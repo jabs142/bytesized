@@ -509,6 +509,12 @@ class MedicalTermExtractor:
             'total_posts': len(posts),
         }
 
+    def extract_bc_types(self, text: str) -> List[str]:
+        """
+        Alias for extract_birth_control_type() for notebook compatibility.
+        """
+        return self.extract_birth_control_type(text)
+
 
 # ============================================
 # EDUCATIONAL EXAMPLES

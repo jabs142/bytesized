@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "brain fog",
+      "frequency": 13
+    },
+    {
+      "id": "anxiety",
+      "frequency": 24
+    },
+    {
+      "id": "nervousness",
+      "frequency": 11
+    }
+  ],
+  "edges": [
+    {
+      "source": "brain fog",
+      "target": "anxiety",
+      "weight": 1.9007575757575759,
+      "confidence": 0.65,
+      "support": 13
+    },
+    {
+      "source": "nervousness",
+      "target": "anxiety",
+      "weight": 1.7870370370370372,
+      "confidence": 0.6111111111111112,
+      "support": 11
+    }
+  ]
+}
