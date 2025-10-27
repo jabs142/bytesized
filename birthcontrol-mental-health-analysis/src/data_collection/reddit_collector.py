@@ -121,7 +121,7 @@ class RedditCollector:
 
         return collected_posts
 
-    def _extract_post_data(self, post) -> Dict:
+    def _extract_post_data(self, post, include_comments: bool = True) -> Dict:
         """
         Extract relevant fields from a Reddit post object.
 
@@ -129,9 +129,13 @@ class RedditCollector:
         - We only keep fields relevant to our analysis
         - This reduces storage and processing overhead
         - Privacy: We deliberately exclude user-identifying information
+
+        Args:
+            post: PRAW Submission object
+            include_comments: Whether to extract top comments (slower but richer data)
         """
 
-        return {
+        post_data = {
             # Post identifiers (for deduplication)
             'id': post.id,
             'created_utc': post.created_utc,
@@ -164,6 +168,65 @@ class RedditCollector:
             # - exact geolocation data
         }
 
+        # Optionally extract top comments
+        # This is slower but provides richer context for analysis
+        if include_comments:
+            post_data['top_comments'] = self._extract_top_comments(post, max_comments=5)
+
+        return post_data
+
+    def _extract_top_comments(self, post, max_comments: int = 5) -> List[Dict]:
+        """
+        Extract top comments from a Reddit post.
+
+        LEARNING: Working with Reddit Comments
+        - Comments form a tree structure (replies to replies)
+        - We flatten this to get top-level comments
+        - PRAW requires .replace_more() to fully load all comments
+        - This can be slow, so we limit it
+
+        Args:
+            post: PRAW Submission object
+            max_comments: Maximum number of comments to extract
+
+        Returns:
+            List of comment dictionaries with text and metadata
+        """
+
+        comments_data = []
+
+        try:
+            # PRAW lazily loads comments. replace_more(limit=0) loads all top-level
+            # Setting limit=0 means "don't load any 'load more comments' sections"
+            # This is faster but might miss some comments - good for our use case
+            post.comments.replace_more(limit=0)
+
+            # Get top-level comments (not replies)
+            top_comments = post.comments[:max_comments]
+
+            for comment in top_comments:
+                # Skip deleted, removed, or low-quality comments
+                # We filter for score >= 1 to keep reasonably valued comments
+                if (hasattr(comment, 'body') and
+                    comment.body not in ['[deleted]', '[removed]'] and
+                    comment.score >= 1):  # ← Quality filter!
+
+                    comment_data = {
+                        'id': comment.id,
+                        'text': comment.body,
+                        'score': comment.score,
+                        'created_utc': comment.created_utc,
+                        # We deliberately don't include author for privacy
+                    }
+                    comments_data.append(comment_data)
+
+        except Exception as e:
+            # If comment extraction fails, don't crash the whole collection
+            print(f"  Warning: Could not extract comments: {e}")
+            pass
+
+        return comments_data
+
     def save_posts(self, posts: List[Dict], filename: str):
         """
         Save collected posts to JSON file.
@@ -191,22 +254,47 @@ class RedditCollector:
 
 def main():
     """
-    Main collection script.
+    Main collection script with DEDUPLICATION and EXPANDED symptoms.
 
-    This demonstrates a typical data collection workflow:
-    1. Initialize collector
-    2. Define search parameters
-    3. Collect data
-    4. Save to disk
+    Workflow:
+    1. Load existing post IDs to avoid duplicates
+    2. Initialize collector
+    3. Define search parameters (mental + physical symptoms)
+    4. Collect data with deduplication
+    5. Save to disk
     """
 
     # Initialize collector
     collector = RedditCollector()
 
-    # Define mental health keywords
-    # LEARNING: Keyword selection is crucial for data mining
-    # These keywords were chosen based on medical literature
-    mental_health_keywords = [
+    # ============================================
+    # DEDUPLICATION: Load existing post IDs
+    # ============================================
+    print("\n🔍 Checking for existing data...")
+    existing_ids = set()
+
+    # Look for any existing data files
+    data_dir = Path(Config.RAW_DATA_DIR)
+    existing_files = list(data_dir.glob('reddit_*_posts_*.json'))
+
+    for file_path in existing_files:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+                for post in existing_data:
+                    existing_ids.add(post['id'])
+        except Exception as e:
+            print(f"  Warning: Could not load {file_path.name}: {e}")
+
+    print(f"✓ Found {len(existing_ids)} existing post IDs (will skip duplicates)")
+
+    # ============================================
+    # EXPANDED KEYWORDS: Mental + Physical symptoms
+    # ============================================
+    # LEARNING: Comprehensive keyword list for pattern discovery
+    # We now search for BOTH mental and physical symptoms
+    symptom_keywords = [
+        # Mental health symptoms
         'depression',
         'anxiety',
         'mood swings',
@@ -218,38 +306,78 @@ def main():
         'mood',
         'crying',
         'anger',
-        'rage'
+        'rage',
+        'brain fog',
+
+        # Physical symptoms
+        'acne',
+        'breakout',
+        'yeast infection',
+        'vaginal dryness',
+        'hair loss',
+        'weight gain',
+        'bloating',
+        'low libido',
+        'spotting',
+        'heavy bleeding',
+        'headache',
+        'nausea',
+
+        # Post-pill specific
+        'post pill',
+        'after stopping',
+        'came off',
+        'quit the pill',
     ]
 
-    # Target subreddits
+    # Target subreddits (added SkincareAddiction for physical symptoms)
     subreddits = [
         'birthcontrol',
         'PMDD',
-        'TwoXChromosomes'
+        'TwoXChromosomes',
+        'SkincareAddiction'  # For acne/skin-related symptoms
     ]
 
-    # Collect data from each subreddit
+    # ============================================
+    # COLLECTION WITH DEDUPLICATION
+    # ============================================
     all_posts = []
+    duplicates_skipped = 0
 
     for subreddit in subreddits:
         posts = collector.search_subreddit(
             subreddit_name=subreddit,
-            keywords=mental_health_keywords,
-            max_posts=100,  # Start small for learning
+            keywords=symptom_keywords,
+            max_posts=150,  # Increased for better pattern discovery
             time_filter='year'  # Last year of posts
         )
-        all_posts.extend(posts)
+
+        # Deduplicate
+        for post in posts:
+            if post['id'] not in existing_ids:
+                all_posts.append(post)
+                existing_ids.add(post['id'])  # Track for inter-subreddit dedup
+            else:
+                duplicates_skipped += 1
+
+    print(f"\n📊 Deduplication Results:")
+    print(f"  New posts collected: {len(all_posts)}")
+    print(f"  Duplicates skipped: {duplicates_skipped}")
 
     # Save collected data
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    filename = f'reddit_mental_health_posts_{timestamp}.json'
-    collector.save_posts(all_posts, filename)
+    if all_posts:
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f'reddit_bc_symptoms_posts_{timestamp}.json'  # Updated filename
+        collector.save_posts(all_posts, filename)
 
-    print(f"\n✓ Collection complete! Total posts: {len(all_posts)}")
-    print(f"  Next steps:")
-    print(f"  1. Run the exploratory analysis notebook")
-    print(f"  2. Review data quality")
-    print(f"  3. Begin preprocessing for NLP")
+        print(f"\n✓ Collection complete! Total posts: {len(all_posts)}")
+        print(f"  Next steps:")
+        print(f"  1. Run pattern mining analysis")
+        print(f"  2. Discover symptom relationships")
+        print(f"  3. Build knowledge graph")
+    else:
+        print(f"\n⚠️  No new posts found (all were duplicates)")
+        print(f"  Try different subreddits or time filters")
 
 
 if __name__ == '__main__':

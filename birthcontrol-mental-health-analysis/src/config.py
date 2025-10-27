@@ -53,7 +53,23 @@ class Config:
         return all(credential is not None for credential in required)
 
 
+    @classmethod
+    def print_safe_summary(cls) -> None:
+        """Print a summary of the configuration without sensitive data."""
+        print(f"Reddit credentials are configured: {cls.validate_reddit_credentials()}")
+        print(f"Max posts per subreddit: {cls.MAX_POSTS_PER_SUBREDDIT}")
+        print(f"Rate limit delay: {cls.RATE_LIMIT_DELAY}")
+        print(f"Data directory paths:")
+        print(f"  Raw data: {cls.RAW_DATA_DIR}")
+        print(f"  Processed data: {cls.PROCESSED_DATA_DIR}")
+        print(f"  Interim data: {cls.INTERIM_DATA_DIR}")
+        print(f"  Outputs: {cls.OUTPUTS_DIR}")
+
 # Create directories if they don't exist
 Config.RAW_DATA_DIR.mkdir(parents=True, exist_ok=True)
 Config.PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 Config.INTERIM_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
+if __name__ == "__main__":
+    Config.print_safe_summary()

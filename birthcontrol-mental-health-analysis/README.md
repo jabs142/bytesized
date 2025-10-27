@@ -1,32 +1,40 @@
-# Birth Control Mental Health Analysis 🧠💊
+# Birth Control Symptom Pattern Discovery 🔬💊
 
-An educational AI/ML project focused on extracting and analyzing information about mental health side effects of hormonal birth control from social media and online sources.
+An educational AI/ML project focused on discovering hidden symptom relationships and patterns in birth control experiences that clinical trials miss - using real-world data from social media.
 
 ## Project Overview
 
-**Purpose**: Learning data mining, NLP, and LLM application through a real-world healthcare research project
+**Purpose**: Learning data mining, pattern discovery, association rule mining, and LLM application through real-world healthcare analysis
 
-**Focus**: Mental health and mood-related side effects of hormonal birth control
-- Depression, anxiety, mood swings
-- Emotional changes and psychological effects
-- Under-counseled or rare side effects
+**Focus**: Comprehensive birth control symptom analysis & relationship discovery
+- **Mental Health**: Depression, anxiety, mood swings, panic, brain fog
+- **Physical Symptoms**: Yeast infections, acne, dryness, weight changes, hair loss
+- **Temporal Patterns**: What happens during use vs. after stopping?
+- **Co-occurrence Discovery**: Which symptoms appear together?
+- **Post-Pill Syndrome**: Recovery timelines and patterns
+
+**Key Innovation**: Finding symptom RELATIONSHIPS, not just frequencies
+- Example: "yeast infections + dryness + long-term use" (71% confidence, 45 posts)
+- Example: "post-pill acne appears 2-4 weeks after stopping" (temporal pattern)
 
 **Data Sources**:
-- Reddit (r/birthcontrol, r/PMDD, r/TwoXChromosomes)
-- Patient information leaflets (future)
-- Online drug reviews (future)
+- Reddit (r/birthcontrol, r/PMDD, r/TwoXChromosomes, r/SkincareAddiction)
+- Deduplication ensures unique posts only
+- Privacy-protected (no usernames, PII removed)
 
-**End Goal**: Extract structured data → Analyze patterns → Build knowledge graph
+**End Goal**: Build interactive knowledge graph showing symptom relationships → Educational website for people on birth control
 
 ## Learning Objectives
 
-This project is designed to teach:
+This project is designed to learn:
 
-1. **Data Mining**: Web scraping, API usage, ethical data collection
-2. **NLP Fundamentals**: Text preprocessing, tokenization, entity extraction
-3. **LLM Application**: Using Claude/GPT for information extraction
-4. **Data Analysis**: Pattern recognition, statistical analysis
-5. **Knowledge Graphs**: Relationship mapping (later phase)
+1. **Data Mining**: Reddit API usage, ethical data collection, deduplication strategies
+2. **NLP Fundamentals**: Text preprocessing, tokenization, entity extraction, n-grams
+3. **Pattern Discovery**: Association rule mining (Apriori algorithm), co-occurrence analysis
+4. **Temporal Analysis**: Timeline extraction, sequence pattern mining
+5. **Network Analysis**: Symptom relationship graphs, community detection
+6. **LLM Application**: Using Claude/GPT for structured information extraction
+7. **Knowledge Graphs**: Interactive visualization of symptom relationships
 
 ## Project Structure
 
@@ -240,35 +248,37 @@ This project follows ethical data collection and analysis practices:
 
 ## Phase Roadmap
 
-### ✅ Phase 1: Setup & Data Collection (Current)
+### ✅ Phase 1: Setup & Data Collection
 - [x] Project structure
-- [x] Reddit data collection
-- [x] Ethical data handling
+- [x] Reddit data collection with rate limiting
+- [x] Ethical data handling & PII removal
 - [x] Exploratory data analysis
 
-### 📋 Phase 2: Text Processing & NLP
-- [ ] Advanced text preprocessing
-- [ ] Named Entity Recognition (NER) for drug names
-- [ ] Symptom extraction
-- [ ] Temporal expression extraction
+### 🔬 Phase 2: Pattern Mining (Current)
+- [ ] Expand symptom detection (mental + physical)
+- [ ] Deduplication in data collection
+- [ ] Association rule mining (Apriori)
+- [ ] Temporal pattern extraction
+- [ ] Network analysis of symptom relationships
+- [ ] Co-occurrence heatmaps
 
-### 🔮 Phase 3: LLM-Based Extraction
-- [ ] Prompt engineering for extraction
-- [ ] LLM API integration (Claude/GPT)
-- [ ] Structured data extraction
-- [ ] Entity relationship extraction
-
-### 📊 Phase 4: Analysis & Patterns
-- [ ] Statistical analysis of side effects
-- [ ] Frequency and co-occurrence analysis
+### 🔮 Phase 3: LLM-Based Enhancement
+- [ ] Prompt engineering for symptom extraction
+- [ ] Context extraction (duration, timing, user profile)
 - [ ] Sentiment analysis
-- [ ] Timeline analysis
+- [ ] Structured data export
 
-### 🕸️ Phase 5: Knowledge Graph
-- [ ] Graph database setup (Neo4j)
-- [ ] Entity relationship modeling
-- [ ] Graph population
-- [ ] Graph queries and visualization
+### 🕸️ Phase 4: Knowledge Graph & Visualization
+- [ ] Interactive symptom relationship network
+- [ ] Timeline visualizations (Sankey diagrams)
+- [ ] "Similar experiences" search feature
+- [ ] Export for React website
+
+### 📱 Phase 5: Educational Website
+- [ ] React frontend with data visualizations
+- [ ] Symptom pattern explorer
+- [ ] Educational disclaimers
+- [ ] Deploy to Vercel
 
 ## Common Issues & Troubleshooting
 
@@ -310,16 +320,7 @@ This is a personal learning project, but suggestions and feedback are welcome!
 
 Educational use only. Please respect privacy and ethical guidelines when using this code.
 
-## Contact
-
-Questions about the project? Check the code comments - they're designed to teach!
-
 ## Acknowledgments
 
 - Reddit communities for publicly sharing their experiences
 - Open source NLP and ML tools
-- Healthcare professionals who inspired this learning project
-
----
-
-**Remember**: This is about learning AI/ML techniques, not making medical claims. Always prioritize ethics, privacy, and responsible data use! 🌟
