@@ -1,0 +1,74 @@
+# Environment and credentials
+.env
+*.env
+config/credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Data files (protect user privacy)
+data/raw/*.json
+data/raw/*.jsonl
+data/raw/*.csv
+data/processed/*.json
+data/processed/*.jsonl
+data/processed/*.csv
+data/interim/*.json
+data/interim/*.jsonl
+data/interim/*.csv
+
+# Keep directory structure but ignore data
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/interim/.gitkeep
+
+# Outputs
+outputs/visualizations/*
+outputs/reports/*
+!outputs/visualizations/.gitkeep
+!outputs/reports/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/

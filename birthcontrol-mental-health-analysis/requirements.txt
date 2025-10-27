@@ -1,0 +1,39 @@
+# Data Collection
+praw==7.7.1  # Python Reddit API Wrapper
+prawcore==2.4.0
+
+# Data Processing & NLP
+pandas==2.1.4
+numpy==1.26.2
+nltk==3.8.1
+spacy==3.7.2
+
+# LLM APIs
+openai==1.6.1
+anthropic==0.8.1
+
+# Data Storage
+jsonlines==4.0.0
+
+# Analysis & Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.18.0
+wordcloud==1.9.3
+
+# Jupyter
+jupyter==1.0.0
+ipykernel==6.27.1
+ipywidgets==8.1.1
+
+# Utilities
+python-dotenv==1.0.0
+tqdm==4.66.1
+requests==2.31.0
+beautifulsoup4==4.12.2
+
+# Date handling
+python-dateutil==2.8.2
+
+# Data validation
+pydantic==2.5.3
