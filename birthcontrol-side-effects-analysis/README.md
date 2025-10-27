@@ -39,7 +39,7 @@ This project is designed to learn:
 ## Project Structure
 
 ```
-birthcontrol-mental-health-analysis/
+birthcontrol-side-effects-analysis/
 ├── data/
 │   ├── raw/              # Raw collected data (not in git)
 │   ├── processed/        # Cleaned and preprocessed data
@@ -75,7 +75,7 @@ birthcontrol-mental-health-analysis/
 ### Step 1: Clone and Navigate
 
 ```bash
-cd birthcontrol-mental-health-analysis
+cd birthcontrol-side-effects-analysis
 ```
 
 ### Step 2: Create Virtual Environment

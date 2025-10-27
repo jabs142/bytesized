@@ -14,7 +14,7 @@ Get up and running in 15 minutes!
 ### 1️⃣ Create Virtual Environment (2 min)
 
 ```bash
-cd birthcontrol-mental-health-analysis
+cd birthcontrol-side-effects-analysis
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 # OR
@@ -111,7 +111,7 @@ Watch as the analysis runs! You'll see:
 - Statistical summaries
 - Visualizations
 - Word frequency analysis
-- Mental health term counts
+- Symptom frequency analysis
 
 ## What You Just Built
 
@@ -204,11 +204,13 @@ subreddits = [
 ```
 
 ### Change keywords
-Edit `reddit_collector.py`, line ~195:
+Edit `reddit_collector.py`, line ~295:
 ```python
-mental_health_keywords = [
+symptom_keywords = [
     'depression',
     'anxiety',
+    'acne',              # Physical symptom
+    'yeast infection',   # Physical symptom
     'insomnia',          # NEW
     'fatigue',           # NEW
     'weight gain'        # NEW

@@ -20,7 +20,7 @@ def main():
 
     # Find most recent raw data file
     data_dir = Path('data/raw')
-    data_files = list(data_dir.glob('reddit_mental_health_posts_*.json'))
+    data_files = list(data_dir.glob('reddit_bc_*.json'))
 
     if not data_files:
         print("\n✗ No data files found in data/raw/")

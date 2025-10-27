@@ -13,7 +13,7 @@ Reddit API
     ↓
 [4] save_posts() writes JSON file
     ↓
-data/raw/reddit_mental_health_posts_TIMESTAMP.json
+data/raw/reddit_bc_side_effects_TIMESTAMP.json
     ↓
 [Later] Loaded by Jupyter notebook for analysis
 ```
@@ -24,7 +24,7 @@ data/raw/reddit_mental_health_posts_TIMESTAMP.json
 
 ### **Where are comments saved?**
 
-**Location**: `data/raw/reddit_mental_health_posts_YYYYMMDD_HHMMSS.json`
+**Location**: `data/raw/reddit_bc_side_effects_YYYYMMDD_HHMMSS.json`
 
 **Format**: Raw JSON (no processing yet)
 
@@ -119,7 +119,7 @@ After preprocessing (`text_cleaner.py`), we'll create:
 ```python
 # Step 1: Collection (raw)
 collector.search_subreddit('birthcontrol', ['depression'])
-# Saves: data/raw/reddit_mental_health_posts_20231027_143000.json
+# Saves: data/raw/reddit_bc_side_effects_20231027_143000.json
 
 # Step 2: Cleaning (processed)
 cleaner = TextCleaner()
@@ -144,11 +144,11 @@ cleaned = cleaner.clean_dataset(raw_posts)
 ls -lh data/raw/
 
 # View the most recent file
-cat data/raw/reddit_mental_health_posts_*.json | head -100
+cat data/raw/reddit_bc_side_effects_*.json | head -100
 
 # Count posts in a file
-python -c "import json; print(len(json.load(open('data/raw/reddit_mental_health_posts_20231027_143000.json'))))"
+python -c "import json; print(len(json.load(open('data/raw/reddit_bc_side_effects_20231027_143000.json'))))"
 
 # Check if comments are included
-python -c "import json; data = json.load(open('data/raw/reddit_mental_health_posts_20231027_143000.json')); print('Has comments:', 'top_comments' in data[0])"
+python -c "import json; data = json.load(open('data/raw/reddit_bc_side_effects_20231027_143000.json')); print('Has comments:', 'top_comments' in data[0])"
 ```

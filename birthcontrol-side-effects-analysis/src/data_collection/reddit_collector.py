@@ -1,7 +1,7 @@
 """
 Reddit Data Collector
 ======================
-Collects posts and comments from Reddit about birth control mental health effects.
+Collects posts and comments from Reddit about birth control side effects.
 
 LEARNING CONCEPTS:
 - API authentication and rate limiting
@@ -26,7 +26,7 @@ from config import Config
 
 class RedditCollector:
     """
-    Collects Reddit posts related to birth control mental health effects.
+    Collects Reddit posts related to birth control side effects (mental + physical).
 
     DESIGN PATTERN: This class encapsulates all Reddit collection logic.
     In ML/AI projects, separating data collection from processing is crucial.
@@ -65,7 +65,7 @@ class RedditCollector:
         time_filter: str = 'all'
     ) -> List[Dict]:
         """
-        Search a subreddit for posts containing mental health keywords.
+        Search a subreddit for posts containing symptom keywords.
 
         LEARNING: Search vs. Scraping
         - This uses Reddit's official API (ethical, legal, rate-limited)
@@ -367,7 +367,7 @@ def main():
     # Save collected data
     if all_posts:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f'reddit_bc_symptoms_posts_{timestamp}.json'  # Updated filename
+        filename = f'reddit_bc_side_effects_{timestamp}.json'  # Birth control side effects
         collector.save_posts(all_posts, filename)
 
         print(f"\n✓ Collection complete! Total posts: {len(all_posts)}")
