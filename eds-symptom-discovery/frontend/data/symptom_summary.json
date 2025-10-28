@@ -1,0 +1,119 @@
+{
+  "total_symptoms": 30,
+  "high_surprise_count": 0,
+  "research_gaps_count": 1,
+  "top_symptoms": [
+    {
+      "symptom": "pain",
+      "mention_count": 98,
+      "surprise_score": 0.152
+    },
+    {
+      "symptom": "fatigue",
+      "mention_count": 39,
+      "surprise_score": 0.072
+    },
+    {
+      "symptom": "chronic pain",
+      "mention_count": 21,
+      "surprise_score": 0.04
+    },
+    {
+      "symptom": "joint pain",
+      "mention_count": 20,
+      "surprise_score": 0.034
+    },
+    {
+      "symptom": "hypermobility",
+      "mention_count": 19,
+      "surprise_score": 0.029
+    },
+    {
+      "symptom": "knee pain",
+      "mention_count": 18,
+      "surprise_score": 0.046
+    },
+    {
+      "symptom": "gastrointestinal issues",
+      "mention_count": 14,
+      "surprise_score": 0.039
+    },
+    {
+      "symptom": "back pain",
+      "mention_count": 14,
+      "surprise_score": 0.021
+    },
+    {
+      "symptom": "hip pain",
+      "mention_count": 11,
+      "surprise_score": 0.022
+    },
+    {
+      "symptom": "anxiety",
+      "mention_count": 11,
+      "surprise_score": 0.019
+    }
+  ],
+  "hidden_gems": [
+    {
+      "symptom": "pain",
+      "surprise_score": 0.152,
+      "mention_count": 98,
+      "paper_count": 10
+    },
+    {
+      "symptom": "fatigue",
+      "surprise_score": 0.072,
+      "mention_count": 39,
+      "paper_count": 8
+    },
+    {
+      "symptom": "knee pain",
+      "surprise_score": 0.046,
+      "mention_count": 18,
+      "paper_count": 3
+    },
+    {
+      "symptom": "chronic pain",
+      "surprise_score": 0.04,
+      "mention_count": 21,
+      "paper_count": 7
+    },
+    {
+      "symptom": "gastrointestinal issues",
+      "surprise_score": 0.039,
+      "mention_count": 14,
+      "paper_count": 2
+    },
+    {
+      "symptom": "joint pain",
+      "surprise_score": 0.034,
+      "mention_count": 20,
+      "paper_count": 9
+    },
+    {
+      "symptom": "hypermobility",
+      "surprise_score": 0.029,
+      "mention_count": 19,
+      "paper_count": 10
+    },
+    {
+      "symptom": "hip pain",
+      "surprise_score": 0.022,
+      "mention_count": 11,
+      "paper_count": 6
+    },
+    {
+      "symptom": "back pain",
+      "surprise_score": 0.021,
+      "mention_count": 14,
+      "paper_count": 10
+    },
+    {
+      "symptom": "anxiety",
+      "surprise_score": 0.019,
+      "mention_count": 11,
+      "paper_count": 8
+    }
+  ]
+}

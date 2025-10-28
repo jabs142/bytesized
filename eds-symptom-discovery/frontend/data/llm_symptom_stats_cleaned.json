@@ -1,0 +1,6941 @@
+[
+  {
+    "symptom": "pain",
+    "mention_count": 100,
+    "examples": [
+      "with some pain",
+      "I feel like everyday have new pain area from either how I sit or walk."
+    ],
+    "contexts": [
+      "when walking about a mile",
+      "everyday, from how I sit or walk"
+    ]
+  },
+  {
+    "symptom": "fatigue",
+    "mention_count": 39,
+    "examples": [
+      "I’m just tired and maybe it’s ridiculous of me to expect anything good to help me this early"
+    ],
+    "contexts": [
+      "i am so tired of being invalidated by doctors"
+    ]
+  },
+  {
+    "symptom": "chronic pain",
+    "mention_count": 21,
+    "examples": [
+      "getting assessed for chronic pain and mobility issues"
+    ],
+    "contexts": [
+      "chronic pain"
+    ]
+  },
+  {
+    "symptom": "joint pain",
+    "mention_count": 20,
+    "examples": [
+      "celiac causes joint pain"
+    ],
+    "contexts": [
+      "related to celiac disease"
+    ]
+  },
+  {
+    "symptom": "hypermobility",
+    "mention_count": 19,
+    "examples": [
+      "I have a lot of hypermobility (both wrists, both knees, and left shoulder all confirmed by physical therapists)"
+    ],
+    "contexts": [
+      "confirmed by physical therapists"
+    ]
+  },
+  {
+    "symptom": "knee pain",
+    "mention_count": 18,
+    "examples": [
+      "Ive started having hip and knee pain"
+    ],
+    "contexts": [
+      "my entire life"
+    ]
+  },
+  {
+    "symptom": "back pain",
+    "mention_count": 14,
+    "examples": [
+      "I personally think my back pain is from my endometriosis"
+    ],
+    "contexts": [
+      "related to endometriosis"
+    ]
+  },
+  {
+    "symptom": "gastrointestinal issues",
+    "mention_count": 14,
+    "examples": [
+      "of course I have all the normal shit like stomach issues"
+    ],
+    "contexts": [
+      "after eating"
+    ]
+  },
+  {
+    "symptom": "anxiety",
+    "mention_count": 11,
+    "examples": [
+      "everything I need to be doing to manage anxiety"
+    ],
+    "contexts": [
+      "downplayed by medical providers and family"
+    ]
+  },
+  {
+    "symptom": "hip pain",
+    "mention_count": 11,
+    "examples": [
+      "Ive started having hip and knee pain"
+    ],
+    "contexts": [
+      "my entire life"
+    ]
+  },
+  {
+    "symptom": "subluxation",
+    "mention_count": 10,
+    "examples": [
+      "a lot of pain and subluxations"
+    ],
+    "contexts": [
+      "for a few weeks"
+    ]
+  },
+  {
+    "symptom": "dysautonomia",
+    "mention_count": 9,
+    "examples": [
+      "dysautonomia"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "lower back pain",
+    "mention_count": 9,
+    "examples": [
+      "help for my lower back pain"
+    ],
+    "contexts": [
+      "worsening over the last year"
+    ]
+  },
+  {
+    "symptom": "dislocation",
+    "mention_count": 9,
+    "examples": [
+      "it's hard for me to switch positions and do what he likes, like grabbing and squeezing"
+    ],
+    "contexts": [
+      "due to dislocations"
+    ]
+  },
+  {
+    "symptom": "dizziness",
+    "mention_count": 9,
+    "examples": [
+      "dizziness"
+    ],
+    "contexts": [
+      "after standing for 40 minutes"
+    ]
+  },
+  {
+    "symptom": "neck pain",
+    "mention_count": 8,
+    "examples": [
+      "when my neck pain gets unbearable"
+    ],
+    "contexts": [
+      "when it gets unbearable"
+    ]
+  },
+  {
+    "symptom": "POTS",
+    "mention_count": 7,
+    "examples": [
+      "my presumed POTS"
+    ],
+    "contexts": [
+      "for 9 years"
+    ]
+  },
+  {
+    "symptom": "hypermobile",
+    "mention_count": 7,
+    "examples": [
+      "you're hypermobile"
+    ],
+    "contexts": [
+      "the doctor observed during the appointment"
+    ]
+  },
+  {
+    "symptom": "shoulder pain",
+    "mention_count": 6,
+    "examples": [
+      "instead of trying to haul stuff around and hurting my shoulders"
+    ],
+    "contexts": [
+      "while hauling stuff around"
+    ]
+  },
+  {
+    "symptom": "chronic fatigue",
+    "mention_count": 6,
+    "examples": [
+      "I’ve been dealing with INTENSE chronic fatigue"
+    ],
+    "contexts": [
+      "INTENSE"
+    ]
+  },
+  {
+    "symptom": "wrist pain",
+    "mention_count": 6,
+    "examples": [
+      "my back, knee, and wrist pain"
+    ],
+    "contexts": [
+      "part of a list of pains"
+    ]
+  },
+  {
+    "symptom": "stiffness",
+    "mention_count": 6,
+    "examples": [
+      "I struggle more with stiffness than dislocations"
+    ],
+    "contexts": [
+      "wakes up feeling stiff"
+    ]
+  },
+  {
+    "symptom": "nausea",
+    "mention_count": 6,
+    "examples": [
+      "I get nauseous very easily"
+    ],
+    "contexts": [
+      "part of my symptoms for having Ehlers-Danlos"
+    ]
+  },
+  {
+    "symptom": "foot pain",
+    "mention_count": 6,
+    "examples": [
+      "Extreme foot pain, any suggestions?"
+    ],
+    "contexts": [
+      "when putting all my weight on my heels"
+    ]
+  },
+  {
+    "symptom": "depression",
+    "mention_count": 5,
+    "examples": [
+      "depression and anxiety disorders"
+    ],
+    "contexts": [
+      "affecting mental health due to odor and dental issues"
+    ]
+  },
+  {
+    "symptom": "exhaustion",
+    "mention_count": 5,
+    "examples": [
+      "I’m lost and I’m tired and exhausted of having nothing closer to an answer"
+    ],
+    "contexts": [
+      "after washing/changing bed sheets"
+    ]
+  },
+  {
+    "symptom": "nerve pain",
+    "mention_count": 5,
+    "examples": [
+      "nerve pain soothers"
+    ],
+    "contexts": [
+      "whenever standing or walking"
+    ]
+  },
+  {
+    "symptom": "headache",
+    "mention_count": 5,
+    "examples": [
+      "sometimes take ibuprofen because it’s normally matched with a headache"
+    ],
+    "contexts": [
+      "normally matched with a headache"
+    ]
+  },
+  {
+    "symptom": "muscle tightness",
+    "mention_count": 5,
+    "examples": [
+      "All of my muscles are tight, they're so tight and painful I can’t put any pressure on them."
+    ],
+    "contexts": [
+      "24/7"
+    ]
+  },
+  {
+    "symptom": "muscle spasms",
+    "mention_count": 4,
+    "examples": [
+      "sometimes a muscle relaxer is I'm having muscle spasms"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "easy bruising",
+    "mention_count": 4,
+    "examples": [
+      "I bruise like it’s a hobby."
+    ],
+    "contexts": [
+      "skin bruises easily"
+    ]
+  },
+  {
+    "symptom": "joint dislocation",
+    "mention_count": 4,
+    "examples": [
+      "Joints dislocating"
+    ],
+    "contexts": [
+      "daily"
+    ]
+  },
+  {
+    "symptom": "muscle pain",
+    "mention_count": 4,
+    "examples": [
+      "muscle pain"
+    ],
+    "contexts": [
+      "after working out"
+    ]
+  },
+  {
+    "symptom": "knee instability",
+    "mention_count": 4,
+    "examples": [
+      "my knees buckle"
+    ],
+    "contexts": [
+      "when working for very long on a hard floor"
+    ]
+  },
+  {
+    "symptom": "difficulty walking",
+    "mention_count": 4,
+    "examples": [
+      "I can hardly... walk normally"
+    ],
+    "contexts": [
+      "until I released the fascia"
+    ]
+  },
+  {
+    "symptom": "limb weakness",
+    "mention_count": 4,
+    "examples": [
+      "my hands get weak",
+      "I lost control of my right leg",
+      "I can't lift my arm at all."
+    ],
+    "contexts": [
+      "sometimes",
+      "during the worst flare up in August"
+    ]
+  },
+  {
+    "symptom": "migraine",
+    "mention_count": 3,
+    "examples": [
+      "preventative and abortive migraine meds"
+    ],
+    "contexts": [
+      "after 12 years"
+    ]
+  },
+  {
+    "symptom": "injury",
+    "mention_count": 3,
+    "examples": [
+      "I’m bullied for my injuries"
+    ],
+    "contexts": [
+      "triggered awareness of hypermobility"
+    ]
+  },
+  {
+    "symptom": "numbness",
+    "mention_count": 3,
+    "examples": [
+      "numbness"
+    ],
+    "contexts": [
+      "when sleeping on my right side"
+    ]
+  },
+  {
+    "symptom": "fibromyalgia",
+    "mention_count": 3,
+    "examples": [
+      "small fiber neuropathy, and fibromyalgia"
+    ],
+    "contexts": [
+      "highly correlated with small fiber neuropathy"
+    ]
+  },
+  {
+    "symptom": "clumsiness",
+    "mention_count": 3,
+    "examples": [
+      "clumsiness (thought it was due to bad vision, but more likely it is because my feet and hands don't land exactly where my brain expects)"
+    ],
+    "contexts": [
+      "thought it was due to bad vision"
+    ]
+  },
+  {
+    "symptom": "cognitive dysfunction",
+    "mention_count": 3,
+    "examples": [
+      "the other conditions i found i never knew about were brain fog"
+    ],
+    "contexts": [
+      "on bad days"
+    ]
+  },
+  {
+    "symptom": "abdominal pain",
+    "mention_count": 3,
+    "examples": [
+      "my tummy pain"
+    ],
+    "contexts": [
+      "occasional"
+    ]
+  },
+  {
+    "symptom": "joint laxity",
+    "mention_count": 3,
+    "examples": [
+      "Ive never had loose joints in my life. But after a 5 month bedrest..."
+    ],
+    "contexts": [
+      "after a 5 month bedrest"
+    ]
+  },
+  {
+    "symptom": "ankle pain",
+    "mention_count": 3,
+    "examples": [
+      "It started with pain in my ankle if i flexed it a certain way."
+    ],
+    "contexts": [
+      "when flexing it a certain way"
+    ]
+  },
+  {
+    "symptom": "sensory issues",
+    "mention_count": 3,
+    "examples": [
+      "ADHD related issues (sensory issues, lack of focus, lack of routines, general scattermindedness)"
+    ],
+    "contexts": [
+      "ADHD related issues"
+    ]
+  },
+  {
+    "symptom": "joint instability",
+    "mention_count": 3,
+    "examples": [
+      "a major contributor to joint instability"
+    ],
+    "contexts": [
+      "after every workout"
+    ]
+  },
+  {
+    "symptom": "insomnia",
+    "mention_count": 3,
+    "examples": [
+      "not sleep"
+    ],
+    "contexts": [
+      "related to pain"
+    ]
+  },
+  {
+    "symptom": "wheelchair use",
+    "mention_count": 3,
+    "examples": [
+      "I know if it keeps progressing I’ll need a wheelchair eventually."
+    ],
+    "contexts": [
+      "if it keeps progressing"
+    ]
+  },
+  {
+    "symptom": "muscle strain",
+    "mention_count": 3,
+    "examples": [
+      "I pulled a weird muscle this time."
+    ],
+    "contexts": [
+      "after a pretty short period"
+    ]
+  },
+  {
+    "symptom": "muscle fatigue",
+    "mention_count": 3,
+    "examples": [
+      "My muscles were fatigued from the moment I woke up"
+    ],
+    "contexts": [
+      "from the moment I woke up"
+    ]
+  },
+  {
+    "symptom": "constipation",
+    "mention_count": 3,
+    "examples": [
+      "I wonder why I'm having trouble shitting?"
+    ],
+    "contexts": [
+      "getting to the point where it’s really concerning"
+    ]
+  },
+  {
+    "symptom": "balance issues",
+    "mention_count": 3,
+    "examples": [
+      "balancing issues"
+    ],
+    "contexts": [
+      "in a boat"
+    ]
+  },
+  {
+    "symptom": "shoulder subluxation",
+    "mention_count": 3,
+    "examples": [
+      "I've always got something subluxed (my right shoulder as of writing this)"
+    ],
+    "contexts": [
+      "current situation"
+    ]
+  },
+  {
+    "symptom": "hEDS",
+    "mention_count": 2,
+    "examples": [
+      "i have hEDS"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "weight loss",
+    "mention_count": 2,
+    "examples": [
+      "I’ve lost 10lbs since Wednesday"
+    ],
+    "contexts": [
+      "since Wednesday"
+    ]
+  },
+  {
+    "symptom": "difficulty standing",
+    "mention_count": 2,
+    "examples": [
+      "difficulty standing in place for even ten minutes"
+    ],
+    "contexts": [
+      "for even ten minutes"
+    ]
+  },
+  {
+    "symptom": "fainting",
+    "mention_count": 2,
+    "examples": [
+      "I’m bullied for my injuries/fainting all the time"
+    ],
+    "contexts": [
+      "all the time"
+    ]
+  },
+  {
+    "symptom": "ligament injury",
+    "mention_count": 2,
+    "examples": [
+      "I already have torn ligaments in my knee and hip"
+    ],
+    "contexts": [
+      "in my knee and hip"
+    ]
+  },
+  {
+    "symptom": "loss of mobility",
+    "mention_count": 2,
+    "examples": [
+      "I’ve lost so much of my mobility over the last year"
+    ],
+    "contexts": [
+      "over the last year"
+    ]
+  },
+  {
+    "symptom": "panic attack",
+    "mention_count": 2,
+    "examples": [
+      "I had a panic attack the other day"
+    ],
+    "contexts": [
+      "the other day"
+    ]
+  },
+  {
+    "symptom": "inflammation",
+    "mention_count": 2,
+    "examples": [
+      "getting their MCAS inflammation under control notably stabilised their tissues"
+    ],
+    "contexts": [
+      "related to MCAS"
+    ]
+  },
+  {
+    "symptom": "flare",
+    "mention_count": 2,
+    "examples": [
+      "I’m feeling like I’m having a flare up again and it’s worse than last year"
+    ],
+    "contexts": [
+      "worse than last year"
+    ]
+  },
+  {
+    "symptom": "oral ulcers",
+    "mention_count": 2,
+    "examples": [
+      "I get mouth ulcers so easily"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "instability",
+    "mention_count": 2,
+    "examples": [
+      "i feel the pain and instability already"
+    ],
+    "contexts": [
+      "first winter with my joints getting messed up by the cold"
+    ]
+  },
+  {
+    "symptom": "skin hyperelasticity",
+    "mention_count": 2,
+    "examples": [
+      "of course I have all the normal shit like stretchy skin"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "difficulty getting out of bed",
+    "mention_count": 2,
+    "examples": [
+      "I can hardly get out of bed"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "soreness",
+    "mention_count": 2,
+    "examples": [
+      "I can feel that I likely shouldn’t have, and that I will be sore tomorrow"
+    ],
+    "contexts": [
+      "after ripping out the old air conditioner"
+    ]
+  },
+  {
+    "symptom": "cervical spine instability",
+    "mention_count": 2,
+    "examples": [
+      "My spine and cranio-cervical instability are quite literally killing me"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "jaw pain",
+    "mention_count": 2,
+    "examples": [
+      "I hit my jaw really hard and I suddenly can't chew"
+    ],
+    "contexts": [
+      "after hitting jaw, unable to chew"
+    ]
+  },
+  {
+    "symptom": "difficulty running",
+    "mention_count": 2,
+    "examples": [
+      "now also wondering how many of us that have difficulty running"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "gastroesophageal reflux",
+    "mention_count": 2,
+    "examples": [
+      "Acid Reflux"
+    ],
+    "contexts": [
+      "alongside POTS"
+    ]
+  },
+  {
+    "symptom": "difficulty moving",
+    "mention_count": 2,
+    "examples": [
+      "I can’t really move around more than a little for a while after"
+    ],
+    "contexts": [
+      "after the hip moves out of place"
+    ]
+  },
+  {
+    "symptom": "big toe pain",
+    "mention_count": 2,
+    "examples": [
+      "but now it has spread to my big toe"
+    ],
+    "contexts": [
+      "spread from the ankle"
+    ]
+  },
+  {
+    "symptom": "discomfort",
+    "mention_count": 2,
+    "examples": [
+      "For the past year, i have been experiencing extreme hip pains and discomfort."
+    ],
+    "contexts": [
+      "for the past year"
+    ]
+  },
+  {
+    "symptom": "irritable bowel syndrome",
+    "mention_count": 2,
+    "examples": [
+      "IBS"
+    ],
+    "contexts": [
+      "part of gastrointestinal issues"
+    ]
+  },
+  {
+    "symptom": "tension headache",
+    "mention_count": 2,
+    "examples": [
+      "I think contributes to my tension headaches"
+    ],
+    "contexts": [
+      "headaches are getting worse daily"
+    ]
+  },
+  {
+    "symptom": "Ehlers-Danlos syndrome",
+    "mention_count": 2,
+    "examples": [
+      "Ehlers Danlos"
+    ],
+    "contexts": [
+      "recent diagnosis"
+    ]
+  },
+  {
+    "symptom": "functional impairment",
+    "mention_count": 2,
+    "examples": [
+      "general ability to be a partially functional person"
+    ],
+    "contexts": [
+      "on a daily basis"
+    ]
+  },
+  {
+    "symptom": "diarrhea",
+    "mention_count": 2,
+    "examples": [
+      "frequent diarrhea"
+    ],
+    "contexts": [
+      "for decades"
+    ]
+  },
+  {
+    "symptom": "tachycardia",
+    "mention_count": 2,
+    "examples": [
+      "with tachycardic episodes"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "bedridden",
+    "mention_count": 2,
+    "examples": [
+      "I don’t wanna sign up for the cheapy plan and end up paying more out of pocket in the long run. I’m trying to motivate myself to start taking my body more seriously and get the help that it needs before I’m permanently bedridden lol"
+    ],
+    "contexts": [
+      "before I’m permanently bedridden"
+    ]
+  },
+  {
+    "symptom": "knee dislocation",
+    "mention_count": 2,
+    "examples": [
+      "I have had issues with my knees dislocating all my life"
+    ],
+    "contexts": [
+      "all my life"
+    ]
+  },
+  {
+    "symptom": "use of crutches",
+    "mention_count": 2,
+    "examples": [
+      "I’m on crutches"
+    ],
+    "contexts": [
+      "used when unable to walk"
+    ]
+  },
+  {
+    "symptom": "shoulder dislocation",
+    "mention_count": 2,
+    "examples": [
+      "my shoulders dislocate"
+    ],
+    "contexts": [
+      "wakes up to it"
+    ]
+  },
+  {
+    "symptom": "joint problems",
+    "mention_count": 2,
+    "examples": [
+      "I have extreme Problems with my joints"
+    ],
+    "contexts": [
+      "almost two years later"
+    ]
+  },
+  {
+    "symptom": "arthritis",
+    "mention_count": 2,
+    "examples": [
+      "celiac causes... arthritis"
+    ],
+    "contexts": [
+      "related to celiac disease"
+    ]
+  },
+  {
+    "symptom": "hypermobile Ehlers-Danlos syndrome",
+    "mention_count": 2,
+    "examples": [
+      "everything I need to be doing to manage heds"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "overexertion",
+    "mention_count": 2,
+    "examples": [
+      "I often don't know I pushed too far until the next day or later."
+    ],
+    "contexts": [
+      "until the next day or later"
+    ]
+  },
+  {
+    "symptom": "dyspnea",
+    "mention_count": 2,
+    "examples": [
+      "that made it almost impossible to move or breathe"
+    ],
+    "contexts": [
+      "when I pulled a muscle on my ribcage"
+    ]
+  },
+  {
+    "symptom": "carpal tunnel syndrome",
+    "mention_count": 2,
+    "examples": [
+      "I have carpel tunnel vibes today"
+    ],
+    "contexts": [
+      "today, after sitting in an unsupportive chair"
+    ]
+  },
+  {
+    "symptom": "jaw dislocation",
+    "mention_count": 2,
+    "examples": [
+      "I did warn the docs to be careful with my jaw which keeps popping out"
+    ],
+    "contexts": [
+      "just from spitting toothpaste"
+    ]
+  },
+  {
+    "symptom": "tissue fragility",
+    "mention_count": 2,
+    "examples": [
+      "my mouth's tissues are fragile"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "gastroparesis",
+    "mention_count": 2,
+    "examples": [
+      "I used this formula to get my GI to order testing for gastroparesis"
+    ],
+    "contexts": [
+      "leaves me sick all day"
+    ]
+  },
+  {
+    "symptom": "dysautonomia symptoms",
+    "mention_count": 2,
+    "examples": [
+      "and now signs of dysautonomia"
+    ],
+    "contexts": [
+      "recent development"
+    ]
+  },
+  {
+    "symptom": "flare-up",
+    "mention_count": 2,
+    "examples": [
+      "I’m constantly flaring"
+    ],
+    "contexts": [
+      "ongoing issue affecting daily life"
+    ]
+  },
+  {
+    "symptom": "rib subluxation",
+    "mention_count": 2,
+    "examples": [
+      "that's been out for like two weeks"
+    ],
+    "contexts": [
+      "for like two weeks"
+    ]
+  },
+  {
+    "symptom": "upper back pain",
+    "mention_count": 2,
+    "examples": [
+      "my upper back/neck will start to hurt"
+    ],
+    "contexts": [
+      "after a pretty short period"
+    ]
+  },
+  {
+    "symptom": "sacroiliac joint pain",
+    "mention_count": 2,
+    "examples": [
+      "I have severe pain in my SI joints"
+    ],
+    "contexts": [
+      "after walking for more than about 5 minutes on anything other than a completely flat surface"
+    ]
+  },
+  {
+    "symptom": "exercise-induced pain",
+    "mention_count": 2,
+    "examples": [
+      "Doing the mile or 2-mile run in school was excruciating because of how slow I was"
+    ],
+    "contexts": [
+      "in school"
+    ]
+  },
+  {
+    "symptom": "sharp pain",
+    "mention_count": 2,
+    "examples": [
+      "sudden sharp, nawing, burrowing, aching sort of pain that doesn't go away with manipulation"
+    ],
+    "contexts": [
+      "when putting pressure directly on the knee"
+    ]
+  },
+  {
+    "symptom": "sore throat",
+    "mention_count": 2,
+    "examples": [
+      "I've been experiencing it a bit myself--I'm a singer who will end up with a sore throat the day after performance"
+    ],
+    "contexts": [
+      "the day after performance"
+    ]
+  },
+  {
+    "symptom": "widespread pain",
+    "mention_count": 2,
+    "examples": [
+      "have developed body wide pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "shin ache",
+    "mention_count": 2,
+    "examples": [
+      "My shins also ache even after a normal day of school"
+    ],
+    "contexts": [
+      "after a normal day of school"
+    ]
+  },
+  {
+    "symptom": "hip and rib cramps",
+    "mention_count": 2,
+    "examples": [
+      "Terrible hip and rib cramps when walking or running"
+    ],
+    "contexts": [
+      "when walking or running"
+    ]
+  },
+  {
+    "symptom": "shoulder instability",
+    "mention_count": 2,
+    "examples": [
+      "it just overwhelmingly feels like my shoulder is 'out of place'"
+    ],
+    "contexts": [
+      "when trying to sleep on my right side"
+    ]
+  },
+  {
+    "symptom": "generalized hypermobility",
+    "mention_count": 2,
+    "examples": [
+      "I’ve known I probably have ADHD for most of my life, but after 15+ years of trying and failing to live happily in a hypermobile body that feels like its falling apart half the time"
+    ],
+    "contexts": [
+      "feels like its falling apart half the time"
+    ]
+  },
+  {
+    "symptom": "ankle instability",
+    "mention_count": 2,
+    "examples": [
+      "my ankles became too much of a liability"
+    ],
+    "contexts": [
+      "when playing volleyball"
+    ]
+  },
+  {
+    "symptom": "delayed onset muscle soreness",
+    "mention_count": 2,
+    "examples": [
+      "the huge amounts of DOMS"
+    ],
+    "contexts": [
+      "wakes up with it"
+    ]
+  },
+  {
+    "symptom": "morning stiffness",
+    "mention_count": 2,
+    "examples": [
+      "just being stiff every morning of existence"
+    ],
+    "contexts": [
+      "in the morning"
+    ]
+  },
+  {
+    "symptom": "fine motor difficulties",
+    "mention_count": 2,
+    "examples": [
+      "did anyone else have trouble holding a pen/pencil as a kid?"
+    ],
+    "contexts": [
+      "as a kid"
+    ]
+  },
+  {
+    "symptom": "symptom fluctuation",
+    "mention_count": 2,
+    "examples": [
+      "as soon as i make progress with one joint something else starts acting up"
+    ],
+    "contexts": [
+      "when making progress with one joint"
+    ]
+  },
+  {
+    "symptom": "chronic migraine with aura",
+    "mention_count": 1,
+    "examples": [
+      "chronic migraine with aura"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hearing loss",
+    "mention_count": 1,
+    "examples": [
+      "hearing loss"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vomiting",
+    "mention_count": 1,
+    "examples": [
+      "vomiting"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "ADHD",
+    "mention_count": 1,
+    "examples": [
+      "doing for my ADHD"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "anxiety disorder",
+    "mention_count": 1,
+    "examples": [
+      "depression and anxiety disorders"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "autism spectrum disorder",
+    "mention_count": 1,
+    "examples": [
+      "ASD"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain related to Sjögren’s",
+    "mention_count": 1,
+    "examples": [
+      "pain related to my Sjögren’s and Ehlers Danlos"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "loss of appetite",
+    "mention_count": 1,
+    "examples": [
+      "repulsion of food"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "passive suicidality",
+    "mention_count": 1,
+    "examples": [
+      "I’ve fought passive suicidality my entire life"
+    ],
+    "contexts": [
+      "making a grand show of itself right now"
+    ]
+  },
+  {
+    "symptom": "inability to cry",
+    "mention_count": 1,
+    "examples": [
+      "it’s been years since I’ve been able to effectively cry"
+    ],
+    "contexts": [
+      "due to Sjögren’s"
+    ]
+  },
+  {
+    "symptom": "loose skin",
+    "mention_count": 1,
+    "examples": [
+      "i have had loose sagging skin without childbirth ever since i was young"
+    ],
+    "contexts": [
+      "without childbirth ever since i was young"
+    ]
+  },
+  {
+    "symptom": "wound healing issues",
+    "mention_count": 1,
+    "examples": [
+      "i don’t seem to have major wound healing issues"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "mast cell activation syndrome",
+    "mention_count": 1,
+    "examples": [
+      "i don’t seem to have major MCAS"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "weather-induced flare",
+    "mention_count": 1,
+    "examples": [
+      "I’d love to go somewhere I don’t have so many weather induced flares."
+    ],
+    "contexts": [
+      "related to sudden weather changes and cold in winter"
+    ]
+  },
+  {
+    "symptom": "cold sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "the cold in winter just hurts."
+    ],
+    "contexts": [
+      "specifically during winter"
+    ]
+  },
+  {
+    "symptom": "pain changes",
+    "mention_count": 1,
+    "examples": [
+      "I feel like the pain wasn’t as dramatic when I lived there."
+    ],
+    "contexts": [
+      "comparison of pain levels between locations"
+    ]
+  },
+  {
+    "symptom": "genital skin tearing",
+    "mention_count": 1,
+    "examples": [
+      "Has anyone else experienced skin tearing on their genitals?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "scar on penis",
+    "mention_count": 1,
+    "examples": [
+      "I have a large scar running down the side of my penis because of it."
+    ],
+    "contexts": [
+      "from an incident over 12 years ago"
+    ]
+  },
+  {
+    "symptom": "frenulum tear",
+    "mention_count": 1,
+    "examples": [
+      "I tore the frenulum of my penis quite bad earlier this year while having sex with my partner."
+    ],
+    "contexts": [
+      "earlier this year during sex"
+    ]
+  },
+  {
+    "symptom": "penile pain",
+    "mention_count": 1,
+    "examples": [
+      "I got a sharp pain in my penis"
+    ],
+    "contexts": [
+      "while masturbating, not particularly aggressively"
+    ]
+  },
+  {
+    "symptom": "foreskin lesions",
+    "mention_count": 1,
+    "examples": [
+      "I now have tons of medium sized phishers on my foreskin."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "internal tearing",
+    "mention_count": 1,
+    "examples": [
+      "I always end up tearing my insides."
+    ],
+    "contexts": [
+      "when attempting anal penetration, no matter how much lube I use"
+    ]
+  },
+  {
+    "symptom": "tachy-bradycardia",
+    "mention_count": 1,
+    "examples": [
+      "I have Tachy-Bradycardia"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "myxomatous mitral valve disease",
+    "mention_count": 1,
+    "examples": [
+      "the newest one Myxomatous Mitral Valve disease with regurgitation in the bicsupsid and tricuspid valves"
+    ],
+    "contexts": [
+      "newest diagnosis"
+    ]
+  },
+  {
+    "symptom": "prolapse",
+    "mention_count": 1,
+    "examples": [
+      "no prolapse yet"
+    ],
+    "contexts": [
+      "currently no prolapse"
+    ]
+  },
+  {
+    "symptom": "bradycardia",
+    "mention_count": 1,
+    "examples": [
+      "I have primary bradycardia with tachycardic episodes"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "low heart rate",
+    "mention_count": 1,
+    "examples": [
+      "my heart rate is very low most of the time"
+    ],
+    "contexts": [
+      "most of the time"
+    ]
+  },
+  {
+    "symptom": "periodontal disease",
+    "mention_count": 1,
+    "examples": [
+      "I was informed that I have gum disease"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "nervousness",
+    "mention_count": 1,
+    "examples": [
+      "I'm a little nervous, since I'm not really a big fan of the dentist in general"
+    ],
+    "contexts": [
+      "upcoming dental visits"
+    ]
+  },
+  {
+    "symptom": "dental anxiety",
+    "mention_count": 1,
+    "examples": [
+      "my dentist is kind of abrasive to put it kindly"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "inward facing foot",
+    "mention_count": 1,
+    "examples": [
+      "my right foot faces more inwards when I stand and walk like pigeon toed"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "flat foot",
+    "mention_count": 1,
+    "examples": [
+      "said foot is not fully arched"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "post-appointment soreness",
+    "mention_count": 1,
+    "examples": [
+      "I felt terrible after the appointment I was sore"
+    ],
+    "contexts": [
+      "after the appointment"
+    ]
+  },
+  {
+    "symptom": "hip instability",
+    "mention_count": 1,
+    "examples": [
+      "my hip felt like it was going to dislocate when she was checking and assessing me"
+    ],
+    "contexts": [
+      "during assessment"
+    ]
+  },
+  {
+    "symptom": "body weakness",
+    "mention_count": 1,
+    "examples": [
+      "it feels like my body is going to give out"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "spinal instability",
+    "mention_count": 1,
+    "examples": [
+      "that my spine won’t support the weight of my body"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint injury",
+    "mention_count": 1,
+    "examples": [
+      "Things like joint injuries that seemed to happen randomly"
+    ],
+    "contexts": [
+      "seemed to happen randomly, but were never quite 'serious' enough to show up on imagery"
+    ]
+  },
+  {
+    "symptom": "eye problem",
+    "mention_count": 1,
+    "examples": [
+      "eye problems that were never taken seriously because I had 20/20 vision"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain when writing",
+    "mention_count": 1,
+    "examples": [
+      "my hands and wrists HURT."
+    ],
+    "contexts": [
+      "when writing by hand"
+    ]
+  },
+  {
+    "symptom": "stuck knuckle",
+    "mention_count": 1,
+    "examples": [
+      "I keep having to crack my knuckles as they get stuck"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "wrist popping",
+    "mention_count": 1,
+    "examples": [
+      "my wrist keeps popping."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hand tremor",
+    "mention_count": 1,
+    "examples": [
+      "I have shaky hands"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "tremulous handwriting",
+    "mention_count": 1,
+    "examples": [
+      "shaky handwriting"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "patellar dislocation",
+    "mention_count": 1,
+    "examples": [
+      "Used to be just my patella but has escalated to tibial dislocations"
+    ],
+    "contexts": [
+      "escalated to tibial dislocations"
+    ]
+  },
+  {
+    "symptom": "tibial dislocation",
+    "mention_count": 1,
+    "examples": [
+      "but has escalated to tibial dislocations"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "injury susceptibility",
+    "mention_count": 1,
+    "examples": [
+      "I’m scared I’m gonna get hurt"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "fragile oral mucosa",
+    "mention_count": 1,
+    "examples": [
+      "Anyone else with EDS have extremely fragile skin inside your mouth?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "fragile skin",
+    "mention_count": 1,
+    "examples": [
+      "the skin in my mouth and in other areas split and rip/ bleed really easily"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain when closing mouth",
+    "mention_count": 1,
+    "examples": [
+      "I was in agony as when I had to close my mouth it started ripping the inside of my cheek and slicing through my soft tissue."
+    ],
+    "contexts": [
+      "when closing mouth during dental x-ray"
+    ]
+  },
+  {
+    "symptom": "oral mucosal tear",
+    "mention_count": 1,
+    "examples": [
+      "I literally ripped the inside of my mouth open"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "bleeding gums",
+    "mention_count": 1,
+    "examples": [
+      "I also bleed when I brush"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sore gums",
+    "mention_count": 1,
+    "examples": [
+      "they just bleed and get really sore and raw because of the toothbrush."
+    ],
+    "contexts": [
+      "due to brushing teeth"
+    ]
+  },
+  {
+    "symptom": "pain when eating",
+    "mention_count": 1,
+    "examples": [
+      "This also happens when I eat hard food or crisps"
+    ],
+    "contexts": [
+      "when eating hard food or crisps"
+    ]
+  },
+  {
+    "symptom": "oral bleeding",
+    "mention_count": 1,
+    "examples": [
+      "I only really noticed this when I went to the dentist for the first time in years"
+    ],
+    "contexts": [
+      "during dental visit"
+    ]
+  },
+  {
+    "symptom": "tearing of muscles and tendons",
+    "mention_count": 1,
+    "examples": [
+      "tearing of muscles and tendons"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "mobility issues",
+    "mention_count": 1,
+    "examples": [
+      "i struggle with mobility"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain and health issues",
+    "mention_count": 1,
+    "examples": [
+      "I don’t want us to suffer through pain and constant issues with our health"
+    ],
+    "contexts": [
+      "daily struggles"
+    ]
+  },
+  {
+    "symptom": "anticipatory anxiety",
+    "mention_count": 1,
+    "examples": [
+      "i’m also worried about possible hoops to jump through"
+    ],
+    "contexts": [
+      "especially with how many specialists we might have to see"
+    ]
+  },
+  {
+    "symptom": "chronic shoulder dislocation",
+    "mention_count": 1,
+    "examples": [
+      "x-ray showing your shoulder is chronically dislocated"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "abscess",
+    "mention_count": 1,
+    "examples": [
+      "I had some abscess and infections the last years"
+    ],
+    "contexts": [
+      "due to rushed dental work"
+    ]
+  },
+  {
+    "symptom": "infections",
+    "mention_count": 1,
+    "examples": [
+      "I had some abscess and infections the last years"
+    ],
+    "contexts": [
+      "due to rushed dental work"
+    ]
+  },
+  {
+    "symptom": "gap under fake tooth",
+    "mention_count": 1,
+    "examples": [
+      "I have a gap under one of the fake teeth and this is what is causing me problems."
+    ],
+    "contexts": [
+      "causing ongoing dental issues"
+    ]
+  },
+  {
+    "symptom": "trauma",
+    "mention_count": 1,
+    "examples": [
+      "Now I have one of the worst trauma of my life"
+    ],
+    "contexts": [
+      "related to dental experiences"
+    ]
+  },
+  {
+    "symptom": "joint issues",
+    "mention_count": 1,
+    "examples": [
+      "My joints have gotten so bad so quickly."
+    ],
+    "contexts": [
+      "progressing quickly"
+    ]
+  },
+  {
+    "symptom": "need mobility aids",
+    "mention_count": 1,
+    "examples": [
+      "At the rate it’s progressing I’ll need mobility aids soon."
+    ],
+    "contexts": [
+      "at the rate it’s progressing"
+    ]
+  },
+  {
+    "symptom": "body ache",
+    "mention_count": 1,
+    "examples": [
+      "I stood for half an hour at the most today and now my whole body is aching."
+    ],
+    "contexts": [
+      "after standing for half an hour"
+    ]
+  },
+  {
+    "symptom": "long-term injuries",
+    "mention_count": 1,
+    "examples": [
+      "its likely i will continue to struggle and possibly have long-term associated injuries with my knees and hips"
+    ],
+    "contexts": [
+      "my main problem areas for walking"
+    ]
+  },
+  {
+    "symptom": "abdominal swelling",
+    "mention_count": 1,
+    "examples": [
+      "swollen belly since I was a child"
+    ],
+    "contexts": [
+      "since I was a child"
+    ]
+  },
+  {
+    "symptom": "osteoporosis",
+    "mention_count": 1,
+    "examples": [
+      "celiac causes... osteoporosis"
+    ],
+    "contexts": [
+      "related to celiac disease"
+    ]
+  },
+  {
+    "symptom": "GI symptoms",
+    "mention_count": 1,
+    "examples": [
+      "tolerated the GI symptoms until they got extreme this year"
+    ],
+    "contexts": [
+      "this year"
+    ]
+  },
+  {
+    "symptom": "pelvic pain",
+    "mention_count": 1,
+    "examples": [
+      "I’m used to accommodating most of my autoimmune and pelvic pain stuff"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "tender abdomen",
+    "mention_count": 1,
+    "examples": [
+      "I’m currently a size 2x with VERY tender abdomen from my surgeries"
+    ],
+    "contexts": [
+      "from my surgeries"
+    ]
+  },
+  {
+    "symptom": "dysphagia",
+    "mention_count": 1,
+    "examples": [
+      "I just find it hard to continually swallow which makes all liquids kind of a turn off"
+    ],
+    "contexts": [
+      "creating issues"
+    ]
+  },
+  {
+    "symptom": "muscle loss",
+    "mention_count": 1,
+    "examples": [
+      "to help with GLP-1 muscle loss"
+    ],
+    "contexts": [
+      "after starting a GLP-1"
+    ]
+  },
+  {
+    "symptom": "clinodactyly",
+    "mention_count": 1,
+    "examples": [
+      "gaming controller for my tiny clinodactyly hands"
+    ],
+    "contexts": [
+      "referring to hand size"
+    ]
+  },
+  {
+    "symptom": "Postural Orthostatic Tachycardia Syndrome",
+    "mention_count": 1,
+    "examples": [
+      "everything I need to be doing to manage pots"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "polycystic ovary syndrome",
+    "mention_count": 1,
+    "examples": [
+      "everything I need to be doing to manage pcos"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "attention deficit disorder",
+    "mention_count": 1,
+    "examples": [
+      "everything I need to be doing to manage add"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain in soles of feet",
+    "mention_count": 1,
+    "examples": [
+      "I have had pain in the soles of my feet for as long as i can remember"
+    ],
+    "contexts": [
+      "for as long as i can remember"
+    ]
+  },
+  {
+    "symptom": "pain like i’d just walked 20 miles",
+    "mention_count": 1,
+    "examples": [
+      "two months ago they started feeling like i’d just walked 20 miles"
+    ],
+    "contexts": [
+      "started two months ago"
+    ]
+  },
+  {
+    "symptom": "foot tightness",
+    "mention_count": 1,
+    "examples": [
+      "They are so tight that it stings to touch it gently"
+    ],
+    "contexts": [
+      "tightness causing stinging sensation when touched gently"
+    ]
+  },
+  {
+    "symptom": "disabling pain",
+    "mention_count": 1,
+    "examples": [
+      "This pain has been really disabling"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "difficulty standing or walking",
+    "mention_count": 1,
+    "examples": [
+      "I am just all of a sudden not able to stand or walk"
+    ],
+    "contexts": [
+      "all of a sudden"
+    ]
+  },
+  {
+    "symptom": "waking up in pain",
+    "mention_count": 1,
+    "examples": [
+      "the pain is still so much that it’s waking me up"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "left ankle pain",
+    "mention_count": 1,
+    "examples": [
+      "I've been waking up with extreme pain in my left ankle"
+    ],
+    "contexts": [
+      "the past two nights; honestly ten times worse than the tonsillectomy pain"
+    ]
+  },
+  {
+    "symptom": "ankle sprain",
+    "mention_count": 1,
+    "examples": [
+      "making my feet look like those of a ballerina on pointe"
+    ],
+    "contexts": [
+      "when I lay on my back"
+    ]
+  },
+  {
+    "symptom": "long-term injury",
+    "mention_count": 1,
+    "examples": [
+      "that usually ends with me injured for months or longer."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "mild pain",
+    "mention_count": 1,
+    "examples": [
+      "if my pain is less than a 5 out of 10 to not mention it"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "upper back/neck/rib spasms",
+    "mention_count": 1,
+    "examples": [
+      "have been experiencing severe upper back/neck/rib spasms due to the increasing laxicity since week 6"
+    ],
+    "contexts": [
+      "since week 6 of pregnancy"
+    ]
+  },
+  {
+    "symptom": "increasing laxity",
+    "mention_count": 1,
+    "examples": [
+      "due to the increasing laxicity since week 6"
+    ],
+    "contexts": [
+      "since week 6 of pregnancy"
+    ]
+  },
+  {
+    "symptom": "sacroiliac joint instability",
+    "mention_count": 1,
+    "examples": [
+      "I have had low back pain, SI instability, and nerve pain ever since."
+    ],
+    "contexts": [
+      "since being jumped on by my in-laws dog in April"
+    ]
+  },
+  {
+    "symptom": "progressive numbness",
+    "mention_count": 1,
+    "examples": [
+      "I ended up in the ER on Friday because of spreading numbness in my legs."
+    ],
+    "contexts": [
+      "ended up in the ER on Friday"
+    ]
+  },
+  {
+    "symptom": "arm and shoulder pain",
+    "mention_count": 1,
+    "examples": [
+      "I’m having terrible arm and shoulder pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "dislocations with aids",
+    "mention_count": 1,
+    "examples": [
+      "dislocations when using the aids"
+    ],
+    "contexts": [
+      "when using the aids"
+    ]
+  },
+  {
+    "symptom": "ribcage pain",
+    "mention_count": 1,
+    "examples": [
+      "that made it almost impossible to move or breathe"
+    ],
+    "contexts": [
+      "when I pulled a muscle on my ribcage"
+    ]
+  },
+  {
+    "symptom": "swelling",
+    "mention_count": 1,
+    "examples": [
+      "reducing the inflammation/swelling actually made their joints looser"
+    ],
+    "contexts": [
+      "related to inflammation"
+    ]
+  },
+  {
+    "symptom": "gut issues",
+    "mention_count": 1,
+    "examples": [
+      "others just focus on the negative impact it had on their gut"
+    ],
+    "contexts": [
+      "related to tetracycline antibiotics like doxycycline"
+    ]
+  },
+  {
+    "symptom": "cervical radiculopathy",
+    "mention_count": 1,
+    "examples": [
+      "I got a shooting pain in my neck I gasped it made me so scared n I didn’t move my neck side to side after that"
+    ],
+    "contexts": [
+      "after walking a very short distance to dinner"
+    ]
+  },
+  {
+    "symptom": "painkiller intolerance",
+    "mention_count": 1,
+    "examples": [
+      "nervous about the pain (can’t tolerate most painkillers)"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pre-surgery pain",
+    "mention_count": 1,
+    "examples": [
+      "that I am hurting already without the surgery"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "difficulty getting up",
+    "mention_count": 1,
+    "examples": [
+      "in most case I have issues getting up on my own"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermobile joints",
+    "mention_count": 1,
+    "examples": [
+      "I’m hyper mobile in all my joints"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain and discomfort",
+    "mention_count": 1,
+    "examples": [
+      "it’s been causing me a lot of pain and discomfort for the past 2 or so years"
+    ],
+    "contexts": [
+      "for the past 2 or so years"
+    ]
+  },
+  {
+    "symptom": "stiff fingers and wrists",
+    "mention_count": 1,
+    "examples": [
+      "My fingers/wrists get stiff"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "achy fingers and wrists",
+    "mention_count": 1,
+    "examples": [
+      "My fingers/wrists get achy"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "locked fingers and wrists",
+    "mention_count": 1,
+    "examples": [
+      "My fingers/wrists... lock up"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "orthostatic hypotension",
+    "mention_count": 1,
+    "examples": [
+      "self medicating my wonky POTS-y blood pressure"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "fluctuating blood pressure",
+    "mention_count": 1,
+    "examples": [
+      "my blood pressure is all over the place again"
+    ],
+    "contexts": [
+      "when dieting and trying to lose weight"
+    ]
+  },
+  {
+    "symptom": "arm discomfort",
+    "mention_count": 1,
+    "examples": [
+      "it feeling like my arms are gonna pop off like a couple poorly put together barbie arm joints"
+    ],
+    "contexts": [
+      "while folding laundry"
+    ]
+  },
+  {
+    "symptom": "sensory distortion",
+    "mention_count": 1,
+    "examples": [
+      "I feel like spongebob with the marshmallows"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "aches",
+    "mention_count": 1,
+    "examples": [
+      "my legs and elbows ache 24/7"
+    ],
+    "contexts": [
+      "24/7"
+    ]
+  },
+  {
+    "symptom": "fatigue in legs and elbows",
+    "mention_count": 1,
+    "examples": [
+      "they also feel tired"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "soreness after standing",
+    "mention_count": 1,
+    "examples": [
+      "i just get sore after standing for a while"
+    ],
+    "contexts": [
+      "after standing for a while"
+    ]
+  },
+  {
+    "symptom": "heat intolerance",
+    "mention_count": 1,
+    "examples": [
+      "I live in a hot climate and I over heat"
+    ],
+    "contexts": [
+      "in a hot climate"
+    ]
+  },
+  {
+    "symptom": "frequent flare-ups",
+    "mention_count": 1,
+    "examples": [
+      "I was flared up most of the time"
+    ],
+    "contexts": [
+      "ongoing"
+    ]
+  },
+  {
+    "symptom": "rib muscle protrusion",
+    "mention_count": 1,
+    "examples": [
+      "I would have what felt like my rib meat poke out of my rib cage if I bent over a certain way and I had to push it back in"
+    ],
+    "contexts": [
+      "when bending over a certain way"
+    ]
+  },
+  {
+    "symptom": "chest muscle cramping",
+    "mention_count": 1,
+    "examples": [
+      "They said it was most likely dehydration and cramping in my chest muscles"
+    ],
+    "contexts": [
+      "misdiagnosed by doctors"
+    ]
+  },
+  {
+    "symptom": "spinal pain",
+    "mention_count": 1,
+    "examples": [
+      "I just think she thinks my pain is coming from my spine and disc issues"
+    ],
+    "contexts": [
+      "related to pain management appointment"
+    ]
+  },
+  {
+    "symptom": "hypermobile EDS pain",
+    "mention_count": 1,
+    "examples": [
+      "my pain absolutely is coming from my hypermobile EDS"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hip dislocations",
+    "mention_count": 1,
+    "examples": [
+      "Those who get recurrent hip dislocations how do you live?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hip joint laxity",
+    "mention_count": 1,
+    "examples": [
+      "For those whos hip joints are loose enough to cause constant dislocations."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "recurrent dislocations",
+    "mention_count": 1,
+    "examples": [
+      "Every dislocation needs hospital visit."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "balance",
+    "mention_count": 1,
+    "examples": [
+      "I was also obsessed with having good balance"
+    ],
+    "contexts": [
+      "as a child"
+    ]
+  },
+  {
+    "symptom": "joint hyperextension",
+    "mention_count": 1,
+    "examples": [
+      "teach me not to overextend my joints"
+    ],
+    "contexts": [
+      "through stretches and strengthening exercises"
+    ]
+  },
+  {
+    "symptom": "sensitivities",
+    "mention_count": 1,
+    "examples": [
+      "sensitivities"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "mild hypermobility",
+    "mention_count": 1,
+    "examples": [
+      "am only a 'little hypermobile'"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "surgical scar",
+    "mention_count": 1,
+    "examples": [
+      "looking at a surgery scar from three weeks ago"
+    ],
+    "contexts": [
+      "from three weeks ago"
+    ]
+  },
+  {
+    "symptom": "air hunger",
+    "mention_count": 1,
+    "examples": [
+      "I was air hungry"
+    ],
+    "contexts": [
+      "while talking"
+    ]
+  },
+  {
+    "symptom": "temperature dysregulation",
+    "mention_count": 1,
+    "examples": [
+      "the temperature dysregulation"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "speech difficulty",
+    "mention_count": 1,
+    "examples": [
+      "she could hear me struggling to speak"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain flares",
+    "mention_count": 1,
+    "examples": [
+      "washing dishes at the sink or unloading the dishwasher triggers pain flares"
+    ],
+    "contexts": [
+      "when washing dishes or unloading the dishwasher"
+    ]
+  },
+  {
+    "symptom": "postprandial pain",
+    "mention_count": 1,
+    "examples": [
+      "I’m struggling a lot with pain after eating"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint hypermobility",
+    "mention_count": 1,
+    "examples": [
+      "my joints are too flexible"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome",
+    "mention_count": 1,
+    "examples": [
+      "developed dysautonomia, me/cfs"
+    ],
+    "contexts": [
+      "related to dysautonomia"
+    ]
+  },
+  {
+    "symptom": "small fiber neuropathy",
+    "mention_count": 1,
+    "examples": [
+      "developed dysautonomia, me/cfs, small fiber neuropathy"
+    ],
+    "contexts": [
+      "related to dysautonomia"
+    ]
+  },
+  {
+    "symptom": "walking difficulty",
+    "mention_count": 1,
+    "examples": [
+      "I went from working everyday, lifting, running marathons, to not being able to walk even a mile"
+    ],
+    "contexts": [
+      "a significant decline in physical ability"
+    ]
+  },
+  {
+    "symptom": "ankle dislocation",
+    "mention_count": 1,
+    "examples": [
+      "I had a dislocation in my ankle."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "humerus fracture",
+    "mention_count": 1,
+    "examples": [
+      "Last night I broke my humerus."
+    ],
+    "contexts": [
+      "a clean transverse break through the middle and the bones were overlapping"
+    ]
+  },
+  {
+    "symptom": "pain response to impact",
+    "mention_count": 1,
+    "examples": [
+      "I screamed when I hit the ground."
+    ],
+    "contexts": [
+      "upon impact"
+    ]
+  },
+  {
+    "symptom": "altered pain perception",
+    "mention_count": 1,
+    "examples": [
+      "Ehlers Danlos Syndrome has made me very accustomed to pain."
+    ],
+    "contexts": [
+      "due to Ehlers Danlos Syndrome"
+    ]
+  },
+  {
+    "symptom": "emotional blunting",
+    "mention_count": 1,
+    "examples": [
+      "I did deep breathing and did not shed a single tear."
+    ],
+    "contexts": [
+      "after hitting the ground"
+    ]
+  },
+  {
+    "symptom": "bone instability",
+    "mention_count": 1,
+    "examples": [
+      "the bones still shift."
+    ],
+    "contexts": [
+      "while wearing a splint"
+    ]
+  },
+  {
+    "symptom": "stabbing pain",
+    "mention_count": 1,
+    "examples": [
+      "the stabbing feeling you get up and down the stairs"
+    ],
+    "contexts": [
+      "when going up and down the stairs"
+    ]
+  },
+  {
+    "symptom": "painful sensation",
+    "mention_count": 1,
+    "examples": [
+      "I kinda just assumed stairs always felt like walking on glass"
+    ],
+    "contexts": [
+      "when using stairs"
+    ]
+  },
+  {
+    "symptom": "heightened sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "I thought for a long time I was being overly sensitive"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "activity-related pain",
+    "mention_count": 1,
+    "examples": [
+      "telling an adult 'doing XYZ hurts'"
+    ],
+    "contexts": [
+      "when expressing pain to adults"
+    ]
+  },
+  {
+    "symptom": "gait disturbance",
+    "mention_count": 1,
+    "examples": [
+      "limping up inclines for years"
+    ],
+    "contexts": [
+      "for years"
+    ]
+  },
+  {
+    "symptom": "enamel defects",
+    "mention_count": 1,
+    "examples": [
+      "it can cause defects in the enamel"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermineralization",
+    "mention_count": 1,
+    "examples": [
+      "hypermineralization"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "early tooth loss",
+    "mention_count": 1,
+    "examples": [
+      "early tooth loss"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "tooth fracture",
+    "mention_count": 1,
+    "examples": [
+      "after my tooth broke"
+    ],
+    "contexts": [
+      "after my tooth broke"
+    ]
+  },
+  {
+    "symptom": "mental health issues",
+    "mention_count": 1,
+    "examples": [
+      "My mental health is suffering"
+    ],
+    "contexts": [
+      "related to physical symptoms and grief"
+    ]
+  },
+  {
+    "symptom": "anxiety about the future",
+    "mention_count": 1,
+    "examples": [
+      "I’m scared about what the future looks like"
+    ],
+    "contexts": [
+      "emotional response to current health issues"
+    ]
+  },
+  {
+    "symptom": "difficulty standing while showering",
+    "mention_count": 1,
+    "examples": [
+      "I knew I had some struggles standing while showering"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "post-shower dizziness",
+    "mention_count": 1,
+    "examples": [
+      "I'm not as dizzy after the shower anymore"
+    ],
+    "contexts": [
+      "after the shower"
+    ]
+  },
+  {
+    "symptom": "hand pain",
+    "mention_count": 1,
+    "examples": [
+      "my hands"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "rib discomfort",
+    "mention_count": 1,
+    "examples": [
+      "I've even twisted my ribs before"
+    ],
+    "contexts": [
+      "it required physical therapy"
+    ]
+  },
+  {
+    "symptom": "post-gardening pain",
+    "mention_count": 1,
+    "examples": [
+      "my body still hurts"
+    ],
+    "contexts": [
+      "after gardening last week"
+    ]
+  },
+  {
+    "symptom": "lax joints",
+    "mention_count": 1,
+    "examples": [
+      "of course I have all the normal shit like super lax joints"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "astigmatism",
+    "mention_count": 1,
+    "examples": [
+      "I have had astigmatism and myopia since age 7"
+    ],
+    "contexts": [
+      "since age 7"
+    ]
+  },
+  {
+    "symptom": "myopia",
+    "mention_count": 1,
+    "examples": [
+      "I have had astigmatism and myopia since age 7"
+    ],
+    "contexts": [
+      "since age 7"
+    ]
+  },
+  {
+    "symptom": "Epithelial Basement Membrane Dystrophy",
+    "mention_count": 1,
+    "examples": [
+      "I also developed something called Epithelial Basement Membrane Dystrophy"
+    ],
+    "contexts": [
+      "developed over the last decade or so"
+    ]
+  },
+  {
+    "symptom": "dry eye",
+    "mention_count": 1,
+    "examples": [
+      "my eyes can get so dry that my eyelids have torn up my corneas"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "corneal tearing",
+    "mention_count": 1,
+    "examples": [
+      "my eyelids have torn up my corneas because they get fused together sometimes"
+    ],
+    "contexts": [
+      "especially when I'm sleeping"
+    ]
+  },
+  {
+    "symptom": "eyeball pain",
+    "mention_count": 1,
+    "examples": [
+      "It felt like a needle stabbed me in the eyeball"
+    ],
+    "contexts": [
+      "experienced this while driving after work"
+    ]
+  },
+  {
+    "symptom": "blurry vision",
+    "mention_count": 1,
+    "examples": [
+      "the vision in my left eye has already been affected to the point where even with glasses, my vision is still slightly blurry"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "eye strain",
+    "mention_count": 1,
+    "examples": [
+      "I also have big issues with eye strain"
+    ],
+    "contexts": [
+      "especially if I spend too much time looking at things up close"
+    ]
+  },
+  {
+    "symptom": "difficulty reading",
+    "mention_count": 1,
+    "examples": [
+      "I've had to take my glasses off while reading/derping on my phone/etc for a couple of years now"
+    ],
+    "contexts": [
+      "for a couple of years now"
+    ]
+  },
+  {
+    "symptom": "chronic dry eye",
+    "mention_count": 1,
+    "examples": [
+      "Chronic dry eye is common with EDS"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "chronic joint pain",
+    "mention_count": 1,
+    "examples": [
+      "I've been dealing with really bad chronic joint pain"
+    ],
+    "contexts": [
+      "daily"
+    ]
+  },
+  {
+    "symptom": "daily subluxations",
+    "mention_count": 1,
+    "examples": [
+      "daily subluxations"
+    ],
+    "contexts": [
+      "daily"
+    ]
+  },
+  {
+    "symptom": "tremor",
+    "mention_count": 1,
+    "examples": [
+      "tremors"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "clicking and popping joints",
+    "mention_count": 1,
+    "examples": [
+      "clicking and popping joints"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "orthostatic hypertension",
+    "mention_count": 1,
+    "examples": [
+      "my blood pressure was abnormally high when standing"
+    ],
+    "contexts": [
+      "when standing"
+    ]
+  },
+  {
+    "symptom": "difficulty keeping head up",
+    "mention_count": 1,
+    "examples": [
+      "I can hardly... keep my head up"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "tremors affecting fine motor skills",
+    "mention_count": 1,
+    "examples": [
+      "tremors to the point where it's difficult to pick things up"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vertigo symptoms",
+    "mention_count": 1,
+    "examples": [
+      "and symptoms of vertigo"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "neck issues",
+    "mention_count": 1,
+    "examples": [
+      "Neck issues still exist but are much lower."
+    ],
+    "contexts": [
+      "still exist but are much lower after using squishmallows again"
+    ]
+  },
+  {
+    "symptom": "near syncope",
+    "mention_count": 1,
+    "examples": [
+      "I almost passed out."
+    ],
+    "contexts": [
+      "while at a museum"
+    ]
+  },
+  {
+    "symptom": "rib pain",
+    "mention_count": 1,
+    "examples": [
+      "I mentioned my rib hurt"
+    ],
+    "contexts": [
+      "been hurting me for weeks"
+    ]
+  },
+  {
+    "symptom": "subluxated rib",
+    "mention_count": 1,
+    "examples": [
+      "she said it's sublaxed"
+    ],
+    "contexts": [
+      "had them most of my life"
+    ]
+  },
+  {
+    "symptom": "easy to injure",
+    "mention_count": 1,
+    "examples": [
+      "freakishly strong yet easy to injure"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "difficulty with micro tasks",
+    "mention_count": 1,
+    "examples": [
+      "struggle with micro"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "EDS exhaustion",
+    "mention_count": 1,
+    "examples": [
+      "this specific flavor of EDS exhaustion"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "discomfort sitting up straight",
+    "mention_count": 1,
+    "examples": [
+      "sitting up straight is so uncomfortable"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "body fatigue",
+    "mention_count": 1,
+    "examples": [
+      "my body totally gave up"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "myalgic encephalomyelitis",
+    "mention_count": 1,
+    "examples": [
+      "severe ME"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "exertion-related subluxations",
+    "mention_count": 1,
+    "examples": [
+      "I am saying goodbye to exertion subluxations"
+    ],
+    "contexts": [
+      "in 2025"
+    ]
+  },
+  {
+    "symptom": "loss of ambulation",
+    "mention_count": 1,
+    "examples": [
+      "after years of 'have you tried therapy' after I'd lost the ability to walk unassisted"
+    ],
+    "contexts": [
+      "after years of therapy"
+    ]
+  },
+  {
+    "symptom": "inability to read",
+    "mention_count": 1,
+    "examples": [
+      "got used to not being able to read or drive anymore"
+    ],
+    "contexts": [
+      "general inability, not specified when"
+    ]
+  },
+  {
+    "symptom": "inability to drive",
+    "mention_count": 1,
+    "examples": [
+      "got used to not being able to read or drive anymore"
+    ],
+    "contexts": [
+      "general inability, not specified when"
+    ]
+  },
+  {
+    "symptom": "sudden vision loss",
+    "mention_count": 1,
+    "examples": [
+      "my periods of sudden vision loss"
+    ],
+    "contexts": [
+      "periodic episodes, previously written off as psychological"
+    ]
+  },
+  {
+    "symptom": "migraine aura",
+    "mention_count": 1,
+    "examples": [
+      "was a totally treatable migraine aura."
+    ],
+    "contexts": [
+      "related to sudden vision loss"
+    ]
+  },
+  {
+    "symptom": "jaw fracture",
+    "mention_count": 1,
+    "examples": [
+      "it turned out I'd broken my jaw almost a month ago"
+    ],
+    "contexts": [
+      "had been going around with a broken jaw for almost a month"
+    ]
+  },
+  {
+    "symptom": "dislocation pain",
+    "mention_count": 1,
+    "examples": [
+      "It didn't hurt as much as a dislocation, honestly."
+    ],
+    "contexts": [
+      "compared to dislocation pain"
+    ]
+  },
+  {
+    "symptom": "anesthesia resistance",
+    "mention_count": 1,
+    "examples": [
+      "my condition is medically recognized to alter both local and general anesthesia effectiveness"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "inadequate local anesthetic effect",
+    "mention_count": 1,
+    "examples": [
+      "88% of EDS patients report inadequate effect from local anesthetics"
+    ],
+    "contexts": [
+      "compared with only 33% in the general population"
+    ]
+  },
+  {
+    "symptom": "local anesthesia failure",
+    "mention_count": 1,
+    "examples": [
+      "Failures of local anesthesia in EDS are well documented in procedures such as dental work, skin biopsy, and minor surgeries"
+    ],
+    "contexts": [
+      "in procedures such as dental work, skin biopsy, and minor surgeries"
+    ]
+  },
+  {
+    "symptom": "difficulties with general anesthesia",
+    "mention_count": 1,
+    "examples": [
+      "difficulties with general anaesthesia and regional anaesthesia are more frequent compared to the general population"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "inadequate anesthesia depth",
+    "mention_count": 1,
+    "examples": [
+      "abnormal connective tissue in EDS alters drug diffusion and metabolism, contributing to inadequate anesthesia depth or early awakening"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "perioperative complications",
+    "mention_count": 1,
+    "examples": [
+      "EDS patients are already at higher risk of perioperative complications"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "itchy",
+    "mention_count": 1,
+    "examples": [
+      "my butt and the backs of my thighs get extremely itchy"
+    ],
+    "contexts": [
+      "if I’m sitting for an extended period of time"
+    ]
+  },
+  {
+    "symptom": "painful itching",
+    "mention_count": 1,
+    "examples": [
+      "sometimes I’m so itchy, it’s genuinely painful"
+    ],
+    "contexts": [
+      "when sitting for an extended period of time"
+    ]
+  },
+  {
+    "symptom": "blood pooling",
+    "mention_count": 1,
+    "examples": [
+      "I only found out recently this is a symptom of blood pooling"
+    ],
+    "contexts": [
+      "related to the itching"
+    ]
+  },
+  {
+    "symptom": "crippling pain",
+    "mention_count": 1,
+    "examples": [
+      "I have been in crippling pain for weeks now."
+    ],
+    "contexts": [
+      "for weeks"
+    ]
+  },
+  {
+    "symptom": "limp",
+    "mention_count": 1,
+    "examples": [
+      "after nursing a limp for two weeks."
+    ],
+    "contexts": [
+      "for two weeks"
+    ]
+  },
+  {
+    "symptom": "foot fracture",
+    "mention_count": 1,
+    "examples": [
+      "one of them is broken."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "collapse and syncope",
+    "mention_count": 1,
+    "examples": [
+      "I made it as far as the top sheet before I collapsed on the bed and passed out"
+    ],
+    "contexts": [
+      "after washing/changing bed sheets, in the early afternoon"
+    ]
+  },
+  {
+    "symptom": "hand soreness",
+    "mention_count": 1,
+    "examples": [
+      "I don’t get as sore when I write like this"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "post-writing pain",
+    "mention_count": 1,
+    "examples": [
+      "it still hurts after like 10 minutes"
+    ],
+    "contexts": [
+      "after like 10 minutes of writing"
+    ]
+  },
+  {
+    "symptom": "difficulty running fast",
+    "mention_count": 1,
+    "examples": [
+      "Has anyone else basically been unable to run fast your whole life?"
+    ],
+    "contexts": [
+      "whole life"
+    ]
+  },
+  {
+    "symptom": "difficulty increasing pace",
+    "mention_count": 1,
+    "examples": [
+      "I literally couldn’t push myself faster."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "exhausts me faster",
+    "mention_count": 1,
+    "examples": [
+      "it takes twice the energy to pull all of them back together and that it exhausts me faster"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hEDS/POTS/MCAS trifecta",
+    "mention_count": 1,
+    "examples": [
+      "I have the hEDS/POTS/MCAS trifecta."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermobile dislocation warning signs",
+    "mention_count": 1,
+    "examples": [
+      "I came across a list of early warning signs for hypermobile individuals of potential future dislocations, and subluxations"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vertigo",
+    "mention_count": 1,
+    "examples": [
+      "I felt like my head was spinning from the nonsense"
+    ],
+    "contexts": [
+      "after the ludicrous appointment"
+    ]
+  },
+  {
+    "symptom": "leg deformities",
+    "mention_count": 1,
+    "examples": [
+      "some leg deformities"
+    ],
+    "contexts": [
+      "related to the root cause of my pain"
+    ]
+  },
+  {
+    "symptom": "mental illness",
+    "mention_count": 1,
+    "examples": [
+      "taking care of myself is already hard due to mental illness"
+    ],
+    "contexts": [
+      "making self-care hard"
+    ]
+  },
+  {
+    "symptom": "jaw fatigue",
+    "mention_count": 1,
+    "examples": [
+      "I noted that I may need to take breaks to rest my jaw."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "decreased proprioception",
+    "mention_count": 1,
+    "examples": [
+      "she knew to give me physical touch cues to accommodate my decreased proprioception."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "organ displacement",
+    "mention_count": 1,
+    "examples": [
+      "my organs moved wrong and I feel like I’m dying"
+    ],
+    "contexts": [
+      "accompanied by feeling like dying"
+    ]
+  },
+  {
+    "symptom": "self-injury",
+    "mention_count": 1,
+    "examples": [
+      "I constantly hurt myself more because I ignore my body"
+    ],
+    "contexts": [
+      "due to grief and frustration"
+    ]
+  },
+  {
+    "symptom": "chronic illness",
+    "mention_count": 1,
+    "examples": [
+      "I used to be sick and hurt a lot as a kid"
+    ],
+    "contexts": [
+      "as a kid"
+    ]
+  },
+  {
+    "symptom": "pain with activity",
+    "mention_count": 1,
+    "examples": [
+      "I was good at sports and school (even if I was in pain while doing it)"
+    ],
+    "contexts": [
+      "while doing sports and school"
+    ]
+  },
+  {
+    "symptom": "tear duct bulge",
+    "mention_count": 1,
+    "examples": [
+      "one of the symptoms is a weird painful bulge near my tear duct"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "ocular migraine",
+    "mention_count": 1,
+    "examples": [
+      "the eye related 'migraines' I have are actually symptoms of the mass pushing my eye out of it's socket"
+    ],
+    "contexts": [
+      "caused by a mass pushing my eye out"
+    ]
+  },
+  {
+    "symptom": "undiagnosed MCAS",
+    "mention_count": 1,
+    "examples": [
+      "I've been dealing with completely debilitating undiagnosed MCAS (or something similar, what do I know?)"
+    ],
+    "contexts": [
+      "undiagnosed and debilitating"
+    ]
+  },
+  {
+    "symptom": "back spasm",
+    "mention_count": 1,
+    "examples": [
+      "been bed bound a few times from back spasms"
+    ],
+    "contexts": [
+      "occurred a few times, causing bed bound episodes"
+    ]
+  },
+  {
+    "symptom": "finger immobility",
+    "mention_count": 1,
+    "examples": [
+      "the pain would come and go and got so bad I couldn't move it for days"
+    ],
+    "contexts": [
+      "for days"
+    ]
+  },
+  {
+    "symptom": "chronic sleep disorder",
+    "mention_count": 1,
+    "examples": [
+      "chronic sleep issues"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "debilitating pain",
+    "mention_count": 1,
+    "examples": [
+      "the pain is debilitating"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "need for hip surgery",
+    "mention_count": 1,
+    "examples": [
+      "down to needing hip surgery at 18"
+    ],
+    "contexts": [
+      "at 18"
+    ]
+  },
+  {
+    "symptom": "delayed dental development",
+    "mention_count": 1,
+    "examples": [
+      "not having any teeth until 16 months old"
+    ],
+    "contexts": [
+      "until 16 months old"
+    ]
+  },
+  {
+    "symptom": "presyncope",
+    "mention_count": 1,
+    "examples": [
+      "I get presyncope symptoms from just about everything"
+    ],
+    "contexts": [
+      "triggered by various activities"
+    ]
+  },
+  {
+    "symptom": "impaired ambulation",
+    "mention_count": 1,
+    "examples": [
+      "I can only walk for about 25-30 minutes straight"
+    ],
+    "contexts": [
+      "duration of walking"
+    ]
+  },
+  {
+    "symptom": "knee crepitus",
+    "mention_count": 1,
+    "examples": [
+      "my left knee pops rather painfully every few steps"
+    ],
+    "contexts": [
+      "occurs every few steps"
+    ]
+  },
+  {
+    "symptom": "finger subluxation",
+    "mention_count": 1,
+    "examples": [
+      "my fingers sublux just randomly"
+    ],
+    "contexts": [
+      "occurs randomly"
+    ]
+  },
+  {
+    "symptom": "shoulder issues",
+    "mention_count": 1,
+    "examples": [
+      "being diagnosed with several shoulder issues"
+    ],
+    "contexts": [
+      "resulting in steroid injection"
+    ]
+  },
+  {
+    "symptom": "Irritable Bowel Syndrome",
+    "mention_count": 1,
+    "examples": [
+      "I was diagnosed with ibs at 19"
+    ],
+    "contexts": [
+      "diagnosed at 19"
+    ]
+  },
+  {
+    "symptom": "SI joint dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "I have a lot of problems with my SI joint/ hip area in general."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sacroiliac joint crepitus",
+    "mention_count": 1,
+    "examples": [
+      "I very rarely have my SI joint pop (usually randomly when I’ve flopped on the bed, it feels so good)"
+    ],
+    "contexts": [
+      "usually randomly when I’ve flopped on the bed"
+    ]
+  },
+  {
+    "symptom": "grinding sensation",
+    "mention_count": 1,
+    "examples": [
+      "it does a sort of grindy/pop that is extremely relieving."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain flare",
+    "mention_count": 1,
+    "examples": [
+      "It’s a total life saver on some really bad pain days"
+    ],
+    "contexts": [
+      "on some really bad pain days"
+    ]
+  },
+  {
+    "symptom": "total body flare",
+    "mention_count": 1,
+    "examples": [
+      "I haven’t gone to PT in months due to a total body flare that left me unable to be touch or do much activity"
+    ],
+    "contexts": [
+      "total body flare left the patient unable to be touched or do much activity"
+    ]
+  },
+  {
+    "symptom": "dark thoughts",
+    "mention_count": 1,
+    "examples": [
+      "My thoughts are seriously getting dark"
+    ],
+    "contexts": [
+      "in relation to coping with treatment setbacks"
+    ]
+  },
+  {
+    "symptom": "loose hips and shoulders",
+    "mention_count": 1,
+    "examples": [
+      "my hips and shoulders have started feeling loose and shift around in their sockets"
+    ],
+    "contexts": [
+      "after a 5 month bedrest"
+    ]
+  },
+  {
+    "symptom": "lax skin",
+    "mention_count": 1,
+    "examples": [
+      "My skin is more lax than most for my age."
+    ],
+    "contexts": [
+      "more lax than most for my age"
+    ]
+  },
+  {
+    "symptom": "crepey skin",
+    "mention_count": 1,
+    "examples": [
+      "dealing with some crepey skin"
+    ],
+    "contexts": [
+      "dealing with some crepey skin"
+    ]
+  },
+  {
+    "symptom": "inability to work",
+    "mention_count": 1,
+    "examples": [
+      "I’ve been unable to work for over 15 years."
+    ],
+    "contexts": [
+      "for over 15 years"
+    ]
+  },
+  {
+    "symptom": "need for prolonged rest",
+    "mention_count": 1,
+    "examples": [
+      "I need a long nap in the afternoon."
+    ],
+    "contexts": [
+      "in the afternoon"
+    ]
+  },
+  {
+    "symptom": "difficulty with mobility",
+    "mention_count": 1,
+    "examples": [
+      "it’s a struggle to get up and functioning in the morning."
+    ],
+    "contexts": [
+      "in the morning"
+    ]
+  },
+  {
+    "symptom": "ME/CFS-like symptoms",
+    "mention_count": 1,
+    "examples": [
+      "which is very similar to my friend with ME/CFS."
+    ],
+    "contexts": [
+      "similar to my friend with ME/CFS"
+    ]
+  },
+  {
+    "symptom": "ankle tendon instability",
+    "mention_count": 1,
+    "examples": [
+      "my right ankle tendon frequently slips out of place over my ankle"
+    ],
+    "contexts": [
+      "frequently slips out of place"
+    ]
+  },
+  {
+    "symptom": "elbow dislocation",
+    "mention_count": 1,
+    "examples": [
+      "I tend to throw out my elbows"
+    ],
+    "contexts": [
+      "tends to happen"
+    ]
+  },
+  {
+    "symptom": "hip pain with clicking",
+    "mention_count": 1,
+    "examples": [
+      "my hips are normally clicking around and in horrible pain"
+    ],
+    "contexts": [
+      "normally clicking and in horrible pain"
+    ]
+  },
+  {
+    "symptom": "chronic headache",
+    "mention_count": 1,
+    "examples": [
+      "Chronic Headaches"
+    ],
+    "contexts": [
+      "alongside POTS"
+    ]
+  },
+  {
+    "symptom": "heartburn",
+    "mention_count": 1,
+    "examples": [
+      "Heartburn"
+    ],
+    "contexts": [
+      "alongside POTS"
+    ]
+  },
+  {
+    "symptom": "irregular bowel habits",
+    "mention_count": 1,
+    "examples": [
+      "either constipated or pooping every hour"
+    ],
+    "contexts": [
+      "alternating between constipation and frequent bowel movements"
+    ]
+  },
+  {
+    "symptom": "high palate with dental crowding",
+    "mention_count": 1,
+    "examples": [
+      "I have the following: High palate with dental crowding."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "skin hyperextensibility",
+    "mention_count": 1,
+    "examples": [
+      "I have the following: mild skin hyperextensibility."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "velvety skin",
+    "mention_count": 1,
+    "examples": [
+      "I have the following: soft velvety skin."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "daily musculoskeletal pain",
+    "mention_count": 1,
+    "examples": [
+      "I have the following: daily musculoskeletal pain in two or more extremities."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "knee subluxation",
+    "mention_count": 1,
+    "examples": [
+      "I’ve had knee sublaxations and the most recent one happened while I was sleeping."
+    ],
+    "contexts": [
+      "most recent one happened while I was sleeping"
+    ]
+  },
+  {
+    "symptom": "piezogenic papules",
+    "mention_count": 1,
+    "examples": [
+      "I have... piezogenic papules on heels."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermobility arthralgia",
+    "mention_count": 1,
+    "examples": [
+      "He noted in my chart that I have hypermobility arthralgia."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sacrum pain",
+    "mention_count": 1,
+    "examples": [
+      "I have been experiencing worsening hip, sacrum, and lower back pain for the last year."
+    ],
+    "contexts": [
+      "worsening over the last year"
+    ]
+  },
+  {
+    "symptom": "left side pain",
+    "mention_count": 1,
+    "examples": [
+      "It started out on the left side only but eventually became both sides, but the left side still bothers me more."
+    ],
+    "contexts": [
+      "started on the left side only, still bothers more"
+    ]
+  },
+  {
+    "symptom": "hip cracking",
+    "mention_count": 1,
+    "examples": [
+      "Lots of cracking of both the hips and si joints."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "SI joint cracking",
+    "mention_count": 1,
+    "examples": [
+      "Lots of cracking of both the hips and si joints."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "buttock pain",
+    "mention_count": 1,
+    "examples": [
+      "A lot of my pain is more in the butt/sacrum region."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "Raynaud's phenomenon",
+    "mention_count": 1,
+    "examples": [
+      "I also have easy bruising, digestive issues, POTS, and Raynauds in my hands."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "left SI joint dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "my left SI joint frequently feels stuck and needs to crack/shift"
+    ],
+    "contexts": [
+      "frequently feels stuck"
+    ]
+  },
+  {
+    "symptom": "floating sensation",
+    "mention_count": 1,
+    "examples": [
+      "I put on knee and back braces and felt like I was floating."
+    ],
+    "contexts": [
+      "after putting on knee and back braces"
+    ]
+  },
+  {
+    "symptom": "metatarsophalangeal joint pain",
+    "mention_count": 1,
+    "examples": [
+      "it’s started hurting my big toe joints"
+    ],
+    "contexts": [
+      "while doing Pilates workouts"
+    ]
+  },
+  {
+    "symptom": "toe hyperextension",
+    "mention_count": 1,
+    "examples": [
+      "My toes bend too far back"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint pain with walking",
+    "mention_count": 1,
+    "examples": [
+      "The joint hurts while walking"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint pain on palpation",
+    "mention_count": 1,
+    "examples": [
+      "when it press on it"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermobile feet",
+    "mention_count": 1,
+    "examples": [
+      "my feet were the 2nd most Hypermobile he’d ever seen"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain with hip movement",
+    "mention_count": 1,
+    "examples": [
+      "my hip can sort of move out of place. It’s very painful right when it happens"
+    ],
+    "contexts": [
+      "when going from crouching to standing"
+    ]
+  },
+  {
+    "symptom": "post-hip movement pain",
+    "mention_count": 1,
+    "examples": [
+      "it’s painful (but less so) and hard to walk usually between a few days to a week after it happens"
+    ],
+    "contexts": [
+      "after the hip movement"
+    ]
+  },
+  {
+    "symptom": "burning ankle pain",
+    "mention_count": 1,
+    "examples": [
+      "the ankles which can sometimes have more acute burning pain that goes away pretty quickly"
+    ],
+    "contexts": [
+      "in the ankles, acute burning pain"
+    ]
+  },
+  {
+    "symptom": "pain with walking",
+    "mention_count": 1,
+    "examples": [
+      "it hurts to walk"
+    ],
+    "contexts": [
+      "some days"
+    ]
+  },
+  {
+    "symptom": "chronic hand pain",
+    "mention_count": 1,
+    "examples": [
+      "I lived with chronic hand pain for 7 months"
+    ],
+    "contexts": [
+      "for 7 months"
+    ]
+  },
+  {
+    "symptom": "inability to write",
+    "mention_count": 1,
+    "examples": [
+      "it stopped my being able to write"
+    ],
+    "contexts": [
+      "due to the pain"
+    ]
+  },
+  {
+    "symptom": "body dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "I am tierd of having a fucked up body"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "food sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "now having a lot more food sensitivity?"
+    ],
+    "contexts": [
+      "after going on a very limited diet"
+    ]
+  },
+  {
+    "symptom": "allergic reaction",
+    "mention_count": 1,
+    "examples": [
+      "it feels like i'm having allergic reactions to everything"
+    ],
+    "contexts": [
+      "after eating different things again"
+    ]
+  },
+  {
+    "symptom": "red face",
+    "mention_count": 1,
+    "examples": [
+      "shortly after eating something my face gets very red"
+    ],
+    "contexts": [
+      "shortly after eating"
+    ]
+  },
+  {
+    "symptom": "red and itchy feet",
+    "mention_count": 1,
+    "examples": [
+      "my feet get red + itchy"
+    ],
+    "contexts": [
+      "shortly after eating"
+    ]
+  },
+  {
+    "symptom": "stomach pain",
+    "mention_count": 1,
+    "examples": [
+      "Bread in general gives me intense stomach pain now."
+    ],
+    "contexts": [
+      "after eating bread"
+    ]
+  },
+  {
+    "symptom": "dry mouth",
+    "mention_count": 1,
+    "examples": [
+      "I have constant dry mouth"
+    ],
+    "contexts": [
+      "due to sleeping with mouth open and taking Vyvanse"
+    ]
+  },
+  {
+    "symptom": "tonsillolith",
+    "mention_count": 1,
+    "examples": [
+      "those horrid tonsils stones"
+    ],
+    "contexts": [
+      "randomly coming out"
+    ]
+  },
+  {
+    "symptom": "halitosis",
+    "mention_count": 1,
+    "examples": [
+      "it is making me realize how bad my breath really is"
+    ],
+    "contexts": [
+      "associated with tonsil stones"
+    ]
+  },
+  {
+    "symptom": "body odor",
+    "mention_count": 1,
+    "examples": [
+      "I am not sure if it's turned into a body odor?"
+    ],
+    "contexts": [
+      "people often cover their nose or open a window around me"
+    ]
+  },
+  {
+    "symptom": "dehydration",
+    "mention_count": 1,
+    "examples": [
+      "Vyvanse which can cause dry mouth, dehydration"
+    ],
+    "contexts": [
+      "related to medication"
+    ]
+  },
+  {
+    "symptom": "elevated ESR",
+    "mention_count": 1,
+    "examples": [
+      "for almost 2 years I've had elevated esr labs"
+    ],
+    "contexts": [
+      "ongoing for almost 2 years"
+    ]
+  },
+  {
+    "symptom": "hypermobility syndrome",
+    "mention_count": 1,
+    "examples": [
+      "I was diagnosed with hyper mobility syndrome"
+    ],
+    "contexts": [
+      "diagnosed in relation to periodontal disease"
+    ]
+  },
+  {
+    "symptom": "irritated gum",
+    "mention_count": 1,
+    "examples": [
+      "it dries my mouth out and irritates my gums really bad"
+    ],
+    "contexts": [
+      "after using closys mouthwash"
+    ]
+  },
+  {
+    "symptom": "altered taste",
+    "mention_count": 1,
+    "examples": [
+      "everything taste weird"
+    ],
+    "contexts": [
+      "after using closys mouthwash"
+    ]
+  },
+  {
+    "symptom": "shoulder blade tension",
+    "mention_count": 1,
+    "examples": [
+      "But now, I also feel tension in my shoulder blades."
+    ],
+    "contexts": [
+      "newly developed"
+    ]
+  },
+  {
+    "symptom": "shoulder joint pain",
+    "mention_count": 1,
+    "examples": [
+      "I noticed that when I hug my pillow while sleeping, my shoulder joints get stretched…"
+    ],
+    "contexts": [
+      "triggered by hugging pillow while sleeping"
+    ]
+  },
+  {
+    "symptom": "pain around the armpits",
+    "mention_count": 1,
+    "examples": [
+      "The area that hurts the most is somewhere around the armits, like next to armits idk what’s that part called to be honest."
+    ],
+    "contexts": [
+      "most painful area"
+    ]
+  },
+  {
+    "symptom": "muscle ache",
+    "mention_count": 1,
+    "examples": [
+      "The pain feels like when you work out too much and your muscles ache the next day..."
+    ],
+    "contexts": [
+      "described as similar to post-workout muscle ache"
+    ]
+  },
+  {
+    "symptom": "bruising pain",
+    "mention_count": 1,
+    "examples": [
+      "...or when you hit something hard and it bruises and hurts to touch."
+    ],
+    "contexts": [
+      "described as similar to bruising pain"
+    ]
+  },
+  {
+    "symptom": "chronic physical discomfort",
+    "mention_count": 1,
+    "examples": [
+      "I literally know nothing about this except that I’m in chronic physical discomfort."
+    ],
+    "contexts": [
+      "ongoing condition"
+    ]
+  },
+  {
+    "symptom": "leg pain",
+    "mention_count": 1,
+    "examples": [
+      "My leg hurts so bad, but only the right one for some reason."
+    ],
+    "contexts": [
+      "only the right leg"
+    ]
+  },
+  {
+    "symptom": "pain at rest",
+    "mention_count": 1,
+    "examples": [
+      "it hurts even being still"
+    ],
+    "contexts": [
+      "even when not active"
+    ]
+  },
+  {
+    "symptom": "flare up of previous issues",
+    "mention_count": 1,
+    "examples": [
+      "I’ve been dealing with a flare up of previous issues as well as new ones"
+    ],
+    "contexts": [
+      "after the weather got cold and rainy"
+    ]
+  },
+  {
+    "symptom": "joint inflammation",
+    "mention_count": 1,
+    "examples": [
+      "my joints all feel very inflamed"
+    ],
+    "contexts": [
+      "after the weather got cold and rainy"
+    ]
+  },
+  {
+    "symptom": "pain with weight bearing",
+    "mention_count": 1,
+    "examples": [
+      "my ankle (which up until has been relatively fine, all things considered) has started causing me pain whenever I walk or bear weight on it"
+    ],
+    "contexts": [
+      "ankle pain has started recently"
+    ]
+  },
+  {
+    "symptom": "tibial posterior dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "That’s now been diagnosed as tibial posterior dysfunction"
+    ],
+    "contexts": [
+      "diagnosed recently"
+    ]
+  },
+  {
+    "symptom": "lower back and hip pain",
+    "mention_count": 1,
+    "examples": [
+      "experiencing some lower back and groin/hip pain bilaterally"
+    ],
+    "contexts": [
+      "came out of nowhere"
+    ]
+  },
+  {
+    "symptom": "intermittent knee pain",
+    "mention_count": 1,
+    "examples": [
+      "intermittent knee pain since high school"
+    ],
+    "contexts": [
+      "since high school"
+    ]
+  },
+  {
+    "symptom": "hypothyroidism",
+    "mention_count": 1,
+    "examples": [
+      "pretty severe hypothyroidism caused by Hashimotos"
+    ],
+    "contexts": [
+      "triggered by Hashimotos"
+    ]
+  },
+  {
+    "symptom": "sacroiliac joint popping",
+    "mention_count": 1,
+    "examples": [
+      "popping sensation"
+    ],
+    "contexts": [
+      "happens dozens of times throughout the day"
+    ]
+  },
+  {
+    "symptom": "snapping hip syndrome",
+    "mention_count": 1,
+    "examples": [
+      "loosely diagnosed with SI joint dysfunction and snapping hip syndrome"
+    ],
+    "contexts": [
+      "hip snaps every time I raised my leg slightly turned out"
+    ]
+  },
+  {
+    "symptom": "discomfort sitting",
+    "mention_count": 1,
+    "examples": [
+      "feeling some discomfort sitting down"
+    ],
+    "contexts": [
+      "relieved by lightly squeezing glutes"
+    ]
+  },
+  {
+    "symptom": "popping sensation",
+    "mention_count": 1,
+    "examples": [
+      "I’ll roll over in bed or bend over and feel the popping sensation"
+    ],
+    "contexts": [
+      "even if I feel perfectly fine"
+    ]
+  },
+  {
+    "symptom": "abnormal sensation",
+    "mention_count": 1,
+    "examples": [
+      "it’s certainly a weird sensation"
+    ],
+    "contexts": [
+      "associated with popping/adjusting"
+    ]
+  },
+  {
+    "symptom": "glute tendon adjustment",
+    "mention_count": 1,
+    "examples": [
+      "I can feel the tendons in my glutes 'adjusting' over a bone or something"
+    ],
+    "contexts": [
+      "happens dozens of times throughout the day"
+    ]
+  },
+  {
+    "symptom": "body swelling",
+    "mention_count": 1,
+    "examples": [
+      "even a small apple can make me feel like a pufferfish"
+    ],
+    "contexts": [
+      "after eating a small apple"
+    ]
+  },
+  {
+    "symptom": "reduced joint instability",
+    "mention_count": 1,
+    "examples": [
+      "my joints don't randomly pop out as much lol"
+    ],
+    "contexts": [
+      "after starting to go to the gym"
+    ]
+  },
+  {
+    "symptom": "joint shifting",
+    "mention_count": 1,
+    "examples": [
+      "lately I've been feeling noticeable shifting in joints"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint cracking",
+    "mention_count": 1,
+    "examples": [
+      "accompanied by extra loud and dramatic cracking"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "muscle cramps",
+    "mention_count": 1,
+    "examples": [
+      "I get Charlie horse cramps in my calves sometimes that are so painful I can't breathe while it lasts"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sternal pain",
+    "mention_count": 1,
+    "examples": [
+      "resulted in sternum aching"
+    ],
+    "contexts": [
+      "after sneezing hard"
+    ]
+  },
+  {
+    "symptom": "chest pain",
+    "mention_count": 1,
+    "examples": [
+      "the mysterious bouts of chest pain I've had over the years"
+    ],
+    "contexts": [
+      "suspected to be recurrent costochondritis or slipping rib syndrome"
+    ]
+  },
+  {
+    "symptom": "shoulder and collarbone pain",
+    "mention_count": 1,
+    "examples": [
+      "I've been experiencing a lot of pain with my shoulders and in the collar bone areas"
+    ],
+    "contexts": [
+      "when trying to move my arm in a windmill motion"
+    ]
+  },
+  {
+    "symptom": "collarbone soreness",
+    "mention_count": 1,
+    "examples": [
+      "I'll have a lot of soreness in my collarbone or shoulder"
+    ],
+    "contexts": [
+      "when not propping up my head with a pillow"
+    ]
+  },
+  {
+    "symptom": "disruptive soreness",
+    "mention_count": 1,
+    "examples": [
+      "laying on my side almost guarantees shifting and very disruptive soreness"
+    ],
+    "contexts": [
+      "that can last for days afterwards"
+    ]
+  },
+  {
+    "symptom": "collarbone pain",
+    "mention_count": 1,
+    "examples": [
+      "my collar bones getting painfully sore"
+    ],
+    "contexts": [
+      "when laying on my stomach"
+    ]
+  },
+  {
+    "symptom": "joint popping",
+    "mention_count": 1,
+    "examples": [
+      "the joint feels like it pops"
+    ],
+    "contexts": [
+      "when laying on my back or side with arms perfectly straight"
+    ]
+  },
+  {
+    "symptom": "paresthesia in arms",
+    "mention_count": 1,
+    "examples": [
+      "my arms fall completely asleep but the painful kind of asleep and not just tingles"
+    ],
+    "contexts": [
+      "when laying with arms perfectly straight"
+    ]
+  },
+  {
+    "symptom": "hypermobility of ankles",
+    "mention_count": 1,
+    "examples": [
+      "I have the worst hypermobile ankles a physiotherapist has ever seen in their career"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint subluxation",
+    "mention_count": 1,
+    "examples": [
+      "only to sublux again (this time pretty minor) yesterday"
+    ],
+    "contexts": [
+      "yesterday"
+    ]
+  },
+  {
+    "symptom": "patellar popping",
+    "mention_count": 1,
+    "examples": [
+      "now I feel popping under my knee cap also"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "fibular head dislocation",
+    "mention_count": 1,
+    "examples": [
+      "I used to dislocate my fibular head on a regular basis from 12-19"
+    ],
+    "contexts": [
+      "on a regular basis from age 12 to 19"
+    ]
+  },
+  {
+    "symptom": "bilateral leg pain",
+    "mention_count": 1,
+    "examples": [
+      "both legs hurt bad enough that the cane essentially becomes useless"
+    ],
+    "contexts": [
+      "after a certain amount of time spent on my feet"
+    ]
+  },
+  {
+    "symptom": "shoulder strain",
+    "mention_count": 1,
+    "examples": [
+      "it serves as nothing but another strain on my shoulders"
+    ],
+    "contexts": [
+      "when using the bag"
+    ]
+  },
+  {
+    "symptom": "generalized ligament laxity",
+    "mention_count": 1,
+    "examples": [
+      "Once ligaments start feeling loose body wide (hips, shoulders)"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "voice strain",
+    "mention_count": 1,
+    "examples": [
+      "I keep 'blowing out' my voice"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "thoracolumbar instability",
+    "mention_count": 1,
+    "examples": [
+      "Anyone else have thoracolumbar instability"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "functional instability",
+    "mention_count": 1,
+    "examples": [
+      "Specifically functional instability and not structural instability?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "muscle guarding",
+    "mention_count": 1,
+    "examples": [
+      "My body freaks out and go into protective mode and seizes up trying to prevent injuries"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "muscle stiffness",
+    "mention_count": 1,
+    "examples": [
+      "and locks my up for a minute."
+    ],
+    "contexts": [
+      "for a minute"
+    ]
+  },
+  {
+    "symptom": "diagnosed with hypermobility spectrum disorder",
+    "mention_count": 1,
+    "examples": [
+      "Got diagnosed with HSD in October 2024."
+    ],
+    "contexts": [
+      "in October 2024"
+    ]
+  },
+  {
+    "symptom": "back problems",
+    "mention_count": 1,
+    "examples": [
+      "I have had significant problems with my back for over 10 years"
+    ],
+    "contexts": [
+      "over 10 years"
+    ]
+  },
+  {
+    "symptom": "hip problems",
+    "mention_count": 1,
+    "examples": [
+      "my hips have been pretty much constantly problematic"
+    ],
+    "contexts": [
+      "for the past year"
+    ]
+  },
+  {
+    "symptom": "hip dislocation",
+    "mention_count": 1,
+    "examples": [
+      "my hip dislocated"
+    ],
+    "contexts": [
+      "during the worst flare up in August"
+    ]
+  },
+  {
+    "symptom": "herniated disc",
+    "mention_count": 1,
+    "examples": [
+      "4 of my discs herniated compressing my spinal cord"
+    ],
+    "contexts": [
+      "during the worst flare up in August"
+    ]
+  },
+  {
+    "symptom": "bladder incontinence",
+    "mention_count": 1,
+    "examples": [
+      "I lost control of my bladder"
+    ],
+    "contexts": [
+      "during the worst flare up in August"
+    ]
+  },
+  {
+    "symptom": "complete immobility",
+    "mention_count": 1,
+    "examples": [
+      "I was completely immobile for maybe 4 weeks"
+    ],
+    "contexts": [
+      "after the worst flare up in August"
+    ]
+  },
+  {
+    "symptom": "muscle paralysis",
+    "mention_count": 1,
+    "examples": [
+      "every time I move my him my muscles go in to paralysis"
+    ],
+    "contexts": [
+      "when moving"
+    ]
+  },
+  {
+    "symptom": "daytime sleepiness",
+    "mention_count": 1,
+    "examples": [
+      "I'm sleepy all day"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "morning body ache",
+    "mention_count": 1,
+    "examples": [
+      "sleeping a lot makes my body aching when I wake up."
+    ],
+    "contexts": [
+      "after sleeping a lot"
+    ]
+  },
+  {
+    "symptom": "exhaustion from walking",
+    "mention_count": 1,
+    "examples": [
+      "walking is so exhausting."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "skin stretching",
+    "mention_count": 1,
+    "examples": [
+      "my skin is stretching"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "loose joints",
+    "mention_count": 1,
+    "examples": [
+      "joints have started feeling loose"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "chronic ache",
+    "mention_count": 1,
+    "examples": [
+      "there is this constant ache whenever my toe is bent back"
+    ],
+    "contexts": [
+      "when the toe is bent back"
+    ]
+  },
+  {
+    "symptom": "pain when pushing off toes",
+    "mention_count": 1,
+    "examples": [
+      "I can't play squash anymore as pushing off my toes hurts"
+    ],
+    "contexts": [
+      "when playing squash"
+    ]
+  },
+  {
+    "symptom": "inflammation while walking",
+    "mention_count": 1,
+    "examples": [
+      "even walking on a treadmill inflames it"
+    ],
+    "contexts": [
+      "while walking on a treadmill"
+    ]
+  },
+  {
+    "symptom": "right arm discomfort",
+    "mention_count": 1,
+    "examples": [
+      "now my right arm is cooked"
+    ],
+    "contexts": [
+      "after using an allen key and a screwdriver for 3 hours"
+    ]
+  },
+  {
+    "symptom": "loss of grip strength",
+    "mention_count": 1,
+    "examples": [
+      "my grip strength is gone"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "weakness and ache in last two fingers",
+    "mention_count": 1,
+    "examples": [
+      "my last two fingers are weak and achey"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "shooting pain",
+    "mention_count": 1,
+    "examples": [
+      "there's a shooting pain going from my shoulder blade all the way down to my hand"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "spiral fractures in arm",
+    "mention_count": 1,
+    "examples": [
+      "makes it feel like the bones in my arm have spiral fractures"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain waking at night",
+    "mention_count": 1,
+    "examples": [
+      "The pain got so bad it was waking me up overnight"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "worsening with stretching",
+    "mention_count": 1,
+    "examples": [
+      "stretching only makes it worse"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "knee burn",
+    "mention_count": 1,
+    "examples": [
+      "Afterwards, my knees burn a little."
+    ],
+    "contexts": [
+      "after the heated mat Pilates class"
+    ]
+  },
+  {
+    "symptom": "difficulty with fast movements",
+    "mention_count": 1,
+    "examples": [
+      "I typically don’t do fast jumpy movements."
+    ],
+    "contexts": [
+      "in relation to burpees and spider man plank jumps"
+    ]
+  },
+  {
+    "symptom": "burn sensation",
+    "mention_count": 1,
+    "examples": [
+      "But I can feel that burn and want to modify and build strength."
+    ],
+    "contexts": [
+      "after doing fast movements"
+    ]
+  },
+  {
+    "symptom": "hip ache",
+    "mention_count": 1,
+    "examples": [
+      "my hips... ache"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "shoulder ache",
+    "mention_count": 1,
+    "examples": [
+      "my shoulders... ache"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "spine ache",
+    "mention_count": 1,
+    "examples": [
+      "my spine... ache"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "elbow ache",
+    "mention_count": 1,
+    "examples": [
+      "my elbows... ache"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "knee overextension",
+    "mention_count": 1,
+    "examples": [
+      "i think that when i walk my knees overextend"
+    ],
+    "contexts": [
+      "when i walk"
+    ]
+  },
+  {
+    "symptom": "pressure on tibia",
+    "mention_count": 1,
+    "examples": [
+      "put pressure on my tibia"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "trapezius muscle pain",
+    "mention_count": 1,
+    "examples": [
+      "another one of my worsts pains is in my trap muscles"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "inflamed finger joints",
+    "mention_count": 1,
+    "examples": [
+      "ways to help with inflamed finger joints please share"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hot finger joints",
+    "mention_count": 1,
+    "examples": [
+      "they get really hot and puffy"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "puffy finger joints",
+    "mention_count": 1,
+    "examples": [
+      "they get really hot and puffy"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain due to hypermobility",
+    "mention_count": 1,
+    "examples": [
+      "I have had pain due to hypermobility for nearly 6 years"
+    ],
+    "contexts": [
+      "affects everything but my neck and back"
+    ]
+  },
+  {
+    "symptom": "difficulty with SSRI pain medications",
+    "mention_count": 1,
+    "examples": [
+      "he said there isn't much evidence that opioids work well for hypermobility, and the type of NSAID that Celecoxib is has cardiorespiratory side effects"
+    ],
+    "contexts": [
+      "related to previous pain medication experiences"
+    ]
+  },
+  {
+    "symptom": "elbow pain",
+    "mention_count": 1,
+    "examples": [
+      "elbows... are in pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "effort to perform activities",
+    "mention_count": 1,
+    "examples": [
+      "Everything feels like an effort"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "exercise intolerance",
+    "mention_count": 1,
+    "examples": [
+      "I can barely workout"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "difficulty living",
+    "mention_count": 1,
+    "examples": [
+      "I can barely live"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "stretching sensation",
+    "mention_count": 1,
+    "examples": [
+      "Everything is just stretching stretching stretching to even feel slightly okay"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "partial pain relief",
+    "mention_count": 1,
+    "examples": [
+      "I even tried injecting peptides and that only kinda worked"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "physical discomfort",
+    "mention_count": 1,
+    "examples": [
+      "Physical discomfort/pain at school makes it hard to get work done"
+    ],
+    "contexts": [
+      "at school, makes it hard to get work done"
+    ]
+  },
+  {
+    "symptom": "difficulty sitting on hard surfaces",
+    "mention_count": 1,
+    "examples": [
+      "I have a hard time sitting on a hard surface for too long"
+    ],
+    "contexts": [
+      "for too long, due to hypermobility"
+    ]
+  },
+  {
+    "symptom": "debilitating back issues",
+    "mention_count": 1,
+    "examples": [
+      "after debilitating back and hip issues"
+    ],
+    "contexts": [
+      "years ago"
+    ]
+  },
+  {
+    "symptom": "debilitating hip issues",
+    "mention_count": 1,
+    "examples": [
+      "after debilitating back and hip issues"
+    ],
+    "contexts": [
+      "years ago"
+    ]
+  },
+  {
+    "symptom": "increased pain at night",
+    "mention_count": 1,
+    "examples": [
+      "keep struggling with pillows, positions, and more pain at night"
+    ],
+    "contexts": [
+      "at night"
+    ]
+  },
+  {
+    "symptom": "pain when curling arms",
+    "mention_count": 1,
+    "examples": [
+      "Curling my arms to sleep in used to be fine but now it hurts"
+    ],
+    "contexts": [
+      "when curling arms to sleep"
+    ]
+  },
+  {
+    "symptom": "costochondritis",
+    "mention_count": 1,
+    "examples": [
+      "Sometimes I feel soreness across the length of a rib."
+    ],
+    "contexts": [
+      "sometimes"
+    ]
+  },
+  {
+    "symptom": "pinching sensation in ribs",
+    "mention_count": 1,
+    "examples": [
+      "Sometimes one feels like it’s pinching."
+    ],
+    "contexts": [
+      "sometimes"
+    ]
+  },
+  {
+    "symptom": "physical limitations",
+    "mention_count": 1,
+    "examples": [
+      "Due to my physical limitations"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "bloating",
+    "mention_count": 1,
+    "examples": [
+      "I’m so uncomfortable and bloated all. the time."
+    ],
+    "contexts": [
+      "all the time"
+    ]
+  },
+  {
+    "symptom": "stomach rumbling",
+    "mention_count": 1,
+    "examples": [
+      "My stomach rumbles and gurgles constantly, especially when I lay down at night."
+    ],
+    "contexts": [
+      "constantly, especially when I lay down at night"
+    ]
+  },
+  {
+    "symptom": "irregular bowel movements",
+    "mention_count": 1,
+    "examples": [
+      "I can’t have regular bowel movements for the life of me."
+    ],
+    "contexts": [
+      "for the life of me"
+    ]
+  },
+  {
+    "symptom": "small bowel movements",
+    "mention_count": 1,
+    "examples": [
+      "I’m having two to three small bowel movements a week if I’m lucky."
+    ],
+    "contexts": [
+      "two to three small bowel movements a week"
+    ]
+  },
+  {
+    "symptom": "general discomfort",
+    "mention_count": 1,
+    "examples": [
+      "I’m so tired of feeling uncomfortable and crappy all the time."
+    ],
+    "contexts": [
+      "all the time"
+    ]
+  },
+  {
+    "symptom": "paresthesia in feet",
+    "mention_count": 1,
+    "examples": [
+      "Do anyone else’s feet fall asleep if you hold literally any position for more than two minutes?"
+    ],
+    "contexts": [
+      "if you hold literally any position for more than two minutes"
+    ]
+  },
+  {
+    "symptom": "dysmenorrhea",
+    "mention_count": 1,
+    "examples": [
+      "I was wondering if it could be the reason for my bad periods."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "heavy menstrual bleeding",
+    "mention_count": 1,
+    "examples": [
+      "They are very long and heavy."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "immediate pain and stiffness",
+    "mention_count": 1,
+    "examples": [
+      "I bent over on the job, heard a snap and immediate pain/stiffness."
+    ],
+    "contexts": [
+      "started when bending over at work"
+    ]
+  },
+  {
+    "symptom": "back immobility",
+    "mention_count": 1,
+    "examples": [
+      "my entire back is just immobile so stiff I can barely breathe"
+    ],
+    "contexts": [
+      "after bending over incorrectly"
+    ]
+  },
+  {
+    "symptom": "debilitating back pain",
+    "mention_count": 1,
+    "examples": [
+      "sometimes I have it and it's debilitating"
+    ],
+    "contexts": [
+      "occurs inconsistently"
+    ]
+  },
+  {
+    "symptom": "inconsistent back pain",
+    "mention_count": 1,
+    "examples": [
+      "it's just very inconsistent"
+    ],
+    "contexts": [
+      "occurs on and off"
+    ]
+  },
+  {
+    "symptom": "snapping sensation in back",
+    "mention_count": 1,
+    "examples": [
+      "other times I bend a little and it just snaps again"
+    ],
+    "contexts": [
+      "when bending over"
+    ]
+  },
+  {
+    "symptom": "pain not relieved by exercises",
+    "mention_count": 1,
+    "examples": [
+      "these exercises aren't helping the pain"
+    ],
+    "contexts": [
+      "despite doing them regularly"
+    ]
+  },
+  {
+    "symptom": "unilateral pain",
+    "mention_count": 1,
+    "examples": [
+      "the pain is only on one side at a time"
+    ],
+    "contexts": [
+      "can switch sides"
+    ]
+  },
+  {
+    "symptom": "pain relief with pressure",
+    "mention_count": 1,
+    "examples": [
+      "If I put pressure on the spot it helps"
+    ],
+    "contexts": [
+      "when pressure is applied"
+    ]
+  },
+  {
+    "symptom": "pain in nose/face",
+    "mention_count": 1,
+    "examples": [
+      "Pain + pressure in nose/face"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "wave of pain",
+    "mention_count": 1,
+    "examples": [
+      "when I've had a harder day I get a wave of pain"
+    ],
+    "contexts": [
+      "after a harder day"
+    ]
+  },
+  {
+    "symptom": "pressure in cheeks and nose",
+    "mention_count": 1,
+    "examples": [
+      "it starts from legs and then moves up and finishes with what feels like pressure in my cheeks and nose"
+    ],
+    "contexts": [
+      "moves from legs up to face"
+    ]
+  },
+  {
+    "symptom": "facial swelling",
+    "mention_count": 1,
+    "examples": [
+      "It feels like my whole face is ballooning up (physically it's not)"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vibrating sensation in face",
+    "mention_count": 1,
+    "examples": [
+      "is vibrating/fizzing"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain triggering migraine",
+    "mention_count": 1,
+    "examples": [
+      "Im wondering if my pain is triggering some kind of migraine"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "shoulder and neck pain",
+    "mention_count": 1,
+    "examples": [
+      "but what about when both are super sore from shoulder to neck"
+    ],
+    "contexts": [
+      "when both are super sore"
+    ]
+  },
+  {
+    "symptom": "frequent finger subluxations",
+    "mention_count": 1,
+    "examples": [
+      "Does frequent finger subluxations/dislocatuon have to be treated?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "finger hypermobility",
+    "mention_count": 1,
+    "examples": [
+      "I've had hypermobile fingers"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "fingers freeze",
+    "mention_count": 1,
+    "examples": [
+      "sometimes they just freeze up"
+    ],
+    "contexts": [
+      "when I'm like trying to write and do guitar"
+    ]
+  },
+  {
+    "symptom": "pulling pain",
+    "mention_count": 1,
+    "examples": [
+      "it feels like someone is constantly pulling my arms forward"
+    ],
+    "contexts": [
+      "regardless of whether or not I'm actually reaching for anything"
+    ]
+  },
+  {
+    "symptom": "tight pain",
+    "mention_count": 1,
+    "examples": [
+      "It's this constant tight, pulling pain"
+    ],
+    "contexts": [
+      "gets worse when I do reach for things"
+    ]
+  },
+  {
+    "symptom": "loss of range of motion in arms",
+    "mention_count": 1,
+    "examples": [
+      "some days I lose the ability to even fully reach above my head due to the pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "restlessness",
+    "mention_count": 1,
+    "examples": [
+      "I'm very restless and like I feel like I need to do something"
+    ],
+    "contexts": [
+      "before a doctor's appointment"
+    ]
+  },
+  {
+    "symptom": "inability to relax",
+    "mention_count": 1,
+    "examples": [
+      "I just feel like I can't relax"
+    ],
+    "contexts": [
+      "due to anxiety about the appointment"
+    ]
+  },
+  {
+    "symptom": "hip hypermobility",
+    "mention_count": 1,
+    "examples": [
+      "I feel my hips and shoulders are loose especially when I lay down."
+    ],
+    "contexts": [
+      "especially when I lay down"
+    ]
+  },
+  {
+    "symptom": "shoulder hypermobility",
+    "mention_count": 1,
+    "examples": [
+      "I feel my hips and shoulders are loose especially when I lay down."
+    ],
+    "contexts": [
+      "especially when I lay down"
+    ]
+  },
+  {
+    "symptom": "physical pain",
+    "mention_count": 1,
+    "examples": [
+      "my physical pain worse"
+    ],
+    "contexts": [
+      "might be making my physical pain worse"
+    ]
+  },
+  {
+    "symptom": "lack of focus",
+    "mention_count": 1,
+    "examples": [
+      "ADHD related issues (sensory issues, lack of focus, lack of routines, general scattermindedness)"
+    ],
+    "contexts": [
+      "ADHD related issues"
+    ]
+  },
+  {
+    "symptom": "leg numbness",
+    "mention_count": 1,
+    "examples": [
+      "I often get one leg or the other that feels 'dead.'"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "dull pain",
+    "mention_count": 1,
+    "examples": [
+      "just kind of a dull but significant pain radiating from behind my knee."
+    ],
+    "contexts": [
+      "radiating from behind my knee"
+    ]
+  },
+  {
+    "symptom": "gender dysphoria",
+    "mention_count": 1,
+    "examples": [
+      "gender dysphoria I’m really scared"
+    ],
+    "contexts": [
+      "causing fear"
+    ]
+  },
+  {
+    "symptom": "sensitivity to touch",
+    "mention_count": 1,
+    "examples": [
+      "I also hate the feeling of having my chest touched"
+    ],
+    "contexts": [
+      "causes sadness and nausea"
+    ]
+  },
+  {
+    "symptom": "sadness",
+    "mention_count": 1,
+    "examples": [
+      "to the point where I feel really sad"
+    ],
+    "contexts": [
+      "triggered by chest touching"
+    ]
+  },
+  {
+    "symptom": "head tilt",
+    "mention_count": 1,
+    "examples": [
+      "my head is always tilted slightly right"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "idiopathic intracranial hypertension",
+    "mention_count": 1,
+    "examples": [
+      "I have IIH"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "temporomandibular joint dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "I have IIH, TMJ & chronic muscle pain/tension, inflammation, mild cheek swelling, ear symptoms, blocked sinus etc."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "chronic muscle pain",
+    "mention_count": 1,
+    "examples": [
+      "chronic muscle pain/tension"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "cheek swelling",
+    "mention_count": 1,
+    "examples": [
+      "mild cheek swelling"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "ear symptoms",
+    "mention_count": 1,
+    "examples": [
+      "ear symptoms"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sinus blockage",
+    "mention_count": 1,
+    "examples": [
+      "blocked sinus"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "cervical instability",
+    "mention_count": 1,
+    "examples": [
+      "my neck tension/pain/instability just continues"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "occipital pain",
+    "mention_count": 1,
+    "examples": [
+      "I get occipital pain on that side too"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "facial pressure",
+    "mention_count": 1,
+    "examples": [
+      "I feel like the pressure in my face is relieved"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "lumbar pain",
+    "mention_count": 1,
+    "examples": [
+      "stop the pain from their lumbar vertebrae doing their thing"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "abdominal distension",
+    "mention_count": 1,
+    "examples": [
+      "a gut stick out their gut as far as they can"
+    ],
+    "contexts": [
+      "in an attempt to stop the pain"
+    ]
+  },
+  {
+    "symptom": "risk of fractures",
+    "mention_count": 1,
+    "examples": [
+      "I should be able to walk in my yard or trip over my dog’s bed without breaking another bone"
+    ],
+    "contexts": [
+      "when walking in the yard or tripping over the dog’s bed"
+    ]
+  },
+  {
+    "symptom": "obstructive sleep apnea",
+    "mention_count": 1,
+    "examples": [
+      "I have OSA"
+    ],
+    "contexts": [
+      "condition affecting sleep position"
+    ]
+  },
+  {
+    "symptom": "heart palpitations",
+    "mention_count": 1,
+    "examples": [
+      "heart palpitations (always thought this was anxiety, though I do have that too!)"
+    ],
+    "contexts": [
+      "always thought this was anxiety"
+    ]
+  },
+  {
+    "symptom": "debilitated",
+    "mention_count": 1,
+    "examples": [
+      "I was pretty much crippled for 2 years."
+    ],
+    "contexts": [
+      "for 2 years"
+    ]
+  },
+  {
+    "symptom": "rib instability",
+    "mention_count": 1,
+    "examples": [
+      "to keep my ribs from falling apart like pickup sticks while i’m asleep"
+    ],
+    "contexts": [
+      "while sleeping"
+    ]
+  },
+  {
+    "symptom": "severe stress",
+    "mention_count": 1,
+    "examples": [
+      "it was genuinely crippling"
+    ],
+    "contexts": [
+      "referring to the stress experienced"
+    ]
+  },
+  {
+    "symptom": "physical debilitation",
+    "mention_count": 1,
+    "examples": [
+      "it felt like not only was life physically debilitating"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "mental debilitation",
+    "mention_count": 1,
+    "examples": [
+      "but also mentally debilitating"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "low stress tolerance",
+    "mention_count": 1,
+    "examples": [
+      "low stress tolerance"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "heart rate variability",
+    "mention_count": 1,
+    "examples": [
+      "heart rate fluctuations"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "neuropathy",
+    "mention_count": 1,
+    "examples": [
+      "the nerve damage I have sustained from my hypermobile vertebral joints"
+    ],
+    "contexts": [
+      "observed by family"
+    ]
+  },
+  {
+    "symptom": "numbness in limbs",
+    "mention_count": 1,
+    "examples": [
+      "They noticed the numbness/limpness in my limbs"
+    ],
+    "contexts": [
+      "observed by family"
+    ]
+  },
+  {
+    "symptom": "pain and fatigue when moving limbs",
+    "mention_count": 1,
+    "examples": [
+      "the pain/fatigue I get when I move them."
+    ],
+    "contexts": [
+      "when moving limbs"
+    ]
+  },
+  {
+    "symptom": "overheating",
+    "mention_count": 1,
+    "examples": [
+      "Does anyone suffer from overheating?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "heat regulation issues",
+    "mention_count": 1,
+    "examples": [
+      "I have read people with hypermobility struggle to regulate heat."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "cold intolerance",
+    "mention_count": 1,
+    "examples": [
+      "I suffer terribly in the summer, and again completely freeze in the winter!"
+    ],
+    "contexts": [
+      "in the winter"
+    ]
+  },
+  {
+    "symptom": "excessive sweating",
+    "mention_count": 1,
+    "examples": [
+      "What's also not great is I become a sweaty mess in the summer or on travels or even when i eat a meal!"
+    ],
+    "contexts": [
+      "in the summer, on travels, or when eating a meal"
+    ]
+  },
+  {
+    "symptom": "leg swelling",
+    "mention_count": 1,
+    "examples": [
+      "my poor legs swell up like balloons when it's hot"
+    ],
+    "contexts": [
+      "when it's hot"
+    ]
+  },
+  {
+    "symptom": "heavy legs",
+    "mention_count": 1,
+    "examples": [
+      "making them feel so heavy!"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vulvodynia",
+    "mention_count": 1,
+    "examples": [
+      "50% of hypermobile folks have vulvodynia"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "dyspareunia",
+    "mention_count": 1,
+    "examples": [
+      "more than 2/3 have painful intercourse"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pelvic floor dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "Men can have pelvic floor dysfunction too btw."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "erectile dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "it can cause pain and erectile dysfunction."
+    ],
+    "contexts": [
+      "associated with pelvic floor dysfunction"
+    ]
+  },
+  {
+    "symptom": "palate fragility",
+    "mention_count": 1,
+    "examples": [
+      "Anyone else’s palate tear easy?"
+    ],
+    "contexts": [
+      "ever since I was a kid, but increasingly as an adult"
+    ]
+  },
+  {
+    "symptom": "burning sensation in palate",
+    "mention_count": 1,
+    "examples": [
+      "it tears. I’m talking about flakes of skin I have to tear off and it burns for days."
+    ],
+    "contexts": [
+      "after eating hard foods"
+    ]
+  },
+  {
+    "symptom": "food temperature sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "I also can’t have things that are too hot because it will burn my palate or tongue easy."
+    ],
+    "contexts": [
+      "things that are too hot"
+    ]
+  },
+  {
+    "symptom": "psychosomatic pain",
+    "mention_count": 1,
+    "examples": [
+      "my mental health team doesn’t think my pain is psychosomatic"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "self-harm",
+    "mention_count": 1,
+    "examples": [
+      "of hurting myself every time I try to get into better shape"
+    ],
+    "contexts": [
+      "every time I try to get into better shape"
+    ]
+  },
+  {
+    "symptom": "irritability",
+    "mention_count": 1,
+    "examples": [
+      "of the irritability when my spouse is just trying to help"
+    ],
+    "contexts": [
+      "when my spouse is just trying to help"
+    ]
+  },
+  {
+    "symptom": "cognitive load",
+    "mention_count": 1,
+    "examples": [
+      "of the amount of mental space dedicated to just existing"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "muscular injuries",
+    "mention_count": 1,
+    "examples": [
+      "of the countless muscular injuries"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "auditory symptoms",
+    "mention_count": 1,
+    "examples": [
+      "of sounding like a bowl of Rice fucking Krispies every time I move"
+    ],
+    "contexts": [
+      "every time I move"
+    ]
+  },
+  {
+    "symptom": "daily fatigue",
+    "mention_count": 1,
+    "examples": [
+      "of the overwhelming daily fatigue"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "chronic suffering",
+    "mention_count": 1,
+    "examples": [
+      "of how this is going to be something I have to endure until I'm dead"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sprains and injuries",
+    "mention_count": 1,
+    "examples": [
+      "the constant sprains and injuries"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "autism",
+    "mention_count": 1,
+    "examples": [
+      "the autism"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "ligament strain",
+    "mention_count": 1,
+    "examples": [
+      "the strained ligaments"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "localized fatigue",
+    "mention_count": 1,
+    "examples": [
+      "keep us away from localised fatigue"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "increased injury risk",
+    "mention_count": 1,
+    "examples": [
+      "overall higher risk of injury"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "femoral dislocation",
+    "mention_count": 1,
+    "examples": [
+      "my femur is out of place by a few degrees"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypervigilance",
+    "mention_count": 1,
+    "examples": [
+      "through pure HYPERVIGILANCE AND SHEER WILLPOWER"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "feeling fragile",
+    "mention_count": 1,
+    "examples": [
+      "I feel like I'm a blandiblu and so fragile"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hyperflexibility",
+    "mention_count": 1,
+    "examples": [
+      "it bothers me being so flexible"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "analgesia",
+    "mention_count": 1,
+    "examples": [
+      "although I'm not feeling pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "chronic stress",
+    "mention_count": 1,
+    "examples": [
+      "I thought it was just chronic stress"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "jaw osteoarthritis",
+    "mention_count": 1,
+    "examples": [
+      "my osteoarthritis in my jaw"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "rib dislocation",
+    "mention_count": 1,
+    "examples": [
+      "dislocating ribs"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "ankle sprains",
+    "mention_count": 1,
+    "examples": [
+      "that cause frequent ankle sprains"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "musculoskeletal pain",
+    "mention_count": 1,
+    "examples": [
+      "the result is impaired force transmission and deep, diffuse musculoskeletal pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "superficial fascia edema",
+    "mention_count": 1,
+    "examples": [
+      "the superficial fascia...is often thickened and edematous"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "reduced mobility",
+    "mention_count": 1,
+    "examples": [
+      "amplifies symptoms such as pain, stiffness, fatigue, and reduced mobility"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "subluxations",
+    "mention_count": 1,
+    "examples": [
+      "sometimes enough to trigger subluxations or dislocations"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "numbness and tingling",
+    "mention_count": 1,
+    "examples": [
+      "can result in symptoms ranging from numbness and tingling to motor weakness"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "motor weakness",
+    "mention_count": 1,
+    "examples": [
+      "can result in symptoms ranging from numbness and tingling to motor weakness"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "falls",
+    "mention_count": 1,
+    "examples": [
+      "people with EDS/HSD often struggle with balance, coordination, and spatial awareness...often struggle with balance, coordination, and spatial awareness"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "postural issues",
+    "mention_count": 1,
+    "examples": [
+      "commonly seen as a slumped or twisted position of the head and neck"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "chronic inflammation",
+    "mention_count": 1,
+    "examples": [
+      "this chronic inflammatory state further stiffens the fascia"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "disproportionate pain",
+    "mention_count": 1,
+    "examples": [
+      "many individuals with hEDS/HSD experience pain that seems disproportionate to injury or visible tissue damage"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sensory disruption",
+    "mention_count": 1,
+    "examples": [
+      "self-perpetuating cycle of tissue remodeling and sensory disruption"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "impaired movement",
+    "mention_count": 1,
+    "examples": [
+      "creating chronic, multi-site pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "poor proprioception",
+    "mention_count": 1,
+    "examples": [
+      "does poor proprioception cause depersonalization to any of you?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain flare-up",
+    "mention_count": 1,
+    "examples": [
+      "massive guilt for resting when they’re having a pain flair up"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "post-exercise pain",
+    "mention_count": 1,
+    "examples": [
+      "If you're in pain after (not doms) you've gone too hard"
+    ],
+    "contexts": [
+      "after working out"
+    ]
+  },
+  {
+    "symptom": "post-exercise fatigue",
+    "mention_count": 1,
+    "examples": [
+      "I was exhausted after the gym"
+    ],
+    "contexts": [
+      "after working out"
+    ]
+  },
+  {
+    "symptom": "illness",
+    "mention_count": 1,
+    "examples": [
+      "I have had times I've been sick and can't get to the gym"
+    ],
+    "contexts": [
+      "when sick"
+    ]
+  },
+  {
+    "symptom": "recurring pain",
+    "mention_count": 1,
+    "examples": [
+      "the pain does come back"
+    ],
+    "contexts": [
+      "when unable to go to the gym"
+    ]
+  },
+  {
+    "symptom": "prolonged standing",
+    "mention_count": 1,
+    "examples": [
+      "mostly in the kitchen (and don't have to sit down after 10 minutes for once)"
+    ],
+    "contexts": [
+      "in the kitchen"
+    ]
+  },
+  {
+    "symptom": "Saturday Night Palsy",
+    "mention_count": 1,
+    "examples": [
+      "I have what's called Saturday Night Palsy."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hip and knee pain",
+    "mention_count": 1,
+    "examples": [
+      "It started with a sore hip and knee."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermobility-related pain",
+    "mention_count": 1,
+    "examples": [
+      "Worse than the usual hypermobility pain."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "joint grinding",
+    "mention_count": 1,
+    "examples": [
+      "I could, quite literally, feel my joints grinding."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "persistent pain",
+    "mention_count": 1,
+    "examples": [
+      "The pain wasn’t going away even with ample rest."
+    ],
+    "contexts": [
+      "getting worse over time"
+    ]
+  },
+  {
+    "symptom": "swollen and bleeding gums",
+    "mention_count": 1,
+    "examples": [
+      "swollen and bleeding gums."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "petechiae",
+    "mention_count": 1,
+    "examples": [
+      "I woke up one morning and I had petechiae (blood spots under the skin) on my feet and legs- both right and left."
+    ],
+    "contexts": [
+      "woke up one morning"
+    ]
+  },
+  {
+    "symptom": "oxidative stress",
+    "mention_count": 1,
+    "examples": [
+      "I believe would also cause oxidative stress in my body."
+    ],
+    "contexts": [
+      "exposure to secondhand smoke"
+    ]
+  },
+  {
+    "symptom": "vitamin D deficiency",
+    "mention_count": 1,
+    "examples": [
+      "a slight vitamin d deficiency explains away all my problems"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "frail",
+    "mention_count": 1,
+    "examples": [
+      "I’ve been frail"
+    ],
+    "contexts": [
+      "my whole life"
+    ]
+  },
+  {
+    "symptom": "trembling hands",
+    "mention_count": 1,
+    "examples": [
+      "My hand trembles even just picking up a half-full kettle."
+    ],
+    "contexts": [
+      "when picking up a half-full kettle"
+    ]
+  },
+  {
+    "symptom": "difficulty falling asleep",
+    "mention_count": 1,
+    "examples": [
+      "It takes me ages to fall asleep"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "body parts feeling out of place",
+    "mention_count": 1,
+    "examples": [
+      "it always feels like parts of my body are out of place, particularly my ribs and my shoulders."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "prodding in ribs",
+    "mention_count": 1,
+    "examples": [
+      "I got this dreadful prodding in my ribs."
+    ],
+    "contexts": [
+      "while laying down"
+    ]
+  },
+  {
+    "symptom": "low stamina",
+    "mention_count": 1,
+    "examples": [
+      "I am low-stamina"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "breathing difficulties",
+    "mention_count": 1,
+    "examples": [
+      "I just can’t breathe"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "taste of blood in mouth",
+    "mention_count": 1,
+    "examples": [
+      "it tastes like blood in my mouth"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "struggling to keep steady",
+    "mention_count": 1,
+    "examples": [
+      "I struggle to keep myself steady."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain in ankles and shoulders",
+    "mention_count": 1,
+    "examples": [
+      "My ankles and shoulders sometimes get spikes in pain, too."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "high palate",
+    "mention_count": 1,
+    "examples": [
+      "High mouth palette"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "skin extensibility",
+    "mention_count": 1,
+    "examples": [
+      "skin extended multiple inches when pulled in some parts of the body"
+    ],
+    "contexts": [
+      "in some parts of the body"
+    ]
+  },
+  {
+    "symptom": "blue sclera",
+    "mention_count": 1,
+    "examples": [
+      "blue sclera"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "spine stability",
+    "mention_count": 1,
+    "examples": [
+      "My spine felt more supported and more stable than it has ever been"
+    ],
+    "contexts": [
+      "after contortion strength training"
+    ]
+  },
+  {
+    "symptom": "pain sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "psychosomatic Hypermobility, which basically means an over-sensitivity to pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vision issues",
+    "mention_count": 1,
+    "examples": [
+      "issues with chronic pain, digestion, vision"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "shoulder tension",
+    "mention_count": 1,
+    "examples": [
+      "My shoulders and upper trapezius muscles hold sooo much tension it's insane."
+    ],
+    "contexts": [
+      "insane amount of tension"
+    ]
+  },
+  {
+    "symptom": "back tightness",
+    "mention_count": 1,
+    "examples": [
+      "my entire back is tight"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "neck tightness",
+    "mention_count": 1,
+    "examples": [
+      "the neck is even worse."
+    ],
+    "contexts": [
+      "worse than the back"
+    ]
+  },
+  {
+    "symptom": "numbness in hand",
+    "mention_count": 1,
+    "examples": [
+      "causing numbness in my left hand."
+    ],
+    "contexts": [
+      "due to c5/c6/c7 disk bulging"
+    ]
+  },
+  {
+    "symptom": "tightness",
+    "mention_count": 1,
+    "examples": [
+      "I'm sure that doesn't help the tightness."
+    ],
+    "contexts": [
+      "related to strength training"
+    ]
+  },
+  {
+    "symptom": "unexplained pain",
+    "mention_count": 1,
+    "examples": [
+      "I have had unexplained pain for the past 3 years."
+    ],
+    "contexts": [
+      "for the past 3 years"
+    ]
+  },
+  {
+    "symptom": "weak pelvic floor",
+    "mention_count": 1,
+    "examples": [
+      "a weak pelvic floor causing me to use the bathroom frequently."
+    ],
+    "contexts": [
+      "causing me to use the bathroom frequently"
+    ]
+  },
+  {
+    "symptom": "frequent bathroom use",
+    "mention_count": 1,
+    "examples": [
+      "causing me to use the bathroom frequently."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "shoulder popping",
+    "mention_count": 1,
+    "examples": [
+      "I can’t get comfortable until I get my arm to “pop” at my shoulder"
+    ],
+    "contexts": [
+      "when trying to get comfortable in bed"
+    ]
+  },
+  {
+    "symptom": "tight hands",
+    "mention_count": 1,
+    "examples": [
+      "my hands feeling tight every now and then"
+    ],
+    "contexts": [
+      "every now and then"
+    ]
+  },
+  {
+    "symptom": "pinkie finger straightening",
+    "mention_count": 1,
+    "examples": [
+      "having to straighten my pinkie finger tips at the knuckles if I accidentally knock them wonky"
+    ],
+    "contexts": [
+      "if I accidentally knock them wonky"
+    ]
+  },
+  {
+    "symptom": "shoulder and knee discomfort",
+    "mention_count": 1,
+    "examples": [
+      "my shoulder is starting to feel the same way my knees do"
+    ],
+    "contexts": [
+      "when I have to constantly push them back into place"
+    ]
+  },
+  {
+    "symptom": "joint and muscle laxity",
+    "mention_count": 1,
+    "examples": [
+      "my joints and muscles becoming even more lax and painful"
+    ],
+    "contexts": [
+      "around their cycle"
+    ]
+  },
+  {
+    "symptom": "gait difficulty",
+    "mention_count": 1,
+    "examples": [
+      "it's getting hard to walk"
+    ],
+    "contexts": [
+      "getting worse"
+    ]
+  },
+  {
+    "symptom": "shoulder blade fracture",
+    "mention_count": 1,
+    "examples": [
+      "I fractured my shoulder blade a couple weeks ago."
+    ],
+    "contexts": [
+      "a couple weeks ago"
+    ]
+  },
+  {
+    "symptom": "wrist issues",
+    "mention_count": 1,
+    "examples": [
+      "my wrists have always been an issue for me"
+    ],
+    "contexts": [
+      "ongoing issue"
+    ]
+  },
+  {
+    "symptom": "dark circles under eyes",
+    "mention_count": 1,
+    "examples": [
+      "Who here gets persistent dark circles under eyes?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "thin skin",
+    "mention_count": 1,
+    "examples": [
+      "Not sure if it’s caused by just think skin and genetics or something else like allergies?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "allergies",
+    "mention_count": 1,
+    "examples": [
+      "Not sure if it’s caused by just think skin and genetics or something else like allergies?"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "facial redness",
+    "mention_count": 1,
+    "examples": [
+      "my skin does redden around the outside corners of my nose"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "flushed cheeks",
+    "mention_count": 1,
+    "examples": [
+      "my cheeks are flushed a lot I guess."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain while walking or sitting",
+    "mention_count": 1,
+    "examples": [
+      "it was so bad at the end of the day that it hurt to walk or even sit"
+    ],
+    "contexts": [
+      "at the end of the day"
+    ]
+  },
+  {
+    "symptom": "pain at desk job",
+    "mention_count": 1,
+    "examples": [
+      "I often feel more pain at my desk job than I do when I’m doing work around the house"
+    ],
+    "contexts": [
+      "when I’m doing work around the house"
+    ]
+  },
+  {
+    "symptom": "pain after resting",
+    "mention_count": 1,
+    "examples": [
+      "My hip did not hurt at all until Sunday night after several hours of *resting*"
+    ],
+    "contexts": [
+      "after several hours of *resting*"
+    ]
+  },
+  {
+    "symptom": "hip stiffness",
+    "mention_count": 1,
+    "examples": [
+      "do u guys also suffer from stiff hip after sexual activity"
+    ],
+    "contexts": [
+      "after sexual activity"
+    ]
+  },
+  {
+    "symptom": "shoulder grinding",
+    "mention_count": 1,
+    "examples": [
+      "my shoulder grinds (it grinds every time i rotate backwards)"
+    ],
+    "contexts": [
+      "every time I rotate backwards"
+    ]
+  },
+  {
+    "symptom": "shoulder buckling",
+    "mention_count": 1,
+    "examples": [
+      "then just like buckles and shits out"
+    ],
+    "contexts": [
+      "occurs during shoulder movement"
+    ]
+  },
+  {
+    "symptom": "whole body ache",
+    "mention_count": 1,
+    "examples": [
+      "my whole body starts aching"
+    ],
+    "contexts": [
+      "after 2 minutes in the sleeping pose"
+    ]
+  },
+  {
+    "symptom": "sleep position dependency",
+    "mention_count": 1,
+    "examples": [
+      "I cannot!!!! fall asleep unless I am in this pose"
+    ],
+    "contexts": [
+      "specific sleeping pose"
+    ]
+  },
+  {
+    "symptom": "pain while sleeping",
+    "mention_count": 1,
+    "examples": [
+      "I fall asleep despite the pain"
+    ],
+    "contexts": [
+      "while trying to sleep in the specific pose"
+    ]
+  },
+  {
+    "symptom": "variable joint pain",
+    "mention_count": 1,
+    "examples": [
+      "with hypermobility and variable joint pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "variable breathing challenges",
+    "mention_count": 1,
+    "examples": [
+      "coupled with variable breathing and pelvic floor challenges"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pelvic floor challenges",
+    "mention_count": 1,
+    "examples": [
+      "coupled with variable breathing and pelvic floor challenges"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "burning sensation in legs",
+    "mention_count": 1,
+    "examples": [
+      "my legs burn"
+    ],
+    "contexts": [
+      "when I do the dishes"
+    ]
+  },
+  {
+    "symptom": "trapezius pain",
+    "mention_count": 1,
+    "examples": [
+      "traps, shoulder, neck, and/or upper back pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "pain from skull to shoulders",
+    "mention_count": 1,
+    "examples": [
+      "I had daily pain all from the base of my skull down to my shoulders and upper back"
+    ],
+    "contexts": [
+      "daily pain"
+    ]
+  },
+  {
+    "symptom": "intermittent pain",
+    "mention_count": 1,
+    "examples": [
+      "the pain can still come and go"
+    ],
+    "contexts": [
+      "due to hypermobility"
+    ]
+  },
+  {
+    "symptom": "upper body collapse",
+    "mention_count": 1,
+    "examples": [
+      "do any other hypermobile side sleepers feel like their upper body and shoulders just collapse when you lie down???"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "nightly subluxations",
+    "mention_count": 1,
+    "examples": [
+      "causing subluxations every night"
+    ],
+    "contexts": [
+      "every night"
+    ]
+  },
+  {
+    "symptom": "dependence on mobility aid",
+    "mention_count": 1,
+    "examples": [
+      "I need a cane or a crutch to walk for long distances"
+    ],
+    "contexts": [
+      "for long distances"
+    ]
+  },
+  {
+    "symptom": "need for rollator",
+    "mention_count": 1,
+    "examples": [
+      "I need a rollator if I need to walker for more than 2 hours"
+    ],
+    "contexts": [
+      "if I need to walk for more than 2 hours"
+    ]
+  },
+  {
+    "symptom": "weakness",
+    "mention_count": 1,
+    "examples": [
+      "I feel weak"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "nerve disorder",
+    "mention_count": 1,
+    "examples": [
+      "I also understand that I have some weird BS nerve disorder from a car accident"
+    ],
+    "contexts": [
+      "from a car accident"
+    ]
+  },
+  {
+    "symptom": "finger injury",
+    "mention_count": 1,
+    "examples": [
+      "I injured my finger doing macrame for 2 days."
+    ],
+    "contexts": [
+      "while doing macrame"
+    ]
+  },
+  {
+    "symptom": "trigger finger",
+    "mention_count": 1,
+    "examples": [
+      "I have trigger finger now, and it's very uncomfortable."
+    ],
+    "contexts": [
+      "now, and it's very uncomfortable"
+    ]
+  },
+  {
+    "symptom": "patellar tendinopathy",
+    "mention_count": 1,
+    "examples": [
+      "I also have patellar tendonopathy in both knees."
+    ],
+    "contexts": [
+      "in both knees"
+    ]
+  },
+  {
+    "symptom": "turf toe",
+    "mention_count": 1,
+    "examples": [
+      "turf toe in my right big toe."
+    ],
+    "contexts": [
+      "in my right big toe"
+    ]
+  },
+  {
+    "symptom": "plantar fasciitis",
+    "mention_count": 1,
+    "examples": [
+      "plantar fasciitis in my left heel."
+    ],
+    "contexts": [
+      "in my left heel"
+    ]
+  },
+  {
+    "symptom": "sleep problems",
+    "mention_count": 1,
+    "examples": [
+      "not to mention the non-obvious symptoms like my sleep problems"
+    ],
+    "contexts": [
+      "non-obvious symptoms"
+    ]
+  },
+  {
+    "symptom": "barometric pressure sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "I am super sensitive to pressure drops"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "sensitivity to temperature changes",
+    "mention_count": 1,
+    "examples": [
+      "I am super sensitive to temperature changes"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "back spasms",
+    "mention_count": 1,
+    "examples": [
+      "I also get really bad back spasms in the summertime"
+    ],
+    "contexts": [
+      "in the summertime"
+    ]
+  },
+  {
+    "symptom": "body feels unstable",
+    "mention_count": 1,
+    "examples": [
+      "I just feel like my body is falling apart every day"
+    ],
+    "contexts": [
+      "during heavy rain season"
+    ]
+  },
+  {
+    "symptom": "back and lower body discomfort",
+    "mention_count": 1,
+    "examples": [
+      "my back and lower body feels so bad and uncomfortable"
+    ],
+    "contexts": [
+      "while sitting at work"
+    ]
+  },
+  {
+    "symptom": "hip subluxations",
+    "mention_count": 1,
+    "examples": [
+      "my hip subluxations while driving"
+    ],
+    "contexts": [
+      "while driving"
+    ]
+  },
+  {
+    "symptom": "inability to touch thumb to wrist",
+    "mention_count": 1,
+    "examples": [
+      "when she asked me to put my thumb to my wrist and I couldn't"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypoalgesia",
+    "mention_count": 1,
+    "examples": [
+      "Another problem I have is a lack of sensation of pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "muscle tear",
+    "mention_count": 1,
+    "examples": [
+      "which led me to tear a muscle a month ago"
+    ],
+    "contexts": [
+      "a month ago"
+    ]
+  },
+  {
+    "symptom": "gait abnormalities",
+    "mention_count": 1,
+    "examples": [
+      "I was walking a little funny"
+    ],
+    "contexts": [
+      "after tearing a muscle"
+    ]
+  },
+  {
+    "symptom": "knee reduction",
+    "mention_count": 1,
+    "examples": [
+      "when I gotta pop my knee until place first thing in the morning"
+    ],
+    "contexts": [
+      "first thing in the morning after yoga"
+    ]
+  },
+  {
+    "symptom": "delayed bruise healing",
+    "mention_count": 1,
+    "examples": [
+      "bruises take a lot of time to heal"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "salivary dysfunction",
+    "mention_count": 1,
+    "examples": [
+      "issues with producing saliva"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "tear production issues",
+    "mention_count": 1,
+    "examples": [
+      "issues with producing saliva, tears etc."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hyperelasticity",
+    "mention_count": 1,
+    "examples": [
+      "I'm super stretchy in some directions"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "rigidity",
+    "mention_count": 1,
+    "examples": [
+      "completely rigid in others"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "fatigue from standing",
+    "mention_count": 1,
+    "examples": [
+      "I don't feel any pain, I just get extremely tired after standing even for a relatively short time"
+    ],
+    "contexts": [
+      "after standing even for a relatively short time (like washing the dishes or going somewhere by bus)"
+    ]
+  },
+  {
+    "symptom": "discomfort while standing",
+    "mention_count": 1,
+    "examples": [
+      "I have a weird feeling that my body kinda 'don't know how to stand'"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "anterior pelvic tilt",
+    "mention_count": 1,
+    "examples": [
+      "I also 100% have anterior pelvic tilt"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "symptom flare-ups",
+    "mention_count": 1,
+    "examples": [
+      "risking injury, joint pain, or flare-ups"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "leg instability",
+    "mention_count": 1,
+    "examples": [
+      "Most people don't feel like their legs are going to fall off when they are sprinting."
+    ],
+    "contexts": [
+      "when sprinting"
+    ]
+  },
+  {
+    "symptom": "migratory pain",
+    "mention_count": 1,
+    "examples": [
+      "Most people don't have strange migratory pain that crescendos at the worst times."
+    ],
+    "contexts": [
+      "crescendos at the worst times"
+    ]
+  },
+  {
+    "symptom": "projectile vomiting",
+    "mention_count": 1,
+    "examples": [
+      "Literally projectile vomiting"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "throat constriction",
+    "mention_count": 1,
+    "examples": [
+      "my throat just decides to give up and clench shut"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "drooling",
+    "mention_count": 1,
+    "examples": [
+      "drooling"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "gasping",
+    "mention_count": 1,
+    "examples": [
+      "gasping"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "heaving",
+    "mention_count": 1,
+    "examples": [
+      "heaving"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "nasal congestion",
+    "mention_count": 1,
+    "examples": [
+      "snotty af"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "muscle collapse",
+    "mention_count": 1,
+    "examples": [
+      "like my muscles just forcibly collapsed in on itself"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "hypermobile spine",
+    "mention_count": 1,
+    "examples": [
+      "My spine is incredibly hypermobile"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "compression sensation",
+    "mention_count": 1,
+    "examples": [
+      "the feeling of compression is so awful, painful and builds up very quickly"
+    ],
+    "contexts": [
+      "builds up very quickly"
+    ]
+  },
+  {
+    "symptom": "hyperlordosis",
+    "mention_count": 1,
+    "examples": [
+      "I also have pretty intense hyperlordosis"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "vertebral separation",
+    "mention_count": 1,
+    "examples": [
+      "I feel my vertabrae 'separating' in a sort of domino effect"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "audible spine movement",
+    "mention_count": 1,
+    "examples": [
+      "it's audible also but not exactly the same as cracking (or 'popping gas') although similar"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "occasional nerve symptoms",
+    "mention_count": 1,
+    "examples": [
+      "I've been dealing with pain, extreme muscle tightness, and occasional nerve symptoms in my left hip and leg for about 2.5 years now."
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "snapping hip",
+    "mention_count": 1,
+    "examples": [
+      "My orthopedist said I just have 'snapping hip' (BOY DO I. I had no idea that could hurt like a bitch)"
+    ],
+    "contexts": [
+      "causes significant pain"
+    ]
+  },
+  {
+    "symptom": "aching from butt to calf",
+    "mention_count": 1,
+    "examples": [
+      "a constantly shifting collection of symptoms including feverish aching from butt to calf"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "gluteus medius tightness",
+    "mention_count": 1,
+    "examples": [
+      "a constantly shifting collection of symptoms including extreme glute medius tightness"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "calf tightness",
+    "mention_count": 1,
+    "examples": [
+      "a constantly shifting collection of symptoms including a tight calf"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "quadriceps pain",
+    "mention_count": 1,
+    "examples": [
+      "a constantly shifting collection of symptoms including quad pain"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "numbness over lateral hip",
+    "mention_count": 1,
+    "examples": [
+      "a constantly shifting collection of symptoms including brief episodes of numb skin over my lateral hip"
+    ],
+    "contexts": []
+  },
+  {
+    "symptom": "lingering instability",
+    "mention_count": 1,
+    "examples": [
+      "My shoulders still have lingering instability despite PT"
+    ],
+    "contexts": [
+      "despite physical therapy"
+    ]
+  },
+  {
+    "symptom": "ligamentous hyperlaxity",
+    "mention_count": 1,
+    "examples": [
+      "I was already a bit stretchy"
+    ],
+    "contexts": [
+      "implied pre-existing condition"
+    ]
+  },
+  {
+    "symptom": "chronic musculoskeletal pain",
+    "mention_count": 1,
+    "examples": [
+      "I’ve been dealing with chronic musculoskeletal pain for most of my life with no real explanation."
+    ],
+    "contexts": [
+      "for most of my life"
+    ]
+  },
+  {
+    "symptom": "flexibility issues",
+    "mention_count": 1,
+    "examples": [
+      "I’m very flexible except for my fingers."
+    ],
+    "contexts": [
+      "except for my fingers"
+    ]
+  },
+  {
+    "symptom": "cutaneous sensitivity",
+    "mention_count": 1,
+    "examples": [
+      "My skin bruises easily and is very sensitive, but not as much as those with EDS."
+    ],
+    "contexts": [
+      "skin is very sensitive"
+    ]
+  },
+  {
+    "symptom": "Celiac disease",
+    "mention_count": 1,
+    "examples": [
+      "I have gastrointestinal issues: Celiac and IBS."
+    ],
+    "contexts": [
+      "part of gastrointestinal issues"
+    ]
+  },
+  {
+    "symptom": "cautious gait",
+    "mention_count": 1,
+    "examples": [
+      "your cautious gait"
+    ],
+    "contexts": [
+      "people used to make fun of, admire, or comment on"
+    ]
+  }
+]
