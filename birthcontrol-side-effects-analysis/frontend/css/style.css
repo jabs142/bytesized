@@ -1,0 +1,81 @@
+/* Custom styles for Birth Control Pattern Explorer */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom checkbox styling */
+.symptom-checkbox {
+    cursor: pointer;
+}
+
+/* Symptom pill hover effects */
+.symptom-pill {
+    transition: all 0.2s ease;
+}
+
+.symptom-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Selected symptom tags */
+.selected-symptom-tag {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Progress bars animation */
+.bg-gradient-to-r {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+    .symptom-pill,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Print styles */
+@media print {
+    header,
+    footer,
+    .bg-amber-50 {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+}

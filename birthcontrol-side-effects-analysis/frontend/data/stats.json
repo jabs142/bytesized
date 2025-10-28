@@ -1,0 +1,57 @@
+{
+  "total_posts": 537,
+  "posts_with_symptoms": 386,
+  "total_rules_found": 2,
+  "mining_params": {
+    "min_support": 11,
+    "min_confidence": 0.6,
+    "min_lift": 1.2
+  },
+  "top_symptoms": {
+    "anxiety": 132,
+    "acne": 94,
+    "fear": 75,
+    "depression": 56,
+    "cramps": 46,
+    "anger": 43,
+    "sensitivity": 41,
+    "fatigue": 38,
+    "emotional": 36,
+    "crying": 35,
+    "sadness": 33,
+    "headaches": 30,
+    "spotting": 25,
+    "panic": 24,
+    "mood swings": 23,
+    "brain fog": 20,
+    "nervousness": 18,
+    "irritability": 18,
+    "nausea": 17,
+    "heavy_bleeding": 16
+  },
+  "temporal_patterns": {
+    "stopped": 116,
+    "weeks": 186,
+    "years": 246,
+    "just_started": 36,
+    "months": 223,
+    "after_stopping": 13,
+    "long_term_use": 11
+  },
+  "user_contexts": {
+    "long_term_user": 56,
+    "first_time": 43,
+    "switcher": 6
+  },
+  "bc_types": {
+    "COC_pill": 301,
+    "progestin_only_pill": 63,
+    "hormonal_IUD": 31,
+    "copper_IUD": 10
+  },
+  "symptom_categories": {
+    "mental_only": 153,
+    "physical_only": 85,
+    "both": 148
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "antecedent": [
+      "brain fog"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 13,
+    "confidence": 0.65,
+    "lift": 1.9007575757575759,
+    "support_pct": 3.3678756476683938
+  },
+  {
+    "antecedent": [
+      "nervousness"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 11,
+    "confidence": 0.6111111111111112,
+    "lift": 1.7870370370370372,
+    "support_pct": 2.849740932642487
+  }
+]
