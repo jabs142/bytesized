@@ -1,28 +1,49 @@
-# Birth Control Symptom Pattern Discovery 🔬💊
+# Birth Control Side Effects Pattern Explorer 🔬💊
 
-An educational AI/ML project focused on discovering hidden symptom relationships and patterns in birth control experiences that clinical trials miss - using real-world data from social media.
+> **Discovering hidden symptom relationships from 537+ real Reddit experiences using association rule mining**
 
-## Project Overview
+An educational data science project that analyzes birth control side effects to find symptom patterns that clinical trials might miss.
 
-**Purpose**: Learning data mining, pattern discovery, association rule mining, and LLM application through real-world healthcare analysis
+## ✨ What's Built
 
-**Focus**: Comprehensive birth control symptom analysis & relationship discovery
-- **Mental Health**: Depression, anxiety, mood swings, panic, brain fog
-- **Physical Symptoms**: Yeast infections, acne, dryness, weight changes, hair loss
-- **Temporal Patterns**: What happens during use vs. after stopping?
-- **Co-occurrence Discovery**: Which symptoms appear together?
-- **Post-Pill Syndrome**: Recovery timelines and patterns
+- ✅ **Data Collection Pipeline**: 537 Reddit posts from 4 subreddits
+- ✅ **Pattern Mining Analysis**: Association rule mining with Apriori algorithm
+- ✅ **Interactive Web App**: Symptom checker + network visualization
+- ✅ **Mobile-First Design**: Touch-friendly, responsive interface
 
-**Key Innovation**: Finding symptom RELATIONSHIPS, not just frequencies
-- Example: "yeast infections + dryness + long-term use" (71% confidence, 45 posts)
-- Example: "post-pill acne appears 2-4 weeks after stopping" (temporal pattern)
+## 🚀 Quick Start
 
-**Data Sources**:
-- Reddit (r/birthcontrol, r/PMDD, r/TwoXChromosomes, r/SkincareAddiction)
-- Deduplication ensures unique posts only
-- Privacy-protected (no usernames, PII removed)
+```bash
+# 1. View the web app
+cd frontend
+python3 -m http.server 8000
+# Open: http://localhost:8000
 
-**End Goal**: Build interactive knowledge graph showing symptom relationships → Educational website for people on birth control
+# 2. Run pattern mining
+jupyter notebook notebooks/02_pattern_mining.ipynb
+
+# 3. Collect new data
+python src/data_collection/reddit_collector.py
+```
+
+## 📊 Current Results
+
+**Dataset**:
+- 537 posts analyzed
+- 386 posts with identifiable symptoms (72%)
+- 20+ unique symptoms tracked
+- 2 patterns discovered (current thresholds)
+
+**Top Discovered Patterns**:
+1. Brain Fog → Anxiety (65% confidence, 1.9x lift)
+2. Nervousness → Anxiety (61% confidence, 1.8x lift)
+
+**Top Symptoms**:
+1. Anxiety (132 posts - 34%)
+2. Acne (94 posts - 24%)
+3. Depression (56 posts - 15%)
+
+👉 **See full project details**: [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)
 
 ## Learning Objectives
 
@@ -246,39 +267,25 @@ This project follows ethical data collection and analysis practices:
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
-## Phase Roadmap
+## 🎯 Project Status
 
-### ✅ Phase 1: Setup & Data Collection
-- [x] Project structure
-- [x] Reddit data collection with rate limiting
-- [x] Ethical data handling & PII removal
-- [x] Exploratory data analysis
+### ✅ Completed
+- [x] Reddit data collection (537 posts, 4 subreddits)
+- [x] Deduplication pipeline
+- [x] Symptom extraction (mental + physical, 40+ types)
+- [x] Association rule mining (Apriori algorithm)
+- [x] Pattern analysis notebook with tqdm progress bars
+- [x] Interactive web frontend (3 pages)
+- [x] D3.js network visualization
+- [x] Mobile-responsive design
+- [x] Comprehensive documentation
 
-### 🔬 Phase 2: Pattern Mining (Current)
-- [ ] Expand symptom detection (mental + physical)
-- [ ] Deduplication in data collection
-- [ ] Association rule mining (Apriori)
-- [ ] Temporal pattern extraction
-- [ ] Network analysis of symptom relationships
-- [ ] Co-occurrence heatmaps
-
-### 🔮 Phase 3: LLM-Based Enhancement
-- [ ] Prompt engineering for symptom extraction
-- [ ] Context extraction (duration, timing, user profile)
-- [ ] Sentiment analysis
-- [ ] Structured data export
-
-### 🕸️ Phase 4: Knowledge Graph & Visualization
-- [ ] Interactive symptom relationship network
-- [ ] Timeline visualizations (Sankey diagrams)
-- [ ] "Similar experiences" search feature
-- [ ] Export for React website
-
-### 📱 Phase 5: Educational Website
-- [ ] React frontend with data visualizations
-- [ ] Symptom pattern explorer
-- [ ] Educational disclaimers
-- [ ] Deploy to Vercel
+### 🔜 Future Enhancements
+- [ ] Lower mining thresholds to find more patterns
+- [ ] Temporal pattern analysis (before/after stopping)
+- [ ] Birth control type-specific patterns
+- [ ] Deploy to GitHub Pages or Netlify
+- [ ] Add more visualizations (heatmaps, timelines)
 
 ## Common Issues & Troubleshooting
 

@@ -1,19 +1,130 @@
 {
   "nodes": [
     {
+      "id": "mood swings",
+      "frequency": 13
+    },
+    {
+      "id": "fatigue",
+      "frequency": 46
+    },
+    {
+      "id": "heavy_bleeding",
+      "frequency": 8
+    },
+    {
+      "id": "bloating",
+      "frequency": 7
+    },
+    {
+      "id": "irritability",
+      "frequency": 8
+    },
+    {
+      "id": "anxiety",
+      "frequency": 181
+    },
+    {
       "id": "brain fog",
       "frequency": 13
     },
     {
-      "id": "anxiety",
-      "frequency": 24
+      "id": "headaches",
+      "frequency": 31
+    },
+    {
+      "id": "cramps",
+      "frequency": 7
     },
     {
       "id": "nervousness",
       "frequency": 11
+    },
+    {
+      "id": "skin_dryness",
+      "frequency": 8
+    },
+    {
+      "id": "acne",
+      "frequency": 8
+    },
+    {
+      "id": "suicidal",
+      "frequency": 14
+    },
+    {
+      "id": "depression",
+      "frequency": 54
+    },
+    {
+      "id": "panic",
+      "frequency": 14
     }
   ],
   "edges": [
+    {
+      "source": "headaches",
+      "target": "fatigue",
+      "weight": 5.417543859649123,
+      "confidence": 0.5333333333333333,
+      "support": 8
+    },
+    {
+      "source": "anxiety",
+      "target": "fatigue",
+      "weight": 5.417543859649123,
+      "confidence": 0.5333333333333333,
+      "support": 8
+    },
+    {
+      "source": "suicidal",
+      "target": "depression",
+      "weight": 3.0156250000000004,
+      "confidence": 0.4375,
+      "support": 7
+    },
+    {
+      "source": "headaches",
+      "target": "anxiety",
+      "weight": 2.599326599326599,
+      "confidence": 0.8888888888888888,
+      "support": 8
+    },
+    {
+      "source": "fatigue",
+      "target": "anxiety",
+      "weight": 2.599326599326599,
+      "confidence": 0.8888888888888888,
+      "support": 8
+    },
+    {
+      "source": "skin_dryness",
+      "target": "acne",
+      "weight": 2.5270049099836336,
+      "confidence": 0.6153846153846154,
+      "support": 8
+    },
+    {
+      "source": "depression",
+      "target": "anxiety",
+      "weight": 2.3393939393939394,
+      "confidence": 0.8,
+      "support": 8
+    },
+    {
+      "source": "fatigue",
+      "target": "anxiety",
+      "weight": 2.3393939393939394,
+      "confidence": 0.8,
+      "support": 8
+    },
+    {
+      "source": "bloating",
+      "target": "anxiety",
+      "weight": 2.046969696969697,
+      "confidence": 0.7,
+      "support": 7
+    },
     {
       "source": "brain fog",
       "target": "anxiety",
@@ -22,11 +133,81 @@
       "support": 13
     },
     {
+      "source": "cramps",
+      "target": "anxiety",
+      "weight": 1.8608815426997245,
+      "confidence": 0.6363636363636364,
+      "support": 7
+    },
+    {
+      "source": "depression",
+      "target": "anxiety",
+      "weight": 1.8608815426997245,
+      "confidence": 0.6363636363636364,
+      "support": 7
+    },
+    {
       "source": "nervousness",
       "target": "anxiety",
       "weight": 1.7870370370370372,
       "confidence": 0.6111111111111112,
       "support": 11
+    },
+    {
+      "source": "panic",
+      "target": "anxiety",
+      "weight": 1.7058080808080809,
+      "confidence": 0.5833333333333334,
+      "support": 14
+    },
+    {
+      "source": "fatigue",
+      "target": "anxiety",
+      "weight": 1.692982456140351,
+      "confidence": 0.5789473684210527,
+      "support": 22
+    },
+    {
+      "source": "depression",
+      "target": "anxiety",
+      "weight": 1.670995670995671,
+      "confidence": 0.5714285714285714,
+      "support": 32
+    },
+    {
+      "source": "mood swings",
+      "target": "anxiety",
+      "weight": 1.652832674571805,
+      "confidence": 0.5652173913043478,
+      "support": 13
+    },
+    {
+      "source": "heavy_bleeding",
+      "target": "anxiety",
+      "weight": 1.4621212121212122,
+      "confidence": 0.5,
+      "support": 8
+    },
+    {
+      "source": "headaches",
+      "target": "anxiety",
+      "weight": 1.4621212121212122,
+      "confidence": 0.5,
+      "support": 15
+    },
+    {
+      "source": "irritability",
+      "target": "anxiety",
+      "weight": 1.2996632996632995,
+      "confidence": 0.4444444444444444,
+      "support": 8
+    },
+    {
+      "source": "suicidal",
+      "target": "anxiety",
+      "weight": 1.2793560606060606,
+      "confidence": 0.4375,
+      "support": 7
     }
   ]
 }

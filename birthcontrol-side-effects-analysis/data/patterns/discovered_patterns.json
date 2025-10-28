@@ -1,6 +1,81 @@
 [
   {
     "antecedent": [
+      "headaches",
+      "anxiety"
+    ],
+    "consequent": [
+      "fatigue"
+    ],
+    "support": 8,
+    "confidence": 0.5333333333333333,
+    "lift": 5.417543859649123,
+    "support_pct": 2.072538860103627
+  },
+  {
+    "antecedent": [
+      "suicidal"
+    ],
+    "consequent": [
+      "depression"
+    ],
+    "support": 7,
+    "confidence": 0.4375,
+    "lift": 3.0156250000000004,
+    "support_pct": 1.8134715025906734
+  },
+  {
+    "antecedent": [
+      "headaches",
+      "fatigue"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 8,
+    "confidence": 0.8888888888888888,
+    "lift": 2.599326599326599,
+    "support_pct": 2.072538860103627
+  },
+  {
+    "antecedent": [
+      "skin_dryness"
+    ],
+    "consequent": [
+      "acne"
+    ],
+    "support": 8,
+    "confidence": 0.6153846153846154,
+    "lift": 2.5270049099836336,
+    "support_pct": 2.072538860103627
+  },
+  {
+    "antecedent": [
+      "depression",
+      "fatigue"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 8,
+    "confidence": 0.8,
+    "lift": 2.3393939393939394,
+    "support_pct": 2.072538860103627
+  },
+  {
+    "antecedent": [
+      "bloating"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 7,
+    "confidence": 0.7,
+    "lift": 2.046969696969697,
+    "support_pct": 1.8134715025906734
+  },
+  {
+    "antecedent": [
       "brain fog"
     ],
     "consequent": [
@@ -13,6 +88,19 @@
   },
   {
     "antecedent": [
+      "cramps",
+      "depression"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 7,
+    "confidence": 0.6363636363636364,
+    "lift": 1.8608815426997245,
+    "support_pct": 1.8134715025906734
+  },
+  {
+    "antecedent": [
       "nervousness"
     ],
     "consequent": [
@@ -22,5 +110,101 @@
     "confidence": 0.6111111111111112,
     "lift": 1.7870370370370372,
     "support_pct": 2.849740932642487
+  },
+  {
+    "antecedent": [
+      "panic"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 14,
+    "confidence": 0.5833333333333334,
+    "lift": 1.7058080808080809,
+    "support_pct": 3.6269430051813467
+  },
+  {
+    "antecedent": [
+      "fatigue"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 22,
+    "confidence": 0.5789473684210527,
+    "lift": 1.692982456140351,
+    "support_pct": 5.699481865284974
+  },
+  {
+    "antecedent": [
+      "depression"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 32,
+    "confidence": 0.5714285714285714,
+    "lift": 1.670995670995671,
+    "support_pct": 8.290155440414509
+  },
+  {
+    "antecedent": [
+      "mood swings"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 13,
+    "confidence": 0.5652173913043478,
+    "lift": 1.652832674571805,
+    "support_pct": 3.3678756476683938
+  },
+  {
+    "antecedent": [
+      "heavy_bleeding"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 8,
+    "confidence": 0.5,
+    "lift": 1.4621212121212122,
+    "support_pct": 2.072538860103627
+  },
+  {
+    "antecedent": [
+      "headaches"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 15,
+    "confidence": 0.5,
+    "lift": 1.4621212121212122,
+    "support_pct": 3.8860103626943006
+  },
+  {
+    "antecedent": [
+      "irritability"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 8,
+    "confidence": 0.4444444444444444,
+    "lift": 1.2996632996632995,
+    "support_pct": 2.072538860103627
+  },
+  {
+    "antecedent": [
+      "suicidal"
+    ],
+    "consequent": [
+      "anxiety"
+    ],
+    "support": 7,
+    "confidence": 0.4375,
+    "lift": 1.2793560606060606,
+    "support_pct": 1.8134715025906734
   }
 ]

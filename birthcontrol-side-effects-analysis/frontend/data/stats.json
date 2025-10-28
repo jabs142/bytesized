@@ -1,10 +1,10 @@
 {
   "total_posts": 537,
   "posts_with_symptoms": 386,
-  "total_rules_found": 2,
+  "total_rules_found": 17,
   "mining_params": {
-    "min_support": 11,
-    "min_confidence": 0.6,
+    "min_support": 7,
+    "min_confidence": 0.4,
     "min_lift": 1.2
   },
   "top_symptoms": {
