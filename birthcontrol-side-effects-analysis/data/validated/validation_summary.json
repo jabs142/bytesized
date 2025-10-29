@@ -1,0 +1,10 @@
+{
+  "total_side_effects": 30,
+  "by_tier": {
+    "⚠️ Emerging Pattern": 2,
+    "✅ Research-Backed": 22,
+    "🏆 FDA-Listed": 6
+  },
+  "high_surprise": [],
+  "research_gaps": []
+}

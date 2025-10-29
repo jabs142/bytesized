@@ -1,12 +1,16 @@
 # Birth Control Side Effects Pattern Explorer 🔬💊
 
-> **Discovering hidden symptom relationships from 537+ real Reddit experiences using association rule mining**
+> **Discovering hidden symptom relationships from 537+ real Reddit experiences using LLM extraction + PubMed validation + statistical analysis**
 
-An educational data science project that analyzes birth control side effects to find symptom patterns that clinical trials might miss.
+An educational data science project that analyzes birth control side effects to find symptom patterns that clinical trials might miss. Following the EDS symptom discovery methodology with multi-source validation.
 
 ## ✨ What's Built
 
 - ✅ **Data Collection Pipeline**: 537 Reddit posts from 4 subreddits
+- ✅ **LLM-Based Side Effect Extraction**: Unbiased discovery using GPT-4
+- ✅ **PubMed Research Validation**: Cross-reference with medical literature
+- ✅ **Evidence Tiering System**: FDA-listed → Research-backed → Patient-validated → Emerging
+- ✅ **Statistical Validation**: Spearman correlation, chi-square tests, Bonferroni correction
 - ✅ **Pattern Mining Analysis**: Association rule mining with Apriori algorithm
 - ✅ **Interactive Web App**: Symptom checker + network visualization
 - ✅ **Mobile-First Design**: Touch-friendly, responsive interface
@@ -19,10 +23,22 @@ cd frontend
 python3 -m http.server 8000
 # Open: http://localhost:8000
 
-# 2. Run pattern mining
+# 2. Run LLM extraction (requires OPENAI_API_KEY)
+python src/analysis/llm_side_effect_extractor.py
+
+# 3. Run PubMed validation
+python src/validation/evidence_validator.py
+
+# 4. Run statistical analysis
+python src/analysis/statistical_validator.py
+
+# 5. View comprehensive analysis
+jupyter notebook notebooks/03_validation_analysis.ipynb
+
+# 6. Run pattern mining
 jupyter notebook notebooks/02_pattern_mining.ipynb
 
-# 3. Collect new data
+# 7. Collect new data
 python src/data_collection/reddit_collector.py
 ```
 
@@ -50,12 +66,15 @@ python src/data_collection/reddit_collector.py
 This project is designed to learn:
 
 1. **Data Mining**: Reddit API usage, ethical data collection, deduplication strategies
-2. **NLP Fundamentals**: Text preprocessing, tokenization, entity extraction, n-grams
-3. **Pattern Discovery**: Association rule mining (Apriori algorithm), co-occurrence analysis
-4. **Temporal Analysis**: Timeline extraction, sequence pattern mining
-5. **Network Analysis**: Symptom relationship graphs, community detection
-6. **LLM Application**: Using Claude/GPT for structured information extraction
-7. **Knowledge Graphs**: Interactive visualization of symptom relationships
+2. **LLM Application**: Using GPT-4 for unbiased symptom extraction without predefined keywords
+3. **Multi-Source Validation**: Combining Reddit + PubMed + FDA data for evidence-based classification
+4. **PubMed E-utilities API**: Searching and extracting medical research data programmatically
+5. **Evidence-Based Medicine**: Tiering systems for classifying medical findings by evidence strength
+6. **Statistical Validation**: Spearman correlation, chi-square tests, Bonferroni correction for multiple testing
+7. **Pattern Discovery**: Association rule mining (Apriori algorithm), co-occurrence analysis
+8. **Surprise Detection**: Finding hidden patterns with high patient reports but low research coverage
+9. **Network Analysis**: Symptom relationship graphs, community detection
+10. **Knowledge Graphs**: Interactive visualization of symptom relationships
 
 ## Project Structure
 
@@ -64,16 +83,31 @@ birthcontrol-side-effects-analysis/
 ├── data/
 │   ├── raw/              # Raw collected data (not in git)
 │   ├── processed/        # Cleaned and preprocessed data
-│   └── interim/          # Intermediate processing steps
+│   ├── patterns/         # Pattern mining results
+│   ├── analysis/         # LLM extraction + statistical results
+│   └── validated/        # Evidence-validated side effects database
 ├── notebooks/            # Jupyter notebooks for exploration
-│   └── 01_exploratory_data_analysis.ipynb
+│   ├── 01_exploratory_data_analysis.ipynb
+│   ├── 02_pattern_mining.ipynb
+│   └── 03_validation_analysis.ipynb  # NEW: Comprehensive validation notebook
 ├── src/
 │   ├── data_collection/  # Data collection scripts
-│   │   └── reddit_collector.py
+│   │   ├── reddit_collector.py
+│   │   └── pubmed_fetcher.py         # NEW: PubMed research validation
 │   ├── preprocessing/    # Text cleaning and preprocessing
 │   │   └── text_cleaner.py
-│   ├── analysis/         # Analysis scripts (future)
+│   ├── analysis/         # Analysis scripts
+│   │   ├── llm_side_effect_extractor.py  # NEW: LLM-based extraction
+│   │   ├── medical_term_extractor.py
+│   │   └── statistical_validator.py      # NEW: Statistical validation
+│   ├── validation/       # NEW: Evidence validation module
+│   │   └── evidence_validator.py
 │   └── config.py         # Configuration management
+├── frontend/
+│   ├── index.html        # Home page with validation methodology
+│   ├── symptom-checker.html
+│   ├── network.html
+│   └── data/             # JSON data for frontend
 ├── outputs/
 │   ├── visualizations/   # Plots and charts
 │   └── reports/          # Analysis reports
@@ -81,7 +115,8 @@ birthcontrol-side-effects-analysis/
 ├── tests/                # Unit tests
 ├── requirements.txt      # Python dependencies
 ├── .env.example          # Example environment variables
-└── README.md            # This file
+├── README.md            # This file
+└── PROJECT_SUMMARY.md   # Detailed methodology
 ```
 
 ## Setup Instructions

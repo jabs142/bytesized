@@ -5,7 +5,15 @@
 
 ## 📋 Project Overview
 
-An educational data science project that analyzes 537+ Reddit posts to discover hidden symptom patterns in birth control experiences using association rule mining. The project combines data collection, pattern mining, and interactive visualization to surface symptom co-occurrences that clinical trials might miss.
+An educational data science project that analyzes 537+ Reddit posts to discover hidden symptom patterns in birth control experiences. Following the **EDS symptom discovery methodology**, we use:
+
+1. **LLM-Based Extraction**: GPT-4 extracts side effects without predefined keywords (unbiased discovery)
+2. **PubMed Validation**: Cross-references each side effect with medical research
+3. **Evidence Tiering**: Classifies findings by evidence strength (FDA-listed → Research-backed → Patient-validated → Emerging)
+4. **Statistical Validation**: Rigorous analysis using Spearman correlation, chi-square tests, and Bonferroni correction
+5. **Pattern Mining**: Association rule mining to find symptom co-occurrences
+
+The project combines multi-source validation with interactive visualization to surface side effects that clinical trials might miss.
 
 **Live Demo**: http://localhost:8000 (when running locally)
 
@@ -34,14 +42,34 @@ Real-world experiences on Reddit reveal patterns that deserve investigation:
 - PII removal (usernames, emails, phone numbers)
 - Expandable keyword search (mental + physical symptoms)
 
-### 2. **Symptom Extraction**
-- NLP-based extraction of 40+ symptom types:
-  - Mental: depression, anxiety, mood swings, brain fog, panic attacks, etc.
-  - Physical: acne, weight gain, hair loss, yeast infections, vaginal dryness, etc.
-- Temporal context detection (long-term use, just started, post-pill)
-- Birth control type identification (COC pill, IUD, etc.)
+### 2. **LLM-Based Side Effect Extraction** ✨ NEW
+- Uses GPT-4 to extract ALL side effects without predefined keywords
+- Captures patient's exact wording and context
+- Discovers truly novel side effects that keyword-based approaches miss
+- Standardizes variations into canonical medical terms
+- Categorizes as mental vs physical
 
-### 3. **Pattern Mining**
+### 3. **PubMed Research Validation** ✨ NEW
+- Searches PubMed for each side effect + birth control using E-utilities API
+- Fetches paper details: title, abstract, authors, year, PMID, DOI
+- Extracts prevalence data from abstracts (e.g., "67% of patients...")
+- Identifies research gaps (high patient reports, low research coverage)
+
+### 4. **Evidence Tiering System** ✨ NEW
+- **Tier 1 🏆**: FDA-listed side effects (nausea, headache, mood changes, etc.)
+- **Tier 2 ✅**: Research-backed (3+ PubMed papers found)
+- **Tier 3 💬**: Patient-validated (50+ Reddit mentions, <3 papers)
+- **Tier 4 ⚠️**: Emerging patterns (needs more investigation)
+- **Surprise Score**: (Patient frequency) × (1 - Research coverage) to find hidden side effects
+
+### 5. **Statistical Validation** ✨ NEW
+- **Spearman Correlation**: Patient frequency vs research coverage
+- **Chi-Square Tests**: Distribution analysis and tier associations
+- **Bonferroni Correction**: Multiple testing correction to avoid false positives
+- **Confidence Intervals**: Quantify uncertainty in findings
+- Rigorous validation ensures patterns aren't due to random chance
+
+### 6. **Pattern Mining**
 - **Association Rule Mining** using Apriori algorithm
 - Metrics calculated:
   - **Support**: How many posts contain the pattern?

@@ -1,0 +1,2331 @@
+[
+  {
+    "side_effect": "dry skin",
+    "evidence_tier": 4,
+    "tier_label": "⚠️ Emerging Pattern",
+    "surprise_score": 0.023,
+    "reddit_data": {
+      "mention_count": 15,
+      "post_count": 14,
+      "frequency": 0.026,
+      "category": "physical",
+      "examples": [
+        "My skin feels dehydrated.",
+        "Hands have weirdly started to turn so sore and dry",
+        "My skin has been dryer than normal."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 1,
+      "papers": [
+        {
+          "pmid": "25918921",
+          "title": "Interventions for hirsutism (excluding laser and photoepilation therapy alone).",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25918921/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "severe emotional distress",
+    "evidence_tier": 4,
+    "tier_label": "⚠️ Emerging Pattern",
+    "surprise_score": 0.02,
+    "reddit_data": {
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "mental",
+      "examples": [
+        "I would be eaten alive at night by horrible thoughts and impulses to hurt myself and run away",
+        "it’s like I’m possessed",
+        "I genuinely turn into the most unhealed, triggered, neurotic, scared, anxious, angry person ever"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 0,
+      "papers": [],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "PMDD symptoms",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.019,
+    "reddit_data": {
+      "mention_count": 19,
+      "post_count": 17,
+      "frequency": 0.032,
+      "category": "mental",
+      "examples": [
+        "I’ve been having PMDD symptoms for a while now",
+        "I feel like people get put on this to help but it definitely doesn’t help me for that!",
+        "Is it normal for you to have the bad PMDD symptoms when your on your last week of the pill each month?"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 4,
+      "papers": [
+        {
+          "pmid": "39070312",
+          "title": "Navigating Unique Diagnostic and Therapeutic Challenges in Premenstrual Dysphoric Disorder: A Case Report.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39070312/"
+        },
+        {
+          "pmid": "29386943",
+          "title": "Contraceptive options for women with premenstrual dysphoric disorder: current insights and a narrative review.",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29386943/"
+        },
+        {
+          "pmid": "29386927",
+          "title": "Efficacy and safety of an oral contraceptive containing ethinylestradiol 20 µg/drospirenone 3 mg (24/4 regimen) in three indications in the People's Republic of China: a comparison with international studies.",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29386927/"
+        },
+        {
+          "pmid": "21374928",
+          "title": "[The efficiency of oral contraception containing drospirenone in treating symptoms of premenstrual syndrome or premenstrual dysphoric disorder in gyneacology practice].",
+          "year": "2010",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21374928/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "anxiety",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.015,
+    "reddit_data": {
+      "mention_count": 86,
+      "post_count": 79,
+      "frequency": 0.147,
+      "category": "mental",
+      "examples": [
+        "anxiety",
+        "it was causing me anxiety",
+        "I have diagnosed anxiety"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 9,
+      "papers": [
+        {
+          "pmid": "31882291",
+          "title": "Strategies to Mitigate Anxiety and Pain in Intrauterine Device Insertion: A Systematic Review.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31882291/"
+        },
+        {
+          "pmid": "33084550",
+          "title": "Oral contraceptive use and risk of suicidal behavior among young women.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33084550/"
+        },
+        {
+          "pmid": "34339927",
+          "title": "Reasons for rejecting hormonal contraception in Western countries: A systematic review.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34339927/"
+        },
+        {
+          "pmid": "32204714",
+          "title": "Adolescent polycystic ovary syndrome according to the international evidence-based guideline.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32204714/"
+        },
+        {
+          "pmid": "38389612",
+          "title": "Osteopathic Manipulative Treatment in Dysmenorrhea: A Systematic Review.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38389612/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "33199360",
+          "title": "Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app.",
+          "prevalence_mentions": [
+            {
+              "percentage": 90.6,
+              "context": "nstrual cycle symptoms were mood changes/anxiety (90.6%), tiredness/fatigue (86.2%), stomach cramps (84.2"
+            },
+            {
+              "percentage": 86.2,
+              "context": "mood changes/anxiety (90.6%), tiredness/fatigue (86.2%), stomach cramps (84.2%) and breast pain/tenderne"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "emotional distress",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.012,
+    "reddit_data": {
+      "mention_count": 36,
+      "post_count": 32,
+      "frequency": 0.06,
+      "category": "mental",
+      "examples": [
+        "the thought makes me want to sob",
+        "i become so physically pained by sadness that is so overwhelming and dark when i am at the end of my pill packet.",
+        "Just totally hopeless and numb."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 8,
+      "papers": [
+        {
+          "pmid": "28825905",
+          "title": "The Experience and Impact of Contraceptive Stockouts Among Women, Providers and Policymakers in Two Districts of Uganda.",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28825905/"
+        },
+        {
+          "pmid": "22473394",
+          "title": "Effect of an oral contraceptive on emotional distress, anxiety and depression of women with polycystic ovary syndrome: a prospective study.",
+          "year": "2012",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22473394/"
+        },
+        {
+          "pmid": "24157186",
+          "title": "[Premature ovarian failures].",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24157186/"
+        },
+        {
+          "pmid": "30064348",
+          "title": "Emotional distress and tobacco demand during the menstrual cycle in female smokers.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30064348/"
+        },
+        {
+          "pmid": "39410007",
+          "title": "Idiopathic Granulomatous Mastitis as a Benign Condition Mimicking Inflammatory Breast Cancer: Current Status, Knowledge Gaps and Rationale for the GRAMAREG Study (EUBREAST-15).",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39410007/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "emotional lability",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.011,
+    "reddit_data": {
+      "mention_count": 12,
+      "post_count": 12,
+      "frequency": 0.022,
+      "category": "mental",
+      "examples": [
+        "I HAVE BEEN CRYING FOR 2 WEEKS",
+        "I start feeling anxious af and cry",
+        "I cry at work - over nothing."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 5,
+      "papers": [
+        {
+          "pmid": "33186698",
+          "title": "Features of Menstruation and Menstruation Management in Individuals with Rett Syndrome.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33186698/"
+        },
+        {
+          "pmid": "28315609",
+          "title": "The levonorgestrel-releasing intrauterine device potentiates stress reactivity.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28315609/"
+        },
+        {
+          "pmid": "22169052",
+          "title": "Estradiol valerate/dienogest: a novel combined oral contraceptive.",
+          "year": "2012",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22169052/"
+        },
+        {
+          "pmid": "21669426",
+          "title": "Combined contraceptive ring versus combined oral contraceptive (30-μg ethinylestradiol and 3-mg drospirenone).",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21669426/"
+        },
+        {
+          "pmid": "23633314",
+          "title": "Skin patch and vaginal ring versus combined oral contraceptives for contraception.",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23633314/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "panic attacks",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.008,
+    "reddit_data": {
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "mental",
+      "examples": [
+        "I've been derailed by... panic attacks before",
+        "Over this past week, I have had a panic attack almost daily.",
+        "panic attacks and depression just isn’t settling"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 6,
+      "papers": [
+        {
+          "pmid": "33019938",
+          "title": "Desogestrel and Severe Psychiatric Disorders: A Retrospective Analysis of Federal Adverse Event Reporting System and EudraVigilance.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33019938/"
+        },
+        {
+          "pmid": "23702252",
+          "title": "Changes in neuroactive steroid secretion associated with CO2-induced panic attacks in normal individuals.",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23702252/"
+        },
+        {
+          "pmid": "25321421",
+          "title": "Stroke findings in the Women's Health Initiative.",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25321421/"
+        },
+        {
+          "pmid": "33005164",
+          "title": "Depressive Disorder With Panic Attacks After Replacement of an Intrauterine Device Containing Levonorgestrel: A Case Report.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33005164/"
+        },
+        {
+          "pmid": "29785475",
+          "title": "Cohort Study of Psychiatric Adverse Events Following Exposure to Levonorgestrel-Containing Intrauterine Devices in UK General Practice.",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29785475/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "cognitive dysfunction",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.007,
+    "reddit_data": {
+      "mention_count": 19,
+      "post_count": 18,
+      "frequency": 0.034,
+      "category": "mental",
+      "examples": [
+        "Brain fog is also an issue I’m dealing with",
+        "My ADHD symptoms (anxiety, depression, brain fog, disorganisation) have been through the roof since taking the mini-pill.",
+        "My ADHD symptoms (anxiety, depression, brain fog, disorganisation) have been through the roof since taking the mini-pill."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 8,
+      "papers": [
+        {
+          "pmid": "39579098",
+          "title": "Association of the number of pregnancies and births with cognitive performance in older postmenopausal women: a cross-sectional study.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39579098/"
+        },
+        {
+          "pmid": "24729909",
+          "title": "Metabotropic glutamate receptor 5 negative modulation in phase I clinical trial: potential impact of circadian rhythm on the neuropsychiatric adverse reactions-do hallucinations matter?",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24729909/"
+        },
+        {
+          "pmid": "21915741",
+          "title": "Competence to consent to sexual activity in bipolar disorder and schizophrenic spectrum disorders.",
+          "year": "2012",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21915741/"
+        },
+        {
+          "pmid": "39449566",
+          "title": "Much more than a biological phenomenon: A qualitative study of women's experiences of brain fog across their reproductive journey.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39449566/"
+        },
+        {
+          "pmid": "29255847",
+          "title": "Pharmacologic Interventions to Prevent Cognitive Decline, Mild Cognitive Impairment, and Clinical Alzheimer-Type Dementia: A Systematic Review.",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29255847/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "dysmenorrhea",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.004,
+    "reddit_data": {
+      "mention_count": 24,
+      "post_count": 23,
+      "frequency": 0.043,
+      "category": "physical",
+      "examples": [
+        "dysmenhorrea (extremely heavy and painful periods, running thru jumbo tampons every 2 hours, lasting 2-3 weeks sometimes)",
+        "I can't take the intense cramping and migraines associated with my periods anymore.",
+        "I had cramps so bad I’d passed out once."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 9,
+      "papers": [
+        {
+          "pmid": "40323608",
+          "title": "Endometriosis: A Review.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40323608/"
+        },
+        {
+          "pmid": "36260896",
+          "title": "Endometriosis: Evaluation and Treatment.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36260896/"
+        },
+        {
+          "pmid": "31538328",
+          "title": "Exercise for dysmenorrhoea.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31538328/"
+        },
+        {
+          "pmid": "32041388",
+          "title": "Dysmenorrhea, Endometriosis and Chronic Pelvic Pain in Adolescents.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32041388/"
+        },
+        {
+          "pmid": "32973688",
+          "title": "Hormonal Contraception and Bone Health in Adolescents.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32973688/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "29283683",
+          "title": "Period Prevalence and Perceived Side Effects of Hormonal Contraceptive Use and the Menstrual Cycle in Elite Athletes.",
+          "prevalence_mentions": [
+            {
+              "percentage": 68.1,
+              "context": "ined oral contraceptives were most commonly used (68.1%), with 30.0% using progestin-only contraceptives"
+            },
+            {
+              "percentage": 30.0,
+              "context": "traceptives were most commonly used (68.1%), with 30.0% using progestin-only contraceptives (implant = 13."
+            },
+            {
+              "percentage": 13.1,
+              "context": "0% using progestin-only contraceptives (implant = 13.1%, injection = 3.7%, and intrauterine system = 2.8%"
+            },
+            {
+              "percentage": 3.7,
+              "context": "only contraceptives (implant = 13.1%, injection = 3.7%, and intrauterine system = 2.8%). perceived negat"
+            }
+          ]
+        },
+        {
+          "pmid": "24284871",
+          "title": "The prevalence and risk factors of dysmenorrhea.",
+          "prevalence_mentions": [
+            {
+              "percentage": 16.0,
+              "context": "ia. the prevalence of dysmenorrhea varies between 16% and 91% in women of reproductive age, with severe"
+            },
+            {
+              "percentage": 91.0,
+              "context": "prevalence of dysmenorrhea varies between 16% and 91% in women of reproductive age, with severe pain in"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "nausea",
+    "evidence_tier": 1,
+    "tier_label": "🏆 FDA-Listed",
+    "surprise_score": 0.004,
+    "reddit_data": {
+      "mention_count": 20,
+      "post_count": 20,
+      "frequency": 0.037,
+      "category": "physical",
+      "examples": [
+        "I cannot and will not use a form of birth control that makes me nauseous or ill.",
+        "I know it'll likely cause nausea or vomiting",
+        "daily nausea"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 9,
+      "papers": [
+        {
+          "pmid": "37523477",
+          "title": "Combined oral contraceptive pill for primary dysmenorrhoea.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37523477/"
+        },
+        {
+          "pmid": "37365881",
+          "title": "Oral contraceptives containing drospirenone for premenstrual syndrome.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37365881/"
+        },
+        {
+          "pmid": "41025987",
+          "title": "Case 344.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41025987/"
+        },
+        {
+          "pmid": "39140906",
+          "title": "AGA Clinical Practice Update on Pregnancy-Related Gastrointestinal and Liver Disease: Expert Review.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39140906/"
+        },
+        {
+          "pmid": "39583420",
+          "title": "Comparison of Combined Oral Contraceptives and a Transdermal Estrogen Patch With Oral Progesterone: Treatment of Abnormal Uterine Bleeding in Adolescents.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39583420/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "37523477",
+          "title": "Combined oral contraceptive pill for primary dysmenorrhoea.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "moderate-quality evidence), and nausea (rr 1.64, 95% ci 1.17 to 2.30; i² = 39%; 8 rcts, 948 women; mode"
+            },
+            {
+              "percentage": 39.0,
+              "context": "), and nausea (rr 1.64, 95% ci 1.17 to 2.30; i² = 39%; 8 rcts, 948 women; moderate-quality evidence). w"
+            },
+            {
+              "percentage": 0.0,
+              "context": "n), headaches (rr 0.94, 95% ci 0.50 to 1.76; i² = 0%; 2 rcts, 435 women), or nausea (rr 1.08, 95% ci 0"
+            },
+            {
+              "percentage": 95.0,
+              "context": "i² = 0%; 2 rcts, 435 women), or nausea (rr 1.08, 95% ci 0.51 to 2.30; i² = 23%; 2 rcts, 435 women) (all"
+            },
+            {
+              "percentage": 23.0,
+              "context": "n), or nausea (rr 1.08, 95% ci 0.51 to 2.30; i² = 23%; 2 rcts, 435 women) (all very low-quality evidenc"
+            }
+          ]
+        },
+        {
+          "pmid": "39583420",
+          "title": "Comparison of Combined Oral Contraceptives and a Transdermal Estrogen Patch With Oral Progesterone: Treatment of Abnormal Uterine Bleeding in Adolescents.",
+          "prevalence_mentions": [
+            {
+              "percentage": 13.3,
+              "context": "(imb), three (20%) reported abdominal pain, two (13.3%) reported nausea-vomiting, and one (6.7%) reporte"
+            },
+            {
+              "percentage": 6.7,
+              "context": "n, two (13.3%) reported nausea-vomiting, and one (6.7%) reported headaches in group a, while eight (53.3"
+            },
+            {
+              "percentage": 13.3,
+              "context": "rted imb, six (40%) reported abdominal pain, two (13.3%) reported nausea-vomiting, and two (13.3%) report"
+            },
+            {
+              "percentage": 13.3,
+              "context": "n, two (13.3%) reported nausea-vomiting, and two (13.3%) reported headaches in group b. no major side eff"
+            }
+          ]
+        },
+        {
+          "pmid": "35283082",
+          "title": "Preliminary side effect profile, safety, and tolerability of hormonal contraception among women receiving opioid-agonist therapy.",
+          "prevalence_mentions": [
+            {
+              "percentage": 43.0,
+              "context": "cipants reporting hormonal contraceptive use, 29 (43%) initiated implants, 14 (21%) intrauterine device"
+            },
+            {
+              "percentage": 22.0,
+              "context": "followed by headaches (16, 24%), weight gain (15, 22%), and abdominal pain or nausea/vomiting (11, 16%)"
+            },
+            {
+              "percentage": 16.0,
+              "context": "22%), and abdominal pain or nausea/vomiting (11, 16%). no serious side effects were reported. twelve p"
+            },
+            {
+              "percentage": 19.0,
+              "context": "twelve participants (18%) changed methods and 13 (19%) discontinued all hormonal contraceptive use. the"
+            }
+          ]
+        },
+        {
+          "pmid": "28950854",
+          "title": "Hormonal contraceptive use and prevalence of premenstrual symptoms in a multiethnic Canadian population.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "al contraceptives was associated with a lower rr (95% ci) of experiencing moderate/severe: cramps (0.82,"
+            }
+          ]
+        },
+        {
+          "pmid": "32578781",
+          "title": "Emergency hormonal contraception in adolescence.",
+          "prevalence_mentions": [
+            {
+              "percentage": 60.5,
+              "context": "of those aged ≥15 years old could not answer, but 60.5% between 15-19 years old mentioned nausea and vomit"
+            },
+            {
+              "percentage": 41.2,
+              "context": "nausea and vomiting. a significant portion (17.6-41.2%) believes that ec causes abortion, cancer, infert"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "pain",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.003,
+    "reddit_data": {
+      "mention_count": 17,
+      "post_count": 16,
+      "frequency": 0.03,
+      "category": "physical",
+      "examples": [
+        "It’s painful and it feels like a bag stuffed my vagina",
+        "I had terrible pains since.",
+        "I've also started getting the pain 24 hours before the blood"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 9,
+      "papers": [
+        {
+          "pmid": "31538328",
+          "title": "Exercise for dysmenorrhoea.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31538328/"
+        },
+        {
+          "pmid": "29276652",
+          "title": "Endometriosis: Epidemiology, Diagnosis and Clinical Management.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29276652/"
+        },
+        {
+          "pmid": "32041388",
+          "title": "Dysmenorrhea, Endometriosis and Chronic Pelvic Pain in Adolescents.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32041388/"
+        },
+        {
+          "pmid": "30664383",
+          "title": "Hormonal contraception in women with endometriosis: a systematic review.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30664383/"
+        },
+        {
+          "pmid": "39159261",
+          "title": "Medical management of endometriosis.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39159261/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "24284871",
+          "title": "The prevalence and risk factors of dysmenorrhea.",
+          "prevalence_mentions": [
+            {
+              "percentage": 91.0,
+              "context": "prevalence of dysmenorrhea varies between 16% and 91% in women of reproductive age, with severe pain in"
+            },
+            {
+              "percentage": 2.0,
+              "context": "in women of reproductive age, with severe pain in 2%-29% of the women studied. women's age, parity, an"
+            },
+            {
+              "percentage": 29.0,
+              "context": "women of reproductive age, with severe pain in 2%-29% of the women studied. women's age, parity, and use of"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "acne",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 116,
+      "post_count": 76,
+      "frequency": 0.142,
+      "category": "physical",
+      "examples": [
+        "I still have little to no acne",
+        "I'm only taking bc to deal with acne",
+        "My acne is about the same as it’s always been, since starting the pill."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "38154809",
+          "title": "Managing acne vulgaris: an update.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38154809/"
+        },
+        {
+          "pmid": "32894455",
+          "title": "Hormonal Contraceptives and Dermatology.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32894455/"
+        },
+        {
+          "pmid": "35534402",
+          "title": "Premenstrual syndrome and premenstrual dysphoric disorder in adolescents.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35534402/"
+        },
+        {
+          "pmid": "33005125",
+          "title": "Male Contraception.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33005125/"
+        },
+        {
+          "pmid": "26897386",
+          "title": "Guidelines of care for the management of acne vulgaris.",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26897386/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "34962522",
+          "title": "Contraception Selection, Effectiveness, and Adverse Effects: A Review.",
+          "prevalence_mentions": [
+            {
+              "percentage": 4.0,
+              "context": "ancy rates of women using oral contraceptives are 4% to 7% per year. use of long-acting methods, such a"
+            },
+            {
+              "percentage": 7.0,
+              "context": "ates of women using oral contraceptives are 4% to 7% per year. use of long-acting methods, such as intr"
+            },
+            {
+              "percentage": 6.0,
+              "context": "ermal implants, has increased substantially, from 6% of all contraceptive users in 2008 to 17.8% in 2016;"
+            },
+            {
+              "percentage": 17.8,
+              "context": "ly, from 6% of all contraceptive users in 2008 to 17.8% in 2016; these methods have failure rates of less"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "depression",
+    "evidence_tier": 1,
+    "tier_label": "🏆 FDA-Listed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 54,
+      "post_count": 49,
+      "frequency": 0.091,
+      "category": "mental",
+      "examples": [
+        "I've been derailed by depression",
+        "I find that the pill makes my mental health symptoms worse, specifically anxiety and low moods",
+        "I have dealt with depression"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "32980990",
+          "title": "Hormonal Contraception and Depression: Updated Evidence and Implications in Clinical Practice.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32980990/"
+        },
+        {
+          "pmid": "35534402",
+          "title": "Premenstrual syndrome and premenstrual dysphoric disorder in adolescents.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35534402/"
+        },
+        {
+          "pmid": "34384631",
+          "title": "Migraine with aura.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34384631/"
+        },
+        {
+          "pmid": "35755988",
+          "title": "Hormonal contraception and mood disorders.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35755988/"
+        },
+        {
+          "pmid": "32224758",
+          "title": "Ischemic Stroke in Young Adults.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32224758/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "27680324",
+          "title": "Association of Hormonal Contraception With Depression.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "ers of a levonorgestrel intrauterine system, 1.4 (95% ci, 1.31-1.42). for depression diagnoses, similar"
+            },
+            {
+              "percentage": 95.0,
+              "context": "of combined oral contraceptives increased to 1.7 (95% ci, 1.66-1.71). use of hormonal contraception, esp"
+            }
+          ]
+        },
+        {
+          "pmid": "37303201",
+          "title": "Population-based cohort study of oral contraceptive use and risk of depression.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "of depression compared to never users (hr = 1.71, 95% confidence interval [ci]: 1.55-1.88). although the"
+            },
+            {
+              "percentage": 95.0,
+              "context": "increased lifetime risk of depression (hr = 1.05, 95% ci: 1.01-1.09). previous oc use were associated wi"
+            }
+          ]
+        },
+        {
+          "pmid": "35781795",
+          "title": "Estetrol/Drospirenone: A Review in Oral Contraception.",
+          "prevalence_mentions": [
+            {
+              "percentage": 18.0,
+              "context": "methods, and in these women using modern methods, 18% used an oral contraceptive. estetrol/drospirenone"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "fatigue",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 47,
+      "post_count": 37,
+      "frequency": 0.069,
+      "category": "physical",
+      "examples": [
+        "it was causing me low energy",
+        "Energy levels are not as consistent",
+        "I am tired for several days after a push day."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "31538328",
+          "title": "Exercise for dysmenorrhoea.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31538328/"
+        },
+        {
+          "pmid": "40323608",
+          "title": "Endometriosis: A Review.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40323608/"
+        },
+        {
+          "pmid": "39052822",
+          "title": "Influence of menstrual cycle and oral contraceptive phases on strength performance, neuromuscular fatigue, and perceived exertion.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39052822/"
+        },
+        {
+          "pmid": "40120659",
+          "title": "Effects of estetrol/drospirenone on self-reported physical and emotional premenstrual and menstrual symptoms: Data from the phase 3 clinical trial in the United States and Canada.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40120659/"
+        },
+        {
+          "pmid": "35534402",
+          "title": "Premenstrual syndrome and premenstrual dysphoric disorder in adolescents.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35534402/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "28950854",
+          "title": "Hormonal contraceptive use and prevalence of premenstrual symptoms in a multiethnic Canadian population.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "al contraceptives was associated with a lower rr (95% ci) of experiencing moderate/severe: cramps (0.82,"
+            }
+          ]
+        },
+        {
+          "pmid": "33199360",
+          "title": "Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app.",
+          "prevalence_mentions": [
+            {
+              "percentage": 90.6,
+              "context": "nstrual cycle symptoms were mood changes/anxiety (90.6%), tiredness/fatigue (86.2%), stomach cramps (84.2"
+            },
+            {
+              "percentage": 86.2,
+              "context": "mood changes/anxiety (90.6%), tiredness/fatigue (86.2%), stomach cramps (84.2%) and breast pain/tenderne"
+            },
+            {
+              "percentage": 84.2,
+              "context": "0.6%), tiredness/fatigue (86.2%), stomach cramps (84.2%) and breast pain/tenderness (83.1%). after contro"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "menorrhagia",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 31,
+      "post_count": 28,
+      "frequency": 0.052,
+      "category": "physical",
+      "examples": [
+        "I started bleeding about a week or two after starting the pill and I’ve been bleeding every day since.",
+        "My bleeding has gotten a little heavier",
+        "my periods are naturally very heavy"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "21237335",
+          "title": "Vaginal ring contraception.",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21237335/"
+        },
+        {
+          "pmid": "34000251",
+          "title": "Estetrol-drospirenone combination oral contraceptive: North American phase 3 efficacy and safety results.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34000251/"
+        },
+        {
+          "pmid": "24773233",
+          "title": "Contraception and hormonal management in the perimenopause.",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24773233/"
+        },
+        {
+          "pmid": "26254516",
+          "title": "The medical management of abnormal uterine bleeding in reproductive-aged women.",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26254516/"
+        },
+        {
+          "pmid": "38759709",
+          "title": "Association of levonorgestrel-releasing intrauterine device with gynecologic and breast cancers: a national cohort study in Sweden.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38759709/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "34000251",
+          "title": "Estetrol-drospirenone combination oral contraceptive: North American phase 3 efficacy and safety results.",
+          "prevalence_mentions": [
+            {
+              "percentage": 0.9,
+              "context": "early for an ae, most commonly for metrorrhagia (0.9%) and menorrhagia (0.8%). no thromboembolic events"
+            },
+            {
+              "percentage": 0.8,
+              "context": "commonly for metrorrhagia (0.9%) and menorrhagia (0.8%). no thromboembolic events occurred. e4/drsp is a"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "mood swings",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 26,
+      "post_count": 26,
+      "frequency": 0.048,
+      "category": "mental",
+      "examples": [
+        "I’ve spent the last few weeks in a storm of emotions",
+        "mood swings",
+        "the insane emotional mood swings"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "33718869",
+          "title": "Hormonal Contraceptive Use in Football Codes in Australia.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33718869/"
+        },
+        {
+          "pmid": "30177298",
+          "title": "Association between Vitamin D Status and Premenstrual Symptoms.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30177298/"
+        },
+        {
+          "pmid": "35534402",
+          "title": "Premenstrual syndrome and premenstrual dysphoric disorder in adolescents.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35534402/"
+        },
+        {
+          "pmid": "38904165",
+          "title": "Effects of E4/DRSP on self-reported physical and emotional premenstrual and menstrual symptoms: data from the phase 3 clinical trial in Europe and Russia.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38904165/"
+        },
+        {
+          "pmid": "36540914",
+          "title": "The menstrual cycle and football: The experiences of African women football players.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36540914/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "33718869",
+          "title": "Hormonal Contraceptive Use in Football Codes in Australia.",
+          "prevalence_mentions": [
+            {
+              "percentage": 50.0,
+              "context": "etes, hormonal contraceptive (hc) use is common (~50%), however, little is known about the prevalence a"
+            }
+          ]
+        },
+        {
+          "pmid": "36540914",
+          "title": "The menstrual cycle and football: The experiences of African women football players.",
+          "prevalence_mentions": [
+            {
+              "percentage": 90.0,
+              "context": "stress questionnaire. the main findings were that 90% of the players did not use contraceptives, . most of"
+            },
+            {
+              "percentage": 53.0,
+              "context": "ted symptoms during menses were abdominal cramps (53%), headache (41%), mood swings (41%) and irritabil"
+            },
+            {
+              "percentage": 41.0,
+              "context": "ing menses were abdominal cramps (53%), headache (41%), mood swings (41%) and irritability (47%). furth"
+            },
+            {
+              "percentage": 41.0,
+              "context": "ominal cramps (53%), headache (41%), mood swings (41%) and irritability (47%). further, players reporte"
+            },
+            {
+              "percentage": 47.0,
+              "context": "adache (41%), mood swings (41%) and irritability (47%). further, players reported irritability (48%), m"
+            },
+            {
+              "percentage": 48.0,
+              "context": "ty (47%). further, players reported irritability (48%), mood swings (52%), and breast tenderness (48%)"
+            },
+            {
+              "percentage": 52.0,
+              "context": "players reported irritability (48%), mood swings (52%), and breast tenderness (48%) in the week before"
+            },
+            {
+              "percentage": 48.0,
+              "context": "(48%), mood swings (52%), and breast tenderness (48%) in the week before their period. the low use of"
+            }
+          ]
+        },
+        {
+          "pmid": "26848851",
+          "title": "Non-hormonal and hormonal intrauterine contraception: survey of patients' perceptions in four Latin American countries.",
+          "prevalence_mentions": [
+            {
+              "percentage": 14.3,
+              "context": "d children. more women believed that weight gain (14.3% vs. 38.2%; p < 0.001), mood swings (14.1% vs. 38.7"
+            },
+            {
+              "percentage": 38.2,
+              "context": ". more women believed that weight gain (14.3% vs. 38.2%; p < 0.001), mood swings (14.1% vs. 38.7%; p < 0."
+            },
+            {
+              "percentage": 14.1,
+              "context": "t gain (14.3% vs. 38.2%; p < 0.001), mood swings (14.1% vs. 38.7%; p < 0.001) and infertility (16.3% vs. 1"
+            },
+            {
+              "percentage": 38.7,
+              "context": ".3% vs. 38.2%; p < 0.001), mood swings (14.1% vs. 38.7%; p < 0.001) and infertility (16.3% vs. 19.9%; p ="
+            }
+          ]
+        },
+        {
+          "pmid": "38482281",
+          "title": "Perception of women on safety and efficacy of contraceptives: A comparative study.",
+          "prevalence_mentions": [
+            {
+              "percentage": 60.9,
+              "context": "with regard to safety, oral contraceptive pills (60.9%) and condoms (51.8%) were unanimously perceived t"
+            },
+            {
+              "percentage": 51.8,
+              "context": "ty, oral contraceptive pills (60.9%) and condoms (51.8%) were unanimously perceived to be the most and le"
+            }
+          ]
+        },
+        {
+          "pmid": "25317952",
+          "title": "Effects of combined hormonal contraception on health and wellbeing: women's knowledge in northern Italy.",
+          "prevalence_mentions": [
+            {
+              "percentage": 51.0,
+              "context": "che (56%), weight gain (74%), increased appetite (51%), leg cramps (77%), mood swings (45%), vaginal dr"
+            },
+            {
+              "percentage": 77.0,
+              "context": "gain (74%), increased appetite (51%), leg cramps (77%), mood swings (45%), vaginal dryness (47%), and l"
+            },
+            {
+              "percentage": 45.0,
+              "context": "ed appetite (51%), leg cramps (77%), mood swings (45%), vaginal dryness (47%), and low sex drive (48%)."
+            },
+            {
+              "percentage": 47.0,
+              "context": "cramps (77%), mood swings (45%), vaginal dryness (47%), and low sex drive (48%). beliefs about diseases"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "weight gain",
+    "evidence_tier": 1,
+    "tier_label": "🏆 FDA-Listed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 27,
+      "post_count": 24,
+      "frequency": 0.045,
+      "category": "physical",
+      "examples": [
+        "I really don’t want to gain weight as I am already overweight.",
+        "I have a friend who got the implant and gained a ton of weight.",
+        "i’m kinda scared of the side effects, especially gaining weight"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "37523477",
+          "title": "Combined oral contraceptive pill for primary dysmenorrhoea.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37523477/"
+        },
+        {
+          "pmid": "27153743",
+          "title": "Progestin-only contraception and thromboembolism: A systematic review.",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27153743/"
+        },
+        {
+          "pmid": "38596755",
+          "title": "Body Appreciation and Discontinuing Contraceptive Use Due to Concern About Weight Gain: A Brief Report.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38596755/"
+        },
+        {
+          "pmid": "35934017",
+          "title": "Polycystic ovary syndrome.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35934017/"
+        },
+        {
+          "pmid": "33005125",
+          "title": "Male Contraception.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33005125/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "37523477",
+          "title": "Combined oral contraceptive pill for primary dysmenorrhoea.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "ain of the effect of ocp on weight gain (rr 1.83, 95% ci 0.75 to 4.45; 1 rct, 76 women; low-quality evid"
+            }
+          ]
+        },
+        {
+          "pmid": "39254585",
+          "title": "Clinical patterns and treatment outcomes of polycystic ovarian syndrome.",
+          "prevalence_mentions": [
+            {
+              "percentage": 43.88,
+              "context": "d mood (53.9%), acne (49.52%), abdominal obesity (43.88%), alopecia (38.12%), and weight gain (34.57%). th"
+            },
+            {
+              "percentage": 38.12,
+              "context": "e (49.52%), abdominal obesity (43.88%), alopecia (38.12%), and weight gain (34.57%). the most common risk"
+            },
+            {
+              "percentage": 34.57,
+              "context": "ity (43.88%), alopecia (38.12%), and weight gain (34.57%). the most common risk factors observed in patien"
+            },
+            {
+              "percentage": 82.11,
+              "context": "ients were treated with oral contraceptive pills (82.11%) or metformin (64.83%). the efficacy of treatment"
+            },
+            {
+              "percentage": 64.83,
+              "context": "h oral contraceptive pills (82.11%) or metformin (64.83%). the efficacy of treatment was observed as compl"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "insomnia",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 25,
+      "post_count": 24,
+      "frequency": 0.045,
+      "category": "mental",
+      "examples": [
+        "I get insomnia",
+        "No amount of sleep is enough.",
+        "no debilitating insomnia"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "30177298",
+          "title": "Association between Vitamin D Status and Premenstrual Symptoms.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30177298/"
+        },
+        {
+          "pmid": "31989746",
+          "title": "Hormonal contraceptive use and subjective sleep reports in women: An online survey.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31989746/"
+        },
+        {
+          "pmid": "37473716",
+          "title": "Hormonal contraception use and insomnia: A nested case-control study.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37473716/"
+        },
+        {
+          "pmid": "34425359",
+          "title": "Oral contraceptives, depressive and insomnia symptoms in adult women with and without depression.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34425359/"
+        },
+        {
+          "pmid": "39562730",
+          "title": "Associations between dairy and alcohol consumption and major depressive disorder in a mendelian randomization study.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39562730/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "28950854",
+          "title": "Hormonal contraceptive use and prevalence of premenstrual symptoms in a multiethnic Canadian population.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "al contraceptives was associated with a lower rr (95% ci) of experiencing moderate/severe: cramps (0.82,"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "premenstrual dysphoric disorder",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 23,
+      "post_count": 23,
+      "frequency": 0.043,
+      "category": "mental",
+      "examples": [
+        "I'm only taking bc to deal with acne and PMDD",
+        "yes, I had a full blown luteal PMDD day",
+        "my PMDD has become so severe"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "37389782",
+          "title": "The Prevalence of Menstrual Cycle Disorders and Menstrual Cycle-Related Symptoms in Female Athletes: A Systematic Literature Review.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37389782/"
+        },
+        {
+          "pmid": "37365881",
+          "title": "Oral contraceptives containing drospirenone for premenstrual syndrome.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37365881/"
+        },
+        {
+          "pmid": "28477648",
+          "title": "Premenstrual Dysphoric Disorder.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28477648/"
+        },
+        {
+          "pmid": "31078196",
+          "title": "Premenstrual Dysphoric Disorder.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31078196/"
+        },
+        {
+          "pmid": "32980990",
+          "title": "Hormonal Contraception and Depression: Updated Evidence and Implications in Clinical Practice.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32980990/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "34630323",
+          "title": "Pilot Data on the Feasibility And Clinical Outcomes of a Nomegestrol Acetate Oral Contraceptive Pill in Women With Premenstrual Dysphoric Disorder.",
+          "prevalence_mentions": [
+            {
+              "percentage": 5.0,
+              "context": "ric disorder (pmdd) is a severe form, affecting 2-5% of women. combined oral contraceptive pills (cocps) are us"
+            }
+          ]
+        },
+        {
+          "pmid": "34962522",
+          "title": "Contraception Selection, Effectiveness, and Adverse Effects: A Review.",
+          "prevalence_mentions": [
+            {
+              "percentage": 4.0,
+              "context": "ancy rates of women using oral contraceptives are 4% to 7% per year. use of long-acting methods, such a"
+            },
+            {
+              "percentage": 7.0,
+              "context": "ates of women using oral contraceptives are 4% to 7% per year. use of long-acting methods, such as intr"
+            },
+            {
+              "percentage": 6.0,
+              "context": "ermal implants, has increased substantially, from 6% of all contraceptive users in 2008 to 17.8% in 2016;"
+            },
+            {
+              "percentage": 17.8,
+              "context": "ly, from 6% of all contraceptive users in 2008 to 17.8% in 2016; these methods have failure rates of less"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "suicidal ideation",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 25,
+      "post_count": 23,
+      "frequency": 0.043,
+      "category": "mental",
+      "examples": [
+        "it can literally make many of us want to d!e every month",
+        "The extreme mood swings, suicidality, and anger are awful",
+        "my SI and SH both started when I was 13."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "37173519",
+          "title": "Examining the relationship between risky sexual behavior and suicidal thoughts among unmarried adolescents in India.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37173519/"
+        },
+        {
+          "pmid": "37899915",
+          "title": "Factors Influencing Suicidal Ideation in Korean Female Adolescents with Sexual Intercourse Experience.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37899915/"
+        },
+        {
+          "pmid": "33084550",
+          "title": "Oral contraceptive use and risk of suicidal behavior among young women.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33084550/"
+        },
+        {
+          "pmid": "30219691",
+          "title": "Association of oral contraceptive use with suicidal behavior among representative Korean population: Results from Korea National Health and Nutrition Examination Survey (2007-2016).",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30219691/"
+        },
+        {
+          "pmid": "23823885",
+          "title": "Sexual health of adolescents in Quebec residential Youth Protection Centres.",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23823885/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "37173519",
+          "title": "Examining the relationship between risky sexual behavior and suicidal thoughts among unmarried adolescents in India.",
+          "prevalence_mentions": [
+            {
+              "percentage": 1.54,
+              "context": "ng adolescent girls, the estimates decreased from 1.54% at wave 1 to 1.51% at wave 2. contraceptive use in"
+            },
+            {
+              "percentage": 1.51,
+              "context": ", the estimates decreased from 1.54% at wave 1 to 1.51% at wave 2. contraceptive use increased over time a"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "depressive symptoms",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 19,
+      "post_count": 18,
+      "frequency": 0.034,
+      "category": "mental",
+      "examples": [
+        "I am having some more periods of depression than I usually do this time of year.",
+        "the pill making me feel anxious, sad, and empty around my boyfriend",
+        "I've been sad a bit every now and then"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "40601246",
+          "title": "Use of systemic hormonal contraception and risk of depression: a registry-based study from Finland.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40601246/"
+        },
+        {
+          "pmid": "37967755",
+          "title": "Symptoms of mental disorders and oral contraception use: A systematic review and meta-analysis.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37967755/"
+        },
+        {
+          "pmid": "26834444",
+          "title": "Depressive Symptoms and Violence Exposure: Contributors to Repeat Pregnancies Among Adolescents.",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26834444/"
+        },
+        {
+          "pmid": "32980990",
+          "title": "Hormonal Contraception and Depression: Updated Evidence and Implications in Clinical Practice.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32980990/"
+        },
+        {
+          "pmid": "34099098",
+          "title": "Hormonal contraceptive use and depressive symptoms: systematic review and network meta-analysis of randomised trials.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34099098/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "38583583",
+          "title": "Association of perinatal depression and postpartum contraception intent, choice, and actual use.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "effectiveness contraceptive methods (aor = 0.28, 95% ci = 0.11-0.70) compared to those without. among p"
+            },
+            {
+              "percentage": 21.1,
+              "context": "participants with persistent depressive symptoms, 21.1% reported using a contraception method of lower eff"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "anger",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 18,
+      "post_count": 18,
+      "frequency": 0.034,
+      "category": "mental",
+      "examples": [
+        "the validation and the fucking RELIEF of hearing that… but also the rage that I had to spiral, guess, and research my way to that conclusion alone.",
+        "the rage, depression, apathy came back with a vengeance",
+        "rage"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "38269384",
+          "title": "U.S. college students' perspectives on contraception and abortion post-",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38269384/"
+        },
+        {
+          "pmid": "35368304",
+          "title": "Oral Contraceptives Modulate the Relationship Between Resting Brain Activity, Amygdala Connectivity and Emotion Recognition - A Resting State fMRI Study.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35368304/"
+        },
+        {
+          "pmid": "39668866",
+          "title": "Development and validation of the premenstrual dysphoric disorder scale in Indian females.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39668866/"
+        },
+        {
+          "pmid": "35895486",
+          "title": "[Premenstrual syndrome and premenstrual dysphoric disorder].",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35895486/"
+        },
+        {
+          "pmid": "27854559",
+          "title": "The Influence of Cyclic Hormonal Contraception on Expression of Premenstrual Syndrome.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27854559/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "36118149",
+          "title": "The experiences of endometriosis patients with diagnosis and treatment in New Zealand.",
+          "prevalence_mentions": [
+            {
+              "percentage": 86.0,
+              "context": "ceiving a diagnosis of endometriosis were relief (86%), feeling overwhelmed (54%), and anger (32%). the"
+            },
+            {
+              "percentage": 54.0,
+              "context": "metriosis were relief (86%), feeling overwhelmed (54%), and anger (32%). the main treatments offered to"
+            },
+            {
+              "percentage": 32.0,
+              "context": "lief (86%), feeling overwhelmed (54%), and anger (32%). the main treatments offered to this cohort were"
+            },
+            {
+              "percentage": 84.0,
+              "context": "ort were pain relief (96%), laparoscopic surgery (84%) and the combined oral contraceptive pill (80%)."
+            },
+            {
+              "percentage": 80.0,
+              "context": "y (84%) and the combined oral contraceptive pill (80%). of these three treatments, only laparoscopic su"
+            },
+            {
+              "percentage": 25.0,
+              "context": "nt, compared to 46% of users for pain relief, and 25% of users for the combined oral contraceptive pill. gatheri"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "irritability",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 15,
+      "post_count": 15,
+      "frequency": 0.028,
+      "category": "mental",
+      "examples": [
+        "i’m so irritable",
+        "Moods have also turned from bad on my hell weeks to feeling grumpy and irritated all month.",
+        "I’ve been suffering from PMDD for a long time."
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "32651034",
+          "title": "Menstrual Migraine Among Spanish University Students.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32651034/"
+        },
+        {
+          "pmid": "40120659",
+          "title": "Effects of estetrol/drospirenone on self-reported physical and emotional premenstrual and menstrual symptoms: Data from the phase 3 clinical trial in the United States and Canada.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40120659/"
+        },
+        {
+          "pmid": "35534402",
+          "title": "Premenstrual syndrome and premenstrual dysphoric disorder in adolescents.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35534402/"
+        },
+        {
+          "pmid": "40643903",
+          "title": "Onset and recovery from depressive mood changes on progestin treatment - a case series reporting the course and type of depressive symptoms in progestin users with different histories and risks.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40643903/"
+        },
+        {
+          "pmid": "38904165",
+          "title": "Effects of E4/DRSP on self-reported physical and emotional premenstrual and menstrual symptoms: data from the phase 3 clinical trial in Europe and Russia.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38904165/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "32651034",
+          "title": "Menstrual Migraine Among Spanish University Students.",
+          "prevalence_mentions": [
+            {
+              "percentage": 6.28,
+              "context": "ossible risk factors: dysmenorrhea (or 9.19; 1.62-6.28% ci), use of hormonal contraceptive methods (or 2.6"
+            },
+            {
+              "percentage": 95.0,
+              "context": ", use of hormonal contraceptive methods (or 2.60; 95% ci 1.30-5.20), menstrual irritability (or 2.34; 95"
+            },
+            {
+              "percentage": 95.0,
+              "context": "% ci 1.30-5.20), menstrual irritability (or 2.34; 95% ci 1.25-4.40), menstrual dizziness (or 2.05; 95% c"
+            }
+          ]
+        },
+        {
+          "pmid": "36540914",
+          "title": "The menstrual cycle and football: The experiences of African women football players.",
+          "prevalence_mentions": [
+            {
+              "percentage": 90.0,
+              "context": "stress questionnaire. the main findings were that 90% of the players did not use contraceptives, . most of"
+            },
+            {
+              "percentage": 41.0,
+              "context": "ing menses were abdominal cramps (53%), headache (41%), mood swings (41%) and irritability (47%). furth"
+            },
+            {
+              "percentage": 41.0,
+              "context": "ominal cramps (53%), headache (41%), mood swings (41%) and irritability (47%). further, players reporte"
+            },
+            {
+              "percentage": 47.0,
+              "context": "adache (41%), mood swings (41%) and irritability (47%). further, players reported irritability (48%), m"
+            },
+            {
+              "percentage": 48.0,
+              "context": "ty (47%). further, players reported irritability (48%), mood swings (52%), and breast tenderness (48%)"
+            },
+            {
+              "percentage": 52.0,
+              "context": "players reported irritability (48%), mood swings (52%), and breast tenderness (48%) in the week before"
+            }
+          ]
+        },
+        {
+          "pmid": "27923181",
+          "title": "Combined oral contraceptive use is associated with both improvement and worsening of mood in the different phases of the treatment cycle-A double-blind, placebo-controlled randomized trial.",
+          "prevalence_mentions": [
+            {
+              "percentage": 10.0,
+              "context": "unintended conception increases. approximately 4-10% of coc users complain of depressed mood, irritability"
+            },
+            {
+              "percentage": 95.0,
+              "context": "lly significant, increases in mean anxiety (0.22; 95% ci: 0.07-0.37, p=0.003), irritability (0.23; 95% c"
+            },
+            {
+              "percentage": 95.0,
+              "context": "95% ci: 0.07-0.37, p=0.003), irritability (0.23; 95% ci: 0.07-0.38, p=0.012), and mood swings scores (0"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "hypoactive sexual desire",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 14,
+      "post_count": 14,
+      "frequency": 0.026,
+      "category": "both",
+      "examples": [
+        "loss of attraction to fiance",
+        "it was causing me zero libido",
+        "my libido is low"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "31204297",
+          "title": "Lumping, Splitting, and Treating: Therapies Are Needed for Women With Overlapping Sexual Dysfunctions.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31204297/"
+        },
+        {
+          "pmid": "39928407",
+          "title": "State of the art in menopause: current best practice approaches from the IMS World Congress 2024, Melbourne.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39928407/"
+        },
+        {
+          "pmid": "35230162",
+          "title": "Prespecified and Integrated Subgroup Analyses from the RECONNECT Phase 3 Studies of Bremelanotide.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35230162/"
+        },
+        {
+          "pmid": "34876374",
+          "title": "Sexuality, pelvic floor/vaginal health and contraception at menopause.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34876374/"
+        },
+        {
+          "pmid": "27916205",
+          "title": "Efficacy and safety of transdermal testosterone in postmenopausal women with hypoactive sexual desire disorder: a systematic review and meta-analysis.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27916205/"
+        }
+      ],
+      "prevalence_findings": []
+    }
+  },
+  {
+    "side_effect": "mood changes",
+    "evidence_tier": 1,
+    "tier_label": "🏆 FDA-Listed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 13,
+      "post_count": 13,
+      "frequency": 0.024,
+      "category": "mental",
+      "examples": [
+        "all i’m worried about besides this whole vaping thing is the pill making me super moody.",
+        "The pill changed me as a person. Like, no joke, when I came off it, it was like a veil had been lifted.",
+        "I feel like I can be so moody all of the time"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "39672361",
+          "title": "Mood lability and depression limit oral contraceptive therapy in endometriosis.",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39672361/"
+        },
+        {
+          "pmid": "32980990",
+          "title": "Hormonal Contraception and Depression: Updated Evidence and Implications in Clinical Practice.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32980990/"
+        },
+        {
+          "pmid": "33005125",
+          "title": "Male Contraception.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33005125/"
+        },
+        {
+          "pmid": "35755988",
+          "title": "Hormonal contraception and mood disorders.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35755988/"
+        },
+        {
+          "pmid": "36647102",
+          "title": "Psychological side effects of hormonal contraception: a disconnect between patients and providers.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36647102/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "36647102",
+          "title": "Psychological side effects of hormonal contraception: a disconnect between patients and providers.",
+          "prevalence_mentions": [
+            {
+              "percentage": 43.6,
+              "context": "2. of the 188 responses included in the analysis, 43.6% reported experiencing mood changes as a side effec"
+            },
+            {
+              "percentage": 61.2,
+              "context": "report mood changes as a side effect of their hc (61.2%) compared to participants with no history of psyc"
+            }
+          ]
+        },
+        {
+          "pmid": "33199360",
+          "title": "Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app.",
+          "prevalence_mentions": [
+            {
+              "percentage": 90.6,
+              "context": "nstrual cycle symptoms were mood changes/anxiety (90.6%), tiredness/fatigue (86.2%), stomach cramps (84.2"
+            },
+            {
+              "percentage": 86.2,
+              "context": "mood changes/anxiety (90.6%), tiredness/fatigue (86.2%), stomach cramps (84.2%) and breast pain/tenderne"
+            }
+          ]
+        },
+        {
+          "pmid": "38351571",
+          "title": "Contraceptive uptake and compliance after structured contraceptive counseling - secondary outcomes of the LOWE trial.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "reversible contraceptive (sarc) method (aor 0.66, 95% ci: 0.46-0.93) compared to the control group. wome"
+            },
+            {
+              "percentage": 63.7,
+              "context": "hs did not differ between study groups (63.9% vs. 63.7%). the most common reasons for contraceptive disco"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "decreased libido",
+    "evidence_tier": 1,
+    "tier_label": "🏆 FDA-Listed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 12,
+      "post_count": 12,
+      "frequency": 0.022,
+      "category": "both",
+      "examples": [
+        "i’ve heard that it can lower your libido",
+        "I feel like my libido is almost nonexistent",
+        "I did always have a slight sex drive lowering but nothing terrible"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "29496473",
+          "title": "Etonogestrel implant use in women primarily choosing a combined oral contraceptive pill: A proof-of-concept trial.",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29496473/"
+        },
+        {
+          "pmid": "38640590",
+          "title": "Longitudinal changes in sexual desire and attraction among women who started using the Natural Cycles app.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38640590/"
+        },
+        {
+          "pmid": "32388766",
+          "title": "Utilization pattern and side effect profile of oral anticonceptives: A community-based cross-sectional study among Saudi women.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32388766/"
+        },
+        {
+          "pmid": "27832260",
+          "title": "Vaginal Testosterone Cream vs Estradiol Vaginal Ring for Vaginal Dryness or Decreased Libido in Women Receiving Aromatase Inhibitors for Early-Stage Breast Cancer: A Randomized Clinical Trial.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27832260/"
+        },
+        {
+          "pmid": "31754066",
+          "title": "Assessing safety in hormonal male contraception: a critical appraisal of adverse events reported in a male contraceptive trial.",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31754066/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "32388766",
+          "title": "Utilization pattern and side effect profile of oral anticonceptives: A community-based cross-sectional study among Saudi women.",
+          "prevalence_mentions": [
+            {
+              "percentage": 49.2,
+              "context": "nticonceptives for birth control. in nearly half (49.2%) of participants, oral pills were advised by a gy"
+            },
+            {
+              "percentage": 42.2,
+              "context": "swings (61.1%), weight gain or increase appetite (42.2%), decreased libido (34.1%), and nausea (31.2%) we"
+            },
+            {
+              "percentage": 34.1,
+              "context": "n or increase appetite (42.2%), decreased libido (34.1%), and nausea (31.2%) were most common. saudi wome"
+            },
+            {
+              "percentage": 31.2,
+              "context": "te (42.2%), decreased libido (34.1%), and nausea (31.2%) were most common. saudi women had a high accepta"
+            }
+          ]
+        },
+        {
+          "pmid": "38323032",
+          "title": "Early removal of the etonogestrel contraceptive implant in Spanish women: a prospective cohort study.",
+          "prevalence_mentions": [
+            {
+              "percentage": 58.8,
+              "context": "on of sexual intercourse (58.8%), worsening mood (58.8%), weight gain (55.9%) or decreased libido (50.0%)"
+            },
+            {
+              "percentage": 55.9,
+              "context": "rse (58.8%), worsening mood (58.8%), weight gain (55.9%) or decreased libido (50.0%). the rate of discont"
+            },
+            {
+              "percentage": 50.0,
+              "context": "(58.8%), weight gain (55.9%) or decreased libido (50.0%). the rate of discontinuous implant uses in the f"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "migraine",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "examples": [
+        "I can't take the intense cramping and migraines associated with my periods anymore.",
+        "Yaz unfortunately gives me major migraines during my periods.",
+        "I have dealt with migraines"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "28994639",
+          "title": "Migraine, menopause and hormone replacement therapy.",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28994639/"
+        },
+        {
+          "pmid": "27910087",
+          "title": "Menstrual Migraine and Treatment Options: Review.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27910087/"
+        },
+        {
+          "pmid": "38426312",
+          "title": "Health benefits of combined oral contraceptives - a narrative review.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38426312/"
+        },
+        {
+          "pmid": "35456034",
+          "title": "Role of Estrogens in Menstrual Migraine.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35456034/"
+        },
+        {
+          "pmid": "34384631",
+          "title": "Migraine with aura.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34384631/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "27910087",
+          "title": "Menstrual Migraine and Treatment Options: Review.",
+          "prevalence_mentions": [
+            {
+              "percentage": 1.0,
+              "context": "r only with menstruation and have a prevalence of 1%. menstrually related migraine has a prevalence of"
+            },
+            {
+              "percentage": 7.0,
+              "context": "enstrually related migraine has a prevalence of 6-7%, and occurs both during menstruation as well as d"
+            }
+          ]
+        },
+        {
+          "pmid": "35456034",
+          "title": "Role of Estrogens in Menstrual Migraine.",
+          "prevalence_mentions": [
+            {
+              "percentage": 25.0,
+              "context": "y migraine disease. in the general population, 18-25% of female migraineurs display a menstrual association"
+            }
+          ]
+        },
+        {
+          "pmid": "34384631",
+          "title": "Migraine with aura.",
+          "prevalence_mentions": [
+            {
+              "percentage": 15.0,
+              "context": "around 15% to one-third of migraineurs experience aura. aura"
+            }
+          ]
+        },
+        {
+          "pmid": "29175843",
+          "title": "Diagnosing migraine.",
+          "prevalence_mentions": [
+            {
+              "percentage": 70.0,
+              "context": "most prevalent type of migraine, affecting up to 70% of people with migraine, while the remainder experien"
+            }
+          ]
+        },
+        {
+          "pmid": "35781795",
+          "title": "Estetrol/Drospirenone: A Review in Oral Contraception.",
+          "prevalence_mentions": [
+            {
+              "percentage": 18.0,
+              "context": "methods, and in these women using modern methods, 18% used an oral contraceptive. estetrol/drospirenone"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "spotting",
+    "evidence_tier": 1,
+    "tier_label": "🏆 FDA-Listed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "examples": [
+        "Other possible side effects don't bother me nearly as much (ex. spotting, cramps, weight changes etc.)",
+        "i’m also having some spotting which idk if it’s from that!",
+        "i can't stop spotting on the pill"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "34245666",
+          "title": "Estetrol-Drospirenone combination oral contraceptive: a clinical study of contraceptive efficacy, bleeding pattern and safety in Europe and Russia.",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34245666/"
+        },
+        {
+          "pmid": "29042818",
+          "title": "Cycle control with an extended-regimen oral contraceptive combining levonorgestrel and ethinyl estradiol that includes continuous low-dose ethinyl estradiol instead of the traditional hormone-free interval.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29042818/"
+        },
+        {
+          "pmid": "36357930",
+          "title": "Coronavirus Disease 2019 (COVID-19)-Related Stress and Menstrual Changes.",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36357930/"
+        },
+        {
+          "pmid": "34000251",
+          "title": "Estetrol-drospirenone combination oral contraceptive: North American phase 3 efficacy and safety results.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34000251/"
+        },
+        {
+          "pmid": "26499407",
+          "title": "Efficacy and safety of a 21/7-active combined oral contraceptive with continuous low-dose ethinyl estradiol.",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26499407/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "34245666",
+          "title": "Estetrol-Drospirenone combination oral contraceptive: a clinical study of contraceptive efficacy, bleeding pattern and safety in Europe and Russia.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "failure pi was 0.29 pregnancies/100 woman-years (95% ci 0.06-0.83). scheduled bleeding/spotting occurre"
+            },
+            {
+              "percentage": 94.4,
+              "context": "83). scheduled bleeding/spotting occurred in 91.9-94.4% of women over cycles 1 to 12 and lasted a median of 4-5 da"
+            },
+            {
+              "percentage": 23.5,
+              "context": "heduled bleeding/spotting episodes decreased from 23.5% in cycle 1 to <16% from cycle 6 onwards. the most"
+            }
+          ]
+        },
+        {
+          "pmid": "36357930",
+          "title": "Coronavirus Disease 2019 (COVID-19)-Related Stress and Menstrual Changes.",
+          "prevalence_mentions": [
+            {
+              "percentage": 95.0,
+              "context": "aor] 2.32; 95% ci 1.12-4.85), duration (aor 2.38; 95% ci 1.14-4.98), and spotting (aor 2.32; 95% ci 1.03"
+            },
+            {
+              "percentage": 95.0,
+              "context": "2.38; 95% ci 1.14-4.98), and spotting (aor 2.32; 95% ci 1.03-5.22). our data also demonstrated a nonsig"
+            }
+          ]
+        },
+        {
+          "pmid": "38395193",
+          "title": "Use of the Drospirenone-Only Contraceptive Pill in Adolescents with Endometriosis.",
+          "prevalence_mentions": [
+            {
+              "percentage": 52.0,
+              "context": "ogen-containing therapy. of those with follow-up, 52% established an absence of bleeding/spotting, and 6"
+            },
+            {
+              "percentage": 67.0,
+              "context": "established an absence of bleeding/spotting, and 67% reported less pain at follow-up. one in 4 patients"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "breakthrough bleeding",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "examples": [
+        "Maybe an occasional break through bleed but nothing else.",
+        "sometimes I still get breakthrough bleeding",
+        "the last 3-4 years have been having breakthrough bleeding midway through the second active pill week"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "21204827",
+          "title": "Carbamazepine coadministration with an oral contraceptive: effects on steroid pharmacokinetics, ovulation, and bleeding.",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21204827/"
+        },
+        {
+          "pmid": "39551952",
+          "title": "Development of breakthrough bleeding model of combined-oral contraceptives utilizing model-based meta-analysis.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39551952/"
+        },
+        {
+          "pmid": "33685375",
+          "title": "Women's perspectives on relationship dynamics with their partners and their role in HIV acquisition, HIV disclosure, hormonal contraceptive uptake, and condom use.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33685375/"
+        },
+        {
+          "pmid": "21814535",
+          "title": "Hormonal contraception--what kind, when, and for whom?",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21814535/"
+        },
+        {
+          "pmid": "24512385",
+          "title": "Interaction between brivaracetam (100 mg/day) and a combination oral contraceptive: a randomized, double-blind, placebo-controlled study.",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24512385/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "39154925",
+          "title": "Paracentral Acute Middle Maculopathy and Risk of Cardiovascular Disease, Stroke, and Death: A Longitudinal Study.",
+          "prevalence_mentions": [
+            {
+              "percentage": 41.6,
+              "context": "included six (50%) sickle cell disease and five (41.6%) others, including breakthrough bleeding in pregn"
+            },
+            {
+              "percentage": 44.4,
+              "context": "= 12) one (9%) had a vascular disorder, and four (44.4%) oral contraceptive use. in the older group of 20"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "side_effect": "menstrual irregularities",
+    "evidence_tier": 2,
+    "tier_label": "✅ Research-Backed",
+    "surprise_score": 0.0,
+    "reddit_data": {
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "examples": [
+        "Crazy random or heavy periods?",
+        "Her period naturally varies a lot and can last for up to 2 weeks sometimes.",
+        "my heavy, painful, and irregular periods"
+      ]
+    },
+    "pubmed_data": {
+      "paper_count": 10,
+      "papers": [
+        {
+          "pmid": "33481414",
+          "title": "Menstrual Dysfunction in PCOS.",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33481414/"
+        },
+        {
+          "pmid": "39215933",
+          "title": "The Association Between Menstrual Cycle Phase, Menstrual Irregularities, Contraceptive Use and Musculoskeletal Injury Among Female Athletes: A Scoping Review.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39215933/"
+        },
+        {
+          "pmid": "38184367",
+          "title": "Occupational physical demands and menstrual cycle irregularities in flight attendants and teachers.",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38184367/"
+        },
+        {
+          "pmid": "29156452",
+          "title": "An International Consortium Update: Pathophysiology, Diagnosis, and Treatment of Polycystic Ovarian Syndrome in Adolescence.",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29156452/"
+        },
+        {
+          "pmid": "31268952",
+          "title": "Polycystic ovary syndrome: An update.",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31268952/"
+        }
+      ],
+      "prevalence_findings": [
+        {
+          "pmid": "21391160",
+          "title": "Menstrual and oral contraceptive use patterns among deployed military women by race and ethnicity.",
+          "prevalence_mentions": [
+            {
+              "percentage": 50.0,
+              "context": ".0001) dysmenorrhea sought health care. less than 50% of women took oral contraceptive, and less than half of th"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

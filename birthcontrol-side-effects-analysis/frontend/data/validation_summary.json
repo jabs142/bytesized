@@ -1,0 +1,520 @@
+{
+  "top_side_effects": [
+    {
+      "side_effect": "dry skin",
+      "tier_label": "⚠️ Emerging Pattern",
+      "evidence_tier": 4,
+      "surprise_score": 0.023,
+      "mention_count": 15,
+      "post_count": 14,
+      "frequency": 0.026,
+      "category": "physical",
+      "paper_count": 1,
+      "examples": [
+        "My skin feels dehydrated.",
+        "Hands have weirdly started to turn so sore and dry",
+        "My skin has been dryer than normal."
+      ]
+    },
+    {
+      "side_effect": "severe emotional distress",
+      "tier_label": "⚠️ Emerging Pattern",
+      "evidence_tier": 4,
+      "surprise_score": 0.02,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "mental",
+      "paper_count": 0,
+      "examples": [
+        "I would be eaten alive at night by horrible thoughts and impulses to hurt myself and run away",
+        "it’s like I’m possessed",
+        "I genuinely turn into the most unhealed, triggered, neurotic, scared, anxious, angry person ever"
+      ]
+    },
+    {
+      "side_effect": "PMDD symptoms",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.019,
+      "mention_count": 19,
+      "post_count": 17,
+      "frequency": 0.032,
+      "category": "mental",
+      "paper_count": 4,
+      "examples": [
+        "I’ve been having PMDD symptoms for a while now",
+        "I feel like people get put on this to help but it definitely doesn’t help me for that!",
+        "Is it normal for you to have the bad PMDD symptoms when your on your last week of the pill each month?"
+      ]
+    },
+    {
+      "side_effect": "anxiety",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.015,
+      "mention_count": 86,
+      "post_count": 79,
+      "frequency": 0.147,
+      "category": "mental",
+      "paper_count": 9,
+      "examples": [
+        "anxiety",
+        "it was causing me anxiety",
+        "I have diagnosed anxiety"
+      ]
+    },
+    {
+      "side_effect": "emotional distress",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.012,
+      "mention_count": 36,
+      "post_count": 32,
+      "frequency": 0.06,
+      "category": "mental",
+      "paper_count": 8,
+      "examples": [
+        "the thought makes me want to sob",
+        "i become so physically pained by sadness that is so overwhelming and dark when i am at the end of my pill packet.",
+        "Just totally hopeless and numb."
+      ]
+    },
+    {
+      "side_effect": "emotional lability",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.011,
+      "mention_count": 12,
+      "post_count": 12,
+      "frequency": 0.022,
+      "category": "mental",
+      "paper_count": 5,
+      "examples": [
+        "I HAVE BEEN CRYING FOR 2 WEEKS",
+        "I start feeling anxious af and cry",
+        "I cry at work - over nothing."
+      ]
+    },
+    {
+      "side_effect": "panic attacks",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.008,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "mental",
+      "paper_count": 6,
+      "examples": [
+        "I've been derailed by... panic attacks before",
+        "Over this past week, I have had a panic attack almost daily.",
+        "panic attacks and depression just isn’t settling"
+      ]
+    },
+    {
+      "side_effect": "cognitive dysfunction",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.007,
+      "mention_count": 19,
+      "post_count": 18,
+      "frequency": 0.034,
+      "category": "mental",
+      "paper_count": 8,
+      "examples": [
+        "Brain fog is also an issue I’m dealing with",
+        "My ADHD symptoms (anxiety, depression, brain fog, disorganisation) have been through the roof since taking the mini-pill.",
+        "My ADHD symptoms (anxiety, depression, brain fog, disorganisation) have been through the roof since taking the mini-pill."
+      ]
+    },
+    {
+      "side_effect": "dysmenorrhea",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.004,
+      "mention_count": 24,
+      "post_count": 23,
+      "frequency": 0.043,
+      "category": "physical",
+      "paper_count": 9,
+      "examples": [
+        "dysmenhorrea (extremely heavy and painful periods, running thru jumbo tampons every 2 hours, lasting 2-3 weeks sometimes)",
+        "I can't take the intense cramping and migraines associated with my periods anymore.",
+        "I had cramps so bad I’d passed out once."
+      ]
+    },
+    {
+      "side_effect": "nausea",
+      "tier_label": "🏆 FDA-Listed",
+      "evidence_tier": 1,
+      "surprise_score": 0.004,
+      "mention_count": 20,
+      "post_count": 20,
+      "frequency": 0.037,
+      "category": "physical",
+      "paper_count": 9,
+      "examples": [
+        "I cannot and will not use a form of birth control that makes me nauseous or ill.",
+        "I know it'll likely cause nausea or vomiting",
+        "daily nausea"
+      ]
+    },
+    {
+      "side_effect": "pain",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.003,
+      "mention_count": 17,
+      "post_count": 16,
+      "frequency": 0.03,
+      "category": "physical",
+      "paper_count": 9,
+      "examples": [
+        "It’s painful and it feels like a bag stuffed my vagina",
+        "I had terrible pains since.",
+        "I've also started getting the pain 24 hours before the blood"
+      ]
+    },
+    {
+      "side_effect": "acne",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 116,
+      "post_count": 76,
+      "frequency": 0.142,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "I still have little to no acne",
+        "I'm only taking bc to deal with acne",
+        "My acne is about the same as it’s always been, since starting the pill."
+      ]
+    },
+    {
+      "side_effect": "depression",
+      "tier_label": "🏆 FDA-Listed",
+      "evidence_tier": 1,
+      "surprise_score": 0.0,
+      "mention_count": 54,
+      "post_count": 49,
+      "frequency": 0.091,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "I've been derailed by depression",
+        "I find that the pill makes my mental health symptoms worse, specifically anxiety and low moods",
+        "I have dealt with depression"
+      ]
+    },
+    {
+      "side_effect": "fatigue",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 47,
+      "post_count": 37,
+      "frequency": 0.069,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "it was causing me low energy",
+        "Energy levels are not as consistent",
+        "I am tired for several days after a push day."
+      ]
+    },
+    {
+      "side_effect": "menorrhagia",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 31,
+      "post_count": 28,
+      "frequency": 0.052,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "I started bleeding about a week or two after starting the pill and I’ve been bleeding every day since.",
+        "My bleeding has gotten a little heavier",
+        "my periods are naturally very heavy"
+      ]
+    },
+    {
+      "side_effect": "mood swings",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 26,
+      "post_count": 26,
+      "frequency": 0.048,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "I’ve spent the last few weeks in a storm of emotions",
+        "mood swings",
+        "the insane emotional mood swings"
+      ]
+    },
+    {
+      "side_effect": "weight gain",
+      "tier_label": "🏆 FDA-Listed",
+      "evidence_tier": 1,
+      "surprise_score": 0.0,
+      "mention_count": 27,
+      "post_count": 24,
+      "frequency": 0.045,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "I really don’t want to gain weight as I am already overweight.",
+        "I have a friend who got the implant and gained a ton of weight.",
+        "i’m kinda scared of the side effects, especially gaining weight"
+      ]
+    },
+    {
+      "side_effect": "insomnia",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 25,
+      "post_count": 24,
+      "frequency": 0.045,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "I get insomnia",
+        "No amount of sleep is enough.",
+        "no debilitating insomnia"
+      ]
+    },
+    {
+      "side_effect": "premenstrual dysphoric disorder",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 23,
+      "post_count": 23,
+      "frequency": 0.043,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "I'm only taking bc to deal with acne and PMDD",
+        "yes, I had a full blown luteal PMDD day",
+        "my PMDD has become so severe"
+      ]
+    },
+    {
+      "side_effect": "suicidal ideation",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 25,
+      "post_count": 23,
+      "frequency": 0.043,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "it can literally make many of us want to d!e every month",
+        "The extreme mood swings, suicidality, and anger are awful",
+        "my SI and SH both started when I was 13."
+      ]
+    },
+    {
+      "side_effect": "depressive symptoms",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 19,
+      "post_count": 18,
+      "frequency": 0.034,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "I am having some more periods of depression than I usually do this time of year.",
+        "the pill making me feel anxious, sad, and empty around my boyfriend",
+        "I've been sad a bit every now and then"
+      ]
+    },
+    {
+      "side_effect": "anger",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 18,
+      "post_count": 18,
+      "frequency": 0.034,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "the validation and the fucking RELIEF of hearing that… but also the rage that I had to spiral, guess, and research my way to that conclusion alone.",
+        "the rage, depression, apathy came back with a vengeance",
+        "rage"
+      ]
+    },
+    {
+      "side_effect": "irritability",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 15,
+      "post_count": 15,
+      "frequency": 0.028,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "i’m so irritable",
+        "Moods have also turned from bad on my hell weeks to feeling grumpy and irritated all month.",
+        "I’ve been suffering from PMDD for a long time."
+      ]
+    },
+    {
+      "side_effect": "hypoactive sexual desire",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 14,
+      "post_count": 14,
+      "frequency": 0.026,
+      "category": "both",
+      "paper_count": 10,
+      "examples": [
+        "loss of attraction to fiance",
+        "it was causing me zero libido",
+        "my libido is low"
+      ]
+    },
+    {
+      "side_effect": "mood changes",
+      "tier_label": "🏆 FDA-Listed",
+      "evidence_tier": 1,
+      "surprise_score": 0.0,
+      "mention_count": 13,
+      "post_count": 13,
+      "frequency": 0.024,
+      "category": "mental",
+      "paper_count": 10,
+      "examples": [
+        "all i’m worried about besides this whole vaping thing is the pill making me super moody.",
+        "The pill changed me as a person. Like, no joke, when I came off it, it was like a veil had been lifted.",
+        "I feel like I can be so moody all of the time"
+      ]
+    },
+    {
+      "side_effect": "decreased libido",
+      "tier_label": "🏆 FDA-Listed",
+      "evidence_tier": 1,
+      "surprise_score": 0.0,
+      "mention_count": 12,
+      "post_count": 12,
+      "frequency": 0.022,
+      "category": "both",
+      "paper_count": 10,
+      "examples": [
+        "i’ve heard that it can lower your libido",
+        "I feel like my libido is almost nonexistent",
+        "I did always have a slight sex drive lowering but nothing terrible"
+      ]
+    },
+    {
+      "side_effect": "migraine",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "I can't take the intense cramping and migraines associated with my periods anymore.",
+        "Yaz unfortunately gives me major migraines during my periods.",
+        "I have dealt with migraines"
+      ]
+    },
+    {
+      "side_effect": "spotting",
+      "tier_label": "🏆 FDA-Listed",
+      "evidence_tier": 1,
+      "surprise_score": 0.0,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "Other possible side effects don't bother me nearly as much (ex. spotting, cramps, weight changes etc.)",
+        "i’m also having some spotting which idk if it’s from that!",
+        "i can't stop spotting on the pill"
+      ]
+    },
+    {
+      "side_effect": "breakthrough bleeding",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "Maybe an occasional break through bleed but nothing else.",
+        "sometimes I still get breakthrough bleeding",
+        "the last 3-4 years have been having breakthrough bleeding midway through the second active pill week"
+      ]
+    },
+    {
+      "side_effect": "menstrual irregularities",
+      "tier_label": "✅ Research-Backed",
+      "evidence_tier": 2,
+      "surprise_score": 0.0,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "physical",
+      "paper_count": 10,
+      "examples": [
+        "Crazy random or heavy periods?",
+        "Her period naturally varies a lot and can last for up to 2 weeks sometimes.",
+        "my heavy, painful, and irregular periods"
+      ]
+    }
+  ],
+  "hidden_gems": [
+    {
+      "side_effect": "dry skin",
+      "tier_label": "⚠️ Emerging Pattern",
+      "evidence_tier": 4,
+      "surprise_score": 0.023,
+      "mention_count": 15,
+      "post_count": 14,
+      "frequency": 0.026,
+      "category": "physical",
+      "paper_count": 1,
+      "examples": [
+        "My skin feels dehydrated.",
+        "Hands have weirdly started to turn so sore and dry",
+        "My skin has been dryer than normal."
+      ]
+    },
+    {
+      "side_effect": "severe emotional distress",
+      "tier_label": "⚠️ Emerging Pattern",
+      "evidence_tier": 4,
+      "surprise_score": 0.02,
+      "mention_count": 11,
+      "post_count": 11,
+      "frequency": 0.02,
+      "category": "mental",
+      "paper_count": 0,
+      "examples": [
+        "I would be eaten alive at night by horrible thoughts and impulses to hurt myself and run away",
+        "it’s like I’m possessed",
+        "I genuinely turn into the most unhealed, triggered, neurotic, scared, anxious, angry person ever"
+      ]
+    }
+  ],
+  "total_validated": 30,
+  "high_surprise_count": 2
+}
