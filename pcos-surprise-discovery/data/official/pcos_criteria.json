@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "created_at": "2025-01-29",
+    "description": "Official PCOS diagnostic criteria from medical guidelines",
+    "sources": [
+      "Rotterdam Criteria (ESHRE/ASRM 2003)",
+      "NIH Criteria (1990)",
+      "Androgen Excess Society (2006)"
+    ]
+  },
+  "rotterdam_criteria": {
+    "name": "Rotterdam Criteria",
+    "year": 2003,
+    "requires": "2 of 3 criteria",
+    "criteria": [
+      {
+        "criterion": "oligo_or_anovulation",
+        "name": "Oligo-ovulation or anovulation",
+        "symptoms": [
+          "irregular_periods",
+          "absent_periods",
+          "amenorrhea",
+          "infrequent_menstruation"
+        ]
+      },
+      {
+        "criterion": "hyperandrogenism",
+        "name": "Clinical or biochemical signs of hyperandrogenism",
+        "symptoms": [
+          "hirsutism",
+          "facial_hair",
+          "acne",
+          "male_pattern_baldness",
+          "elevated_testosterone"
+        ]
+      },
+      {
+        "criterion": "polycystic_ovaries",
+        "name": "Polycystic ovaries on ultrasound",
+        "symptoms": [
+          "ovarian_cysts",
+          "enlarged_ovaries",
+          "multiple_follicles"
+        ]
+      }
+    ],
+    "exclusions": [
+      "thyroid_disorders",
+      "hyperprolactinemia",
+      "congenital_adrenal_hyperplasia"
+    ]
+  },
+  "nih_criteria": {
+    "name": "NIH Criteria",
+    "year": 1990,
+    "requires": "Both criteria required",
+    "criteria": [
+      {
+        "criterion": "hyperandrogenism",
+        "name": "Clinical or biochemical hyperandrogenism",
+        "symptoms": [
+          "hirsutism",
+          "acne",
+          "elevated_androgens"
+        ]
+      },
+      {
+        "criterion": "oligo_or_anovulation",
+        "name": "Chronic anovulation",
+        "symptoms": [
+          "irregular_periods",
+          "absent_periods"
+        ]
+      }
+    ]
+  },
+  "commonly_discussed_symptoms": {
+    "description": "Symptoms commonly associated with PCOS in medical literature but not in diagnostic criteria",
+    "symptoms": [
+      {
+        "symptom": "insulin_resistance",
+        "category": "metabolic",
+        "expected": true,
+        "note": "Present in 50-70% of PCOS patients"
+      },
+      {
+        "symptom": "weight_gain",
+        "category": "metabolic",
+        "expected": true
+      },
+      {
+        "symptom": "difficulty_losing_weight",
+        "category": "metabolic",
+        "expected": true
+      },
+      {
+        "symptom": "infertility",
+        "category": "reproductive",
+        "expected": true
+      },
+      {
+        "symptom": "dark_skin_patches",
+        "category": "skin",
+        "expected": true,
+        "medical_term": "acanthosis_nigricans"
+      }
+    ]
+  },
+  "diagnostic_core_features": [
+    "irregular_periods",
+    "absent_periods",
+    "amenorrhea",
+    "hirsutism",
+    "facial_hair",
+    "acne",
+    "ovarian_cysts",
+    "elevated_testosterone",
+    "elevated_androgens"
+  ],
+  "associated_but_not_diagnostic": [
+    "insulin_resistance",
+    "weight_gain",
+    "difficulty_losing_weight",
+    "infertility",
+    "dark_skin_patches",
+    "acanthosis_nigricans"
+  ]
+}
