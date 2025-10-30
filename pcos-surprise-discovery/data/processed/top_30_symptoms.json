@@ -1,0 +1,257 @@
+[
+  {
+    "symptom": "weight gain",
+    "mentions": 89,
+    "posts_appearing_in": 85,
+    "frequency": 0.17,
+    "surprise_signals": 1,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical": 18,
+      "weight changes": 1,
+      "physical symptom": 33,
+      "weight issue": 16,
+      "physical health": 7,
+      "weight-related issue": 2,
+      "weight issues": 6,
+      "metabolic": 2,
+      "physical symptoms": 1,
+      "weight-related": 1,
+      "weight": 1,
+      "metabolic issue": 1
+    },
+    "sample_quotes": [
+      "gained 50-60lbs over the course of 4 years",
+      "I gained a few pounds when my weight normally does not fluctuate",
+      "35 lbs i rapidly gained after having my second kid",
+      "the underlying driver of both weight gain *and* elevated androgens is an excess of the metabolic hormone insulin.",
+      "I gained literally 20 lbs???!!"
+    ],
+    "selection_score": 87
+  },
+  {
+    "symptom": "irregular periods",
+    "mentions": 82,
+    "posts_appearing_in": 81,
+    "frequency": 0.162,
+    "surprise_signals": 0,
+    "category": "menstrual issues",
+    "all_categories": {
+      "reproductive health": 13,
+      "reproductive issue": 11,
+      "menstrual issues": 27,
+      "menstrual issue": 9,
+      "menstrual symptoms": 1,
+      "reproductive symptom": 3,
+      "reproductive": 11,
+      "menstrual health": 3,
+      "physical": 1,
+      "menstrual": 2,
+      "reproductive issues": 1
+    },
+    "sample_quotes": [
+      "I get my period every month!",
+      "the heavier I am the less regular my period is",
+      "I had a history of irregular periods when I was younger, but not in the past 12 years (after having kids post birth control).",
+      "literally the first week of my journey I git my period and have been getting it every month since",
+      "I’ve only had 2 periods. I should’ve had 8 by now"
+    ],
+    "selection_score": 81
+  },
+  {
+    "symptom": "stress",
+    "mentions": 53,
+    "posts_appearing_in": 52,
+    "frequency": 0.104,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 52,
+      "mental health issue": 1
+    },
+    "sample_quotes": [
+      "this is actually causing me more stress",
+      "maybe it's just stress",
+      "It can be due to street because I have really important exams coming up but I don't know how to manage the stress either.",
+      "prioritize not being stressed",
+      "Managing stress by doing activities that calm your nervous system."
+    ],
+    "selection_score": 52
+  },
+  {
+    "symptom": "insulin resistance",
+    "mentions": 50,
+    "posts_appearing_in": 50,
+    "frequency": 0.1,
+    "surprise_signals": 1,
+    "category": "metabolic issue",
+    "all_categories": {
+      "metabolic issue": 16,
+      "physical health": 2,
+      "metabolic condition": 6,
+      "endocrine": 1,
+      "metabolic issues": 5,
+      "condition": 8,
+      "health issue": 2,
+      "metabolic": 6,
+      "physical": 2,
+      "physical condition": 1,
+      "health condition": 1
+    },
+    "sample_quotes": [
+      "My GYN said that I am insulin resistant.",
+      "The Keto diet helped me a lot with the androgen levels and with insulin resistance.",
+      "metformin helps with breaking the insulin resistance",
+      "I have insulin resistance",
+      "you can still have insulin resistance at a lean weight."
+    ],
+    "selection_score": 52
+  },
+  {
+    "symptom": "hirsutism",
+    "mentions": 44,
+    "posts_appearing_in": 44,
+    "frequency": 0.088,
+    "surprise_signals": 1,
+    "category": "skin issue",
+    "all_categories": {
+      "skin issue": 21,
+      "physical symptom": 8,
+      "skin issues": 6,
+      "physical symptoms": 1,
+      "hair growth issues": 1,
+      "condition": 1,
+      "skin": 1,
+      "hair growth issue": 1,
+      "physical": 1,
+      "hair growth": 2,
+      "hair issue": 1
+    },
+    "sample_quotes": [
+      "my PCOS symptoms are hirsutism",
+      "I have some hirsutism, not much though.",
+      "Hirsutism: Excess hair on my abdomen, thighs, breasts, and jawline.",
+      "I was diagnosed with PCOS because my testosterone levels are very high and I also have hirsutism (i can basically grow a beard).",
+      "I don’t experience hirsutism"
+    ],
+    "selection_score": 46
+  },
+  {
+    "symptom": "fatigue",
+    "mentions": 39,
+    "posts_appearing_in": 39,
+    "frequency": 0.078,
+    "surprise_signals": 0,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical": 6,
+      "physical symptom": 20,
+      "general health": 7,
+      "energy issue": 1,
+      "mental health": 1,
+      "cognitive issues": 1,
+      "general health issue": 1,
+      "general": 1,
+      "physical health": 1
+    },
+    "sample_quotes": [
+      "I've been too fatigued to go",
+      "I am tired all the time.",
+      "unusual hunger/food cravings/fatigue",
+      "but contributes to my fatigue.",
+      "unusual hunger/food cravings/fatigue"
+    ],
+    "selection_score": 39
+  },
+  {
+    "symptom": "anxiety",
+    "mentions": 39,
+    "posts_appearing_in": 38,
+    "frequency": 0.076,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 39
+    },
+    "sample_quotes": [
+      "raging anxiety",
+      "I'm a very anxious person and it's been a rough year.",
+      "I am already nauseous a lot, without taking it, because of anxiety.",
+      "hypoglycemic episodes that can feel like panic attacks…e.g., tremor/anxiety/muscle weakness/high heart rate/sweating/faintness/spots in vision, occasionally nausea, etc.",
+      "I also take Wellbutrin (an NDRI) for anxiety."
+    ],
+    "selection_score": 38
+  },
+  {
+    "symptom": "acne",
+    "mentions": 36,
+    "posts_appearing_in": 35,
+    "frequency": 0.07,
+    "surprise_signals": 1,
+    "category": "skin issue",
+    "all_categories": {
+      "skin issue": 25,
+      "skin issues": 4,
+      "skin": 7
+    },
+    "sample_quotes": [
+      "much acne anymore (it used to be worse when I was younger)",
+      "my acne became so terrible",
+      "I’m still struggling with acne",
+      "I've struggled with acne for a long time despite eating fairly healthy now and being vegan.",
+      "I've been breaking out more often now for about two months now and I don't know why."
+    ],
+    "selection_score": 37
+  },
+  {
+    "symptom": "weight loss",
+    "mentions": 33,
+    "posts_appearing_in": 33,
+    "frequency": 0.066,
+    "surprise_signals": 1,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical health": 5,
+      "physical symptom": 10,
+      "weight issue": 5,
+      "physical condition": 2,
+      "metabolic": 1,
+      "physical": 2,
+      "general health": 1,
+      "weight issues": 1,
+      "physical symptoms": 1,
+      "weight management": 1,
+      "general": 1,
+      "weight-related": 1,
+      "physical change": 1,
+      "health issue": 1
+    },
+    "sample_quotes": [
+      "I worked hard and lost ten more pounds (total 25 now)",
+      "I have lost about 30 pounds this year.",
+      "managing the IR with metformin makes it easier to finally lose the weight",
+      "I'm trying to be healthier and I am losing weight (I'm on it a few months now)",
+      "What should I expect as far as weight loss with PCOS and this drug"
+    ],
+    "selection_score": 35
+  },
+  {
+    "symptom": "depression",
+    "mentions": 30,
+    "posts_appearing_in": 30,
+    "frequency": 0.06,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 30
+    },
+    "sample_quotes": [
+      "depression is one symptom of PCOS.",
+      "it's making me depressed as fuck",
+      "and making me depressed.",
+      "I’m feeling depressed and defeated lol",
+      "or if that just my depression"
+    ],
+    "selection_score": 30
+  }
+]

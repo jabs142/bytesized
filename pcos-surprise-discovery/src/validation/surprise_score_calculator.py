@@ -10,16 +10,6 @@ from typing import List, Dict
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
-    Config.VALIDATED_DATA_DIR,
-    Config.OFFICIAL_DATA_DIR,
-    OFFICIAL_CRITERIA_FILE,
-    Config.SURPRISE_RANKINGS_FILE,
-    Config.WEIGHT_NOT_IN_CRITERIA,
-    Config.WEIGHT_LOW_AWARENESS,
-    Config.WEIGHT_HIGH_SURPRISE_SIGNALS,
-    WEIGHT_HIGH_PREVALENCE_RATIO,
-    Config.MIN_SURPRISE_SIGNALS,
-)
 
 
 class SurpriseScoreCalculator:
@@ -232,7 +222,7 @@ def load_validated_symptoms() -> List[Dict]:
 
 def load_official_criteria() -> Dict:
     """Load official PCOS diagnostic criteria"""
-    input_path = Config.OFFICIAL_DATA_DIR / OFFICIAL_CRITERIA_FILE
+    input_path = Config.OFFICIAL_DATA_DIR / Config.OFFICIAL_CRITERIA_FILE
 
     if not input_path.exists():
         print(f"❌ Error: Official criteria file not found at {input_path}")

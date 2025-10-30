@@ -10,12 +10,6 @@ from typing import List, Dict
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
-    Config.PROCESSED_DATA_DIR,
-    Config.ALL_SYMPTOMS_FILE,
-    Config.TOP_N_SYMPTOMS,
-    Config.MIN_MENTION_PERCENTAGE,
-    Config.MIN_SURPRISE_SIGNALS,
-)
 
 
 def load_all_symptoms() -> List[Dict]:

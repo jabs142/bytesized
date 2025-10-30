@@ -1,0 +1,292 @@
+[
+  {
+    "symptom": "weight gain",
+    "surprise_classification": "🔥 VERY SURPRISING",
+    "surprise_score": 3.74,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Hidden connection - strong patient signal but rarely discussed",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 89,
+      "reddit_posts": 85,
+      "reddit_frequency": 0.17,
+      "surprise_signals": 1,
+      "pubmed_papers": 276,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "gained 50-60lbs over the course of 4 years",
+      "I gained a few pounds when my weight normally does not fluctuate",
+      "35 lbs i rapidly gained after having my second kid"
+    ]
+  },
+  {
+    "symptom": "fatigue",
+    "surprise_classification": "🔥 VERY SURPRISING",
+    "surprise_score": 2.57,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Hidden connection - strong patient signal but rarely discussed",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 39,
+      "reddit_posts": 39,
+      "reddit_frequency": 0.078,
+      "surprise_signals": 0,
+      "pubmed_papers": 30,
+      "has_research": true,
+      "awareness_level": "low"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": true,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "I've been too fatigued to go",
+      "I am tired all the time.",
+      "unusual hunger/food cravings/fatigue"
+    ]
+  },
+  {
+    "symptom": "anxiety",
+    "surprise_classification": "🔥 VERY SURPRISING",
+    "surprise_score": 2.51,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Hidden connection - strong patient signal but rarely discussed",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 39,
+      "reddit_posts": 38,
+      "reddit_frequency": 0.076,
+      "surprise_signals": 0,
+      "pubmed_papers": 375,
+      "has_research": true,
+      "awareness_level": "low"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": true,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "raging anxiety",
+      "I'm a very anxious person and it's been a rough year.",
+      "I am already nauseous a lot, without taking it, because of anxiety."
+    ]
+  },
+  {
+    "symptom": "stress",
+    "surprise_classification": "🔥 VERY SURPRISING",
+    "surprise_score": 2.29,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Hidden connection - strong patient signal but rarely discussed",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 53,
+      "reddit_posts": 52,
+      "reddit_frequency": 0.104,
+      "surprise_signals": 0,
+      "pubmed_papers": 1102,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "this is actually causing me more stress",
+      "maybe it's just stress",
+      "It can be due to street because I have really important exams coming up but I don't know how to manage the stress either."
+    ]
+  },
+  {
+    "symptom": "insulin resistance",
+    "surprise_classification": "🔥 VERY SURPRISING",
+    "surprise_score": 2.2,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Hidden connection - strong patient signal but rarely discussed",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 50,
+      "reddit_posts": 50,
+      "reddit_frequency": 0.1,
+      "surprise_signals": 1,
+      "pubmed_papers": 3803,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "My GYN said that I am insulin resistant.",
+      "The Keto diet helped me a lot with the androgen levels and with insulin resistance.",
+      "metformin helps with breaking the insulin resistance"
+    ]
+  },
+  {
+    "symptom": "depression",
+    "surprise_classification": "⚠️ SOMEWHAT SURPRISING",
+    "surprise_score": 1.98,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Underappreciated connection - patients notice but doctors may not emphasize",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 30,
+      "reddit_posts": 30,
+      "reddit_frequency": 0.06,
+      "surprise_signals": 0,
+      "pubmed_papers": 493,
+      "has_research": true,
+      "awareness_level": "low"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": true,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "depression is one symptom of PCOS.",
+      "it's making me depressed as fuck",
+      "and making me depressed."
+    ]
+  },
+  {
+    "symptom": "irregular periods",
+    "surprise_classification": "⚠️ SOMEWHAT SURPRISING",
+    "surprise_score": 1.62,
+    "tier": 1,
+    "tier_label": "Tier 1: Diagnostic",
+    "tier_description": "Underappreciated connection - patients notice but doctors may not emphasize",
+    "evidence": {
+      "in_criteria": true,
+      "reddit_mentions": 82,
+      "reddit_posts": 81,
+      "reddit_frequency": 0.162,
+      "surprise_signals": 0,
+      "pubmed_papers": 23,
+      "has_research": true,
+      "awareness_level": "high"
+    },
+    "surprise_factors": {
+      "not_in_criteria": false,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "I get my period every month!",
+      "the heavier I am the less regular my period is",
+      "I had a history of irregular periods when I was younger, but not in the past 12 years (after having kids post birth control)."
+    ]
+  },
+  {
+    "symptom": "weight loss",
+    "surprise_classification": "⚠️ SOMEWHAT SURPRISING",
+    "surprise_score": 1.45,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Underappreciated connection - patients notice but doctors may not emphasize",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 33,
+      "reddit_posts": 33,
+      "reddit_frequency": 0.066,
+      "surprise_signals": 1,
+      "pubmed_papers": 480,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "I worked hard and lost ten more pounds (total 25 now)",
+      "I have lost about 30 pounds this year.",
+      "managing the IR with metformin makes it easier to finally lose the weight"
+    ]
+  },
+  {
+    "symptom": "hirsutism",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.88,
+    "tier": 1,
+    "tier_label": "Tier 1: Diagnostic",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": true,
+      "reddit_mentions": 44,
+      "reddit_posts": 44,
+      "reddit_frequency": 0.088,
+      "surprise_signals": 1,
+      "pubmed_papers": 1004,
+      "has_research": true,
+      "awareness_level": "high"
+    },
+    "surprise_factors": {
+      "not_in_criteria": false,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "my PCOS symptoms are hirsutism",
+      "I have some hirsutism, not much though.",
+      "Hirsutism: Excess hair on my abdomen, thighs, breasts, and jawline."
+    ]
+  },
+  {
+    "symptom": "acne",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.7,
+    "tier": 1,
+    "tier_label": "Tier 1: Diagnostic",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": true,
+      "reddit_mentions": 36,
+      "reddit_posts": 35,
+      "reddit_frequency": 0.07,
+      "surprise_signals": 1,
+      "pubmed_papers": 511,
+      "has_research": true,
+      "awareness_level": "high"
+    },
+    "surprise_factors": {
+      "not_in_criteria": false,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "much acne anymore (it used to be worse when I was younger)",
+      "my acne became so terrible",
+      "I’m still struggling with acne"
+    ]
+  }
+]

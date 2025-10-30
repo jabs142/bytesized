@@ -11,10 +11,6 @@ from collections import Counter, defaultdict
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
-    Config.PROCESSED_DATA_DIR,
-    Config.ALL_SYMPTOMS_FILE,
-    SURPRISE_SIGNALS_FILE,
-)
 
 
 class SymptomAggregator:
@@ -176,7 +172,7 @@ class SymptomAggregator:
         print(f"\nMaster symptom list saved to: {output_path}")
 
         # Save surprise signals
-        output_path = Config.PROCESSED_DATA_DIR / SURPRISE_SIGNALS_FILE
+        output_path = Config.PROCESSED_DATA_DIR / Config.SURPRISE_SIGNALS_FILE
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(surprise_report, f, indent=2, ensure_ascii=False)
         print(f"Surprise signals report saved to: {output_path}")

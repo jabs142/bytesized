@@ -1,0 +1,1218 @@
+{
+  "total_symptoms_with_surprise": 71,
+  "top_surprise_symptoms": [
+    {
+      "symptom": "high testosterone",
+      "surprise_signals": 1,
+      "total_mentions": 11,
+      "surprise_rate": 0.09090909090909091,
+      "posts": 11,
+      "quotes": [
+        "high testosterone (3.4)",
+        "My testosterone is very high due to pcos.",
+        "it was only when I put on like 3 stone that my testosterone was high enough for someone to dx me.",
+        "high testosterone",
+        "my only lab indication is high testosterone",
+        "my testosterone has come back as high",
+        "high testosterone (1.9)",
+        "my testosterone being a little higher than it should be",
+        "high testosterone",
+        "my blood also never showed elevated testosterone before this!"
+      ]
+    },
+    {
+      "symptom": "unpainful periods",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I’ve always been blessed with unpainful 4-5 day periods my whole life"
+      ]
+    },
+    {
+      "symptom": "weight gain",
+      "surprise_signals": 1,
+      "total_mentions": 89,
+      "surprise_rate": 0.011235955056179775,
+      "posts": 85,
+      "quotes": [
+        "gained 50-60lbs over the course of 4 years",
+        "I gained a few pounds when my weight normally does not fluctuate",
+        "35 lbs i rapidly gained after having my second kid",
+        "the underlying driver of both weight gain *and* elevated androgens is an excess of the metabolic hormone insulin.",
+        "I gained literally 20 lbs???!!",
+        "I gained another 15 lbs during my 5-6 week stay.",
+        "I gained 3 more pounds and got to 188lbs",
+        "I started to gain back some weight",
+        "I kept gaining weight, but it wasn’t terrible… just grown woman weight coming in",
+        "I gained 50+ in less than a year after dropping to my lowest weight ever from 200…"
+      ]
+    },
+    {
+      "symptom": "difficulty losing weight",
+      "surprise_signals": 1,
+      "total_mentions": 14,
+      "surprise_rate": 0.07142857142857142,
+      "posts": 14,
+      "quotes": [
+        "Still no weight loss",
+        "even when I eat light, I stay the same or even gain slightly",
+        "Still cant lose weight.",
+        "my PCOS is still causing many health issues and making it difficult to lose weight.",
+        "it’s hard to lose weight",
+        "I think it's harder for me than for most",
+        "can’t seem to lose it even after following the same methods as before",
+        "even then it’s only a pound or two before it triples in a few weeks",
+        "it is usually very hard for me to lose weight",
+        "it’s just so much harder and our bodies will fight us every step of the way"
+      ]
+    },
+    {
+      "symptom": "dyslipidemia",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have Dyslipidemia as well but I believe that’s a symptom of my PCOS!"
+      ]
+    },
+    {
+      "symptom": "hirsutism",
+      "surprise_signals": 1,
+      "total_mentions": 44,
+      "surprise_rate": 0.022727272727272728,
+      "posts": 44,
+      "quotes": [
+        "my PCOS symptoms are hirsutism",
+        "I have some hirsutism, not much though.",
+        "Hirsutism: Excess hair on my abdomen, thighs, breasts, and jawline.",
+        "I was diagnosed with PCOS because my testosterone levels are very high and I also have hirsutism (i can basically grow a beard).",
+        "I don’t experience hirsutism",
+        "I’ve had a long story dealing with hirsutism.",
+        "I was diagnosed through irregular periods (that I had before BC) and hirsutism and that's it.",
+        "I’m still struggling with acne, hirsutism, and losing my hair. If anything I feel like my hirsutism is worse.",
+        "hirutism",
+        "hirutism"
+      ]
+    },
+    {
+      "symptom": "acne",
+      "surprise_signals": 1,
+      "total_mentions": 36,
+      "surprise_rate": 0.027777777777777776,
+      "posts": 35,
+      "quotes": [
+        "much acne anymore (it used to be worse when I was younger)",
+        "my acne became so terrible",
+        "I’m still struggling with acne",
+        "I've struggled with acne for a long time despite eating fairly healthy now and being vegan.",
+        "I've been breaking out more often now for about two months now and I don't know why.",
+        "ever since my acne has been terrible (it pretty much went away while on birth control)",
+        "My acne is out of control",
+        "I read somewhere that it may be less likely to cause acne.",
+        "my acne problem is getting worse",
+        "I struggle with acne on my face and some on my upper back/shoulders"
+      ]
+    },
+    {
+      "symptom": "high ovarian reserve",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "now my number is ridiculously high and apparently is associated with PCOS"
+      ]
+    },
+    {
+      "symptom": "thinning hair",
+      "surprise_signals": 1,
+      "total_mentions": 8,
+      "surprise_rate": 0.125,
+      "posts": 8,
+      "quotes": [
+        "I’ve noticed thinning around hairline and hair in general.",
+        "My ponytail is getting thinner and thinner each week",
+        "low ferritin is linked to thinning and falling hair, which is something I attributed to my PCOS",
+        "I lost half the volume of my hair in just a month!! And ever since then I’ve lost even more, so my hair is less than half as thick as it used to be.",
+        "my hair is still thinning.",
+        "thinning hair, excess body/facial hair, excess weight (especially in the midsection), skin tags, etc.",
+        "my hair is visibly thinner",
+        "my hair has been thinning"
+      ]
+    },
+    {
+      "symptom": "skin tags",
+      "surprise_signals": 1,
+      "total_mentions": 6,
+      "surprise_rate": 0.16666666666666666,
+      "posts": 6,
+      "quotes": [
+        "skin tags on my neck and armpits",
+        "thinning hair, excess body/facial hair, excess weight (especially in the midsection), skin tags, etc.",
+        "I have skin tags all over.",
+        "I have skin tags all over under my armpits I never had.",
+        "skin tags",
+        "skin tags etc too"
+      ]
+    },
+    {
+      "symptom": "lack of change in symptoms",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I’ve seen no changes except I have gas"
+      ]
+    },
+    {
+      "symptom": "weight loss",
+      "surprise_signals": 1,
+      "total_mentions": 33,
+      "surprise_rate": 0.030303030303030304,
+      "posts": 33,
+      "quotes": [
+        "I worked hard and lost ten more pounds (total 25 now)",
+        "I have lost about 30 pounds this year.",
+        "managing the IR with metformin makes it easier to finally lose the weight",
+        "I'm trying to be healthier and I am losing weight (I'm on it a few months now)",
+        "What should I expect as far as weight loss with PCOS and this drug",
+        "I ended up losing weight. My max was at 225, once I stopped taking the glp, I was 195. I am still steadily losing and am down to 182.",
+        "It helped me lose weight",
+        "after 2 years of weightloss and supplement/medical treatment.",
+        "I’ve actually lost a ton of weight and it’s still getting worse.",
+        "Lost like 3,5 kg"
+      ]
+    },
+    {
+      "symptom": "side effects",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "i have zero side effects, which is a miracle because i have lupus and usually react poorly to every little thing"
+      ]
+    },
+    {
+      "symptom": "insulin resistance",
+      "surprise_signals": 1,
+      "total_mentions": 50,
+      "surprise_rate": 0.02,
+      "posts": 50,
+      "quotes": [
+        "My GYN said that I am insulin resistant.",
+        "The Keto diet helped me a lot with the androgen levels and with insulin resistance.",
+        "metformin helps with breaking the insulin resistance",
+        "I have insulin resistance",
+        "you can still have insulin resistance at a lean weight.",
+        "I don’t have insulin resistance.",
+        "insulin resistance",
+        "insulin resistance may be an issue",
+        "managing the insulin resistance that is the most common underlying driver of PCOS.",
+        "insulan resistance"
+      ]
+    },
+    {
+      "symptom": "breast tenderness",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "now I'm getting things like 'breast tenderness' I'd never dealt with before."
+      ]
+    },
+    {
+      "symptom": "normal periods",
+      "surprise_signals": 1,
+      "total_mentions": 2,
+      "surprise_rate": 0.5,
+      "posts": 2,
+      "quotes": [
+        "My periods are normal and I'm actually ovulating again.",
+        "I’ve had two consecutive normal periods"
+      ]
+    },
+    {
+      "symptom": "sugar cravings",
+      "surprise_signals": 1,
+      "total_mentions": 15,
+      "surprise_rate": 0.06666666666666667,
+      "posts": 13,
+      "quotes": [
+        "I get sugar cravings a lot, which I've heard can be a symptom?",
+        "sugar cravings",
+        "have sugar cravings (though I always have those)",
+        "I don't completely skip sugar. I have things I like but in moderation",
+        "the least manageable symptom is my sugar cravings",
+        "my sugar cravings haven't been touched",
+        "I'm finding my sugar cravings are getting out of hand lately",
+        "I feel shaky and crave sugar after eating.",
+        "Ovasitol helps with sugar cravings like nothing else.",
+        "After baby #1 had almost all my PCOS symptoms start- massive weight gain, sugar cravings, NO periods."
+      ]
+    },
+    {
+      "symptom": "numbness",
+      "surprise_signals": 1,
+      "total_mentions": 2,
+      "surprise_rate": 0.5,
+      "posts": 2,
+      "quotes": [
+        "I feel numb",
+        "for me it made me numb there (from implant)"
+      ]
+    },
+    {
+      "symptom": "getting period at age 15",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I didn’t realize getting my period at 15 was also linked to PCOS"
+      ]
+    },
+    {
+      "symptom": "facial hair growth",
+      "surprise_signals": 1,
+      "total_mentions": 8,
+      "surprise_rate": 0.125,
+      "posts": 8,
+      "quotes": [
+        "my facial hair is growing in thicker",
+        "my facial hair was growing back thicker when I'd wax or epilate.",
+        "it seems like everyone has a success story about it clearing up facial hair",
+        "It does also help with the facial hair a bit.",
+        "I usually have to shave or tweeze my face everyday",
+        "a literal beard growing",
+        "I’ve been shaving my face daily since I was in middle school",
+        "my facial hair has really gotten to me"
+      ]
+    },
+    {
+      "symptom": "calmness",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I feel incredibly calm and well rested."
+      ]
+    },
+    {
+      "symptom": "rested",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I feel incredibly calm and well rested."
+      ]
+    },
+    {
+      "symptom": "normalcy perception",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "Now I'm wondering if what I thought was 'normal' was not normal at all."
+      ]
+    },
+    {
+      "symptom": "shock",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I was in shock as I genuinely thought this would never happen to me"
+      ]
+    },
+    {
+      "symptom": "fluctuating libido",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have more libido but it definitely still fluctuates from time to time."
+      ]
+    },
+    {
+      "symptom": "never-ending period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "My never-ending period that lasted weeks on and off for months finally stopped"
+      ]
+    },
+    {
+      "symptom": "normal-looking, normal-feeling period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I got my period!!! Naturally!! A normal-looking, normal-feeling period"
+      ]
+    },
+    {
+      "symptom": "watery blood",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "but it was more like water than blood"
+      ]
+    },
+    {
+      "symptom": "skin irritation",
+      "surprise_signals": 1,
+      "total_mentions": 3,
+      "surprise_rate": 0.3333333333333333,
+      "posts": 3,
+      "quotes": [
+        "Spearmint oil did absolutely nothing to me except irritate tf out of my skin",
+        "how am I supposed to let the hair on my face grow out for days beforehand, AND deal with skin irritation afterwards",
+        "I use it at night before going to sleep, on days that my skin isn't irritated."
+      ]
+    },
+    {
+      "symptom": "never had a natural period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have never had a natural period in my life."
+      ]
+    }
+  ],
+  "all_surprise_symptoms": [
+    {
+      "symptom": "high testosterone",
+      "surprise_signals": 1,
+      "total_mentions": 11,
+      "surprise_rate": 0.09090909090909091,
+      "posts": 11,
+      "quotes": [
+        "high testosterone (3.4)",
+        "My testosterone is very high due to pcos.",
+        "it was only when I put on like 3 stone that my testosterone was high enough for someone to dx me.",
+        "high testosterone",
+        "my only lab indication is high testosterone",
+        "my testosterone has come back as high",
+        "high testosterone (1.9)",
+        "my testosterone being a little higher than it should be",
+        "high testosterone",
+        "my blood also never showed elevated testosterone before this!"
+      ]
+    },
+    {
+      "symptom": "unpainful periods",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I’ve always been blessed with unpainful 4-5 day periods my whole life"
+      ]
+    },
+    {
+      "symptom": "weight gain",
+      "surprise_signals": 1,
+      "total_mentions": 89,
+      "surprise_rate": 0.011235955056179775,
+      "posts": 85,
+      "quotes": [
+        "gained 50-60lbs over the course of 4 years",
+        "I gained a few pounds when my weight normally does not fluctuate",
+        "35 lbs i rapidly gained after having my second kid",
+        "the underlying driver of both weight gain *and* elevated androgens is an excess of the metabolic hormone insulin.",
+        "I gained literally 20 lbs???!!",
+        "I gained another 15 lbs during my 5-6 week stay.",
+        "I gained 3 more pounds and got to 188lbs",
+        "I started to gain back some weight",
+        "I kept gaining weight, but it wasn’t terrible… just grown woman weight coming in",
+        "I gained 50+ in less than a year after dropping to my lowest weight ever from 200…"
+      ]
+    },
+    {
+      "symptom": "difficulty losing weight",
+      "surprise_signals": 1,
+      "total_mentions": 14,
+      "surprise_rate": 0.07142857142857142,
+      "posts": 14,
+      "quotes": [
+        "Still no weight loss",
+        "even when I eat light, I stay the same or even gain slightly",
+        "Still cant lose weight.",
+        "my PCOS is still causing many health issues and making it difficult to lose weight.",
+        "it’s hard to lose weight",
+        "I think it's harder for me than for most",
+        "can’t seem to lose it even after following the same methods as before",
+        "even then it’s only a pound or two before it triples in a few weeks",
+        "it is usually very hard for me to lose weight",
+        "it’s just so much harder and our bodies will fight us every step of the way"
+      ]
+    },
+    {
+      "symptom": "dyslipidemia",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have Dyslipidemia as well but I believe that’s a symptom of my PCOS!"
+      ]
+    },
+    {
+      "symptom": "hirsutism",
+      "surprise_signals": 1,
+      "total_mentions": 44,
+      "surprise_rate": 0.022727272727272728,
+      "posts": 44,
+      "quotes": [
+        "my PCOS symptoms are hirsutism",
+        "I have some hirsutism, not much though.",
+        "Hirsutism: Excess hair on my abdomen, thighs, breasts, and jawline.",
+        "I was diagnosed with PCOS because my testosterone levels are very high and I also have hirsutism (i can basically grow a beard).",
+        "I don’t experience hirsutism",
+        "I’ve had a long story dealing with hirsutism.",
+        "I was diagnosed through irregular periods (that I had before BC) and hirsutism and that's it.",
+        "I’m still struggling with acne, hirsutism, and losing my hair. If anything I feel like my hirsutism is worse.",
+        "hirutism",
+        "hirutism"
+      ]
+    },
+    {
+      "symptom": "acne",
+      "surprise_signals": 1,
+      "total_mentions": 36,
+      "surprise_rate": 0.027777777777777776,
+      "posts": 35,
+      "quotes": [
+        "much acne anymore (it used to be worse when I was younger)",
+        "my acne became so terrible",
+        "I’m still struggling with acne",
+        "I've struggled with acne for a long time despite eating fairly healthy now and being vegan.",
+        "I've been breaking out more often now for about two months now and I don't know why.",
+        "ever since my acne has been terrible (it pretty much went away while on birth control)",
+        "My acne is out of control",
+        "I read somewhere that it may be less likely to cause acne.",
+        "my acne problem is getting worse",
+        "I struggle with acne on my face and some on my upper back/shoulders"
+      ]
+    },
+    {
+      "symptom": "high ovarian reserve",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "now my number is ridiculously high and apparently is associated with PCOS"
+      ]
+    },
+    {
+      "symptom": "thinning hair",
+      "surprise_signals": 1,
+      "total_mentions": 8,
+      "surprise_rate": 0.125,
+      "posts": 8,
+      "quotes": [
+        "I’ve noticed thinning around hairline and hair in general.",
+        "My ponytail is getting thinner and thinner each week",
+        "low ferritin is linked to thinning and falling hair, which is something I attributed to my PCOS",
+        "I lost half the volume of my hair in just a month!! And ever since then I’ve lost even more, so my hair is less than half as thick as it used to be.",
+        "my hair is still thinning.",
+        "thinning hair, excess body/facial hair, excess weight (especially in the midsection), skin tags, etc.",
+        "my hair is visibly thinner",
+        "my hair has been thinning"
+      ]
+    },
+    {
+      "symptom": "skin tags",
+      "surprise_signals": 1,
+      "total_mentions": 6,
+      "surprise_rate": 0.16666666666666666,
+      "posts": 6,
+      "quotes": [
+        "skin tags on my neck and armpits",
+        "thinning hair, excess body/facial hair, excess weight (especially in the midsection), skin tags, etc.",
+        "I have skin tags all over.",
+        "I have skin tags all over under my armpits I never had.",
+        "skin tags",
+        "skin tags etc too"
+      ]
+    },
+    {
+      "symptom": "lack of change in symptoms",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I’ve seen no changes except I have gas"
+      ]
+    },
+    {
+      "symptom": "weight loss",
+      "surprise_signals": 1,
+      "total_mentions": 33,
+      "surprise_rate": 0.030303030303030304,
+      "posts": 33,
+      "quotes": [
+        "I worked hard and lost ten more pounds (total 25 now)",
+        "I have lost about 30 pounds this year.",
+        "managing the IR with metformin makes it easier to finally lose the weight",
+        "I'm trying to be healthier and I am losing weight (I'm on it a few months now)",
+        "What should I expect as far as weight loss with PCOS and this drug",
+        "I ended up losing weight. My max was at 225, once I stopped taking the glp, I was 195. I am still steadily losing and am down to 182.",
+        "It helped me lose weight",
+        "after 2 years of weightloss and supplement/medical treatment.",
+        "I’ve actually lost a ton of weight and it’s still getting worse.",
+        "Lost like 3,5 kg"
+      ]
+    },
+    {
+      "symptom": "side effects",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "i have zero side effects, which is a miracle because i have lupus and usually react poorly to every little thing"
+      ]
+    },
+    {
+      "symptom": "insulin resistance",
+      "surprise_signals": 1,
+      "total_mentions": 50,
+      "surprise_rate": 0.02,
+      "posts": 50,
+      "quotes": [
+        "My GYN said that I am insulin resistant.",
+        "The Keto diet helped me a lot with the androgen levels and with insulin resistance.",
+        "metformin helps with breaking the insulin resistance",
+        "I have insulin resistance",
+        "you can still have insulin resistance at a lean weight.",
+        "I don’t have insulin resistance.",
+        "insulin resistance",
+        "insulin resistance may be an issue",
+        "managing the insulin resistance that is the most common underlying driver of PCOS.",
+        "insulan resistance"
+      ]
+    },
+    {
+      "symptom": "breast tenderness",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "now I'm getting things like 'breast tenderness' I'd never dealt with before."
+      ]
+    },
+    {
+      "symptom": "normal periods",
+      "surprise_signals": 1,
+      "total_mentions": 2,
+      "surprise_rate": 0.5,
+      "posts": 2,
+      "quotes": [
+        "My periods are normal and I'm actually ovulating again.",
+        "I’ve had two consecutive normal periods"
+      ]
+    },
+    {
+      "symptom": "sugar cravings",
+      "surprise_signals": 1,
+      "total_mentions": 15,
+      "surprise_rate": 0.06666666666666667,
+      "posts": 13,
+      "quotes": [
+        "I get sugar cravings a lot, which I've heard can be a symptom?",
+        "sugar cravings",
+        "have sugar cravings (though I always have those)",
+        "I don't completely skip sugar. I have things I like but in moderation",
+        "the least manageable symptom is my sugar cravings",
+        "my sugar cravings haven't been touched",
+        "I'm finding my sugar cravings are getting out of hand lately",
+        "I feel shaky and crave sugar after eating.",
+        "Ovasitol helps with sugar cravings like nothing else.",
+        "After baby #1 had almost all my PCOS symptoms start- massive weight gain, sugar cravings, NO periods."
+      ]
+    },
+    {
+      "symptom": "numbness",
+      "surprise_signals": 1,
+      "total_mentions": 2,
+      "surprise_rate": 0.5,
+      "posts": 2,
+      "quotes": [
+        "I feel numb",
+        "for me it made me numb there (from implant)"
+      ]
+    },
+    {
+      "symptom": "getting period at age 15",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I didn’t realize getting my period at 15 was also linked to PCOS"
+      ]
+    },
+    {
+      "symptom": "facial hair growth",
+      "surprise_signals": 1,
+      "total_mentions": 8,
+      "surprise_rate": 0.125,
+      "posts": 8,
+      "quotes": [
+        "my facial hair is growing in thicker",
+        "my facial hair was growing back thicker when I'd wax or epilate.",
+        "it seems like everyone has a success story about it clearing up facial hair",
+        "It does also help with the facial hair a bit.",
+        "I usually have to shave or tweeze my face everyday",
+        "a literal beard growing",
+        "I’ve been shaving my face daily since I was in middle school",
+        "my facial hair has really gotten to me"
+      ]
+    },
+    {
+      "symptom": "calmness",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I feel incredibly calm and well rested."
+      ]
+    },
+    {
+      "symptom": "rested",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I feel incredibly calm and well rested."
+      ]
+    },
+    {
+      "symptom": "normalcy perception",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "Now I'm wondering if what I thought was 'normal' was not normal at all."
+      ]
+    },
+    {
+      "symptom": "shock",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I was in shock as I genuinely thought this would never happen to me"
+      ]
+    },
+    {
+      "symptom": "fluctuating libido",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have more libido but it definitely still fluctuates from time to time."
+      ]
+    },
+    {
+      "symptom": "never-ending period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "My never-ending period that lasted weeks on and off for months finally stopped"
+      ]
+    },
+    {
+      "symptom": "normal-looking, normal-feeling period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I got my period!!! Naturally!! A normal-looking, normal-feeling period"
+      ]
+    },
+    {
+      "symptom": "watery blood",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "but it was more like water than blood"
+      ]
+    },
+    {
+      "symptom": "skin irritation",
+      "surprise_signals": 1,
+      "total_mentions": 3,
+      "surprise_rate": 0.3333333333333333,
+      "posts": 3,
+      "quotes": [
+        "Spearmint oil did absolutely nothing to me except irritate tf out of my skin",
+        "how am I supposed to let the hair on my face grow out for days beforehand, AND deal with skin irritation afterwards",
+        "I use it at night before going to sleep, on days that my skin isn't irritated."
+      ]
+    },
+    {
+      "symptom": "never had a natural period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have never had a natural period in my life."
+      ]
+    },
+    {
+      "symptom": "no period after going off the pill",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I didn’t get a period at all after going off the pill"
+      ]
+    },
+    {
+      "symptom": "ovulation without a period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I still never got a period but ovulated at some point."
+      ]
+    },
+    {
+      "symptom": "gut disruption",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I also see people saying it disrupts your gut?!?"
+      ]
+    },
+    {
+      "symptom": "issues with hormones",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "15 years of thinking I just had issues with 'hormones'"
+      ]
+    },
+    {
+      "symptom": "testosterone levels impact",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "insulin is a hormone that impacts testosterone levels"
+      ]
+    },
+    {
+      "symptom": "surprise about symptoms disappearing",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I was a bit surprised honestly I didn't think it'd go away."
+      ]
+    },
+    {
+      "symptom": "hyperpigmentation",
+      "surprise_signals": 1,
+      "total_mentions": 8,
+      "surprise_rate": 0.125,
+      "posts": 8,
+      "quotes": [
+        "hyperpigmentation",
+        "Hyperpigmentation there too and in other areas.",
+        "the pigmentation has completely faded",
+        "hyperpigmentation due to frequent face shaving",
+        "the hyperpigmentation that can come along with it.",
+        "causes scarring/hyperpigmentation from constant ingrowns",
+        "I’m actively working on the scars and hyperpigmentation",
+        "and gave me hyperpigmentation."
+      ]
+    },
+    {
+      "symptom": "glucose dysregulation",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I discovered I actually have glucose dysregulation"
+      ]
+    },
+    {
+      "symptom": "hyperinsulinemia",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "probably hyperinsulinemia together with adrenal dysfunction"
+      ]
+    },
+    {
+      "symptom": "adrenal dysfunction",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "probably hyperinsulinemia together with adrenal dysfunction"
+      ]
+    },
+    {
+      "symptom": "nipple fluffies",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "my mom only told me recently 'oh, nipple fluffies? i have those. your grandma too!!' - generations of pcos fml"
+      ]
+    },
+    {
+      "symptom": "not getting my period",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I haven’t gotten my period all month."
+      ]
+    },
+    {
+      "symptom": "hair not growing back",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "some areas of my chin hasn’t grown back yet, which is unusual for my face"
+      ]
+    },
+    {
+      "symptom": "rash/irritation on skin",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I got a rash/irritation on the skin under a fold on my side/saddlebag area"
+      ]
+    },
+    {
+      "symptom": "rapid weight gain",
+      "surprise_signals": 1,
+      "total_mentions": 3,
+      "surprise_rate": 0.3333333333333333,
+      "posts": 3,
+      "quotes": [
+        "somewhat rapid weight gain",
+        "poor mental health and the medication I received to deal with it had many side effects. Some of the side effects were insulin resistance, rapid weight gain and hormonal imbalances.",
+        "my weight gain reached +40lbs between November ‘24-Feb ‘25 unexplained by diet or exercise changes"
+      ]
+    },
+    {
+      "symptom": "emotional mood swings",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "my emotional moods(possibly pmdd?) have been evened out."
+      ]
+    },
+    {
+      "symptom": "sudden allergies",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I feel I have developed sudden allergies"
+      ]
+    },
+    {
+      "symptom": "negative effects from foods with salt or sugar",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "some foods with salt or sugar are affecting me in new, negative ways"
+      ]
+    },
+    {
+      "symptom": "secondary infertility",
+      "surprise_signals": 1,
+      "total_mentions": 2,
+      "surprise_rate": 0.5,
+      "posts": 2,
+      "quotes": [
+        "surprise! Secondary infertility gone",
+        "Been TTC for 1.5-2 years and experiencing secondary infertility after my 2 healthy kids."
+      ]
+    },
+    {
+      "symptom": "pregnancy",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I got the surprise of my life in July 2023 when I got pregnant naturally"
+      ]
+    },
+    {
+      "symptom": "redness",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I was pleasantly surprised to only have some redness and slight raised area like acne spots."
+      ]
+    },
+    {
+      "symptom": "raised area like acne spots",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I was pleasantly surprised to only have some redness and slight raised area like acne spots."
+      ]
+    },
+    {
+      "symptom": "acne spots",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I was pleasantly surprised to only have some redness and slight raised area like acne spots."
+      ]
+    },
+    {
+      "symptom": "dark circles",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "it worked well for my chin area, and i also used it for one week to reduce my dark circles and i was legit shocked to see that they were COMPLETELY GONE."
+      ]
+    },
+    {
+      "symptom": "paradoxical hypertrichosis",
+      "surprise_signals": 1,
+      "total_mentions": 2,
+      "surprise_rate": 0.5,
+      "posts": 2,
+      "quotes": [
+        "any area which is prone to paradoxical hypertrichosis",
+        "I got hit with paradoxical hypertrichosis, yay... now I have even more hair than before, and thicker too"
+      ]
+    },
+    {
+      "symptom": "red itchy welts",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "Broke out into red itchy welts for days."
+      ]
+    },
+    {
+      "symptom": "appendicitis",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "it turns out that at some point I had appendicitis but I just didn’t know?"
+      ]
+    },
+    {
+      "symptom": "foggy understanding of pcos",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I'll admit, I hadn't the foggiest I had it until I was diagnosed!"
+      ]
+    },
+    {
+      "symptom": "period disappearing",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "coinciding with my period disappearing for the first time in my life"
+      ]
+    },
+    {
+      "symptom": "very light and barely there periods",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "my very light and barely there periods"
+      ]
+    },
+    {
+      "symptom": "bleeding internally",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I’ve been literally bleeding internally for 3 years"
+      ]
+    },
+    {
+      "symptom": "stunned about cyst size",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I'm absolutely stunned"
+      ]
+    },
+    {
+      "symptom": "extreme body hair",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "extreme body hair that i’ve had since a prepubescent girl."
+      ]
+    },
+    {
+      "symptom": "velvety patches in armpits",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "due to velvety patches in my armpits."
+      ]
+    },
+    {
+      "symptom": "never had period pain or cramps",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I have literally never had period pain or cramps in my entire life."
+      ]
+    },
+    {
+      "symptom": "horrible pms",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "horrible PMS"
+      ]
+    },
+    {
+      "symptom": "leaking once a cycle",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "Turns out it’s not actually normal to leak once a cycle!!"
+      ]
+    },
+    {
+      "symptom": "wishing for an abusive relationship",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I wish for a man…even if he was horrifically abusive."
+      ]
+    },
+    {
+      "symptom": "extreme iron deficiency",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "It's fucking insane how many women are walking around with extreme iron deficiency too, having no idea."
+      ]
+    },
+    {
+      "symptom": "ab- blood type",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "I learned at 39 that I had AB- blood..."
+      ]
+    },
+    {
+      "symptom": "body attacking fetuses",
+      "surprise_signals": 1,
+      "total_mentions": 1,
+      "surprise_rate": 1.0,
+      "posts": 1,
+      "quotes": [
+        "it was making my body attack our fetuses."
+      ]
+    }
+  ]
+}

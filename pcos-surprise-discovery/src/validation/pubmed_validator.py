@@ -13,11 +13,6 @@ from Bio import Entrez
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
-    Config.NCBI_EMAIL,
-    Config.PROCESSED_DATA_DIR,
-    Config.VALIDATED_DATA_DIR,
-    Config.TOP_N_SYMPTOMS,
-)
 
 
 class PubMedValidator:

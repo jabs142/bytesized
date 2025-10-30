@@ -1,0 +1,941 @@
+[
+  {
+    "symptom": "weight gain",
+    "mentions": 89,
+    "posts_appearing_in": 85,
+    "frequency": 0.17,
+    "surprise_signals": 1,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical": 18,
+      "weight changes": 1,
+      "physical symptom": 33,
+      "weight issue": 16,
+      "physical health": 7,
+      "weight-related issue": 2,
+      "weight issues": 6,
+      "metabolic": 2,
+      "physical symptoms": 1,
+      "weight-related": 1,
+      "weight": 1,
+      "metabolic issue": 1
+    },
+    "sample_quotes": [
+      "gained 50-60lbs over the course of 4 years",
+      "I gained a few pounds when my weight normally does not fluctuate",
+      "35 lbs i rapidly gained after having my second kid",
+      "the underlying driver of both weight gain *and* elevated androgens is an excess of the metabolic hormone insulin.",
+      "I gained literally 20 lbs???!!"
+    ],
+    "selection_score": 87,
+    "pubmed_validation": {
+      "symptom": "weight gain",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"weight gain\"",
+      "total_papers": 276,
+      "papers_fetched": 9,
+      "top_papers": [
+        {
+          "pmid": "35934017",
+          "title": "Polycystic ovary syndrome.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS) affects 5-18% of women, and is a reproductive, metabolic, and psychological condition with impacts across the lifespan. The cause is complex, and includes genetic and epigenetic susceptibility, hypothalamic and ovarian dysfunction, excess androgen exposure, insulin resistance, and adiposity-related mechanisms. Diagnosis is recommended based on the 2003 Rotterdam criteria and confirmed with two of three criteria: hyperandrogenism (clinical or biochemical), irregul"
+        },
+        {
+          "pmid": "26509855",
+          "title": "AMERICAN ASSOCIATION OF CLINICAL ENDOCRINOLOGISTS, AMERICAN COLLEGE OF ENDOCRINOLOGY, AND ANDROGEN EXCESS AND PCOS SOCIETY DISEASE STATE CLINICAL REVIEW: GUIDE TO THE BEST PRACTICES IN THE EVALUATION AND TREATMENT OF POLYCYSTIC OVARY SYNDROME--PART 1.",
+          "year": "2015",
+          "abstract": "Polycystic Ovary Syndrome (PCOS) is recognized as the most common endocrine disorder of reproductive-aged women around the world. This document, produced by the collaboration of the American Association of Clinical Endocrinologists (AACE) and the Androgen Excess and PCOS Society (AES) aims to highlight the most important clinical issues confronting physicians and their patients with PCOS. It is a summary of current best practices in 2015. PCOS has been defined using various criteria, including m"
+        },
+        {
+          "pmid": "30921477",
+          "title": "Lifestyle changes in women with polycystic ovary syndrome.",
+          "year": "2019",
+          "abstract": "Polycystic ovary syndrome (PCOS) affects 8% to 13% of reproductive-aged women and is associated with reproductive and metabolic dysfunction. Obesity worsens the presentation of PCOS and weight management (weight loss, maintenance or prevention of excess weight gain) is proposed as an initial treatment strategy, best achieved through lifestyle changes incorporating diet, exercise and behavioural interventions. To assess the effectiveness of lifestyle treatment in improving reproductive, anthropom"
+        },
+        {
+          "pmid": "32204714",
+          "title": "Adolescent polycystic ovary syndrome according to the international evidence-based guideline.",
+          "year": "2020",
+          "abstract": "Diagnosing polycystic ovary syndrome (PCOS) during adolescence is challenging because features of normal pubertal development overlap with adult diagnostic criteria. The international evidence-based PCOS Guideline aimed to promote accurate and timely diagnosis, to optimise consistent care, and to improve health outcomes for adolescents and women with PCOS. International healthcare professionals, evidence synthesis teams and consumers informed the priorities, reviewed published data and synthesis"
+        },
+        {
+          "pmid": "35504067",
+          "title": "Green tea promotes weight loss in women with polycystic ovary syndrome: Systematic review and meta-analysis.",
+          "year": "2022",
+          "abstract": "Among the main consequences of polycystic ovary syndrome (PCOS) are menstrual dysfunction, infertility, hyperandrogenism, insulin resistance, and weight gain; in aggravated cases, it can become a risk factor for the development of metabolic syndrome and cardiovascular disease. We hypothesized that green tea can be an option to complement the treatment of PCOS. Thus, this systematic review aims to evaluate the effects of green tea supplementation in women with PCOS. We searched for randomized con"
+        },
+        {
+          "pmid": "35639552",
+          "title": "Comparison of dietary and physical activity behaviors in women with and without polycystic ovary syndrome: a systematic review and meta-analysis of 39 471 women.",
+          "year": "2022",
+          "abstract": "Lifestyle (dietary and/or physical activity [PA]) modification is recommended as first-line therapy to manage polycystic ovary syndrome (PCOS). Current recommendations are based on healthy lifestyle practices for the general public since evidence for unique lifestyle approaches in PCOS is limited and low quality. We aimed to synthesize evidence on dietary and PA behaviors between women with PCOS and those without PCOS. Primary outcomes were overall diet quality, total energy intake and total PA,"
+        },
+        {
+          "pmid": "34391246",
+          "title": "Effect of yoga on polycystic ovarian syndrome: A systematic review.",
+          "year": "2021",
+          "abstract": "Polycystic Ovarian Syndrome (PCOS) is not a disease but a mere syndrome. Many researchers have studied polycystic ovarian syndrome and found that there is no proper cause of that, it may occur due to hormonal imbalance or stress, or due to a sedentary lifestyle. The rate of polycystic ovarian syndrome in Indian women has been increasing rapidly. The symptoms include acne, weight gain, hirsutism, difficulties in fertility, irregular or infrequent periods, immature ovarian eggs that do not ovulate"
+        },
+        {
+          "pmid": "36964058",
+          "title": "Adolescent PCOS: a postpubertal central obesity syndrome.",
+          "year": "2023",
+          "abstract": "Adolescent polycystic ovary syndrome (PCOS) is a highly prevalent, reversible, endocrine-metabolic mode essentially driven by ectopic fat, which, in turn, often results from a mismatch between early adipogenesis and later lipogenesis, or between prenatal and postnatal weight gain. The key features of adolescent PCOS are menstrual irregularity and androgen excess (hirsutism, acne, and/or high testosterone). Adolescent PCOS is frequently preceded by rapid maturation (early variants of adrenarche/p"
+        },
+        {
+          "pmid": "38960811",
+          "title": "Exercise in the management of polycystic ovary syndrome: A position statement from Exercise and Sports Science Australia.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is the most prevalent endocrine condition amongst females of reproductive age, leading to lifelong cardiometabolic, reproductive, psychological, and dermatologic symptoms as well as a reduced quality of life. Lifestyle interventions, which can include structured exercise programmes delivered by appropriately trained exercise professionals such as clinical exercise physiologists, are considered first-line strategies in PCOS management due to their therapeutic effe"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "irregular periods",
+    "mentions": 82,
+    "posts_appearing_in": 81,
+    "frequency": 0.162,
+    "surprise_signals": 0,
+    "category": "menstrual issues",
+    "all_categories": {
+      "reproductive health": 13,
+      "reproductive issue": 11,
+      "menstrual issues": 27,
+      "menstrual issue": 9,
+      "menstrual symptoms": 1,
+      "reproductive symptom": 3,
+      "reproductive": 11,
+      "menstrual health": 3,
+      "physical": 1,
+      "menstrual": 2,
+      "reproductive issues": 1
+    },
+    "sample_quotes": [
+      "I get my period every month!",
+      "the heavier I am the less regular my period is",
+      "I had a history of irregular periods when I was younger, but not in the past 12 years (after having kids post birth control).",
+      "literally the first week of my journey I git my period and have been getting it every month since",
+      "I’ve only had 2 periods. I should’ve had 8 by now"
+    ],
+    "selection_score": 81,
+    "pubmed_validation": {
+      "symptom": "irregular periods",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"irregular periods\"",
+      "total_papers": 23,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "37427232",
+          "title": "Vitamin D and polycystic ovary syndrome (PCOS): a review.",
+          "year": "2023",
+          "abstract": "A common health problem known as polycystic ovarian syndrome (PCOS), is characterized by irregular periods, an excess of androgen production, and polycystic ovaries. It is one of the most prevalent endocrine disorders in women of reproductive age, affecting 4-20% of women worldwide. Numerous studies have found a connection between the onset and symptoms of PCOS and Vitamin D insufficiency. Vitamin D insufficiency causes calcium dysregulation and follicular arrest in women with PCOS, which is con"
+        },
+        {
+          "pmid": "38421576",
+          "title": "Gut Microbiota and Polycystic Ovary Syndrome (PCOS): Understanding the Pathogenesis and the Role of Probiotics as a Therapeutic Strategy.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is one of the most common disorders among women in modern societies. A variety of factors can contribute to the development of PCOS. These women often exhibit high insulin resistance (IR), hyperandrogenism, irregular periods, and infertility. Dysbiosis of the gut microbiota (GMB) in women with PCOS has attracted the attention of many researchers. Porphyromonas spp., B. coprophilus, and F. prausnitzii are found in higher numbers in the gut of women with PCOS. Shor"
+        },
+        {
+          "pmid": "39338048",
+          "title": "Prevalence of Polycystic Ovary Syndrome (PCOS) and Its Associated Risk Factors among Medical Students in Two Countries.",
+          "year": "2024",
+          "abstract": "PCOS, a common hormonal disorder in women of reproductive age, affects fertility and increases the risks of other diseases. Early detection, risk factor assessment, and intervention are crucial to prevent long-term complications. This study was conducted using a pre-validated questionnaire at two medical colleges in the UAE and Oman. The first study (UAE) results are already published. Here, we present the findings of the second study (Oman) and compare them. The prevalence of PCOS was 4.6% (<i>"
+        },
+        {
+          "pmid": "33005117",
+          "title": "Polycystic Ovary Syndrome and Gender Identity.",
+          "year": "2020",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a common endocrinopathy affecting 46XX individuals of reproductive age. Cardinal features of PCOS include hyperandrogenism, irregular periods, and insulin resistance. Pathogenesis is unclear but likely involves hypothalamic, pituitary, or ovarian abnormalities leading to increased androgen production. In addition, alternative insulin signaling pathways are activated to preserve ovarian sensitivity to insulin while other \"classical\" tissues (<i>e.g.</i> liver, "
+        },
+        {
+          "pmid": "39228465",
+          "title": "Pharmacological management of polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome is a common and frequently undiagnosed female endocrine disorder that is associated with diverse symptoms and features, and an increased risk of long-term chronic diseases such as type 2 diabetes and cardiovascular disease. Pharmacotherapy for polycystic ovary syndrome should be directed at the key concerns of the individual patient. The combined oral contraceptive pill or metformin may be prescribed for irregular periods. The combined oral contraceptive pill is preferr"
+        },
+        {
+          "pmid": "36843701",
+          "title": "Polycystic Ovarian Syndrome in Adolescents.",
+          "year": "2023",
+          "abstract": "Polycystic ovarian syndrome (PCOS) is a metabolic, reproductive, and psychological complex series of disorders that impacts a woman throughout her lifespan. PCOS is a disorder of hormonal imbalance occurring in women of reproductive age. This disorder is characterized by high levels of male androgens like testosterone. This can lead to symptoms like irregular periods, amenorrhea (absence of menstruation), anovulation (absence of ovulation), hirsutism, acne, and obesity. PCOS also causes metaboli"
+        },
+        {
+          "pmid": "39560309",
+          "title": "Examining symptom and quality of life in polycystic ovarian syndrome: a web-based cross-sectional study.",
+          "year": "2024",
+          "abstract": "Polycystic Ovarian Syndrome (PCOS) is a reproductive disorder that significantly impacts women's quality of life (QOL). Its unclear etiology, whether genetic or environmental, and the treatments associated with it have been widely studied globally. This study assessed the QOL of 108 women with PCOS, examining both physical and mental symptoms. Participants completed the Short Form-12 (SF-12) questionnaire through a web-based survey to evaluate their QOL scores. Common symptoms included menstrual"
+        },
+        {
+          "pmid": "39287700",
+          "title": "Metabolic and hormonal profiling in polycystic ovarian syndrome: insights into INSR gene variations.",
+          "year": "2024",
+          "abstract": "Polycystic Ovary Syndrome (PCOS) is a hormonal disorder characterized by irregular periods, excess androgen levels, and polycystic ovaries, affecting many women of reproductive age. This study employed statistical and molecular analyses to compare hormone and metabolic markers between PCOS patients and controls. Sanger sequencing identified two INSR gene variants linked to high insulin and pre-diabetic conditions. Statistically, no significant age differences were detected (p = 0.492) between th"
+        },
+        {
+          "pmid": "33412131",
+          "title": "Polycystic ovary syndrome and postpartum depression symptoms: a population-based cohort study.",
+          "year": "2021",
+          "abstract": "Women with polycystic ovary syndrome are more likely to experience several pregnancy complications including hypertensive disorders, gestational diabetes mellitus, and preterm births than women without polycystic ovary syndrome. However, at present, there is limited research on whether polycystic ovary syndrome is associated with both anxiety and depression during pregnancy and whether this augments a woman's risk of postpartum depression, particularly among high-risk populations who have limite"
+        },
+        {
+          "pmid": "32543238",
+          "title": "Current and experimental drug therapy for the treatment of polycystic ovarian syndrome.",
+          "year": "2020",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an endocrine disorder that affects 8-13% of reproductive-age women. Irregular periods, hirsutism, or infertility are the most common clinical presentations of patients affected by PCOS. This syndrome is also linked to metabolic abnormalities such as type 2 diabetes, insulin resistance and obesity. The optimal therapeutic approach is still unknown. This narrative review offers an overview of the literature on current and experimental pharmacological options for"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "stress",
+    "mentions": 53,
+    "posts_appearing_in": 52,
+    "frequency": 0.104,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 52,
+      "mental health issue": 1
+    },
+    "sample_quotes": [
+      "this is actually causing me more stress",
+      "maybe it's just stress",
+      "It can be due to street because I have really important exams coming up but I don't know how to manage the stress either.",
+      "prioritize not being stressed",
+      "Managing stress by doing activities that calm your nervous system."
+    ],
+    "selection_score": 52,
+    "pubmed_validation": {
+      "symptom": "stress",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"stress\"",
+      "total_papers": 1102,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "36190593",
+          "title": "A brief insight into the etiology, genetics, and immunology of polycystic ovarian syndrome (PCOS).",
+          "year": "2022",
+          "abstract": "Polycystic ovarian syndrome (PCOS) is a prevailing endocrine and metabolic disorder occurring in about 6-20% of females in reproductive age. Most symptoms of PCOS arise early during puberty. Since PCOS involves a combination of signs and symptoms, thus it is considered as a heterogeneous disorderliness. The most accepted diagnostic criteria is Rotterdam criteria which involves two of the latter three features: (a) hyperandrogenism, (b) oligo- or an-ovulation, and (c) polycystic ovaries. The pers"
+        },
+        {
+          "pmid": "35054768",
+          "title": "Polycystic Ovary Syndrome: A Comprehensive Review of Pathogenesis, Management, and Drug Repurposing.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an endocrine-gynecology disorder affecting many women of childbearing age. Although a part of the involved mechanism in PCOS occurrence is discovered, the exact etiology and pathophysiology are not comprehensively understood yet. We searched PubMed for PCOS pathogenesis and management in this article and ClinicalTrials.gov for information on repurposed medications. All responsible factors behind PCOS were thoroughly evaluated. Furthermore, the complete informa"
+        },
+        {
+          "pmid": "38965663",
+          "title": "The latest reports and treatment methods on polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an increasingly recognized endocrine disorder. The pathogenesis is not fully known. Polycystic ovary syndrome is still difficult to diagnose correctly, despite simple diagnostic criteria. The aim of the study is to review the current knowledge about PCOS and treatment options for patients with the disease. To explore this topic, publications were reviewed and conclusions drawn from them. The incidence of hyperandrogenism in a patient with PCOS may be as high a"
+        },
+        {
+          "pmid": "34976213",
+          "title": "Resveratrol ameliorates polycystic ovary syndrome via transzonal projections within oocyte-granulosa cell communication.",
+          "year": "2022",
+          "abstract": "<b>Rationale:</b> Polycystic ovary syndrome (PCOS) is closely linked to follicular dysplasia and impaired bidirectional oocyte-granulosa cell (GC) communication. Given that PCOS is a heterogeneous, multifactorial endocrine disorder, it is important to clarify the pathophysiology of this ovarian disease and identify a specific treatment. <b>Methods:</b> We generated PCOS rat models based on neonatal tributyltin (TBT) exposure and studied the therapeutic effect and mechanism of resveratrol (RSV), "
+        },
+        {
+          "pmid": "31420039",
+          "title": "Polycystic ovary syndrome and mitochondrial dysfunction.",
+          "year": "2019",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a prevalent hormonal disorder of premenopausal women worldwide and is characterized by reproductive, endocrine, and metabolic abnormalities. The clinical manifestations of PCOS include oligomenorrhea or amenorrhea, hyperandrogenism, ovarian polycystic changes, and infertility. Women with PCOS are at an increased risk of suffering from type 2 diabetes; me\\tabolic syndrome; cardiovascular events, such as hypertension, dyslipidemia; gynecological diseases, includ"
+        },
+        {
+          "pmid": "36589825",
+          "title": "Insulin resistance, autophagy and apoptosis in patients with polycystic ovary syndrome: Association with PI3K signaling pathway.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a disease in which endocrine metabolic abnormalities coexist with reproductive system abnormalities, with the main clinical manifestations including abnormal menstruation, hirsutism, acne, infertility, and obesity, and it is also a high risk for the development of many pregnancy complications, gynecological malignancies and other diseases. Therefore, timely intervention to prevent the progression of PCOS is of great significance for improving the quality of li"
+        },
+        {
+          "pmid": "36676087",
+          "title": "Polycystic Ovary Syndrome and Endocrine Disruptors (Bisphenols, Parabens, and Triclosan)-A Systematic Review.",
+          "year": "2023",
+          "abstract": "Exposure to endocrine disrupting chemicals (EDCs) can result in alterations of the female reproductive system, including polycystic ovary syndrome (PCOS). The aim of this review was to summarize the knowledge about the association of EDCs (bisphenols, parabens, and triclosan) with PCOS. We conducted an electronic literature search using PubMed for studies published between January 2007 and October 2022 on EDCs related to PCOS, and evaluated the association of PCOS with bisphenols, parabens and t"
+        },
+        {
+          "pmid": "33592539",
+          "title": "Tempol ameliorates polycystic ovary syndrome through attenuating intestinal oxidative stress and modulating of gut microbiota composition-serum metabolites interaction.",
+          "year": "2021",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a complex endocrine and metabolic disorder, which is often accompanied by oxidative stress. Tempol, a superoxide dismutase mimetic, protects against several diseases caused by oxidative stress. However, the effect of tempol on PCOS has not been investigated. The present study demonstrated the alleviation of ovarian dysfunction and glucose tolerance in dehydroepiandrosterone (DHEA)-induced PCOS rats treated with tempol. Tempol significantly reduced the intestin"
+        },
+        {
+          "pmid": "35956124",
+          "title": "PCOS Physiopathology and Vitamin D Deficiency: Biological Insights and Perspectives for Treatment.",
+          "year": "2022",
+          "abstract": "Recent literature has stressed the importance of vitamin D (VD) in polycystic ovary syndrome (PCOS). Women with PCOS are deficient in VD, particularly those with a higher weight. Hypovitaminosis is a risk factor for glucose intolerance, and reduced levels of VD is associated with insulin resistance and increased diabetes risk. Since women with PCOS and hirsutism seem to have lower levels of VD than women with PCOS without hirsutism, a correlation between VD deficiency and hyperandrogenism may be"
+        },
+        {
+          "pmid": "35594990",
+          "title": "Mitochondrial and glucose metabolic dysfunctions in granulosa cells induce impaired oocytes of polycystic ovary syndrome through Sirtuin 3.",
+          "year": "2022",
+          "abstract": "Mitochondrial function and glucose metabolism play important roles in bidirectional signaling between granulosa cells (GCs) and oocytes. However, the factors associated with mitochondrial function and glucose metabolism of GCs in polycystic ovary syndrome (PCOS) are poorly understood, and their potential downstream effects on oocyte quality are still unknown. The aim of this study was to investigate whether there are alterations in mitochondrial-related functions and glucose metabolism in ovaria"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "insulin resistance",
+    "mentions": 50,
+    "posts_appearing_in": 50,
+    "frequency": 0.1,
+    "surprise_signals": 1,
+    "category": "metabolic issue",
+    "all_categories": {
+      "metabolic issue": 16,
+      "physical health": 2,
+      "metabolic condition": 6,
+      "endocrine": 1,
+      "metabolic issues": 5,
+      "condition": 8,
+      "health issue": 2,
+      "metabolic": 6,
+      "physical": 2,
+      "physical condition": 1,
+      "health condition": 1
+    },
+    "sample_quotes": [
+      "My GYN said that I am insulin resistant.",
+      "The Keto diet helped me a lot with the androgen levels and with insulin resistance.",
+      "metformin helps with breaking the insulin resistance",
+      "I have insulin resistance",
+      "you can still have insulin resistance at a lean weight."
+    ],
+    "selection_score": 52,
+    "pubmed_validation": {
+      "symptom": "insulin resistance",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"insulin resistance\"",
+      "total_papers": 3803,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "37213054",
+          "title": "Pathophysiology and Nutritional Approaches in Polycystic Ovary Syndrome (PCOS): A Comprehensive Review.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is the most common endocrine and metabolic disorder in women of reproductive age worldwide. This disease causes menstrual, metabolic, and biochemical abnormalities such as hyperandrogenism, oligo-anovulatory menstrual cycles, polycystic ovary, hyperleptinemia, insulin resistance (IR), and cardiometabolic disorders, often associated with overweight or obesity and visceral adiposity. The etiology and pathophysiology of PCOS are not yet fully understood, but insulin"
+        },
+        {
+          "pmid": "36190593",
+          "title": "A brief insight into the etiology, genetics, and immunology of polycystic ovarian syndrome (PCOS).",
+          "year": "2022",
+          "abstract": "Polycystic ovarian syndrome (PCOS) is a prevailing endocrine and metabolic disorder occurring in about 6-20% of females in reproductive age. Most symptoms of PCOS arise early during puberty. Since PCOS involves a combination of signs and symptoms, thus it is considered as a heterogeneous disorderliness. The most accepted diagnostic criteria is Rotterdam criteria which involves two of the latter three features: (a) hyperandrogenism, (b) oligo- or an-ovulation, and (c) polycystic ovaries. The pers"
+        },
+        {
+          "pmid": "36631836",
+          "title": "Insulin resistance in polycystic ovary syndrome across various tissues: an updated review of pathogenesis, evaluation, and treatment.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a common endocrine disorder characterized by chronic ovulation dysfunction and overabundance of androgens; it affects 6-20% of women of reproductive age. PCOS involves various pathophysiological factors, and affected women usually have significant insulin resistance (IR), which is a major cause of PCOS. IR and compensatory hyperinsulinaemia have differing pathogeneses in various tissues, and IR varies among different PCOS phenotypes. Genetic and epigenetic cha"
+        },
+        {
+          "pmid": "38965663",
+          "title": "The latest reports and treatment methods on polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an increasingly recognized endocrine disorder. The pathogenesis is not fully known. Polycystic ovary syndrome is still difficult to diagnose correctly, despite simple diagnostic criteria. The aim of the study is to review the current knowledge about PCOS and treatment options for patients with the disease. To explore this topic, publications were reviewed and conclusions drawn from them. The incidence of hyperandrogenism in a patient with PCOS may be as high a"
+        },
+        {
+          "pmid": "29678491",
+          "title": "Polycystic ovary syndrome (PCOS), an inflammatory, systemic, lifestyle endocrinopathy.",
+          "year": "2018",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an endocrine disorder, afflicting females of reproductive age. This syndrome leads to infertility, insulin resistance, obesity, and cardiovascular problems, including a litany of other health issues. PCOS is a polygenic, polyfactorial, systemic, inflammatory, dysregulated steroid state, autoimmune disease, manifesting largely due to lifestyle errors. The advent of biochemical tests and ultrasound scanning has enabled the detection of PCOS in the affected femal"
+        },
+        {
+          "pmid": "36589825",
+          "title": "Insulin resistance, autophagy and apoptosis in patients with polycystic ovary syndrome: Association with PI3K signaling pathway.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a disease in which endocrine metabolic abnormalities coexist with reproductive system abnormalities, with the main clinical manifestations including abnormal menstruation, hirsutism, acne, infertility, and obesity, and it is also a high risk for the development of many pregnancy complications, gynecological malignancies and other diseases. Therefore, timely intervention to prevent the progression of PCOS is of great significance for improving the quality of li"
+        },
+        {
+          "pmid": "32621748",
+          "title": "Effect of Diet on Insulin Resistance in Polycystic Ovary Syndrome.",
+          "year": "2020",
+          "abstract": "The effect of diet on insulin resistance (IR) in polycystic ovary syndrome (PCOS) is controversial. Thus, we conducted this systematic review and meta-analysis to evaluate whether diet could reduce IR in women with PCOS while providing optimal and precise nutrition advice for clinical practice. The search was conducted in 8 databases through June 30, 2019. The systematic review was performed following the Preferred Reporting Items for Systematic Reviews and Meta-analyses guidelines. A random-eff"
+        },
+        {
+          "pmid": "31604107",
+          "title": "Hyperandrogenemia and insulin resistance: The chief culprit of polycystic ovary syndrome.",
+          "year": "2019",
+          "abstract": "Polycystic ovary syndrome (PCOS) is one of the most common systemic reproductive endocrine diseases, which has a variety of effects on a woman's health. Because of the involvement of multiple pathways and the lack of common clues, PCOS demonstrates multifactorial properties and heterogeneity of symptoms. Recent studies have demonstrated that the core etiology and primary endocrine characteristics of PCOS are hyperandrogenemia (HA) and insulin resistance (IR). HA and IR are the main causes of PCO"
+        },
+        {
+          "pmid": "27808588",
+          "title": "Comparison of two insulin sensitizers, metformin and myo-inositol, in women with polycystic ovary syndrome (PCOS).",
+          "year": "2017",
+          "abstract": "Insulin resistance (IR) plays a pivotal role in PCOS. Insulin-sensitizer agents such as metformin and inositols have been shown to improve the endocrine and metabolic aspects of PCOS. The purpose of this study is to compare their effects on the clinical and metabolic features of the women with PCOS. Fifty PCOS women with IR and/or hyperinsulinemia were randomized to treatment with metformin (1500 mg/day) or myo-inositol (4 g/day). IR was defined as HOMA-IR >2.5, while hyperinsulinemia was define"
+        },
+        {
+          "pmid": "39609634",
+          "title": "Polycystic ovary syndrome as a metabolic disease.",
+          "year": "2025",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a heterogeneous familial disorder affecting up to one in five women. The aetiology remains unclear, but available evidence suggests it is a polygenic disorder with epigenetic, developmental, and environmental components. The diagnostic criteria for PCOS are based on reproductive features, and the syndrome is categorized into several phenotypes that can vary by race and ethnicity. Insulin resistance and metabolic dysfunction have a crucial role in the pathogene"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "hirsutism",
+    "mentions": 44,
+    "posts_appearing_in": 44,
+    "frequency": 0.088,
+    "surprise_signals": 1,
+    "category": "skin issue",
+    "all_categories": {
+      "skin issue": 21,
+      "physical symptom": 8,
+      "skin issues": 6,
+      "physical symptoms": 1,
+      "hair growth issues": 1,
+      "condition": 1,
+      "skin": 1,
+      "hair growth issue": 1,
+      "physical": 1,
+      "hair growth": 2,
+      "hair issue": 1
+    },
+    "sample_quotes": [
+      "my PCOS symptoms are hirsutism",
+      "I have some hirsutism, not much though.",
+      "Hirsutism: Excess hair on my abdomen, thighs, breasts, and jawline.",
+      "I was diagnosed with PCOS because my testosterone levels are very high and I also have hirsutism (i can basically grow a beard).",
+      "I don’t experience hirsutism"
+    ],
+    "selection_score": 46,
+    "pubmed_validation": {
+      "symptom": "hirsutism",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"hirsutism\"",
+      "total_papers": 1004,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "38965663",
+          "title": "The latest reports and treatment methods on polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an increasingly recognized endocrine disorder. The pathogenesis is not fully known. Polycystic ovary syndrome is still difficult to diagnose correctly, despite simple diagnostic criteria. The aim of the study is to review the current knowledge about PCOS and treatment options for patients with the disease. To explore this topic, publications were reviewed and conclusions drawn from them. The incidence of hyperandrogenism in a patient with PCOS may be as high a"
+        },
+        {
+          "pmid": "29995717",
+          "title": "Polycystic Ovary Syndrome.",
+          "year": "2018",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a highly prevalent disorder, representing the single most common endocrine-metabolic disorder in reproductive-aged women. Currently there are four recognized phenotypes of PCOS: 1) hyperandrogenism+oligo-anovulation+polycystic ovarian morphology; 2) hyperandrogenism+oligo-anovulation; 3) hyperandrogenism+polycystic ovarian morphology; and 4) oligo-anovulation+polycystic ovarian morphology, each with different long-term health and metabolic implications. Clinic"
+        },
+        {
+          "pmid": "30100006",
+          "title": "Polycystic Ovary Syndrome.",
+          "year": "2018",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a commonly occurring endocrine disorder characterized by hirsutism, anovulation, and polycystic ovaries. Often comorbid with insulin resistance, dyslipidemia, and obesity, it also carries significant risk for the development of cardiovascular and metabolic sequelae, including diabetes and metabolic syndrome. Traditionally, the treatment of patients with PCOS has focused on relief of symptoms. Here, the criteria for the diagnosis of PCOS are reviewed with an em"
+        },
+        {
+          "pmid": "27510481",
+          "title": "Hirsutism in Polycystic Ovary Syndrome: Pathophysiology and Management.",
+          "year": "2016",
+          "abstract": "Hirsutism is defined as the presence of terminal hair with male distribution in women, and polycystic ovary syndrome (PCOS) is the most common etiology of hirsutism. The aim of this study is to review aspects of hair growth that are relevant for the understanding of hirsutism in PCOS, along with current treatment alternatives. The prevalence of hirsutism in PCOS ranges from 70 to 80%, vs. 4% to 11% in women in the general population. Hirsutism in PCOS is associated with both ovarianderived andro"
+        },
+        {
+          "pmid": "26509855",
+          "title": "AMERICAN ASSOCIATION OF CLINICAL ENDOCRINOLOGISTS, AMERICAN COLLEGE OF ENDOCRINOLOGY, AND ANDROGEN EXCESS AND PCOS SOCIETY DISEASE STATE CLINICAL REVIEW: GUIDE TO THE BEST PRACTICES IN THE EVALUATION AND TREATMENT OF POLYCYSTIC OVARY SYNDROME--PART 1.",
+          "year": "2015",
+          "abstract": "Polycystic Ovary Syndrome (PCOS) is recognized as the most common endocrine disorder of reproductive-aged women around the world. This document, produced by the collaboration of the American Association of Clinical Endocrinologists (AACE) and the Androgen Excess and PCOS Society (AES) aims to highlight the most important clinical issues confronting physicians and their patients with PCOS. It is a summary of current best practices in 2015. PCOS has been defined using various criteria, including m"
+        },
+        {
+          "pmid": "35916457",
+          "title": "Polycystic ovaries and herbal remedies: A systematic review.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an endocrine disorder that affects one in every 15 women worldwide. This disorder is mainly characterized by increased levels of male hormones (androgens), acne, and hirsutism, and can lead to long-term insulin resistance, miscarriage, or even infertility in women. PCOS is a disorder that can be treated with natural and allopathic remedies that work against the PCOS mechanism. The present study reviews previous studies on the treatment of PCOS using natural dr"
+        },
+        {
+          "pmid": "35181044",
+          "title": "Polycystic ovarian syndrome-current pharmacotherapy and clinical implications.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS), the most common endocrinopathy in women is characterized by polycystic ovaries, chronic anovulation and hyperandrogenism. The treatment in PCOS is mainly symptomatic and involves lifestyle interventions and medications such as Metformin, Oral contraceptives and Antiandrogens. However, the management of PCOS is challenging and current interventions are not able to deal with outcomes of this syndrome. This review encompasses latest pharmacotherapeutic and non-phar"
+        },
+        {
+          "pmid": "37215125",
+          "title": "Dysregulation of immune response in PCOS organ system.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is the most common reproductive endocrine disorder affecting women, which can lead to infertility. Infertility, obesity, hirsutism, acne, and irregular menstruation are just a few of the issues that PCOS can be linked to. PCOS has a complicated pathophysiology and a range of clinical symptoms. Chronic low-grade inflammation is one of the features of PCOS. The inflammatory environment involves immune and metabolic disturbances. Numerous organ systems across the bo"
+        },
+        {
+          "pmid": "27808588",
+          "title": "Comparison of two insulin sensitizers, metformin and myo-inositol, in women with polycystic ovary syndrome (PCOS).",
+          "year": "2017",
+          "abstract": "Insulin resistance (IR) plays a pivotal role in PCOS. Insulin-sensitizer agents such as metformin and inositols have been shown to improve the endocrine and metabolic aspects of PCOS. The purpose of this study is to compare their effects on the clinical and metabolic features of the women with PCOS. Fifty PCOS women with IR and/or hyperinsulinemia were randomized to treatment with metformin (1500 mg/day) or myo-inositol (4 g/day). IR was defined as HOMA-IR >2.5, while hyperinsulinemia was define"
+        },
+        {
+          "pmid": "36759093",
+          "title": "Polycystic Ovarian Syndrome.",
+          "year": "2023",
+          "abstract": "Polycystic ovarian syndrome (PCOS) is a complex, familial, polygenetic metabolic condition. The Rotterdam criteria are commonly used to diagnose PCOS. Lifestyle changes are the first-line treatment of PCOS. Treatment options for menstrual irregularities and hirsutism are based on the clinical goals and preferences of the patient. Along with treating the symptoms of PCOS, it is essential to screen and treat the comorbid conditions commonly associated with PCOS, including type 2 diabetes mellitus,"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "fatigue",
+    "mentions": 39,
+    "posts_appearing_in": 39,
+    "frequency": 0.078,
+    "surprise_signals": 0,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical": 6,
+      "physical symptom": 20,
+      "general health": 7,
+      "energy issue": 1,
+      "mental health": 1,
+      "cognitive issues": 1,
+      "general health issue": 1,
+      "general": 1,
+      "physical health": 1
+    },
+    "sample_quotes": [
+      "I've been too fatigued to go",
+      "I am tired all the time.",
+      "unusual hunger/food cravings/fatigue",
+      "but contributes to my fatigue.",
+      "unusual hunger/food cravings/fatigue"
+    ],
+    "selection_score": 39,
+    "pubmed_validation": {
+      "symptom": "fatigue",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"fatigue\"",
+      "total_papers": 30,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "34907435",
+          "title": "Effect of acupuncture and metformin on insulin sensitivity in women with polycystic ovary syndrome and insulin resistance: a three-armed randomized controlled trial.",
+          "year": "2022",
+          "abstract": "Does acupuncture improve insulin sensitivity more effectively than metformin or sham acupuncture in women with polycystic ovary syndrome (PCOS) and insulin resistance (IR)? Among women with PCOS and IR, acupuncture was not more effective than metformin or sham acupuncture in improving insulin sensitivity. Uncontrolled trials have shown that acupuncture improved insulin sensitivity with fewer side effects compared with metformin in women with PCOS and IR. However, data from randomized trials betw"
+        },
+        {
+          "pmid": "35918728",
+          "title": "The effects of magnesium supplementation on abnormal uterine bleeding, alopecia, quality of life, and acne in women with polycystic ovary syndrome: a randomized clinical trial.",
+          "year": "2022",
+          "abstract": "Abnormal uterine bleeding (AUB), alopecia, low quality of life, and acne are considered as complications of polycystic ovary syndrome (PCOS). We hypothesized that magnesium supplementation would yield beneficial effects on PCOS related complications. To examine the effects of magnesium supplementation on AUB, alopecia, quality of life, and acne. In this parallel randomized clinical trial, we randomly assigned 64 women with PCOS to the magnesium group (n = 32) or placebo group (n = 32) for 10 wee"
+        },
+        {
+          "pmid": "25006718",
+          "title": "Letrozole versus clomiphene for infertility in the polycystic ovary syndrome.",
+          "year": "2014",
+          "abstract": "Clomiphene is the current first-line infertility treatment in women with the polycystic ovary syndrome, but aromatase inhibitors, including letrozole, might result in better pregnancy outcomes. In this double-blind, multicenter trial, we randomly assigned 750 women, in a 1:1 ratio, to receive letrozole or clomiphene for up to five treatment cycles, with visits to determine ovulation and pregnancy, followed by tracking of pregnancies. The polycystic ovary syndrome was defined according to modifie"
+        },
+        {
+          "pmid": "38146250",
+          "title": "Comparison of the efficacy of different frequency electroacupuncture in the treatment of polycystic ovary syndrome patients with abdominal obesity.",
+          "year": "2023",
+          "abstract": "To compare the effects of 2 Hz continuous wave and 2 Hz/100 Hz dilatational wave setting in electroacupuncture(EA) on ovulation frequency, hormone levels, body fat parameters, quality of life and depression-anxiety level in polycystic ovary syndrome (PCOS) patients with abdominal obesity. PCOS patients with abdominal obesity were randomly divided into low-frequency group (<i>n</i>=29) and dilatational wave group (<i>n</i>=29). Patients in both groups were treated with \"Tongtiaodaimai\" (regulatin"
+        },
+        {
+          "pmid": "39666967",
+          "title": "Exploring Self-Reported Symptoms for Developing and Evaluating Digital Symptom Checkers for Polycystic Ovarian Syndrome, Endometriosis, and Uterine Fibroids: Exploratory Survey Study.",
+          "year": "2024",
+          "abstract": "Reproductive health conditions such as polycystic ovary syndrome (PCOS), endometriosis, and uterine fibroids pose a significant burden to people who menstruate, health care systems, and economies. Despite clinical guidelines for each condition, prolonged delays in diagnosis are commonplace, resulting in an increase to health care costs and risk of health complications. Symptom checker apps have the potential to significantly reduce time to diagnosis by providing users with health information and"
+        },
+        {
+          "pmid": "37715066",
+          "title": "Insulin Resistance in Patients with Polycystic Ovary Syndrome is a Predictor of Fibromyalgia.",
+          "year": "2024",
+          "abstract": "This study aims to investigate the frequency of fibromyalgia and its predictors in women with polycystic ovary syndrome (PCOS) and its relationship with insulin resistance, and to assess the effect of fibromyalgia on the anxiety and depressive symptoms in PCOS patients, and how the quality of life was affected by this combination. The study was conducted with 74 women with PCOS according to the Rotterdam criteria, which applied to our tertiary care clinic between January 2021 and January 2022, a"
+        },
+        {
+          "pmid": "38194939",
+          "title": "Polycystic Ovary Syndrome and Alteration of Vocal Function: A Systematic Review and Meta-Analysis.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a common hormonal disorder among young women, correlated with hyperandrogenism. Among the symptoms of PCOS, vocal alterations are quite unknown. Dysphonia may be related to hyperandrogenism, and there is no consensus about its prevalence and the severity of vocal disorders, which can cause noticeable discomfort. A systematic review of the literature was conducted. Four studies on PCOS that evaluated the phonatory system were included for a total of 174 patient"
+        },
+        {
+          "pmid": "26703328",
+          "title": "\"Is It Her Hormones?\": Psychiatric Diagnoses and Polycystic Ovarian Syndrome.",
+          "year": "2016",
+          "abstract": "Beth, whom you have cared for in your primary care practice since she was born, is a 15-year-old adolescent girl with no prior psychiatric history who developed significant symptoms of clinical depression, associated with self-injurious behavior (cutting on wrists, arms, and thighs). She denied any known precipitant for her depression.She is a ninth grade honors student in the gifted program at a local high school and is described as a talented musician, playing multiple musical instruments as w"
+        },
+        {
+          "pmid": "39666468",
+          "title": "Association of Gut Microbiota With Fatigue in Black Women With Polycystic Ovary Syndrome.",
+          "year": "",
+          "abstract": "Fatigue is a highly prevalent symptom for individuals with polycystic ovary syndrome (PCOS); however, characterization of fatigue and investigation into the gut microbiome-a pathway that may contribute to fatigue-remains inadequately explored in Black women with PCOS. The purpose of this cross-sectional study was to examine fatigue and its relationship to the gut microbiome in adult Black women with PCOS. Adult Black women with a diagnosis of PCOS were recruited for this cross-sectional study. T"
+        },
+        {
+          "pmid": "26789346",
+          "title": "IDENTIFICATION OF POTENTIAL MARKERS FOR CUSHING DISEASE.",
+          "year": "2016",
+          "abstract": "Cushing disease (CD) causes a wide variety of nonspecific symptoms, which may result in delayed diagnosis. It may be possible to uncover unusual combinations of otherwise common symptoms using International Classification of Diseases, Ninth Revision, Clinical Modification (ICD-9-CM) codes. Our aim was to identify and evaluate dyads of clinical symptoms or conditions associated with CD. We conducted a matched case-control study using a commercial healthcare insurance claims database designed to c"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "anxiety",
+    "mentions": 39,
+    "posts_appearing_in": 38,
+    "frequency": 0.076,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 39
+    },
+    "sample_quotes": [
+      "raging anxiety",
+      "I'm a very anxious person and it's been a rough year.",
+      "I am already nauseous a lot, without taking it, because of anxiety.",
+      "hypoglycemic episodes that can feel like panic attacks…e.g., tremor/anxiety/muscle weakness/high heart rate/sweating/faintness/spots in vision, occasionally nausea, etc.",
+      "I also take Wellbutrin (an NDRI) for anxiety."
+    ],
+    "selection_score": 38,
+    "pubmed_validation": {
+      "symptom": "anxiety",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"anxiety\"",
+      "total_papers": 375,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "34970669",
+          "title": "Nutritional Supplements and Complementary Therapies in Polycystic Ovary Syndrome.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS) affects 1 in 5 women of reproductive age, and is characterized by menstrual irregularities, clinical or biochemical hyperandrogenism, and the presence of polycystic ovary morphology. One of the recommended treatment strategies in the international evidence-based guidelines is lifestyle modification, which includes diet and exercise, with the aim of improving a range of health outcomes. The incurable nature of PCOS reinforces the importance of developing novel and"
+        },
+        {
+          "pmid": "38637590",
+          "title": "Polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Despite affecting ~11-13% of women globally, polycystic ovary syndrome (PCOS) is a substantially understudied condition. PCOS, possibly extending to men's health, imposes a considerable health and economic burden worldwide. Diagnosis in adults follows the International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome, requiring two out of three criteria - clinical or biochemical hyperandrogenism, ovulatory dysfunction, and/or specific ovarian morphological "
+        },
+        {
+          "pmid": "36759093",
+          "title": "Polycystic Ovarian Syndrome.",
+          "year": "2023",
+          "abstract": "Polycystic ovarian syndrome (PCOS) is a complex, familial, polygenetic metabolic condition. The Rotterdam criteria are commonly used to diagnose PCOS. Lifestyle changes are the first-line treatment of PCOS. Treatment options for menstrual irregularities and hirsutism are based on the clinical goals and preferences of the patient. Along with treating the symptoms of PCOS, it is essential to screen and treat the comorbid conditions commonly associated with PCOS, including type 2 diabetes mellitus,"
+        },
+        {
+          "pmid": "32204714",
+          "title": "Adolescent polycystic ovary syndrome according to the international evidence-based guideline.",
+          "year": "2020",
+          "abstract": "Diagnosing polycystic ovary syndrome (PCOS) during adolescence is challenging because features of normal pubertal development overlap with adult diagnostic criteria. The international evidence-based PCOS Guideline aimed to promote accurate and timely diagnosis, to optimise consistent care, and to improve health outcomes for adolescents and women with PCOS. International healthcare professionals, evidence synthesis teams and consumers informed the priorities, reviewed published data and synthesis"
+        },
+        {
+          "pmid": "30131078",
+          "title": "Depression, anxiety and perceived stress in women with and without PCOS: a community-based study.",
+          "year": "2019",
+          "abstract": "Polycystic ovary syndrome (PCOS) is associated with increased psychological distress in clinical populations. We aimed to assess depression, anxiety and perceived stress in women with and without PCOS in a large community-based sample and investigate the role of stress in contributing to and mediating the relationship between PCOS, depression and anxiety. A cross-sectional analysis was performed from the Australian Longitudinal Study of Women's Health (ALWSH) comparing women with (n = 478) or wi"
+        },
+        {
+          "pmid": "36421397",
+          "title": "The Gut Microbiome and Female Health.",
+          "year": "2022",
+          "abstract": "The possession of two X chromosomes may come with the risk of various illnesses, females are more likely to be affected by osteoarthritis, heart disease, and anxiety. Given the reported correlations between gut microbiome dysbiosis and various illnesses, the female gut microbiome is worthy of exploration. Herein, we discuss the composition of the female gut microbiota and its dysbiosis in pathologies affecting the female population. Using PubMed, we performed a literature search, using key terms"
+        },
+        {
+          "pmid": "30316414",
+          "title": "Beyond fertility: polycystic ovary syndrome and long-term health.",
+          "year": "2018",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a reproductive, endocrine, and metabolic disorder affecting millions of women worldwide. Women with PCOS are often identified in adolescence or early adulthood with symptoms of oligomenorrhea or hirsutism or when presenting for infertility care. The health risks associated out of PCOS, however, go far beyond management of these common presenting symptoms or fertility treatment and likely extend past the reproductive years through and beyond menopause. Internat"
+        },
+        {
+          "pmid": "31677111",
+          "title": "Female Androgenetic Alopecia: An Update on Diagnosis and Management.",
+          "year": "2020",
+          "abstract": "Female androgenetic alopecia (FAGA) is a common cause of non-scarring alopecia in women. The onset may be at any age following puberty and the frequency increases with age. Clinically, it shows a diffuse hair thinning over the central scalp, while the frontal hairline is usually retained. FAGA can have a significant psychological impact, leading to anxiety and depression. For this reason, early diagnosis is very important to stop the progression of the disease. The sex hormonal milieu is the mai"
+        },
+        {
+          "pmid": "34391246",
+          "title": "Effect of yoga on polycystic ovarian syndrome: A systematic review.",
+          "year": "2021",
+          "abstract": "Polycystic Ovarian Syndrome (PCOS) is not a disease but a mere syndrome. Many researchers have studied polycystic ovarian syndrome and found that there is no proper cause of that, it may occur due to hormonal imbalance or stress, or due to a sedentary lifestyle. The rate of polycystic ovarian syndrome in Indian women has been increasing rapidly. The symptoms include acne, weight gain, hirsutism, difficulties in fertility, irregular or infrequent periods, immature ovarian eggs that do not ovulate"
+        },
+        {
+          "pmid": "37867519",
+          "title": "The role of the thyroid in polycystic ovary syndrome.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is the most common endocrine and metabolic disease in women of childbearing age and can cause metabolic disorder, infertility, and increased anxiety and depression; as a result, it can seriously affect the physical and mental health of fertile women. PCOS is a highly clinically heterogeneous disease with unclear etiology and pathogenesis, which increases the difficulty of treatment. The thyroid gland has complex regulatory effects on metabolism, reproduction, and"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "acne",
+    "mentions": 36,
+    "posts_appearing_in": 35,
+    "frequency": 0.07,
+    "surprise_signals": 1,
+    "category": "skin issue",
+    "all_categories": {
+      "skin issue": 25,
+      "skin issues": 4,
+      "skin": 7
+    },
+    "sample_quotes": [
+      "much acne anymore (it used to be worse when I was younger)",
+      "my acne became so terrible",
+      "I’m still struggling with acne",
+      "I've struggled with acne for a long time despite eating fairly healthy now and being vegan.",
+      "I've been breaking out more often now for about two months now and I don't know why."
+    ],
+    "selection_score": 37,
+    "pubmed_validation": {
+      "symptom": "acne",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"acne\"",
+      "total_papers": 511,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "38965663",
+          "title": "The latest reports and treatment methods on polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an increasingly recognized endocrine disorder. The pathogenesis is not fully known. Polycystic ovary syndrome is still difficult to diagnose correctly, despite simple diagnostic criteria. The aim of the study is to review the current knowledge about PCOS and treatment options for patients with the disease. To explore this topic, publications were reviewed and conclusions drawn from them. The incidence of hyperandrogenism in a patient with PCOS may be as high a"
+        },
+        {
+          "pmid": "27510637",
+          "title": "Polycystic ovary syndrome.",
+          "year": "2016",
+          "abstract": "Polycystic ovary syndrome (PCOS) affects 5-20% of women of reproductive age worldwide. The condition is characterized by hyperandrogenism, ovulatory dysfunction and polycystic ovarian morphology (PCOM) - with excessive androgen production by the ovaries being a key feature of PCOS. Metabolic dysfunction characterized by insulin resistance and compensatory hyperinsulinaemia is evident in the vast majority of affected individuals. PCOS increases the risk for type 2 diabetes mellitus, gestational d"
+        },
+        {
+          "pmid": "26509855",
+          "title": "AMERICAN ASSOCIATION OF CLINICAL ENDOCRINOLOGISTS, AMERICAN COLLEGE OF ENDOCRINOLOGY, AND ANDROGEN EXCESS AND PCOS SOCIETY DISEASE STATE CLINICAL REVIEW: GUIDE TO THE BEST PRACTICES IN THE EVALUATION AND TREATMENT OF POLYCYSTIC OVARY SYNDROME--PART 1.",
+          "year": "2015",
+          "abstract": "Polycystic Ovary Syndrome (PCOS) is recognized as the most common endocrine disorder of reproductive-aged women around the world. This document, produced by the collaboration of the American Association of Clinical Endocrinologists (AACE) and the Androgen Excess and PCOS Society (AES) aims to highlight the most important clinical issues confronting physicians and their patients with PCOS. It is a summary of current best practices in 2015. PCOS has been defined using various criteria, including m"
+        },
+        {
+          "pmid": "35916457",
+          "title": "Polycystic ovaries and herbal remedies: A systematic review.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is an endocrine disorder that affects one in every 15 women worldwide. This disorder is mainly characterized by increased levels of male hormones (androgens), acne, and hirsutism, and can lead to long-term insulin resistance, miscarriage, or even infertility in women. PCOS is a disorder that can be treated with natural and allopathic remedies that work against the PCOS mechanism. The present study reviews previous studies on the treatment of PCOS using natural dr"
+        },
+        {
+          "pmid": "37215125",
+          "title": "Dysregulation of immune response in PCOS organ system.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is the most common reproductive endocrine disorder affecting women, which can lead to infertility. Infertility, obesity, hirsutism, acne, and irregular menstruation are just a few of the issues that PCOS can be linked to. PCOS has a complicated pathophysiology and a range of clinical symptoms. Chronic low-grade inflammation is one of the features of PCOS. The inflammatory environment involves immune and metabolic disturbances. Numerous organ systems across the bo"
+        },
+        {
+          "pmid": "38389707",
+          "title": "PCOS stratification for precision diagnostics and treatment.",
+          "year": "2024",
+          "abstract": "Globally, polycystic ovarian syndrome (PCOS) affects approximately 10% of fertile women, leading to great health and economic burden. PCOS is a heterogenous illness that can cause infertility, irregular menstrual cycles, acne, and hirsutism, among other symptoms. The clinical diagnosis is primarily a diagnosis of exclusion if one or more of the three primary symptoms, namely, oligo- or anovulation, hyperandrogenism, and polycystic ovarian morphology, are present. Obesity and PCOS are often coexi"
+        },
+        {
+          "pmid": "37880791",
+          "title": "The effects of intermittent fasting diet alone or in combination with probiotic supplementation in comparison with calorie-restricted diet on metabolic and hormonal profile in patients with polycystic ovary syndrome: study protocol for a randomized clinical trial.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is one of the most common endocrine disorders in females characterized by ovulatory dysfunction, hyperandrogenism, and other metabolic disorders. Both intermittent fasting and specific probiotics have been suggested to help improve patients with PCOS through changes in gut microbial composition, circadian clock, and metabolic regulation. Therefore, the present study aims to investigate the effects of intermittent fasting alone or in combination with probiotic sup"
+        },
+        {
+          "pmid": "27808588",
+          "title": "Comparison of two insulin sensitizers, metformin and myo-inositol, in women with polycystic ovary syndrome (PCOS).",
+          "year": "2017",
+          "abstract": "Insulin resistance (IR) plays a pivotal role in PCOS. Insulin-sensitizer agents such as metformin and inositols have been shown to improve the endocrine and metabolic aspects of PCOS. The purpose of this study is to compare their effects on the clinical and metabolic features of the women with PCOS. Fifty PCOS women with IR and/or hyperinsulinemia were randomized to treatment with metformin (1500 mg/day) or myo-inositol (4 g/day). IR was defined as HOMA-IR >2.5, while hyperinsulinemia was define"
+        },
+        {
+          "pmid": "37265016",
+          "title": "A randomized controlled trial comparing myoinositol with metformin versus metformin monotherapy in polycystic ovary syndrome.",
+          "year": "2023",
+          "abstract": "Insulin resistance and hyperinsulinemia plays an important role in pathogenesis of polycystic ovary syndrome (PCOS). Metformin, Myoinositol and d-chiro-inositol acts as insulin sensitizers and exerts a beneficial effects in PCOS. The objective is to compare the effect of metformin monotherapy versus a combination of metformin with Myoinositol and d-chiro-inositol in PCOS. This study is a randomized controlled trial conducted over a period of 6 months. All overweight and obese women with PCOS wit"
+        },
+        {
+          "pmid": "32204714",
+          "title": "Adolescent polycystic ovary syndrome according to the international evidence-based guideline.",
+          "year": "2020",
+          "abstract": "Diagnosing polycystic ovary syndrome (PCOS) during adolescence is challenging because features of normal pubertal development overlap with adult diagnostic criteria. The international evidence-based PCOS Guideline aimed to promote accurate and timely diagnosis, to optimise consistent care, and to improve health outcomes for adolescents and women with PCOS. International healthcare professionals, evidence synthesis teams and consumers informed the priorities, reviewed published data and synthesis"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "weight loss",
+    "mentions": 33,
+    "posts_appearing_in": 33,
+    "frequency": 0.066,
+    "surprise_signals": 1,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical health": 5,
+      "physical symptom": 10,
+      "weight issue": 5,
+      "physical condition": 2,
+      "metabolic": 1,
+      "physical": 2,
+      "general health": 1,
+      "weight issues": 1,
+      "physical symptoms": 1,
+      "weight management": 1,
+      "general": 1,
+      "weight-related": 1,
+      "physical change": 1,
+      "health issue": 1
+    },
+    "sample_quotes": [
+      "I worked hard and lost ten more pounds (total 25 now)",
+      "I have lost about 30 pounds this year.",
+      "managing the IR with metformin makes it easier to finally lose the weight",
+      "I'm trying to be healthier and I am losing weight (I'm on it a few months now)",
+      "What should I expect as far as weight loss with PCOS and this drug"
+    ],
+    "selection_score": 35,
+    "pubmed_validation": {
+      "symptom": "weight loss",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"weight loss\"",
+      "total_papers": 480,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "35710599",
+          "title": "Liraglutide 3 mg on weight, body composition, and hormonal and metabolic parameters in women with obesity and polycystic ovary syndrome: a randomized placebo-controlled-phase 3 study.",
+          "year": "2022",
+          "abstract": "To study the efficacy and safety of the GLP-1 analog liraglutide 3 mg (LIRA 3 mg) vs. placebo (PL) for reduction of body weight (BW) and hyperandrogenism in women with obesity and polycystic ovary syndrome (PCOS). Randomized, double-blind, placebo-controlled trial. Hospital-based outpatient endocrine and metabolic center. Women diagnosed with PCOS (NIH criteria) were randomly assigned to LIRA 3 mg (n = 55) or PL (n = 27) once daily for 32 weeks with lifestyle intervention. Study visits at baseli"
+        },
+        {
+          "pmid": "32442310",
+          "title": "Obesity, Polycystic Ovary Syndrome, and Infertility: A New Avenue for GLP-1 Receptor Agonists.",
+          "year": "2020",
+          "abstract": "Obesity is responsible for an increased risk of sub-fecundity and infertility. Obese women show poorer reproductive outcomes regardless of the mode of conception, and higher body mass index (BMI) is associated with poorer fertility prognosis. Polycystic ovary syndrome (PCOS) is one of the leading causes of infertility, and many women with PCOS are also overweight or obese. The aim of the present narrative review is to describe the mechanisms responsible for the development of infertility and PCO"
+        },
+        {
+          "pmid": "34338572",
+          "title": "Polycystic ovarian syndrome and infertility: overview and insights of the putative treatments.",
+          "year": "2021",
+          "abstract": "Infertility concerns 15% of the couples. Management of female infertility requires a complete history of the patient followed by a physical, gynecological and endocrine examination. Infertility etiology will be investigated thanks to different tests including ovarian function and reserve assessment, search for uterine abnormalities and evaluation of tubal permeability. Polycystic ovarian syndrome (PCOS) is a predominant cause of infertility and a common gyne-endocrine disorder affecting 7 to 15%"
+        },
+        {
+          "pmid": "38612972",
+          "title": "High Fat Diet and Polycystic Ovary Syndrome (PCOS) in Adolescence: An Overview of Nutritional Strategies.",
+          "year": "2024",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a multifaceted and heterogeneous disorder, linked with notable reproductive, metabolic, and psychological outcomes. During adolescence, key components of PCOS treatment involve weight loss achieved through lifestyle and dietary interventions, subsequently pursued by pharmacological or surgical therapies. Nutritional interventions represent the first-line therapeutic approach in adolescents affected by PCOS, but different kinds of dietary protocols exist, so it"
+        },
+        {
+          "pmid": "34610596",
+          "title": "Dietary Interventions: A Promising Treatment for Polycystic Ovary Syndrome.",
+          "year": "2021",
+          "abstract": "Dietary interventions as a first-line treatment for patients with polycystic ovary syndrome (PCOS) have been evaluated, but the optimal diet has not been determined. Proper diet and the maintenance of adequate nutritional status are of great importance in the prevention of this disorder, and therapeutics and dietary habits play an important role in the recovery of patients with PCOS. A range of dietary patterns have been shown to impact weight loss and insulin resistance (IR) and improve reprodu"
+        },
+        {
+          "pmid": "37764656",
+          "title": "The Effect of a Very-Low-Calorie Diet (VLCD) vs. a Moderate Energy Deficit Diet in Obese Women with Polycystic Ovary Syndrome (PCOS)-A Randomised Controlled Trial.",
+          "year": "2023",
+          "abstract": "We performed an open-label, randomised controlled trial to compare the effects of a very-low-calorie diet (VLCD) vs. moderate energy deficit approach on body weight, body composition, free androgen index (FAI), and metabolic markers in obese women with polycystic ovary syndrome (PCOS). Forty eligible patients were randomly assigned to a VLCD (<i>n</i> = 21) or a conventional energy deficit approach (<i>n</i> = 19) over the same period. After eight weeks, both groups experienced significant weigh"
+        },
+        {
+          "pmid": "37329216",
+          "title": "Adipose Tissue Dysfunction in Polycystic Ovary Syndrome.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a complex genetic trait and the most common endocrine disorder of women, clinically evident in 5% to 15% of reproductive-aged women globally, with associated cardiometabolic dysfunction. Adipose tissue (AT) dysfunction appears to play an important role in the pathophysiology of PCOS even in patients who do not have excess adiposity. We undertook a systematic review concerning AT dysfunction in PCOS, and prioritized studies that assessed AT function directly. W"
+        },
+        {
+          "pmid": "34071499",
+          "title": "Polycystic Ovary Syndrome in Insulin-Resistant Adolescents with Obesity: The Role of Nutrition Therapy and Food Supplements as a Strategy to Protect Fertility.",
+          "year": "2021",
+          "abstract": "Polycystic ovary syndrome (PCOS) is the most common endocrine disorder in young reproductive-aged women. PCOS is often associated with obesity and impairs reproductive health. Even though several theories have been proposed to explain the pathogenic mechanism of PCOS, the role of insulin resistance (IR) as a key etiological component, independently of (but amplified by) obesity, is well recognized. The consequent hyperinsulinemia activates excessive ovarian androgen production, leading to PCOS. "
+        },
+        {
+          "pmid": "35504067",
+          "title": "Green tea promotes weight loss in women with polycystic ovary syndrome: Systematic review and meta-analysis.",
+          "year": "2022",
+          "abstract": "Among the main consequences of polycystic ovary syndrome (PCOS) are menstrual dysfunction, infertility, hyperandrogenism, insulin resistance, and weight gain; in aggravated cases, it can become a risk factor for the development of metabolic syndrome and cardiovascular disease. We hypothesized that green tea can be an option to complement the treatment of PCOS. Thus, this systematic review aims to evaluate the effects of green tea supplementation in women with PCOS. We searched for randomized con"
+        },
+        {
+          "pmid": "37880791",
+          "title": "The effects of intermittent fasting diet alone or in combination with probiotic supplementation in comparison with calorie-restricted diet on metabolic and hormonal profile in patients with polycystic ovary syndrome: study protocol for a randomized clinical trial.",
+          "year": "2023",
+          "abstract": "Polycystic ovary syndrome (PCOS) is one of the most common endocrine disorders in females characterized by ovulatory dysfunction, hyperandrogenism, and other metabolic disorders. Both intermittent fasting and specific probiotics have been suggested to help improve patients with PCOS through changes in gut microbial composition, circadian clock, and metabolic regulation. Therefore, the present study aims to investigate the effects of intermittent fasting alone or in combination with probiotic sup"
+        }
+      ],
+      "has_research": true
+    }
+  },
+  {
+    "symptom": "depression",
+    "mentions": 30,
+    "posts_appearing_in": 30,
+    "frequency": 0.06,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 30
+    },
+    "sample_quotes": [
+      "depression is one symptom of PCOS.",
+      "it's making me depressed as fuck",
+      "and making me depressed.",
+      "I’m feeling depressed and defeated lol",
+      "or if that just my depression"
+    ],
+    "selection_score": 30,
+    "pubmed_validation": {
+      "symptom": "depression",
+      "query": "(\"PCOS\" OR \"polycystic ovary syndrome\") AND \"depression\"",
+      "total_papers": 493,
+      "papers_fetched": 10,
+      "top_papers": [
+        {
+          "pmid": "34970669",
+          "title": "Nutritional Supplements and Complementary Therapies in Polycystic Ovary Syndrome.",
+          "year": "2022",
+          "abstract": "Polycystic ovary syndrome (PCOS) affects 1 in 5 women of reproductive age, and is characterized by menstrual irregularities, clinical or biochemical hyperandrogenism, and the presence of polycystic ovary morphology. One of the recommended treatment strategies in the international evidence-based guidelines is lifestyle modification, which includes diet and exercise, with the aim of improving a range of health outcomes. The incurable nature of PCOS reinforces the importance of developing novel and"
+        },
+        {
+          "pmid": "38637590",
+          "title": "Polycystic ovary syndrome.",
+          "year": "2024",
+          "abstract": "Despite affecting ~11-13% of women globally, polycystic ovary syndrome (PCOS) is a substantially understudied condition. PCOS, possibly extending to men's health, imposes a considerable health and economic burden worldwide. Diagnosis in adults follows the International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome, requiring two out of three criteria - clinical or biochemical hyperandrogenism, ovulatory dysfunction, and/or specific ovarian morphological "
+        },
+        {
+          "pmid": "36759093",
+          "title": "Polycystic Ovarian Syndrome.",
+          "year": "2023",
+          "abstract": "Polycystic ovarian syndrome (PCOS) is a complex, familial, polygenetic metabolic condition. The Rotterdam criteria are commonly used to diagnose PCOS. Lifestyle changes are the first-line treatment of PCOS. Treatment options for menstrual irregularities and hirsutism are based on the clinical goals and preferences of the patient. Along with treating the symptoms of PCOS, it is essential to screen and treat the comorbid conditions commonly associated with PCOS, including type 2 diabetes mellitus,"
+        },
+        {
+          "pmid": "32204714",
+          "title": "Adolescent polycystic ovary syndrome according to the international evidence-based guideline.",
+          "year": "2020",
+          "abstract": "Diagnosing polycystic ovary syndrome (PCOS) during adolescence is challenging because features of normal pubertal development overlap with adult diagnostic criteria. The international evidence-based PCOS Guideline aimed to promote accurate and timely diagnosis, to optimise consistent care, and to improve health outcomes for adolescents and women with PCOS. International healthcare professionals, evidence synthesis teams and consumers informed the priorities, reviewed published data and synthesis"
+        },
+        {
+          "pmid": "34180998",
+          "title": "Sleep Habits of Women With Infertility.",
+          "year": "2021",
+          "abstract": "Sleep plays important roles in metabolic and reproductive function, and polycystic ovary syndrome (PCOS) is associated with sleep disturbances, including increased prevalence of obstructive sleep apnea. We sought to evaluate sleep parameters in infertile women with PCOS compared with women with unexplained infertility (UI) and identify risk factors for disturbed sleep. At private and academic ambulatory gynecology and infertility practices, we evaluated a prospective cohort of women diagnosed wi"
+        },
+        {
+          "pmid": "34669940",
+          "title": "Causes and Consequences of Polycystic Ovary Syndrome: Insights From Mendelian Randomization.",
+          "year": "2022",
+          "abstract": "Although polycystic ovary syndrome (PCOS) is the most common endocrinopathy affecting women of reproductive age, risk factors that may cause the syndrome are poorly understood. Based on epidemiologic studies, PCOS is thought to cause several adverse outcomes such as cardiovascular disease; however, the common presence of comorbidities such as obesity may be responsible for such associations, rather than PCOS in and of itself. To overcome the limitations of observational studies, investigators ha"
+        },
+        {
+          "pmid": "34642910",
+          "title": "PCOS and Depression: Common Links and Potential Targets.",
+          "year": "2022",
+          "abstract": "PCOS or polycystic ovary syndrome is a common endocrine disorder that occurs during the reproductive age in females. It manifests in the form of a wide range of symptoms including (but not limited to) hirsutism, amenorrhea, oligomenorrhea, obesity, acne vulgaris, infertility, alopecia, and insulin resistance. The incidence of depression in PCOS population is increasing as compared to the general population. Increased depression in PCOS significantly alters the quality of life (QOL) of affected f"
+        },
+        {
+          "pmid": "30316414",
+          "title": "Beyond fertility: polycystic ovary syndrome and long-term health.",
+          "year": "2018",
+          "abstract": "Polycystic ovary syndrome (PCOS) is a reproductive, endocrine, and metabolic disorder affecting millions of women worldwide. Women with PCOS are often identified in adolescence or early adulthood with symptoms of oligomenorrhea or hirsutism or when presenting for infertility care. The health risks associated out of PCOS, however, go far beyond management of these common presenting symptoms or fertility treatment and likely extend past the reproductive years through and beyond menopause. Internat"
+        },
+        {
+          "pmid": "31677111",
+          "title": "Female Androgenetic Alopecia: An Update on Diagnosis and Management.",
+          "year": "2020",
+          "abstract": "Female androgenetic alopecia (FAGA) is a common cause of non-scarring alopecia in women. The onset may be at any age following puberty and the frequency increases with age. Clinically, it shows a diffuse hair thinning over the central scalp, while the frontal hairline is usually retained. FAGA can have a significant psychological impact, leading to anxiety and depression. For this reason, early diagnosis is very important to stop the progression of the disease. The sex hormonal milieu is the mai"
+        },
+        {
+          "pmid": "34391246",
+          "title": "Effect of yoga on polycystic ovarian syndrome: A systematic review.",
+          "year": "2021",
+          "abstract": "Polycystic Ovarian Syndrome (PCOS) is not a disease but a mere syndrome. Many researchers have studied polycystic ovarian syndrome and found that there is no proper cause of that, it may occur due to hormonal imbalance or stress, or due to a sedentary lifestyle. The rate of polycystic ovarian syndrome in Indian women has been increasing rapidly. The symptoms include acne, weight gain, hirsutism, difficulties in fertility, irregular or infrequent periods, immature ovarian eggs that do not ovulate"
+        }
+      ],
+      "has_research": true
+    }
+  }
+]

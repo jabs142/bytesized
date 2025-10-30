@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "total_symptoms": 9,
+    "total_treatments": 23,
+    "description": "Treatment effectiveness rankings based on patient-reported outcomes"
+  },
+  "rankings": {
+    "weight loss": [
+      {
+        "treatment": "tirzepatide",
+        "tried_by": 3,
+        "success_count": 2,
+        "success_rate": 0.83,
+        "timeframes": [
+          "4 months",
+          "6 months to 8 months",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "Im on tirzepatide so not the exact same, but i lost about 2lbs a week for the first 4 months and this month it seems to have slowed down even with upping my dosage.",
+          "I think she lost 20 lbs in 6 months on sema, and tirz lost 100 in 8 months.",
+          "I started directly on tirz as my physician is also my moms and thought it’d be a better fit, and I lost 50 lbs the first time and 60 the second time."
+        ]
+      },
+      {
+        "treatment": "low carb diet",
+        "tried_by": 3,
+        "success_count": 2,
+        "success_rate": 0.67,
+        "timeframes": [
+          "unclear",
+          "not specified",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "I’ve been having modest success by increasing protein and doing low carb.",
+          "I did low carb for awhile and lost 20 lbs but was killing my self doing it.",
+          "PCOS causes issues with how your body processes carbs, so low carb approaches are a good choice."
+        ]
+      },
+      {
+        "treatment": "calorie deficit",
+        "tried_by": 4,
+        "success_count": 2,
+        "success_rate": 0.62,
+        "timeframes": [
+          "N/A",
+          "not mentioned",
+          "not specified",
+          "unclear"
+        ],
+        "side_effects_mentioned": 4,
+        "sample_quotes": [
+          "Remember to be in a calorie deficit every day even if you have to track calories in an app.",
+          "I’ve tired calorie deficit let me explain... I thought maybe slow progress? So i decided screw the scale fast forward went to my OB for my appointment to be seen about pcos to see I weigh 230 while in a deficit!",
+          "I lost 12 pounds and 4% body fat a few years ago by doing a calorie deficit."
+        ]
+      },
+      {
+        "treatment": "mounjaro",
+        "tried_by": 5,
+        "success_count": 2,
+        "success_rate": 0.4,
+        "timeframes": [
+          "some months might not lose much, but then it’ll all drop off suddenly",
+          "not mentioned",
+          "not mentioned",
+          "7 months for weight loss to start",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 5,
+        "sample_quotes": [
+          "I’ve started mounjaro out of my own pocket because of their refusal to help and have lost 2 stone so far.",
+          "Have you tried getting a PA for Mounjaro? It’s has the same active medication (tirzepatide) as Zepbound, as opposed to the semaglutide in Wegovy.",
+          "I started taking mounjaro and has like 25lbs (which is awesome, since I have never lost that much weight before)"
+        ]
+      },
+      {
+        "treatment": "intermittent fasting",
+        "tried_by": 4,
+        "success_count": 1,
+        "success_rate": 0.38,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "unclear",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 4,
+        "sample_quotes": [
+          "you really need to track, weigh and count everything that goes into your mouth, try intermittent fasting",
+          "I do intermitted fasting",
+          "Intermittent fasting helped me when I hit a weight plateau."
+        ]
+      },
+      {
+        "treatment": "keto diet",
+        "tried_by": 4,
+        "success_count": 1,
+        "success_rate": 0.38,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "unclear",
+          "2 months"
+        ],
+        "side_effects_mentioned": 4,
+        "sample_quotes": [
+          "I'm not saying keto although in your case it could be helpful, but remember to not do it for too long.",
+          "I lost about 20 pounds on a very strict and annoying keto diet before my wedding.",
+          "I got there and decided to do keto and I’m finally losing again."
+        ]
+      },
+      {
+        "treatment": "calorie counting",
+        "tried_by": 4,
+        "success_count": 1,
+        "success_rate": 0.38,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "Not mentioned",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 4,
+        "sample_quotes": [
+          "Do you count calories? It's not the funnest thing to do, but it's the simplest way to ensure you're maintaining a deficit.",
+          "Now I count some calories (not super strict) and exercise. I lose weight very slowly, but it does come off.",
+          "Calorie counting is a pain, but it's the best way to ensure you're truly in a deficit..."
+        ]
+      },
+      {
+        "treatment": "metformin",
+        "tried_by": 6,
+        "success_count": 2,
+        "success_rate": 0.33,
+        "timeframes": [
+          "unclear",
+          "unclear",
+          "not mentioned",
+          "not mentioned",
+          "Not mentioned",
+          "first couple months"
+        ],
+        "side_effects_mentioned": 6,
+        "sample_quotes": [
+          "I didn’t like the metformin as it cause gastric issues for me.",
+          "I’ve been having modest success by increasing protein and doing low carb. I mostly just walk after big meals to help with bloating and digestion.",
+          "I needed to be on 10mg (one of the higher ones) for three months, and add metformin 2000mg for my body to do it."
+        ]
+      },
+      {
+        "treatment": "ozempic",
+        "tried_by": 3,
+        "success_count": 0,
+        "success_rate": 0.0,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "I’m not exactly sure what the difference is between them",
+          "I have noticed I'm just not as hungry as I usually am.",
+          "I then looked to my doctor for recommendations and started ozempic."
+        ]
+      }
+    ],
+    "anxiety": [],
+    "irregular periods": [
+      {
+        "treatment": "weight loss",
+        "tried_by": 3,
+        "success_count": 2,
+        "success_rate": 0.67,
+        "timeframes": [
+          "1 year",
+          "6 weeks",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "I lost 10 pounds and my period regulated.",
+          "I just weighed myself and I am 298.6! Down 24.6lbs in 6 weeks!",
+          "Whenever i lose weight, i observe my period is getting regular"
+        ]
+      },
+      {
+        "treatment": "metformin",
+        "tried_by": 8,
+        "success_count": 2,
+        "success_rate": 0.31,
+        "timeframes": [
+          "not mentioned",
+          "not specified",
+          "not mentioned",
+          "unclear",
+          "not mentioned",
+          "Not mentioned",
+          "around a month",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 8,
+        "sample_quotes": [
+          "As soon as the ultrasound results came back, my Gyno put me on Metformin.",
+          "research something like metformin to discuss with your doctor when you can.",
+          "now that I’m taking metformin it’s normalized my period"
+        ]
+      },
+      {
+        "treatment": "birth control",
+        "tried_by": 11,
+        "success_count": 2,
+        "success_rate": 0.18,
+        "timeframes": [
+          "not mentioned",
+          "N/A",
+          "not specified",
+          "not mentioned",
+          "unclear",
+          "not mentioned",
+          "not mentioned",
+          "Not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 11,
+        "sample_quotes": [
+          "She advised me to lose a bit of weight... go on birth control if I want regular periods",
+          "I’ve always been on and off birth control. Had a 3 year break until May this year, had it for 2 months, realised why i came off it (horrible side effects), then came off it at the beginning of July.",
+          "birth control is not the only treatment option for PCOS."
+        ]
+      }
+    ],
+    "weight gain": [],
+    "fatigue": [],
+    "insulin resistance": [
+      {
+        "treatment": "glp-1 agonist drugs (e.g., ozempic)",
+        "tried_by": 3,
+        "success_count": 1,
+        "success_rate": 0.5,
+        "timeframes": [
+          "not mentioned",
+          "unclear",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "Recently, some of the GLP 1 agonist drugs like Ozempic are also being used, if insurance will cover them.",
+          "Recently, some of the GLP 1 agonist drugs like Ozempic are also being used, if insurance will cover them.",
+          "Recently, some of the GLP 1 agonist drugs like Ozempic are also being used, if insurance will cover them."
+        ]
+      },
+      {
+        "treatment": "metformin",
+        "tried_by": 9,
+        "success_count": 3,
+        "success_rate": 0.39,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "6 months to reach therapeutic dose, 1 year for management",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 9,
+        "sample_quotes": [
+          "Trying Metformin just to see, if it changes anything (so far it doesn't).",
+          "She the put me on Metformin and I’ve been on it sense. It honestly hasn’t felt like it’s done anything.",
+          "Treatment of IR is done by adopting a 'diabetic' lifestyle... and by taking meds if needed (typically prescription metformin)."
+        ]
+      },
+      {
+        "treatment": "berberine supplement",
+        "tried_by": 3,
+        "success_count": 1,
+        "success_rate": 0.33,
+        "timeframes": [
+          "not mentioned",
+          "unclear",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "the supplement berberine also has some research supporting its use for IR, if inositol does not help.",
+          "The supplement berberine also has some research supporting its use for IR, if inositol does not help.",
+          "you might also try a supplement called *berberine.*"
+        ]
+      },
+      {
+        "treatment": "berberine",
+        "tried_by": 3,
+        "success_count": 0,
+        "success_rate": 0.17,
+        "timeframes": [
+          "unclear",
+          "not mentioned",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "the supplement berberine also has some research supporting its use for IR.",
+          "the supplement berberine also has some research supporting its use for IR, if inositol does not help.",
+          "The supplement berberine also has some research supporting its use for IR, if inositol does not help."
+        ]
+      }
+    ],
+    "hirsutism": [
+      {
+        "treatment": "laser hair removal",
+        "tried_by": 5,
+        "success_count": 3,
+        "success_rate": 0.7,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "after 6 sessions and incredible results after 7th and 8th sessions"
+        ],
+        "side_effects_mentioned": 5,
+        "sample_quotes": [
+          "Unfortunately, laser didn't work, though the first place I went to... slowed a bit, but as I grew older I guess it just stopped working.",
+          "most likely have a procedure like laser.",
+          "I’ve been lasering my face ever since I was 25. The hair is fine now"
+        ]
+      },
+      {
+        "treatment": "spearmint tea",
+        "tried_by": 5,
+        "success_count": 3,
+        "success_rate": 0.6,
+        "timeframes": [
+          "2 years",
+          "not mentioned",
+          "Not mentioned",
+          "not mentioned",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 5,
+        "sample_quotes": [
+          "I eat low carb, take metformin and drink spearmint tea.",
+          "I’ve been drinking spearmint tea twice a day and it seems to be reducing the thickness of the hair and speed of regrowth.",
+          "Don’t forget to drink massive amounts of spearmint tea every day for hirsutism (tbf this has actually really helped)."
+        ]
+      },
+      {
+        "treatment": "electrolysis",
+        "tried_by": 7,
+        "success_count": 4,
+        "success_rate": 0.57,
+        "timeframes": [
+          "not applicable",
+          "not mentioned",
+          "not mentioned",
+          "not specified",
+          "not mentioned",
+          "unclear",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 7,
+        "sample_quotes": [
+          "I heard that electrolysis or something like that is a permanent solution of getting rid of hair on the body.",
+          "I did electrolysis too for almost a year, and it also didn't work. It just left my skin all red, and the pain was awful.",
+          "Electrolysis will get rid of the hairs entirely."
+        ]
+      },
+      {
+        "treatment": "laser treatment",
+        "tried_by": 3,
+        "success_count": 1,
+        "success_rate": 0.33,
+        "timeframes": [
+          "not mentioned",
+          "not applicable",
+          "not applicable"
+        ],
+        "side_effects_mentioned": 3,
+        "sample_quotes": [
+          "Now I’m 25 and it’s under control thanks to medications I did some years ago but especially because of laser treatment",
+          "I have also had laser on my face and tried every possible medication and supplements. Nothing works.",
+          "I have also had laser on my face and tried every possible medication and supplements. Nothing works."
+        ]
+      },
+      {
+        "treatment": "shaving",
+        "tried_by": 5,
+        "success_count": 1,
+        "success_rate": 0.2,
+        "timeframes": [
+          "not mentioned",
+          "not applicable",
+          "not mentioned",
+          "not applicable",
+          "not mentioned"
+        ],
+        "side_effects_mentioned": 5,
+        "sample_quotes": [
+          "now I have to use it another time because I’m shaving my face every day",
+          "I shave now 3 or even 4 times a day if I go somewhere in the evening. The shaving doesn’t even work because the hair is so thick.",
+          "I basically can’t shave any part of my body that gets any friction when I’m walking around."
+        ]
+      },
+      {
+        "treatment": "spironolactone",
+        "tried_by": 8,
+        "success_count": 1,
+        "success_rate": 0.19,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "4 months for noticeable decrease",
+          "4 months"
+        ],
+        "side_effects_mentioned": 8,
+        "sample_quotes": [
+          "i used to take spirinolactone 2 years ago but it was only 50mg total which ive been told now its nothing for hirsutism???",
+          "I tried spironolactone for like a week or two, but it made me have my period two times a month, so I stopped.",
+          "You could try spironolactone, its pretty cheap."
+        ]
+      }
+    ],
+    "acne": [
+      {
+        "treatment": "spironolactone",
+        "tried_by": 4,
+        "success_count": 1,
+        "success_rate": 0.38,
+        "timeframes": [
+          "not mentioned",
+          "not mentioned",
+          "not mentioned",
+          "6 months"
+        ],
+        "side_effects_mentioned": 4,
+        "sample_quotes": [
+          "I was initially prescribed spironolactone for acne, but discontinued it after realizing it was causing dangerously low blood pressure.",
+          "Then, after pregnancy I got on spironalactone and tretinoin.",
+          "I'm on 100mg and I love it because it cleared my acne right up."
+        ]
+      }
+    ],
+    "stress": []
+  }
+}
