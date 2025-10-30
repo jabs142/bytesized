@@ -1,0 +1,163 @@
+[
+  {
+    "date": "2019-12-31",
+    "title": "First Reports",
+    "description": "WHO China Country Office informed of cases of pneumonia of unknown etiology in Wuhan.",
+    "type": "milestone",
+    "icon": "🔬"
+  },
+  {
+    "date": "2020-01-30",
+    "title": "Global Emergency",
+    "description": "WHO declares Public Health Emergency of International Concern (PHEIC).",
+    "type": "policy",
+    "icon": "⚠️"
+  },
+  {
+    "date": "2020-03-11",
+    "title": "Pandemic Declared",
+    "description": "WHO declares COVID-19 a pandemic as cases exceed 118,000 in 114 countries.",
+    "type": "milestone",
+    "icon": "🌍"
+  },
+  {
+    "date": "2020-03-13",
+    "title": "Europe Becomes Epicenter",
+    "description": "WHO announces Europe has become the epicenter of the pandemic.",
+    "type": "milestone",
+    "icon": "🇪🇺"
+  },
+  {
+    "date": "2020-03-27",
+    "title": "1 Million Cases",
+    "description": "Global confirmed cases surpass 1 million.",
+    "type": "stat",
+    "icon": "📊"
+  },
+  {
+    "date": "2020-04-02",
+    "title": "Global Lockdowns",
+    "description": "More than 3 billion people under lockdown globally.",
+    "type": "policy",
+    "icon": "🏠"
+  },
+  {
+    "date": "2020-06-28",
+    "title": "10 Million Cases",
+    "description": "Global confirmed cases exceed 10 million.",
+    "type": "stat",
+    "icon": "📊"
+  },
+  {
+    "date": "2020-07-01",
+    "title": "Americas Peak",
+    "description": "Americas become the hardest-hit region with US, Brazil, and Mexico leading in cases.",
+    "type": "milestone",
+    "icon": "🌎"
+  },
+  {
+    "date": "2020-09-28",
+    "title": "1 Million Deaths",
+    "description": "Global deaths surpass 1 million.",
+    "type": "stat",
+    "icon": "💔"
+  },
+  {
+    "date": "2020-11-09",
+    "title": "Vaccine Breakthrough",
+    "description": "Pfizer-BioNTech announces their vaccine is 90% effective in Phase 3 trials.",
+    "type": "vaccine",
+    "icon": "💉"
+  },
+  {
+    "date": "2020-12-08",
+    "title": "First Vaccination",
+    "description": "Margaret Keenan, 90, becomes the first person to receive Pfizer vaccine outside clinical trials in the UK.",
+    "type": "vaccine",
+    "icon": "💉"
+  },
+  {
+    "date": "2020-12-14",
+    "title": "US Vaccinations Begin",
+    "description": "United States begins mass vaccination campaign.",
+    "type": "vaccine",
+    "icon": "🇺🇸"
+  },
+  {
+    "date": "2021-01-26",
+    "title": "100 Million Cases",
+    "description": "Global confirmed cases exceed 100 million.",
+    "type": "stat",
+    "icon": "📊"
+  },
+  {
+    "date": "2021-04-28",
+    "title": "India Crisis",
+    "description": "India reports over 400,000 daily cases as Delta variant spreads rapidly.",
+    "type": "milestone",
+    "icon": "🇮🇳"
+  },
+  {
+    "date": "2021-05-05",
+    "title": "3 Million Deaths",
+    "description": "Global deaths surpass 3 million.",
+    "type": "stat",
+    "icon": "💔"
+  },
+  {
+    "date": "2021-06-10",
+    "title": "Delta Variant Dominance",
+    "description": "WHO declares Delta variant as the fastest and fittest variant.",
+    "type": "variant",
+    "icon": "🧬"
+  },
+  {
+    "date": "2021-08-04",
+    "title": "200 Million Cases",
+    "description": "Global confirmed cases exceed 200 million.",
+    "type": "stat",
+    "icon": "📊"
+  },
+  {
+    "date": "2021-11-26",
+    "title": "Omicron Detected",
+    "description": "WHO designates Omicron (B.1.1.529) as a Variant of Concern.",
+    "type": "variant",
+    "icon": "🧬"
+  },
+  {
+    "date": "2022-01-10",
+    "title": "Omicron Wave Peaks",
+    "description": "Omicron drives global daily cases to record highs, but with lower severity.",
+    "type": "milestone",
+    "icon": "📈"
+  },
+  {
+    "date": "2022-03-01",
+    "title": "6 Million Deaths",
+    "description": "Global deaths surpass 6 million.",
+    "type": "stat",
+    "icon": "💔"
+  },
+  {
+    "date": "2022-05-05",
+    "title": "1 Billion Vaccinations",
+    "description": "Over 1 billion people fully vaccinated globally.",
+    "type": "vaccine",
+    "icon": "💉"
+  },
+  {
+    "date": "2023-05-05",
+    "title": "Emergency Ends",
+    "description": "WHO declares end of COVID-19 as a Public Health Emergency of International Concern.",
+    "type": "policy",
+    "icon": "✅"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Endemic Phase",
+    "description": "COVID-19 transitions to endemic phase in most countries with continued vaccination and monitoring.",
+    "type": "milestone",
+    "icon": "🌐"
+  }
+]
