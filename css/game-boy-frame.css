@@ -1,0 +1,441 @@
+/* =========================================
+   GAME BOY FRAME - Authentic DMG-01 Style
+   ========================================= */
+
+/* Color Palette - Original Game Boy DMG-01 */
+:root {
+  /* Game Boy Original Colors */
+  --gb-darkest: #0f380f;
+  --gb-dark: #306230;
+  --gb-light: #8bac0f;
+  --gb-lightest: #9bbc0f;
+
+  /* Device Colors */
+  --device-body: #d3d3d3;
+  --device-shadow: #a0a0a0;
+  --device-highlight: #f0f0f0;
+  --screen-bezel: #2a2a2a;
+  --button-gray: #5a5a5a;
+  --button-red: #cc3333;
+
+  /* Effects */
+  --screen-glow: rgba(139, 172, 15, 0.3);
+  --led-glow: rgba(255, 0, 0, 0.6);
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.portal-body {
+  font-family: 'Press Start 2P', monospace;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--gb-lightest);
+  overflow-x: hidden;
+}
+
+.portal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* ========== GAME BOY DEVICE ========== */
+
+.gameboy-device {
+  width: 100%;
+  max-width: 450px;
+  background: var(--device-body);
+  border-radius: 12px 12px 40px 12px;
+  padding: 30px 25px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 var(--device-highlight),
+    inset 0 -2px 0 var(--device-shadow);
+  position: relative;
+}
+
+/* Device Header - Nintendo Style Logo */
+.device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.gameboy-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--button-red);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(204, 51, 51, 0.6);
+}
+
+.logo-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.power-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.led-light {
+  width: 8px;
+  height: 8px;
+  background: var(--button-red);
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px var(--led-glow),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  animation: ledPulse 2s ease-in-out infinite;
+}
+
+@keyframes ledPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.led-label {
+  font-size: 6px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* ========== SCREEN CONTAINER ========== */
+
+.screen-container {
+  background: var(--screen-bezel);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 4px 12px rgba(0, 0, 0, 0.6),
+    0 2px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 25px;
+}
+
+.screen-bezel {
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.screen-glass {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 10 / 9;
+  background: var(--gb-darkest);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 30px var(--screen-glow);
+}
+
+/* Screen Content */
+.screen-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.screen-title {
+  margin-bottom: 10px;
+}
+
+.pixel-text-lg {
+  font-size: 16px;
+  color: var(--gb-lightest);
+  text-shadow: 2px 2px 0 var(--gb-dark);
+  margin-bottom: 8px;
+}
+
+.pixel-text-md {
+  font-size: 10px;
+  color: var(--gb-light);
+  text-shadow: 1px 1px 0 var(--gb-dark);
+}
+
+.pixel-text-sm {
+  font-size: 8px;
+  color: var(--gb-light);
+  line-height: 1.6;
+}
+
+.pixel-text-xs {
+  font-size: 6px;
+  color: var(--gb-light);
+  line-height: 1.8;
+}
+
+.screen-subtitle {
+  margin-bottom: 10px;
+}
+
+.cartridge-preview {
+  margin-top: auto;
+  padding: 10px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+/* ========== DEVICE CONTROLS ========== */
+
+.device-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+/* D-Pad */
+.dpad-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.dpad {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dpad-btn {
+  position: absolute;
+  background: var(--button-gray);
+  border: none;
+  box-shadow:
+    0 3px 0 #333,
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.dpad-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 #333,
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dpad-up, .dpad-down {
+  width: 28px;
+  height: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px 4px 0 0;
+}
+
+.dpad-up { top: 0; }
+.dpad-down {
+  bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.dpad-left, .dpad-right {
+  width: 24px;
+  height: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px 0 0 4px;
+}
+
+.dpad-left { left: 0; }
+.dpad-right {
+  right: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.dpad-center {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--button-gray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transform: rotate(-20deg);
+}
+
+.btn-a, .btn-b {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #9c3c3c;
+  box-shadow:
+    0 4px 0 #6b2626,
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn-a { transform: translateY(10px); }
+.btn-b { transform: translateY(-10px); }
+
+.btn-a:active, .btn-b:active {
+  transform: translateY(12px);
+  box-shadow:
+    0 2px 0 #6b2626,
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-label {
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== DEVICE FOOTER ========== */
+
+.device-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.speaker-grille {
+  width: 60px;
+  height: 40px;
+  background: var(--device-shadow);
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.speaker-holes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+  height: 100%;
+}
+
+.speaker-holes::before,
+.speaker-holes::after {
+  content: '';
+  display: block;
+  background: #666;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.device-text {
+  font-size: 7px;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
+  .gameboy-device {
+    max-width: 380px;
+    padding: 25px 20px;
+  }
+
+  .pixel-text-lg { font-size: 14px; }
+  .pixel-text-md { font-size: 9px; }
+  .pixel-text-sm { font-size: 7px; }
+  .pixel-text-xs { font-size: 5px; }
+
+  .dpad-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn-a, .btn-b {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameboy-device {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .device-controls {
+    gap: 10px;
+  }
+}
+
+/* ========== AUDIO CONTROLS ========== */
+
+.audio-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.mute-btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--gb-light);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mute-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.mute-btn.muted .sound-icon::before {
+  content: '🔇';
+}

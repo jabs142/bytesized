@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCOS Surprising Symptoms Discovery</title>
     <meta name="description" content="Discover which PCOS symptoms are surprisingly connected but rarely discussed by doctors">
+
+    <!-- Retro Game Boy Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="nav-breadcrumb">
-            <a href="/index.html" class="back-link">← back to home</a>
-        </nav>
+    <!-- Eject Cartridge Button -->
+    <div class="eject-button-container">
+        <button id="ejectButton" class="eject-button">
+            <span class="eject-icon">◄</span> EJECT
+        </button>
     </div>
 
     <!-- Header -->
@@ -137,5 +142,22 @@
     </footer>
 
     <script src="js/app.js"></script>
+
+    <!-- Eject Button Logic -->
+    <script>
+        // Eject button functionality
+        document.getElementById('ejectButton').addEventListener('click', function() {
+            // Add click effect
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 100);
+
+            // Navigate back to portal after brief delay
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 200);
+        });
+    </script>
 </body>
 </html>

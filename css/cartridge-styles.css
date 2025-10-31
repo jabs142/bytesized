@@ -1,0 +1,430 @@
+/* ====================================
+   CARTRIDGE SHELF & CARTRIDGE STYLES
+   ==================================== */
+
+/* Cartridge Shelf Container */
+.cartridge-shelf {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--gb-dark);
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(139, 172, 15, 0.1);
+}
+
+.shelf-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.shelf-title {
+  color: var(--gb-lightest);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 var(--gb-darkest);
+}
+
+.shelf-subtitle {
+  color: var(--gb-light);
+  opacity: 0.8;
+}
+
+/* Cartridge Grid */
+.cartridge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.loading-cartridges {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: var(--gb-light);
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+/* Individual Cartridge */
+.cartridge {
+  width: 100%;
+  max-width: 220px;
+  height: 280px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cartridge:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.cartridge.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cartridge.coming-soon:hover {
+  transform: none;
+}
+
+/* Cartridge Body */
+.cartridge-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+  border-radius: 8px 8px 16px 16px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.cartridge:hover .cartridge-body {
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 20px var(--cartridge-glow),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Keyboard Focus Indicator */
+.cartridge.keyboard-focused {
+  outline: 3px solid var(--gb-lightest);
+  outline-offset: 4px;
+  animation: focusGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes focusGlow {
+  0%, 100% {
+    outline-color: var(--gb-lightest);
+    box-shadow: 0 0 15px var(--gb-lightest);
+  }
+  50% {
+    outline-color: var(--gb-light);
+    box-shadow: 0 0 25px var(--gb-light);
+  }
+}
+
+.cartridge.keyboard-focused .cartridge-body {
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 20px var(--cartridge-glow),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Cartridge Top Notch */
+.cartridge-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 30px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cartridge-notch::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 215, 0, 0.6) 20%,
+    rgba(255, 215, 0, 0.6) 80%,
+    transparent);
+}
+
+/* Cartridge Label */
+.cartridge-label {
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  right: 12px;
+  bottom: 60px;
+  background: var(--label-color, var(--gb-light));
+  border-radius: 4px;
+  padding: 15px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.cartridge-title {
+  font-size: 11px;
+  color: var(--gb-darkest);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.cartridge-subtitle {
+  font-size: 7px;
+  color: var(--gb-dark);
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.cartridge-description {
+  font-size: 6px;
+  color: var(--gb-dark);
+  line-height: 1.6;
+  opacity: 0.7;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartridge-label-text {
+  font-size: 8px;
+  color: var(--gb-darkest);
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: auto;
+}
+
+/* Cartridge Bottom Connector */
+.cartridge-connector {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  right: 15px;
+  height: 35px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 5px;
+}
+
+.connector-pins {
+  display: flex;
+  gap: 2px;
+  height: 80%;
+}
+
+.connector-pin {
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #ffd700 0%, #b8860b 100%);
+  border-radius: 1px;
+  box-shadow: 0 0 2px rgba(255, 215, 0, 0.5);
+}
+
+/* Coming Soon Badge */
+.coming-soon-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--gb-light);
+  font-size: 6px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--gb-light);
+  z-index: 10;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+/* Cartridge Selection Highlight */
+.cartridge.selected .cartridge-body {
+  border: 3px solid var(--gb-lightest);
+  box-shadow:
+    0 0 30px var(--gb-light),
+    0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Insertion Animation */
+.cartridge.inserting {
+  animation: insertCartridge 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  z-index: 1000;
+}
+
+@keyframes insertCartridge {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.8) translateY(-100px) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.4) translateY(-200px) translateX(calc(var(--gameboy-x, 0px) - 50%));
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.1) translateY(-300px) translateX(calc(var(--gameboy-x, 0px) - 50%));
+    opacity: 0;
+  }
+}
+
+/* Cartridge Icon Styling */
+.cartridge-icon {
+  font-size: 20px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Decorative Patterns */
+.pattern-medical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+
+.pattern-virus::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.05) 3px,
+    rgba(255,255,255,0.05) 6px
+  );
+  pointer-events: none;
+}
+
+.pattern-network::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 12px 12px;
+  pointer-events: none;
+}
+
+.pattern-dna::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(255,255,255,0.08) 4px,
+    rgba(255,255,255,0.08) 8px
+  );
+  pointer-events: none;
+}
+
+.pattern-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(139,101,67,0.15) 2px, transparent 2px),
+    radial-gradient(circle at 10% 30%, rgba(139,101,67,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 90% 60%, rgba(139,101,67,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 50% 80%, rgba(139,101,67,0.1) 2px, transparent 2px);
+  background-size: 100% 15px, 100% 100%, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  pointer-events: none;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .cartridge-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+
+  .cartridge {
+    max-width: 180px;
+    height: 240px;
+  }
+
+  .cartridge-title { font-size: 10px; }
+  .cartridge-subtitle { font-size: 6px; }
+  .cartridge-description { font-size: 5px; }
+  .cartridge-label-text { font-size: 7px; }
+}
+
+@media (max-width: 480px) {
+  .cartridge-shelf {
+    padding: 20px 15px;
+  }
+
+  .cartridge-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .cartridge {
+    max-width: 160px;
+    height: 220px;
+  }
+
+  .cartridge-title { font-size: 9px; }
+  .cartridge-subtitle { font-size: 5px; }
+  .cartridge-label-text { font-size: 6px; }
+}
+
+/* Hover Preview State */
+.cartridge.previewing {
+  /* Animation removed to prevent flickering conflict with :hover transform */
+}

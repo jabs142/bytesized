@@ -1,0 +1,687 @@
+/* ======================================
+   CRT SCREEN EFFECTS & ANIMATIONS
+   ====================================== */
+
+/* CRT Overlay - Curved Glass Effect */
+.crt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.2) 95%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+/* Scanlines Effect */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 5;
+  animation: scanlineMove 8s linear infinite;
+  opacity: 0.5;
+  border-radius: 4px;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Pixel Grid Effect (Dot Matrix) */
+.screen-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 4px
+    );
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.3;
+}
+
+/* Screen Flicker */
+.screen-glass::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gb-lightest);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: screenFlicker 0.2s steps(1) infinite;
+}
+
+@keyframes screenFlicker {
+  0%, 95%, 100% { opacity: 0; }
+  96%, 98% { opacity: 0.01; }
+}
+
+/* Subtle Screen Glow Pulse */
+.screen-glass {
+  animation: screenGlow 4s ease-in-out infinite;
+}
+
+@keyframes screenGlow {
+  0%, 100% { box-shadow: 0 0 30px var(--screen-glow); }
+  50% { box-shadow: 0 0 40px var(--screen-glow), 0 0 15px var(--screen-glow); }
+}
+
+/* ========== BOOT SEQUENCE ========== */
+
+.boot-sequence {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gb-darkest);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: bootFadeOut 0.5s ease-out 3s forwards;
+}
+
+.boot-sequence.hidden {
+  display: none;
+}
+
+@keyframes bootFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.boot-logo {
+  text-align: center;
+  animation: bootLogoAppear 1s ease-out;
+}
+
+@keyframes bootLogoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.boot-logo .pixel-text {
+  font-size: 32px;
+  color: var(--gb-lightest);
+  text-shadow:
+    3px 3px 0 var(--gb-dark),
+    0 0 20px var(--gb-light);
+  margin-bottom: 15px;
+  animation: pixelTextGlow 2s ease-in-out infinite;
+}
+
+@keyframes pixelTextGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.boot-logo .pixel-subtitle {
+  font-size: 14px;
+  color: var(--gb-light);
+  text-shadow: 2px 2px 0 var(--gb-dark);
+  letter-spacing: 4px;
+}
+
+.boot-loading {
+  margin-top: 40px;
+  width: 200px;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 12px;
+  background: var(--gb-dark);
+  border: 2px solid var(--gb-light);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 10px var(--screen-glow);
+}
+
+.loading-fill {
+  height: 100%;
+  background: var(--gb-lightest);
+  width: 0%;
+  animation: loadingProgress 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 0 10px var(--gb-lightest);
+}
+
+@keyframes loadingProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ========== LOADING TRANSITION ========== */
+
+.loading-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gb-darkest);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: transitionFadeIn 0.3s ease-out;
+}
+
+.loading-transition.hidden {
+  display: none;
+}
+
+@keyframes transitionFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.transition-content {
+  text-align: center;
+}
+
+.transition-content .pixel-text-lg {
+  font-size: 24px;
+  color: var(--gb-lightest);
+  text-shadow: 2px 2px 0 var(--gb-dark);
+  margin-bottom: 20px;
+  animation: loadingBlink 1s steps(2) infinite;
+}
+
+@keyframes loadingBlink {
+  50% { opacity: 0.3; }
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 4px solid var(--gb-dark);
+  border-top: 4px solid var(--gb-lightest);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px var(--screen-glow);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== SCREEN FLASH EFFECT ========== */
+
+.screen-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gb-lightest);
+  z-index: 20;
+  animation: flashEffect 0.3s ease-out;
+  pointer-events: none;
+}
+
+@keyframes flashEffect {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ========== TEXT TYPEWRITER EFFECT ========== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--gb-light);
+  white-space: nowrap;
+  animation:
+    typing 2s steps(40) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+/* ========== PIXEL FADE IN ========== */
+
+.pixel-fade-in {
+  animation: pixelFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pixelFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+/* ========== SHAKE EFFECT ========== */
+
+.screen-shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* ========== PIXEL MASCOT (BOBBING ROBOT) ========== */
+
+.pixel-mascot {
+  animation: bob 2s ease-in-out infinite;
+  margin: 15px 0;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Simple pixel art T-Rex design - cute front view! */
+.mascot-character {
+  width: 40px;
+  height: 48px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* T-Rex big round head */
+.mascot-head {
+  width: 32px;
+  height: 24px;
+  background: var(--gb-lightest);
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 8px var(--screen-glow);
+  border-radius: 4px;
+}
+
+/* T-Rex eyes - both eyes this time! */
+.mascot-head::before,
+.mascot-head::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--gb-darkest);
+  top: 8px;
+  border-radius: 50%;
+  animation: blink 4s infinite;
+}
+
+.mascot-head::before { left: 7px; }
+.mascot-head::after { right: 7px; }
+
+@keyframes blink {
+  0%, 96%, 100% { height: 5px; }
+  97%, 99% { height: 1px; }
+}
+
+/* T-Rex body - rounder and cuter */
+.mascot-body {
+  width: 24px;
+  height: 18px;
+  background: var(--gb-light);
+  margin: -2px auto 0;
+  border-radius: 3px;
+  position: relative;
+  box-shadow: 0 0 6px var(--screen-glow);
+}
+
+/* Cute belly spot */
+.mascot-body::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 10px;
+  background: var(--gb-lightest);
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/* T-Rex adorably tiny arms */
+.mascot-arms {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 10px;
+}
+
+.mascot-arms::before,
+.mascot-arms::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 9px;
+  background: var(--gb-light);
+  border-radius: 2px;
+  top: 0;
+}
+
+.mascot-arms::before { left: 3px; }
+.mascot-arms::after { right: 3px; }
+
+/* ========== TOPIC-SPECIFIC MASCOTS ========== */
+
+/* Hide default T-Rex elements for topic mascots */
+.mascot-pcos .mascot-head,
+.mascot-pcos .mascot-body,
+.mascot-pcos .mascot-arms,
+.mascot-covid .mascot-head,
+.mascot-covid .mascot-body,
+.mascot-covid .mascot-arms,
+.mascot-birth-control .mascot-head,
+.mascot-birth-control .mascot-body,
+.mascot-birth-control .mascot-arms,
+.mascot-eds .mascot-head,
+.mascot-eds .mascot-body,
+.mascot-eds .mascot-arms {
+  display: none;
+}
+
+/* PCOS - Stethoscope Character */
+.mascot-pcos::before {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: var(--gb-lightest);
+  border-radius: 50%;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--screen-glow);
+}
+
+/* Stethoscope ear pieces */
+.mascot-pcos::after {
+  content: '';
+  position: absolute;
+  width: 36px;
+  height: 8px;
+  background: var(--gb-light);
+  border-radius: 4px 4px 0 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow:
+    -10px 0 0 var(--gb-light),
+    10px 0 0 var(--gb-light);
+}
+
+/* Stethoscope tubing */
+.mascot-pcos {
+  background: linear-gradient(
+    to bottom,
+    transparent 36px,
+    var(--gb-light) 36px,
+    var(--gb-light) 40px,
+    transparent 40px
+  );
+}
+
+/* COVID - Virus Blob with Spikes */
+.mascot-covid::before {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: var(--gb-light);
+  border-radius: 50%;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--screen-glow);
+}
+
+/* Virus spikes */
+.mascot-covid::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 50% 0%, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 100% 25%, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 100% 75%, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 50% 100%, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 0% 75%, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 0% 25%, var(--gb-lightest) 3px, transparent 3px);
+}
+
+/* Birth Control - Pill Capsule */
+.mascot-birth-control::before {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 36px;
+  background: linear-gradient(
+    to bottom,
+    var(--gb-lightest) 0%,
+    var(--gb-lightest) 50%,
+    var(--gb-light) 50%,
+    var(--gb-light) 100%
+  );
+  border-radius: 14px;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--screen-glow);
+  border: 2px solid var(--gb-dark);
+}
+
+/* Pill shine */
+.mascot-birth-control::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-8px);
+}
+
+/* EDS - DNA Double Helix (Better Design) */
+.mascot-eds::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 40px;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    /* Left strand dots */
+    radial-gradient(circle at 4px 4px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 6px 12px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 10px 20px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 14px 28px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 16px 36px, var(--gb-lightest) 3px, transparent 3px),
+    /* Right strand dots */
+    radial-gradient(circle at 20px 0px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 18px 8px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 14px 16px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 10px 24px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 8px 32px, var(--gb-lightest) 3px, transparent 3px),
+    radial-gradient(circle at 4px 40px, var(--gb-lightest) 3px, transparent 3px);
+  box-shadow: 0 0 8px var(--screen-glow);
+}
+
+/* DNA connecting base pairs */
+.mascot-eds::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 40px;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    /* Horizontal connecting bars */
+    linear-gradient(90deg, transparent 5px, var(--gb-light) 5px, var(--gb-light) 19px, transparent 19px) 0 6px / 100% 2px,
+    linear-gradient(90deg, transparent 7px, var(--gb-light) 7px, var(--gb-light) 17px, transparent 17px) 0 14px / 100% 2px,
+    linear-gradient(90deg, transparent 10px, var(--gb-light) 10px, var(--gb-light) 14px, transparent 14px) 0 22px / 100% 2px,
+    linear-gradient(90deg, transparent 10px, var(--gb-light) 10px, var(--gb-light) 14px, transparent 14px) 0 30px / 100% 2px;
+  background-repeat: no-repeat;
+}
+
+/* Extra definition - remove background from mascot-eds container */
+.mascot-eds {
+  background: transparent;
+}
+
+/* ========== RESPONSIVE EFFECTS ========== */
+
+@media (max-width: 768px) {
+  .boot-logo .pixel-text { font-size: 24px; }
+  .boot-logo .pixel-subtitle { font-size: 12px; }
+  .transition-content .pixel-text-lg { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+  .scanlines { opacity: 0.3; }
+  .screen-glass::before { opacity: 0.2; }
+  .boot-logo .pixel-text { font-size: 20px; }
+  .boot-logo .pixel-subtitle { font-size: 10px; }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .scanlines,
+  .screen-glass,
+  .boot-sequence,
+  .loading-transition,
+  .cartridge,
+  .screen-glass::after {
+    animation: none !important;
+  }
+
+  .cartridge:hover {
+    transform: none;
+  }
+}
+
+/* ========== GLITCH EFFECT (Optional) ========== */
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.glitch::before {
+  animation: glitch-1 0.3s infinite;
+  color: var(--gb-light);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.3s infinite;
+  color: var(--gb-dark);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+  100% { transform: translate(0); }
+}
