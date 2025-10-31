@@ -1,0 +1,225 @@
+{
+  "inventions": [
+    {
+      "id": "fire",
+      "name": "Fire",
+      "year": -400000,
+      "era": "stone",
+      "icon": "🔥",
+      "dismissed": false,
+      "description": "First controlled use of fire by early humans"
+    },
+    {
+      "id": "wheel",
+      "name": "Wheel",
+      "year": -3500,
+      "era": "stone",
+      "icon": "⚙️",
+      "dismissed": false,
+      "description": "Revolutionary transportation and mechanical advantage"
+    },
+    {
+      "id": "writing",
+      "name": "Writing",
+      "year": -3200,
+      "era": "ancient",
+      "icon": "📜",
+      "dismissed": false,
+      "description": "Preserved knowledge across generations"
+    },
+    {
+      "id": "printing-press",
+      "name": "Printing Press",
+      "year": 1440,
+      "era": "renaissance",
+      "icon": "📰",
+      "dismissed": true,
+      "dismissalQuote": "Too many books will make men less studious",
+      "dismissedBy": "Venetian Senate",
+      "dismissalYear": 1515,
+      "impact": "Enabled the spread of knowledge, sparked the Renaissance and Reformation. Over 8 million books exist today.",
+      "funFact": "The Catholic Church initially banned many printed books, creating the Index of Forbidden Books in 1559."
+    },
+    {
+      "id": "steam-engine",
+      "name": "Steam Engine",
+      "year": 1712,
+      "era": "industrial",
+      "icon": "🚂",
+      "dismissed": true,
+      "dismissalQuote": "Rail travel at high speed is not possible because passengers would die of asphyxia",
+      "dismissedBy": "Dr. Dionysius Lardner, professor of Natural Philosophy",
+      "dismissalYear": 1830,
+      "impact": "Powered the Industrial Revolution. Modern freight trains can exceed 100 mph safely.",
+      "funFact": "The first passenger railway death was not from speed but from a person being hit by a locomotive at the track opening ceremony."
+    },
+    {
+      "id": "telephone",
+      "name": "Telephone",
+      "year": 1876,
+      "era": "industrial",
+      "icon": "☎️",
+      "dismissed": true,
+      "dismissalQuote": "This 'telephone' has too many shortcomings to be seriously considered as a means of communication",
+      "dismissedBy": "Western Union internal memo",
+      "dismissalYear": 1876,
+      "impact": "Over 8 billion mobile subscriptions worldwide today. Connected the entire planet.",
+      "funFact": "Western Union rejected buying the telephone patent for $100,000. That patent would be worth trillions today."
+    },
+    {
+      "id": "lightbulb",
+      "name": "Electric Light",
+      "year": 1879,
+      "era": "industrial",
+      "icon": "💡",
+      "dismissed": true,
+      "dismissalQuote": "Everyone acquainted with the subject will recognize it as a conspicuous failure",
+      "dismissedBy": "Henry Morton, President of the Stevens Institute of Technology",
+      "dismissalYear": 1879,
+      "impact": "Changed human civilization - enabling 24-hour productivity and fundamentally altering sleep patterns.",
+      "funFact": "Edison tested over 3,000 materials before finding the right filament. Persistence pays off!"
+    },
+    {
+      "id": "airplane",
+      "name": "Airplane",
+      "year": 1903,
+      "era": "industrial",
+      "icon": "✈️",
+      "dismissed": true,
+      "dismissalQuote": "Heavier-than-air flying machines are impossible",
+      "dismissedBy": "Lord Kelvin, President of the Royal Society",
+      "dismissalYear": 1895,
+      "impact": "Over 100,000 flights daily. Changed travel, commerce, and warfare forever.",
+      "funFact": "The Wright Brothers' first flight was shorter than the wingspan of a Boeing 747."
+    },
+    {
+      "id": "penicillin",
+      "name": "Penicillin",
+      "year": 1928,
+      "era": "modern",
+      "icon": "💊",
+      "dismissed": true,
+      "dismissalQuote": "Fleming's discovery was a laboratory curiosity with no practical application",
+      "dismissedBy": "Medical establishment (Fleming couldn't get funding for years)",
+      "dismissalYear": 1929,
+      "impact": "Saved over 200 million lives. First true antibiotic revolutionized medicine.",
+      "funFact": "Fleming discovered penicillin by accident when mold contaminated his bacterial cultures while he was on vacation."
+    },
+    {
+      "id": "pap-smear",
+      "name": "Pap Smear",
+      "year": 1928,
+      "era": "modern",
+      "icon": "🔬",
+      "dismissed": true,
+      "dismissalQuote": "A waste of time - cervical cancer screening is unnecessary and invasive",
+      "dismissedBy": "Medical journals and doctors",
+      "dismissalYear": 1928,
+      "impact": "Prevents over 250,000 cervical cancer deaths per year. Reduced mortality by 70%.",
+      "funFact": "Dr. Papanicolaou spent 21 years perfecting the test before it was accepted. It's now standard healthcare worldwide."
+    },
+    {
+      "id": "computer",
+      "name": "Personal Computer",
+      "year": 1977,
+      "era": "digital",
+      "icon": "💻",
+      "dismissed": true,
+      "dismissalQuote": "There is no reason anyone would want a computer in their home",
+      "dismissedBy": "Ken Olsen, founder of Digital Equipment Corporation",
+      "dismissalYear": 1977,
+      "impact": "Over 2 billion PCs in use today. Transformed work, education, and entertainment globally.",
+      "funFact": "The first Apple II cost $1,298 in 1977 ($6,500 in today's money). Today's smartphones have 100,000x more computing power."
+    },
+    {
+      "id": "internet",
+      "name": "Internet",
+      "year": 1983,
+      "era": "digital",
+      "icon": "🌐",
+      "dismissed": true,
+      "dismissalQuote": "The Internet will go spectacularly supernova and in 1996 catastrophically collapse",
+      "dismissedBy": "Bob Metcalfe, inventor of Ethernet",
+      "dismissalYear": 1995,
+      "impact": "5+ billion users worldwide. Fundamentally changed human communication and commerce.",
+      "funFact": "Metcalfe later blended a printed copy of his prediction and ate it at a conference to admit he was wrong."
+    },
+    {
+      "id": "smartphone",
+      "name": "iPhone",
+      "year": 2007,
+      "era": "digital",
+      "icon": "📱",
+      "dismissed": true,
+      "dismissalQuote": "There's no chance that the iPhone is going to get any significant market share",
+      "dismissedBy": "Steve Ballmer, Microsoft CEO",
+      "dismissalYear": 2007,
+      "impact": "Over 6 billion smartphone users today. Redefined mobile computing and communication.",
+      "funFact": "Ballmer laughed at the iPhone's $600 price and lack of keyboard. Apple now sells $200B+ worth of iPhones annually."
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "year": 2022,
+      "era": "ai",
+      "icon": "🤖",
+      "dismissed": true,
+      "dismissalQuote": "AI is just autocomplete on steroids - it will never be truly useful",
+      "dismissedBy": "Various tech critics",
+      "dismissalYear": 2022,
+      "impact": "ChatGPT reached 100M users in 2 months. AI is transforming every industry from healthcare to creative work.",
+      "funFact": "ChatGPT became the fastest-growing consumer application in history, surpassing TikTok and Instagram's early growth."
+    }
+  ],
+  "eras": [
+    {
+      "id": "stone",
+      "name": "Stone Age",
+      "yearRange": [-400000, -3000],
+      "color": "#A8BCC8",
+      "description": "Fire and basic tools"
+    },
+    {
+      "id": "ancient",
+      "name": "Ancient Civilizations",
+      "yearRange": [-3000, 500],
+      "color": "#85B09A",
+      "description": "Writing and agriculture"
+    },
+    {
+      "id": "renaissance",
+      "name": "Renaissance",
+      "yearRange": [500, 1700],
+      "color": "#7B96A8",
+      "description": "Printing and exploration"
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial Age",
+      "yearRange": [1700, 1950],
+      "color": "#5C9EAD",
+      "description": "Steam, electricity, flight"
+    },
+    {
+      "id": "modern",
+      "name": "Modern Age",
+      "yearRange": [1950, 2000],
+      "color": "#4A90A4",
+      "description": "Medicine and space"
+    },
+    {
+      "id": "digital",
+      "name": "Digital Age",
+      "yearRange": [2000, 2020],
+      "color": "#5C9EAD",
+      "description": "Internet and smartphones"
+    },
+    {
+      "id": "ai",
+      "name": "AI Age",
+      "yearRange": [2020, 2025],
+      "color": "#7B96A8",
+      "description": "Artificial intelligence"
+    }
+  ]
+}

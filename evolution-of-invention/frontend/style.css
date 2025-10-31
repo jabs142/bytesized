@@ -1,0 +1,92 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+    color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 3rem 2rem 2rem 2rem;
+}
+
+/* Pixel-Perfect Rendering */
+canvas {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    border: 3px solid #5C9EAD;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 900px;
+}
+
+#game {
+    position: relative;
+}
+
+/* Info Panel */
+.info-panel {
+    background: #2a2a2a;
+    border: 2px solid #5C9EAD;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.info-panel h1 {
+    color: #5C9EAD;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.era-name {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 1.25rem;
+    color: #8b7355;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+}
+
+.instructions {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    line-height: 1.8;
+}
+
+.instructions strong {
+    color: #5C9EAD;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    body {
+        padding: 1rem;
+    }
+
+    .game-container {
+        gap: 1rem;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
