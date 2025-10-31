@@ -1,8 +1,161 @@
 /* Custom styles for Birth Control Pattern Explorer */
+/* Override Tailwind with Homepage Theme */
+
+:root {
+    /* Cool color palette - matching homepage */
+    --primary: #5C9EAD;
+    --primary-dark: #4A90A4;
+    --secondary: #7B96A8;
+    --accent: #85B09A;
+    --accent-light: #A8BCC8;
+
+    --bg: #FFFFFF;
+    --text-primary: #37352F;
+    --text-secondary: #787774;
+    --border: #E9E9E7;
+}
 
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Body override */
+body {
+    background-color: var(--bg) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Container max-width override */
+.max-w-4xl {
+    max-width: 900px !important;
+}
+
+/* Typography overrides */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+h1 {
+    text-transform: lowercase;
+    font-weight: 600 !important;
+}
+
+h2 {
+    text-transform: lowercase;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace !important;
+    font-size: 0.875rem !important;
+    color: var(--text-secondary) !important;
+    letter-spacing: 0.5px;
+}
+
+/* Code/monospace font */
+code, pre {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+}
+
+/* Remove gradient hero - make it clean */
+.bg-gradient-to-r.from-indigo-500 {
+    background: var(--bg) !important;
+    color: var(--text-primary) !important;
+    border: 2px solid var(--border) !important;
+    padding: 4rem !important;
+}
+
+.bg-gradient-to-r.from-indigo-500 h2 {
+    color: var(--text-primary) !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+.bg-gradient-to-r.from-indigo-500 p {
+    color: var(--text-secondary) !important;
+}
+
+/* Button overrides */
+.bg-white.text-indigo-600,
+.bg-purple-600.text-white {
+    background: var(--primary) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.bg-white.text-indigo-600:hover,
+.bg-purple-600:hover {
+    background: var(--primary-dark) !important;
+}
+
+/* Card colors */
+.bg-white {
+    background: var(--bg) !important;
+    border: 2px solid var(--border) !important;
+}
+
+.text-indigo-600 {
+    color: var(--primary) !important;
+}
+
+.text-purple-600 {
+    color: var(--secondary) !important;
+}
+
+.text-pink-600 {
+    color: var(--accent) !important;
+}
+
+/* Remove yellow/orange gradients */
+.bg-gradient-to-r.from-yellow-50,
+.bg-amber-50 {
+    background: rgba(133, 176, 154, 0.1) !important;
+    border-color: var(--border) !important;
+}
+
+/* Border colors */
+.border-amber-200,
+.border-orange-200 {
+    border-color: var(--border) !important;
+}
+
+/* Text colors */
+.text-amber-900,
+.text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+.text-gray-600,
+.text-gray-700,
+.text-indigo-100 {
+    color: var(--text-secondary) !important;
+}
+
+/* Shadow overrides */
+.shadow,
+.shadow-sm,
+.shadow-lg {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Header override */
+header.bg-white {
+    border-bottom: 2px solid var(--border) !important;
+    box-shadow: none !important;
+}
+
+/* Navigation */
+.nav-breadcrumb {
+    padding: 0;
+}
+
+.back-link {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    transition: opacity 0.2s !important;
+    display: inline-block !important;
+}
+
+.back-link:hover {
+    opacity: 0.7 !important;
 }
 
 /* Custom checkbox styling */
