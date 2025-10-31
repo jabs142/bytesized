@@ -136,8 +136,8 @@ export class ScrollHandler {
         this.updateStatsInstant(dateString);
       }
 
-      // Update timeline month highlights and progress bar
-      this.updateTimelineMonthHighlights(interpolatedDate);
+      // Only update progress bar during scroll, not month highlights
+      // Month highlights update on scene enter to stay synced with narrative
       this.updateTimelineProgress(interpolatedDate);
     }
   }

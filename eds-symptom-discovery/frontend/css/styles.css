@@ -6,18 +6,43 @@
 }
 
 :root {
-    --primary-color: #5C9EAD;
-    --secondary-color: #7B96A8;
-    --success-color: #85B09A;
-    --warning-color: #A8BCC8;
-    --danger-color: #7B96A8;
-    --bg-color: #FFFFFF;
-    --card-bg: #FFFFFF;
-    --text-primary: #37352F;
-    --text-secondary: #787774;
-    --border-color: #E9E9E7;
-    --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
-    --shadow-lg: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    /* Game Boy Retro Color Palette */
+    --gb-darkest: #0f380f;
+    --gb-dark: #306230;
+    --gb-light: #8bac0f;
+    --gb-lightest: #9bbc0f;
+
+    /* Primary colors - Game Boy greens */
+    --primary-color: #8bac0f;
+    --secondary-color: #306230;
+    --success-color: #8bac0f;
+    --warning-color: #9bbc0f;
+    --danger-color: #6B8E23;
+
+    /* Backgrounds */
+    --bg-color: #E8E8E8;
+    --card-bg: #F5F5F5;
+
+    /* Text */
+    --text-primary: #2a2a2a;
+    --text-secondary: #5a5a5a;
+    --border-color: #306230;
+
+    /* Retro Shadows */
+    --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.15);
+    --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.2);
+
+    /* Fonts */
+    --font-pixel: 'Press Start 2P', cursive;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
 }
 
 body {
@@ -37,21 +62,36 @@ code, pre {
     padding: 4rem;
 }
 
-/* Navigation */
-.nav-breadcrumb {
-    padding: 1rem 0;
-}
-
-.back-link {
-    color: var(--primary-color);
+/* Navigation - Eject Button */
+.eject-button {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--gb-light);
+    border: 2px solid var(--gb-dark);
+    border-radius: 2px;
+    color: var(--gb-darkest);
+    font-family: var(--font-pixel);
+    font-size: 0.5rem;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: opacity 0.2s;
-    display: inline-block;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+    z-index: 10000;
 }
 
-.back-link:hover {
-    opacity: 0.7;
+.eject-button:hover {
+    background: var(--gb-lightest);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.eject-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Header */
@@ -63,11 +103,13 @@ code, pre {
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    color: var(--gb-dark);
     margin-bottom: 0.5rem;
-    text-transform: lowercase;
-    font-weight: 600;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.4;
 }
 
 .subtitle {
@@ -80,20 +122,43 @@ code, pre {
     background: var(--card-bg);
     color: var(--text-primary);
     padding: 1rem 1.5rem;
-    border-radius: 12px;
+    border-radius: 2px;
     text-align: center;
     margin-bottom: 2rem;
-    border: 2px solid var(--border-color);
-    box-shadow: var(--shadow);
+    border: 2px solid var(--gb-dark);
+    box-shadow: var(--shadow-md);
+}
+
+.methodology-badge strong {
+    color: var(--gb-dark);
+}
+
+/* Section Headers */
+h2 {
+    font-family: var(--font-pixel);
+    font-size: 0.75rem;
+    color: var(--gb-dark);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: var(--font-pixel);
+    font-size: 0.625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    font-weight: normal;
 }
 
 /* Cards */
 .card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 2px;
     padding: 1.5rem;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--gb-dark);
+    position: relative;
 }
 
 /* Summary Section */

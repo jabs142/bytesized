@@ -59,7 +59,9 @@
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              outline 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .cartridge:hover {
@@ -102,17 +104,17 @@
 .cartridge.keyboard-focused {
   outline: 3px solid var(--gb-lightest);
   outline-offset: 4px;
-  animation: focusGlow 1.5s ease-in-out infinite;
+  animation: focusGlow 2s ease-in-out infinite;
 }
 
 @keyframes focusGlow {
   0%, 100% {
     outline-color: var(--gb-lightest);
-    box-shadow: 0 0 15px var(--gb-lightest);
+    box-shadow: 0 0 12px rgba(155, 188, 15, 0.6);
   }
   50% {
     outline-color: var(--gb-light);
-    box-shadow: 0 0 25px var(--gb-light);
+    box-shadow: 0 0 20px rgba(139, 172, 15, 0.8);
   }
 }
 

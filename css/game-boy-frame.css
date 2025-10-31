@@ -74,28 +74,6 @@
   margin-bottom: 15px;
 }
 
-.gameboy-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo-dot {
-  width: 12px;
-  height: 12px;
-  background: var(--button-red);
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(204, 51, 51, 0.6);
-}
-
-.logo-text {
-  font-size: 12px;
-  font-weight: bold;
-  color: #333;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-}
-
 .power-indicator {
   display: flex;
   align-items: center;
@@ -108,20 +86,16 @@
   background: var(--button-red);
   border-radius: 50%;
   box-shadow:
-    0 0 10px var(--led-glow),
+    0 0 10px rgba(231, 76, 60, 0.8),
     inset 0 -2px 4px rgba(0, 0, 0, 0.3);
-  animation: ledPulse 2s ease-in-out infinite;
+  /* Static glow - no animation */
 }
 
-@keyframes ledPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
-.led-label {
+.power-label {
   font-size: 6px;
   color: #666;
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 /* ========== SCREEN CONTAINER ========== */

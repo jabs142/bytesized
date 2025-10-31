@@ -123,9 +123,12 @@ export class MapRenderer {
         }
 
         if (showVaccinations && countryData.peopleFullyVaccinated > 0) {
-          // Show vaccination percentage
+          // Show vaccination percentage (blue gradient)
           const vaccinationPct = (countryData.peopleFullyVaccinated / countryData.population) * 100;
           return this.vaccineColorScale(vaccinationPct);
+        } else if (showVaccinations) {
+          // In vaccination mode but no data available - show neutral gray
+          return '#d3d3d3';
         } else {
           // Show cases per million (red gradient)
           if (countryData.casesPerMillion === 0) {

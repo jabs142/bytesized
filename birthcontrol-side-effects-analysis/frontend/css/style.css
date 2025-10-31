@@ -2,17 +2,32 @@
 /* Override Tailwind with Homepage Theme */
 
 :root {
-    /* Cool color palette - matching homepage */
-    --primary: #5C9EAD;
-    --primary-dark: #4A90A4;
-    --secondary: #7B96A8;
-    --accent: #85B09A;
-    --accent-light: #A8BCC8;
+    /* Game Boy Retro Color Palette */
+    --gb-darkest: #0f380f;
+    --gb-dark: #306230;
+    --gb-light: #8bac0f;
+    --gb-lightest: #9bbc0f;
 
-    --bg: #FFFFFF;
-    --text-primary: #37352F;
-    --text-secondary: #787774;
-    --border: #E9E9E7;
+    /* Primary colors */
+    --primary: #8bac0f;
+    --primary-dark: #306230;
+    --secondary: #306230;
+    --accent: #8bac0f;
+    --accent-light: #9bbc0f;
+
+    /* Backgrounds */
+    --bg: #E8E8E8;
+    --text-primary: #2a2a2a;
+    --text-secondary: #5a5a5a;
+    --border: #306230;
+
+    /* Fonts */
+    --font-pixel: 'Press Start 2P', cursive;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Retro Shadows */
+    --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* Smooth scrolling */
@@ -37,16 +52,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    text-transform: lowercase;
-    font-weight: 600 !important;
+    font-family: var(--font-pixel) !important;
+    text-transform: uppercase;
+    font-weight: normal !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    color: var(--gb-dark) !important;
 }
 
 h2 {
-    text-transform: lowercase;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace !important;
-    font-size: 0.875rem !important;
-    color: var(--text-secondary) !important;
+    font-family: var(--font-pixel) !important;
+    text-transform: uppercase;
+    font-size: 0.75rem !important;
+    color: var(--gb-dark) !important;
     letter-spacing: 0.5px;
+    font-weight: normal !important;
 }
 
 /* Code/monospace font */
@@ -141,21 +161,36 @@ header.bg-white {
     box-shadow: none !important;
 }
 
-/* Navigation */
-.nav-breadcrumb {
-    padding: 0;
+/* Navigation - Eject Button */
+.eject-button {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--gb-light);
+    border: 2px solid var(--gb-dark);
+    border-radius: 2px;
+    color: var(--gb-darkest);
+    font-family: var(--font-pixel);
+    font-size: 0.5rem;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+    z-index: 10000;
 }
 
-.back-link {
-    color: var(--primary) !important;
-    text-decoration: none !important;
-    font-size: 0.9rem !important;
-    transition: opacity 0.2s !important;
-    display: inline-block !important;
+.eject-button:hover {
+    background: var(--gb-lightest);
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-.back-link:hover {
-    opacity: 0.7 !important;
+.eject-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Custom checkbox styling */
@@ -189,9 +224,16 @@ header.bg-white {
     }
 }
 
-/* Progress bars animation */
-.bg-gradient-to-r {
+/* Progress bars - Bar chart specific styling */
+#top-symptoms-list .bg-gradient-to-r {
+    background: linear-gradient(to right, var(--gb-light), var(--gb-dark)) !important;
+    opacity: 0.9;
     animation: slideIn 0.6s ease-out;
+}
+
+/* Gray background for bars */
+#top-symptoms-list .bg-gray-200 {
+    background: rgba(48, 98, 48, 0.15) !important;
 }
 
 @keyframes slideIn {

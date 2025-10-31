@@ -2747,8 +2747,11 @@ class CavemanScene extends Phaser.Scene {
         super({ key: 'CavemanScene' });
     }
 
-    preload() {
+    create() {
+        console.log('CavemanScene: Starting create()');
+
         // Generate all textures procedurally
+        console.log('CavemanScene: Generating textures...');
         generateDirtTexture(this, 'dirt');
         generateStoneTexture(this, 'stone');
         generateCaveWallTexture(this, 'cave-wall');
@@ -2787,17 +2790,12 @@ class CavemanScene extends Phaser.Scene {
         // Generate walking sprite for timeline
         generateWalkingSpriteTexture(this, 'walking-sprite');
 
-        // Future: Load from OpenGameArt
-        // AssetLoader.loadSpriteFromURL(this, 'lpc-char', 'url-here').catch(() => {
-        //     // Fallback to procedural generation
-        //     generateCharacterSprite(this, 'player-char');
-        // });
-    }
+        // Add frames for walking sprite (4 frames of 16x16 pixels)
+        for (let i = 0; i < 4; i++) {
+            this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+        }
 
-    create() {
-        // FIRST: Add sprite sheet frame configs before anything else
-        this.textures.get('player-char').add('__BASE', 0, 0, 0, 96, 192);
-
+        // Add sprite sheet frame configs
         // Add frames for player character sprite sheet
         for (let i = 0; i < 12; i++) {
             const col = i % 3;
@@ -2808,7 +2806,6 @@ class CavemanScene extends Phaser.Scene {
         // Add frames for all NPC character sprite sheets
         for (let npcNum = 1; npcNum <= 4; npcNum++) {
             const key = `npc-char-${npcNum}`;
-            this.textures.get(key).add('__BASE', 0, 0, 0, 96, 192);
             for (let i = 0; i < 12; i++) {
                 const col = i % 3;
                 const row = Math.floor(i / 3);
@@ -2820,16 +2817,18 @@ class CavemanScene extends Phaser.Scene {
         for (let npcNum = 1; npcNum <= 3; npcNum++) {
             const key = `npc-work-${npcNum}`;
             const numFrames = npcNum === 1 ? 3 : 4; // Fire has 3, spear and crafting have 4
-            this.textures.get(key).add('__BASE', 0, 0, 0, 32 * numFrames, 48);
             for (let i = 0; i < numFrames; i++) {
                 this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
             }
         }
 
+        console.log('CavemanScene: Textures and frames setup complete');
+
         // World bounds
         this.physics.world.setBounds(0, 0, 800, 600);
 
         // Create tile-based ground
+        console.log('CavemanScene: Creating game objects...');
         this.createGround();
 
         // Create cave walls
@@ -2877,6 +2876,8 @@ class CavemanScene extends Phaser.Scene {
 
         // Track last direction
         this.lastDirection = 'down';
+
+        console.log('CavemanScene: create() completed successfully');
     }
 
     createInteractables() {
@@ -2901,7 +2902,7 @@ class CavemanScene extends Phaser.Scene {
         // Stone crafter NPC interactable
         const crafterInfo = {
             title: 'Tool Innovation',
-            content: '📈 The stone hand axe was used for over 1 million years - making it the longest-used tool in human history!',
+            content: 'The stone hand axe was used for over 1 million years - making it the longest-used tool in human history!',
             icon: '📈'
         };
         const crafterZone = createInteractable(this, 620, 480, 60, 60, crafterInfo);
@@ -3375,13 +3376,9 @@ class CavemanScene extends Phaser.Scene {
         // Fade camera to black over 1 second
         this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        // After fade completes, transition to Progress Timeline, then to Farming Scene
+        // After fade completes, transition directly to Farming Scene
         this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('ProgressTimelineScene', {
-                previousEra: 'caveman',
-                nextEra: 'farming',
-                nextSceneKey: 'FarmingScene'
-            });
+            this.scene.start('FarmingScene');
         });
     }
 }
@@ -3393,7 +3390,7 @@ class FarmingScene extends Phaser.Scene {
         super({ key: 'FarmingScene' });
     }
 
-    preload() {
+    create(data) {
         // Generate farming era textures
         generateGrassTexture(this, 'grass');
         generateFarmlandTexture(this, 'farmland');
@@ -3426,10 +3423,12 @@ class FarmingScene extends Phaser.Scene {
         // Generate walking sprite for timeline (shared across scenes)
         if (!this.textures.exists('walking-sprite')) {
             generateWalkingSpriteTexture(this, 'walking-sprite');
+            // Add frames for walking sprite (4 frames of 16x16 pixels)
+            for (let i = 0; i < 4; i++) {
+                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+            }
         }
-    }
 
-    create(data) {
         // Get spawn position from previous scene (or default)
         const spawnX = data?.spawnX || 400;
         const spawnY = data?.spawnY || 500;
@@ -3441,7 +3440,6 @@ class FarmingScene extends Phaser.Scene {
         for (let i = 1; i <= 3; i++) {
             const key = `farmer-work-${i}`;
             const numFrames = 4;
-            this.textures.get(key).add('__BASE', 0, 0, 0, 32 * numFrames, 48);
             for (let f = 0; f < numFrames; f++) {
                 this.textures.get(key).add(f, 0, f * 32, 0, 32, 48);
             }
@@ -3449,7 +3447,6 @@ class FarmingScene extends Phaser.Scene {
 
         // Add frame configs for player (if not already added)
         if (!this.anims.exists('walk-down')) {
-            this.textures.get('player-char').add('__BASE', 0, 0, 0, 96, 192);
             for (let i = 0; i < 12; i++) {
                 const col = i % 3;
                 const row = Math.floor(i / 3);
@@ -3535,7 +3532,7 @@ class FarmingScene extends Phaser.Scene {
         // Tiller NPC interactable
         const tillerInfo = {
             title: 'Timeline: Neolithic Revolution',
-            content: '📅 Agriculture began in the Fertile Crescent around 10,000 BCE and spread to Europe by 7,000 BCE. This "Neolithic Revolution" changed human society forever.',
+            content: 'Agriculture began in the Fertile Crescent around 10,000 BCE and spread to Europe by 7,000 BCE. This "Neolithic Revolution" changed human society forever.',
             icon: '📅'
         };
         const tillerZone = createInteractable(this, 620, 480, 60, 60, tillerInfo);
@@ -3544,7 +3541,7 @@ class FarmingScene extends Phaser.Scene {
         // Barn portal interactable
         const barnInfo = {
             title: 'Food Storage Revolution',
-            content: '📈 The ability to store surplus grain through winter was revolutionary. It freed people from constant food gathering and allowed specialization into other crafts and trades.',
+            content: 'The ability to store surplus grain through winter was revolutionary. It freed people from constant food gathering and allowed specialization into other crafts and trades.',
             icon: '📈'
         };
         const barnZone = createInteractable(this, 400, 80, 96, 96, barnInfo);
@@ -3901,13 +3898,9 @@ class FarmingScene extends Phaser.Scene {
         // Fade to black
         this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        // After fade, transition to Progress Timeline, then to Medieval Scene
+        // After fade, transition directly to Medieval Scene
         this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('ProgressTimelineScene', {
-                previousEra: 'farming',
-                nextEra: 'medieval',
-                nextSceneKey: 'MedievalScene'
-            });
+            this.scene.start('MedievalScene');
         });
     }
 }
@@ -3919,7 +3912,7 @@ class MedievalScene extends Phaser.Scene {
         super({ key: 'MedievalScene' });
     }
 
-    preload() {
+    create(data) {
         // Generate medieval era textures
         generateCobblestoneTexture(this, 'cobblestone');
         generateCastleWallTexture(this, 'castle-wall');
@@ -3960,10 +3953,12 @@ class MedievalScene extends Phaser.Scene {
         // Generate walking sprite for timeline (shared across scenes)
         if (!this.textures.exists('walking-sprite')) {
             generateWalkingSpriteTexture(this, 'walking-sprite');
+            // Add frames for walking sprite (4 frames of 16x16 pixels)
+            for (let i = 0; i < 4; i++) {
+                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+            }
         }
-    }
 
-    create(data) {
         // Get spawn position
         const spawnX = data?.spawnX || 400;
         const spawnY = data?.spawnY || 500;
@@ -3975,7 +3970,6 @@ class MedievalScene extends Phaser.Scene {
         for (let i = 1; i <= 2; i++) {
             const key = `medieval-work-${i}`;
             const numFrames = 4;
-            this.textures.get(key).add('__BASE', 0, 0, 0, 32 * numFrames, 48);
             for (let f = 0; f < numFrames; f++) {
                 this.textures.get(key).add(f, 0, f * 32, 0, 32, 48);
             }
@@ -3983,7 +3977,6 @@ class MedievalScene extends Phaser.Scene {
 
         // Add frame configs for player (if not already added)
         if (!this.anims.exists('walk-down')) {
-            this.textures.get('player-char').add('__BASE', 0, 0, 0, 96, 192);
             for (let i = 0; i < 12; i++) {
                 const col = i % 3;
                 const row = Math.floor(i / 3);
@@ -4065,7 +4058,7 @@ class MedievalScene extends Phaser.Scene {
         // Castle Gate interactable
         const gateInfo = {
             title: 'Castle Architecture',
-            content: '🏰 Medieval castles (1000-1500 CE) were both homes and fortresses. Their thick walls, towers, and strategic design could withstand months-long sieges.',
+            content: 'Medieval castles (1000-1500 CE) were both homes and fortresses. Their thick walls, towers, and strategic design could withstand months-long sieges.',
             icon: '🏰'
         };
         const gateZone = createInteractable(this, 400, 90, 160, 128, gateInfo);
@@ -4074,7 +4067,7 @@ class MedievalScene extends Phaser.Scene {
         // Torches interactable
         const torchInfo = {
             title: 'Medieval Lighting',
-            content: '🕯️ Before electricity, torches and candles were the only way to light dark spaces. A single torch burned for about 1-2 hours, making light an expensive luxury.',
+            content: 'Before electricity, torches and candles were the only way to light dark spaces. A single torch burned for about 1-2 hours, making light an expensive luxury.',
             icon: '🕯️'
         };
         const torchZone = createInteractable(this, 150, 80, 60, 60, torchInfo);
@@ -4083,7 +4076,7 @@ class MedievalScene extends Phaser.Scene {
         // Cobblestone ground interactable
         const roadInfo = {
             title: 'Medieval Infrastructure',
-            content: '🛤️ Cobblestone roads were a major advancement from dirt paths. They improved trade by allowing carts to travel in all weather and lasted for centuries with proper maintenance.',
+            content: 'Cobblestone roads were a major advancement from dirt paths. They improved trade by allowing carts to travel in all weather and lasted for centuries with proper maintenance.',
             icon: '🛤️'
         };
         const roadZone = createInteractable(this, 400, 400, 100, 100, roadInfo);
@@ -4092,7 +4085,7 @@ class MedievalScene extends Phaser.Scene {
         // Castle walls interactable
         const wallInfo = {
             title: 'Defensive Fortifications',
-            content: '🧱 Castle walls could be up to 20 feet thick and 60 feet tall. Crenellations (the notched top) allowed defenders to shoot arrows while staying protected.',
+            content: 'Castle walls could be up to 20 feet thick and 60 feet tall. Crenellations (the notched top) allowed defenders to shoot arrows while staying protected.',
             icon: '🧱'
         };
         const wallZone = createInteractable(this, 400, 48, 200, 60, wallInfo);
@@ -4110,7 +4103,7 @@ class MedievalScene extends Phaser.Scene {
         // Guilds and crafts
         const guildInfo = {
             title: 'Craft Guilds',
-            content: '⚒️ Guilds controlled medieval trades through apprenticeship systems. Becoming a master craftsman took 7+ years of training and required creating a "masterpiece" to prove skill.',
+            content: 'Guilds controlled medieval trades through apprenticeship systems. Becoming a master craftsman took 7+ years of training and required creating a "masterpiece" to prove skill.',
             icon: '⚒️'
         };
         const guildZone = createInteractable(this, 200, 250, 80, 80, guildInfo);
@@ -4119,7 +4112,7 @@ class MedievalScene extends Phaser.Scene {
         // Feudal system
         const feudalInfo = {
             title: 'Feudal Society',
-            content: '👑 Medieval Europe operated on feudalism: kings granted land to nobles, who provided knights for protection. Peasants worked the land in exchange for protection and housing.',
+            content: 'Medieval Europe operated on feudalism: kings granted land to nobles, who provided knights for protection. Peasants worked the land in exchange for protection and housing.',
             icon: '👑'
         };
         const feudalZone = createInteractable(this, 600, 150, 80, 80, feudalInfo);
@@ -4495,13 +4488,9 @@ class MedievalScene extends Phaser.Scene {
         // Fade to black
         this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        // After fade, transition to Progress Timeline, then to Renaissance Scene
+        // After fade, transition directly to Renaissance Scene
         this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('ProgressTimelineScene', {
-                previousEra: 'medieval',
-                nextEra: 'renaissance',
-                nextSceneKey: 'RenaissanceScene'
-            });
+            this.scene.start('RenaissanceScene');
         });
     }
 }
@@ -4513,7 +4502,7 @@ class RenaissanceScene extends Phaser.Scene {
         super({ key: 'RenaissanceScene' });
     }
 
-    preload() {
+    create(data) {
         // Generate all textures procedurally
         generateMarbleTexture(this, 'marble');
         generateLibraryPortalTexture(this, 'library-portal');
@@ -4528,10 +4517,14 @@ class RenaissanceScene extends Phaser.Scene {
         generateRenaissanceNPCTexture(this, 'renaissance-inventor', 'inventor');
 
         // Generate player character (reuse from previous scenes)
-        generatePlayerTexture(this, 'player-char');
+        if (!this.textures.exists('player-char')) {
+            generateCharacterSprite(this, 'player-char');
+        }
 
         // Generate fire particles (for candles/lamps)
-        generateFireParticleTexture(this, 'fire-orange');
+        if (!this.textures.exists('fire-orange')) {
+            generateFireParticles(this);
+        }
 
         // Generate interactive object sprites
         generateTelescopeTexture(this, 'telescope');
@@ -4539,10 +4532,12 @@ class RenaissanceScene extends Phaser.Scene {
         // Generate walking sprite for timeline (shared across scenes)
         if (!this.textures.exists('walking-sprite')) {
             generateWalkingSpriteTexture(this, 'walking-sprite');
+            // Add frames for walking sprite (4 frames of 16x16 pixels)
+            for (let i = 0; i < 4; i++) {
+                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+            }
         }
-    }
 
-    create(data) {
         // Setup
         this.playerSpeed = 160;
         this.lastDirection = 'down';
@@ -4720,7 +4715,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Printing Press interactable
         const printingPressInfo = {
             title: 'The Printing Press Revolution',
-            content: '📖 Johannes Gutenberg\'s printing press (1440) revolutionized knowledge sharing. Before this, books were hand-copied and took months to produce. The press could print 3,600 pages per day, making books affordable and spreading literacy across Europe.',
+            content: 'Johannes Gutenberg\'s printing press (1440) revolutionized knowledge sharing. Before this, books were hand-copied and took months to produce. The press could print 3,600 pages per day, making books affordable and spreading literacy across Europe.',
             icon: '📖'
         };
         const printingPressZone = createInteractable(this, 150, 200, 60, 70, printingPressInfo);
@@ -4729,7 +4724,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Easel/Artist interactable
         const artInfo = {
             title: 'Renaissance Art & Perspective',
-            content: '🎨 Renaissance artists like Leonardo da Vinci and Michelangelo pioneered linear perspective, making paintings look 3D. They studied anatomy, light, and mathematics to create realistic art that still amazes us today.',
+            content: 'Renaissance artists like Leonardo da Vinci and Michelangelo pioneered linear perspective, making paintings look 3D. They studied anatomy, light, and mathematics to create realistic art that still amazes us today.',
             icon: '🎨'
         };
         const artZone = createInteractable(this, 650, 250, 80, 80, artInfo);
@@ -4738,7 +4733,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Globe interactable
         const explorationInfo = {
             title: 'Age of Exploration',
-            content: '🌍 Renaissance explorers like Columbus (1492) and Magellan (1519) mapped the world using new navigation tools: the compass, astrolabe, and printed maps. These voyages connected continents and changed global trade forever.',
+            content: 'Renaissance explorers like Columbus (1492) and Magellan (1519) mapped the world using new navigation tools: the compass, astrolabe, and printed maps. These voyages connected continents and changed global trade forever.',
             icon: '🌍'
         };
         const globeZone = createInteractable(this, 250, 400, 50, 50, explorationInfo);
@@ -4747,7 +4742,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Scholar NPC interactable
         const scholarInfo = {
             title: 'Humanism & Classical Learning',
-            content: '📚 Renaissance scholars revived ancient Greek and Roman texts, studying philosophy, science, and literature. This "rebirth" of classical knowledge sparked new ideas about human potential and individual achievement.',
+            content: 'Renaissance scholars revived ancient Greek and Roman texts, studying philosophy, science, and literature. This "rebirth" of classical knowledge sparked new ideas about human potential and individual achievement.',
             icon: '📚'
         };
         const scholarZone = createInteractable(this, 180, 500, 60, 60, scholarInfo);
@@ -4756,7 +4751,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Inventor NPC interactable
         const inventorInfo = {
             title: 'Renaissance Inventions',
-            content: '⚙️ Renaissance inventors like Leonardo da Vinci designed flying machines, submarines, and mechanical devices centuries ahead of their time. Though many weren\'t built, their detailed drawings inspired future engineers.',
+            content: 'Renaissance inventors like Leonardo da Vinci designed flying machines, submarines, and mechanical devices centuries ahead of their time. Though many weren\'t built, their detailed drawings inspired future engineers.',
             icon: '⚙️'
         };
         const inventorZone = createInteractable(this, 280, 400, 60, 60, inventorInfo);
@@ -4765,7 +4760,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Manuscripts interactable
         const manuscriptInfo = {
             title: 'From Manuscripts to Print',
-            content: '✍️ Before printing, monks spent years hand-copying books with beautiful illuminated letters. A single Bible took 2-3 years! The printing press made the same book in days, democratizing knowledge.',
+            content: 'Before printing, monks spent years hand-copying books with beautiful illuminated letters. A single Bible took 2-3 years! The printing press made the same book in days, democratizing knowledge.',
             icon: '✍️'
         };
         const manuscriptZone = createInteractable(this, 610, 450, 80, 60, manuscriptInfo);
@@ -4774,7 +4769,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Library Portal interactable
         const libraryInfo = {
             title: 'Centers of Learning',
-            content: '🏛️ Renaissance libraries and universities became temples of knowledge. The Medici Library in Florence held thousands of books on science, art, and philosophy, fueling the intellectual revolution.',
+            content: 'Renaissance libraries and universities became temples of knowledge. The Medici Library in Florence held thousands of books on science, art, and philosophy, fueling the intellectual revolution.',
             icon: '🏛️'
         };
         const libraryZone = createInteractable(this, 400, 90, 130, 150, libraryInfo);
@@ -4783,7 +4778,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Scientific Method area
         const scienceInfo = {
             title: 'Birth of Modern Science',
-            content: '🔬 Renaissance thinkers like Galileo and Copernicus challenged old beliefs with observation and experiments. Their scientific method - question, test, prove - became the foundation of all modern science.',
+            content: 'Renaissance thinkers like Galileo and Copernicus challenged old beliefs with observation and experiments. Their scientific method - question, test, prove - became the foundation of all modern science.',
             icon: '🔬'
         };
         const scienceZone = createInteractable(this, 500, 350, 100, 100, scienceInfo);
@@ -5222,7 +5217,7 @@ const config = {
             debug: false
         }
     },
-    scene: [CavemanScene, FarmingScene, MedievalScene, RenaissanceScene, ProgressTimelineScene],
+    scene: [CavemanScene, FarmingScene, MedievalScene, RenaissanceScene],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH

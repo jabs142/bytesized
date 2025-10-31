@@ -128,7 +128,7 @@ body {
 
 #stats-overlay {
   position: fixed;
-  top: var(--spacing-md);
+  top: 6rem;
   left: var(--spacing-md);
   z-index: 100;
   display: flex;
@@ -671,4 +671,54 @@ body {
     --color-text: #ffffff;
     --color-border: #ffffff;
   }
+}
+
+/* ==================== RETRO ADDITIONS ==================== */
+
+/* Minimal retro font for headers */
+h1, h2 {
+  font-family: 'Press Start 2P', cursive !important;
+}
+
+h1 {
+  font-size: 1.5rem !important;
+  line-height: 1.4 !important;
+}
+
+h2 {
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Dark-themed eject button - More visible Game Boy style */
+.eject-button-dark {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #8bac0f;  /* Game Boy green */
+  border: 3px solid #306230;  /* Darker green border */
+  border-radius: 2px;
+  color: #0f380f;  /* Dark green text */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+  z-index: 10000;
+}
+
+.eject-button-dark:hover {
+  background: #9bbc0f;  /* Lighter green on hover */
+  border-color: #8bac0f;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.eject-button-dark:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }

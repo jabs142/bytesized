@@ -75,6 +75,74 @@ canvas {
     color: #5C9EAD;
 }
 
+/* Eject Button */
+.eject-button-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
+}
+
+.eject-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.625rem;
+    background: #0f380f;
+    color: #9bbc0f;
+    border: 3px solid #306230;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow:
+        0 4px 0 rgba(15, 56, 15, 0.3),
+        0 0 15px rgba(155, 188, 15, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+}
+
+.eject-button::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    height: 2px;
+    background: #306230;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.eject-button:hover {
+    background: #1a4a1a;
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 0 rgba(15, 56, 15, 0.3),
+        0 0 25px rgba(155, 188, 15, 0.5);
+    border-color: #8bac0f;
+    color: #8bac0f;
+}
+
+.eject-button:active {
+    transform: translateY(-1px);
+    box-shadow:
+        0 2px 0 rgba(15, 56, 15, 0.3),
+        0 0 10px rgba(155, 188, 15, 0.3);
+}
+
+.eject-icon {
+    font-size: 0.875rem;
+    animation: blinkArrow 2s infinite;
+}
+
+@keyframes blinkArrow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
     body {

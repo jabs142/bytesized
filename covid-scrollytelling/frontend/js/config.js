@@ -197,12 +197,13 @@ export const SCENES = [
   {
     index: 12,
     date: '2024-01-01',
-    title: 'The New Normal',
-    subtitle: 'January 2024',
+    title: 'Data Sources',
+    subtitle: 'References',
     narrative: `
-      COVID-19 became part of everyday life. Vaccination programs continued.
-      Surveillance systems monitored for new variants. The world learned to
-      live with the virus.
+      This visualization is based on data from Our World in Data COVID-19 Dataset,
+      the World Health Organization (WHO), and Natural Earth for map data.
+      The timeline shows the global impact of COVID-19 from December 2019 through January 2024,
+      tracking cases, deaths, and vaccination progress across 58 countries.
     `,
     mapFocus: null,
     showVaccinations: true,
