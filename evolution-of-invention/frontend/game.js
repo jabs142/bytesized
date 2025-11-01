@@ -3,30 +3,6 @@
  * Player walks through different historical eras
  */
 
-// ===== ASSET LOADER CLASS =====
-
-class AssetLoader {
-    /**
-     * Load a sprite from a URL
-     * @param {Phaser.Scene} scene - The scene to load into
-     * @param {string} key - The key to store the sprite under
-     * @param {string} url - The URL to load from
-     * @returns {Promise} Resolves when loaded
-     */
-    static async loadSpriteFromURL(scene, key, url) {
-        return new Promise((resolve, reject) => {
-            scene.load.image(key, url);
-            scene.load.once('complete', () => resolve());
-            scene.load.once('loaderror', () => reject(new Error(`Failed to load ${url}`)));
-            scene.load.start();
-        });
-    }
-}
-
-// Example URLs for future integration:
-// OpenGameArt LPC character: 'https://opengameart.org/sites/default/files/...'
-// For now, we'll use procedural generation as fallback
-
 // ===== TEXTURE GENERATION UTILITIES =====
 
 /**
@@ -2748,10 +2724,7 @@ class CavemanScene extends Phaser.Scene {
     }
 
     create() {
-        console.log('CavemanScene: Starting create()');
-
         // Generate all textures procedurally
-        console.log('CavemanScene: Generating textures...');
         generateDirtTexture(this, 'dirt');
         generateStoneTexture(this, 'stone');
         generateCaveWallTexture(this, 'cave-wall');
@@ -2822,13 +2795,10 @@ class CavemanScene extends Phaser.Scene {
             }
         }
 
-        console.log('CavemanScene: Textures and frames setup complete');
-
         // World bounds
         this.physics.world.setBounds(0, 0, 800, 600);
 
         // Create tile-based ground
-        console.log('CavemanScene: Creating game objects...');
         this.createGround();
 
         // Create cave walls
@@ -2876,8 +2846,6 @@ class CavemanScene extends Phaser.Scene {
 
         // Track last direction
         this.lastDirection = 'down';
-
-        console.log('CavemanScene: create() completed successfully');
     }
 
     createInteractables() {
