@@ -199,7 +199,6 @@ export class ScrollHandler {
     // Animate counters
     this.animateCounter('#total-cases', globalData.totalCases);
     this.animateCounter('#total-deaths', globalData.totalDeaths);
-    this.animateCounter('#total-vaccinations', globalData.totalVaccinations);
   }
 
   /**
@@ -214,7 +213,6 @@ export class ScrollHandler {
     // Update counters instantly
     const casesEl = document.querySelector('#total-cases');
     const deathsEl = document.querySelector('#total-deaths');
-    const vaccinationsEl = document.querySelector('#total-vaccinations');
 
     if (casesEl) {
       casesEl.textContent = DataLoader.formatNumber(globalData.totalCases);
@@ -223,10 +221,6 @@ export class ScrollHandler {
     if (deathsEl) {
       deathsEl.textContent = DataLoader.formatNumber(globalData.totalDeaths);
       deathsEl.dataset.value = globalData.totalDeaths;
-    }
-    if (vaccinationsEl) {
-      vaccinationsEl.textContent = DataLoader.formatNumber(globalData.totalVaccinations);
-      vaccinationsEl.dataset.value = globalData.totalVaccinations;
     }
   }
 

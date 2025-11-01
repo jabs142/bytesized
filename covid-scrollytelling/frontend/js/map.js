@@ -403,11 +403,7 @@ export class MapRenderer {
       .attr('stroke', '#fff');
 
     // Build tooltip content
-    const vaccinationPct = countryData.population > 0
-      ? ((countryData.peopleFullyVaccinated / countryData.population) * 100).toFixed(1)
-      : 0;
-
-    let html = `
+    const html = `
       <div style="font-weight: bold; margin-bottom: 8px; font-size: 16px;">
         ${countryData.name}
       </div>
@@ -421,19 +417,6 @@ export class MapRenderer {
         <strong>Cases per million:</strong> ${countryData.casesPerMillion.toFixed(0)}
       </div>
     `;
-
-    if (countryData.peopleFullyVaccinated > 0) {
-      html += `
-        <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.2);">
-          <div style="margin-bottom: 4px;">
-            <strong>Vaccinated:</strong> ${DataLoader.formatNumber(countryData.peopleFullyVaccinated)}
-          </div>
-          <div>
-            <strong>% Population:</strong> ${vaccinationPct}%
-          </div>
-        </div>
-      `;
-    }
 
     this.tooltip.html(html).style('visibility', 'visible');
   }

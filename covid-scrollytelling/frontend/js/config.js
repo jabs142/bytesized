@@ -129,7 +129,7 @@ export const SCENES = [
       its relentless spread.
     `,
     mapFocus: null,
-    showVaccinations: true,
+    showVaccinations: false,
   },
   {
     index: 7,
@@ -142,7 +142,7 @@ export const SCENES = [
       watched in horror.
     `,
     mapFocus: 'Asia',
-    showVaccinations: true,
+    showVaccinations: false,
   },
   {
     index: 8,
@@ -154,7 +154,7 @@ export const SCENES = [
       countries saw breakthrough cases. The pandemic was far from over.
     `,
     mapFocus: null,
-    showVaccinations: true,
+    showVaccinations: false,
   },
   {
     index: 9,
@@ -167,7 +167,7 @@ export const SCENES = [
       Vaccines provided crucial protection.
     `,
     mapFocus: null,
-    showVaccinations: true,
+    showVaccinations: false,
   },
   {
     index: 10,
@@ -180,7 +180,7 @@ export const SCENES = [
       virus remained a threat.
     `,
     mapFocus: null,
-    showVaccinations: true,
+    showVaccinations: false,
   },
   {
     index: 11,
@@ -192,7 +192,7 @@ export const SCENES = [
       lives lost. Billions vaccinated. The pandemic transitioned to an endemic phase.
     `,
     mapFocus: null,
-    showVaccinations: true,
+    showVaccinations: false,
   },
   {
     index: 12,
@@ -206,7 +206,7 @@ export const SCENES = [
       tracking cases, deaths, and vaccination progress across 58 countries.
     `,
     mapFocus: null,
-    showVaccinations: true,
+    showVaccinations: false,
   },
 ];
 

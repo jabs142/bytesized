@@ -202,12 +202,6 @@ class COVIDStoryApp {
       firstSection.classList.add('fade-in');
     }
 
-    // Optional: Add a "scroll down" indicator
-    const scrollHint = document.createElement('div');
-    scrollHint.className = 'scroll-hint';
-    scrollHint.innerHTML = '↓ Scroll to explore';
-    document.body.appendChild(scrollHint);
-
     // Remove hint after first scroll
     let hasScrolled = false;
     window.addEventListener('scroll', () => {
