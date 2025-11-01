@@ -212,6 +212,457 @@ function generateCharacterSprite(scene, key, colors = {}) {
     canvas.refresh();
 }
 
+// ===== ERA-SPECIFIC PLAYER CHARACTER GENERATORS =====
+
+function generateAncientPlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#c49a6c';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Egyptian headdress/hair
+        ctx.fillStyle = '#2a1a0a';
+        ctx.fillRect(centerX - 7, baseY + 3, 14, 6);
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // White linen tunic
+        ctx.fillStyle = '#f4e4c1';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
+
+        // Belt
+        ctx.fillStyle = '#8b7355';
+        ctx.fillRect(centerX - 8, baseY + 26, 16, 2);
+
+        // Arms
+        ctx.fillStyle = '#c49a6c';
+        ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
+        ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
+
+        // Legs (linen skirt)
+        ctx.fillStyle = '#f4e4c1';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+
+        // Sandals
+        ctx.fillStyle = '#8b7355';
+        ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 2);
+        ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 2);
+    }
+
+    // Generate frames (same pattern as original)
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
+function generateIndustrialPlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#d4a574';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Worker's cap
+        ctx.fillStyle = '#3a3a3a';
+        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // Work shirt (dark)
+        ctx.fillStyle = '#4a4a4a';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+
+        // Belt
+        ctx.fillStyle = '#2a2a2a';
+        ctx.fillRect(centerX - 8, baseY + 28, 16, 2);
+
+        // Arms
+        ctx.fillStyle = '#d4a574';
+        ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
+        ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
+
+        // Work pants
+        ctx.fillStyle = '#2a2a2a';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+
+        // Work boots
+        ctx.fillStyle = '#1a1a1a';
+        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+    }
+
+    // Generate frames
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
+function generateModernPlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#d4a574';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Modern hair
+        ctx.fillStyle = '#3a2a1a';
+        ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // T-shirt (blue)
+        ctx.fillStyle = '#2a4a6a';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+
+        // Arms
+        ctx.fillStyle = '#d4a574';
+        ctx.fillRect(centerX - 11, baseY + 18, 3, 8);
+        ctx.fillRect(centerX + 8, baseY + 18, 3, 8);
+
+        // Jeans
+        ctx.fillStyle = '#3a5a7a';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+
+        // Sneakers
+        ctx.fillStyle = '#f4f4f4';
+        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+    }
+
+    // Generate frames
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
+// ===== ERA-SPECIFIC PLAYER CHARACTER GENERATORS (CONTINUED) =====
+
+function generateCavemanPlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#c49a6c';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Wild, unkempt hair
+        ctx.fillStyle = '#4a3a2a';
+        ctx.fillRect(centerX - 8, baseY + 2, 16, 6); // Larger, messy hair
+        ctx.fillRect(centerX - 7, baseY + 6, 3, 2); // Left hair strand
+        ctx.fillRect(centerX + 4, baseY + 6, 3, 2); // Right hair strand
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // Animal fur tunic (ragged)
+        ctx.fillStyle = '#7a6348';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+        // Fur shadows/texture
+        ctx.fillStyle = '#5a4838';
+        ctx.fillRect(centerX - 7, baseY + 18, 2, 2);
+        ctx.fillRect(centerX + 5, baseY + 20, 2, 2);
+        ctx.fillRect(centerX - 4, baseY + 24, 2, 2);
+
+        // Arms (bare)
+        ctx.fillStyle = '#c49a6c';
+        ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
+        ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
+
+        // Fur wrap/skirt
+        ctx.fillStyle = '#7a6348';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+
+        // Bare feet/wrapped feet
+        ctx.fillStyle = '#8b7355';
+        ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 2);
+        ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 2);
+    }
+
+    // Generate frames (down, left, right, up)
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
+function generateFarmingPlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#c49a6c';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Simple farmer's hair/cap
+        ctx.fillStyle = '#5a4a3a';
+        ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // Earth-tone tunic
+        ctx.fillStyle = '#8a7a5a';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+
+        // Rope belt
+        ctx.fillStyle = '#6a5a4a';
+        ctx.fillRect(centerX - 8, baseY + 26, 16, 2);
+
+        // Arms (visible, rolled sleeves)
+        ctx.fillStyle = '#c49a6c';
+        ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
+        ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
+
+        // Work pants
+        ctx.fillStyle = '#7a6a4a';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+
+        // Brown boots
+        ctx.fillStyle = '#5a4a3a';
+        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+    }
+
+    // Generate frames
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
+function generateMedievalPlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#d4a574';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Medieval hair
+        ctx.fillStyle = '#3a2a1a';
+        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // Off-white undershirt sleeves
+        ctx.fillStyle = '#f4e4c1';
+        ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
+        ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
+
+        // Burgundy tunic over undershirt
+        ctx.fillStyle = '#7a4a4a';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
+
+        // Leather belt
+        ctx.fillStyle = '#4a3a2a';
+        ctx.fillRect(centerX - 8, baseY + 27, 16, 3);
+
+        // Brown pants
+        ctx.fillStyle = '#5a4a3a';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+
+        // Leather boots
+        ctx.fillStyle = '#3a2a1a';
+        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 5);
+        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 5);
+    }
+
+    // Generate frames
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
+function generateRenaissancePlayerSprite(scene, key) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, 96, 192);
+    const ctx = canvas.getContext();
+
+    function drawFrame(x, y, legOffset1, legOffset2) {
+        const centerX = x + frameWidth / 2;
+        const baseY = y;
+
+        // Head
+        ctx.fillStyle = '#d4a574';
+        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+
+        // Styled Renaissance hair
+        ctx.fillStyle = '#4a3a2a';
+        ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
+
+        // Eyes
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+
+        // White/cream undershirt
+        ctx.fillStyle = '#f4f4e4';
+        ctx.fillRect(centerX - 9, baseY + 18, 4, 10); // Left sleeve
+        ctx.fillRect(centerX + 5, baseY + 18, 4, 10); // Right sleeve
+
+        // Renaissance doublet (rich brown/purple)
+        ctx.fillStyle = '#6a4a3a';
+        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+
+        // Decorative belt
+        ctx.fillStyle = '#8b7355';
+        ctx.fillRect(centerX - 8, baseY + 27, 16, 2);
+
+        // Breeches (dark brown, fitted)
+        ctx.fillStyle = '#4a3a2a';
+        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+
+        // Black dress shoes
+        ctx.fillStyle = '#2a1a0a';
+        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+    }
+
+    // Generate frames
+    drawFrame(0, 0, 0, 0);
+    drawFrame(32, 0, -2, 2);
+    drawFrame(64, 0, 2, -2);
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    for (let frame = 0; frame < 3; frame++) {
+        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
+    }
+    drawFrame(0, frameHeight * 3, 0, 0);
+    drawFrame(32, frameHeight * 3, -2, 2);
+    drawFrame(64, frameHeight * 3, 2, -2);
+
+    canvas.refresh();
+}
+
 /**
  * Generate NPC sprites (different color variations)
  */
@@ -2006,6 +2457,472 @@ function generateManuscriptTexture(scene, key) {
     canvas.refresh();
 }
 
+// ===== ANCIENT CIVILIZATIONS ERA TEXTURES =====
+
+/**
+ * Generate sandstone tile texture
+ */
+function generateSandstoneTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 32, 32);
+    const ctx = canvas.getContext();
+
+    // Base sandstone color with gradient
+    const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+    gradient.addColorStop(0, '#d4c4a0');
+    gradient.addColorStop(1, '#c4b490');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 32, 32);
+
+    // Add texture variation (sand grains)
+    for (let i = 0; i < 40; i++) {
+        const x = Math.floor(Math.random() * 32);
+        const y = Math.floor(Math.random() * 32);
+        const size = Math.floor(Math.random() * 2) + 1;
+        ctx.fillStyle = `rgba(180, 160, 120, ${Math.random() * 0.3})`;
+        ctx.fillRect(x, y, size, size);
+    }
+
+    // Add darker grain lines
+    ctx.strokeStyle = 'rgba(160, 140, 100, 0.2)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 5; i++) {
+        ctx.beginPath();
+        ctx.moveTo(Math.random() * 32, 0);
+        ctx.lineTo(Math.random() * 32, 32);
+        ctx.stroke();
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate pyramid entrance texture
+ */
+function generatePyramidTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 120, 120);
+    const ctx = canvas.getContext();
+
+    // Dark entrance
+    const gradient = ctx.createRadialGradient(60, 80, 10, 60, 80, 40);
+    gradient.addColorStop(0, '#000000');
+    gradient.addColorStop(0.8, '#1a1a1a');
+    gradient.addColorStop(1, '#c4b490');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(20, 40, 80, 60);
+
+    // Stone blocks
+    ctx.strokeStyle = '#9a8a70';
+    ctx.lineWidth = 2;
+
+    // Horizontal lines
+    for (let y = 40; y < 100; y += 20) {
+        ctx.beginPath();
+        ctx.moveTo(20, y);
+        ctx.lineTo(100, y);
+        ctx.stroke();
+    }
+
+    // Vertical lines (irregular)
+    for (let x = 30; x < 100; x += 25) {
+        ctx.beginPath();
+        ctx.moveTo(x, 40);
+        ctx.lineTo(x, 100);
+        ctx.stroke();
+    }
+
+    // Add simple hieroglyphs
+    ctx.fillStyle = '#8a7a60';
+    ctx.fillRect(25, 45, 3, 10); // Vertical line
+    ctx.fillRect(35, 48, 8, 3); // Horizontal line
+    ctx.fillRect(50, 45, 5, 5); // Square
+    ctx.fillRect(60, 48, 6, 3); // Eye shape
+    ctx.fillRect(60, 51, 6, 3);
+
+    canvas.refresh();
+}
+
+/**
+ * Generate papyrus scroll texture
+ */
+function generatePapyrusTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 24, 32);
+    const ctx = canvas.getContext();
+
+    // Papyrus color
+    ctx.fillStyle = '#e8d8b8';
+    ctx.fillRect(4, 2, 16, 28);
+
+    // Rolled edges
+    ctx.fillStyle = '#d4c4a0';
+    ctx.fillRect(0, 2, 4, 28);
+    ctx.fillRect(20, 2, 4, 28);
+
+    // Add papyrus texture lines
+    ctx.strokeStyle = '#c4b490';
+    ctx.lineWidth = 1;
+    for (let y = 4; y < 30; y += 3) {
+        ctx.beginPath();
+        ctx.moveTo(4, y);
+        ctx.lineTo(20, y);
+        ctx.stroke();
+    }
+
+    // Add some writing marks
+    ctx.strokeStyle = '#4a3a2a';
+    ctx.lineWidth = 1;
+    for (let y = 8; y < 26; y += 4) {
+        ctx.beginPath();
+        ctx.moveTo(6, y);
+        ctx.lineTo(18, y);
+        ctx.stroke();
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate pottery vessel texture
+ */
+function generatePotteryTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 24, 32);
+    const ctx = canvas.getContext();
+
+    // Pot body
+    ctx.fillStyle = '#a67c52';
+    ctx.beginPath();
+    ctx.ellipse(12, 24, 10, 6, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillRect(2, 12, 20, 12);
+    ctx.beginPath();
+    ctx.ellipse(12, 12, 10, 6, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Pot neck
+    ctx.fillStyle = '#b68c62';
+    ctx.fillRect(8, 4, 8, 8);
+
+    // Pot rim
+    ctx.fillStyle = '#c49c72';
+    ctx.beginPath();
+    ctx.ellipse(12, 4, 5, 3, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Decorative pattern
+    ctx.strokeStyle = '#4a3a2a';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(4, 16);
+    ctx.lineTo(20, 16);
+    ctx.stroke();
+
+    canvas.refresh();
+}
+
+// ===== INDUSTRIAL REVOLUTION ERA TEXTURES =====
+
+/**
+ * Generate brick pavement texture
+ */
+function generateBrickTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 32, 32);
+    const ctx = canvas.getContext();
+
+    // Base brick color
+    ctx.fillStyle = '#7a4a3a';
+    ctx.fillRect(0, 0, 32, 32);
+
+    // Individual bricks with mortar
+    const brickWidth = 15;
+    const brickHeight = 7;
+    const mortarSize = 1;
+
+    for (let y = 0; y < 32; y += brickHeight + mortarSize) {
+        const offset = (Math.floor(y / (brickHeight + mortarSize)) % 2) * (brickWidth / 2);
+        for (let x = -brickWidth; x < 32; x += brickWidth + mortarSize) {
+            // Brick color variation
+            const shade = Math.random() * 20 - 10;
+            const r = Math.min(255, Math.max(0, 122 + shade));
+            const g = Math.min(255, Math.max(0, 74 + shade));
+            const b = Math.min(255, Math.max(0, 58 + shade));
+            ctx.fillStyle = `rgb(${r},${g},${b})`;
+            ctx.fillRect(x + offset, y, brickWidth, brickHeight);
+        }
+    }
+
+    // Mortar lines
+    ctx.fillStyle = '#5a4a4a';
+    for (let y = brickHeight; y < 32; y += brickHeight + mortarSize) {
+        ctx.fillRect(0, y, 32, mortarSize);
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate steam engine texture
+ */
+function generateSteamEngineTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 64, 64);
+    const ctx = canvas.getContext();
+
+    // Engine body
+    ctx.fillStyle = '#4a4a4a';
+    ctx.fillRect(12, 20, 40, 30);
+
+    // Boiler (cylinder)
+    ctx.fillStyle = '#5a5a5a';
+    ctx.beginPath();
+    ctx.arc(32, 32, 15, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Piston
+    ctx.fillStyle = '#6a6a6a';
+    ctx.fillRect(45, 28, 12, 8);
+
+    // Pipes
+    ctx.strokeStyle = '#3a3a3a';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(32, 17);
+    ctx.lineTo(32, 8);
+    ctx.stroke();
+
+    // Wheels/gears
+    ctx.strokeStyle = '#7a7a7a';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(20, 50, 8, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(44, 50, 8, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Spokes
+    ctx.strokeStyle = '#6a6a6a';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 4; i++) {
+        const angle = (i * Math.PI) / 2;
+        ctx.beginPath();
+        ctx.moveTo(20, 50);
+        ctx.lineTo(20 + Math.cos(angle) * 6, 50 + Math.sin(angle) * 6);
+        ctx.stroke();
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate factory smokestack texture
+ */
+function generateSmokestackTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 32, 64);
+    const ctx = canvas.getContext();
+
+    // Stack body
+    const gradient = ctx.createLinearGradient(0, 0, 32, 0);
+    gradient.addColorStop(0, '#5a4a4a');
+    gradient.addColorStop(0.5, '#6a5a5a');
+    gradient.addColorStop(1, '#5a4a4a');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(8, 10, 16, 54);
+
+    // Top rim
+    ctx.fillStyle = '#4a3a3a';
+    ctx.fillRect(6, 8, 20, 4);
+
+    // Brick lines
+    ctx.strokeStyle = '#4a3a3a';
+    ctx.lineWidth = 1;
+    for (let y = 15; y < 60; y += 8) {
+        ctx.beginPath();
+        ctx.moveTo(8, y);
+        ctx.lineTo(24, y);
+        ctx.stroke();
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate gear/cog texture
+ */
+function generateGearTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 32, 32);
+    const ctx = canvas.getContext();
+
+    // Gear body
+    ctx.fillStyle = '#6a6a6a';
+    ctx.beginPath();
+    ctx.arc(16, 16, 12, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Teeth
+    ctx.fillStyle = '#7a7a7a';
+    const teeth = 8;
+    for (let i = 0; i < teeth; i++) {
+        const angle = (i * Math.PI * 2) / teeth;
+        const x = 16 + Math.cos(angle) * 10;
+        const y = 16 + Math.sin(angle) * 10;
+        ctx.fillRect(x - 2, y - 2, 4, 4);
+    }
+
+    // Center hole
+    ctx.fillStyle = '#2a2a2a';
+    ctx.beginPath();
+    ctx.arc(16, 16, 4, 0, Math.PI * 2);
+    ctx.fill();
+
+    canvas.refresh();
+}
+
+// ===== MODERN/DIGITAL AGE ERA TEXTURES =====
+
+/**
+ * Generate modern floor tile texture
+ */
+function generateModernFloorTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 32, 32);
+    const ctx = canvas.getContext();
+
+    // Clean white/gray tile
+    ctx.fillStyle = '#e8e8e8';
+    ctx.fillRect(0, 0, 32, 32);
+
+    // Tile border (grout line)
+    ctx.strokeStyle = '#d0d0d0';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(0, 0, 32, 32);
+
+    // Subtle texture
+    for (let i = 0; i < 10; i++) {
+        const x = Math.floor(Math.random() * 32);
+        const y = Math.floor(Math.random() * 32);
+        ctx.fillStyle = `rgba(200, 200, 200, ${Math.random() * 0.1})`;
+        ctx.fillRect(x, y, 2, 2);
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate computer monitor texture
+ */
+function generateComputerTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 48, 40);
+    const ctx = canvas.getContext();
+
+    // Monitor frame
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(0, 0, 48, 40);
+
+    // Screen (blue glow)
+    const gradient = ctx.createRadialGradient(24, 20, 5, 24, 20, 18);
+    gradient.addColorStop(0, '#4a6a8a');
+    gradient.addColorStop(1, '#2a4a6a');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(4, 4, 40, 28);
+
+    // Screen reflection
+    ctx.fillStyle = 'rgba(200, 220, 255, 0.1)';
+    ctx.fillRect(6, 6, 15, 10);
+
+    // Base stand
+    ctx.fillStyle = '#3a3a3a';
+    ctx.fillRect(18, 32, 12, 8);
+
+    canvas.refresh();
+}
+
+/**
+ * Generate server rack texture
+ */
+function generateServerTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 40, 64);
+    const ctx = canvas.getContext();
+
+    // Rack frame
+    ctx.fillStyle = '#1a1a1a';
+    ctx.fillRect(0, 0, 40, 64);
+
+    // Server units (horizontal sections)
+    for (let y = 4; y < 60; y += 12) {
+        // Unit body
+        ctx.fillStyle = '#2a2a2a';
+        ctx.fillRect(2, y, 36, 10);
+
+        // LED indicators
+        const colors = ['#00ff00', '#ffaa00', '#0080ff'];
+        for (let i = 0; i < 3; i++) {
+            ctx.fillStyle = colors[i];
+            ctx.fillRect(4 + i * 4, y + 3, 2, 2);
+        }
+
+        // Vents
+        ctx.strokeStyle = '#1a1a1a';
+        ctx.lineWidth = 1;
+        for (let x = 18; x < 36; x += 3) {
+            ctx.beginPath();
+            ctx.moveTo(x, y + 2);
+            ctx.lineTo(x, y + 8);
+            ctx.stroke();
+        }
+    }
+
+    canvas.refresh();
+}
+
+/**
+ * Generate circuit board texture
+ */
+function generateCircuitBoardTexture(scene, key) {
+    const canvas = scene.textures.createCanvas(key, 32, 32);
+    const ctx = canvas.getContext();
+
+    // Board base (green)
+    ctx.fillStyle = '#2a5a3a';
+    ctx.fillRect(0, 0, 32, 32);
+
+    // Circuit traces (copper)
+    ctx.strokeStyle = '#d4a832';
+    ctx.lineWidth = 2;
+
+    // Horizontal traces
+    ctx.beginPath();
+    ctx.moveTo(0, 8);
+    ctx.lineTo(32, 8);
+    ctx.moveTo(0, 16);
+    ctx.lineTo(32, 16);
+    ctx.moveTo(0, 24);
+    ctx.lineTo(32, 24);
+    ctx.stroke();
+
+    // Vertical traces
+    ctx.beginPath();
+    ctx.moveTo(10, 0);
+    ctx.lineTo(10, 32);
+    ctx.moveTo(22, 0);
+    ctx.lineTo(22, 32);
+    ctx.stroke();
+
+    // Components (chips/resistors)
+    ctx.fillStyle = '#1a1a1a';
+    ctx.fillRect(4, 4, 6, 6);
+    ctx.fillRect(14, 12, 4, 4);
+    ctx.fillRect(24, 20, 6, 6);
+
+    // Solder points
+    ctx.fillStyle = '#c0c0c0';
+    for (let x = 6; x < 30; x += 8) {
+        for (let y = 6; y < 30; y += 8) {
+            ctx.beginPath();
+            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    canvas.refresh();
+}
+
 // ===== INTERACTIVE OBJECT TEXTURES =====
 
 /**
@@ -2521,6 +3438,323 @@ function generateRenaissanceNPCTexture(scene, key, activity) {
     canvas.refresh();
 }
 
+// ===== ANCIENT ERA NPC TEXTURES =====
+
+function generateAncientNPCTexture(scene, key, activity) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+    const ctx = canvas.getContext();
+
+    const skin = '#c49a6c';
+    const clothing = activity === 'scribe' ? '#f4e4c1' : '#8b7355'; // Light linen or brown
+
+    function drawAncientBody(offsetX, offsetY) {
+        const centerX = offsetX + frameWidth / 2;
+        const baseY = offsetY + frameHeight - 8;
+
+        // Head
+        ctx.fillStyle = skin;
+        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+
+        // Black hair
+        ctx.fillStyle = '#2a1a0a';
+        ctx.fillRect(centerX - 5, baseY - 34, 10, 3);
+
+        // Simple tunic
+        ctx.fillStyle = clothing;
+        ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
+
+        // Legs
+        ctx.fillStyle = '#6a5a4a';
+        ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
+        ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
+
+        // Feet
+        ctx.fillStyle = '#4a3a2a';
+        ctx.fillRect(centerX - 5, baseY, 4, 2);
+        ctx.fillRect(centerX + 1, baseY, 4, 2);
+
+        return { centerX, baseY };
+    }
+
+    if (activity === 'scribe') {
+        // Frame 0: Writing
+        const pos0 = drawAncientBody(0, 0);
+        ctx.fillStyle = skin;
+        ctx.fillRect(pos0.centerX - 10, pos0.baseY - 20, 3, 8); // Left arm down
+        ctx.fillRect(pos0.centerX + 2, pos0.baseY - 22, 3, 10); // Right arm writing
+        // Papyrus scroll
+        ctx.fillStyle = '#f4e4c1';
+        ctx.fillRect(pos0.centerX - 6, pos0.baseY - 18, 8, 6);
+
+        // Frame 1-3: Slight variations
+        for (let i = 1; i < 4; i++) {
+            const pos = drawAncientBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8);
+            ctx.fillRect(pos.centerX + 2, pos.baseY - 21 + (i % 2), 3, 10);
+            ctx.fillStyle = '#f4e4c1';
+            ctx.fillRect(pos.centerX - 6, pos.baseY - 18, 8, 6);
+        }
+    } else if (activity === 'pottery') {
+        // Frame 0-3: Shaping pottery
+        for (let i = 0; i < 4; i++) {
+            const pos = drawAncientBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Arms working pottery
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+            ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+            // Pottery vessel
+            ctx.fillStyle = '#8b4513';
+            ctx.fillRect(pos.centerX - 4, pos.baseY - 14 + (i % 2), 8, 6);
+        }
+    } else if (activity === 'merchant') {
+        // Walking frames for merchant (similar to player walking frames)
+        for (let i = 0; i < 4; i++) {
+            const pos = drawAncientBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Arms in walking position
+            if (i % 2 === 0) {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
+            } else {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
+            }
+            // Merchant bag
+            ctx.fillStyle = '#8b7355';
+            ctx.fillRect(pos.centerX + 6, pos.baseY - 16, 6, 8);
+        }
+    } else if (activity === 'farmer') {
+        // Frame 0-3: Planting/hoeing motion
+        for (let i = 0; i < 4; i++) {
+            const pos = drawAncientBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Arms in hoeing/planting motion
+            if (i < 2) {
+                // Raising hoe
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 24, 3, 10);
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 24, 3, 10);
+            } else {
+                // Lowering hoe to ground
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+            }
+        }
+    }
+
+    canvas.refresh();
+}
+
+// ===== INDUSTRIAL ERA NPC TEXTURES =====
+
+function generateIndustrialNPCTexture(scene, key, activity) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+    const ctx = canvas.getContext();
+
+    const skin = '#d4a574';
+    const clothing = '#4a4a4a'; // Dark work clothes
+
+    function drawIndustrialBody(offsetX, offsetY) {
+        const centerX = offsetX + frameWidth / 2;
+        const baseY = offsetY + frameHeight - 8;
+
+        // Head
+        ctx.fillStyle = skin;
+        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+
+        // Hair/cap
+        ctx.fillStyle = '#3a2a1a';
+        ctx.fillRect(centerX - 5, baseY - 34, 10, 4);
+
+        // Work shirt
+        ctx.fillStyle = clothing;
+        ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
+
+        // Pants
+        ctx.fillStyle = '#2a2a2a';
+        ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
+        ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
+
+        // Boots
+        ctx.fillStyle = '#1a1a1a';
+        ctx.fillRect(centerX - 5, baseY, 4, 2);
+        ctx.fillRect(centerX + 1, baseY, 4, 2);
+
+        return { centerX, baseY };
+    }
+
+    if (activity === 'worker') {
+        // Shoveling animation
+        for (let i = 0; i < 4; i++) {
+            const pos = drawIndustrialBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            const armAngle = i < 2 ? -2 : 2;
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 16 + armAngle, 3, 10);
+            ctx.fillRect(pos.centerX + 7, pos.baseY - 18 + armAngle, 3, 10);
+            // Shovel
+            ctx.fillStyle = '#8b7355';
+            ctx.fillRect(pos.centerX + 8, pos.baseY - 10 + armAngle * 2, 2, 12);
+        }
+    } else if (activity === 'engineer') {
+        // Checking gauges
+        for (let i = 0; i < 4; i++) {
+            const pos = drawIndustrialBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10);
+            ctx.fillRect(pos.centerX + 4, pos.baseY - 20 + (i % 2), 4, 8);
+        }
+    } else if (activity === 'assembly') {
+        // Assembly line worker packing boxes
+        for (let i = 0; i < 4; i++) {
+            const pos = drawIndustrialBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Arms moving boxes
+            if (i < 2) {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm reaching
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm reaching
+            } else {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 16, 3, 8); // Arms down
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 16, 3, 8);
+            }
+            // Box in hands
+            if (i >= 2) {
+                ctx.fillStyle = '#8b7355';
+                ctx.fillRect(pos.centerX - 4, pos.baseY - 14, 8, 6);
+            }
+        }
+    } else if (activity === 'foreman') {
+        // Walking foreman with clipboard
+        for (let i = 0; i < 4; i++) {
+            const pos = drawIndustrialBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Walking arms
+            if (i % 2 === 0) {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
+            } else {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
+            }
+            // Clipboard in hand
+            ctx.fillStyle = '#d4a832';
+            ctx.fillRect(pos.centerX - 8, pos.baseY - 18, 4, 6);
+        }
+    }
+
+    canvas.refresh();
+}
+
+// ===== MODERN ERA NPC TEXTURES =====
+
+function generateModernNPCTexture(scene, key, activity) {
+    const frameWidth = 32;
+    const frameHeight = 48;
+    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+    const ctx = canvas.getContext();
+
+    const skin = '#d4a574';
+    const clothing = activity === 'programmer' ? '#2a4a6a' : '#4a4a4a'; // Blue shirt or gray
+
+    function drawModernBody(offsetX, offsetY) {
+        const centerX = offsetX + frameWidth / 2;
+        const baseY = offsetY + frameHeight - 8;
+
+        // Head
+        ctx.fillStyle = skin;
+        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+
+        // Hair
+        ctx.fillStyle = '#3a2a1a';
+        ctx.fillRect(centerX - 5, baseY - 34, 10, 3);
+
+        // Shirt/clothing
+        ctx.fillStyle = clothing;
+        ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
+
+        // Pants
+        ctx.fillStyle = '#2a2a2a';
+        ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
+        ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
+
+        // Shoes
+        ctx.fillStyle = '#1a1a1a';
+        ctx.fillRect(centerX - 5, baseY, 4, 2);
+        ctx.fillRect(centerX + 1, baseY, 4, 2);
+
+        return { centerX, baseY };
+    }
+
+    if (activity === 'programmer') {
+        // Typing animation
+        for (let i = 0; i < 4; i++) {
+            const pos = drawModernBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Arms typing
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+            ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+            // Laptop
+            ctx.fillStyle = '#6a6a6a';
+            ctx.fillRect(pos.centerX - 6, pos.baseY - 12, 12, 2);
+            // Screen glow
+            if (i % 2 === 0) {
+                ctx.fillStyle = '#4a6a8a';
+                ctx.fillRect(pos.centerX - 4, pos.baseY - 18, 8, 4);
+            }
+        }
+    } else if (activity === 'tech') {
+        // Checking servers
+        for (let i = 0; i < 4; i++) {
+            const pos = drawModernBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10);
+            ctx.fillRect(pos.centerX + 4, pos.baseY - 20 + (i % 2), 4, 8);
+        }
+    } else if (activity === 'desk') {
+        // Desk worker typing
+        for (let i = 0; i < 4; i++) {
+            const pos = drawModernBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Arms on keyboard
+            ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+            ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+            // Keyboard
+            ctx.fillStyle = '#4a4a4a';
+            ctx.fillRect(pos.centerX - 8, pos.baseY - 14, 16, 4);
+            // Monitor (above)
+            ctx.fillStyle = '#2a2a2a';
+            ctx.fillRect(pos.centerX - 6, pos.baseY - 28, 12, 10);
+            // Screen content
+            if (i % 2 === 0) {
+                ctx.fillStyle = '#4a8a6a';
+                ctx.fillRect(pos.centerX - 5, pos.baseY - 27, 10, 8);
+            }
+        }
+    } else if (activity === 'it-tech') {
+        // Walking IT tech with laptop
+        for (let i = 0; i < 4; i++) {
+            const pos = drawModernBody(i * frameWidth, 0);
+            ctx.fillStyle = skin;
+            // Walking arms
+            if (i % 2 === 0) {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
+            } else {
+                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
+                ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
+            }
+            // Laptop in hand
+            ctx.fillStyle = '#6a6a6a';
+            ctx.fillRect(pos.centerX - 6, pos.baseY - 18, 10, 6);
+        }
+    }
+
+    canvas.refresh();
+}
+
 // ===== INFO PANEL SYSTEM =====
 
 /**
@@ -2603,14 +3837,17 @@ class InfoPanel {
 class TimelineBar {
     constructor(scene, currentEra) {
         this.scene = scene;
-        this.currentEra = currentEra; // 'caveman', 'farming', 'medieval', 'renaissance'
+        this.currentEra = currentEra; // 'caveman', 'farming', 'ancient', 'medieval', 'renaissance', 'industrial', 'modern'
 
         // Era data
         this.eras = [
             { key: 'caveman', label: 'CAVEMAN', x: 150 },
-            { key: 'farming', label: 'FARMING', x: 300 },
-            { key: 'medieval', label: 'MEDIEVAL', x: 500 },
-            { key: 'renaissance', label: 'RENAISSANCE', x: 650 }
+            { key: 'farming', label: 'FARMING', x: 230 },
+            { key: 'ancient', label: 'ANCIENT', x: 310 },
+            { key: 'medieval', label: 'MEDIEVAL', x: 390 },
+            { key: 'renaissance', label: 'RENAISSANCE', x: 470 },
+            { key: 'industrial', label: 'INDUSTRIAL', x: 550 },
+            { key: 'modern', label: 'MODERN', x: 630 }
         ];
 
         this.barY = 530;
@@ -2626,9 +3863,20 @@ class TimelineBar {
         graphics.lineStyle(3, 0x5C9EAD);
         graphics.beginPath();
         graphics.moveTo(150, this.barY);
-        graphics.lineTo(650, this.barY);
+        graphics.lineTo(630, this.barY);
         graphics.strokePath();
         this.container.add(graphics);
+
+        // Map era keys to scene names
+        const sceneMap = {
+            'caveman': 'CavemanScene',
+            'farming': 'FarmingScene',
+            'ancient': 'AncientScene',
+            'medieval': 'MedievalScene',
+            'renaissance': 'RenaissanceScene',
+            'industrial': 'IndustrialScene',
+            'modern': 'ModernScene'
+        };
 
         // Draw era milestones
         this.eras.forEach((era, index) => {
@@ -2648,6 +3896,39 @@ class TimelineBar {
             if (era.key === this.currentEra) {
                 dot.setFillStyle(0xd4a832);
                 label.setStyle({ fill: '#5C9EAD', fontStyle: 'bold' });
+            } else {
+                // Make other eras clickable
+                label.setInteractive({ useHandCursor: true });
+                dot.setInteractive({ useHandCursor: true });
+
+                // Hover effects for label
+                label.on('pointerover', () => {
+                    label.setStyle({ fill: '#5C9EAD' });
+                });
+                label.on('pointerout', () => {
+                    label.setStyle({ fill: '#9ca3af' });
+                });
+
+                // Click to jump to era
+                const jumpToEra = () => {
+                    this.scene.cameras.main.fadeOut(500, 0, 0, 0);
+                    this.scene.time.delayedCall(500, () => {
+                        this.scene.scene.start(sceneMap[era.key], { spawnX: 400, spawnY: 500 });
+                    });
+                };
+
+                label.on('pointerdown', jumpToEra);
+                dot.on('pointerdown', jumpToEra);
+
+                // Hover effect for dot
+                dot.on('pointerover', () => {
+                    dot.setFillStyle(0x8bac0f);
+                    label.setStyle({ fill: '#5C9EAD' });
+                });
+                dot.on('pointerout', () => {
+                    dot.setFillStyle(0x5C9EAD);
+                    label.setStyle({ fill: '#9ca3af' });
+                });
             }
         });
     }
@@ -2728,7 +4009,11 @@ class CavemanScene extends Phaser.Scene {
         generateDirtTexture(this, 'dirt');
         generateStoneTexture(this, 'stone');
         generateCaveWallTexture(this, 'cave-wall');
-        generateCharacterSprite(this, 'player-char');
+
+        // Generate caveman era player character
+        if (!this.textures.exists('player-caveman')) {
+            generateCavemanPlayerSprite(this, 'player-caveman');
+        }
 
         // Generate multiple NPC variants
         const npcVariants = [
@@ -2770,10 +4055,12 @@ class CavemanScene extends Phaser.Scene {
 
         // Add sprite sheet frame configs
         // Add frames for player character sprite sheet
-        for (let i = 0; i < 12; i++) {
-            const col = i % 3;
-            const row = Math.floor(i / 3);
-            this.textures.get('player-char').add(i, 0, col * 32, row * 48, 32, 48);
+        if (!this.textures.get('player-caveman').has(0)) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-caveman').add(i, 0, col * 32, row * 48, 32, 48);
+            }
         }
 
         // Add frames for all NPC character sprite sheets
@@ -3024,44 +4311,61 @@ class CavemanScene extends Phaser.Scene {
 
     createPlayer() {
         // Create player sprite
-        this.player = this.physics.add.sprite(400, 400, 'player-char');
+        this.player = this.physics.add.sprite(400, 400, 'player-caveman');
         this.player.setCollideWorldBounds(true);
         this.player.setSize(24, 40);
         this.player.setOffset(4, 8);
         this.player.setDepth(50);
 
+        // Add frame configs for caveman player (if not already added)
+        if (!this.textures.get('player-caveman').has(0)) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-caveman').add(i, 0, col * 32, row * 48, 32, 48);
+            }
+        }
+
         // Create animations for each direction
-        this.anims.create({
-            key: 'walk-down',
-            frames: [
-                { key: 'player-char', frame: 0 },
-                { key: 'player-char', frame: 1 },
-                { key: 'player-char', frame: 2 }
-            ],
-            frameRate: 8,
-            repeat: -1
-        });
+        if (!this.anims.exists('caveman-walk-down')) {
+            this.anims.create({
+                key: 'caveman-walk-down',
+                frames: [
+                    { key: 'player-caveman', frame: 0 },
+                    { key: 'player-caveman', frame: 1 },
+                    { key: 'player-caveman', frame: 2 }
+                ],
+                frameRate: 8,
+                repeat: -1
+            });
+        }
 
-        this.anims.create({
-            key: 'walk-left',
-            frames: this.anims.generateFrameNumbers('player-char', { start: 3, end: 5 }),
-            frameRate: 8,
-            repeat: -1
-        });
+        if (!this.anims.exists('caveman-walk-left')) {
+            this.anims.create({
+                key: 'caveman-walk-left',
+                frames: this.anims.generateFrameNumbers('player-caveman', { start: 3, end: 5 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
 
-        this.anims.create({
-            key: 'walk-right',
-            frames: this.anims.generateFrameNumbers('player-char', { start: 6, end: 8 }),
-            frameRate: 8,
-            repeat: -1
-        });
+        if (!this.anims.exists('caveman-walk-right')) {
+            this.anims.create({
+                key: 'caveman-walk-right',
+                frames: this.anims.generateFrameNumbers('player-caveman', { start: 6, end: 8 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
 
-        this.anims.create({
-            key: 'walk-up',
-            frames: this.anims.generateFrameNumbers('player-char', { start: 9, end: 11 }),
-            frameRate: 8,
-            repeat: -1
-        });
+        if (!this.anims.exists('caveman-walk-up')) {
+            this.anims.create({
+                key: 'caveman-walk-up',
+                frames: this.anims.generateFrameNumbers('player-caveman', { start: 9, end: 11 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
 
         // Enable collision with cave
         this.physics.add.overlap(this.player, this.cave, this.handleCaveInteraction, null, this);
@@ -3302,7 +4606,7 @@ class CavemanScene extends Phaser.Scene {
         // Update animation
         if (moving) {
             if (newDirection !== this.lastDirection) {
-                this.player.play(`walk-${newDirection}`);
+                this.player.play(`caveman-walk-${newDirection}`);
                 this.lastDirection = newDirection;
             }
         } else {
@@ -3380,9 +4684,9 @@ class FarmingScene extends Phaser.Scene {
         generateFarmingWorkFrames(this, 'farmer-work-2', farmerVariants[1], 'harvesting');
         generateFarmingWorkFrames(this, 'farmer-work-3', farmerVariants[2], 'tilling');
 
-        // Reuse player character from caveman era
-        if (!this.textures.exists('player-char')) {
-            generateCharacterSprite(this, 'player-char');
+        // Generate farming era player character
+        if (!this.textures.exists('player-farming')) {
+            generateFarmingPlayerSprite(this, 'player-farming');
         }
 
         // Generate interactive object sprites
@@ -3414,11 +4718,11 @@ class FarmingScene extends Phaser.Scene {
         }
 
         // Add frame configs for player (if not already added)
-        if (!this.anims.exists('walk-down')) {
+        if (!this.anims.exists('farming-walk-down')) {
             for (let i = 0; i < 12; i++) {
                 const col = i % 3;
                 const row = Math.floor(i / 3);
-                this.textures.get('player-char').add(i, 0, col * 32, row * 48, 32, 48);
+                this.textures.get('player-farming').add(i, 0, col * 32, row * 48, 32, 48);
             }
         }
 
@@ -3703,42 +5007,42 @@ class FarmingScene extends Phaser.Scene {
 
     createPlayer(x, y) {
         // Create player sprite
-        this.player = this.physics.add.sprite(x, y, 'player-char');
+        this.player = this.physics.add.sprite(x, y, 'player-farming');
         this.player.setCollideWorldBounds(true);
         this.player.setSize(24, 40);
         this.player.setOffset(4, 8);
         this.player.setDepth(50);
 
         // Create animations if they don't exist yet
-        if (!this.anims.exists('walk-down')) {
+        if (!this.anims.exists('farming-walk-down')) {
             this.anims.create({
-                key: 'walk-down',
+                key: 'farming-walk-down',
                 frames: [
-                    { key: 'player-char', frame: 0 },
-                    { key: 'player-char', frame: 1 },
-                    { key: 'player-char', frame: 2 }
+                    { key: 'player-farming', frame: 0 },
+                    { key: 'player-farming', frame: 1 },
+                    { key: 'player-farming', frame: 2 }
                 ],
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-left',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 3, end: 5 }),
+                key: 'farming-walk-left',
+                frames: this.anims.generateFrameNumbers('player-farming', { start: 3, end: 5 }),
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-right',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 6, end: 8 }),
+                key: 'farming-walk-right',
+                frames: this.anims.generateFrameNumbers('player-farming', { start: 6, end: 8 }),
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-up',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 9, end: 11 }),
+                key: 'farming-walk-up',
+                frames: this.anims.generateFrameNumbers('player-farming', { start: 9, end: 11 }),
                 frameRate: 8,
                 repeat: -1
             });
@@ -3849,7 +5153,7 @@ class FarmingScene extends Phaser.Scene {
         // Update animation
         if (moving) {
             if (newDirection !== this.lastDirection) {
-                this.player.play(`walk-${newDirection}`);
+                this.player.play(`farming-walk-${newDirection}`);
                 this.lastDirection = newDirection;
             }
         } else {
@@ -3866,9 +5170,9 @@ class FarmingScene extends Phaser.Scene {
         // Fade to black
         this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        // After fade, transition directly to Medieval Scene
+        // After fade, transition directly to Ancient Civilizations Scene
         this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('MedievalScene');
+            this.scene.start('AncientScene');
         });
     }
 }
@@ -3901,9 +5205,9 @@ class MedievalScene extends Phaser.Scene {
         generateMedievalWorkFrames(this, 'medieval-work-1', medievalVariants[0], 'blacksmith');
         generateMedievalWorkFrames(this, 'medieval-work-2', medievalVariants[1], 'guarding');
 
-        // Reuse player character
-        if (!this.textures.exists('player-char')) {
-            generateCharacterSprite(this, 'player-char');
+        // Generate medieval era player character
+        if (!this.textures.exists('player-medieval')) {
+            generateMedievalPlayerSprite(this, 'player-medieval');
         }
 
         // Generate fire particles for torch flames
@@ -3944,11 +5248,11 @@ class MedievalScene extends Phaser.Scene {
         }
 
         // Add frame configs for player (if not already added)
-        if (!this.anims.exists('walk-down')) {
+        if (!this.anims.exists('medieval-walk-down')) {
             for (let i = 0; i < 12; i++) {
                 const col = i % 3;
                 const row = Math.floor(i / 3);
-                this.textures.get('player-char').add(i, 0, col * 32, row * 48, 32, 48);
+                this.textures.get('player-medieval').add(i, 0, col * 32, row * 48, 32, 48);
             }
         }
 
@@ -4281,42 +5585,42 @@ class MedievalScene extends Phaser.Scene {
 
     createPlayer(x, y) {
         // Create player sprite
-        this.player = this.physics.add.sprite(x, y, 'player-char');
+        this.player = this.physics.add.sprite(x, y, 'player-medieval');
         this.player.setCollideWorldBounds(true);
         this.player.setSize(24, 40);
         this.player.setOffset(4, 8);
         this.player.setDepth(50);
 
         // Create animations if they don't exist yet
-        if (!this.anims.exists('walk-down')) {
+        if (!this.anims.exists('medieval-walk-down')) {
             this.anims.create({
-                key: 'walk-down',
+                key: 'medieval-walk-down',
                 frames: [
-                    { key: 'player-char', frame: 0 },
-                    { key: 'player-char', frame: 1 },
-                    { key: 'player-char', frame: 2 }
+                    { key: 'player-medieval', frame: 0 },
+                    { key: 'player-medieval', frame: 1 },
+                    { key: 'player-medieval', frame: 2 }
                 ],
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-left',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 3, end: 5 }),
+                key: 'medieval-walk-left',
+                frames: this.anims.generateFrameNumbers('player-medieval', { start: 3, end: 5 }),
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-right',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 6, end: 8 }),
+                key: 'medieval-walk-right',
+                frames: this.anims.generateFrameNumbers('player-medieval', { start: 6, end: 8 }),
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-up',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 9, end: 11 }),
+                key: 'medieval-walk-up',
+                frames: this.anims.generateFrameNumbers('player-medieval', { start: 9, end: 11 }),
                 frameRate: 8,
                 repeat: -1
             });
@@ -4439,7 +5743,7 @@ class MedievalScene extends Phaser.Scene {
         // Update animation
         if (moving) {
             if (newDirection !== this.lastDirection) {
-                this.player.play(`walk-${newDirection}`);
+                this.player.play(`medieval-walk-${newDirection}`);
                 this.lastDirection = newDirection;
             }
         } else {
@@ -4484,9 +5788,28 @@ class RenaissanceScene extends Phaser.Scene {
         generateRenaissanceNPCTexture(this, 'renaissance-scholar', 'scholar');
         generateRenaissanceNPCTexture(this, 'renaissance-inventor', 'inventor');
 
-        // Generate player character (reuse from previous scenes)
-        if (!this.textures.exists('player-char')) {
-            generateCharacterSprite(this, 'player-char');
+        // Add frame configs for NPC sprites (4 frames per NPC)
+        if (!this.textures.get('renaissance-artist').has(0)) {
+            const npcKeys = ['renaissance-artist', 'renaissance-scholar', 'renaissance-inventor'];
+            npcKeys.forEach(key => {
+                for (let i = 0; i < 4; i++) {
+                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+                }
+            });
+        }
+
+        // Generate renaissance era player character
+        if (!this.textures.exists('player-renaissance')) {
+            generateRenaissancePlayerSprite(this, 'player-renaissance');
+        }
+
+        // Add frame configs for player sprite
+        if (!this.textures.get('player-renaissance').has(0)) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-renaissance').add(i, 0, col * 32, row * 48, 32, 48);
+            }
         }
 
         // Generate fire particles (for candles/lamps)
@@ -4521,8 +5844,8 @@ class RenaissanceScene extends Phaser.Scene {
         this.createScholars();
 
         // Create player at spawn point
-        const spawnX = data.fromEra ? 400 : 400;
-        const spawnY = data.fromEra ? 500 : 500;
+        const spawnX = data?.spawnX || 400;
+        const spawnY = data?.spawnY || 500;
         this.createPlayer(spawnX, spawnY);
 
         // Camera follows player
@@ -4534,7 +5857,7 @@ class RenaissanceScene extends Phaser.Scene {
         this.eKey = this.input.keyboard.addKey('E');
 
         // Interaction text
-        this.interactionText = this.add.text(400, 550, '', {
+        this.interactionText = this.add.text(400, 560, '', {
             fontSize: '16px',
             fill: '#ffffff',
             backgroundColor: '#000000',
@@ -4546,6 +5869,9 @@ class RenaissanceScene extends Phaser.Scene {
         this.infoPanel = new InfoPanel(this);
         this.interactables = [];
         this.createInteractables();
+
+        // Timeline
+        this.timelineBar = new TimelineBar(this, 'renaissance');
 
         // Era title card
         this.showEraTitleCard('RENAISSANCE ERA', '1400-1600 CE');
@@ -4785,42 +6111,42 @@ class RenaissanceScene extends Phaser.Scene {
 
     createPlayer(x, y) {
         // Create player sprite
-        this.player = this.physics.add.sprite(x, y, 'player-char');
+        this.player = this.physics.add.sprite(x, y, 'player-renaissance');
         this.player.setCollideWorldBounds(true);
         this.player.setSize(24, 40);
         this.player.setOffset(4, 8);
         this.player.setDepth(50);
 
         // Create animations if they don't exist yet
-        if (!this.anims.exists('walk-down')) {
+        if (!this.anims.exists('renaissance-walk-down')) {
             this.anims.create({
-                key: 'walk-down',
+                key: 'renaissance-walk-down',
                 frames: [
-                    { key: 'player-char', frame: 0 },
-                    { key: 'player-char', frame: 1 },
-                    { key: 'player-char', frame: 2 }
+                    { key: 'player-renaissance', frame: 0 },
+                    { key: 'player-renaissance', frame: 1 },
+                    { key: 'player-renaissance', frame: 2 }
                 ],
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-left',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 3, end: 5 }),
+                key: 'renaissance-walk-left',
+                frames: this.anims.generateFrameNumbers('player-renaissance', { start: 3, end: 5 }),
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-right',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 6, end: 8 }),
+                key: 'renaissance-walk-right',
+                frames: this.anims.generateFrameNumbers('player-renaissance', { start: 6, end: 8 }),
                 frameRate: 8,
                 repeat: -1
             });
 
             this.anims.create({
-                key: 'walk-up',
-                frames: this.anims.generateFrameNumbers('player-char', { start: 9, end: 11 }),
+                key: 'renaissance-walk-up',
+                frames: this.anims.generateFrameNumbers('player-renaissance', { start: 9, end: 11 }),
                 frameRate: 8,
                 repeat: -1
             });
@@ -4918,7 +6244,7 @@ class RenaissanceScene extends Phaser.Scene {
         // Update animation
         if (moving) {
             if (newDirection !== this.lastDirection) {
-                this.player.play(`walk-${newDirection}`);
+                this.player.play(`renaissance-walk-${newDirection}`);
                 this.lastDirection = newDirection;
             }
         } else {
@@ -4929,12 +6255,1590 @@ class RenaissanceScene extends Phaser.Scene {
     }
 
     enterNextEra() {
-        // Show coming soon message
-        this.interactionText.setText('🎉 More eras coming soon!');
-        this.interactionText.setVisible(true);
+        this.cameras.main.fadeOut(1000);
+        this.time.delayedCall(1000, () => {
+            this.scene.start('IndustrialScene', { spawnX: 400, spawnY: 500 });
+        });
+    }
+}
 
-        this.time.delayedCall(2000, () => {
-            this.interactionText.setVisible(false);
+// ===== ANCIENT CIVILIZATIONS SCENE =====
+
+class AncientScene extends Phaser.Scene {
+    constructor() {
+        super({ key: 'AncientScene' });
+    }
+
+    create(data) {
+        // Generate scene-specific textures
+        generateSandstoneTexture(this, 'sandstone');
+        generatePyramidTexture(this, 'pyramid');
+        generatePapyrusTexture(this, 'papyrus');
+        generatePotteryTexture(this, 'pottery');
+
+        // Generate NPC textures
+        generateAncientNPCTexture(this, 'ancient-scribe', 'scribe');
+        generateAncientNPCTexture(this, 'ancient-pottery', 'pottery');
+        generateAncientNPCTexture(this, 'ancient-merchant', 'merchant');
+        generateAncientNPCTexture(this, 'ancient-farmer', 'farmer');
+
+        // Add frame configs for NPC sprites (4 frames per NPC)
+        if (!this.textures.get('ancient-scribe').has(0)) {
+            const npcKeys = ['ancient-scribe', 'ancient-pottery', 'ancient-merchant', 'ancient-farmer'];
+            npcKeys.forEach(key => {
+                for (let i = 0; i < 4; i++) {
+                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+                }
+            });
+        }
+
+        // Generate Ancient era player character
+        if (!this.textures.exists('player-ancient')) {
+            generateAncientPlayerSprite(this, 'player-ancient');
+        }
+
+        // Generate walking sprite for timeline (shared across scenes)
+        if (!this.textures.exists('walking-sprite')) {
+            generateWalkingSpriteTexture(this, 'walking-sprite');
+            // Add frames for walking sprite (4 frames of 16x16 pixels)
+            for (let i = 0; i < 4; i++) {
+                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+            }
+        }
+
+        // Spawn position
+        const spawnX = data?.spawnX || 400;
+        const spawnY = data?.spawnY || 500;
+
+        // Fade in effect when entering scene
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+        // Add frame configs for player (if not already added)
+        if (!this.anims.exists('walk-down')) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-char').add(i, 0, col * 32, row * 48, 32, 48);
+            }
+        }
+
+        // World bounds
+        this.physics.world.setBounds(0, 0, 800, 600);
+
+        // Create scene elements
+        this.createGround();
+        this.createPyramid();
+        this.createProps();
+        this.createNPCs();
+
+        // Create player at spawn position
+        this.createPlayer(spawnX, spawnY);
+
+        // Camera
+        this.cameras.main.setBounds(0, 0, 800, 600);
+        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+        // Controls
+        this.cursors = this.input.keyboard.createCursorKeys();
+        this.eKey = this.input.keyboard.addKey('E');
+
+        // Info panel & interactables
+        this.infoPanel = new InfoPanel(this);
+        this.interactables = [];
+        this.createInteractables();
+
+        // Timeline bar
+        this.timelineBar = new TimelineBar(this, 'ancient');
+
+        // Interaction text
+        this.interactionText = this.add.text(400, 560, '', {
+            fontSize: '16px',
+            fill: '#ffffff',
+            backgroundColor: '#000000',
+            padding: { x: 10, y: 5 }
+        }).setOrigin(0.5).setDepth(100).setVisible(false);
+
+        // Title card
+        this.showEraTitleCard('ANCIENT CIVILIZATIONS', '3000 BCE - 500 CE');
+
+        this.lastDirection = 'down';
+        this.playerSpeed = 140;
+    }
+
+    createGround() {
+        const tileSize = 32;
+        const cols = 25;
+        const rows = 19;
+
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                this.add.image(x * tileSize + 16, y * tileSize + 16, 'sandstone');
+            }
+        }
+    }
+
+    createPyramid() {
+        const pyramidX = 400;
+        const pyramidY = 80;
+
+        // Pyramid portal
+        this.pyramid = this.physics.add.sprite(pyramidX, pyramidY, 'pyramid');
+        this.pyramid.setImmovable(true);
+
+        // Sign
+        this.add.text(pyramidX, pyramidY - 70, '⬆ PYRAMID\nNext Era', {
+            fontSize: '14px',
+            fill: '#ffffff',
+            backgroundColor: '#4a4a4a',
+            padding: { x: 8, y: 4 },
+            align: 'center'
+        }).setOrigin(0.5).setDepth(10);
+    }
+
+    createProps() {
+        // Papyrus scrolls
+        this.add.image(150, 200, 'papyrus').setDepth(5);
+        this.add.image(180, 210, 'papyrus').setDepth(5);
+
+        // Pottery vessels
+        this.add.image(550, 250, 'pottery').setDepth(5);
+        this.add.image(580, 260, 'pottery').setDepth(5);
+        this.add.image(600, 240, 'pottery').setDepth(5);
+
+        // More scrolls
+        this.add.image(300, 450, 'papyrus').setDepth(5);
+
+        // Torches with fire particles (for ambient lighting)
+        this.createTorch(100, 100);
+        this.createTorch(700, 120);
+        this.createTorch(400, 550);
+    }
+
+    createTorch(x, y) {
+        // Torch holder (simple rectangle for the torch stick)
+        this.add.rectangle(x, y, 4, 20, 0x8b4513).setDepth(5);
+
+        // Orange flames (main fire)
+        this.add.particles(x, y - 15, 'fire-orange', {
+            speed: { min: 15, max: 25 },
+            angle: { min: 250, max: 290 },
+            scale: { start: 0.6, end: 0 },
+            alpha: { start: 0.9, end: 0 },
+            lifespan: 600,
+            frequency: 60,
+            gravityY: -40,
+            blendMode: 'ADD'
+        });
+
+        // Yellow flame tips
+        this.add.particles(x, y - 18, 'fire-yellow', {
+            speed: { min: 20, max: 30 },
+            angle: { min: 260, max: 280 },
+            scale: { start: 0.4, end: 0 },
+            alpha: { start: 0.7, end: 0 },
+            lifespan: 400,
+            frequency: 80,
+            gravityY: -50,
+            blendMode: 'ADD'
+        });
+
+        // Smoke
+        this.add.particles(x, y - 20, 'fire-smoke', {
+            speed: { min: 5, max: 10 },
+            angle: { min: 260, max: 280 },
+            scale: { start: 0.3, end: 0.8 },
+            alpha: { start: 0.2, end: 0 },
+            lifespan: 1500,
+            frequency: 250,
+            gravityY: -15
+        });
+    }
+
+    createNPCs() {
+        this.npcs = [];
+        this.npcProps = []; // Track props that move with NPCs
+
+        // NPC 1: Scribe writing on papyrus (left side, mid-height)
+        const scribe = this.add.sprite(180, 280, 'ancient-scribe');
+        scribe.setDepth(50);
+        scribe.activity = 'scribe';
+        scribe.workFrame = 0;
+        this.npcs.push(scribe);
+
+        // Papyrus scroll prop (on desk/table in front of scribe)
+        const papyrusScroll = this.add.rectangle(170, 300, 16, 10, 0xf4e4c1).setDepth(49);
+        scribe.prop = papyrusScroll;
+
+        // Animate scribe with papyrus scroll movement
+        this.time.addEvent({
+            delay: 600,
+            callback: () => {
+                scribe.workFrame = (scribe.workFrame + 1) % 4;
+                scribe.setFrame(scribe.workFrame);
+                // Subtle scroll movement as if being unrolled
+                papyrusScroll.y = 300 + (scribe.workFrame % 2);
+            },
+            loop: true
+        });
+
+        // NPC 2: Potter shaping pottery (bottom right)
+        const potter = this.add.sprite(600, 450, 'ancient-pottery');
+        potter.setDepth(50);
+        potter.activity = 'pottery';
+        potter.workFrame = 0;
+        this.npcs.push(potter);
+
+        // Pottery wheel prop
+        const potteryWheel = this.add.circle(600, 465, 8, 0x8b7355).setDepth(49);
+        potter.prop = potteryWheel;
+
+        // Animate potter with pottery wheel rotation
+        this.time.addEvent({
+            delay: 500,
+            callback: () => {
+                potter.workFrame = (potter.workFrame + 1) % 4;
+                potter.setFrame(potter.workFrame);
+            },
+            loop: true
+        });
+        // Continuous pottery wheel rotation
+        this.tweens.add({
+            targets: potteryWheel,
+            rotation: Math.PI * 2,
+            duration: 2000,
+            repeat: -1
+        });
+
+        // NPC 3: Merchant/Trader (bottom left-center)
+        const merchant = this.add.sprite(250, 480, 'ancient-merchant');
+        merchant.setDepth(50);
+        merchant.activity = 'merchant';
+        merchant.workFrame = 0;
+        this.npcs.push(merchant);
+
+        // Merchant goods/basket prop
+        const merchantGoods = this.add.rectangle(265, 495, 16, 12, 0x8b7355).setDepth(49);
+        merchant.prop = merchantGoods;
+
+        // Animate merchant
+        this.time.addEvent({
+            delay: 700,
+            callback: () => {
+                merchant.workFrame = (merchant.workFrame + 1) % 4;
+                merchant.setFrame(merchant.workFrame);
+                // Basket slightly moves as merchant gestures
+                merchantGoods.x = 265 + (merchant.workFrame % 2) * 2;
+            },
+            loop: true
+        });
+
+        // NPC 4: Farmer with irrigation (right side, mid-height)
+        const farmer = this.add.sprite(550, 280, 'ancient-farmer');
+        farmer.setDepth(50);
+        farmer.activity = 'farmer';
+        farmer.workFrame = 0;
+        this.npcs.push(farmer);
+
+        // Water vessel prop
+        const waterVessel = this.add.rectangle(565, 295, 10, 14, 0x6a6a6a).setDepth(49);
+        farmer.prop = waterVessel;
+
+        // Animate farmer
+        this.time.addEvent({
+            delay: 650,
+            callback: () => {
+                farmer.workFrame = (farmer.workFrame + 1) % 4;
+                farmer.setFrame(farmer.workFrame);
+                // Vessel moves with farmer's work
+                waterVessel.y = 295 + (farmer.workFrame % 2);
+            },
+            loop: true
+        });
+    }
+
+    createPlayer(x, y) {
+        this.player = this.physics.add.sprite(x, y, 'player-ancient');
+        this.player.setCollideWorldBounds(true);
+        this.player.setDepth(50);
+
+        // Add frame configs for ancient player (if not already added)
+        if (!this.textures.get('player-ancient').has(0)) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-ancient').add(i, 0, col * 32, row * 48, 32, 48);
+            }
+        }
+
+        // Create walking animations
+        if (!this.anims.exists('ancient-walk-down')) {
+            this.anims.create({
+                key: 'ancient-walk-down',
+                frames: this.anims.generateFrameNumbers('player-ancient', { start: 0, end: 2 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('ancient-walk-left')) {
+            this.anims.create({
+                key: 'ancient-walk-left',
+                frames: this.anims.generateFrameNumbers('player-ancient', { start: 3, end: 5 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('ancient-walk-right')) {
+            this.anims.create({
+                key: 'ancient-walk-right',
+                frames: this.anims.generateFrameNumbers('player-ancient', { start: 6, end: 8 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('ancient-walk-up')) {
+            this.anims.create({
+                key: 'ancient-walk-up',
+                frames: this.anims.generateFrameNumbers('player-ancient', { start: 9, end: 11 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+
+        // Collision with pyramid
+        this.physics.add.overlap(this.player, this.pyramid, () => {
+            if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+                this.enterNextEra();
+            } else {
+                this.interactionText.setText('Press E to enter pyramid');
+                this.interactionText.setVisible(true);
+                this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
+            }
+        });
+    }
+
+    createInteractables() {
+        const writingInfo = {
+            title: 'Writing Systems',
+            content: 'Cuneiform and hieroglyphs (3200 BCE) let humans record knowledge for the first time. Before writing, all history was oral and easily lost!',
+            icon: '📜'
+        };
+        this.interactables.push(createInteractable(this, 150, 200, 80, 80, writingInfo));
+
+        const wheelInfo = {
+            title: 'The Wheel',
+            content: 'Invented ~3500 BCE, the wheel revolutionized transport. But it took 300 years before anyone thought to use it for chariots!',
+            icon: '⚙️'
+        };
+        this.interactables.push(createInteractable(this, 250, 350, 80, 80, wheelInfo));
+
+        const pyramidInfo = {
+            title: 'Pyramid Construction',
+            content: 'The Great Pyramid was built with 2.3M stone blocks, each 2.5 tons. It remained Earth\'s tallest structure for 3,800 years!',
+            icon: '🏛️'
+        };
+        this.interactables.push(createInteractable(this, 350, 80, 120, 120, pyramidInfo));
+
+        const irrigationInfo = {
+            title: 'Irrigation Systems',
+            content: 'Ancient irrigation systems could water 1000+ acres. This freed people from depending on rain and created the first cities.',
+            icon: '💧'
+        };
+        this.interactables.push(createInteractable(this, 500, 450, 80, 80, irrigationInfo));
+
+        const bronzeInfo = {
+            title: 'Bronze Metallurgy',
+            content: 'Bronze tools (3300 BCE) were 3x stronger than stone. This sparked trade networks spanning thousands of miles.',
+            icon: '⚒️'
+        };
+        this.interactables.push(createInteractable(this, 600, 300, 80, 80, bronzeInfo));
+
+        const mathInfo = {
+            title: 'Mathematics',
+            content: 'Babylonians invented the 60-minute hour and 360° circle in 2000 BCE. We still use their system today!',
+            icon: '📐'
+        };
+        this.interactables.push(createInteractable(this, 200, 500, 80, 80, mathInfo));
+    }
+
+    showEraTitleCard(title, subtitle) {
+        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+        const titleText = this.add.text(400, 280, title, {
+            fontSize: '48px',
+            fill: '#d4a832',
+            fontStyle: 'bold',
+            align: 'center'
+        }).setOrigin(0.5).setDepth(301);
+        const subtitleText = this.add.text(400, 340, subtitle, {
+            fontSize: '24px',
+            fill: '#f3f4f6',
+            align: 'center'
+        }).setOrigin(0.5).setDepth(301);
+
+        this.time.delayedCall(3000, () => {
+            this.tweens.add({
+                targets: [titleCard, titleText, subtitleText],
+                alpha: 0,
+                duration: 1000,
+                onComplete: () => {
+                    titleCard.destroy();
+                    titleText.destroy();
+                    subtitleText.destroy();
+                }
+            });
+        });
+    }
+
+    update() {
+        if (!this.player) return;
+
+        const speed = this.playerSpeed;
+        this.player.setVelocity(0);
+
+        if (this.cursors.left.isDown) {
+            this.player.setVelocityX(-speed);
+            this.player.play('walk-left', true);
+            this.lastDirection = 'left';
+        } else if (this.cursors.right.isDown) {
+            this.player.setVelocityX(speed);
+            this.player.play('walk-right', true);
+            this.lastDirection = 'right';
+        } else if (this.cursors.up.isDown) {
+            this.player.setVelocityY(-speed);
+            this.player.play('walk-up', true);
+            this.lastDirection = 'up';
+        } else if (this.cursors.down.isDown) {
+            this.player.setVelocityY(speed);
+            this.player.play('walk-down', true);
+            this.lastDirection = 'down';
+        } else {
+            this.player.stop();
+            const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
+            this.player.setFrame(idleFrames[this.lastDirection]);
+        }
+
+        // Check interactables
+        this.interactables.forEach(interactable => {
+            const distance = Phaser.Math.Distance.Between(
+                this.player.x, this.player.y,
+                interactable.x, interactable.y
+            );
+
+            if (distance < 80) {
+                interactable.indicator.setVisible(true);
+                if (!interactable.promptShown) {
+                    this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
+                    this.interactionText.setVisible(true);
+                    interactable.promptShown = true;
+                }
+
+                if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+                    this.infoPanel.toggle(interactable.infoData);
+                }
+            } else {
+                interactable.indicator.setVisible(false);
+                if (interactable.promptShown) {
+                    this.interactionText.setVisible(false);
+                    interactable.promptShown = false;
+                }
+            }
+        });
+    }
+
+    enterNextEra() {
+        this.cameras.main.fadeOut(1000);
+        this.time.delayedCall(1000, () => {
+            this.scene.start('MedievalScene', { spawnX: 400, spawnY: 500 });
+        });
+    }
+}
+
+// ===== INDUSTRIAL REVOLUTION SCENE =====
+
+class IndustrialScene extends Phaser.Scene {
+    constructor() {
+        super({ key: 'IndustrialScene' });
+    }
+
+    create(data) {
+        // Generate scene-specific textures
+        generateBrickTexture(this, 'brick');
+        generateSteamEngineTexture(this, 'steam-engine');
+        generateSmokestackTexture(this, 'smokestack');
+        generateGearTexture(this, 'gear');
+
+        // Generate NPC textures
+        generateIndustrialNPCTexture(this, 'industrial-worker', 'worker');
+        generateIndustrialNPCTexture(this, 'industrial-engineer', 'engineer');
+        generateIndustrialNPCTexture(this, 'industrial-assembly', 'assembly');
+        generateIndustrialNPCTexture(this, 'industrial-foreman', 'foreman');
+
+        // Add frame configs for NPC sprites (4 frames per NPC)
+        if (!this.textures.get('industrial-worker').has(0)) {
+            const npcKeys = ['industrial-worker', 'industrial-engineer', 'industrial-assembly', 'industrial-foreman'];
+            npcKeys.forEach(key => {
+                for (let i = 0; i < 4; i++) {
+                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+                }
+            });
+        }
+
+        // Generate industrial era player character
+        if (!this.textures.exists('player-industrial')) {
+            generateIndustrialPlayerSprite(this, 'player-industrial');
+        }
+
+        // Generate walking sprite for timeline (shared across scenes)
+        if (!this.textures.exists('walking-sprite')) {
+            generateWalkingSpriteTexture(this, 'walking-sprite');
+            // Add frames for walking sprite (4 frames of 16x16 pixels)
+            for (let i = 0; i < 4; i++) {
+                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+            }
+        }
+
+        // Spawn position
+        const spawnX = data?.spawnX || 400;
+        const spawnY = data?.spawnY || 500;
+
+        // Fade in effect when entering scene
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+        // Add frame configs for player (if not already added)
+        if (!this.anims.exists('industrial-walk-down')) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-industrial').add(i, 0, col * 32, row * 48, 32, 48);
+            }
+        }
+
+        // World bounds
+        this.physics.world.setBounds(0, 0, 800, 600);
+
+        // Create scene
+        this.createGround();
+        this.createFactory();
+        this.createProps();
+        this.createNPCs();
+
+        // Create player at spawn position
+        this.createPlayer(spawnX, spawnY);
+
+        // Camera
+        this.cameras.main.setBounds(0, 0, 800, 600);
+        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+        // Controls
+        this.cursors = this.input.keyboard.createCursorKeys();
+        this.eKey = this.input.keyboard.addKey('E');
+
+        // Info & interactables
+        this.infoPanel = new InfoPanel(this);
+        this.interactables = [];
+        this.createInteractables();
+
+        // Timeline
+        this.timelineBar = new TimelineBar(this, 'industrial');
+
+        // Interaction text
+        this.interactionText = this.add.text(400, 560, '', {
+            fontSize: '16px',
+            fill: '#ffffff',
+            backgroundColor: '#000000',
+            padding: { x: 10, y: 5 }
+        }).setOrigin(0.5).setDepth(100).setVisible(false);
+
+        // Smoke particles
+        this.createSmokeEffects();
+
+        // Title card
+        this.showEraTitleCard('INDUSTRIAL REVOLUTION', '1760-1900 CE');
+
+        this.lastDirection = 'down';
+        this.playerSpeed = 140;
+    }
+
+    createGround() {
+        const tileSize = 32;
+        const cols = 25;
+        const rows = 19;
+
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                this.add.image(x * tileSize + 16, y * tileSize + 16, 'brick');
+            }
+        }
+    }
+
+    createFactory() {
+        const factoryX = 400;
+        const factoryY = 80;
+
+        // Smokestack (factory portal)
+        this.smokestack = this.physics.add.sprite(factoryX, factoryY, 'smokestack');
+        this.smokestack.setImmovable(true);
+
+        // Sign
+        this.add.text(factoryX, factoryY - 50, '⬆ FACTORY\nNext Era', {
+            fontSize: '14px',
+            fill: '#ffffff',
+            backgroundColor: '#4a4a4a',
+            padding: { x: 8, y: 4 },
+            align: 'center'
+        }).setOrigin(0.5).setDepth(10);
+    }
+
+    createProps() {
+        // Steam engine
+        this.steamEngine = this.add.image(200, 250, 'steam-engine').setDepth(5);
+
+        // Gears with rotation animations
+        const gear1 = this.add.image(500, 300, 'gear').setDepth(5).setScale(1.5);
+        const gear2 = this.add.image(530, 320, 'gear').setDepth(5).setScale(1.2);
+        const gear3 = this.add.image(550, 280, 'gear').setDepth(5);
+
+        // Rotate gears at different speeds for mechanical effect
+        this.tweens.add({
+            targets: gear1,
+            rotation: Math.PI * 2,
+            duration: 3000,
+            repeat: -1,
+            ease: 'Linear'
+        });
+
+        this.tweens.add({
+            targets: gear2,
+            rotation: -Math.PI * 2, // Opposite direction
+            duration: 2500,
+            repeat: -1,
+            ease: 'Linear'
+        });
+
+        this.tweens.add({
+            targets: gear3,
+            rotation: Math.PI * 2,
+            duration: 2000,
+            repeat: -1,
+            ease: 'Linear'
+        });
+    }
+
+    createNPCs() {
+        this.npcs = [];
+        this.npcProps = []; // Track props that move with NPCs
+
+        // NPC 1: Factory worker shoveling (bottom left)
+        const worker = this.add.sprite(150, 520, 'industrial-worker');
+        worker.setDepth(50);
+        worker.activity = 'worker';
+        worker.workFrame = 0;
+        this.npcs.push(worker);
+
+        // Shovel prop (moves with worker's hands)
+        const shovel = this.add.rectangle(165, 515, 3, 18, 0x8b7355).setDepth(49);
+        worker.prop = shovel;
+
+        // Animate worker with shovel movement
+        this.time.addEvent({
+            delay: 650,
+            callback: () => {
+                worker.workFrame = (worker.workFrame + 1) % 4;
+                worker.setFrame(worker.workFrame);
+
+                // Move shovel with shoveling motion
+                if (worker.workFrame < 2) {
+                    shovel.setPosition(165, 510); // Raised
+                    shovel.rotation = -0.5;
+                } else {
+                    shovel.setPosition(165, 525); // Lowered (shoveling coal)
+                    shovel.rotation = 0.2;
+                }
+            },
+            loop: true
+        });
+
+        // NPC 2: Engineer at steam engine (left-center)
+        const engineer = this.add.sprite(220, 260, 'industrial-engineer');
+        engineer.setDepth(50);
+        engineer.activity = 'engineer';
+        engineer.workFrame = 0;
+        this.npcs.push(engineer);
+
+        // Pressure gauge prop
+        const pressureGauge = this.add.circle(235, 275, 6, 0x6a6a6a).setDepth(49);
+        engineer.prop = pressureGauge;
+
+        // Animate engineer checking gauges
+        this.time.addEvent({
+            delay: 550,
+            callback: () => {
+                engineer.workFrame = (engineer.workFrame + 1) % 4;
+                engineer.setFrame(engineer.workFrame);
+                // Gauge "fluctuates" as engineer works
+                pressureGauge.radius = 6 + (engineer.workFrame % 2);
+            },
+            loop: true
+        });
+
+        // NPC 3: Assembly line worker (right lower)
+        const assembly = this.add.sprite(550, 420, 'industrial-assembly');
+        assembly.setDepth(50);
+        assembly.activity = 'assembly';
+        assembly.workFrame = 0;
+        this.npcs.push(assembly);
+
+        // Parts/tools prop
+        const assemblyPart = this.add.rectangle(565, 435, 12, 8, 0x7a7a7a).setDepth(49);
+        assembly.prop = assemblyPart;
+
+        // Animate assembly worker
+        this.time.addEvent({
+            delay: 600,
+            callback: () => {
+                assembly.workFrame = (assembly.workFrame + 1) % 4;
+                assembly.setFrame(assembly.workFrame);
+                // Part moves with assembly work
+                assemblyPart.y = 435 + (assembly.workFrame % 2) * 2;
+            },
+            loop: true
+        });
+
+        // NPC 4: Foreman supervising (right mid)
+        const foreman = this.add.sprite(600, 280, 'industrial-foreman');
+        foreman.setDepth(50);
+        foreman.activity = 'foreman';
+        foreman.workFrame = 0;
+        this.npcs.push(foreman);
+
+        // Clipboard prop
+        const clipboard = this.add.rectangle(590, 295, 10, 14, 0x8b7355).setDepth(49);
+        foreman.prop = clipboard;
+
+        // Animate foreman with clipboard
+        this.time.addEvent({
+            delay: 700,
+            callback: () => {
+                foreman.workFrame = (foreman.workFrame + 1) % 4;
+                foreman.setFrame(foreman.workFrame);
+                // Clipboard moves slightly as foreman writes
+                clipboard.x = 590 + (foreman.workFrame % 2);
+            },
+            loop: true
+        });
+    }
+
+    createSmokeEffects() {
+        // Create smoke particle texture
+        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
+        graphics.fillStyle(0x4a4a4a);
+        graphics.fillCircle(4, 4, 4);
+        graphics.generateTexture('smoke-particle', 8, 8);
+        graphics.destroy();
+
+        // Smoke from smokestack (existing)
+        this.add.particles(350, 40, 'smoke-particle', {
+            speed: { min: 20, max: 40 },
+            angle: { min: 260, max: 280 },
+            scale: { start: 0.5, end: 1.5 },
+            alpha: { start: 0.6, end: 0 },
+            lifespan: 2000,
+            frequency: 200,
+            gravityY: -20
+        });
+
+        // Multi-layer steam engine particles
+        // Layer 1: White hot steam
+        this.add.particles(200, 240, 'fire-smoke', {
+            speed: { min: 15, max: 30 },
+            angle: { min: 260, max: 280 },
+            scale: { start: 0.6, end: 1.2 },
+            alpha: { start: 0.7, end: 0 },
+            lifespan: 1200,
+            frequency: 100,
+            tint: 0xffffff, // White steam
+            gravityY: -25
+        });
+
+        // Layer 2: Gray smoke from engine
+        this.add.particles(200, 235, 'smoke-particle', {
+            speed: { min: 10, max: 20 },
+            angle: { min: 250, max: 290 },
+            scale: { start: 0.4, end: 1.0 },
+            alpha: { start: 0.5, end: 0 },
+            lifespan: 1500,
+            frequency: 150,
+            gravityY: -15
+        });
+
+        // Furnace glow particles (bottom left near worker)
+        // Orange glow
+        this.add.particles(150, 500, 'fire-orange', {
+            speed: { min: 5, max: 15 },
+            angle: { min: 260, max: 280 },
+            scale: { start: 0.8, end: 0 },
+            alpha: { start: 0.8, end: 0 },
+            lifespan: 800,
+            frequency: 80,
+            gravityY: -30,
+            blendMode: 'ADD'
+        });
+
+        // Yellow furnace sparks
+        this.add.particles(150, 505, 'fire-yellow', {
+            speed: { min: 10, max: 25 },
+            angle: { min: 240, max: 300 },
+            scale: { start: 0.5, end: 0 },
+            alpha: { start: 1, end: 0 },
+            lifespan: 600,
+            frequency: 120,
+            gravityY: -20,
+            blendMode: 'ADD'
+        });
+    }
+
+    createPlayer(x, y) {
+        this.player = this.physics.add.sprite(x, y, 'player-industrial');
+        this.player.setCollideWorldBounds(true);
+        this.player.setDepth(50);
+
+        // Create walking animations
+        if (!this.anims.exists('industrial-walk-down')) {
+            this.anims.create({
+                key: 'industrial-walk-down',
+                frames: this.anims.generateFrameNumbers('player-industrial', { start: 0, end: 2 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('industrial-walk-left')) {
+            this.anims.create({
+                key: 'industrial-walk-left',
+                frames: this.anims.generateFrameNumbers('player-industrial', { start: 3, end: 5 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('industrial-walk-right')) {
+            this.anims.create({
+                key: 'industrial-walk-right',
+                frames: this.anims.generateFrameNumbers('player-industrial', { start: 6, end: 8 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('industrial-walk-up')) {
+            this.anims.create({
+                key: 'industrial-walk-up',
+                frames: this.anims.generateFrameNumbers('player-industrial', { start: 9, end: 11 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+
+        // Collision
+        this.physics.add.overlap(this.player, this.smokestack, () => {
+            if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+                this.enterNextEra();
+            } else {
+                this.interactionText.setText('Press E to enter factory');
+                this.interactionText.setVisible(true);
+                this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
+            }
+        });
+    }
+
+    createInteractables() {
+        const steamInfo = {
+            title: 'Steam Engine',
+            content: 'Watt\'s steam engine (1776) was 4x more efficient than previous designs. One engine replaced 50 horses - revolutionizing factories overnight!',
+            icon: '⚙️'
+        };
+        this.interactables.push(createInteractable(this, 200, 250, 80, 80, steamInfo));
+
+        const railroadInfo = {
+            title: 'Railroads',
+            content: 'The first passenger railway (1825) averaged 15 mph. People said traveling faster than horses would make passengers\' lungs explode!',
+            icon: '🚂'
+        };
+        this.interactables.push(createInteractable(this, 150, 450, 80, 80, railroadInfo));
+
+        const factoryInfo = {
+            title: 'Factory System',
+            content: 'Manchester\'s factories employed 20,000+ workers by 1850. Cities grew from 10,000 to 1 million people in just 50 years.',
+            icon: '🏭'
+        };
+        this.interactables.push(createInteractable(this, 350, 80, 64, 80, factoryInfo));
+
+        const telegraphInfo = {
+            title: 'Telegraph',
+            content: 'The telegraph (1844) sent messages at lightning speed - 186,000 miles/second! Before this, news traveled at horse speed: 10 mph.',
+            icon: '📡'
+        };
+        this.interactables.push(createInteractable(this, 550, 200, 80, 80, telegraphInfo));
+
+        const laborInfo = {
+            title: 'Child Labor',
+            content: '40% of factory workers were children under 10. Reforms in 1833 \'generously\' limited their workday to 12 hours.',
+            icon: '👶'
+        };
+        this.interactables.push(createInteractable(this, 600, 450, 80, 80, laborInfo));
+
+        const assemblyInfo = {
+            title: 'Assembly Line',
+            content: 'Ford\'s assembly line (1913) cut car production from 12 hours to 93 minutes! A Model T cost $850 (half of previous cars).',
+            icon: '🚗'
+        };
+        this.interactables.push(createInteractable(this, 500, 500, 80, 80, assemblyInfo));
+    }
+
+    showEraTitleCard(title, subtitle) {
+        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+        const titleText = this.add.text(400, 280, title, {
+            fontSize: '48px',
+            fill: '#7a7a7a',
+            fontStyle: 'bold',
+            align: 'center'
+        }).setOrigin(0.5).setDepth(301);
+        const subtitleText = this.add.text(400, 340, subtitle, {
+            fontSize: '24px',
+            fill: '#f3f4f6',
+            align: 'center'
+        }).setOrigin(0.5).setDepth(301);
+
+        this.time.delayedCall(3000, () => {
+            this.tweens.add({
+                targets: [titleCard, titleText, subtitleText],
+                alpha: 0,
+                duration: 1000,
+                onComplete: () => {
+                    titleCard.destroy();
+                    titleText.destroy();
+                    subtitleText.destroy();
+                }
+            });
+        });
+    }
+
+    update() {
+        if (!this.player) return;
+
+        const speed = this.playerSpeed;
+        this.player.setVelocity(0);
+
+        if (this.cursors.left.isDown) {
+            this.player.setVelocityX(-speed);
+            this.player.play('industrial-walk-left', true);
+            this.lastDirection = 'left';
+        } else if (this.cursors.right.isDown) {
+            this.player.setVelocityX(speed);
+            this.player.play('industrial-walk-right', true);
+            this.lastDirection = 'right';
+        } else if (this.cursors.up.isDown) {
+            this.player.setVelocityY(-speed);
+            this.player.play('industrial-walk-up', true);
+            this.lastDirection = 'up';
+        } else if (this.cursors.down.isDown) {
+            this.player.setVelocityY(speed);
+            this.player.play('industrial-walk-down', true);
+            this.lastDirection = 'down';
+        } else {
+            this.player.stop();
+            const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
+            this.player.setFrame(idleFrames[this.lastDirection]);
+        }
+
+        // Check interactables
+        this.interactables.forEach(interactable => {
+            const distance = Phaser.Math.Distance.Between(
+                this.player.x, this.player.y,
+                interactable.x, interactable.y
+            );
+
+            if (distance < 80) {
+                interactable.indicator.setVisible(true);
+                if (!interactable.promptShown) {
+                    this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
+                    this.interactionText.setVisible(true);
+                    interactable.promptShown = true;
+                }
+
+                if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+                    this.infoPanel.toggle(interactable.infoData);
+                }
+            } else {
+                interactable.indicator.setVisible(false);
+                if (interactable.promptShown) {
+                    this.interactionText.setVisible(false);
+                    interactable.promptShown = false;
+                }
+            }
+        });
+    }
+
+    enterNextEra() {
+        this.cameras.main.fadeOut(1000);
+        this.time.delayedCall(1000, () => {
+            this.scene.start('ModernScene', { spawnX: 400, spawnY: 500 });
+        });
+    }
+}
+
+// ===== MODERN/DIGITAL AGE SCENE =====
+
+class ModernScene extends Phaser.Scene {
+    constructor() {
+        super({ key: 'ModernScene' });
+    }
+
+    create(data) {
+        // Generate scene-specific textures
+        generateModernFloorTexture(this, 'modern-floor');
+        generateComputerTexture(this, 'computer');
+        generateServerTexture(this, 'server');
+        generateCircuitBoardTexture(this, 'circuit');
+
+        // Generate NPC textures
+        generateModernNPCTexture(this, 'modern-programmer', 'programmer');
+        generateModernNPCTexture(this, 'modern-tech', 'tech');
+        generateModernNPCTexture(this, 'modern-desk', 'desk');
+        generateModernNPCTexture(this, 'modern-it-tech', 'it-tech');
+
+        // Add frame configs for NPC sprites (4 frames per NPC)
+        if (!this.textures.get('modern-programmer').has(0)) {
+            const npcKeys = ['modern-programmer', 'modern-tech', 'modern-desk', 'modern-it-tech'];
+            npcKeys.forEach(key => {
+                for (let i = 0; i < 4; i++) {
+                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+                }
+            });
+        }
+
+        // Generate modern era player character
+        if (!this.textures.exists('player-modern')) {
+            generateModernPlayerSprite(this, 'player-modern');
+        }
+
+        // Generate walking sprite for timeline (shared across scenes)
+        if (!this.textures.exists('walking-sprite')) {
+            generateWalkingSpriteTexture(this, 'walking-sprite');
+            // Add frames for walking sprite (4 frames of 16x16 pixels)
+            for (let i = 0; i < 4; i++) {
+                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+            }
+        }
+
+        // Spawn position
+        const spawnX = data?.spawnX || 400;
+        const spawnY = data?.spawnY || 500;
+
+        // Fade in effect when entering scene
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+        // Add frame configs for player (if not already added)
+        if (!this.anims.exists('modern-walk-down')) {
+            for (let i = 0; i < 12; i++) {
+                const col = i % 3;
+                const row = Math.floor(i / 3);
+                this.textures.get('player-modern').add(i, 0, col * 32, row * 48, 32, 48);
+            }
+        }
+
+        // World bounds
+        this.physics.world.setBounds(0, 0, 800, 600);
+
+        // Create scene
+        this.createGround();
+        this.createServer();
+        this.createProps();
+        this.createNPCs();
+
+        // Create player at spawn position
+        this.createPlayer(spawnX, spawnY);
+
+        // Camera
+        this.cameras.main.setBounds(0, 0, 800, 600);
+        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+        // Controls
+        this.cursors = this.input.keyboard.createCursorKeys();
+        this.eKey = this.input.keyboard.addKey('E');
+
+        // Info & interactables
+        this.infoPanel = new InfoPanel(this);
+        this.interactables = [];
+        this.createInteractables();
+
+        // Timeline
+        this.timelineBar = new TimelineBar(this, 'modern');
+
+        // Interaction text
+        this.interactionText = this.add.text(400, 560, '', {
+            fontSize: '16px',
+            fill: '#ffffff',
+            backgroundColor: '#000000',
+            padding: { x: 10, y: 5 }
+        }).setOrigin(0.5).setDepth(100).setVisible(false);
+
+        // Screen glow effects
+        this.createScreenEffects();
+
+        // Title card
+        this.showEraTitleCard('MODERN/DIGITAL AGE', '1950-2020 CE');
+
+        this.lastDirection = 'down';
+        this.playerSpeed = 140;
+    }
+
+    createGround() {
+        const tileSize = 32;
+        const cols = 25;
+        const rows = 19;
+
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                this.add.image(x * tileSize + 16, y * tileSize + 16, 'modern-floor');
+            }
+        }
+    }
+
+    createServer() {
+        const serverX = 400;
+        const serverY = 80;
+
+        // Server rack (portal)
+        this.server = this.physics.add.sprite(serverX, serverY, 'server');
+        this.server.setImmovable(true);
+
+        // Sign
+        this.add.text(serverX, serverY - 50, '⬆ DATA CENTER\nEnd Journey', {
+            fontSize: '14px',
+            fill: '#ffffff',
+            backgroundColor: '#2a2a2a',
+            padding: { x: 8, y: 4 },
+            align: 'center'
+        }).setOrigin(0.5).setDepth(10);
+    }
+
+    createProps() {
+        // Computers
+        this.add.image(150, 250, 'computer').setDepth(5);
+        this.add.image(550, 300, 'computer').setDepth(5);
+
+        // Circuit boards
+        this.add.image(200, 450, 'circuit').setDepth(5).setScale(1.5);
+        this.add.image(500, 470, 'circuit').setDepth(5).setScale(1.5);
+    }
+
+    createNPCs() {
+        this.npcs = [];
+        this.npcProps = []; // Track props that move with NPCs
+
+        // NPC 1: Programmer typing (left side, upper-mid)
+        const programmer = this.add.sprite(180, 260, 'modern-programmer');
+        programmer.setDepth(50);
+        programmer.activity = 'programmer';
+        programmer.workFrame = 0;
+        this.npcs.push(programmer);
+
+        // Laptop prop for programmer
+        const laptop1 = this.add.rectangle(180, 275, 20, 12, 0x6a6a6a).setDepth(49);
+        programmer.prop = laptop1;
+
+        // Keyboard prop (visual detail)
+        const keyboard1 = this.add.rectangle(180, 280, 24, 8, 0x4a4a4a).setDepth(48);
+
+        // Animate programmer
+        this.time.addEvent({
+            delay: 500,
+            callback: () => {
+                programmer.workFrame = (programmer.workFrame + 1) % 4;
+                programmer.setFrame(programmer.workFrame);
+            },
+            loop: true
+        });
+
+        // NPC 2: Tech Support Worker (right side, mid)
+        const techSupport = this.add.sprite(570, 310, 'modern-tech');
+        techSupport.setDepth(50);
+        techSupport.activity = 'tech';
+        techSupport.workFrame = 0;
+        this.npcs.push(techSupport);
+
+        // Circuit board/tools prop
+        const circuitBoard = this.add.rectangle(585, 325, 16, 12, 0x4a8a6a).setDepth(49);
+        techSupport.prop = circuitBoard;
+
+        // Animate tech support
+        this.time.addEvent({
+            delay: 550,
+            callback: () => {
+                techSupport.workFrame = (techSupport.workFrame + 1) % 4;
+                techSupport.setFrame(techSupport.workFrame);
+                // Circuit board "tilts" as tech works
+                circuitBoard.rotation = (techSupport.workFrame % 2) * 0.1;
+            },
+            loop: true
+        });
+
+        // NPC 3: Desk Worker (bottom center-left)
+        const deskWorker = this.add.sprite(300, 470, 'modern-desk');
+        deskWorker.setDepth(50);
+        deskWorker.activity = 'desk';
+        deskWorker.workFrame = 0;
+        this.npcs.push(deskWorker);
+
+        // Desktop computer prop
+        const desktop = this.add.rectangle(300, 485, 22, 14, 0x5a5a5a).setDepth(49);
+        deskWorker.prop = desktop;
+
+        // Monitor prop (visual detail)
+        const monitor = this.add.rectangle(300, 480, 18, 12, 0x2a2a2a).setDepth(48);
+
+        // Animate desk worker
+        this.time.addEvent({
+            delay: 600,
+            callback: () => {
+                deskWorker.workFrame = (deskWorker.workFrame + 1) % 4;
+                deskWorker.setFrame(deskWorker.workFrame);
+            },
+            loop: true
+        });
+
+        // NPC 4: IT Technician near servers (top right)
+        const itTech = this.add.sprite(650, 240, 'modern-it-tech');
+        itTech.setDepth(50);
+        itTech.activity = 'it-tech';
+        itTech.workFrame = 0;
+        this.npcs.push(itTech);
+
+        // Server cables/tools prop
+        const serverCables = this.add.rectangle(665, 250, 12, 4, 0x4a6a8a).setDepth(49);
+        itTech.prop = serverCables;
+
+        // Animate IT tech
+        this.time.addEvent({
+            delay: 580,
+            callback: () => {
+                itTech.workFrame = (itTech.workFrame + 1) % 4;
+                itTech.setFrame(itTech.workFrame);
+                // Cables move as tech works
+                serverCables.x = 665 + (itTech.workFrame % 2) * 2;
+            },
+            loop: true
+        });
+    }
+
+    createScreenEffects() {
+        // Create blue glow particle
+        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
+        graphics.fillStyle(0x4a6a8a);
+        graphics.fillCircle(4, 4, 4);
+        graphics.generateTexture('screen-glow', 8, 8);
+        graphics.destroy();
+
+        // Enhanced screen glow from computers (more aggressive)
+        this.add.particles(150, 230, 'screen-glow', {
+            speed: { min: 8, max: 20 },
+            scale: { start: 0.5, end: 0 },
+            alpha: { start: 0.6, end: 0 },
+            lifespan: 800,
+            frequency: 200,
+            blendMode: 'ADD'
+        });
+
+        this.add.particles(550, 290, 'screen-glow', {
+            speed: { min: 8, max: 20 },
+            scale: { start: 0.5, end: 0 },
+            alpha: { start: 0.6, end: 0 },
+            lifespan: 800,
+            frequency: 200,
+            blendMode: 'ADD'
+        });
+
+        // Desk worker screen glow (flickering more)
+        this.add.particles(300, 470, 'screen-glow', {
+            speed: { min: 5, max: 12 },
+            scale: { start: 0.4, end: 0 },
+            alpha: { start: 0.5, end: 0 },
+            lifespan: 600,
+            frequency: 150,
+            tint: 0x4a8a6a, // Green tint
+            blendMode: 'ADD'
+        });
+
+        // Blinking LED particles on server rack (top right)
+        // Red LED
+        this.add.particles(650, 230, 'screen-glow', {
+            speed: { min: 0, max: 2 },
+            scale: { start: 0.15, end: 0.15 },
+            alpha: { start: 1, end: 0 },
+            lifespan: 500,
+            frequency: 1000,
+            tint: 0xff0000,
+            blendMode: 'ADD'
+        });
+
+        // Green LED
+        this.add.particles(655, 235, 'screen-glow', {
+            speed: { min: 0, max: 2 },
+            scale: { start: 0.15, end: 0.15 },
+            alpha: { start: 1, end: 0 },
+            lifespan: 700,
+            frequency: 800,
+            tint: 0x00ff00,
+            blendMode: 'ADD'
+        });
+
+        // Yellow LED
+        this.add.particles(660, 240, 'screen-glow', {
+            speed: { min: 0, max: 2 },
+            scale: { start: 0.15, end: 0.15 },
+            alpha: { start: 1, end: 0 },
+            lifespan: 600,
+            frequency: 900,
+            tint: 0xffff00,
+            blendMode: 'ADD'
+        });
+
+        // Data flow particles (horizontal streaks between computers)
+        this.add.particles(200, 250, 'screen-glow', {
+            speed: { min: 50, max: 100 },
+            angle: 0, // Moving right
+            scale: { start: 0.3, end: 0.1 },
+            alpha: { start: 0.8, end: 0 },
+            lifespan: 1000,
+            frequency: 500,
+            tint: 0x4a8a6a, // Green data
+            blendMode: 'ADD'
+        });
+
+        // Data flow from computer to desk worker
+        this.add.particles(180, 240, 'screen-glow', {
+            speed: { min: 40, max: 80 },
+            angle: { min: 80, max: 100 }, // Moving down
+            scale: { start: 0.25, end: 0.1 },
+            alpha: { start: 0.7, end: 0 },
+            lifespan: 1200,
+            frequency: 600,
+            tint: 0x6a6aaa, // Blue data
+            blendMode: 'ADD'
+        });
+    }
+
+    createPlayer(x, y) {
+        this.player = this.physics.add.sprite(x, y, 'player-modern');
+        this.player.setCollideWorldBounds(true);
+        this.player.setDepth(50);
+
+        // Animations (with existence checks to prevent duplicates)
+        if (!this.anims.exists('modern-walk-down')) {
+            this.anims.create({
+                key: 'modern-walk-down',
+                frames: this.anims.generateFrameNumbers('player-modern', { start: 0, end: 2 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('modern-walk-left')) {
+            this.anims.create({
+                key: 'modern-walk-left',
+                frames: this.anims.generateFrameNumbers('player-modern', { start: 3, end: 5 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('modern-walk-right')) {
+            this.anims.create({
+                key: 'modern-walk-right',
+                frames: this.anims.generateFrameNumbers('player-modern', { start: 6, end: 8 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+        if (!this.anims.exists('modern-walk-up')) {
+            this.anims.create({
+                key: 'modern-walk-up',
+                frames: this.anims.generateFrameNumbers('player-modern', { start: 9, end: 11 }),
+                frameRate: 8,
+                repeat: -1
+            });
+        }
+
+        // Collision
+        this.physics.add.overlap(this.player, this.server, () => {
+            if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+                this.enterNextEra();
+            } else {
+                this.interactionText.setText('Press E to complete journey');
+                this.interactionText.setVisible(true);
+                this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
+            }
+        });
+    }
+
+    createInteractables() {
+        const pcInfo = {
+            title: 'Personal Computer',
+            content: 'The first PC (1977) had 4KB RAM and cost $1,298. Your smartphone has 4 MILLION times more memory!',
+            icon: '💻'
+        };
+        this.interactables.push(createInteractable(this, 150, 250, 60, 50, pcInfo));
+
+        const internetInfo = {
+            title: 'The Internet',
+            content: 'ARPANET (1969) connected 4 computers. Today\'s internet has 5+ billion users and 200 billion devices connected.',
+            icon: '🌐'
+        };
+        this.interactables.push(createInteractable(this, 300, 350, 80, 80, internetInfo));
+
+        const mobileInfo = {
+            title: 'Mobile Phones',
+            content: 'The first cell phone (1983) weighed 2 pounds and cost $4,000. Battery life? 30 minutes. Today\'s phones are 100x more powerful than 1969\'s Apollo computer!',
+            icon: '📱'
+        };
+        this.interactables.push(createInteractable(this, 550, 300, 60, 50, mobileInfo));
+
+        const genomeInfo = {
+            title: 'Human Genome',
+            content: 'Sequencing the first human genome (2003) took 13 years and $3B. Today it takes 1 day and $600!',
+            icon: '🧬'
+        };
+        this.interactables.push(createInteractable(this, 200, 150, 80, 80, genomeInfo));
+
+        const socialInfo = {
+            title: 'Social Media',
+            content: 'Facebook reached 1 billion users in 8 years (2012). It took TV 13 years, radio 38 years, and telephone 75 years!',
+            icon: '📲'
+        };
+        this.interactables.push(createInteractable(this, 600, 450, 80, 80, socialInfo));
+
+        const renewableInfo = {
+            title: 'Renewable Energy',
+            content: 'Solar panel efficiency doubled from 15% (2000) to 30% (2020). Solar is now cheaper than coal in most of the world!',
+            icon: '☀️'
+        };
+        this.interactables.push(createInteractable(this, 150, 500, 80, 80, renewableInfo));
+    }
+
+    showEraTitleCard(title, subtitle) {
+        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+        const titleText = this.add.text(400, 280, title, {
+            fontSize: '48px',
+            fill: '#4a6a8a',
+            fontStyle: 'bold',
+            align: 'center'
+        }).setOrigin(0.5).setDepth(301);
+        const subtitleText = this.add.text(400, 340, subtitle, {
+            fontSize: '24px',
+            fill: '#f3f4f6',
+            align: 'center'
+        }).setOrigin(0.5).setDepth(301);
+
+        this.time.delayedCall(3000, () => {
+            this.tweens.add({
+                targets: [titleCard, titleText, subtitleText],
+                alpha: 0,
+                duration: 1000,
+                onComplete: () => {
+                    titleCard.destroy();
+                    titleText.destroy();
+                    subtitleText.destroy();
+                }
+            });
+        });
+    }
+
+    update() {
+        if (!this.player) return;
+
+        const speed = this.playerSpeed;
+        this.player.setVelocity(0);
+
+        if (this.cursors.left.isDown) {
+            this.player.setVelocityX(-speed);
+            this.player.play('modern-walk-left', true);
+            this.lastDirection = 'left';
+        } else if (this.cursors.right.isDown) {
+            this.player.setVelocityX(speed);
+            this.player.play('modern-walk-right', true);
+            this.lastDirection = 'right';
+        } else if (this.cursors.up.isDown) {
+            this.player.setVelocityY(-speed);
+            this.player.play('modern-walk-up', true);
+            this.lastDirection = 'up';
+        } else if (this.cursors.down.isDown) {
+            this.player.setVelocityY(speed);
+            this.player.play('modern-walk-down', true);
+            this.lastDirection = 'down';
+        } else {
+            this.player.stop();
+            const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
+            this.player.setFrame(idleFrames[this.lastDirection]);
+        }
+
+        // Check interactables
+        this.interactables.forEach(interactable => {
+            const distance = Phaser.Math.Distance.Between(
+                this.player.x, this.player.y,
+                interactable.x, interactable.y
+            );
+
+            if (distance < 80) {
+                interactable.indicator.setVisible(true);
+                if (!interactable.promptShown) {
+                    this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
+                    this.interactionText.setVisible(true);
+                    interactable.promptShown = true;
+                }
+
+                if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+                    this.infoPanel.toggle(interactable.infoData);
+                }
+            } else {
+                interactable.indicator.setVisible(false);
+                if (interactable.promptShown) {
+                    this.interactionText.setVisible(false);
+                    interactable.promptShown = false;
+                }
+            }
+        });
+    }
+
+    enterNextEra() {
+        // Show completion message
+        const completionCard = this.add.rectangle(400, 300, 600, 400, 0x000000, 0.9).setDepth(300);
+        const congratsText = this.add.text(400, 220, 'Journey Complete!', {
+            fontSize: '48px',
+            fill: '#4a6a8a',
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setDepth(301);
+        const messageText = this.add.text(400, 300, 'You\'ve traveled through\n2.5 million years of human innovation!\n\nFrom cave fires to computers,\neach era built upon the last.', {
+            fontSize: '20px',
+            fill: '#f3f4f6',
+            align: 'center',
+            lineSpacing: 10
+        }).setOrigin(0.5).setDepth(301);
+        const restartText = this.add.text(400, 420, 'Press SPACE to restart', {
+            fontSize: '18px',
+            fill: '#d4a832'
+        }).setOrigin(0.5).setDepth(301);
+
+        // Blinking restart prompt
+        this.tweens.add({
+            targets: restartText,
+            alpha: 0.3,
+            duration: 800,
+            yoyo: true,
+            repeat: -1
+        });
+
+        // Restart on space
+        const spaceKey = this.input.keyboard.addKey('SPACE');
+        this.input.keyboard.once('keydown-SPACE', () => {
+            this.cameras.main.fadeOut(1000);
+            this.time.delayedCall(1000, () => {
+                this.scene.start('CavemanScene', { spawnX: 400, spawnY: 500 });
+            });
         });
     }
 }
@@ -5185,7 +8089,7 @@ const config = {
             debug: false
         }
     },
-    scene: [CavemanScene, FarmingScene, MedievalScene, RenaissanceScene],
+    scene: [CavemanScene, FarmingScene, AncientScene, MedievalScene, RenaissanceScene, IndustrialScene, ModernScene],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
