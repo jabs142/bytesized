@@ -1,0 +1,19 @@
+{
+  "name": "bytesized",
+  "version": "1.0.0",
+  "description": "Interactive research stories presented as retro Game Boy cartridges",
+  "scripts": {
+    "start": "live-server --port=8000 --open=/",
+    "dev": "live-server --port=8000 --open=/ --watch=.",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "data-visualization",
+    "interactive-stories",
+    "research",
+    "scrollytelling"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {}
+}

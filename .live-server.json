@@ -1,0 +1,11 @@
+{
+  "port": 8000,
+  "host": "localhost",
+  "root": ".",
+  "open": true,
+  "ignore": ".git,.venv,*.py,data/*.csv,notebooks",
+  "file": "index.html",
+  "wait": 100,
+  "logLevel": 1,
+  "middleware": []
+}

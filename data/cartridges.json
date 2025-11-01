@@ -1,14 +1,14 @@
 [
   {
-    "id": "pcos-symptoms",
-    "title": "PCOS Hidden Symptoms",
-    "subtitle": "Surprising Connections",
-    "color": "#8BBE55",
-    "icon": "🩺",
-    "pattern": "medical",
-    "labelText": "reproductive health",
-    "description": "Discover which PCOS symptoms are surprisingly connected but rarely discussed",
-    "url": "/pcos-surprise-discovery/frontend/pcos-symptoms.html",
+    "id": "evolution-invention",
+    "title": "Evolution of Invention",
+    "subtitle": "Walking Through Time",
+    "color": "#D4A574",
+    "icon": "💡",
+    "pattern": "timeline",
+    "labelText": "history",
+    "description": "Explore human innovation from stone tools to the printing press",
+    "url": "/evolution-of-invention/frontend/index.html",
     "status": "available"
   },
   {
@@ -21,6 +21,18 @@
     "labelText": "pandemic data",
     "description": "Interactive timeline of the COVID-19 pandemic",
     "url": "/covid-scrollytelling/frontend/index.html",
+    "status": "available"
+  },
+  {
+    "id": "pcos-symptoms",
+    "title": "PCOS Hidden Symptoms",
+    "subtitle": "Surprising Connections",
+    "color": "#8BBE55",
+    "icon": "🩺",
+    "pattern": "medical",
+    "labelText": "reproductive health",
+    "description": "Discover which PCOS symptoms are surprisingly connected but rarely discussed",
+    "url": "/pcos-surprise-discovery/frontend/pcos-symptoms.html",
     "status": "available"
   },
   {
@@ -45,18 +57,6 @@
     "labelText": "genetic condition",
     "description": "Discovering patterns in Ehlers-Danlos Syndrome",
     "url": "/eds-symptom-discovery/frontend/index.html",
-    "status": "available"
-  },
-  {
-    "id": "evolution-invention",
-    "title": "Evolution of Invention",
-    "subtitle": "Walking Through Time",
-    "color": "#D4A574",
-    "icon": "💡",
-    "pattern": "timeline",
-    "labelText": "history",
-    "description": "Explore human innovation from stone tools to the printing press",
-    "url": "/evolution-of-invention/frontend/index.html",
     "status": "available"
   }
 ]

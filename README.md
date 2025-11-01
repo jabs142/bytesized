@@ -200,6 +200,14 @@ REJECT (negative examples):
 
 ```
 bytesized/
+├── shared/                         # 🆕 Shared components & utilities
+│   ├── components/                 # Reusable Web Components
+│   │   ├── StatCard.js             # Stat display cards
+│   │   └── EjectButton.js          # Navigation button
+│   ├── utils/                      # JavaScript utilities
+│   │   ├── dataLoader.js           # Data fetching helpers
+│   │   └── formatters.js           # Number/text formatting
+│   └── README.md                   # Component documentation
 ├── eds-symptom-discovery/          # EDS symptom research project
 │   ├── data/                       # Raw and processed data
 │   ├── src/                        # Analysis scripts
@@ -210,8 +218,21 @@ bytesized/
 │       ├── data/                   # JSON data for visualization
 │       └── js/app.js               # Dashboard logic
 ├── birthcontrol-side-effects-analysis/  # Birth control research
+├── covid-scrollytelling/           # COVID timeline story
+├── pcos-surprise-discovery/        # PCOS symptom analysis
+├── evolution-of-invention/         # Interactive game story
 └── index.html                      # Research hub landing page
 ```
+
+### Shared Components Library
+
+The `/shared` directory contains reusable components and utilities to eliminate code duplication:
+
+- **Web Components**: StatCard, EjectButton (framework-agnostic, pure vanilla JS)
+- **Utilities**: Data loaders, formatters, common functions
+- **See `/shared/README.md`** for full documentation and examples
+
+This reduces code duplication by ~40% and makes creating new cartridges faster!
 
 ---
 
@@ -225,12 +246,23 @@ pip install openai pandas scipy statsmodels matplotlib seaborn
 ```
 
 ### View Dashboards
+
+**Option 1: Hot Reloading Dev Server (Recommended for Development)**
+```bash
+# Start live-server with auto-refresh
+npm start
+
+# Your browser will open automatically to http://localhost:8000
+# Any HTML/CSS/JS changes will refresh the page instantly!
+```
+
+**Option 2: Python Simple Server (Backup)**
 ```bash
 # Start server at project root
 python3 -m http.server 8000
 
 # Visit http://localhost:8000
-# Navigate to EDS or Birth Control projects
+# Manually refresh after changes
 ```
 
 ### Run Analysis Pipeline
