@@ -280,22 +280,22 @@
 
 /* Insertion Animation */
 .cartridge.inserting {
-  animation: insertCartridge 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  animation: insertCartridge 1.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
   z-index: 1000;
 }
 
 @keyframes insertCartridge {
   0% {
-    transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0) translateX(0);
     opacity: 1;
   }
-  40% {
-    transform: scale(0.8) translateY(-100px) translateX(0);
+  30% {
+    transform: scale(0.85) translateY(-80px) translateX(0);
     opacity: 1;
   }
-  70% {
-    transform: scale(0.4) translateY(-200px) translateX(calc(var(--gameboy-x, 0px) - 50%));
-    opacity: 0.7;
+  60% {
+    transform: scale(0.5) translateY(-180px) translateX(calc(var(--gameboy-x, 0px) - 50%));
+    opacity: 0.8;
   }
   100% {
     transform: scale(0.1) translateY(-300px) translateX(calc(var(--gameboy-x, 0px) - 50%));

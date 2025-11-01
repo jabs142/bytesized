@@ -253,5 +253,260 @@
       "or if that just my depression"
     ],
     "selection_score": 30
+  },
+  {
+    "symptom": "nausea",
+    "mentions": 24,
+    "posts_appearing_in": 24,
+    "frequency": 0.048,
+    "surprise_signals": 0,
+    "category": "digestive issue",
+    "all_categories": {
+      "digestive issue": 10,
+      "digestive issues": 1,
+      "gastrointestinal": 5,
+      "digestive": 2,
+      "physical symptom": 4,
+      "physical": 1,
+      "gastrointestinal issue": 1
+    },
+    "sample_quotes": [
+      "it’s been making me throw up",
+      "hypoglycemic episodes that can feel like panic attacks…e.g., tremor/anxiety/muscle weakness/high heart rate/sweating/faintness/spots in vision, occasionally nausea, etc.",
+      "mainly nausea and loss of appetite",
+      "I’ve had almost persistent nausea for over a week.",
+      "occasionally nausea"
+    ],
+    "selection_score": 24
+  },
+  {
+    "symptom": "bloating",
+    "mentions": 21,
+    "posts_appearing_in": 21,
+    "frequency": 0.042,
+    "surprise_signals": 0,
+    "category": "digestive issues",
+    "all_categories": {
+      "digestive issue": 6,
+      "gastrointestinal": 1,
+      "digestive": 3,
+      "digestive issues": 7,
+      "physical symptom": 4
+    },
+    "sample_quotes": [
+      "bloating (I have IBS and lactose intolerance, so that might also play a part)",
+      "I’m not bloating as much anymore",
+      "noticing my ever present bloating",
+      "I was visibly bloated",
+      "bloatedness etc."
+    ],
+    "selection_score": 21
+  },
+  {
+    "symptom": "hair loss",
+    "mentions": 20,
+    "posts_appearing_in": 20,
+    "frequency": 0.04,
+    "surprise_signals": 0,
+    "category": "physical symptom",
+    "all_categories": {
+      "physical symptom": 6,
+      "hair issues": 2,
+      "physical": 5,
+      "hair issue": 4,
+      "physical symptoms": 1,
+      "physical health": 1,
+      "skin issue": 1
+    },
+    "sample_quotes": [
+      "I feel I lost half my hair this year.",
+      "my hair is coming out more than usual when I wash it or brush it",
+      "hair is falling out.",
+      "I lost about 1/3 of my hair in the course of a year",
+      "I’m still struggling with acne, hirsutism, and losing my hair."
+    ],
+    "selection_score": 20
+  },
+  {
+    "symptom": "brain fog",
+    "mentions": 18,
+    "posts_appearing_in": 18,
+    "frequency": 0.036,
+    "surprise_signals": 0,
+    "category": "cognitive issue",
+    "all_categories": {
+      "cognitive issue": 12,
+      "cognitive issues": 3,
+      "cognitive": 3
+    },
+    "sample_quotes": [
+      "constant tiredness and horrible brain fog",
+      "brain fog",
+      "brain fog",
+      "my brain got foggier",
+      "my brain fog came back even though I follow a ketogenic diet"
+    ],
+    "selection_score": 18
+  },
+  {
+    "symptom": "mood swings",
+    "mentions": 18,
+    "posts_appearing_in": 18,
+    "frequency": 0.036,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 16,
+      "mental health issue": 2
+    },
+    "sample_quotes": [
+      "mood swings (I do have BPD, so that might be related)",
+      "mood swings due to unstable blood glucose",
+      "mood swings due to unstable blood glucose",
+      "I didn’t want to start back taking BC bcuz I was getting mood swings during college",
+      "mood swings"
+    ],
+    "selection_score": 18
+  },
+  {
+    "symptom": "pain",
+    "mentions": 17,
+    "posts_appearing_in": 17,
+    "frequency": 0.034,
+    "surprise_signals": 0,
+    "category": "pain",
+    "all_categories": {
+      "physical symptom": 2,
+      "general pain": 1,
+      "pain": 4,
+      "general": 1,
+      "physical": 2,
+      "gynecological": 1,
+      "reproductive": 1,
+      "digestive": 1,
+      "general discomfort": 1,
+      "general symptom": 1,
+      "general health": 1,
+      "mental health": 1
+    },
+    "sample_quotes": [
+      "imma be in pain",
+      "persistent symptoms (cystic acne, more hair, pain, issues with weight, excruciating periods etc)",
+      "The pain was awful. I was bedbound and could barely walk.",
+      "sharp pain so bad I thought it was my appendix",
+      "to try and correct my pain"
+    ],
+    "selection_score": 17
+  },
+  {
+    "symptom": "pcos",
+    "mentions": 17,
+    "posts_appearing_in": 17,
+    "frequency": 0.034,
+    "surprise_signals": 0,
+    "category": "condition",
+    "all_categories": {
+      "condition": 7,
+      "endocrine issue": 1,
+      "chronic condition": 1,
+      "chronic conditions": 1,
+      "physical": 1,
+      "health condition": 1,
+      "reproductive health": 4,
+      "endocrine disorder": 1
+    },
+    "sample_quotes": [
+      "have pcos",
+      "yes I have pcos",
+      "It turns out I had PCOS",
+      "I didn’t have PCOS until the end of 5 years of Mirena IUD",
+      "I’ve had pcos since I was 15"
+    ],
+    "selection_score": 17
+  },
+  {
+    "symptom": "frustration",
+    "mentions": 17,
+    "posts_appearing_in": 17,
+    "frequency": 0.034,
+    "surprise_signals": 0,
+    "category": "mental health",
+    "all_categories": {
+      "mental health": 17
+    },
+    "sample_quotes": [
+      "It’s really frustrating and makes me feel like I’m stuck in PMS mode",
+      "I need encouraging words cause this sucks",
+      "I’m so fed up and frustrated!",
+      "it's really hard to live a normal life when I don't know when I'm going to get my period",
+      "He just felt so guilty and frustrated"
+    ],
+    "selection_score": 17
+  },
+  {
+    "symptom": "exhaustion",
+    "mentions": 15,
+    "posts_appearing_in": 15,
+    "frequency": 0.03,
+    "surprise_signals": 0,
+    "category": "fatigue",
+    "all_categories": {
+      "fatigue": 4,
+      "physical": 4,
+      "physical health": 1,
+      "mental health": 3,
+      "physical symptom": 2,
+      "general": 1
+    },
+    "sample_quotes": [
+      "i’m constantly exhausted no matter how much sleep i get",
+      "I am exhausted when I come home",
+      "I understand the pain and exhaustion wasn't normal.",
+      "I’m exhausted and have no idea what else to do.",
+      "if for some reason the insulin supply doesn’t open enough cells up to receive that glucose we will feel exhausted"
+    ],
+    "selection_score": 15
+  },
+  {
+    "symptom": "insomnia",
+    "mentions": 15,
+    "posts_appearing_in": 15,
+    "frequency": 0.03,
+    "surprise_signals": 0,
+    "category": "sleep issue",
+    "all_categories": {
+      "sleep issue": 10,
+      "sleep issues": 5
+    },
+    "sample_quotes": [
+      "I can't sleep at night",
+      "insomnia",
+      "I’m experiencing hardcore insomnia",
+      "insomnia (esp. if hypoglycemia occurs at night)",
+      "insomnia (esp. if hypoglycemia occurs at night)"
+    ],
+    "selection_score": 15
+  },
+  {
+    "symptom": "facial hair",
+    "mentions": 15,
+    "posts_appearing_in": 15,
+    "frequency": 0.03,
+    "surprise_signals": 0,
+    "category": "skin issue",
+    "all_categories": {
+      "skin issue": 10,
+      "skin issues": 2,
+      "skin": 2,
+      "physical symptom": 1
+    },
+    "sample_quotes": [
+      "the facial hair",
+      "my facial hair got worse and darker",
+      "Has anyone used a laser device from Walmart or amazon. What were your results and which one did you use?",
+      "Facial hair that I can just shave off daily? Biggest concern and it will be the end of the world if you don't use this.",
+      "if you have facial hair clean eating helps with the acne and waxing for the hair..or laser treatments."
+    ],
+    "selection_score": 15
   }
 ]

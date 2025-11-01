@@ -90,8 +90,8 @@ class Config:
     # Analysis Thresholds
     # ============================================
     TOP_N_SYMPTOMS = 30  # Only validate top 30 (efficiency!)
-    MIN_MENTION_PERCENTAGE = 0.05  # 5% of posts (25+ posts out of 500)
-    MIN_SURPRISE_SIGNALS = 20  # Threshold for "high surprise signal"
+    MIN_MENTION_PERCENTAGE = 0.03  # 3% of posts (15+ posts out of 500)
+    MIN_SURPRISE_SIGNALS = 10  # Threshold for "high surprise signal"
 
     # ============================================
     # Surprise Score Weights

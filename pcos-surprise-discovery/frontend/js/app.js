@@ -3,6 +3,24 @@
  * Displays symptoms ranked by surprise factor
  */
 
+// Medical Term Glossary (factual definitions)
+const MEDICAL_TERMS = {
+    'hirsutism': 'excessive hair growth in areas typical of male pattern',
+    'insulin resistance': 'reduced cellular response to insulin',
+    'hyperandrogenism': 'elevated androgen hormone levels',
+    'anovulation': 'absence of ovulation',
+    'oligo-ovulation': 'infrequent ovulation',
+    'oligoovulation': 'infrequent ovulation',
+    'polycystic ovaries': 'ovaries with multiple follicular cysts',
+    'androgen': 'male sex hormone (e.g., testosterone)',
+    'testosterone': 'primary male sex hormone',
+    'acanthosis nigricans': 'darkened, thickened skin patches',
+    'metabolic syndrome': 'cluster of metabolic risk factors',
+    'amenorrhea': 'absence of menstrual periods',
+    'oligomenorrhea': 'infrequent menstrual periods',
+    'dysmenorrhea': 'painful menstruation'
+};
+
 // State
 let allSymptoms = [];
 let currentFilter = 'all';
@@ -27,7 +45,6 @@ async function loadData() {
         const data = await response.json();
         allSymptoms = data;
 
-        updateStats();
         renderSymptoms();
 
     } catch (error) {
@@ -39,18 +56,6 @@ async function loadData() {
             </div>
         `;
     }
-}
-
-/**
- * Update statistics cards
- */
-function updateStats() {
-    const verySurprising = allSymptoms.filter(s =>
-        s.surprise_classification === '🔥 VERY SURPRISING'
-    ).length;
-
-    document.getElementById('totalSymptoms').textContent = allSymptoms.length;
-    document.getElementById('surprisingCount').textContent = verySurprising;
 }
 
 /**
@@ -111,8 +116,11 @@ function createSymptomCard(symptom, rank) {
         classColor = 'somewhat-surprising';
     }
 
-    // Format symptom name
-    const symptomName = symptom.symptom.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    // Format symptom name with medical term definition if available
+    const rawSymptomName = symptom.symptom.replace(/_/g, ' ');
+    const symptomName = rawSymptomName.replace(/\b\w/g, l => l.toUpperCase());
+    const lowerSymptom = rawSymptomName.toLowerCase();
+    const definition = MEDICAL_TERMS[lowerSymptom] ? ` (${MEDICAL_TERMS[lowerSymptom]})` : '';
 
     // Build evidence list
     const evidenceItems = [];
@@ -148,7 +156,7 @@ function createSymptomCard(symptom, rank) {
             <div class="symptom-header">
                 <div class="symptom-rank">#${rank}</div>
                 <div class="symptom-info">
-                    <h3>${classEmoji} ${symptomName}</h3>
+                    <h3>${classEmoji} ${symptomName}${definition ? `<span class="medical-term-definition">${definition}</span>` : ''}</h3>
                     <div class="symptom-meta">
                         <span class="surprise-score">Score: ${symptom.surprise_score.toFixed(2)}</span>
                         <span class="tier-badge tier-${tier}">${tierLabel}</span>

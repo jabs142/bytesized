@@ -416,6 +416,17 @@ code, pre {
     font-weight: 600;
 }
 
+.medical-term-definition {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+    margin-top: 0.25rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
 .symptom-meta {
     display: flex;
     flex-wrap: wrap;
@@ -869,6 +880,189 @@ blockquote {
     .header h1 {
         font-size: 1.125rem;
     }
+}
+
+/* ===== PCOS Background Section ===== */
+.pcos-background-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.background-card,
+.criteria-card,
+.study-context-card {
+    background: var(--bg-card);
+    border: var(--pixel-border);
+    border-radius: var(--radius-pixel);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.background-card h2,
+.criteria-card h2,
+.study-context-card h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.875rem;
+    color: var(--gb-darkest);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.criteria-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.criteria-section:last-child {
+    margin-bottom: 0;
+}
+
+.criteria-section h3 {
+    font-size: 0.95rem;
+    color: var(--gb-dark);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.criteria-section p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.criteria-section ol {
+    margin-left: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+}
+
+.criteria-section ol li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.8;
+}
+
+.study-context-card code {
+    background: rgba(15, 56, 15, 0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: var(--radius-pixel);
+    font-size: 0.875em;
+    border: 1px solid var(--gb-light);
+}
+
+/* ===== Statistics Section ===== */
+.stats-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: var(--pixel-border);
+    border-radius: var(--radius-pixel);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.stat-value {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--gb-darkest);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Methodology Section ===== */
+.methodology-section {
+    background: var(--gb-darkest);
+    color: var(--gb-lightest);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+}
+
+.methodology-section h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.875rem;
+    color: var(--gb-lightest);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.method-card {
+    background: rgba(139, 172, 15, 0.15);
+    border: 2px solid var(--gb-light);
+    border-radius: var(--radius-pixel);
+    padding: var(--spacing-md);
+}
+
+.method-card h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.625rem;
+    color: var(--gb-lightest);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.method-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.method-card ul li {
+    padding-left: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    line-height: 1.8;
+}
+
+.method-card ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--gb-light);
+}
+
+.disclaimer-card {
+    background: rgba(139, 172, 15, 0.2);
+    border: 2px solid var(--gb-lightest);
+    border-radius: var(--radius-pixel);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.disclaimer-card h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.625rem;
+    color: var(--gb-lightest);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.disclaimer-card p {
+    line-height: 1.8;
+    font-size: 0.9rem;
 }
 
 /* ===== Print Styles ===== */

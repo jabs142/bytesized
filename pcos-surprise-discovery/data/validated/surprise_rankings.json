@@ -232,6 +232,64 @@
     ]
   },
   {
+    "symptom": "nausea",
+    "surprise_classification": "⚠️ SOMEWHAT SURPRISING",
+    "surprise_score": 1.06,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Underappreciated connection - patients notice but doctors may not emphasize",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 24,
+      "reddit_posts": 24,
+      "reddit_frequency": 0.048,
+      "surprise_signals": 0,
+      "pubmed_papers": 36,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "it’s been making me throw up",
+      "hypoglycemic episodes that can feel like panic attacks…e.g., tremor/anxiety/muscle weakness/high heart rate/sweating/faintness/spots in vision, occasionally nausea, etc.",
+      "mainly nausea and loss of appetite"
+    ]
+  },
+  {
+    "symptom": "bloating",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.92,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 21,
+      "reddit_posts": 21,
+      "reddit_frequency": 0.042,
+      "surprise_signals": 0,
+      "pubmed_papers": 5,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "bloating (I have IBS and lactose intolerance, so that might also play a part)",
+      "I’m not bloating as much anymore",
+      "noticing my ever present bloating"
+    ]
+  },
+  {
     "symptom": "hirsutism",
     "surprise_classification": "Expected",
     "surprise_score": 0.88,
@@ -261,6 +319,180 @@
     ]
   },
   {
+    "symptom": "hair loss",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.88,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 20,
+      "reddit_posts": 20,
+      "reddit_frequency": 0.04,
+      "surprise_signals": 0,
+      "pubmed_papers": 47,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "I feel I lost half my hair this year.",
+      "my hair is coming out more than usual when I wash it or brush it",
+      "hair is falling out."
+    ]
+  },
+  {
+    "symptom": "mood swings",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.79,
+    "tier": 4,
+    "tier_label": "Tier 4: Emerging pattern",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 18,
+      "reddit_posts": 18,
+      "reddit_frequency": 0.036,
+      "surprise_signals": 0,
+      "pubmed_papers": 3,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "mood swings (I do have BPD, so that might be related)",
+      "mood swings due to unstable blood glucose",
+      "mood swings due to unstable blood glucose"
+    ]
+  },
+  {
+    "symptom": "pain",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.75,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 17,
+      "reddit_posts": 17,
+      "reddit_frequency": 0.034,
+      "surprise_signals": 0,
+      "pubmed_papers": 187,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "imma be in pain",
+      "persistent symptoms (cystic acne, more hair, pain, issues with weight, excruciating periods etc)",
+      "The pain was awful. I was bedbound and could barely walk."
+    ]
+  },
+  {
+    "symptom": "pcos",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.75,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 17,
+      "reddit_posts": 17,
+      "reddit_frequency": 0.034,
+      "surprise_signals": 0,
+      "pubmed_papers": 11589,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "have pcos",
+      "yes I have pcos",
+      "It turns out I had PCOS"
+    ]
+  },
+  {
+    "symptom": "frustration",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.75,
+    "tier": 4,
+    "tier_label": "Tier 4: Emerging pattern",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 17,
+      "reddit_posts": 17,
+      "reddit_frequency": 0.034,
+      "surprise_signals": 0,
+      "pubmed_papers": 3,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "It’s really frustrating and makes me feel like I’m stuck in PMS mode",
+      "I need encouraging words cause this sucks",
+      "I’m so fed up and frustrated!"
+    ]
+  },
+  {
+    "symptom": "brain fog",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.72,
+    "tier": 4,
+    "tier_label": "Tier 4: Emerging pattern",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 18,
+      "reddit_posts": 18,
+      "reddit_frequency": 0.036,
+      "surprise_signals": 0,
+      "pubmed_papers": 0,
+      "has_research": false,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": false
+    },
+    "sample_quotes": [
+      "constant tiredness and horrible brain fog",
+      "brain fog",
+      "brain fog"
+    ]
+  },
+  {
     "symptom": "acne",
     "surprise_classification": "Expected",
     "surprise_score": 0.7,
@@ -287,6 +519,93 @@
       "much acne anymore (it used to be worse when I was younger)",
       "my acne became so terrible",
       "I’m still struggling with acne"
+    ]
+  },
+  {
+    "symptom": "exhaustion",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.66,
+    "tier": 4,
+    "tier_label": "Tier 4: Emerging pattern",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 15,
+      "reddit_posts": 15,
+      "reddit_frequency": 0.03,
+      "surprise_signals": 0,
+      "pubmed_papers": 4,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "i’m constantly exhausted no matter how much sleep i get",
+      "I am exhausted when I come home",
+      "I understand the pain and exhaustion wasn't normal."
+    ]
+  },
+  {
+    "symptom": "insomnia",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.66,
+    "tier": 2,
+    "tier_label": "Tier 2: Research-backed",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": false,
+      "reddit_mentions": 15,
+      "reddit_posts": 15,
+      "reddit_frequency": 0.03,
+      "surprise_signals": 0,
+      "pubmed_papers": 18,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": true,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "I can't sleep at night",
+      "insomnia",
+      "I’m experiencing hardcore insomnia"
+    ]
+  },
+  {
+    "symptom": "facial hair",
+    "surprise_classification": "Expected",
+    "surprise_score": 0.3,
+    "tier": 1,
+    "tier_label": "Tier 1: Diagnostic",
+    "tier_description": "Known PCOS symptom or expected association",
+    "evidence": {
+      "in_criteria": true,
+      "reddit_mentions": 15,
+      "reddit_posts": 15,
+      "reddit_frequency": 0.03,
+      "surprise_signals": 0,
+      "pubmed_papers": 10,
+      "has_research": true,
+      "awareness_level": "medium"
+    },
+    "surprise_factors": {
+      "not_in_criteria": false,
+      "low_public_awareness": false,
+      "high_surprise_signals": false,
+      "research_validated": true
+    },
+    "sample_quotes": [
+      "the facial hair",
+      "my facial hair got worse and darker",
+      "Has anyone used a laser device from Walmart or amazon. What were your results and which one did you use?"
     ]
   }
 ]

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCOS Surprising Symptoms Discovery</title>
-    <meta name="description" content="Discover which PCOS symptoms are surprisingly connected but rarely discussed by doctors">
+    <meta name="description" content="Analysis of 500 Reddit posts identifies PCOS symptoms frequently discussed in patient communities, ranked by their representation in medical literature">
 
     <!-- Retro Game Boy Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,37 +23,49 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1>🔥 PCOS Surprising Symptoms</h1>
-            <p class="subtitle">Discover hidden symptom connections doctors rarely mention</p>
+            <h1>🔥 PCOS Symptom Analysis</h1>
+            <p class="subtitle">Reddit patient discussions analyzed against medical literature</p>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Introduction -->
-            <section class="intro-section">
-                <div class="intro-card">
-                    <h2>What is this?</h2>
-                    <p>This tool discovers which PCOS symptoms are <strong>surprisingly connected</strong> but rarely discussed in medical appointments. Based on analysis of 500+ patient experiences and medical research.</p>
+            <!-- PCOS Background -->
+            <section class="pcos-background-section">
+                <div class="background-card">
+                    <h2>What is PCOS?</h2>
+                    <p><strong>Polycystic Ovary Syndrome (PCOS)</strong> is a hormonal disorder affecting approximately 10% of women of reproductive age. It is characterized by a combination of reproductive and metabolic symptoms.</p>
                 </div>
-            </section>
 
-            <!-- Stats Overview -->
-            <section class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalPosts">500</div>
-                        <div class="stat-label">Patient Experiences</div>
+                <div class="criteria-card">
+                    <h2>Diagnostic Criteria</h2>
+
+                    <div class="criteria-section">
+                        <h3>Rotterdam Criteria (2003) — Most Widely Used</h3>
+                        <p>Diagnosis requires <strong>2 of the following 3 criteria:</strong></p>
+                        <ol>
+                            <li>Oligo-ovulation or anovulation (irregular or absent ovulation)</li>
+                            <li>Clinical or biochemical hyperandrogenism (elevated male hormones)</li>
+                            <li>Polycystic ovaries on ultrasound</li>
+                        </ol>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalSymptoms">-</div>
-                        <div class="stat-label">Symptoms Discovered</div>
+
+                    <div class="criteria-section">
+                        <h3>NIH Criteria (1990)</h3>
+                        <p>Diagnosis requires <strong>both:</strong></p>
+                        <ol>
+                            <li>Hyperandrogenism (clinical or biochemical)</li>
+                            <li>Chronic anovulation</li>
+                        </ol>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="surprisingCount">-</div>
-                        <div class="stat-label">Surprising Connections</div>
-                    </div>
+                </div>
+
+                <div class="study-context-card">
+                    <h2>This Analysis</h2>
+                    <p>This tool analyzes 500 Reddit posts from r/PCOS to identify which symptoms are frequently reported in patient discussions and compares them with their representation in medical literature (PubMed database).</p>
+                    <p>Symptoms are ranked by a "surprise score" calculated as: <code>(Reddit frequency) × (1 - normalized PubMed coverage)</code></p>
+                    <p>A high surprise score indicates frequent patient discussion with relatively fewer research papers.</p>
                 </div>
             </section>
 
@@ -85,21 +97,21 @@
                         <span class="legend-icon">🔥</span>
                         <div>
                             <strong>Very Surprising</strong>
-                            <p>Hidden connection - strong patient signal but rarely discussed by doctors</p>
+                            <p>High Reddit discussion frequency with relatively lower PubMed research coverage</p>
                         </div>
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon">⚠️</span>
                         <div>
                             <strong>Somewhat Surprising</strong>
-                            <p>Underappreciated connection - patients notice but doctors may not emphasize</p>
+                            <p>Moderate Reddit frequency with moderate research coverage</p>
                         </div>
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon">✓</span>
                         <div>
                             <strong>Expected</strong>
-                            <p>Known PCOS symptom used in diagnosis or commonly discussed</p>
+                            <p>Well-represented in both patient discussions and medical literature</p>
                         </div>
                     </div>
                 </div>
@@ -109,22 +121,22 @@
                     <div class="legend-item">
                         <span class="tier-badge tier-1">Tier 1</span>
                         <div>
-                            <strong>Diagnostic</strong>
-                            <p>Used in official PCOS diagnostic criteria</p>
+                            <strong>Diagnostic Criteria</strong>
+                            <p>Part of Rotterdam or NIH diagnostic criteria for PCOS</p>
                         </div>
                     </div>
                     <div class="legend-item">
                         <span class="tier-badge tier-2">Tier 2</span>
                         <div>
-                            <strong>Research-backed</strong>
-                            <p>Validated by medical research papers</p>
+                            <strong>Research-Validated</strong>
+                            <p>Cross-referenced with PubMed medical research database</p>
                         </div>
                     </div>
                     <div class="legend-item">
                         <span class="tier-badge tier-3">Tier 3</span>
                         <div>
-                            <strong>Strong patient signal</strong>
-                            <p>Frequently mentioned by patients, emerging research</p>
+                            <strong>Patient-Reported</strong>
+                            <p>Reported in Reddit patient community discussions (r/PCOS)</p>
                         </div>
                     </div>
                 </div>
@@ -135,9 +147,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>🔬 Based on analysis of 500 PCOS patient experiences + medical literature validation</p>
-            <p>⚠️ This tool discovers patterns in patient discussions, not medical advice. Always consult healthcare providers.</p>
-            <p><a href="../README.md">Learn about the methodology</a></p>
+            <p>🔬 Data sources: Reddit r/PCOS (500 posts) + PubMed database (medical research papers)</p>
+            <p><a href="../README.md">View detailed methodology documentation</a></p>
         </div>
     </footer>
 
