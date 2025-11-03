@@ -135,12 +135,11 @@ code, pre {
 
 /* Section Headers */
 h2 {
-    font-family: var(--font-pixel);
-    font-size: 0.75rem;
-    color: var(--gb-dark);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-primary);
     margin-bottom: var(--space-md);
-    text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 700;
 }
 
 h3 {

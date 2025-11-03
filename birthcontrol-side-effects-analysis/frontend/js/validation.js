@@ -2,6 +2,35 @@
  * Validation Page - Display validated side effects with evidence tiers
  */
 
+// Medical term glossary for tooltips
+const MEDICAL_GLOSSARY = {
+    'menorrhagia': 'heavy menstrual bleeding',
+    'pmdd': 'Premenstrual Dysphoric Disorder - severe PMS symptoms',
+    'emotional lability': 'rapid, exaggerated changes in mood',
+    'libido': 'sex drive',
+    'hirsutism': 'excessive hair growth',
+    'amenorrhea': 'absence of menstrual periods',
+    'dysmenorrhea': 'painful menstruation',
+    'oligomenorrhea': 'infrequent menstrual periods',
+    'spotting': 'light bleeding between periods',
+    'breakthrough bleeding': 'unexpected bleeding while on birth control'
+};
+
+// Function to add layman tooltips to medical terms
+function addMedicalTooltips(text) {
+    const lowerText = text.toLowerCase();
+
+    // Check each medical term
+    for (const [term, definition] of Object.entries(MEDICAL_GLOSSARY)) {
+        if (lowerText.includes(term.toLowerCase())) {
+            // Return text with inline definition
+            return `${text} <span class="medical-term-definition">(${definition})</span>`;
+        }
+    }
+
+    return text;
+}
+
 let allSideEffects = [];
 let currentFilter = 'all';
 
@@ -75,16 +104,12 @@ function displayHighSurpriseSideEffects(hiddenGems) {
             <div class="flex items-start justify-between">
                 <div class="flex-1">
                     <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-lg font-semibold text-gray-900 capitalize">${item.side_effect}</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 capitalize">${addMedicalTooltips(item.side_effect)}</h3>
                         <span class="text-sm px-2 py-1 rounded ${getTierBadgeClass(item.tier_label)}">
                             ${item.tier_label}
                         </span>
                     </div>
-                    <div class="grid grid-cols-3 gap-4 text-sm">
-                        <div>
-                            <span class="text-gray-600">Surprise Score:</span>
-                            <span class="font-semibold text-orange-600">${(item.surprise_score * 100).toFixed(1)}%</span>
-                        </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
                         <div>
                             <span class="text-gray-600">Patient Reports:</span>
                             <span class="font-semibold text-indigo-600">${item.mention_count}</span>
@@ -94,9 +119,6 @@ function displayHighSurpriseSideEffects(hiddenGems) {
                             <span class="font-semibold text-purple-600">${item.paper_count}</span>
                         </div>
                     </div>
-                </div>
-                <div class="ml-4">
-                    <div class="text-3xl">${getSurpriseEmoji(item.surprise_score)}</div>
                 </div>
             </div>
         </div>
@@ -115,12 +137,9 @@ function displayValidatedSideEffects(sideEffects) {
     let filteredEffects = sideEffects;
     if (currentFilter !== 'all') {
         filteredEffects = sideEffects.filter(item => {
-            // Extract tier number from tier_label
-            const tierMatch = item.tier_label?.match(/Tier (\d)/);
-            if (tierMatch) {
-                return parseInt(tierMatch[1]) === currentFilter;
-            }
-            return false;
+            // Use getTierNumber to extract tier consistently
+            const tierNumber = getTierNumber(item.tier_label);
+            return tierNumber === currentFilter;
         });
     }
 
@@ -134,12 +153,12 @@ function displayValidatedSideEffects(sideEffects) {
             <div class="flex items-start justify-between mb-3">
                 <div class="flex-1">
                     <div class="flex items-center gap-3 mb-2">
-                        <h3 class="text-xl font-bold text-gray-900 capitalize">${item.side_effect}</h3>
+                        <h3 class="text-xl font-bold text-gray-900 capitalize">${addMedicalTooltips(item.side_effect)}</h3>
                         <span class="text-sm px-3 py-1 rounded-full ${getTierBadgeClass(item.tier_label)}">
                             ${item.tier_label}
                         </span>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
                         <div class="bg-indigo-50 rounded p-2">
                             <div class="text-gray-600 text-xs">Patient Reports</div>
                             <div class="text-lg font-bold text-indigo-700">${item.mention_count}</div>
@@ -147,10 +166,6 @@ function displayValidatedSideEffects(sideEffects) {
                         <div class="bg-purple-50 rounded p-2">
                             <div class="text-gray-600 text-xs">Frequency</div>
                             <div class="text-lg font-bold text-purple-700">${(item.frequency * 100).toFixed(1)}%</div>
-                        </div>
-                        <div class="bg-orange-50 rounded p-2">
-                            <div class="text-gray-600 text-xs">Surprise Score</div>
-                            <div class="text-lg font-bold text-orange-700">${(item.surprise_score * 100).toFixed(1)}%</div>
                         </div>
                         <div class="bg-green-50 rounded p-2">
                             <div class="text-gray-600 text-xs">Research Papers</div>
@@ -164,18 +179,11 @@ function displayValidatedSideEffects(sideEffects) {
                 </div>
             </div>
 
-            ${item.paper_count > 0 ? `
-                <button onclick="togglePapers(${index})" class="text-sm text-indigo-600 hover:text-indigo-800 mt-2">
-                    View ${item.paper_count} Research Paper${item.paper_count > 1 ? 's' : ''} →
-                </button>
-                <div id="papers-${index}" class="hidden mt-3 pl-4 border-l-2 border-indigo-200">
-                    <p class="text-sm text-gray-600 italic">Research papers will be loaded from validated database</p>
-                </div>
-            ` : `
+            ${item.paper_count === 0 ? `
                 <div class="mt-2 text-sm text-gray-500 italic">
                     ⚠️ Research gap: High patient reports but limited research coverage
                 </div>
-            `}
+            ` : ''}
         </div>
     `).join('');
 }
@@ -194,15 +202,22 @@ function filterTier(tier) {
     displayValidatedSideEffects(allSideEffects);
 }
 
-function togglePapers(index) {
-    const papersDiv = document.getElementById(`papers-${index}`);
-    papersDiv.classList.toggle('hidden');
-}
-
 function getTierNumber(tierLabel) {
     if (!tierLabel) return 4;
-    const match = tierLabel.match(/Tier (\d)/);
-    return match ? parseInt(match[1]) : 4;
+
+    // Try to extract from "Tier X:" format first
+    const tierMatch = tierLabel.match(/Tier (\d)/);
+    if (tierMatch) {
+        return parseInt(tierMatch[1]);
+    }
+
+    // Fallback to emoji/keyword matching
+    if (tierLabel.includes('FDA') || tierLabel.includes('🏆')) return 1;
+    if (tierLabel.includes('Research') || tierLabel.includes('✅')) return 2;
+    if (tierLabel.includes('Patient') || tierLabel.includes('💬')) return 3;
+    if (tierLabel.includes('Emerging') || tierLabel.includes('⚠️')) return 4;
+
+    return 4; // Default to tier 4
 }
 
 function getTierBadgeClass(tierLabel) {

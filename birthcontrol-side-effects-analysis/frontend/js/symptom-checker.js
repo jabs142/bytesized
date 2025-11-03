@@ -101,14 +101,32 @@ function updateSelectedDisplay() {
     } else {
         emptyState.classList.add('hidden');
 
-        container.innerHTML = Array.from(selectedSymptoms).map(symptom => `
-            <span class="selected-symptom-tag inline-flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
-                <span class="capitalize">${symptom.replace(/_/g, ' ')}</span>
-                <button onclick="toggleSymptom('${symptom}')" class="ml-2 text-indigo-600 hover:text-indigo-800">
-                    ✕
-                </button>
-            </span>
-        `).join('');
+        // Remove existing tags without destroying the empty state element
+        const existingTags = container.querySelectorAll('.selected-symptom-tag');
+        existingTags.forEach(el => el.remove());
+
+        // Create a document fragment to add all new tags at once
+        const fragment = document.createDocumentFragment();
+
+        selectedSymptoms.forEach(symptom => {
+            const tag = document.createElement('span');
+            tag.className = 'selected-symptom-tag inline-flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2';
+
+            const symptomText = document.createElement('span');
+            symptomText.className = 'capitalize';
+            symptomText.textContent = symptom.replace(/_/g, ' ');
+
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'ml-2 text-indigo-600 hover:text-indigo-800';
+            removeBtn.textContent = '✕';
+            removeBtn.onclick = () => toggleSymptom(symptom);
+
+            tag.appendChild(symptomText);
+            tag.appendChild(removeBtn);
+            fragment.appendChild(tag);
+        });
+
+        container.appendChild(fragment);
     }
 }
 
@@ -213,12 +231,12 @@ function analyzePatterns() {
                         </div>
 
                         <div class="bg-white p-3 rounded">
-                            <div class="text-xs text-gray-600 mb-1">Lift ${liftEmoji}</div>
+                            <div class="text-xs text-gray-600 mb-1">Likelihood ${liftEmoji}</div>
                             <div class="text-2xl font-bold text-gray-900">
                                 ${pattern.lift.toFixed(1)}x
                             </div>
                             <div class="text-xs text-gray-500 mt-1">
-                                ${pattern.lift.toFixed(1)}x more likely than random chance
+                                more likely than random
                             </div>
                         </div>
 

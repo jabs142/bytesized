@@ -7,6 +7,7 @@ class Portal {
     this.cartridges = [];
     this.selectedCartridge = null;
     this.focusedIndex = -1; // Track keyboard focus, start unfocused
+    this.cartridgesReady = false; // Track if cartridges are fully rendered
   }
 
   /**
@@ -69,6 +70,9 @@ class Portal {
     // Stagger animation for cartridges appearing
     const cartridgeElements = grid.querySelectorAll('.cartridge');
     Animations.staggerAnimation(cartridgeElements, 'pixel-fade-in', 150);
+
+    // Mark cartridges as ready for interaction
+    this.cartridgesReady = true;
   }
 
   /**
@@ -137,6 +141,10 @@ class Portal {
     if (dpadLeft) {
       dpadLeft.addEventListener('click', (e) => {
         e.stopPropagation();
+
+        // Don't navigate if cartridges aren't ready yet
+        if (!this.cartridgesReady) return;
+
         const currentFocus = this.focusedIndex;
 
         // Wrap around: if at first item or unfocused, go to last
@@ -155,6 +163,10 @@ class Portal {
     if (dpadRight) {
       dpadRight.addEventListener('click', (e) => {
         e.stopPropagation();
+
+        // Don't navigate if cartridges aren't ready yet
+        if (!this.cartridgesReady) return;
+
         const currentFocus = this.focusedIndex;
 
         // Wrap around: if at last item, go to first; if unfocused, go to first
@@ -416,7 +428,7 @@ class Portal {
       }
       Animations.showCartridgePreview(cartridgeData);
 
-      // Don't scroll - keep focus on Game Boy screen
+      // Keep focus on Game Boy screen - don't scroll cartridge shelf
     }
   }
 }

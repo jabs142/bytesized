@@ -24,10 +24,7 @@ function displayStats() {
     document.getElementById('stat-symptoms').textContent = statsData.posts_with_symptoms.toLocaleString();
     document.getElementById('stat-patterns').textContent = statsData.total_rules_found.toLocaleString();
 
-    // Update category stats
-    document.getElementById('stat-mental').textContent = statsData.symptom_categories.mental_only.toLocaleString();
-    document.getElementById('stat-physical').textContent = statsData.symptom_categories.physical_only.toLocaleString();
-    document.getElementById('stat-both').textContent = statsData.symptom_categories.both.toLocaleString();
+    // Category stats removed - those sections were deleted from the HTML
 }
 
 function displayTopSymptoms() {
