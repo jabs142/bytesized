@@ -58,5 +58,17 @@
     "description": "Discovering patterns in Ehlers-Danlos Syndrome",
     "url": "/eds-symptom-discovery/frontend/index.html",
     "status": "available"
+  },
+  {
+    "id": "heart-story",
+    "title": "Heart's Life Story",
+    "subtitle": "A Lifetime in Beats",
+    "color": "#E74C3C",
+    "icon": "❤️",
+    "pattern": "medical",
+    "labelText": "biology",
+    "description": "Watch your heart's journey from newborn to senior. See how heart rate changes with age, celebrate milestones, and compare with nature",
+    "url": "/heart-story/frontend/index.html",
+    "status": "available"
   }
 ]

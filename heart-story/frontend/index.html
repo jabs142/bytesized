@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Heart's Life Story - ByteSized</title>
+    <meta name="description" content="Watch your heart's journey from first beat to now">
+
+    <!-- Google Fonts - Press Start 2P for authentic 8-bit feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-body">
+    <!-- Eject Button -->
+    <div class="eject-button-container">
+        <a href="/" class="eject-button">
+            <span class="eject-icon">◄</span> EJECT
+        </a>
+    </div>
+
+    <!-- Main Game Container -->
+    <main class="game-container">
+        <!-- Game Boy Device (Larger than portal) -->
+        <div class="gameboy-device">
+            <!-- Device Header -->
+            <div class="device-header">
+                <div class="power-indicator">
+                    <div class="led-light active"></div>
+                    <span class="power-label">POWER</span>
+                </div>
+                <div class="game-title">HEART'S LIFE STORY</div>
+            </div>
+
+            <!-- Screen Container -->
+            <div class="screen-container">
+                <div class="screen-bezel">
+                    <div class="screen-glass">
+                        <!-- CRT Effects Overlay -->
+                        <div class="crt-overlay"></div>
+                        <div class="scanlines"></div>
+
+                        <!-- Screen Content - Game renders here -->
+                        <div id="gameScreen" class="screen-content">
+                            <!-- Game content will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device Controls -->
+            <div class="device-controls">
+                <div class="dpad-container">
+                    <div class="dpad">
+                        <button class="dpad-btn dpad-up" id="btnUp" aria-label="D-pad up"></button>
+                        <button class="dpad-btn dpad-right" id="btnRight" aria-label="D-pad right"></button>
+                        <button class="dpad-btn dpad-down" id="btnDown" aria-label="D-pad down"></button>
+                        <button class="dpad-btn dpad-left" id="btnLeft" aria-label="D-pad left"></button>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-b" id="btnB" aria-label="B button">
+                        <span class="btn-label">B</span>
+                    </button>
+                    <button class="btn-a" id="btnA" aria-label="A button">
+                        <span class="btn-label">A</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Device Footer -->
+            <div class="device-footer">
+                <div class="speaker-grille">
+                    <div class="speaker-holes"></div>
+                </div>
+                <div class="device-text">
+                    <span class="model-number">© 2025 BYTESIZED</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/game.js"></script>
+</body>
+</html>
