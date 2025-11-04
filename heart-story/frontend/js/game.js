@@ -172,9 +172,6 @@ class HeartStoryGame {
         this.selectedChoiceIndex = Math.max(0, this.selectedChoiceIndex - 1);
         this.updateChoiceSelection();
         break;
-      case this.STATE.DAY_SIM_ROOM:
-        this.moveCharacter(0, -1);
-        break;
       case this.STATE.DAY_SIM_SUMMARY:
         this.scrollSummary(-50);
         break;
@@ -197,9 +194,6 @@ class HeartStoryGame {
         this.selectedChoiceIndex = Math.min(maxIndex, this.selectedChoiceIndex + 1);
         this.updateChoiceSelection();
         break;
-      case this.STATE.DAY_SIM_ROOM:
-        this.moveCharacter(0, 1);
-        break;
       case this.STATE.DAY_SIM_SUMMARY:
         this.scrollSummary(50);
         break;
@@ -214,9 +208,6 @@ class HeartStoryGame {
         this.currentFieldIndex = Math.max(0, this.currentFieldIndex - 1);
         this.updateDateEntryDisplay();
         break;
-      case this.STATE.DAY_SIM_ROOM:
-        this.moveCharacter(-1, 0);
-        break;
     }
   }
 
@@ -227,9 +218,6 @@ class HeartStoryGame {
       case this.STATE.BIRTH_ENTRY:
         this.currentFieldIndex = Math.min(2, this.currentFieldIndex + 1);
         this.updateDateEntryDisplay();
-        break;
-      case this.STATE.DAY_SIM_ROOM:
-        this.moveCharacter(1, 0);
         break;
     }
   }
@@ -502,7 +490,7 @@ class HeartStoryGame {
         <div style="text-align: center;">
           <p class="pixel-text-md">${this.formatDate(this.firstBeatDate)}</p>
           <p class="pixel-text-sm" style="margin-top: 8px;">CONCEPTION + 22 DAYS</p>
-          <p class="pixel-text-xs" style="margin-top: 8px;">SIZE: POPPY SEED</p>
+          <p class="pixel-text-xs" style="margin-top: 8px;">SIZE: SESAME SEED</p>
         </div>
 
         <div class="pokemon-textbox">
@@ -729,11 +717,20 @@ class HeartStoryGame {
       peakBPM: 65
     };
 
-    this.showKitchenBreakfast();
+    this.showBreakfastChoice();
   }
 
   /**
-   * Calculate hours difference between two times
+   * Calculate the difference in hours between two time strings
+   * Handles AM/PM conversion and properly processes times like "7:30 AM" or "3:00 PM"
+   *
+   * @param {string} startTime - Start time in format "H:MM AM/PM" (e.g., "7:30 AM")
+   * @param {string} endTime - End time in format "H:MM AM/PM" (e.g., "3:00 PM")
+   * @returns {number} Number of hours between startTime and endTime (can be decimal)
+   *
+   * @example
+   * calculateHoursDiff('7:30 AM', '8:00 AM') // returns 0.5
+   * calculateHoursDiff('10:00 AM', '3:00 PM') // returns 5
    */
   calculateHoursDiff(startTime, endTime) {
     const timeToMinutes = (time) => {
@@ -753,7 +750,20 @@ class HeartStoryGame {
   }
 
   /**
-   * Calculate current BPM based on resting rate and active effects
+   * Calculate current heart rate (BPM) based on resting rate and active effects with time-based decay
+   *
+   * This function implements realistic bioavailability:
+   * - Immediate effects (exercise): Full effect for 1 hour, then expire
+   * - Linear effects (caffeine, stress): Decay proportionally over duration (e.g., caffeine's 3-5 hour half-life)
+   * - Effects that exceed their duration are automatically filtered out
+   *
+   * @param {string} currentTime - Current time in format "H:MM AM/PM" (e.g., "3:00 PM")
+   * @returns {number} Calculated BPM (clamped between 50-200), rounded to nearest integer
+   *
+   * @example
+   * // Coffee consumed at 7:30 AM (+20 BPM, 4-hour linear decay)
+   * // At 9:30 AM (2 hours later), effect is 50% decayed = +10 BPM
+   * calculateCurrentBPM('9:30 AM') // returns 75 (65 resting + 10 remaining caffeine effect)
    */
   calculateCurrentBPM(currentTime) {
     let bpm = this.daySimData.restingBPM;
@@ -792,14 +802,11 @@ class HeartStoryGame {
   }
 
   /**
-   * Show kitchen breakfast choice
+   * Show breakfast choice
    */
-  showKitchenBreakfast() {
+  showBreakfastChoice() {
     this.daySimData.currentTime = '7:30 AM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('7:30 AM');
 
     this.showChoiceScreen(
       'kitchen',
@@ -810,19 +817,16 @@ class HeartStoryGame {
         { text: 'WATER', bpmChange: 0, status: '💧HYDRATED', fact: 'EXCELLENT! Staying hydrated supports healthy heart function and is the best morning choice!', duration: 0, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
         { text: 'ENERGY DRINK', bpmChange: 35, status: '⚡WIRED', fact: 'High caffeine (80-300mg) + sugar spikes HR. Limit to avoid heart palpitations!', duration: 5, decayType: 'linear', choiceType: 'unhealthy', icon: '⚠️' }
       ],
-      () => this.showCommute()
+      () => this.showCommuteChoice()
     );
   }
 
   /**
    * Show commute choice
    */
-  showCommute() {
+  showCommuteChoice() {
     this.daySimData.currentTime = '8:00 AM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('8:00 AM');
 
     this.showChoiceScreen(
       'outside',
@@ -833,19 +837,16 @@ class HeartStoryGame {
         { text: 'CAR', bpmChange: 5, status: '🚗COMMUTING', fact: 'Commute stress slightly elevates HR. Try calming music or podcasts to reduce stress during your drive.', duration: 2, decayType: 'linear', choiceType: 'neutral', icon: '💛' },
         { text: 'WALK', bpmChange: 40, status: '🚶WALKING', fact: 'EXCELLENT CHOICE! Walking improves cardiovascular fitness. Regular walkers have 30% lower heart disease risk!', duration: 1, decayType: 'immediate', choiceType: 'healthy', icon: '💚' }
       ],
-      () => this.showOffice()
+      () => this.showOfficeStressChoice()
     );
   }
 
   /**
    * Show office stress choice
    */
-  showOffice() {
+  showOfficeStressChoice() {
     this.daySimData.currentTime = '10:00 AM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('10:00 AM');
 
     this.showChoiceScreen(
       'office',
@@ -856,19 +857,16 @@ class HeartStoryGame {
         { text: 'BREATHE', bpmChange: -5, status: '🧘CALM', fact: 'BEST CHOICE! Deep breathing activates the vagus nerve, naturally lowering HR and blood pressure. Excellent stress management!', duration: 2, decayType: 'linear', choiceType: 'healthy', icon: '💚' },
         { text: 'ARGUE', bpmChange: 50, status: '😠ANGRY', fact: 'BAD FOR HEART! Anger spikes HR by 40-50 BPM and raises blood pressure. Chronic anger is linked to heart attacks!', duration: 2, decayType: 'linear', choiceType: 'unhealthy', icon: '❌' }
       ],
-      () => this.showLunch()
+      () => this.showLunchChoice()
     );
   }
 
   /**
    * Show lunch choice
    */
-  showLunch() {
+  showLunchChoice() {
     this.daySimData.currentTime = '12:00 PM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('12:00 PM');
 
     this.showChoiceScreen(
       'office',
@@ -876,22 +874,19 @@ class HeartStoryGame {
       'LUNCH BREAK',
       [
         { text: 'HEAVY MEAL', bpmChange: 10, status: '🍔DIGESTING', fact: 'Normal response - large meals increase blood flow to digestive system, slightly raising HR 5-10 BPM. Eat mindfully!', duration: 2, decayType: 'linear', choiceType: 'neutral', icon: '💛' },
-        { text: 'LIGHT SNACK', bpmChange: 0, status: null, fact: 'SMART CHOICE! Balanced meals maintain stable blood sugar and steady heart rate throughout the day.', duration: 0, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
+        { text: 'LIGHT SNACK', bpmChange: 0, status: '', fact: 'SMART CHOICE! Balanced meals maintain stable blood sugar and steady heart rate throughout the day.', duration: 0, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
         { text: 'SKIP LUNCH', bpmChange: 5, status: '😓HUNGRY', fact: 'Skipping meals drops blood sugar, then stress hormones spike to compensate. Eat regular balanced meals!', duration: 3, decayType: 'linear', choiceType: 'unhealthy', icon: '⚠️' }
       ],
-      () => this.showAfternoon()
+      () => this.showAfternoonSlumpChoice()
     );
   }
 
   /**
    * Show afternoon activity
    */
-  showAfternoon() {
+  showAfternoonSlumpChoice() {
     this.daySimData.currentTime = '3:00 PM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('3:00 PM');
 
     this.showChoiceScreen(
       'office',
@@ -902,19 +897,16 @@ class HeartStoryGame {
         { text: 'QUICK WALK', bpmChange: 30, status: '🚶ENERGIZED', fact: 'PERFECT! Movement combats afternoon slump. Even 5-10 min boosts energy and heart health!', duration: 1, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
         { text: 'POWER NAP', bpmChange: -10, status: '😴RESTED', fact: 'GOOD CHOICE! 20-30 min naps lower HR temporarily and improve afternoon performance without disrupting night sleep.', duration: 1, decayType: 'linear', choiceType: 'healthy', icon: '💚' }
       ],
-      () => this.showGym()
+      () => this.showExerciseChoice()
     );
   }
 
   /**
    * Show gym choice
    */
-  showGym() {
+  showExerciseChoice() {
     this.daySimData.currentTime = '6:00 PM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('6:00 PM');
 
     this.showChoiceScreen(
       'gym',
@@ -923,21 +915,18 @@ class HeartStoryGame {
       [
         { text: 'INTENSE WORKOUT', bpmChange: 90, status: '💪TRAINING', fact: 'OUTSTANDING! Target HR zone: 70-85% max (150-180 BPM). Regular cardio LOWERS resting HR by 5-10 BPM! THE BEST thing for heart health!', duration: 1, decayType: 'immediate', choiceType: 'healthy', icon: '💚', permanent: -1 },
         { text: 'YOGA', bpmChange: 15, status: '🧘STRETCHING', fact: 'EXCELLENT! Yoga combines light cardio with stress reduction. Lowers resting HR over time and improves heart rate variability.', duration: 1, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
-        { text: 'GO HOME', bpmChange: 0, status: null, fact: 'Neutral choice. Aim for 150 min/week moderate exercise for optimal heart health and disease prevention.', duration: 0, decayType: 'immediate', choiceType: 'neutral', icon: '💛' }
+        { text: 'GO HOME', bpmChange: 0, status: '', fact: 'Neutral choice. Aim for 150 min/week moderate exercise for optimal heart health and disease prevention.', duration: 0, decayType: 'immediate', choiceType: 'neutral', icon: '💛' }
       ],
-      () => this.showEvening()
+      () => this.showEveningChoice()
     );
   }
 
   /**
    * Show evening wind down
    */
-  showEvening() {
+  showEveningChoice() {
     this.daySimData.currentTime = '8:00 PM';
     this.selectedChoiceIndex = 0;
-
-    // Calculate current BPM based on active effects
-    this.daySimData.currentBPM = this.calculateCurrentBPM('8:00 PM');
 
     this.showChoiceScreen(
       'home',
@@ -1269,15 +1258,6 @@ class HeartStoryGame {
     }
 
     return tips.slice(0, 3); // Return max 3 tips
-  }
-
-  /**
-   * Move character (placeholder for future room exploration)
-   */
-  moveCharacter(dx, dy) {
-    // This would be used if we add free movement in rooms
-    // For now, just play a beep
-    this.playBeep(500, 0.05);
   }
 
   /**
