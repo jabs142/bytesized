@@ -1006,7 +1006,10 @@ class HeartStoryGame {
    */
   confirmChoice() {
     const choice = this.currentChoices[this.selectedChoiceIndex];
-    const oldBPM = this.daySimData.currentBPM;
+
+    // Recalculate current BPM accounting for decay/expiration before applying new effect
+    const oldBPM = this.calculateCurrentBPM(this.daySimData.currentTime);
+    this.daySimData.currentBPM = oldBPM;
 
     // Track total choices
     this.daySimData.totalChoices++;

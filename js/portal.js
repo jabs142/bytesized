@@ -42,7 +42,7 @@ class Portal {
    */
   async loadCartridges() {
     try {
-      const response = await fetch('/data/cartridges.json');
+      const response = await fetch('./data/cartridges.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
