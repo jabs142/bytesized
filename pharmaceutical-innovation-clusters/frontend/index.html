@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmaceutical Innovation Clusters - ByteSized Research</title>
+
+    <!-- Retro Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- EJECT BUTTON -->
+    <div class="eject-button-container">
+        <button id="ejectButton" class="eject-button">
+            <span class="eject-icon">◄</span> EJECT
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Pharmaceutical Innovation Clusters</h1>
+            <p class="subtitle">Discovering temporal patterns in FDA drug approvals</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Introduction Section -->
+            <section class="intro-section">
+                <div class="intro-card">
+                    <h2>What Are Pharmaceutical Innovation Clusters?</h2>
+                    <p>
+                        History shows us that major pharmaceutical innovations don't happen randomly—they cluster together in waves.
+                        This analysis examines FDA drug approvals from 1939–2024 to identify these temporal patterns
+                        and reveal disparities in therapeutic development.
+                    </p>
+                    <p>
+                        Using statistical clustering analysis (>2σ above mean), we reveal which time periods experienced
+                        unusual spikes in drug approvals, and which therapeutic areas have been systematically neglected—revealing
+                        a striking 4x disparity between common and rare disease treatments.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-innovations">---</div>
+                        <div class="stat-label">FDA Drug Approvals</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="cluster-count">---</div>
+                        <div class="stat-label">Cluster Periods</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="peak-decade">---</div>
+                        <div class="stat-label">Peak Decade</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistical Tests Section -->
+            <section class="stats-tests-section">
+                <h2>Are Innovations Random?</h2>
+                <p class="section-description">
+                    Using statistical tests, we can prove that innovations cluster together
+                    rather than occurring randomly over time.
+                </p>
+
+                <div id="poisson-results" class="test-results-grid">
+                    <div class="loading">Loading statistical tests...</div>
+                </div>
+            </section>
+
+            <!-- Master Timeline Section -->
+            <section class="timeline-section">
+                <h2>FDA Drug Approval Timeline</h2>
+                <p class="section-description">
+                    Shaded regions indicate statistically significant cluster periods (>2σ above mean)
+                </p>
+                <div id="master-timeline" class="timeline-container">
+                    <div class="loading">Loading timeline...</div>
+                </div>
+            </section>
+
+            <!-- Drug Approval Clusters -->
+            <section class="clusters-section">
+                <h2>FDA Drug Approval Clusters</h2>
+                <p class="section-description">
+                    Periods of statistically significant spikes in pharmaceutical approvals
+                </p>
+                <div id="fda-cluster-list" class="cluster-list">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Top 10 Individual Diseases -->
+            <section class="categories-section">
+                <h2>Top 10 Individual Diseases by Approval Count</h2>
+                <div id="top-diseases-chart" class="category-bars-container">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Pharmaceutical Insights Section -->
+            <section class="unique-insights-section">
+                <h2>Pharmaceutical Insights</h2>
+                <p class="section-description">
+                    Data-driven analysis of therapeutic area patterns and approval trends
+                </p>
+
+                <!-- Bottom 10 Individual Diseases -->
+                <div class="insight-container">
+                    <h3>Bottom 10 Individual Diseases by Approval Count</h3>
+                    <p class="insight-intro">
+                        Data-driven ranking showing which individual diseases have received the fewest FDA approvals.
+                        Sorted from least to most approvals.
+                    </p>
+                    <div id="pharmaceutical-neglect">
+                        <div class="loading">Loading disease data...</div>
+                    </div>
+                </div>
+
+                <!-- Top Therapeutic Areas -->
+                <div class="insight-container">
+                    <h3>Top Therapeutic Areas by Approval Count</h3>
+                    <p class="insight-intro">
+                        Broad therapeutic categories ranked by total FDA drug approvals.
+                        Shows which disease areas have attracted the most pharmaceutical investment.
+                    </p>
+                    <div id="top-therapeutic-areas">
+                        <div class="loading">Loading therapeutic areas data...</div>
+                    </div>
+                </div>
+
+                <!-- Therapeutic Trends -->
+                <div class="insight-container">
+                    <h3>Therapeutic Area Trends</h3>
+                    <p class="insight-intro">
+                        Which therapeutic areas have flourished, and which have been left behind?
+                        Exploring the evolution of drug development across disease categories.
+                    </p>
+                    <div id="therapeutic-trends">
+                        <div class="loading">Loading therapeutic trends data...</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology Section -->
+            <section class="methodology-section">
+                <div class="container">
+                    <h2>Methodology</h2>
+                    <div class="methodology-grid">
+                        <div class="method-card">
+                            <h3>Data Sources</h3>
+                            <ul>
+                                <li>FDA Orange Book API (drug approvals, 1939-2024)</li>
+                                <li>71,149 total drug approvals analyzed</li>
+                                <li>Therapeutic area classification via keywords</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h3>Clustering Method</h3>
+                            <ul>
+                                <li>Statistical threshold: >2σ above mean</li>
+                                <li>Minimum cluster size: 3 consecutive years</li>
+                                <li>Identifies periods of unusual approval density</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h3>Therapeutic Areas</h3>
+                            <ul>
+                                <li>11 therapeutic categories tracked</li>
+                                <li>8 neglected diseases monitored</li>
+                                <li>4 common diseases for comparison</li>
+                                <li>Disparity ratio: 4.0x</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="disclaimer-card">
+                        <h3>Research Context</h3>
+                        <p>
+                            This analysis reveals temporal patterns in pharmaceutical innovation and therapeutic neglect
+                            but does not establish causality. Multiple factors—economic incentives, regulatory changes,
+                            disease prevalence, research funding, and market size—may contribute to these patterns.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Data source: FDA Orange Book API (1939-2024)</p>
+            <p>Analysis method: Statistical temporal clustering | Therapeutic area classification</p>
+        </div>
+    </footer>
+
+    <!-- D3.js for interactive visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/statistical-viz.js"></script>
+    <script src="js/timeline-viz.js"></script>
+    <script src="js/unique-insights.js"></script>
+    <script src="js/therapeutic-timeline.js"></script>
+
+    <!-- Eject Button Logic -->
+    <script>
+        document.getElementById('ejectButton').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 100);
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 200);
+        });
+    </script>
+</body>
+</html>

@@ -72,15 +72,15 @@
     "status": "available"
   },
   {
-    "id": "innovation-clusters",
-    "title": "Innovation Clusters",
-    "subtitle": "Temporal Patterns",
+    "id": "pharmaceutical-innovation-clusters",
+    "title": "Pharmaceutical Innovation Clusters",
+    "subtitle": "FDA Drug Approval Patterns",
     "color": "#FFB86C",
-    "icon": "💡",
+    "icon": "💊",
     "pattern": "timeline",
-    "labelText": "history",
-    "description": "Discover how innovations cluster in time - which breakthroughs happened together?",
-    "url": "./innovation-clusters/frontend/index.html",
+    "labelText": "pharmaceutical",
+    "description": "Discover temporal clustering in 71,149 FDA drug approvals (1938-2024)",
+    "url": "./pharmaceutical-innovation-clusters/frontend/index.html",
     "status": "available"
   }
 ]
