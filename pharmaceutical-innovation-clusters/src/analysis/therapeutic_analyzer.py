@@ -14,6 +14,7 @@ import re
 import sys
 sys.path.append(str(Path(__file__).parent.parent))
 from config import Config
+from analysis.pharm_class_mapper import PharmClassMapper
 
 
 class TherapeuticAnalyzer:
@@ -24,6 +25,9 @@ class TherapeuticAnalyzer:
         self.raw_dir = self.data_dir / 'raw'
         self.processed_dir = self.data_dir / 'processed'
         self.processed_dir.mkdir(parents=True, exist_ok=True)
+
+        # Initialize pharmacological class mapper
+        self.pharm_mapper = PharmClassMapper()
 
         # Therapeutic area classification keywords
         self.therapeutic_categories = {
@@ -160,27 +164,52 @@ class TherapeuticAnalyzer:
         """Classify drugs into therapeutic categories"""
         print("\nClassifying drugs by therapeutic area...")
 
-        # Create combined text for classification
+        # Ensure indication column exists (for backward compatibility with old data)
+        if 'indication' not in df.columns:
+            df['indication'] = ''
+
+        # Create combined text for fallback keyword classification
+        # Use pharm_class fields, indication, and generic_name (NOT drug_name + sponsor_name)
         df['search_text'] = (
-            df['drug_name'].fillna('') + ' ' +
-            df['sponsor_name'].fillna('')
+            df['pharm_class_epc'].fillna('') + ' ' +
+            df['pharm_class_moa'].fillna('') + ' ' +
+            df['indication'].fillna('') + ' ' +
+            df['generic_name'].fillna('')
         ).str.lower()
 
-        # Classify each drug
+        # Classify each drug using hybrid approach
         classifications = []
+        primary_areas = []
+
         for _, row in df.iterrows():
-            categories = self._categorize_drug(row['search_text'])
-            classifications.append(categories)
+            # First: Try PharmClassMapper with pharm_class fields
+            pharm_areas = self.pharm_mapper.map_to_therapeutic_area(
+                row.get('pharm_class_epc', ''),
+                row.get('pharm_class_moa', '')
+            )
+
+            if pharm_areas:
+                # Use pharm class classification
+                classifications.append(pharm_areas)
+                primary_areas.append(pharm_areas[0])
+            else:
+                # Fallback: Use keyword matching on indication + generic_name
+                categories = self._categorize_drug(row['search_text'])
+                classifications.append(categories)
+                primary_areas.append(categories[0] if categories else 'Unclassified')
 
         df['therapeutic_areas'] = classifications
-        df['primary_therapeutic_area'] = df['therapeutic_areas'].apply(
-            lambda x: x[0] if x else 'Unclassified'
-        )
+        df['primary_therapeutic_area'] = primary_areas
 
         # Print classification summary
         classified = df['primary_therapeutic_area'] != 'Unclassified'
         print(f"  Classified: {classified.sum():,} drugs ({classified.sum()/len(df)*100:.1f}%)")
         print(f"  Unclassified: {(~classified).sum():,} drugs")
+
+        # Show breakdown of classification methods
+        pharm_classified = df['pharm_class_epc'].notna() & (df['pharm_class_epc'] != '')
+        print(f"  Via pharm_class: {(pharm_classified & classified).sum():,} drugs")
+        print(f"  Via keywords: {(~pharm_classified & classified).sum():,} drugs")
 
         return df
 

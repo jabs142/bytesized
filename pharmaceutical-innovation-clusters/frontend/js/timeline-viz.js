@@ -75,13 +75,16 @@ function renderFDALineChart(years, yearlyCounts, clusters) {
         html += '<h4>Significant Cluster Periods:</h4>';
         html += '<ul>';
         clusters.slice(0, 5).forEach(cluster => {
-            html += `<li>${cluster.start_year}-${cluster.end_year}: ${cluster.total_count} approvals (${cluster.sigma_above_mean.toFixed(1)}σ above mean)</li>`;
+            const total = cluster.total_count || cluster.total_innovations || 0;
+            const avgPerYear = cluster.avg_per_year != null ? ` (avg ${cluster.avg_per_year.toFixed(0)}/year)` : '';
+            const sigmaInfo = cluster.sigma_above_mean != null ? ` - ${cluster.sigma_above_mean.toFixed(1)}σ above mean` : '';
+            html += `<li>${cluster.start_year}-${cluster.end_year}: ${total.toLocaleString()} approvals${avgPerYear}${sigmaInfo}</li>`;
         });
         html += '</ul>';
         html += '</div>';
     } else {
         html += '<div class="cluster-highlights-info">';
-        html += '<p style="color: var(--text-secondary); font-size: 0.9rem;">No significant clustering periods detected at 2σ threshold</p>';
+        html += '<p style="color: var(--text-secondary); font-size: 0.9rem;">No significant clustering periods detected</p>';
         html += '</div>';
     }
 

@@ -100,9 +100,10 @@ class StatisticalAnalyzer:
 
     def _poisson_test(self, df: pd.DataFrame, category_name: str) -> Dict:
         """
-        Run Poisson goodness of fit test
+        Test if innovations show clustering patterns
 
-        Null hypothesis: innovations are randomly distributed (Poisson)
+        Uses coefficient of variation and variance-to-mean ratio
+        to detect non-random clustering patterns
         """
         # Count innovations per year
         yearly_counts = df['year'].value_counts().sort_index()
@@ -110,35 +111,41 @@ class StatisticalAnalyzer:
         # Calculate observed frequencies
         observed = yearly_counts.values
         mean_rate = observed.mean()
+        std_rate = observed.std()
 
-        # Calculate expected Poisson frequencies
-        from scipy.stats import poisson
-        expected = np.array([poisson.pmf(k, mean_rate) * len(observed)
-                            for k in range(int(observed.max()) + 1)])
+        # Coefficient of Variation (CV)
+        # CV > 1.0 suggests high variability/clustering
+        # CV < 1.0 suggests more uniform distribution
+        cv = std_rate / mean_rate if mean_rate > 0 else 0
 
-        # Bin observations to match expected
-        observed_binned = np.bincount(observed.astype(int), minlength=len(expected))
+        # Variance-to-Mean Ratio (Index of Dispersion)
+        # For Poisson (random): variance = mean, so ratio = 1
+        # Ratio > 1: overdispersed (clustered)
+        # Ratio < 1: underdispersed (uniform)
+        variance = observed.var()
+        vmr = variance / mean_rate if mean_rate > 0 else 0
 
-        # Chi-square test
-        chi_square, p_value = stats.chisquare(
-            observed_binned[:len(expected)],
-            expected
-        )
+        # Calculate confidence score based on both metrics
+        # High CV and high VMR → strong clustering evidence
+        clustering_score = min(cv + (vmr - 1), 2.0) / 2.0  # Normalize to 0-1
+        confidence = max(0.0, min(1.0, clustering_score))
 
         # Interpretation
-        is_random = p_value >= 0.05 if not np.isnan(p_value) else False
-        interpretation = "Random (Poisson)" if is_random else "Clustered (NOT random)"
+        is_clustered = cv > 0.7  # Threshold for significant clustering
+        interpretation = "Clustered" if is_clustered else "Relatively uniform"
 
-        print(f"   {category_name}: p={p_value:.4f} → {interpretation}")
+        print(f"   {category_name}: CV={cv:.2f}, VMR={vmr:.2f} → {interpretation}")
 
-        # Convert NaN to None for valid JSON
         return {
-            'p_value': float(p_value) if not np.isnan(p_value) else None,
-            'chi_square': float(chi_square) if not np.isnan(chi_square) else None,
-            'is_random': bool(is_random),
+            'coefficient_of_variation': float(cv),
+            'variance_to_mean_ratio': float(vmr),
+            'is_random': not is_clustered,
+            'is_clustered': is_clustered,
             'interpretation': interpretation,
             'mean_rate': float(mean_rate),
-            'confidence': '95%'
+            'std_rate': float(std_rate),
+            'confidence': float(confidence),
+            'confidence_percent': f"{confidence * 100:.0f}%"
         }
 
     def _sliding_window_analysis(
@@ -240,13 +247,13 @@ class StatisticalAnalyzer:
         print("STATISTICAL ANALYSIS SUMMARY")
         print("="*70)
 
-        # Poisson test results
-        print("\nPoisson Test Results (Randomness Test):")
+        # Clustering test results
+        print("\nClustering Analysis Results:")
         for category, result in results['poisson_tests'].items():
-            status = "✅ CLUSTERED" if not result['is_random'] else "❌ RANDOM"
-            p_val = result['p_value']
-            p_str = f"{p_val:.4f}" if p_val is not None else "N/A"
-            print(f"  {category:20s}: {status} (p={p_str})")
+            status = "✅ CLUSTERED" if result['is_clustered'] else "❌ UNIFORM"
+            cv = result['coefficient_of_variation']
+            conf = result['confidence_percent']
+            print(f"  {category:20s}: {status} (CV={cv:.2f}, confidence={conf})")
 
         # Significant clusters
         print(f"\nSignificant Cluster Periods: {len(results['significant_clusters'])}")

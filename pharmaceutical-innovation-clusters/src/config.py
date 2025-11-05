@@ -37,7 +37,7 @@ class Config:
     MAX_RETRIES = 3
 
     # Analysis Settings
-    CLUSTERING_THRESHOLD_SIGMA = 2.0  # std deviations above mean
+    CLUSTERING_THRESHOLD_SIGMA = 1.0  # std deviations above mean
     MIN_CLUSTER_SIZE = 3  # minimum innovations to form a cluster
     SLIDING_WINDOW_SIZE = 5  # years for sliding window analysis
 

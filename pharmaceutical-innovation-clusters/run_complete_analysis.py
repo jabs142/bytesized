@@ -35,7 +35,9 @@ def generate_summary_report(stat_results, therapeutic_results, neglect_results):
 
     for category, result in stat_results['poisson_tests'].items():
         status = "✅ **CLUSTERED**" if not result['is_random'] else "❌ Random"
-        report.append(f"- **{category.replace('_', ' ').title()}**: {status} (p={result['p_value']:.4f})\n")
+        cv = result.get('coefficient_of_variation', 0)
+        confidence = result.get('confidence_percent', 'N/A')
+        report.append(f"- **{category.replace('_', ' ').title()}**: {status} (CV={cv:.2f}, confidence={confidence})\n")
 
     # Significant Clusters
     report.append(f"\n### Significant Cluster Periods\n\n")

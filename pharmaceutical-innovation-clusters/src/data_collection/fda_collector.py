@@ -129,6 +129,14 @@ class FDACollector:
                 # Extract drug name
                 drug_name = self._get_drug_name(result)
 
+                # Extract pharmacological class information
+                openfda = result.get('openfda', {})
+                pharm_class_epc = '; '.join(openfda.get('pharm_class_epc', [])) if openfda.get('pharm_class_epc') else ''
+                pharm_class_moa = '; '.join(openfda.get('pharm_class_moa', [])) if openfda.get('pharm_class_moa') else ''
+                generic_name = '; '.join(openfda.get('generic_name', [])) if openfda.get('generic_name') else ''
+                route = '; '.join(openfda.get('route', [])) if openfda.get('route') else ''
+                indication = '; '.join(openfda.get('indication_and_usage', [])) if openfda.get('indication_and_usage') else ''
+
                 # Get submissions (approval records)
                 submissions = result.get('submissions', [])
 
@@ -142,14 +150,26 @@ class FDACollector:
                     if submission.get('submission_status') != 'AP':  # AP = Approved
                         continue
 
+                    # Check for orphan drug designation
+                    is_orphan = False
+                    submission_property_type = submission.get('submission_property_type', [])
+                    if submission_property_type:
+                        is_orphan = any(prop.get('code') == 'Orphan' for prop in submission_property_type)
+
                     # Parse data
                     parsed.append({
                         'drug_name': drug_name,
+                        'generic_name': generic_name,
                         'approval_date': status_date,
                         'submission_type': submission.get('submission_type', ''),
                         'submission_number': submission.get('submission_number', ''),
                         'application_number': result.get('application_number', ''),
                         'sponsor_name': result.get('sponsor_name', ''),
+                        'pharm_class_epc': pharm_class_epc,
+                        'pharm_class_moa': pharm_class_moa,
+                        'route': route,
+                        'indication': indication,
+                        'is_orphan': is_orphan,
                         'year': year
                     })
 

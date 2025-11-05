@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadData() {
     try {
         // Load all pharmaceutical data files in parallel
-        const [clustersRes, statsRes, therapeuticRes, neglectRes, timelineRes] = await Promise.all([
+        const [clustersRes, statsRes, therapeuticRes, neglectRes, timelineRes, fdaPharmRes] = await Promise.all([
             fetch('data/clusters.json'),
             fetch('../data/processed/statistical_results.json').catch(() => null),
             fetch('../data/processed/therapeutic_trends.json').catch(() => null),
             fetch('../data/unique_angles/neglected_diseases.json').catch(() => null),
-            fetch('../data/processed/therapeutic_timeline.json').catch(() => null)
+            fetch('../data/processed/therapeutic_timeline.json').catch(() => null),
+            fetch('../data/processed/fda_pharm_classes.json').catch(() => null)
         ]);
 
         // Parse responses
@@ -55,6 +56,11 @@ async function loadData() {
         if (timelineRes && timelineRes.ok) {
             window.therapeuticTimeline = await timelineRes.json();
             console.log('Timeline data loaded:', window.therapeuticTimeline.total_records, 'approvals');
+        }
+
+        if (fdaPharmRes && fdaPharmRes.ok) {
+            window.fdaPharmClasses = await fdaPharmRes.json();
+            console.log('FDA Pharm Classes loaded:', window.fdaPharmClasses.total_pharm_classes, 'classes');
         }
 
         // Use clusters.json for visualization if available
@@ -114,7 +120,6 @@ function renderDashboard() {
 
     // Render cluster sections
     renderClusters();
-    renderTechCategories();
 
     // Render unique insights
     renderUniqueInsights();

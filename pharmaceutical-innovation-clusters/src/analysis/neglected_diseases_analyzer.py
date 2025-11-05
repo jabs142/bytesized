@@ -141,11 +141,17 @@ class NeglectedDiseasesAnalyzer:
         """Count approvals for each disease"""
         results = {}
 
+        # Ensure indication column exists (for backward compatibility with old data)
+        if 'indication' not in df.columns:
+            df['indication'] = ''
+
         for disease, keywords in disease_dict.items():
-            # Create search text
+            # Create search text using pharm_class, indication, and generic_name fields
             df['search_text'] = (
-                df['drug_name'].fillna('') + ' ' +
-                df['sponsor_name'].fillna('')
+                df['pharm_class_epc'].fillna('') + ' ' +
+                df['pharm_class_moa'].fillna('') + ' ' +
+                df['indication'].fillna('') + ' ' +
+                df['generic_name'].fillna('')
             ).str.lower()
 
             # Find matches
@@ -178,12 +184,19 @@ class NeglectedDiseasesAnalyzer:
         """Analyze approval timelines for neglected diseases"""
         timelines = {}
 
+        # Ensure indication column exists (for backward compatibility with old data)
+        if 'indication' not in df.columns:
+            df['indication'] = ''
+
         all_diseases = {**self.disease_keywords, **self.common_diseases}
 
         for disease, keywords in all_diseases.items():
+            # Create search text using pharm_class, indication, and generic_name fields
             df['search_text'] = (
-                df['drug_name'].fillna('') + ' ' +
-                df['sponsor_name'].fillna('')
+                df['pharm_class_epc'].fillna('') + ' ' +
+                df['pharm_class_moa'].fillna('') + ' ' +
+                df['indication'].fillna('') + ' ' +
+                df['generic_name'].fillna('')
             ).str.lower()
 
             matches = df[df['search_text'].apply(

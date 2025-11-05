@@ -21,65 +21,53 @@ function renderUniqueInsights() {
 }
 
 /**
- * Render bottom 10 individual diseases by approval count
+ * Render bottom 10 FDA pharmacological classes (market gaps / innovation opportunities)
  */
 function renderPharmaceuticalNeglect() {
     const container = document.getElementById('pharmaceutical-neglect');
 
     if (!container) return;
 
-    if (!window.neglectData) {
-        container.innerHTML = '<div class="loading">No disease data available</div>';
+    if (!window.fdaPharmClasses || !window.fdaPharmClasses.bottom_10_pharm_classes) {
+        container.innerHTML = '<div class="loading">Loading therapeutic areas data...</div>';
         return;
     }
 
-    // Collect all individual diseases (neglected + common)
-    const allDiseases = [];
+    // Get bottom 10 FDA pharmacological classes
+    const bottom10 = window.fdaPharmClasses.bottom_10_pharm_classes;
 
-    // Add neglected diseases
-    if (window.neglectData.neglected_diseases) {
-        Object.entries(window.neglectData.neglected_diseases).forEach(([name, data]) => {
-            allDiseases.push({
-                name,
-                total: data.total_approvals || 0,
-                category: 'neglected'
-            });
-        });
-    }
+    // Reverse to show from bottom up (least drugs at top)
+    const reversed = [...bottom10].reverse();
 
-    // Add common diseases
-    if (window.neglectData.common_diseases) {
-        Object.entries(window.neglectData.common_diseases).forEach(([name, data]) => {
-            allDiseases.push({
-                name,
-                total: data.total_approvals || 0,
-                category: 'common'
-            });
-        });
-    }
-
-    // Sort by total approvals (ascending) and take bottom 10
-    const bottom10 = allDiseases
-        .sort((a, b) => a.total - b.total)
-        .slice(0, 10);
-
-    const maxCount = Math.max(...bottom10.map(d => d.total));
+    // Use a fixed reference scale of 50 drugs for bottom 10
+    // This way, 1 drug = 2%, 10 drugs = 20%, 50 drugs = 100%
+    // Gives truthful visual representation of "few drugs"
+    const referenceScale = 50;
 
     let html = `
         <div class="patterns-section">
             <div class="category-bars">
     `;
 
-    bottom10.forEach(disease => {
-        const percentage = maxCount > 0 ? (disease.total / maxCount) * 100 : 0;
-        const barColor = '#3498db';
+    reversed.forEach(pharmClass => {
+        // Scale based on fixed reference, with minimum 2% for visibility
+        const percentage = Math.max(2, (pharmClass.count / referenceScale) * 100);
+        const barColor = '#e74c3c'; // Red color for neglected/underserved areas
+
+        // Create detailed tooltip with layman-friendly information
+        const tooltipHtml = `title="${pharmClass.simple_name}
+${pharmClass.description}
+
+Used for: ${pharmClass.uses}
+Examples: ${pharmClass.examples}
+Total drugs: ${pharmClass.count}"`;
 
         html += `
-            <div class="category-bar-row">
-                <div class="category-label">${disease.name}</div>
+            <div class="category-bar-row" ${tooltipHtml} style="cursor: help;">
+                <div class="category-label">${pharmClass.simple_name} <span style="color: var(--text-secondary); font-size: 0.85em;">(${pharmClass.category})</span></div>
                 <div class="category-bar-container">
                     <div class="category-bar-fill" style="width: ${percentage}%; background: ${barColor};"></div>
-                    <div class="category-bar-value">${disease.total.toLocaleString()}</div>
+                    <div class="category-bar-value">${pharmClass.count.toLocaleString()}</div>
                 </div>
             </div>
         `;
@@ -94,45 +82,46 @@ function renderPharmaceuticalNeglect() {
 }
 
 /**
- * Render top therapeutic areas by approval count as horizontal bar chart
+ * Render top 10 FDA pharmacological classes (saturated markets / established drugs)
  */
 function renderTopTherapeuticAreas() {
     const container = document.getElementById('top-therapeutic-areas');
 
     if (!container) return;
 
-    if (!window.therapeuticData || !window.therapeuticData.neglect_analysis) {
-        container.innerHTML = '<div class="loading">No therapeutic areas data available</div>';
+    if (!window.fdaPharmClasses || !window.fdaPharmClasses.top_10_pharm_classes) {
+        container.innerHTML = '<div class="loading">Loading therapeutic areas data...</div>';
         return;
     }
 
-    // Get all therapeutic areas and sort by approvals (descending)
-    const therapeuticAreas = window.therapeuticData.neglect_analysis.most_developed || [];
+    // Get top 10 FDA pharmacological classes
+    const top10 = window.fdaPharmClasses.top_10_pharm_classes;
 
-    if (therapeuticAreas.length === 0) {
-        container.innerHTML = '<div class="loading">No therapeutic areas data available</div>';
-        return;
-    }
-
-    // Take top 10 therapeutic areas
-    const top10 = therapeuticAreas.slice(0, 10);
-    const maxCount = Math.max(...top10.map(area => area.approvals));
+    const maxCount = Math.max(...top10.map(d => d.count));
 
     let html = `
         <div class="patterns-section">
             <div class="category-bars">
     `;
 
-    top10.forEach(area => {
-        const percentage = maxCount > 0 ? (area.approvals / maxCount) * 100 : 0;
-        const barColor = '#3498db';
+    top10.forEach(pharmClass => {
+        const percentage = maxCount > 0 ? Math.max(5, (pharmClass.count / maxCount) * 100) : 0;
+        const barColor = '#3498db'; // Blue for saturated/developed areas
+
+        // Create detailed tooltip with layman-friendly information
+        const tooltipHtml = `title="${pharmClass.simple_name}
+${pharmClass.description}
+
+Used for: ${pharmClass.uses}
+Examples: ${pharmClass.examples}
+Total drugs: ${pharmClass.count}"`;
 
         html += `
-            <div class="category-bar-row">
-                <div class="category-label">${area.area}</div>
+            <div class="category-bar-row" ${tooltipHtml} style="cursor: help;">
+                <div class="category-label">${pharmClass.simple_name} <span style="color: var(--text-secondary); font-size: 0.85em;">(${pharmClass.category})</span></div>
                 <div class="category-bar-container">
                     <div class="category-bar-fill" style="width: ${percentage}%; background: ${barColor};"></div>
-                    <div class="category-bar-value">${area.approvals.toLocaleString()}</div>
+                    <div class="category-bar-value">${pharmClass.count.toLocaleString()}</div>
                 </div>
             </div>
         `;

@@ -584,18 +584,22 @@ body {
 
 .test-results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .test-card {
     background: var(--bg-card);
     border: var(--pixel-border);
     border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     text-align: center;
     box-shadow: var(--shadow-sm);
     transition: all 0.2s;
+    width: 100%;
+    max-width: 100%;
 }
 
 .test-card.clustered {
@@ -613,8 +617,9 @@ body {
 }
 
 .test-icon {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-sm);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .test-card h3 {
@@ -632,10 +637,34 @@ body {
     font-weight: normal;
 }
 
-.p-value {
-    font-size: 0.75rem;
+.test-metrics {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid rgba(15, 56, 15, 0.1);
+    border-bottom: 1px solid rgba(15, 56, 15, 0.1);
+}
+
+.metric {
+    flex: 1;
+    text-align: center;
+}
+
+.metric-value {
+    font-family: var(--font-pixel);
+    font-size: 1.5rem;
+    color: var(--gb-dark);
+    font-weight: bold;
+    margin-bottom: var(--spacing-xs);
+}
+
+.metric-label {
+    font-size: 0.7rem;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .test-explanation {
@@ -1112,9 +1141,13 @@ body {
 }
 
 .category-label {
-    min-width: 150px;
+    min-width: 250px;
+    max-width: 250px;
     font-size: 0.75rem;
     text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .category-bar-container {
