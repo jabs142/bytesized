@@ -52,19 +52,24 @@ function renderPharmaceuticalNeglect() {
     reversed.forEach(pharmClass => {
         // Scale based on fixed reference, with minimum 2% for visibility
         const percentage = Math.max(2, (pharmClass.count / referenceScale) * 100);
-        const barColor = '#e74c3c'; // Red color for neglected/underserved areas
+        const barColor = '#E4ACB2'; // Dusty rose from therapeutic palette for emerging areas
 
         // Create detailed tooltip with layman-friendly information
-        const tooltipHtml = `title="${pharmClass.simple_name}
+        const tooltipContent = `${pharmClass.simple_name}
 ${pharmClass.description}
 
 Used for: ${pharmClass.uses}
 Examples: ${pharmClass.examples}
-Total drugs: ${pharmClass.count}"`;
+Total drugs: ${pharmClass.count}`;
 
         html += `
-            <div class="category-bar-row" ${tooltipHtml} style="cursor: help;">
-                <div class="category-label">${pharmClass.simple_name} <span style="color: var(--text-secondary); font-size: 0.85em;">(${pharmClass.category})</span></div>
+            <div class="category-bar-row custom-tooltip" data-tooltip="${tooltipContent.replace(/"/g, '&quot;')}" style="cursor: help;">
+                <div class="category-label">
+                    <strong>${pharmClass.simple_name}</strong>
+                    <span style="color: var(--text-secondary); font-size: 0.75em; display: block; margin-top: 2px;">
+                        for ${pharmClass.category.toLowerCase()}
+                    </span>
+                </div>
                 <div class="category-bar-container">
                     <div class="category-bar-fill" style="width: ${percentage}%; background: ${barColor};"></div>
                     <div class="category-bar-value">${pharmClass.count.toLocaleString()}</div>
@@ -106,18 +111,18 @@ function renderTopTherapeuticAreas() {
 
     top10.forEach(pharmClass => {
         const percentage = maxCount > 0 ? Math.max(5, (pharmClass.count / maxCount) * 100) : 0;
-        const barColor = '#3498db'; // Blue for saturated/developed areas
+        const barColor = '#99BAB9'; // Blue-gray from therapeutic palette for established areas
 
         // Create detailed tooltip with layman-friendly information
-        const tooltipHtml = `title="${pharmClass.simple_name}
+        const tooltipContent = `${pharmClass.simple_name}
 ${pharmClass.description}
 
 Used for: ${pharmClass.uses}
 Examples: ${pharmClass.examples}
-Total drugs: ${pharmClass.count}"`;
+Total drugs: ${pharmClass.count}`;
 
         html += `
-            <div class="category-bar-row" ${tooltipHtml} style="cursor: help;">
+            <div class="category-bar-row custom-tooltip" data-tooltip="${tooltipContent.replace(/"/g, '&quot;')}" style="cursor: help;">
                 <div class="category-label">${pharmClass.simple_name} <span style="color: var(--text-secondary); font-size: 0.85em;">(${pharmClass.category})</span></div>
                 <div class="category-bar-container">
                     <div class="category-bar-fill" style="width: ${percentage}%; background: ${barColor};"></div>
@@ -153,21 +158,28 @@ function renderTherapeuticTrends() {
 
     let html = `
         <div class="insight-summary">
-            <h3>Therapeutic Landscape</h3>
             <div class="stat-grid">
-                <div class="stat-item">
-                    <div class="stat-label">Total Drugs Analyzed</div>
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL DRUGS ANALYZED</div>
                     <div class="stat-value">${window.therapeuticData.total_drugs_analyzed.toLocaleString()}</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-label">Therapeutic Areas</div>
+                <div class="stat-card">
+                    <div class="stat-label">THERAPEUTIC AREAS</div>
                     <div class="stat-value">${Object.keys(trends).length}</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-label">Date Range</div>
+                <div class="stat-card">
+                    <div class="stat-label">DATE RANGE</div>
                     <div class="stat-value">${window.therapeuticData.summary.date_range}</div>
                 </div>
             </div>
+        </div>
+
+        <!-- Therapeutic Peaks Chart -->
+        <div style="margin-top: var(--spacing-lg);">
+            <h4 style="font-family: var(--font-pixel); font-size: 0.8rem; margin-bottom: var(--spacing-md); color: var(--gb-dark);">
+                📊 When Did Each Therapeutic Area Peak?
+            </h4>
+            <div id="therapeutic-peaks-chart"></div>
         </div>
 
         <!-- Timeline Visualization -->
@@ -179,8 +191,14 @@ function renderTherapeuticTrends() {
 
     container.innerHTML = html;
 
-    // Render interactive timeline after HTML is set
+    // Render visualizations after HTML is set
     setTimeout(() => {
+        // Render peaks chart
+        if (typeof renderTherapeuticPeaksChart === 'function') {
+            renderTherapeuticPeaksChart();
+        }
+
+        // Render timeline
         if (typeof renderTherapeuticTimeline === 'function') {
             renderTherapeuticTimeline();
         }
@@ -208,7 +226,7 @@ function renderFunFactCards() {
             icon: '🌬️',
             title: 'Respiratory Collapse',
             insight: '82% decline from 1990s peak',
-            description: 'Respiratory medicine exploded to 105 approvals in the 1990s, then collapsed to just 4 in the 2020s. COVID treatments are classified under Infectious Disease, not Respiratory.',
+            description: 'Respiratory medicine exploded to 105 approvals in the 1990s, then collapsed to just 4 in the 2020s.',
             hasDisclaimer: true
         },
         {
@@ -222,6 +240,13 @@ function renderFunFactCards() {
             title: 'Cancer Immunotherapy',
             insight: '127 approvals since 2010',
             description: 'The newest frontier in pharmaceutical innovation. Checkpoint inhibitors and CAR-T therapies are transforming cancer treatment.'
+        },
+        {
+            icon: '🧠',
+            title: 'The 1980s Boom',
+            insight: '15,987 drugs approved',
+            description: 'The most innovative decade in pharmaceutical history. The 1980s saw unprecedented drug development, averaging 1,600 approvals per year—a record never matched since.',
+            tooltip: 'The Hatch-Waxman Act (1984) revolutionized generic drug approvals, no longer requiring full clinical trials. This, combined with the biotech revolution and AIDS crisis, created the most innovative decade in pharmaceutical history.'
         }
     ];
 
@@ -229,13 +254,14 @@ function renderFunFactCards() {
         <div class="methodology-section" style="margin-top: 40px;">
             <div class="container">
                 <h3>📚 Pharmaceutical Innovation Stories</h3>
-                <p class="section-subtitle">Five data-driven insights into therapeutic breakthroughs</p>
+                <p class="section-subtitle">Six data-driven insights into therapeutic breakthroughs</p>
                 <div class="methodology-grid">
     `;
 
     stories.forEach(story => {
+        const tooltipAttr = story.tooltip ? `title="${story.tooltip}"` : '';
         html += `
-                    <div class="method-card">
+                    <div class="method-card" ${tooltipAttr}>
                         <div class="story-icon">${story.icon}</div>
                         <h4>${story.title}</h4>
                         <div class="story-insight">${story.insight}</div>

@@ -3,18 +3,21 @@
  * Scatter plot showing individual drug approvals across time within decades
  */
 
-// Color palette for therapeutic areas (darker colors for better visibility)
+// Color palette for therapeutic areas (pastel palette for better aesthetics)
 const THERAPEUTIC_COLORS = {
-    "Alzheimer's & Dementia": "#2a9d8f",
-    "CNS & Neurology": "#e9c46a",
-    "Cardiovascular": "#6a4c93",
-    "Diabetes & Endocrine": "#e76f51",
-    "Gastrointestinal": "#457b9d",
-    "Infectious Disease": "#f77f00",
-    "Oncology": "#6a994e",
-    "Pain & Analgesia": "#d62828",
-    "Rare & Orphan Diseases": "#6c757d",
-    "Respiratory": "#9c4a8b"
+    "Alzheimer's & Dementia": "#E4ACB2",    // Dusty rose
+    "CNS & Neurology": "#EABCA8",           // Peach
+    "Cardiovascular": "#FAEDCD",            // Cream
+    "Diabetes & Endocrine": "#CCD5AE",      // Sage green
+    "Gastrointestinal": "#99BAB9",          // Blue gray
+    "Infectious Disease": "#D4A5A5",        // Rose variation
+    "Oncology": "#E8B088",                  // Peach variation
+    "Pain & Analgesia": "#F5E5B8",          // Cream variation
+    "Rare & Orphan Diseases": "#B8C99A",    // Sage variation
+    "Respiratory": "#88A5A4",               // Blue gray variation
+    "Immunology & Rheumatology": "#F0D0D0", // Light rose
+    "Psychiatry": "#F2D4BA",                // Light peach
+    "Dermatology": "#FDF8E8"                // Light cream
 };
 
 // State management
@@ -105,6 +108,9 @@ function renderTherapeuticTimeline() {
 
     // Render initial decade
     renderScatterPlot(decades[currentDecadeIndex]);
+
+    // Initialize dropdown to match currentDecadeIndex
+    document.getElementById('decade-dropdown').value = currentDecadeIndex;
 }
 
 /**
@@ -221,7 +227,7 @@ function renderScatterPlot(decade) {
     g.append('g')
         .call(yAxis)
         .selectAll('text')
-        .style('fill', (d, i) => THERAPEUTIC_COLORS[therapeuticAreas[i]] || '#fff')
+        .style('fill', '#333')
         .style('font-size', '11px')
         .style('font-weight', 'bold')
         .style('font-family', 'Courier New, monospace');
@@ -239,7 +245,7 @@ function renderScatterPlot(decade) {
         .attr('r', 6)
         .attr('fill', d => d.color)
         .attr('opacity', 0.85)
-        .attr('stroke', '#fff')
+        .attr('stroke', '#333')
         .attr('stroke-width', 1)
         .style('cursor', 'pointer')
         .on('mouseover', function(event, d) {
@@ -255,7 +261,7 @@ function renderScatterPlot(decade) {
             d3.select(this)
                 .attr('r', 6)
                 .attr('opacity', 0.85)
-                .attr('stroke', '#fff')
+                .attr('stroke', '#333')
                 .attr('stroke-width', 1);
 
             hideTooltip();
@@ -327,29 +333,30 @@ function showTooltip(event, data) {
             .append('div')
             .attr('class', 'scatter-tooltip')
             .style('position', 'absolute')
-            .style('background', 'rgba(0, 0, 0, 0.95)')
-            .style('color', '#fff')
+            .style('background', '#ffffff')
+            .style('color', '#1a1a1a')
             .style('padding', '12px')
             .style('border-radius', '4px')
-            .style('border', '1px solid #ccc')
+            .style('border', '2px solid #333')
             .style('pointer-events', 'none')
             .style('font-size', '12px')
             .style('font-family', 'Courier New, monospace')
             .style('z-index', '10000')
-            .style('max-width', '300px');
+            .style('max-width', '300px')
+            .style('box-shadow', '0 4px 6px rgba(0, 0, 0, 0.1)');
     }
 
     tooltip.html(`
         <div style="margin-bottom: 8px;">
             <strong style="color: ${data.color}; font-size: 14px;">${data.drug}</strong>
         </div>
-        <div style="color: #fff; margin-bottom: 6px;">
+        <div style="color: #1a1a1a; margin-bottom: 6px;">
             <strong>${data.year}</strong>
         </div>
         <div style="margin-bottom: 4px;">
             Area: <strong>${data.area}</strong>
         </div>
-        <div style="color: #888; font-size: 11px;">
+        <div style="color: #666; font-size: 11px;">
             Sponsor: ${data.sponsor}
         </div>
     `)

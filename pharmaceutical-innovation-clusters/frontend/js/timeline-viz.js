@@ -39,6 +39,44 @@ function renderTimeline(vizData) {
     `;
 
     container.innerHTML = html;
+
+    // Add custom hover tooltips to bars
+    setTimeout(() => {
+        const bars = container.querySelectorAll('.bar.fda');
+
+        // Create tooltip element if it doesn't exist
+        let tooltip = document.getElementById('timeline-tooltip');
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.id = 'timeline-tooltip';
+            tooltip.className = 'timeline-tooltip';
+            tooltip.style.display = 'none';
+            document.body.appendChild(tooltip);
+        }
+
+        bars.forEach(bar => {
+            bar.addEventListener('mouseenter', (e) => {
+                const total = parseInt(e.target.dataset.total);
+                const start = e.target.dataset.start;
+                const end = e.target.dataset.end;
+
+                tooltip.innerHTML = `
+                    <strong>${total.toLocaleString()} drugs approved</strong><br/>
+                    <span style="color: var(--text-secondary); font-size: 0.85em;">from ${start}-${end}</span>
+                `;
+                tooltip.style.display = 'block';
+            });
+
+            bar.addEventListener('mousemove', (e) => {
+                tooltip.style.left = (e.pageX + 10) + 'px';
+                tooltip.style.top = (e.pageY - 40) + 'px';
+            });
+
+            bar.addEventListener('mouseleave', () => {
+                tooltip.style.display = 'none';
+            });
+        });
+    }, 0);
 }
 
 /**
@@ -60,7 +98,10 @@ function renderFDALineChart(years, yearlyCounts, clusters) {
             <div class="decade-column">
                 <div class="bars">
                     <div class="bar fda" style="height: ${height}%"
-                         title="FDA Drugs: ${decade.total} (avg ${decade.avg_per_year.toFixed(1)}/year)"></div>
+                         data-decade="${decade.decade}"
+                         data-total="${decade.total}"
+                         data-start="${decade.decade}"
+                         data-end="${decade.decade + 9}"></div>
                 </div>
                 <div class="decade-label">${decade.decade}s</div>
             </div>

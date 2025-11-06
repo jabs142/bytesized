@@ -20,9 +20,23 @@ from config import Config
 class StatisticalAnalyzer:
     """Analyzes temporal clustering using statistical methods"""
 
-    def __init__(self):
+    def __init__(self, drug_type_filter: str = 'all'):
+        """
+        Initialize analyzer
+
+        Args:
+            drug_type_filter: 'all', 'innovative', or 'generic'
+        """
         self.fda_path = Config.RAW_DATA_DIR / 'fda_drugs_raw.csv'
-        self.output_path = Config.PROCESSED_DATA_DIR / 'statistical_results.json'
+        self.drug_type_filter = drug_type_filter
+
+        # Set output path based on filter
+        if drug_type_filter == 'innovative':
+            self.output_path = Config.PROCESSED_DATA_DIR / 'statistical_results_innovative.json'
+        elif drug_type_filter == 'generic':
+            self.output_path = Config.PROCESSED_DATA_DIR / 'statistical_results_generic.json'
+        else:
+            self.output_path = Config.PROCESSED_DATA_DIR / 'statistical_results.json'
 
     def analyze(self) -> Dict:
         """
@@ -31,8 +45,14 @@ class StatisticalAnalyzer:
         Returns:
             Dictionary with statistical test results
         """
+        filter_label = {
+            'all': 'ALL DRUGS',
+            'innovative': 'INNOVATIVE DRUGS (NDA/BLA)',
+            'generic': 'GENERIC DRUGS (ANDA)'
+        }.get(self.drug_type_filter, 'ALL DRUGS')
+
         print("\n" + "="*70)
-        print("STATISTICAL CLUSTERING ANALYSIS - FDA DRUG APPROVALS")
+        print(f"STATISTICAL CLUSTERING ANALYSIS - {filter_label}")
         print("="*70)
 
         # Load FDA data
@@ -55,7 +75,9 @@ class StatisticalAnalyzer:
             'metadata': {
                 'analysis_date': pd.Timestamp.now().isoformat(),
                 'sliding_window_size': Config.SLIDING_WINDOW_SIZE,
-                'threshold_sigma': Config.CLUSTERING_THRESHOLD_SIGMA
+                'threshold_sigma': Config.CLUSTERING_THRESHOLD_SIGMA,
+                'drug_type_filter': self.drug_type_filter,
+                'total_records_analyzed': len(fda_df)
             }
         }
 
@@ -71,7 +93,7 @@ class StatisticalAnalyzer:
         return results
 
     def _load_fda_data(self) -> pd.DataFrame:
-        """Load FDA data"""
+        """Load FDA data and apply drug type filter"""
         if not self.fda_path.exists():
             print("⚠️  FDA data not found")
             return pd.DataFrame()
@@ -79,6 +101,17 @@ class StatisticalAnalyzer:
         df = pd.read_csv(self.fda_path)
         df['approval_date'] = pd.to_datetime(df['approval_date'], errors='coerce')
         df['year'] = df['approval_date'].dt.year
+
+        # Apply drug type filter
+        if self.drug_type_filter == 'innovative':
+            df = df[df['is_innovative'] == True].copy()
+            print(f"   Filtered to {len(df):,} innovative drugs (NDA/BLA)")
+        elif self.drug_type_filter == 'generic':
+            df = df[df['is_generic'] == True].copy()
+            print(f"   Filtered to {len(df):,} generic drugs (ANDA)")
+        else:
+            print(f"   Analyzing all {len(df):,} drugs")
+
         return df
 
     def _run_poisson_tests(self, fda_df: pd.DataFrame) -> Dict:

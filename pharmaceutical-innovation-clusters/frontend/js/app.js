@@ -23,13 +23,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadData() {
     try {
         // Load all pharmaceutical data files in parallel
-        const [clustersRes, statsRes, therapeuticRes, neglectRes, timelineRes, fdaPharmRes] = await Promise.all([
+        const [clustersRes, statsRes, therapeuticRes, neglectRes, timelineRes, fdaPharmRes, enrichedClustersRes, clusterContextRes] = await Promise.all([
             fetch('data/clusters.json'),
             fetch('../data/processed/statistical_results.json').catch(() => null),
             fetch('../data/processed/therapeutic_trends.json').catch(() => null),
             fetch('../data/unique_angles/neglected_diseases.json').catch(() => null),
             fetch('../data/processed/therapeutic_timeline.json').catch(() => null),
-            fetch('../data/processed/fda_pharm_classes.json').catch(() => null)
+            fetch('../data/processed/fda_pharm_classes.json').catch(() => null),
+            fetch('data/enriched_clusters.json').catch(() => null),
+            fetch('data/cluster_context.json').catch(() => null)
         ]);
 
         // Parse responses
@@ -61,6 +63,16 @@ async function loadData() {
         if (fdaPharmRes && fdaPharmRes.ok) {
             window.fdaPharmClasses = await fdaPharmRes.json();
             console.log('FDA Pharm Classes loaded:', window.fdaPharmClasses.total_pharm_classes, 'classes');
+        }
+
+        if (enrichedClustersRes && enrichedClustersRes.ok) {
+            window.enrichedClusters = await enrichedClustersRes.json();
+            console.log('Enriched clusters loaded:', window.enrichedClusters.clusters?.length || 0, 'clusters');
+        }
+
+        if (clusterContextRes && clusterContextRes.ok) {
+            window.clusterContext = await clusterContextRes.json();
+            console.log('Cluster context loaded');
         }
 
         // Use clusters.json for visualization if available
@@ -110,7 +122,6 @@ function renderDashboard() {
     // Render new statistical visualizations
     if (statsData) {
         renderPoissonTests(statsData);
-        renderStatisticalSummary(statsData);
     }
 
     // Render timeline
@@ -161,45 +172,106 @@ function renderClusters() {
 
 
 /**
- * Render FDA cluster list
+ * Render FDA cluster list with enriched context
  */
 function renderFDAClusters() {
     const container = document.getElementById('fda-cluster-list');
-    const clusters = clusterData.fda_clusters?.clusters || [];
+    const enrichedClusters = window.enrichedClusters?.clusters || clusterData.fda_clusters?.clusters || [];
+    const context = window.clusterContext || {};
 
-    if (clusters.length === 0) {
+    if (enrichedClusters.length === 0) {
         container.innerHTML = '<div class="loading">No FDA clusters identified</div>';
         return;
     }
 
-    const html = clusters.map(cluster => {
+    const html = enrichedClusters.map(cluster => {
+        const clusterId = `${cluster.start_year}-${cluster.end_year}`;
+        const clusterInfo = context[clusterId] || {};
+
+        // Generate therapeutic breakdown HTML
+        const therapeuticHtml = cluster.therapeutic_breakdown
+            ? cluster.therapeutic_breakdown.slice(0, 5).map(area => `
+                <div class="therapeutic-item">
+                    <div class="therapeutic-label">${area.area}</div>
+                    <div class="therapeutic-bar-container">
+                        <div class="therapeutic-bar" style="width: ${area.percentage}%"></div>
+                        <div class="therapeutic-value">${area.percentage}% (${area.count.toLocaleString()})</div>
+                    </div>
+                </div>
+            `).join('')
+            : '<p class="no-data">Therapeutic breakdown not available</p>';
+
+        // Generate sponsors HTML
+        const sponsorsHtml = cluster.top_sponsors
+            ? cluster.top_sponsors.map((sponsor, i) => `
+                <li><strong>${i + 1}. ${sponsor.name}</strong> — ${sponsor.approvals} approvals</li>
+            `).join('')
+            : '<p class="no-data">Sponsor data not available</p>';
+
+        // Generate key events HTML
+        const eventsHtml = clusterInfo.key_events
+            ? clusterInfo.key_events.map(event => `
+                <div class="key-event-badge">
+                    <span class="event-year">${event.year}</span>
+                    <span class="event-name">${event.event}</span>
+                </div>
+            `).join('')
+            : '';
+
         return `
             <div class="cluster-card" onclick="toggleCluster(this)">
                 <div class="cluster-header">
                     <div class="cluster-period">${cluster.start_year}–${cluster.end_year}</div>
                     <div class="cluster-info">
-                        <h3>${cluster.duration_years} Year Drug Approval Surge</h3>
+                        <h3>${clusterInfo.title || `${cluster.duration_years} Year Drug Approval Surge`}</h3>
+                        ${clusterInfo.subtitle ? `<p class="cluster-subtitle">${clusterInfo.subtitle}</p>` : ''}
                         <div class="cluster-meta">
-                            <span>${cluster.total_innovations} approvals</span>
-                            <span>Avg: ${cluster.avg_per_year.toFixed(1)}/year</span>
+                            <span>${cluster.total_innovations || cluster.total_approvals_in_period || 0} approvals</span>
+                            <span>Avg: ${(cluster.avg_per_year || 0).toFixed(1)}/year</span>
                         </div>
                     </div>
                     <div class="expand-icon">▼</div>
                 </div>
                 <div class="cluster-details">
-                    <h4>Details</h4>
-                    <p>
-                        This period saw <strong>${cluster.total_innovations} drug approvals</strong>
-                        over ${cluster.duration_years} years, averaging ${cluster.avg_per_year.toFixed(1)}
-                        approvals per year.
-                    </p>
-                    <p>
-                        Peak year: <strong>${cluster.peak_year}</strong> with ${cluster.peak_count} approvals
-                    </p>
-                    <p>
-                        This cluster represents a period of ${cluster.avg_per_year > 50 ? 'exceptional' : 'elevated'}
-                        pharmaceutical innovation, significantly above the historical mean.
-                    </p>
+                    ${clusterInfo.description ? `
+                        <div class="cluster-context">
+                            <h4>📖 Historical Context</h4>
+                            <p>${clusterInfo.description}</p>
+                            ${eventsHtml ? `<div class="key-events">${eventsHtml}</div>` : ''}
+                        </div>
+                    ` : ''}
+
+                    <div class="cluster-section">
+                        <h4>🎯 Top Therapeutic Areas</h4>
+                        <div class="therapeutic-breakdown">
+                            ${therapeuticHtml}
+                        </div>
+                    </div>
+
+                    <div class="cluster-section">
+                        <h4>🏢 Most Active Companies</h4>
+                        <ul class="sponsors-list">
+                            ${sponsorsHtml}
+                        </ul>
+                    </div>
+
+                    ${clusterInfo.notable_drug_classes ? `
+                        <div class="cluster-section">
+                            <h4>💊 Breakthrough Drug Categories</h4>
+                            <div class="drug-classes">
+                                ${clusterInfo.notable_drug_classes.map(cls => `
+                                    <span class="drug-class-badge">${cls}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    ${clusterInfo.why_it_matters ? `
+                        <div class="cluster-impact">
+                            <h4>💡 Why It Matters</h4>
+                            <p>${clusterInfo.why_it_matters}</p>
+                        </div>
+                    ` : ''}
                 </div>
             </div>
         `;

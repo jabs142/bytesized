@@ -63,28 +63,48 @@
                 </div>
             </section>
 
-            <!-- Statistical Tests Section -->
-            <section class="stats-tests-section">
+            <!-- Question Section -->
+            <section class="question-section">
                 <h2>Are Innovations Random?</h2>
                 <p class="section-description">
-                    Using statistical tests, we can prove that innovations cluster together
-                    rather than occurring randomly over time.
+                    History shows us that major pharmaceutical breakthroughs don't happen randomly—they cluster together in waves.
+                    Two-thirds of all antibiotic types ever discovered emerged in a single 20-year window (1940s-1960s).
+                    But is this pattern statistically significant, or just coincidence?
+                </p>
+                <p class="section-description">
+                    Let's examine the FDA approval timeline to see if any patterns emerge...
+                </p>
+            </section>
+
+            <!-- Master Timeline Section -->
+            <section class="timeline-section">
+                <h2>📊 FDA Drug Approval Timeline</h2>
+                <p class="section-description">
+                    Each bar represents a decade of pharmaceutical approvals. Hover to see exact counts.
+                </p>
+                <div id="master-timeline" class="timeline-container">
+                    <div class="loading">Loading timeline...</div>
+                </div>
+                <p class="transition-text">
+                    The spikes are visually striking, but are they statistically significant or just random variation?
+                </p>
+            </section>
+
+            <!-- Statistical Analysis Section -->
+            <section class="stats-tests-section">
+                <h2>🔬 Statistical Analysis Results</h2>
+                <p class="section-description">
+                    Using the Coefficient of Variation and sliding window analysis, we can prove that pharmaceutical innovations cluster together rather than occurring randomly.
                 </p>
 
                 <div id="poisson-results" class="test-results-grid">
                     <div class="loading">Loading statistical tests...</div>
                 </div>
-            </section>
 
-            <!-- Master Timeline Section -->
-            <section class="timeline-section">
-                <h2>FDA Drug Approval Timeline</h2>
-                <p class="section-description">
-                    Shaded regions indicate statistically significant cluster periods (>2σ above mean)
+                <p class="transition-text">
+                    <strong>The verdict: These clusters are real.</strong> Two major innovation surges emerge from the data.
+                    Let's explore what drove each unprecedented wave of pharmaceutical development...
                 </p>
-                <div id="master-timeline" class="timeline-container">
-                    <div class="loading">Loading timeline...</div>
-                </div>
             </section>
 
             <!-- Drug Approval Clusters -->
@@ -100,22 +120,11 @@
 
             <!-- Pharmaceutical Insights Section -->
             <section class="unique-insights-section">
-                <h2>Pharmaceutical Insights</h2>
+                <h2>🔍 Pharmaceutical Insights</h2>
                 <p class="section-description">
-                    Data-driven analysis of therapeutic area patterns and approval trends
+                    Now that we've identified the major innovation clusters, let's zoom out to examine the broader therapeutic landscape.
+                    Which disease areas have attracted the most investment? Where are the innovation gaps?
                 </p>
-
-                <!-- Bottom 10 Individual Diseases -->
-                <div class="insight-container">
-                    <h3>Bottom 10 Individual Diseases by Approval Count</h3>
-                    <p class="insight-intro">
-                        Data-driven ranking showing which individual diseases have received the fewest FDA approvals.
-                        Sorted from least to most approvals.
-                    </p>
-                    <div id="pharmaceutical-neglect">
-                        <div class="loading">Loading disease data...</div>
-                    </div>
-                </div>
 
                 <!-- Top Therapeutic Areas -->
                 <div class="insight-container">
@@ -129,6 +138,18 @@
                     </div>
                 </div>
 
+                <!-- Emerging Drug Classes -->
+                <div class="insight-container">
+                    <h3>Emerging Drug Classes (Only 1 Drug Each)</h3>
+                    <p class="insight-intro">
+                        Cutting-edge pharmaceutical innovations where only a single drug has been approved.
+                        These represent breakthrough therapies or novel mechanisms of action entering the market.
+                    </p>
+                    <div id="pharmaceutical-neglect">
+                        <div class="loading">Loading drug class data...</div>
+                    </div>
+                </div>
+
                 <!-- Therapeutic Trends -->
                 <div class="insight-container">
                     <h3>Therapeutic Area Trends</h3>
@@ -138,6 +159,18 @@
                     </p>
                     <div id="therapeutic-trends">
                         <div class="loading">Loading therapeutic trends data...</div>
+                    </div>
+                </div>
+
+                <!-- Decade Breakdown: Generic vs Innovative -->
+                <div class="insight-container">
+                    <h3>The Generic Drug Revolution</h3>
+                    <p class="insight-intro">
+                        The 1980s boom wasn't just about innovation—it was fueled by the rise of generic drugs.
+                        See how the balance between innovative and generic drugs shifted over time.
+                    </p>
+                    <div id="decade-breakdown-chart">
+                        <div class="loading">Loading decade breakdown data...</div>
                     </div>
                 </div>
             </section>
@@ -161,15 +194,6 @@
                                 <li>Statistical threshold: >2σ above mean</li>
                                 <li>Minimum cluster size: 3 consecutive years</li>
                                 <li>Identifies periods of unusual approval density</li>
-                            </ul>
-                        </div>
-                        <div class="method-card">
-                            <h3>Pharmacological Classes</h3>
-                            <ul>
-                                <li>345 FDA pharmacological classes tracked</li>
-                                <li>Plain-language simplification applied</li>
-                                <li>Top 10 / Bottom 10 analysis</li>
-                                <li>Real market opportunities identified</li>
                             </ul>
                         </div>
                     </div>
@@ -222,6 +246,8 @@
     <script src="js/statistical-viz.js"></script>
     <script src="js/timeline-viz.js"></script>
     <script src="js/unique-insights.js"></script>
+    <script src="js/therapeutic-peaks-viz.js"></script>
+    <script src="js/decade-breakdown-viz.js"></script>
     <script src="js/therapeutic-timeline.js"></script>
 
     <!-- Eject Button Logic -->

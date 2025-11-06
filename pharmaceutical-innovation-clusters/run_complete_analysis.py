@@ -110,35 +110,58 @@ def main():
     print("PHARMACEUTICAL INNOVATION CLUSTERS - COMPLETE ANALYSIS")
     print("="*70)
 
-    # Step 1: Statistical clustering
-    print("\n[1/5] Running statistical analysis...")
-    stat_analyzer = StatisticalAnalyzer()
-    stat_results = stat_analyzer.analyze()
-    print(f"  ✓ Found {len(stat_results['significant_clusters'])} significant clusters")
+    # Step 1: Statistical clustering (all three views)
+    print("\n[1/6] Running statistical analysis (3 views)...")
+    stat_analyzer_all = StatisticalAnalyzer(drug_type_filter='all')
+    stat_results = stat_analyzer_all.analyze()
+    print(f"  ✓ All drugs: {len(stat_results['significant_clusters'])} clusters")
 
-    # Step 2: Temporal cluster analysis
-    print("\n[2/5] Analyzing temporal clusters...")
-    cluster_analyzer = ClusterAnalyzer()
-    cluster_results = cluster_analyzer.analyze()
-    print(f"  ✓ Identified {cluster_results['summary']['cluster_count']} cluster periods")
+    stat_analyzer_innovative = StatisticalAnalyzer(drug_type_filter='innovative')
+    stat_results_innovative = stat_analyzer_innovative.analyze()
+    print(f"  ✓ Innovative only: {len(stat_results_innovative['significant_clusters'])} clusters")
+
+    stat_analyzer_generic = StatisticalAnalyzer(drug_type_filter='generic')
+    stat_results_generic = stat_analyzer_generic.analyze()
+    print(f"  ✓ Generic only: {len(stat_results_generic['significant_clusters'])} clusters")
+
+    # Step 2: Temporal cluster analysis (all three views)
+    print("\n[2/6] Analyzing temporal clusters (3 views)...")
+    cluster_analyzer_all = ClusterAnalyzer(drug_type_filter='all')
+    cluster_results = cluster_analyzer_all.analyze()
+    print(f"  ✓ All drugs: {cluster_results['summary']['cluster_count']} periods")
+
+    cluster_analyzer_innovative = ClusterAnalyzer(drug_type_filter='innovative')
+    cluster_results_innovative = cluster_analyzer_innovative.analyze()
+    print(f"  ✓ Innovative only: {cluster_results_innovative['summary']['cluster_count']} periods")
+
+    cluster_analyzer_generic = ClusterAnalyzer(drug_type_filter='generic')
+    cluster_results_generic = cluster_analyzer_generic.analyze()
+    print(f"  ✓ Generic only: {cluster_results_generic['summary']['cluster_count']} periods")
 
     # Step 3: Therapeutic area analysis
-    print("\n[3/5] Analyzing therapeutic areas...")
+    print("\n[3/6] Analyzing therapeutic areas...")
     therapeutic_analyzer = TherapeuticAnalyzer()
     therapeutic_results = therapeutic_analyzer.analyze()
     print(f"  ✓ Analyzed {len(therapeutic_results['therapeutic_trends'])} therapeutic areas")
 
     # Step 4: Neglected diseases analysis
-    print("\n[4/5] Analyzing neglected diseases...")
+    print("\n[4/6] Analyzing neglected diseases...")
     neglect_analyzer = NeglectedDiseasesAnalyzer()
     neglect_results = neglect_analyzer.analyze()
     print(f"  ✓ Identified {neglect_results['neglect_metrics']['disparity_ratio']:.1f}x disparity")
 
     # Step 5: Export frontend data
-    print("\n[5/5] Exporting frontend data...")
+    print("\n[5/6] Exporting frontend data...")
     frontend_exporter = FrontendDataExporter()
     frontend_exporter.export()
     print(f"  ✓ Frontend JSON data ready")
+
+    # Step 6: Print three-view comparison
+    print("\n[6/6] Three-view comparison...")
+    print(f"  • Peak years: All={stat_results['peak_years'].get('fda_drugs', 'N/A')}, "
+          f"Innovative={stat_results_innovative['peak_years'].get('fda_drugs', 'N/A')}, "
+          f"Generic={stat_results_generic['peak_years'].get('fda_drugs', 'N/A')}")
+    print(f"  ✓ Three-view analysis complete")
 
     # Generate summary report
     print("\nGenerating summary report...")

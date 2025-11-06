@@ -196,6 +196,33 @@ class FDACollector:
 
         return 'Unknown'
 
+    def _extract_application_type(self, application_number: str) -> str:
+        """
+        Extract application type from application_number prefix
+
+        Examples:
+            'NDA021335' → 'NDA'
+            'ANDA078123' → 'ANDA'
+            'BLA125387' → 'BLA'
+
+        Returns:
+            'NDA', 'ANDA', 'BLA', or 'UNKNOWN'
+        """
+        if not application_number or not isinstance(application_number, str):
+            return 'UNKNOWN'
+
+        app_num_upper = application_number.upper().strip()
+
+        # Check for common prefixes
+        if app_num_upper.startswith('NDA'):
+            return 'NDA'
+        elif app_num_upper.startswith('ANDA'):
+            return 'ANDA'
+        elif app_num_upper.startswith('BLA'):
+            return 'BLA'
+        else:
+            return 'UNKNOWN'
+
     def _clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
         """Clean and standardize the data"""
 
@@ -206,9 +233,13 @@ class FDACollector:
         if 'year' not in df.columns:
             df['year'] = df['approval_date'].dt.year
 
-        # Mark New Molecular Entities (NMEs)
-        # Type 1 = NME, Type 2 = New Active Ingredient
-        df['is_nme'] = df['submission_type'].isin(['ORIG-1', 'TYPE 1', 'NME'])
+        # Extract application type from application_number prefix
+        df['application_type'] = df['application_number'].apply(self._extract_application_type)
+
+        # Create classification flags
+        df['is_innovative'] = df['application_type'].isin(['NDA', 'BLA'])  # NDA = New Drug, BLA = Biologics
+        df['is_generic'] = df['application_type'] == 'ANDA'  # ANDA = Abbreviated New Drug (Generic)
+        df['is_biologic'] = df['application_type'] == 'BLA'  # BLA = Biologics License Application
 
         # Remove duplicates
         df = df.drop_duplicates(subset=['application_number', 'approval_date'])
@@ -230,8 +261,19 @@ class FDACollector:
         print(f"Total approvals: {len(df):,}")
         print(f"Date range: {df['approval_date'].min()} to {df['approval_date'].max()}")
 
-        nme_count = df['is_nme'].sum()
-        print(f"New Molecular Entities (NMEs): {nme_count:,} ({nme_count/len(df)*100:.1f}%)")
+        # Application type breakdown
+        print(f"\nApplication Type Breakdown:")
+        innovative_count = df['is_innovative'].sum()
+        generic_count = df['is_generic'].sum()
+        biologic_count = df['is_biologic'].sum()
+        unknown_count = (df['application_type'] == 'UNKNOWN').sum()
+
+        print(f"  Innovative Drugs (NDA/BLA): {innovative_count:,} ({innovative_count/len(df)*100:.1f}%)")
+        print(f"    - New Drug Applications (NDA): {(df['application_type']=='NDA').sum():,}")
+        print(f"    - Biologics (BLA): {biologic_count:,}")
+        print(f"  Generic Drugs (ANDA): {generic_count:,} ({generic_count/len(df)*100:.1f}%)")
+        if unknown_count > 0:
+            print(f"  Unknown: {unknown_count:,} ({unknown_count/len(df)*100:.1f}%)")
 
         print(f"\nTop 5 years by approvals:")
         top_years = df['year'].value_counts().head(5)

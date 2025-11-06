@@ -20,9 +20,23 @@ from config import Config
 class ClusterAnalyzer:
     """Analyzes temporal clustering patterns in innovation data"""
 
-    def __init__(self):
+    def __init__(self, drug_type_filter: str = 'all'):
+        """
+        Initialize analyzer
+
+        Args:
+            drug_type_filter: 'all', 'innovative', or 'generic'
+        """
         self.fda_path = Config.RAW_DATA_DIR / 'fda_drugs_raw.csv'
-        self.output_path = Config.PROCESSED_DATA_DIR / 'innovation_clusters.json'
+        self.drug_type_filter = drug_type_filter
+
+        # Set output path based on filter
+        if drug_type_filter == 'innovative':
+            self.output_path = Config.PROCESSED_DATA_DIR / 'innovation_clusters_innovative.json'
+        elif drug_type_filter == 'generic':
+            self.output_path = Config.PROCESSED_DATA_DIR / 'innovation_clusters_generic.json'
+        else:
+            self.output_path = Config.PROCESSED_DATA_DIR / 'innovation_clusters.json'
 
     def analyze(self) -> Dict:
         """
@@ -31,8 +45,14 @@ class ClusterAnalyzer:
         Returns:
             Dictionary with clustering results
         """
+        filter_label = {
+            'all': 'ALL DRUGS',
+            'innovative': 'INNOVATIVE DRUGS (NDA/BLA)',
+            'generic': 'GENERIC DRUGS (ANDA)'
+        }.get(self.drug_type_filter, 'ALL DRUGS')
+
         print("\n" + "="*60)
-        print("TEMPORAL CLUSTERING ANALYSIS - FDA DRUG APPROVALS")
+        print(f"TEMPORAL CLUSTERING ANALYSIS - {filter_label}")
         print("="*60)
 
         # Load FDA data
@@ -56,7 +76,9 @@ class ClusterAnalyzer:
             'metadata': {
                 'analysis_date': pd.Timestamp.now().isoformat(),
                 'clustering_threshold_sigma': Config.CLUSTERING_THRESHOLD_SIGMA,
-                'min_cluster_size': Config.MIN_CLUSTER_SIZE
+                'min_cluster_size': Config.MIN_CLUSTER_SIZE,
+                'drug_type_filter': self.drug_type_filter,
+                'total_records_analyzed': len(fda_df)
             }
         }
 
@@ -69,7 +91,7 @@ class ClusterAnalyzer:
         return results
 
     def _load_fda_data(self) -> pd.DataFrame:
-        """Load and prepare FDA data"""
+        """Load and prepare FDA data with drug type filter"""
         print("\n📊 Loading FDA drug approval data...")
 
         if not self.fda_path.exists():
@@ -80,7 +102,16 @@ class ClusterAnalyzer:
         df['approval_date'] = pd.to_datetime(df['approval_date'], errors='coerce')
         df['year'] = df['approval_date'].dt.year
 
-        print(f"   Loaded {len(df):,} drug approvals")
+        # Apply drug type filter
+        if self.drug_type_filter == 'innovative':
+            df = df[df['is_innovative'] == True].copy()
+            print(f"   Filtered to {len(df):,} innovative drugs (NDA/BLA)")
+        elif self.drug_type_filter == 'generic':
+            df = df[df['is_generic'] == True].copy()
+            print(f"   Filtered to {len(df):,} generic drugs (ANDA)")
+        else:
+            print(f"   Loaded {len(df):,} drug approvals (all types)")
+
         return df
 
 
