@@ -32,6 +32,13 @@ function renderTherapeuticPeaksChart() {
 
     let html = `
         <div class="peaks-visualization">
+            <div class="peaks-explanation" style="margin-bottom: var(--spacing-md); padding: var(--spacing-sm); background: #f0f0f0; border-radius: var(--radius-pixel); border: 2px solid var(--gb-dark);">
+                <p style="font-size: 0.875rem; line-height: 1.6; margin: 0; color: var(--text-primary);">
+                    <strong>How to read this chart:</strong> Each bar shows what percentage of that therapeutic area's total drug approvals
+                    occurred in its peak decade. For example, <strong>71%</strong> means that 71% of all Rare & Orphan Disease drugs
+                    were approved in the 2010s, indicating highly concentrated development in that single decade.
+                </p>
+            </div>
             <div class="peaks-grid">
     `;
 
@@ -59,27 +66,11 @@ function renderTherapeuticPeaksChart() {
             <div class="peaks-insight">
                 <h4>💡 Key Insight</h4>
                 <p>
-                    Most therapeutic innovation happened in the <strong>2010s</strong>, not the 1980s.
-                    The 1980s boom was driven by generic drugs, while cutting-edge therapeutic breakthroughs
-                    (rare diseases, Alzheimer's, cancer immunotherapy) concentrated in the 2010s.
+                    Most therapeutic areas peaked in the <strong>2010s</strong>, driven by advances in precision medicine,
+                    immunotherapy, and orphan drug development. Rare diseases (71%), Alzheimer's (65%), and oncology (39%)
+                    all saw their highest concentration of approvals in this decade, representing a shift toward
+                    cutting-edge therapeutic breakthroughs for previously challenging conditions.
                 </p>
-            </div>
-            <div class="decade-legend">
-                <h4>Therapeutic Eras</h4>
-                <div class="legend-grid">
-                    <div class="legend-item">
-                        <span class="legend-color" style="background: ${decadeColors['1990']};"></span>
-                        <span class="legend-text"><strong>1990s</strong>: HIV/AIDS Crisis</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color" style="background: ${decadeColors['2000']};"></span>
-                        <span class="legend-text"><strong>2000s</strong>: Biologics Revolution</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color" style="background: ${decadeColors['2010']};"></span>
-                        <span class="legend-text"><strong>2010s</strong>: Immunotherapy Boom</span>
-                    </div>
-                </div>
             </div>
         </div>
     `;

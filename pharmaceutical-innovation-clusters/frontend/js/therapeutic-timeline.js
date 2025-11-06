@@ -209,7 +209,7 @@ function renderScatterPlot(decade) {
         .call(xAxis)
         .selectAll('text')
         .style('fill', '#000')
-        .style('font-size', '11px')
+        .style('font-size', '6px')
         .style('font-family', 'Courier New, monospace');
 
     g.select('.domain').style('stroke', '#333');
@@ -228,7 +228,7 @@ function renderScatterPlot(decade) {
         .call(yAxis)
         .selectAll('text')
         .style('fill', '#333')
-        .style('font-size', '11px')
+        .style('font-size', '6px')
         .style('font-weight', 'bold')
         .style('font-family', 'Courier New, monospace');
 
@@ -273,7 +273,7 @@ function renderScatterPlot(decade) {
         .attr('y', 25)
         .attr('text-anchor', 'middle')
         .style('fill', '#000')
-        .style('font-size', '16px')
+        .style('font-size', '12px')
         .style('font-weight', 'bold')
         .style('font-family', 'Courier New, monospace')
         .text(`${decade.label}: ${approvals.length} Drug Approvals`);
@@ -297,7 +297,7 @@ function addLegend(svg, width, height, therapeuticAreas) {
         .attr('x', 0)
         .attr('y', 0)
         .style('fill', '#000')
-        .style('font-size', '12px')
+        .style('font-size', '9px')
         .style('font-weight', 'bold')
         .style('font-family', 'Courier New, monospace')
         .text('Therapeutic Areas:');

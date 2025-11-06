@@ -9,6 +9,15 @@ let industryData = null;
 let vizData = null;
 let currentFilter = 'all';
 
+/**
+ * Convert markdown bold syntax to HTML
+ */
+function markdownToHtml(text) {
+    if (!text) return '';
+    // Convert **text** to <strong>text</strong>
+    return text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
@@ -208,22 +217,44 @@ function renderFDAClusters() {
             `).join('')
             : '<p class="no-data">Sponsor data not available</p>';
 
-        // Generate key events HTML
+        // Tooltip definitions for historical events
+        const eventTooltips = {
+            'Hatch-Waxman Act': 'Landmark law that revolutionized drug approvals. Allowed generic drugs to skip expensive clinical trials if they proved bioequivalence to brand-name drugs. This single law unleashed the modern generic drug industry and dramatically lowered prescription costs.',
+            'First Biotech Drug': 'Humulin (human insulin) was the first drug made using recombinant DNA technology—essentially programming bacteria to produce human proteins. This breakthrough launched the entire biotech industry and paved the way for modern biologics like cancer immunotherapy.',
+            'FDA Accelerated Approval': 'Created during the AIDS crisis, this pathway allows drugs for life-threatening diseases to get approved based on surrogate endpoints (like CD4 counts) rather than waiting years for survival data. Transformed how the FDA evaluates breakthrough therapies.',
+            'First Monoclonal Antibody': 'Orthoclone OKT3 (1986) was the first therapeutic monoclonal antibody, launching a revolution in precision medicine. Today, monoclonal antibodies are among the most successful drug categories, treating everything from cancer to autoimmune diseases.'
+        };
+
+        // Generate key events HTML with tooltips
         const eventsHtml = clusterInfo.key_events
-            ? clusterInfo.key_events.map(event => `
-                <div class="key-event-badge">
-                    <span class="event-year">${event.year}</span>
-                    <span class="event-name">${event.event}</span>
-                </div>
-            `).join('')
+            ? clusterInfo.key_events.map(event => {
+                const tooltipText = eventTooltips[event.event] || '';
+                const eventNameHtml = tooltipText
+                    ? `<span class="custom-tooltip" data-tooltip="${tooltipText.replace(/"/g, '&quot;')}">${event.event}</span>`
+                    : event.event;
+
+                return `
+                    <div class="key-event-badge">
+                        <span class="event-year">${event.year}</span>
+                        <span class="event-name">${eventNameHtml}</span>
+                    </div>
+                `;
+            }).join('')
             : '';
+
+        // Add tooltip to title if it contains "HIV/AIDS"
+        const titleTooltip = 'The AIDS crisis in the 1990s transformed drug development. The FDA created fast-track approval pathways for life-threatening diseases, and pharmaceutical companies collaborated in unprecedented ways. HAART (combination therapy) turned HIV from a death sentence into a manageable chronic disease—one of medicine\'s greatest success stories.';
+        const titleText = clusterInfo.title || `${cluster.duration_years} Year Drug Approval Surge`;
+        const titleHtml = titleText.includes('HIV/AIDS')
+            ? `<span class="custom-tooltip" data-tooltip="${titleTooltip.replace(/"/g, '&quot;')}">${titleText}</span>`
+            : titleText;
 
         return `
             <div class="cluster-card" onclick="toggleCluster(this)">
                 <div class="cluster-header">
                     <div class="cluster-period">${cluster.start_year}–${cluster.end_year}</div>
                     <div class="cluster-info">
-                        <h3>${clusterInfo.title || `${cluster.duration_years} Year Drug Approval Surge`}</h3>
+                        <h3>${titleHtml}</h3>
                         ${clusterInfo.subtitle ? `<p class="cluster-subtitle">${clusterInfo.subtitle}</p>` : ''}
                         <div class="cluster-meta">
                             <span>${cluster.total_innovations || cluster.total_approvals_in_period || 0} approvals</span>
@@ -236,7 +267,7 @@ function renderFDAClusters() {
                     ${clusterInfo.description ? `
                         <div class="cluster-context">
                             <h4>📖 Historical Context</h4>
-                            <p>${clusterInfo.description}</p>
+                            <p>${markdownToHtml(clusterInfo.description)}</p>
                             ${eventsHtml ? `<div class="key-events">${eventsHtml}</div>` : ''}
                         </div>
                     ` : ''}
@@ -269,7 +300,7 @@ function renderFDAClusters() {
                     ${clusterInfo.why_it_matters ? `
                         <div class="cluster-impact">
                             <h4>💡 Why It Matters</h4>
-                            <p>${clusterInfo.why_it_matters}</p>
+                            <p>${markdownToHtml(clusterInfo.why_it_matters)}</p>
                         </div>
                     ` : ''}
                 </div>

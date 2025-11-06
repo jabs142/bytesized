@@ -62,20 +62,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Question Section -->
-            <section class="question-section">
-                <h2>Are Innovations Random?</h2>
-                <p class="section-description">
-                    History shows us that major pharmaceutical breakthroughs don't happen randomly—they cluster together in waves.
-                    Two-thirds of all antibiotic types ever discovered emerged in a single 20-year window (1940s-1960s).
-                    But is this pattern statistically significant, or just coincidence?
-                </p>
-                <p class="section-description">
-                    Let's examine the FDA approval timeline to see if any patterns emerge...
-                </p>
-            </section>
-
             <!-- Master Timeline Section -->
             <section class="timeline-section">
                 <h2>📊 FDA Drug Approval Timeline</h2>
@@ -85,9 +71,14 @@
                 <div id="master-timeline" class="timeline-container">
                     <div class="loading">Loading timeline...</div>
                 </div>
-                <p class="transition-text">
-                    The spikes are visually striking, but are they statistically significant or just random variation?
-                </p>
+            </section>
+
+            <!-- Therapeutic Area Trends -->
+            <section class="timeline-section">
+                <h3>Therapeutic Area Trends</h3>
+                <div id="therapeutic-trends">
+                    <div class="loading">Loading therapeutic trends data...</div>
+                </div>
             </section>
 
             <!-- Statistical Analysis Section -->
@@ -100,18 +91,13 @@
                 <div id="poisson-results" class="test-results-grid">
                     <div class="loading">Loading statistical tests...</div>
                 </div>
-
-                <p class="transition-text">
-                    <strong>The verdict: These clusters are real.</strong> Two major innovation surges emerge from the data.
-                    Let's explore what drove each unprecedented wave of pharmaceutical development...
-                </p>
             </section>
 
             <!-- Drug Approval Clusters -->
             <section class="clusters-section">
                 <h2>FDA Drug Approval Clusters</h2>
                 <p class="section-description">
-                    Periods of statistically significant spikes in pharmaceutical approvals
+                    Periods where drug approvals exceeded the historical mean by more than 1 standard deviation
                 </p>
                 <div id="fda-cluster-list" class="cluster-list">
                     <div class="loading">Loading...</div>
@@ -121,10 +107,15 @@
             <!-- Pharmaceutical Insights Section -->
             <section class="unique-insights-section">
                 <h2>🔍 Pharmaceutical Insights</h2>
-                <p class="section-description">
-                    Now that we've identified the major innovation clusters, let's zoom out to examine the broader therapeutic landscape.
-                    Which disease areas have attracted the most investment? Where are the innovation gaps?
-                </p>
+                <!-- Data Coverage Note -->
+                <div style="margin: var(--spacing-md) auto; max-width: 900px; padding: var(--spacing-md); background: #FFF3CD; border: 2px solid #FFC107; border-radius: var(--radius-pixel);">
+                    <h4 style="font-family: var(--font-pixel); font-size: 0.7rem; margin-bottom: var(--spacing-sm); color: var(--gb-dark);">📊 Data Coverage Note</h4>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin: 0; color: var(--text-primary);">
+                        The therapeutic area analyses below are based on <strong>12,121 classified drugs (~17% of the 71,203 total FDA approvals)</strong>.
+                        Many older drugs (pre-1980s) lack complete pharmacological classification in FDA records. The patterns shown are representative
+                        of drugs with available therapeutic classifications, with classification accuracy improving significantly for post-2000 approvals.
+                    </p>
+                </div>
 
                 <!-- Top Therapeutic Areas -->
                 <div class="insight-container">
@@ -150,27 +141,27 @@
                     </div>
                 </div>
 
-                <!-- Therapeutic Trends -->
-                <div class="insight-container">
-                    <h3>Therapeutic Area Trends</h3>
-                    <p class="insight-intro">
-                        Which therapeutic areas have flourished, and which have been left behind?
-                        Exploring the evolution of drug development across disease categories.
-                    </p>
-                    <div id="therapeutic-trends">
-                        <div class="loading">Loading therapeutic trends data...</div>
-                    </div>
-                </div>
-
                 <!-- Decade Breakdown: Generic vs Innovative -->
                 <div class="insight-container">
                     <h3>The Generic Drug Revolution</h3>
                     <p class="insight-intro">
-                        The 1980s boom wasn't just about innovation—it was fueled by the rise of generic drugs.
-                        See how the balance between innovative and generic drugs shifted over time.
+                        The 1980s saw the highest number of drug approvals in history. But was this pure innovation,
+                        or was something else driving the numbers? Let's break down innovative drugs (new molecules)
+                        versus generic drugs (bioequivalent copies of existing drugs).
                     </p>
                     <div id="decade-breakdown-chart">
                         <div class="loading">Loading decade breakdown data...</div>
+                    </div>
+
+                    <!-- Context Box -->
+                    <div style="margin-top: var(--spacing-md); padding: var(--spacing-md); background: #E8F5E9; border: 2px solid var(--gb-light); border-radius: var(--radius-pixel);">
+                        <h4 style="font-family: var(--font-pixel); font-size: 0.7rem; margin-bottom: var(--spacing-sm); color: var(--gb-dark);">ℹ️ Understanding Drug Types</h4>
+                        <ul style="font-size: 0.875rem; line-height: 1.6; margin: 0; padding-left: 1.5rem; color: var(--text-primary);">
+                            <li><strong>Innovative (NDA/BLA):</strong> New molecular entities, biologics, or novel combinations. These represent original pharmaceutical research.</li>
+                            <li><strong>Generic (ANDA):</strong> Bioequivalent copies of off-patent drugs. Same active ingredient as the original but typically lower cost.</li>
+                            <li><strong>Historical Context:</strong> The Hatch-Waxman Act (1984) created the modern generic drug approval pathway, eliminating the need for full clinical trials for bioequivalent drugs.</li>
+                            <li><strong>Both are important:</strong> Generics improve access and affordability, while innovative drugs advance medical science.</li>
+                        </ul>
                     </div>
                 </div>
             </section>

@@ -827,7 +827,7 @@ body {
 
 .decade-label {
     font-family: var(--font-pixel);
-    font-size: 0.4rem;
+    font-size: 0.2rem;
     color: var(--text-secondary);
     writing-mode: horizontal-tb;
 }

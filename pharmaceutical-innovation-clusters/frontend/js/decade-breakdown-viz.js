@@ -42,12 +42,12 @@ async function renderDecadeBreakdown() {
                         <div class="stacked-bar">
                             <div class="bar-segment innovative"
                                  style="width: ${innov_pct}%; background: ${innovativeColor};"
-                                 title="Innovative: ${decade.innovative:,} (${innov_pct}%)">
+                                 title="Innovative: ${decade.innovative.toLocaleString()} (${innov_pct}%)">
                                 ${innov_pct > 15 ? `<span class="segment-label">${innov_pct}%</span>` : ''}
                             </div>
                             <div class="bar-segment generic"
                                  style="width: ${gen_pct}%; background: ${genericColor};"
-                                 title="Generic: ${decade.generic:,} (${gen_pct}%)">
+                                 title="Generic: ${decade.generic.toLocaleString()} (${gen_pct}%)">
                                 ${gen_pct > 15 ? `<span class="segment-label">${gen_pct}%</span>` : ''}
                             </div>
                         </div>
@@ -90,6 +90,15 @@ async function renderDecadeBreakdown() {
                             <p class="revelation-text">
                                 Generic drugs <strong>overtook innovative drugs</strong> for the first time,
                                 reaching 55% of all approvals as the generic drug industry matured.
+                            </p>
+                        </div>
+                        <div class="revelation-card">
+                            <div class="revelation-decade">2000s Reality</div>
+                            <div class="revelation-stat">${data.decade_breakdown.find(d => d.decade === 2000).total.toLocaleString()} total approvals</div>
+                            <div class="revelation-stat">73% generic</div>
+                            <p class="revelation-text">
+                                The decade with the <strong>highest proportion of generic drugs</strong> (73%).
+                                As patents expired on blockbuster drugs from the 1980s-90s, generics flooded the market.
                             </p>
                         </div>
                         <div class="revelation-card">

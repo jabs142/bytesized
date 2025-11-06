@@ -157,23 +157,6 @@ function renderTherapeuticTrends() {
     const neglectAnalysis = window.therapeuticData.neglect_analysis;
 
     let html = `
-        <div class="insight-summary">
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="stat-label">TOTAL DRUGS ANALYZED</div>
-                    <div class="stat-value">${window.therapeuticData.total_drugs_analyzed.toLocaleString()}</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">THERAPEUTIC AREAS</div>
-                    <div class="stat-value">${Object.keys(trends).length}</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">DATE RANGE</div>
-                    <div class="stat-value">${window.therapeuticData.summary.date_range}</div>
-                </div>
-            </div>
-        </div>
-
         <!-- Therapeutic Peaks Chart -->
         <div style="margin-top: var(--spacing-lg);">
             <h4 style="font-family: var(--font-pixel); font-size: 0.8rem; margin-bottom: var(--spacing-md); color: var(--gb-dark);">
@@ -211,42 +194,42 @@ function renderTherapeuticTrends() {
 function renderFunFactCards() {
     const stories = [
         {
-            icon: '🎯',
-            title: 'The Pain Paradox',
-            insight: '63% of all FDA drug approvals',
-            description: 'Pain & Analgesia dominates pharmaceutical development with 2,277 approvals since 1952 - more than all other therapeutic areas combined.'
-        },
-        {
-            icon: '⚠️',
-            title: 'The Antibiotic Crisis',
-            insight: '2/3 developed in 1940-60s',
-            description: 'The Antibiotic Golden Age produced most effective antibiotics we still use today. Modern development has nearly stopped.'
-        },
-        {
-            icon: '🌬️',
-            title: 'Respiratory Collapse',
-            insight: '82% decline from 1990s peak',
-            description: 'Respiratory medicine exploded to 105 approvals in the 1990s, then collapsed to just 4 in the 2020s.',
-            hasDisclaimer: true
-        },
-        {
-            icon: '🦠',
-            title: 'Infectious Disease Boom',
-            insight: '47% approved in 1990s alone',
-            description: 'Nearly half of all infection-fighting drugs were approved in a single decade, driven by the HIV/AIDS crisis and antibiotic development.'
-        },
-        {
-            icon: '🧬',
-            title: 'Cancer Immunotherapy',
-            insight: '127 approvals since 2010',
-            description: 'The newest frontier in pharmaceutical innovation. Checkpoint inhibitors and CAR-T therapies are transforming cancer treatment.'
-        },
-        {
             icon: '🧠',
             title: 'The 1980s Boom',
             insight: '15,987 drugs approved',
-            description: 'The most innovative decade in pharmaceutical history. The 1980s saw unprecedented drug development, averaging 1,600 approvals per year—a record never matched since.',
-            tooltip: 'The Hatch-Waxman Act (1984) revolutionized generic drug approvals, no longer requiring full clinical trials. This, combined with the biotech revolution and AIDS crisis, created the most innovative decade in pharmaceutical history.'
+            description: 'The decade with the most drug approvals in history, averaging 1,600 per year. However, 37% were generic drugs following the Hatch-Waxman Act (1984), while 63% were innovative new molecules.',
+            tooltip: 'The Hatch-Waxman Act (1984) created the modern generic drug approval pathway, no longer requiring full clinical trials for bioequivalent drugs. Combined with the biotech revolution, this created the highest-volume decade for drug approvals.'
+        },
+        {
+            icon: '🦠',
+            title: 'Infectious Disease Surge',
+            insight: '19% approved in 1990s',
+            description: 'The HIV/AIDS crisis drove a surge in infectious disease drug development. The 1990s saw 389 approvals out of 2,045 total, concentrated in a single decade of urgent medical need.'
+        },
+        {
+            icon: '🌬️',
+            title: 'Respiratory Decline',
+            insight: '76% decline from peak',
+            description: 'Respiratory medicine peaked at 34 approvals in the 2010s, then declined to 8 in the 2020s—a 76% drop in development activity.',
+            hasDisclaimer: true
+        },
+        {
+            icon: '🧬',
+            title: 'Oncology Acceleration',
+            insight: '526 approvals since 2010',
+            description: 'Cancer treatment entered a new era. The 2010s and 2020s combined saw 526 oncology drug approvals, driven by immunotherapy breakthroughs, checkpoint inhibitors, and CAR-T therapies.'
+        },
+        {
+            icon: '🔬',
+            title: 'Rare Disease Revolution',
+            insight: '71% in the 2010s',
+            description: 'Rare and orphan diseases saw concentrated development in the 2010s, with 71% of all rare disease drugs approved in a single decade, transforming previously untreatable conditions.'
+        },
+        {
+            icon: '💊',
+            title: 'Cardiovascular Evolution',
+            insight: '23% peak concentration',
+            description: 'Cardiovascular drugs show the most distributed development pattern, with the 2010s peak representing only 23% of total approvals—indicating steady innovation across decades.'
         }
     ];
 

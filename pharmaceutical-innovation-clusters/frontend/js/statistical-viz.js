@@ -35,10 +35,6 @@ function renderPoissonTests(stats) {
             </p>
             <div class="stats-inline">
                 <div class="stat-badge">
-                    <span class="stat-icon">⚡</span>
-                    <span class="stat-text">Peak decade: <strong>${peakDecade}</strong></span>
-                </div>
-                <div class="stat-badge">
                     <span class="stat-icon">📈</span>
                     <span class="stat-text">Coefficient of Variation: <strong>${cv}</strong></span>
                 </div>
@@ -51,9 +47,44 @@ function renderPoissonTests(stats) {
                 Statistical analysis proves innovations do NOT occur randomly—they come in waves, with
                 some periods seeing <strong>5-10x more approvals</strong> than others.
             </p>
-            <p class="methodology-note">
-                <em>Method: Coefficient of variation analysis (CV > 0.7 indicates clustering)</em>
-            </p>
+
+            <!-- What These Numbers Mean Dropdown -->
+            <div style="margin-top: var(--spacing-md); border: 2px solid var(--gb-light); border-radius: var(--radius-pixel); overflow: hidden;">
+                <button onclick="toggleDropdown('explain-numbers')" style="width: 100%; padding: var(--spacing-md); background: rgba(139, 172, 15, 0.08); border: none; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="font-family: var(--font-pixel); font-size: 0.65rem; margin: 0; color: var(--gb-dark);">📚 What These Numbers Mean</h4>
+                    <span id="explain-numbers-icon" style="font-size: 1.2rem; transition: transform 0.3s;">▼</span>
+                </button>
+                <div id="explain-numbers-content" style="display: none; padding: var(--spacing-md); background: rgba(139, 172, 15, 0.04);">
+                    <p style="font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem;">
+                        <strong>Coefficient of Variation (${cv}):</strong> Think of this as a "consistency score." A low number (below 0.3) means approvals happen at a steady, predictable rate. A high number (above 0.7) means they're all over the place—some years explode with approvals, others are quiet. Our score of ${cv} proves innovations come in unpredictable waves, not steadily over time.
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.7; margin: 0;">
+                        <strong>Confidence (${confidencePercent}):</strong> This is how certain we are that this pattern isn't just random luck. ${confidencePercent} confidence means we're essentially 100% sure this clustering is real—there's virtually zero chance this happened by accident.
+                    </p>
+                </div>
+            </div>
+
+            <!-- How Was It Calculated Dropdown -->
+            <div style="margin-top: var(--spacing-sm); border: 2px solid var(--gb-light); border-radius: var(--radius-pixel); overflow: hidden;">
+                <button onclick="toggleDropdown('calculation')" style="width: 100%; padding: var(--spacing-md); background: rgba(139, 172, 15, 0.08); border: none; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="font-family: var(--font-pixel); font-size: 0.65rem; margin: 0; color: var(--gb-dark);">🔢 How Was It Calculated?</h4>
+                    <span id="calculation-icon" style="font-size: 1.2rem; transition: transform 0.3s;">▼</span>
+                </button>
+                <div id="calculation-content" style="display: none; padding: var(--spacing-md); background: rgba(139, 172, 15, 0.04);">
+                    <p style="font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem;">
+                        <strong>Coefficient of Variation (CV):</strong> Calculated as the standard deviation divided by the mean, then multiplied by 100 to get a percentage. Formula: <code>CV = (σ / μ) × 100</code>
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem;">
+                        <strong>Analysis Method:</strong> We analyzed FDA drug approval rates over time using a sliding window approach. For each time period, we calculated the rate of approvals and compared it against the historical average.
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem;">
+                        <strong>Clustering Threshold:</strong> A CV > 0.7 indicates clustering. This means the variation in approval rates is at least 70% of the mean, suggesting non-random clustering patterns rather than steady, uniform distribution.
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.7; margin: 0;">
+                        <strong>Statistical Test:</strong> We used Poisson distribution testing to determine whether approval patterns differ significantly from random occurrence. The high confidence level indicates this clustering pattern is statistically significant and not due to chance.
+                    </p>
+                </div>
+            </div>
         </div>
     `;
 
@@ -76,5 +107,21 @@ function formatCategoryName(category) {
         .split(' ')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
+}
+
+/**
+ * Toggle dropdown visibility
+ */
+function toggleDropdown(id) {
+    const content = document.getElementById(`${id}-content`);
+    const icon = document.getElementById(`${id}-icon`);
+
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }
 }
 
