@@ -52,6 +52,15 @@ body {
     font-size: 16px;
 }
 
+/* Global header styles */
+h2 {
+    color: var(--text-primary);
+}
+
+h3 {
+    color: var(--gb-dark);
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -147,7 +156,7 @@ body {
     font-family: var(--font-pixel);
     font-size: 0.875rem;
     margin-bottom: var(--spacing-md);
-    color: var(--gb-dark);
+    color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.6;
@@ -216,7 +225,7 @@ body {
     font-size: 0.625rem;
     margin-bottom: var(--spacing-md);
     text-transform: uppercase;
-    color: var(--gb-dark);
+    color: var(--text-primary);
     letter-spacing: 0.05em;
 }
 
@@ -267,7 +276,7 @@ body {
     font-size: 0.75rem;
     margin-bottom: var(--spacing-md);
     text-transform: uppercase;
-    color: var(--gb-dark);
+    color: var(--text-primary);
     letter-spacing: 0.05em;
     line-height: 1.6;
 }
@@ -333,7 +342,7 @@ body {
 .cluster-info h3 {
     font-size: 1.0625rem;
     margin-bottom: var(--spacing-xs);
-    color: var(--text-primary);
+    color: var(--gb-dark);
     font-weight: 600;
 }
 
@@ -1510,7 +1519,7 @@ body {
 .timeline-header h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
-    color: var(--primary-color);
+    color: var(--gb-dark);
     margin-bottom: 0.5rem;
 }
 
@@ -1613,7 +1622,7 @@ body {
 .fun-facts-section h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.1rem;
-    color: var(--primary-color);
+    color: var(--gb-dark);
     margin-bottom: 0.5rem;
 }
 

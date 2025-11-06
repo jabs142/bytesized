@@ -15,9 +15,15 @@ async function loadUniqueInsightsData() {
  * Render all pharmaceutical insights
  */
 function renderUniqueInsights() {
-    renderPharmaceuticalNeglect();
+    // Render temporal clustering timeline
+    if (typeof renderTherapeuticTimeline === 'function') {
+        renderTherapeuticTimeline();
+    }
+
     renderTopTherapeuticAreas();
-    renderTherapeuticTrends();
+    renderPharmaceuticalNeglect();
+    renderTherapeuticPeaks();
+    renderPharmaceuticalStories();
 }
 
 /**
@@ -141,51 +147,27 @@ Total drugs: ${pharmClass.count}`;
 }
 
 /**
- * Render therapeutic area trends section
+ * Render therapeutic peaks chart
  */
-function renderTherapeuticTrends() {
-    const container = document.getElementById('therapeutic-trends');
-
-    if (!container) return;
-
-    if (!window.therapeuticData || !window.therapeuticData.therapeutic_trends) {
-        container.innerHTML = '<div class="loading">No therapeutic trends data available</div>';
-        return;
-    }
-
-    const trends = window.therapeuticData.therapeutic_trends;
-    const neglectAnalysis = window.therapeuticData.neglect_analysis;
-
-    let html = `
-        <!-- Therapeutic Peaks Chart -->
-        <div style="margin-top: var(--spacing-lg);">
-            <h4 style="font-family: var(--font-pixel); font-size: 0.8rem; margin-bottom: var(--spacing-md); color: var(--gb-dark);">
-                📊 When Did Each Therapeutic Area Peak?
-            </h4>
-            <div id="therapeutic-peaks-chart"></div>
-        </div>
-
-        <!-- Timeline Visualization -->
-        <div id="therapeutic-timeline-container"></div>
-    `;
-
-    // Fun fact cards
-    html += renderFunFactCards();
-
-    container.innerHTML = html;
-
-    // Render visualizations after HTML is set
+function renderTherapeuticPeaks() {
+    // Render peaks chart if function exists
     setTimeout(() => {
-        // Render peaks chart
         if (typeof renderTherapeuticPeaksChart === 'function') {
             renderTherapeuticPeaksChart();
         }
-
-        // Render timeline
-        if (typeof renderTherapeuticTimeline === 'function') {
-            renderTherapeuticTimeline();
-        }
     }, 0);
+}
+
+/**
+ * Render pharmaceutical innovation stories
+ */
+function renderPharmaceuticalStories() {
+    const container = document.getElementById('pharmaceutical-stories');
+
+    if (!container) return;
+
+    const storiesHtml = renderFunFactCards();
+    container.innerHTML = storiesHtml;
 }
 
 /**

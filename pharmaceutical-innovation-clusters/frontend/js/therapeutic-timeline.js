@@ -75,10 +75,6 @@ function renderTherapeuticTimeline() {
     // Add title and description
     const headerDiv = document.createElement('div');
     headerDiv.className = 'timeline-header';
-    headerDiv.innerHTML = `
-        <h3>📊 Temporal Clustering Patterns</h3>
-        <p>See when each therapeutic area had concentrated innovation "boom" periods. Each dot = one drug approval.</p>
-    `;
     container.appendChild(headerDiv);
 
     // Create navigation controls
