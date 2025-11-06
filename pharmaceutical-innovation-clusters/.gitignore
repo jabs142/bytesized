@@ -17,6 +17,7 @@ ENV/
 data/raw/
 data/processed/
 data/validated/
+frontend/data/*.json
 *.csv
 *.json
 *.parquet
