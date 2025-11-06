@@ -1,7 +1,7 @@
 // Symptom Checker JavaScript
 // Interactive symptom selection and pattern discovery
 
-let statsData = null;
+let checkerStatsData = null;
 let patternsData = null;
 let selectedSymptoms = new Set();
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch('data/discovered_patterns.json')
         ]);
 
-        statsData = await statsResponse.json();
+        checkerStatsData = await statsResponse.json();
         patternsData = await patternsResponse.json();
 
         displayPopularSymptoms();
@@ -27,20 +27,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function setupEventListeners() {
     // Search box
-    document.getElementById('symptom-search').addEventListener('input', handleSearch);
+    document.getElementById('symptom-search-checker').addEventListener('input', handleSearch);
 
     // Analyze button
     document.getElementById('analyze-btn').addEventListener('click', analyzePatterns);
 }
 
 function displayPopularSymptoms() {
-    if (!statsData || !statsData.top_symptoms) return;
+    if (!checkerStatsData || !checkerStatsData.top_symptoms) return;
 
     const container = document.getElementById('popular-symptoms');
-    const topSymptoms = Object.entries(statsData.top_symptoms).slice(0, 8);
+    const topSymptoms = Object.entries(checkerStatsData.top_symptoms).slice(0, 8);
 
     container.innerHTML = topSymptoms.map(([symptom, count]) => {
-        const percentage = ((count / statsData.posts_with_symptoms) * 100).toFixed(0);
+        const percentage = ((count / checkerStatsData.posts_with_symptoms) * 100).toFixed(0);
         return `
             <button
                 class="symptom-pill bg-white border-2 border-gray-300 hover:border-indigo-500 px-4 py-2 rounded-full text-sm font-medium transition"
@@ -55,10 +55,10 @@ function displayPopularSymptoms() {
 }
 
 function displayAllSymptoms() {
-    if (!statsData || !statsData.top_symptoms) return;
+    if (!checkerStatsData || !checkerStatsData.top_symptoms) return;
 
     const container = document.getElementById('all-symptoms');
-    const allSymptoms = Object.entries(statsData.top_symptoms);
+    const allSymptoms = Object.entries(checkerStatsData.top_symptoms);
 
     container.innerHTML = allSymptoms.map(([symptom, count]) => {
         return `

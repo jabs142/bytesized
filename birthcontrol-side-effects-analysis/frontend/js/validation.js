@@ -31,6 +31,61 @@ function addMedicalTooltips(text) {
     return text;
 }
 
+// Calculate surprise classification from surprise score
+function getSurpriseClassification(surpriseScore) {
+    if (surpriseScore >= 0.015) return "🔥 VERY SURPRISING";
+    if (surpriseScore >= 0.008) return "⚠️ SOMEWHAT SURPRISING";
+    return "✓ EXPECTED";
+}
+
+// Get classification color class
+function getClassificationColor(classification) {
+    if (classification.includes('VERY')) return 'very-surprising';
+    if (classification.includes('SOMEWHAT')) return 'somewhat-surprising';
+    return 'expected';
+}
+
+// Build surprise factors from data
+function buildSurpriseFactors(item) {
+    const factors = [];
+    if (item.paper_count < 3) {
+        factors.push('Limited research coverage despite patient reports');
+    }
+    if (item.frequency > 0.05) {
+        factors.push(`High patient report frequency (${(item.frequency * 100).toFixed(1)}% of posts)`);
+    }
+    if (item.evidence_tier === 4 || item.tier_label?.includes('Tier 4')) {
+        factors.push('Not officially documented in medical literature');
+    }
+    if (item.paper_count > 0 && item.paper_count < 3) {
+        factors.push('Some research validation exists but needs more study');
+    }
+    if (!item.fda_listed && item.fda_listed !== undefined) {
+        factors.push('Not listed in FDA official documentation');
+    }
+    return factors;
+}
+
+// Transform data to PCOS format
+function transformDataForDisplay(item) {
+    const surpriseScore = item.surprise_score || 0;
+    const classification = getSurpriseClassification(surpriseScore);
+
+    return {
+        ...item,
+        surprise_classification: classification,
+        classification_color: getClassificationColor(classification),
+        evidence: {
+            reddit_mentions: item.mention_count,
+            reddit_posts: item.post_count || Math.ceil(item.mention_count / 2),
+            reddit_frequency: item.frequency,
+            pubmed_papers: item.paper_count || 0
+        },
+        surprise_factors: buildSurpriseFactors(item),
+        sample_quotes: item.examples || []
+    };
+}
+
 let allSideEffects = [];
 let currentFilter = 'all';
 
@@ -133,63 +188,121 @@ function displayValidatedSideEffects(sideEffects) {
         return;
     }
 
-    // Filter by tier if needed
-    let filteredEffects = sideEffects;
+    // Transform all items to PCOS format and sort by surprise score
+    const transformedEffects = sideEffects
+        .map(item => transformDataForDisplay(item))
+        .sort((a, b) => (b.surprise_score || 0) - (a.surprise_score || 0));
+
+    // Filter by surprise level if needed
+    let filteredEffects = transformedEffects;
     if (currentFilter !== 'all') {
-        filteredEffects = sideEffects.filter(item => {
-            // Use getTierNumber to extract tier consistently
-            const tierNumber = getTierNumber(item.tier_label);
-            return tierNumber === currentFilter;
+        filteredEffects = transformedEffects.filter(item => {
+            const classification = item.surprise_classification.toLowerCase();
+            if (currentFilter === 'very') return classification.includes('very');
+            if (currentFilter === 'somewhat') return classification.includes('somewhat');
+            if (currentFilter === 'expected') return classification.includes('expected');
+            return true;
         });
     }
 
     if (filteredEffects.length === 0) {
-        container.innerHTML = '<p class="text-gray-600 text-center py-8">No side effects found for this tier.</p>';
+        container.innerHTML = '<p class="text-gray-600 text-center py-8">No side effects found for this surprise level.</p>';
         return;
     }
 
-    container.innerHTML = filteredEffects.map((item, index) => `
-        <div class="border rounded-lg p-5 hover:shadow-md transition side-effect-card" data-tier="${getTierNumber(item.tier_label)}">
-            <div class="flex items-start justify-between mb-3">
-                <div class="flex-1">
-                    <div class="flex items-center gap-3 mb-2">
-                        <h3 class="text-xl font-bold text-gray-900 capitalize">${addMedicalTooltips(item.side_effect)}</h3>
-                        <span class="text-sm px-3 py-1 rounded-full ${getTierBadgeClass(item.tier_label)}">
-                            ${item.tier_label}
-                        </span>
+    container.innerHTML = filteredEffects.map((item, index) => {
+        const tierNumber = getTierNumber(item.tier_label);
+        const rawName = item.side_effect.toLowerCase();
+        const displayName = item.side_effect.charAt(0).toUpperCase() + item.side_effect.slice(1);
+        const definition = MEDICAL_GLOSSARY[rawName] || '';
+
+        // Get surprise emoji based on classification
+        let surpriseEmoji = '✓';
+        if (item.surprise_classification.includes('VERY')) surpriseEmoji = '🔥';
+        else if (item.surprise_classification.includes('SOMEWHAT')) surpriseEmoji = '⚠️';
+
+        // Get tier emoji
+        let tierEmoji = '⚠️';
+        if (tierNumber === 1) tierEmoji = '🏆';
+        else if (tierNumber === 2) tierEmoji = '✅';
+        else if (tierNumber === 3) tierEmoji = '💬';
+
+        const surpriseScore = (item.surprise_score || 0).toFixed(3);
+
+        return `
+            <div class="side-effect-card ${item.classification_color}" data-classification="${item.classification_color}">
+                <!-- Collapsed Header -->
+                <div class="side-effect-header">
+                    <div class="side-effect-rank">${index + 1}</div>
+                    <div class="side-effect-info">
+                        <h3>
+                            ${surpriseEmoji} ${displayName}
+                            ${definition ? `<span class="medical-term-definition" style="display: block; font-size: 0.75rem; color: var(--text-secondary); font-weight: normal; margin-top: 0.25rem; font-style: italic;">(${definition})</span>` : ''}
+                        </h3>
+                        <div class="side-effect-meta">
+                            <span class="surprise-score">Score: ${surpriseScore}</span>
+                            <span class="tier-badge-compact tier-${tierNumber}">${tierEmoji} ${item.tier_label}</span>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
-                        <div class="bg-indigo-50 rounded p-2">
-                            <div class="text-gray-600 text-xs">Patient Reports</div>
-                            <div class="text-lg font-bold text-indigo-700">${item.mention_count}</div>
-                        </div>
-                        <div class="bg-purple-50 rounded p-2">
-                            <div class="text-gray-600 text-xs">Frequency</div>
-                            <div class="text-lg font-bold text-purple-700">${(item.frequency * 100).toFixed(1)}%</div>
-                        </div>
-                        <div class="bg-green-50 rounded p-2">
-                            <div class="text-gray-600 text-xs">Research Papers</div>
-                            <div class="text-lg font-bold text-green-700">${item.paper_count || 0}</div>
-                        </div>
-                    </div>
+                    <div class="expand-icon">▼</div>
                 </div>
-                <div class="ml-4 text-right">
-                    <div class="text-2xl mb-1">${getCategoryEmoji(item.category)}</div>
-                    <div class="text-xs text-gray-500 capitalize">${item.category || 'unknown'}</div>
+
+                <!-- Expanded Details -->
+                <div class="side-effect-details">
+                    <!-- Classification Badge -->
+                    <div class="classification-badge ${item.classification_color}">
+                        ${item.surprise_classification}
+                    </div>
+
+                    <!-- Tier Description -->
+                    <div class="tier-description">
+                        <h4>${tierEmoji} ${item.tier_label}</h4>
+                        <p>${getTierDescription(tierNumber)}</p>
+                    </div>
+
+                    <!-- Evidence Section -->
+                    <div class="evidence-section">
+                        <h4>📊 Evidence:</h4>
+                        <ul>
+                            <li><strong>${item.evidence.reddit_mentions}</strong> patient mentions across <strong>${item.evidence.reddit_posts}</strong> Reddit posts</li>
+                            <li>Reported by <strong>${(item.evidence.reddit_frequency * 100).toFixed(1)}%</strong> of users discussing symptoms</li>
+                            <li><strong>${item.evidence.pubmed_papers}</strong> PubMed research papers found</li>
+                            ${item.fda_listed !== undefined ? `<li>FDA Official Documentation: <strong>${item.fda_listed ? 'Yes' : 'No'}</strong></li>` : ''}
+                        </ul>
+                    </div>
+
+                    <!-- Why This Matters Section -->
+                    ${item.surprise_factors.length > 0 ? `
+                    <div class="surprise-factors-section">
+                        <h4>💡 Why This Matters:</h4>
+                        <ul>
+                            ${item.surprise_factors.map(factor => `<li>${factor}</li>`).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+
+                    <!-- Patient Quotes Section -->
+                    ${item.sample_quotes.length > 0 ? `
+                    <div class="quotes-section">
+                        <h4>💬 Patient Reports:</h4>
+                        ${item.sample_quotes.slice(0, 3).map(quote => `
+                            <blockquote>"${quote}"</blockquote>
+                        `).join('')}
+                    </div>
+                    ` : ''}
                 </div>
             </div>
+        `;
+    }).join('');
 
-            ${item.paper_count === 0 ? `
-                <div class="mt-2 text-sm text-gray-500 italic">
-                    ⚠️ Research gap: High patient reports but limited research coverage
-                </div>
-            ` : ''}
-        </div>
-    `).join('');
+    // Add click listeners for expandable cards
+    document.querySelectorAll('.side-effect-card').forEach(card => {
+        card.addEventListener('click', () => card.classList.toggle('expanded'));
+    });
 }
 
-function filterTier(tier) {
-    currentFilter = tier;
+function filterSurprise(level) {
+    currentFilter = level;
 
     // Update button styles
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -247,6 +360,16 @@ function getSurpriseEmoji(score) {
     if (score >= 0.5) return '⚡';
     if (score >= 0.3) return '💡';
     return '📊';
+}
+
+function getTierDescription(tierNumber) {
+    const descriptions = {
+        1: 'This side effect is officially listed by the FDA in drug labeling and prescribing information.',
+        2: 'Strong research backing with 3+ peer-reviewed PubMed papers documenting this side effect.',
+        3: 'Patient-validated with 50+ mentions in patient reports, but limited research coverage (fewer than 3 papers).',
+        4: 'Emerging pattern with significant patient reports but needs more research validation.'
+    };
+    return descriptions[tierNumber] || descriptions[4];
 }
 
 // Initialize on page load

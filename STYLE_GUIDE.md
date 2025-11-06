@@ -115,6 +115,65 @@ ByteSized Research combines **retro Game Boy aesthetics** with **medical readabi
 --expected: #A8BCC8;          /* Light muted blue-green */
 ```
 
+### Pastel Color Scheme (Data Visualizations)
+
+Use this pastel color palette for **scatter plots, bar charts, data points, and any categorical data visualizations**. These colors provide better contrast than monochrome Game Boy greens and are accessible and print-friendly.
+
+```javascript
+const VISUALIZATION_COLORS = {
+    "Category 1": "#E4ACB2",    // Dusty rose
+    "Category 2": "#EABCA8",    // Peach
+    "Category 3": "#FAEDCD",    // Cream
+    "Category 4": "#CCD5AE",    // Sage green
+    "Category 5": "#99BAB9",    // Blue gray
+    "Category 6": "#D4A5A5",    // Rose variation
+    "Category 7": "#E8B088",    // Peach variation
+    "Category 8": "#F5E5B8",    // Cream variation
+    "Category 9": "#B8C99A",    // Sage variation
+    "Category 10": "#88A5A4",   // Blue gray variation
+    "Category 11": "#F0D0D0",   // Light rose
+    "Category 12": "#F2D4BA",   // Light peach
+    "Category 13": "#FDF8E8"    // Light cream
+};
+
+// Example usage for therapeutic areas (pharmaceutical project):
+const THERAPEUTIC_COLORS = {
+    "Alzheimer's & Dementia": "#E4ACB2",
+    "CNS & Neurology": "#EABCA8",
+    "Cardiovascular": "#FAEDCD",
+    "Diabetes & Endocrine": "#CCD5AE",
+    "Gastrointestinal": "#99BAB9",
+    "Infectious Disease": "#D4A5A5",
+    "Oncology": "#E8B088",
+    "Pain & Analgesia": "#F5E5B8",
+    "Rare & Orphan Diseases": "#B8C99A",
+    "Respiratory": "#88A5A4",
+    "Immunology & Rheumatology": "#F0D0D0",
+    "Psychiatry": "#F2D4BA",
+    "Dermatology": "#FDF8E8"
+};
+
+// Example usage for side effect categories (birth control project):
+const SIDE_EFFECT_COLORS = {
+    "mental": "#E4ACB2",        // Dusty rose
+    "physical": "#99BAB9",      // Blue gray
+    "both": "#CCD5AE",          // Sage green
+    "unknown": "#D4A5A5"        // Rose variation
+};
+```
+
+**When to use:**
+- Scatter plots showing categorical data
+- Bar charts with multiple categories
+- Data points in timeline visualizations
+- Network graph nodes (when representing categories)
+- Any visualization where color encodes categorical information
+
+**Do NOT use for:**
+- Backgrounds (use `--bg-main`, `--bg-card` instead)
+- Interactive UI elements (use Game Boy greens instead)
+- Text (use `--text-primary`, `--text-secondary` instead)
+
 ### Usage Rules
 
 1. **Always use Game Boy greens for primary actions** and interactive elements

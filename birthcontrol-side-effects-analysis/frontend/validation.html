@@ -29,6 +29,33 @@
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Context Section -->
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">About This Analysis</h2>
+            <p class="text-gray-700 mb-4">
+                This tool analyzes <strong>537 Reddit posts</strong> from birth control communities to identify side effects frequently reported by patients. Of these posts, <strong>386 contained symptom discussions</strong>.
+            </p>
+            <p class="text-gray-700 mb-4">
+                Each side effect is validated against medical research by cross-referencing with the <strong>PubMed database</strong> and classified into evidence tiers based on FDA listings, research coverage, and patient report frequency.
+            </p>
+            <p class="text-gray-700">
+                Side effects are ranked by a <strong>"surprise score"</strong> that highlights symptoms with high patient discussion frequency but relatively lower research coverage.
+            </p>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow p-6 mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-3">💡 Understanding the Evidence Tiers</h2>
+            <p class="text-gray-700 mb-3">
+                This analysis uses a 4-tier validation system:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li><strong>Tier 1 (FDA-Listed):</strong> Officially documented by the FDA in drug labeling</li>
+                <li><strong>Tier 2 (Research-Backed):</strong> Validated by 3+ peer-reviewed medical papers</li>
+                <li><strong>Tier 3 (Patient-Validated):</strong> High patient reports (50+) with limited research</li>
+                <li><strong>Tier 4 (Emerging Pattern):</strong> Lower patient reports requiring investigation</li>
+            </ul>
+        </div>
+
         <!-- Legend -->
         <section class="bg-white rounded-lg shadow p-6 mb-8">
             <h2 class="text-xl font-bold text-gray-900 mb-4">Evidence Tier Legend</h2>
@@ -77,22 +104,19 @@
 
         <!-- Filter Controls -->
         <section class="bg-white rounded-lg shadow p-6 mb-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-4">Filter by Evidence Tier</h2>
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Filter by Surprise Level</h2>
             <div class="flex flex-wrap gap-3">
-                <button onclick="filterTier('all')" class="filter-btn active px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">
-                    All Tiers
+                <button onclick="filterSurprise('all')" class="filter-btn active px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">
+                    All Symptoms
                 </button>
-                <button onclick="filterTier(1)" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    🏆 Tier 1
+                <button onclick="filterSurprise('very')" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    🔥 Very Surprising
                 </button>
-                <button onclick="filterTier(2)" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    ✅ Tier 2
+                <button onclick="filterSurprise('somewhat')" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    ⚠️ Somewhat Surprising
                 </button>
-                <button onclick="filterTier(3)" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    💬 Tier 3
-                </button>
-                <button onclick="filterTier(4)" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    ⚠️ Tier 4
+                <button onclick="filterSurprise('expected')" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                    ✓ Expected
                 </button>
             </div>
         </section>
@@ -100,7 +124,7 @@
         <!-- Validated Side Effects List -->
         <section class="bg-white rounded-lg shadow p-6">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">All Validated Side Effects</h2>
-            <div id="validated-side-effects-list" class="space-y-4">
+            <div id="validated-side-effects-list" class="side-effects-list">
                 <div class="text-center py-8 text-gray-500">Loading validated side effects...</div>
             </div>
         </section>

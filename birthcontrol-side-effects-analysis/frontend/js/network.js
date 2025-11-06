@@ -2,7 +2,7 @@
 // Interactive D3.js force-directed graph for symptom relationships
 
 let networkData = null;
-let statsData = null;
+let networkStatsData = null;
 let svg = null;
 let simulation = null;
 let selectedNode = null;
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         ]);
 
         networkData = await networkResponse.json();
-        statsData = await statsResponse.json();
+        networkStatsData = await statsResponse.json();
 
         if (networkData.nodes.length === 0) {
             document.getElementById('no-data').classList.remove('hidden');
@@ -331,13 +331,13 @@ function initializeNetwork() {
 }
 
 function getNodeColor(symptomId) {
-    // Color nodes based on symptom category using same logic as filters
+    // Color nodes based on symptom category using pastel colors
     if (isMentalSymptom(symptomId)) {
-        return '#ec4899'; // Pink for mental symptoms
+        return '#E4ACB2'; // Dusty rose for mental symptoms
     } else if (isPhysicalSymptom(symptomId)) {
-        return '#10b981'; // Green for physical symptoms
+        return '#99BAB9'; // Blue gray for physical symptoms
     }
-    return '#6366f1'; // Indigo for ambiguous/other
+    return '#CCD5AE'; // Sage green for ambiguous/other
 }
 
 function formatSymptomName(symptom) {
@@ -350,7 +350,7 @@ function formatSymptomName(symptom) {
 
 function showNodeTooltip(event, d) {
     const tooltip = document.getElementById('tooltip');
-    const percentage = ((d.frequency / statsData.posts_with_symptoms) * 100).toFixed(1);
+    const percentage = ((d.frequency / networkStatsData.posts_with_symptoms) * 100).toFixed(1);
 
     tooltip.innerHTML = `
         <strong>${formatSymptomName(d.id)}</strong><br>
@@ -428,7 +428,7 @@ function showDetailsPanel(node, connectedNodes, connectedLinks) {
     const panel = document.getElementById('details-panel');
     const content = document.getElementById('details-content');
 
-    const percentage = ((node.frequency / statsData.posts_with_symptoms) * 100).toFixed(1);
+    const percentage = ((node.frequency / networkStatsData.posts_with_symptoms) * 100).toFixed(1);
 
     let html = `
         <div class="mb-6">

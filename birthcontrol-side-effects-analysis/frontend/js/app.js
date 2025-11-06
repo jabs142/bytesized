@@ -44,8 +44,8 @@ function displayTopSymptoms() {
                 </div>
                 <div class="flex-1 mx-4">
                     <div class="bg-gray-200 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-4 transition-all duration-500"
-                             style="width: ${barWidth}%"></div>
+                        <div class="h-4 transition-all duration-500"
+                             style="width: ${barWidth}%; background-color: #8bac0f;"></div>
                     </div>
                 </div>
                 <div class="w-24 text-right">
