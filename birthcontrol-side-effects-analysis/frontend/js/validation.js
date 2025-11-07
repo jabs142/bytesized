@@ -221,12 +221,6 @@ function displayValidatedSideEffects(sideEffects) {
         if (item.surprise_classification.includes('VERY')) surpriseEmoji = '🔥';
         else if (item.surprise_classification.includes('SOMEWHAT')) surpriseEmoji = '⚠️';
 
-        // Get tier emoji
-        let tierEmoji = '⚠️';
-        if (tierNumber === 1) tierEmoji = '🏆';
-        else if (tierNumber === 2) tierEmoji = '✅';
-        else if (tierNumber === 3) tierEmoji = '💬';
-
         const surpriseScore = (item.surprise_score || 0).toFixed(3);
 
         return `
@@ -241,7 +235,7 @@ function displayValidatedSideEffects(sideEffects) {
                         </h3>
                         <div class="side-effect-meta">
                             <span class="surprise-score">Score: ${surpriseScore}</span>
-                            <span class="tier-badge-compact tier-${tierNumber}">${tierEmoji} ${item.tier_label}</span>
+                            <span class="tier-badge-compact tier-${tierNumber}">${item.tier_label}</span>
                         </div>
                     </div>
                     <div class="expand-icon">▼</div>

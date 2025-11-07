@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "description": "Top substantiated symptom co-occurrence patterns from Reddit analysis",
+    "total_patterns": 17,
+    "criteria": "Ranked by significance score (confidence × lift)",
+    "data_source": "537 Reddit posts from birth control communities"
+  },
+  "top_patterns": [
+    {
+      "rank": 1,
+      "pattern": "Headaches + Anxiety → Fatigue",
+      "description": "People experiencing both headaches and anxiety are 53% likely to also report fatigue",
+      "antecedent": ["headaches", "anxiety"],
+      "consequent": ["fatigue"],
+      "confidence": 0.53,
+      "lift": 5.42,
+      "significance": 2.87,
+      "support": 8,
+      "support_pct": 2.07,
+      "patient_impact": "This strong connection suggests that mental symptoms (anxiety) and physical symptoms (headaches) may compound to create overwhelming fatigue. The 5.4x lift indicates this combination is highly predictive.",
+      "plain_language": "If you have both headaches and anxiety, you're 5 times more likely to experience fatigue than average"
+    },
+    {
+      "rank": 2,
+      "pattern": "Suicidal ideation → Depression",
+      "description": "People reporting suicidal thoughts are 44% likely to also report depression",
+      "antecedent": ["suicidal"],
+      "consequent": ["depression"],
+      "confidence": 0.44,
+      "lift": 3.02,
+      "significance": 1.33,
+      "support": 7,
+      "support_pct": 1.81,
+      "patient_impact": "This pattern highlights the serious mental health risks associated with birth control for some users. The connection between suicidal ideation and depression is clinically significant and warrants immediate medical attention.",
+      "plain_language": "Suicidal thoughts on birth control are strongly linked with depression - seek help immediately",
+      "warning": "⚠️ If experiencing suicidal thoughts, contact a mental health professional or crisis hotline immediately"
+    },
+    {
+      "rank": 3,
+      "pattern": "Headaches + Fatigue → Anxiety",
+      "description": "People experiencing both headaches and fatigue are 89% likely to also report anxiety",
+      "antecedent": ["headaches", "fatigue"],
+      "consequent": ["anxiety"],
+      "confidence": 0.89,
+      "lift": 2.60,
+      "significance": 2.31,
+      "support": 8,
+      "support_pct": 2.07,
+      "patient_impact": "Nearly 9 in 10 people with this combination experience anxiety. This suggests physical symptoms may trigger or worsen mental health concerns, creating a feedback loop.",
+      "plain_language": "If you have both headaches and fatigue, there's an 89% chance you'll also experience anxiety"
+    },
+    {
+      "rank": 4,
+      "pattern": "Dry skin → Acne",
+      "description": "People reporting dry skin are 62% likely to also experience acne",
+      "antecedent": ["skin_dryness"],
+      "consequent": ["acne"],
+      "confidence": 0.62,
+      "lift": 2.53,
+      "significance": 1.57,
+      "support": 8,
+      "support_pct": 2.07,
+      "patient_impact": "This unexpected dermatological connection suggests hormonal changes may affect skin in multiple ways. Dry skin and acne typically have opposite causes, making this finding particularly surprising.",
+      "plain_language": "Dry skin users are 2.5x more likely to also develop acne - an unusual combination worth discussing with a dermatologist",
+      "note": "Research gap: Minimal academic study despite patient reports"
+    },
+    {
+      "rank": 5,
+      "pattern": "Depression + Fatigue → Anxiety",
+      "description": "People with both depression and fatigue are 80% likely to also report anxiety",
+      "antecedent": ["depression", "fatigue"],
+      "consequent": ["anxiety"],
+      "confidence": 0.80,
+      "lift": 2.34,
+      "significance": 1.87,
+      "support": 8,
+      "support_pct": 2.07,
+      "patient_impact": "The mental health triad of depression, anxiety, and fatigue appears frequently. This may indicate a systemic hormonal effect on mood regulation rather than isolated symptoms.",
+      "plain_language": "Depression and fatigue together predict anxiety 80% of the time"
+    }
+  ],
+  "additional_notable_patterns": [
+    {
+      "pattern": "Brain fog → Anxiety",
+      "description": "65% confidence, 1.9x lift - Cognitive symptoms strongly linked to anxiety",
+      "support": 13,
+      "significance": 1.24
+    },
+    {
+      "pattern": "Bloating → Anxiety",
+      "description": "70% confidence, 2.0x lift - Physical discomfort may trigger mental distress",
+      "support": 7,
+      "significance": 1.40
+    },
+    {
+      "pattern": "Panic attacks → Anxiety",
+      "description": "58% confidence, 1.7x lift - Panic and general anxiety co-occur frequently",
+      "support": 14,
+      "significance": 0.99
+    }
+  ],
+  "interpretation_guide": {
+    "confidence": "The probability that if someone has the first symptom(s), they will also have the second symptom. Higher is stronger.",
+    "lift": "How much more likely this combination is compared to random chance. >1 means positive association, >2 is strong.",
+    "significance": "Confidence × Lift - our composite measure of pattern strength. Higher values are more meaningful.",
+    "support": "Number of people who experienced this exact combination of symptoms",
+    "plain_language_note": "These are statistical associations from patient reports, not clinical causation. Always consult a healthcare provider."
+  },
+  "research_recommendations": [
+    "The Dry skin → Acne pattern deserves clinical investigation",
+    "Mental health patterns (depression/anxiety/suicidal) warrant urgent research",
+    "Headache-related combinations may indicate vascular effects",
+    "Physical-to-mental symptom patterns (e.g., Bloating → Anxiety) suggest psychosomatic connections"
+  ]
+}
