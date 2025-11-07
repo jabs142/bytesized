@@ -15,14 +15,41 @@
     --accent: #8bac0f;
     --accent-light: #9bbc0f;
 
+    /* Surprise level colors */
+    --very-surprising: #6B8E23;
+    --somewhat-surprising: var(--gb-light);
+    --expected: #A8BCC8;
+
     /* Backgrounds */
-    --bg: #E8E8E8;
+    --bg-main: #E8E8E8;
+    --bg: #E8E8E8; /* Kept for backward compatibility */
+    --bg-card: #F5F5F5;
+    --bg-secondary: #EEEEEE;
+
+    /* Text colors */
     --text-primary: #2a2a2a;
     --text-secondary: #5a5a5a;
+
+    /* Borders */
     --border: #306230;
+    --border-color: #d0d0d0;
+    --pixel-border: 2px solid var(--gb-darkest);
+
+    /* Effects */
+    --screen-glow: rgba(139, 172, 15, 0.4);
 
     /* Fonts */
     --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Border radius */
+    --radius-pixel: 2px;
 
     /* Retro Shadows */
     --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.1);
@@ -364,11 +391,15 @@ header.bg-white {
 
 /* Tier Badge Compact */
 .tier-badge-compact {
-    font-size: 0.75rem;
-    padding: 2px 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.4375rem;
+    padding: 0.375rem 0.625rem;
     border-radius: var(--radius-pixel);
     border: 2px solid;
-    font-weight: 600;
+    font-weight: normal;
+    text-transform: uppercase;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
 }
 
 .tier-badge-compact.tier-1 {
@@ -706,13 +737,14 @@ h2 {
 
 /* Medical term tooltips */
 .medical-term-definition {
-    display: inline;
+    display: block;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     font-size: 0.75rem;
     color: var(--text-secondary);
     font-weight: normal;
+    margin-top: 0.25rem;
     font-style: italic;
-    margin-left: 0.25rem;
+    line-height: 1.4;
 }
 
 /* ===== COMPACT SIDE EFFECTS LAYOUT ===== */
@@ -900,7 +932,7 @@ h2 {
 }
 
 .side-effect-rank {
-    font-family: var(--font-body);
+    font-family: 'Press Start 2P', cursive;
     font-size: 0.75rem;
     font-weight: normal;
     color: var(--gb-dark);
@@ -1007,9 +1039,9 @@ h2 {
 }
 
 .side-effect-details h4 {
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.625rem;
+    font-weight: normal;
     margin-bottom: var(--spacing-md);
     color: var(--gb-dark);
     text-transform: uppercase;

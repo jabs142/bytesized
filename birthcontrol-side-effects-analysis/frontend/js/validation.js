@@ -256,7 +256,7 @@ function displayValidatedSideEffects(sideEffects) {
 
                     <!-- Tier Description -->
                     <div class="tier-description">
-                        <h4>${tierEmoji} ${item.tier_label}</h4>
+                        <h4>${item.tier_label}</h4>
                         <p>${getTierDescription(tierNumber)}</p>
                     </div>
 
