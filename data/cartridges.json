@@ -1,38 +1,14 @@
 [
   {
-    "id": "evolution-invention",
-    "title": "Evolution of Invention",
-    "subtitle": "Walking Through Time",
-    "color": "#3498DB",
-    "icon": "💡",
+    "id": "pharmaceutical-innovation-clusters",
+    "title": "Pharmaceutical Innovation Clusters",
+    "subtitle": "FDA Drug Approval Patterns",
+    "color": "#FFB86C",
+    "icon": "💊",
     "pattern": "timeline",
-    "labelText": "History",
-    "description": "Explore human innovation from stone tools to the printing press",
-    "url": "./evolution-of-invention/frontend/index.html",
-    "status": "available"
-  },
-  {
-    "id": "covid-timeline",
-    "title": "COVID-19 Timeline",
-    "subtitle": "Pandemic Tracker",
-    "color": "#E74C3C",
-    "icon": "🦠",
-    "pattern": "virus",
-    "labelText": "Medical",
-    "description": "Interactive timeline of the COVID-19 pandemic",
-    "url": "./covid-scrollytelling/frontend/index.html",
-    "status": "available"
-  },
-  {
-    "id": "pcos-symptoms",
-    "title": "PCOS Hidden Symptoms",
-    "subtitle": "Surprising Connections",
-    "color": "#4CAF50",
-    "icon": "🩺",
-    "pattern": "medical",
-    "labelText": "Women's Health",
-    "description": "Discover which PCOS symptoms are surprisingly connected but rarely discussed",
-    "url": "./pcos-surprise-discovery/frontend/pcos-symptoms.html",
+    "labelText": "Pharma",
+    "description": "Discover temporal clustering in 71,149 FDA drug approvals (1938-2024)",
+    "url": "./pharmaceutical-innovation-clusters/frontend/index.html",
     "status": "available"
   },
   {
@@ -48,15 +24,15 @@
     "status": "available"
   },
   {
-    "id": "eds-syndrome",
-    "title": "EDS Syndrome Discovery",
-    "subtitle": "Hidden Patterns",
+    "id": "covid-timeline",
+    "title": "COVID-19 Timeline",
+    "subtitle": "Pandemic Tracker",
     "color": "#E74C3C",
-    "icon": "🧬",
-    "pattern": "dna",
+    "icon": "🦠",
+    "pattern": "virus",
     "labelText": "Medical",
-    "description": "Discovering patterns in Ehlers-Danlos Syndrome",
-    "url": "./eds-symptom-discovery/frontend/index.html",
+    "description": "Interactive timeline of the COVID-19 pandemic",
+    "url": "./covid-scrollytelling/frontend/index.html",
     "status": "available"
   },
   {
@@ -72,15 +48,39 @@
     "status": "available"
   },
   {
-    "id": "pharmaceutical-innovation-clusters",
-    "title": "Pharmaceutical Innovation Clusters",
-    "subtitle": "FDA Drug Approval Patterns",
-    "color": "#FFB86C",
-    "icon": "💊",
+    "id": "eds-syndrome",
+    "title": "EDS Syndrome Discovery",
+    "subtitle": "Hidden Patterns",
+    "color": "#E74C3C",
+    "icon": "🧬",
+    "pattern": "dna",
+    "labelText": "Medical",
+    "description": "Discovering patterns in Ehlers-Danlos Syndrome",
+    "url": "./eds-symptom-discovery/frontend/index.html",
+    "status": "available"
+  },
+  {
+    "id": "pcos-symptoms",
+    "title": "PCOS Hidden Symptoms",
+    "subtitle": "Surprising Connections",
+    "color": "#4CAF50",
+    "icon": "🩺",
+    "pattern": "medical",
+    "labelText": "Women's Health",
+    "description": "Discover which PCOS symptoms are surprisingly connected but rarely discussed",
+    "url": "./pcos-surprise-discovery/frontend/pcos-symptoms.html",
+    "status": "available"
+  },
+  {
+    "id": "evolution-invention",
+    "title": "Evolution of Invention",
+    "subtitle": "Walking Through Time",
+    "color": "#3498DB",
+    "icon": "💡",
     "pattern": "timeline",
-    "labelText": "Pharma",
-    "description": "Discover temporal clustering in 71,149 FDA drug approvals (1938-2024)",
-    "url": "./pharmaceutical-innovation-clusters/frontend/index.html",
+    "labelText": "History",
+    "description": "Explore human innovation from stone tools to the printing press",
+    "url": "./evolution-of-invention/frontend/index.html",
     "status": "available"
   }
 ]
