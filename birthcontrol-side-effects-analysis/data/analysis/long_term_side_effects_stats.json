@@ -1,0 +1,1365 @@
+[
+  {
+    "side_effect": "acne",
+    "mention_count": 12,
+    "post_count": 11,
+    "frequency": 0.061,
+    "category": "physical",
+    "examples": [
+      "my skin’s breaking out",
+      "Hormonal acne also came back with a horrible vengeance like I haven't had since I was a teenager.",
+      "Here I am almost 34 with a jawline full of cystic breakouts... I feel like I’m gunna be 80 years old and still have pimples!!"
+    ],
+    "temporal_contexts": [
+      "developed after coming off the pill",
+      "returned after 5 years of use",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 22.4,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 4,
+      "severe": 3
+    }
+  },
+  {
+    "side_effect": "premenstrual dysphoric disorder",
+    "mention_count": 11,
+    "post_count": 11,
+    "frequency": 0.061,
+    "category": "mental",
+    "examples": [
+      "my PMDD has become so severe that I’m at the point where I want to quit the pill",
+      "I feel like people get put on this to help but it definitely doesn’t help me for that!",
+      "My PMDD actually got far worse, but due to some other med changes I didn't realize that's what happened for a year"
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "started after 7/8 years of use",
+      "got worse over time"
+    ],
+    "avg_years_when_appeared": 11.8,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "severe": 9,
+      "moderate": 2
+    }
+  },
+  {
+    "side_effect": "depression",
+    "mention_count": 11,
+    "post_count": 10,
+    "frequency": 0.056,
+    "category": "mental",
+    "examples": [
+      "I have dealt with... depression",
+      "then the rage, depression, apathy came back with a vengeance",
+      "the 6 days before my period was awful... Just totally hopeless and numb."
+    ],
+    "temporal_contexts": [
+      "started after 2 years of use",
+      "started after quitting the pill",
+      "started after getting the IUD"
+    ],
+    "avg_years_when_appeared": 12.7,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 4,
+      "severe": 4
+    }
+  },
+  {
+    "side_effect": "migraines",
+    "mention_count": 8,
+    "post_count": 8,
+    "frequency": 0.045,
+    "category": "physical",
+    "examples": [
+      "Yaz unfortunately gives me major migraines during my periods.",
+      "I have dealt with... migraines",
+      "I was also figuring out I have migraines and should stop the pill for that reason."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "developed over time",
+      "appeared after starting BC and developed over time"
+    ],
+    "avg_years_when_appeared": 14.4,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 2,
+      "severe": 3
+    }
+  },
+  {
+    "side_effect": "cognitive dysfunction",
+    "mention_count": 7,
+    "post_count": 7,
+    "frequency": 0.039,
+    "category": "mental",
+    "examples": [
+      "Brain fog is also an issue I’m dealing with as I go into my last year of college.",
+      "serious brain fog",
+      "It also solved my chronic bloat, fatigue, migraines, sleep issues, and brain fog."
+    ],
+    "temporal_contexts": [
+      "developed over time after coming off the pill",
+      "developed over time",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.7,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 4,
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "anxiety",
+    "mention_count": 7,
+    "post_count": 7,
+    "frequency": 0.039,
+    "category": "mental",
+    "examples": [
+      "I have dealt with... anxiety",
+      "I fear that the pill has been making my anxiety way worse than what it actually is.",
+      "I get back on after Day 7, extreme anxiety ever since."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "appeared after returning to the pill",
+      "started after 5 years of use"
+    ],
+    "avg_years_when_appeared": 12.6,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 2,
+      "severe": 3
+    }
+  },
+  {
+    "side_effect": "chronic pain",
+    "mention_count": 6,
+    "post_count": 6,
+    "frequency": 0.034,
+    "category": "physical",
+    "examples": [
+      "about a year ago I began having pain flares.",
+      "Would I be dealing with debilitating chronic pains and autoimmune issues today?",
+      "I have suffered for years with horrible symptoms which the dr diagnosed as PMDD."
+    ],
+    "temporal_contexts": [
+      "started after 5 years of use",
+      "developed over time",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.8,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 4
+    }
+  },
+  {
+    "side_effect": "fatigue",
+    "mention_count": 5,
+    "post_count": 5,
+    "frequency": 0.028,
+    "category": "physical",
+    "examples": [
+      "Energy levels are not as consistent and I am having some more periods of depression than I usually do this time of year.",
+      "It also solved my chronic bloat, fatigue, migraines, sleep issues, and brain fog.",
+      "lack of energy"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 13.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1,
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "menorrhagia",
+    "mention_count": 6,
+    "post_count": 5,
+    "frequency": 0.028,
+    "category": "physical",
+    "examples": [
+      "this past 3 years with it have been hellish- from heavy bleeding to volatile mood swings.",
+      "a flow so heavy that I’d bleed through an ultra tampon in less than an hour...",
+      "bleeding very heavily."
+    ],
+    "temporal_contexts": [
+      "developed over the past 3 years",
+      "appeared after starting BC and developed over time",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 13.8,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 3,
+      "moderate": 2
+    }
+  },
+  {
+    "side_effect": "alopecia",
+    "mention_count": 4,
+    "post_count": 4,
+    "frequency": 0.022,
+    "category": "physical",
+    "examples": [
+      "I have dealt with extreme hair loss",
+      "I’ve been noticing significant hair loss.",
+      "I experienced hair loss :( so not great, which I'm still dealing with today."
+    ],
+    "temporal_contexts": [
+      "started after over a decade of use",
+      "developed over time after second round of Accutane",
+      "started after stopping the pill"
+    ],
+    "avg_years_when_appeared": 17.5,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "severe": 1,
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "low libido",
+    "mention_count": 4,
+    "post_count": 4,
+    "frequency": 0.022,
+    "category": "both",
+    "examples": [
+      "I have dealt with... ZERO sex drive",
+      "I feel like I can be so moody all of the time and my libido is low, I’ve felt like this probably since I switched to sprintec.",
+      "I have had basically 0 libido for nearly 3."
+    ],
+    "temporal_contexts": [
+      "started after switching to sprintec",
+      "started after 11 years of use",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 13.2,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 3
+    }
+  },
+  {
+    "side_effect": "sexual dysfunction",
+    "mention_count": 4,
+    "post_count": 4,
+    "frequency": 0.022,
+    "category": "mental",
+    "examples": [
+      "as i’ve gotten older I realised I have next to no sex drive",
+      "birth control had a lot of side effects for me and even contributed to long term sexual dysfunction even years after coming off of it",
+      "I've lost the sex drive... in the last three months I've felt less and less desire to have sex with him."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "developed over time",
+      "started after 14 years of use"
+    ],
+    "avg_years_when_appeared": 14.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 2
+    }
+  },
+  {
+    "side_effect": "insomnia",
+    "mention_count": 4,
+    "post_count": 4,
+    "frequency": 0.022,
+    "category": "mental",
+    "examples": [
+      "I get insomnia and when I do fall asleep I don’t get much deep sleep",
+      "Don't even get me started on my insane insomnia",
+      "I still get insomnia before and during my period."
+    ],
+    "temporal_contexts": [
+      "started after coming off the pill",
+      "started after coming off the pill"
+    ],
+    "avg_years_when_appeared": 19.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 2
+    }
+  },
+  {
+    "side_effect": "mood instability",
+    "mention_count": 4,
+    "post_count": 4,
+    "frequency": 0.022,
+    "category": "mental",
+    "examples": [
+      "I feel like I can be so moody all of the time",
+      "Ever since my moods and body have felt incredibly uneven.",
+      "this past 3 years with it have been hellish- from heavy bleeding to volatile mood swings."
+    ],
+    "temporal_contexts": [
+      "started after switching to sprintec",
+      "developed over the past 3 years",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 9.2,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 2,
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "mental health decline",
+    "mention_count": 3,
+    "post_count": 3,
+    "frequency": 0.017,
+    "category": "mental",
+    "examples": [
+      "With other life things happening to me I felt my mental health worsen.",
+      "Exacerbated mental health symptoms etc.",
+      "5 years go by and my mental state has worsened due to being a first time mum and covid preventing me from seeing my family."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "worsened over time"
+    ],
+    "avg_years_when_appeared": 14.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 2
+    }
+  },
+  {
+    "side_effect": "hormonal imbalance",
+    "mention_count": 3,
+    "post_count": 3,
+    "frequency": 0.017,
+    "category": "physical",
+    "examples": [
+      "Hormonal imbalance after coming off the pill",
+      "she's seen a lot of women with hormone issues feel way better with more progesterone",
+      "Hormonal imbalance after coming off the pill"
+    ],
+    "temporal_contexts": [
+      "developed over time after 7.5 years on the pill",
+      "developed over time due to long-term use",
+      "developed over time after 7.5 years on the pill"
+    ],
+    "avg_years_when_appeared": 20.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "weight gain",
+    "mention_count": 3,
+    "post_count": 3,
+    "frequency": 0.017,
+    "category": "physical",
+    "examples": [
+      "I have noticed gradual weight gain over the year I’ve done this.",
+      "weight gain which majorly fucks with my ED related body image",
+      "I randomly gained 20 lbs after turning 30."
+    ],
+    "temporal_contexts": [
+      "appeared gradually over the year",
+      "developed over time",
+      "appeared after turning 30"
+    ],
+    "avg_years_when_appeared": 10.3,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 2
+    }
+  },
+  {
+    "side_effect": "arthralgia",
+    "mention_count": 3,
+    "post_count": 3,
+    "frequency": 0.017,
+    "category": "physical",
+    "examples": [
+      "Weird food cravings, joint pain, migraines, hydration issues, racing thoughts.",
+      "Every joint in both legs hurt and felt swollen. It was truly debilitating.",
+      "my joints hurt every morning and whenever I stand from crouching or sitting on the floor."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "developed over time",
+      "worsened over time"
+    ],
+    "avg_years_when_appeared": 14.3,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 2,
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "dysmenorrhea",
+    "mention_count": 4,
+    "post_count": 3,
+    "frequency": 0.017,
+    "category": "physical",
+    "examples": [
+      "cramps so painful I have to grit my teeth to keep from screaming...",
+      "for the last several years it's getting worse and worse!!!",
+      "I have the worst periods of my life now."
+    ],
+    "temporal_contexts": [
+      "appeared after starting BC and developed over time",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 20.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 4
+    }
+  },
+  {
+    "side_effect": "skin texture issues",
+    "mention_count": 3,
+    "post_count": 3,
+    "frequency": 0.017,
+    "category": "physical",
+    "examples": [
+      "I swear even my skin texture changed overnight.",
+      "It gets flaky/scaly if I don’t moisture.",
+      "the overall texture of my skin, it's is bumpy and rough like the entire surface of my skin is textured."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "developed over time",
+      "appeared gradually after stopping Accutane"
+    ],
+    "avg_years_when_appeared": 6.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 3
+    }
+  },
+  {
+    "side_effect": "intermenstrual bleeding",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "I randomly started spotting a lot.",
+      "the problematic side effect is that I spot bleed most days of my cycle."
+    ],
+    "temporal_contexts": [
+      "started after 7 years of use"
+    ],
+    "avg_years_when_appeared": 6.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "sleep disturbances",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "It also solved my chronic bloat, fatigue, migraines, sleep issues, and brain fog.",
+      "my sleep was garbage."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 10.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "chronic illness flare-ups",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "My physical chronic illness was constantly in a flare up.",
+      "exacerbation of all my underlying chronic illnesses and chronic pain conditions"
+    ],
+    "temporal_contexts": [
+      "got worse over time",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 12.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1,
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "mastalgia",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "breast tenderness and swelling",
+      "Suddenly, I’ve got new symptoms. Horribly tender breasts..."
+    ],
+    "temporal_contexts": [
+      "developed over time",
+      "appeared after starting BC and developed over time"
+    ],
+    "avg_years_when_appeared": 16.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "hypomenorrhea",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "my periods have been much lighter than they were on the pill",
+      "The last few months my period is now very light."
+    ],
+    "temporal_contexts": [
+      "developed after coming off the pill",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 17.5,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "mild": 1
+    }
+  },
+  {
+    "side_effect": "polycystic ovary syndrome",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "By the way, you also have mild PCOS",
+      "By the way, you also have mild PCOS."
+    ],
+    "temporal_contexts": [
+      "discovered after 13 years of use",
+      "discovered after years of use"
+    ],
+    "avg_years_when_appeared": 10.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "mild": 2
+    }
+  },
+  {
+    "side_effect": "hirsutism",
+    "mention_count": 2,
+    "post_count": 2,
+    "frequency": 0.011,
+    "category": "physical",
+    "examples": [
+      "the chin hairs which seemed to get more and more numerous over the years",
+      "the only other symptom of PCOS, besides my beard hair and acne..."
+    ],
+    "temporal_contexts": [
+      "increased over time",
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 10.5,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "mild": 1
+    }
+  },
+  {
+    "side_effect": "hypothyroidism",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I also developed hypothyroidism."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 6.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "sensitivity of nipples",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "My nipples? Rock hard. Like they could cut glass I think."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 11.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "headaches",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "all the side effects are coming back. The headaches..."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 12.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "mood swings",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "The... insane emotional mood swings..."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 12.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "increased vaginal discharge",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "the ridiculous watery discharge that just soaks my underwear..."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 12.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "orgasmic disorder",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "it is very hard for me to reach orgasm"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 12.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "vertigo",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I have noticed that ever since I started this pill, I seem to experience vertigo head-rush-like symptoms from time to time."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "night sweats",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I have began having night sweats every so often, I wake up with my sheets soaking wet. I’ve been on birth control for 6 straight years and this just started happening a few months ago."
+    ],
+    "temporal_contexts": [
+      "started after 6 years of use"
+    ],
+    "avg_years_when_appeared": 6.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "irritability",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "I feel sensitive and irritable"
+    ],
+    "temporal_contexts": [
+      "developed over time after coming off the pill"
+    ],
+    "avg_years_when_appeared": 25.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "tension-type headaches",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I have been having tension headaches and lightheadedness for a few months now."
+    ],
+    "temporal_contexts": [
+      "started after 5 years of use"
+    ],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "lightheadedness",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I have been having tension headaches and lightheadedness for a few months now."
+    ],
+    "temporal_contexts": [
+      "started after 5 years of use"
+    ],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "vasomotor symptoms",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "Unfortunately this month I started experiencing menopause like hot flashes"
+    ],
+    "temporal_contexts": [
+      "started after 2 years of use"
+    ],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "ineffective treatment response",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "I’ve been on Zoloft 150mg for 3 years which has worked well, but now it’s not helping at all."
+    ],
+    "temporal_contexts": [
+      "developed over time after long-term BC use"
+    ],
+    "avg_years_when_appeared": 8.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "emotional instability",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "Then it shifts into such stultifying fragility."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "anxiety and depression",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "The anxiety and depression are being kept at bay with the zoloft i have been on for 20 years."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 20.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "bloating",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "It also solved my chronic bloat"
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 13.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "suicidal ideation",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "my husband was so worried about me especially now that we have kids because I was getting really bad suicidal thoughts."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 13.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "muscle cramps",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "my body has been crampy ever since, like it thinks I’m doing the week off again."
+    ],
+    "temporal_contexts": [
+      "started after being late on the pill"
+    ],
+    "avg_years_when_appeared": 18.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "hyperthyroidism",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "she also wants me to get thyroid labs done again because mine were too high even though my doctor had said it was within normal range"
+    ],
+    "temporal_contexts": [
+      "discovered after long-term use"
+    ],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "appetite changes",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "appetite fluctuations"
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 16.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "general malaise",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "general malaise"
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 16.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "decreased productivity",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "productivity fell etc."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "panic disorder",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "Biggest symptom was insomnia, anxiety, panic attacks."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "abdominal bloating",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "severe bloating/distention"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "nausea",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "nausea on the verge of vomiting"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "malaise",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "malaise"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "genitourinary syndrome of menopause",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I've also started with genitourinary syndrome of menopause symptoms and was diagnosed with lichen sclerosis."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "lichen sclerosus",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I was diagnosed with lichen sclerosis."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 15.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "varicose veins",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "And my spider veins getting worse."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "anovulation",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "my ovulation days so far have been: 21, 26, 37, 18, 26, 33 & 29."
+    ],
+    "temporal_contexts": [
+      "developed over time after 7.5 years on the pill"
+    ],
+    "avg_years_when_appeared": 25.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "endometrioma",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I developed a gradual pain each month that feels like period pain but 100000x worse."
+    ],
+    "temporal_contexts": [
+      "developed over time after stopping BC"
+    ],
+    "avg_years_when_appeared": 18.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "Hashimoto's thyroiditis",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I see a thyroid specialist who does an ultrasound and discovers I have Hashimotos disease."
+    ],
+    "temporal_contexts": [
+      "discovered after long-term use"
+    ],
+    "avg_years_when_appeared": 18.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "tachycardia",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "Yet my heart rate is continuing to be dangerously high. Never dropping below 90 and constantly in 130-150 range most of the day."
+    ],
+    "temporal_contexts": [
+      "started after long-term use"
+    ],
+    "avg_years_when_appeared": 18.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "deep vein thrombosis",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "last year I had deep vein thrombosis."
+    ],
+    "temporal_contexts": [
+      "developed after long-term use"
+    ],
+    "avg_years_when_appeared": 30.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "premenstrual syndrome",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "the only other symptom of my PCOS besides the chin hair and acne was horrible PMS"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 13.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "weight management issues",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I have barely lost 4lbs in over a year of actively trying to lose weight."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "dry skin",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "My skin has been dryer than normal."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 10.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "mild": 1
+    }
+  },
+  {
+    "side_effect": "abnormal uterine bleeding",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "the first 3–6 months were super irregular"
+    ],
+    "temporal_contexts": [
+      "appeared after starting BC"
+    ],
+    "avg_years_when_appeared": 9.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "neurological disorders",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I have pretty severe neurological issues now, and I have to think that they relate to the medication not working properly."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 12.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "acne scarring",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I ended up with severe acne scaring and sex was painful the whole time I had it in."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "dizziness",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I’m exhausted, in pain, dizzy, and it’s affecting work and daily life."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 20.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "pain",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I’m exhausted, in pain, dizzy, and it’s affecting work and daily life."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 20.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "emotional distress",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "mental",
+    "examples": [
+      "the physical pain from the cysts, and the emotional pain I felt on a daily basis"
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 29.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "severe": 1
+    }
+  },
+  {
+    "side_effect": "burning sensation",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "My skin has a burning sensation and it feels tight."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "erythema",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I turn beet red in the cold and flush when I am hot."
+    ],
+    "temporal_contexts": [
+      "developed over time"
+    ],
+    "avg_years_when_appeared": 5.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "seborrhea",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "my skin was getting oily again and closed comedones/texture returning"
+    ],
+    "temporal_contexts": [
+      "started after finishing Accutane"
+    ],
+    "avg_years_when_appeared": null,
+    "persists_after_stopping": null,
+    "severity_distribution": {
+      "moderate": 1
+    }
+  },
+  {
+    "side_effect": "chronic urticaria",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "I struggle with rashes, eczema, chronic hives, and a lot of allergic reactions."
+    ],
+    "temporal_contexts": [],
+    "avg_years_when_appeared": 26.0,
+    "persists_after_stopping": null,
+    "severity_distribution": {}
+  },
+  {
+    "side_effect": "menstrual irregularities",
+    "mention_count": 1,
+    "post_count": 1,
+    "frequency": 0.006,
+    "category": "physical",
+    "examples": [
+      "This time the Spiro is really messing with my cycle too since I’m not on the pill."
+    ],
+    "temporal_contexts": [
+      "developed over time after stopping BC"
+    ],
+    "avg_years_when_appeared": 30.0,
+    "persists_after_stopping": true,
+    "severity_distribution": {}
+  }
+]

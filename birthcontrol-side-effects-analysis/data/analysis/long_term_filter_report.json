@@ -1,0 +1,19 @@
+{
+  "total_posts_analyzed": 537,
+  "posts_matching_long_term": 179,
+  "match_percentage": 33.33,
+  "explicit_year_matches": 159,
+  "keyword_matches": 55,
+  "year_distribution": {
+    "5-7 years": 38,
+    "8-9 years": 14,
+    "10+ years": 104
+  },
+  "filter_criteria": {
+    "min_years_threshold": 5,
+    "year_patterns_used": 3,
+    "keyword_patterns_used": 6
+  },
+  "filtering_rationale": "Posts were selected if they mention 5+ years of birth control use OR contain long-term indicators (chronic, long-term, decade, etc.). This captures both explicit duration mentions and implicit long-term use patterns.",
+  "filtered_at": "2025-11-07T21:13:32.127905"
+}

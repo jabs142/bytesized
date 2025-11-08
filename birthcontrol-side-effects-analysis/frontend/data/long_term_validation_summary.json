@@ -1,0 +1,1421 @@
+{
+  "total_effects": 20,
+  "total_posts_analyzed": 179,
+  "by_validation_status": {
+    "No Research Found": 5,
+    "Validated": 12,
+    "Limited Evidence": 3
+  },
+  "by_clinical_significance": {
+    "High": 4,
+    "Moderate": 3,
+    "Low": 13
+  },
+  "high_surprise_effects": [
+    {
+      "side_effect": "cognitive dysfunction",
+      "surprise_score": 0.039,
+      "validation_status": "No Research Found",
+      "post_count": 7,
+      "paper_count": 0
+    },
+    {
+      "side_effect": "migraines",
+      "surprise_score": 0.036,
+      "validation_status": "Validated",
+      "post_count": 8,
+      "paper_count": 3
+    },
+    {
+      "side_effect": "premenstrual dysphoric disorder",
+      "surprise_score": 0.033,
+      "validation_status": "Validated",
+      "post_count": 11,
+      "paper_count": 7
+    },
+    {
+      "side_effect": "chronic pain",
+      "surprise_score": 0.027,
+      "validation_status": "Validated",
+      "post_count": 6,
+      "paper_count": 3
+    },
+    {
+      "side_effect": "mood instability",
+      "surprise_score": 0.022,
+      "validation_status": "No Research Found",
+      "post_count": 4,
+      "paper_count": 0
+    },
+    {
+      "side_effect": "low libido",
+      "surprise_score": 0.021,
+      "validation_status": "Limited Evidence",
+      "post_count": 4,
+      "paper_count": 1
+    },
+    {
+      "side_effect": "insomnia",
+      "surprise_score": 0.019,
+      "validation_status": "Limited Evidence",
+      "post_count": 4,
+      "paper_count": 2
+    },
+    {
+      "side_effect": "mental health decline",
+      "surprise_score": 0.017,
+      "validation_status": "No Research Found",
+      "post_count": 3,
+      "paper_count": 0
+    },
+    {
+      "side_effect": "hormonal imbalance",
+      "surprise_score": 0.017,
+      "validation_status": "No Research Found",
+      "post_count": 3,
+      "paper_count": 0
+    },
+    {
+      "side_effect": "skin texture issues",
+      "surprise_score": 0.017,
+      "validation_status": "No Research Found",
+      "post_count": 3,
+      "paper_count": 0
+    },
+    {
+      "side_effect": "arthralgia",
+      "surprise_score": 0.016,
+      "validation_status": "Limited Evidence",
+      "post_count": 3,
+      "paper_count": 1
+    },
+    {
+      "side_effect": "depression",
+      "surprise_score": 0.015,
+      "validation_status": "Validated",
+      "post_count": 10,
+      "paper_count": 11
+    },
+    {
+      "side_effect": "menorrhagia",
+      "surprise_score": 0.015,
+      "validation_status": "Validated",
+      "post_count": 5,
+      "paper_count": 7
+    }
+  ],
+  "research_gaps": [],
+  "top_effects": [
+    {
+      "side_effect": "cognitive dysfunction",
+      "validation_status": "No Research Found",
+      "clinical_significance": "High",
+      "surprise_score": 0.039,
+      "reddit_data": {
+        "mention_count": 7,
+        "post_count": 7,
+        "frequency": 0.039,
+        "category": "mental",
+        "examples": [
+          "Brain fog is also an issue I’m dealing with as I go into my last year of college.",
+          "serious brain fog",
+          "It also solved my chronic bloat, fatigue, migraines, sleep issues, and brain fog."
+        ],
+        "temporal_contexts": [
+          "developed over time after coming off the pill",
+          "developed over time",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 15.7,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "moderate": 4,
+          "severe": 1
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 0,
+        "papers": []
+      }
+    },
+    {
+      "side_effect": "migraines",
+      "validation_status": "Validated",
+      "clinical_significance": "Moderate",
+      "surprise_score": 0.036,
+      "reddit_data": {
+        "mention_count": 8,
+        "post_count": 8,
+        "frequency": 0.045,
+        "category": "physical",
+        "examples": [
+          "Yaz unfortunately gives me major migraines during my periods.",
+          "I have dealt with... migraines",
+          "I was also figuring out I have migraines and should stop the pill for that reason."
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "developed over time",
+          "appeared after starting BC and developed over time"
+        ],
+        "avg_years_when_appeared": 14.4,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 2,
+          "severe": 3
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 3,
+        "papers": [
+          {
+            "pmid": "38915802",
+            "title": "The influence of factors associated with past reproductive histories on migraines in middle-aged premenopausal women: a nationwide population-based study in Republic of Korea.",
+            "year": "2024",
+            "journal": "Frontiers in neurology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38915802/"
+          },
+          {
+            "pmid": "35866143",
+            "title": "Contraception During Perimenopause: Practical Guidance.",
+            "year": "2022",
+            "journal": "International journal of women's health",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35866143/"
+          },
+          {
+            "pmid": "35781795",
+            "title": "Estetrol/Drospirenone: A Review in Oral Contraception.",
+            "year": "2022",
+            "journal": "Drugs",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35781795/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "premenstrual dysphoric disorder",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.033,
+      "reddit_data": {
+        "mention_count": 11,
+        "post_count": 11,
+        "frequency": 0.061,
+        "category": "mental",
+        "examples": [
+          "my PMDD has become so severe that I’m at the point where I want to quit the pill",
+          "I feel like people get put on this to help but it definitely doesn’t help me for that!",
+          "My PMDD actually got far worse, but due to some other med changes I didn't realize that's what happened for a year"
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "started after 7/8 years of use",
+          "got worse over time"
+        ],
+        "avg_years_when_appeared": 11.8,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "severe": 9,
+          "moderate": 2
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 7,
+        "papers": [
+          {
+            "pmid": "29359527",
+            "title": "Treatment of premenstrual mood changes in a patient with schizophrenia using dienogest: A case report.",
+            "year": "2018",
+            "journal": "The journal of obstetrics and gynaecology research",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29359527/"
+          },
+          {
+            "pmid": "28257559",
+            "title": "Non-contraceptive oestrogen-containing preparations for controlling symptoms of premenstrual syndrome.",
+            "year": "2017",
+            "journal": "The Cochrane database of systematic reviews",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28257559/"
+          },
+          {
+            "pmid": "20842989",
+            "title": "Contraception choices in women with underlying medical conditions.",
+            "year": "2010",
+            "journal": "American family physician",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20842989/"
+          },
+          {
+            "pmid": "34962522",
+            "title": "Contraception Selection, Effectiveness, and Adverse Effects: A Review.",
+            "year": "2021",
+            "journal": "JAMA",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34962522/"
+          },
+          {
+            "pmid": "32730861",
+            "title": "Progesterone - Friend or foe?",
+            "year": "2020",
+            "journal": "Frontiers in neuroendocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32730861/"
+          },
+          {
+            "pmid": "21961825",
+            "title": "The state of hormonal contraception today: benefits and risks of hormonal contraceptives: combined estrogen and progestin contraceptives.",
+            "year": "2011",
+            "journal": "American journal of obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21961825/"
+          },
+          {
+            "pmid": "21961824",
+            "title": "The state of hormonal contraception today: established and emerging noncontraceptive health benefits.",
+            "year": "2011",
+            "journal": "American journal of obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21961824/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "chronic pain",
+      "validation_status": "Validated",
+      "clinical_significance": "Moderate",
+      "surprise_score": 0.027,
+      "reddit_data": {
+        "mention_count": 6,
+        "post_count": 6,
+        "frequency": 0.034,
+        "category": "physical",
+        "examples": [
+          "about a year ago I began having pain flares.",
+          "Would I be dealing with debilitating chronic pains and autoimmune issues today?",
+          "I have suffered for years with horrible symptoms which the dr diagnosed as PMDD."
+        ],
+        "temporal_contexts": [
+          "started after 5 years of use",
+          "developed over time",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 15.8,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "severe": 4
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 3,
+        "papers": [
+          {
+            "pmid": "32041388",
+            "title": "Dysmenorrhea, Endometriosis and Chronic Pelvic Pain in Adolescents.",
+            "year": "2020",
+            "journal": "Journal of clinical research in pediatric endocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32041388/"
+          },
+          {
+            "pmid": "28176932",
+            "title": "Intrauterine levonorgestrel delivery with frameless fibrous delivery system: review of clinical experience.",
+            "year": "2017",
+            "journal": "International journal of women's health",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28176932/"
+          },
+          {
+            "pmid": "34363842",
+            "title": "Timing of pregnancy discovery among women seeking abortion",
+            "year": "2021",
+            "journal": "Contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34363842/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "mood instability",
+      "validation_status": "No Research Found",
+      "clinical_significance": "Low",
+      "surprise_score": 0.022,
+      "reddit_data": {
+        "mention_count": 4,
+        "post_count": 4,
+        "frequency": 0.022,
+        "category": "mental",
+        "examples": [
+          "I feel like I can be so moody all of the time",
+          "Ever since my moods and body have felt incredibly uneven.",
+          "this past 3 years with it have been hellish- from heavy bleeding to volatile mood swings."
+        ],
+        "temporal_contexts": [
+          "started after switching to sprintec",
+          "developed over the past 3 years",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 9.2,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 2,
+          "severe": 1
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 0,
+        "papers": []
+      }
+    },
+    {
+      "side_effect": "low libido",
+      "validation_status": "Limited Evidence",
+      "clinical_significance": "Low",
+      "surprise_score": 0.021,
+      "reddit_data": {
+        "mention_count": 4,
+        "post_count": 4,
+        "frequency": 0.022,
+        "category": "both",
+        "examples": [
+          "I have dealt with... ZERO sex drive",
+          "I feel like I can be so moody all of the time and my libido is low, I’ve felt like this probably since I switched to sprintec.",
+          "I have had basically 0 libido for nearly 3."
+        ],
+        "temporal_contexts": [
+          "started after switching to sprintec",
+          "started after 11 years of use",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 13.2,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 3
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 1,
+        "papers": [
+          {
+            "pmid": "35950047",
+            "title": "Spontaneous Twin Pregnancy: A Challenging and Exceptional Scenario in a Patient on Maintenance Hemodialysis in Sub-Saharan Africa.",
+            "year": "2022",
+            "journal": "Case reports in nephrology and dialysis",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35950047/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "insomnia",
+      "validation_status": "Limited Evidence",
+      "clinical_significance": "Low",
+      "surprise_score": 0.019,
+      "reddit_data": {
+        "mention_count": 4,
+        "post_count": 4,
+        "frequency": 0.022,
+        "category": "mental",
+        "examples": [
+          "I get insomnia and when I do fall asleep I don’t get much deep sleep",
+          "Don't even get me started on my insane insomnia",
+          "I still get insomnia before and during my period."
+        ],
+        "temporal_contexts": [
+          "started after coming off the pill",
+          "started after coming off the pill"
+        ],
+        "avg_years_when_appeared": 19.0,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "moderate": 2
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 2,
+        "papers": [
+          {
+            "pmid": "37473716",
+            "title": "Hormonal contraception use and insomnia: A nested case-control study.",
+            "year": "2023",
+            "journal": "Sleep medicine",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37473716/"
+          },
+          {
+            "pmid": "34425359",
+            "title": "Oral contraceptives, depressive and insomnia symptoms in adult women with and without depression.",
+            "year": "2021",
+            "journal": "Psychoneuroendocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34425359/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "mental health decline",
+      "validation_status": "No Research Found",
+      "clinical_significance": "High",
+      "surprise_score": 0.017,
+      "reddit_data": {
+        "mention_count": 3,
+        "post_count": 3,
+        "frequency": 0.017,
+        "category": "mental",
+        "examples": [
+          "With other life things happening to me I felt my mental health worsen.",
+          "Exacerbated mental health symptoms etc.",
+          "5 years go by and my mental state has worsened due to being a first time mum and covid preventing me from seeing my family."
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "worsened over time"
+        ],
+        "avg_years_when_appeared": 14.0,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "severe": 2
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 0,
+        "papers": []
+      }
+    },
+    {
+      "side_effect": "hormonal imbalance",
+      "validation_status": "No Research Found",
+      "clinical_significance": "Low",
+      "surprise_score": 0.017,
+      "reddit_data": {
+        "mention_count": 3,
+        "post_count": 3,
+        "frequency": 0.017,
+        "category": "physical",
+        "examples": [
+          "Hormonal imbalance after coming off the pill",
+          "she's seen a lot of women with hormone issues feel way better with more progesterone",
+          "Hormonal imbalance after coming off the pill"
+        ],
+        "temporal_contexts": [
+          "developed over time after 7.5 years on the pill",
+          "developed over time due to long-term use",
+          "developed over time after 7.5 years on the pill"
+        ],
+        "avg_years_when_appeared": 20.0,
+        "persists_after_stopping": true,
+        "severity_distribution": {}
+      },
+      "pubmed_data": {
+        "paper_count": 0,
+        "papers": []
+      }
+    },
+    {
+      "side_effect": "skin texture issues",
+      "validation_status": "No Research Found",
+      "clinical_significance": "Low",
+      "surprise_score": 0.017,
+      "reddit_data": {
+        "mention_count": 3,
+        "post_count": 3,
+        "frequency": 0.017,
+        "category": "physical",
+        "examples": [
+          "I swear even my skin texture changed overnight.",
+          "It gets flaky/scaly if I don’t moisture.",
+          "the overall texture of my skin, it's is bumpy and rough like the entire surface of my skin is textured."
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "developed over time",
+          "appeared gradually after stopping Accutane"
+        ],
+        "avg_years_when_appeared": 6.5,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 3
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 0,
+        "papers": []
+      }
+    },
+    {
+      "side_effect": "arthralgia",
+      "validation_status": "Limited Evidence",
+      "clinical_significance": "Low",
+      "surprise_score": 0.016,
+      "reddit_data": {
+        "mention_count": 3,
+        "post_count": 3,
+        "frequency": 0.017,
+        "category": "physical",
+        "examples": [
+          "Weird food cravings, joint pain, migraines, hydration issues, racing thoughts.",
+          "Every joint in both legs hurt and felt swollen. It was truly debilitating.",
+          "my joints hurt every morning and whenever I stand from crouching or sitting on the floor."
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "developed over time",
+          "worsened over time"
+        ],
+        "avg_years_when_appeared": 14.3,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 2,
+          "severe": 1
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 1,
+        "papers": [
+          {
+            "pmid": "33049363",
+            "title": "Patients' satisfaction following laparoscopic cornuectomy for removal of hysteroscopic sterilization devices.",
+            "year": "2021",
+            "journal": "Journal of gynecology obstetrics and human reproduction",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33049363/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "depression",
+      "validation_status": "Validated",
+      "clinical_significance": "High",
+      "surprise_score": 0.015,
+      "reddit_data": {
+        "mention_count": 11,
+        "post_count": 10,
+        "frequency": 0.056,
+        "category": "mental",
+        "examples": [
+          "I have dealt with... depression",
+          "then the rage, depression, apathy came back with a vengeance",
+          "the 6 days before my period was awful... Just totally hopeless and numb."
+        ],
+        "temporal_contexts": [
+          "started after 2 years of use",
+          "started after quitting the pill",
+          "started after getting the IUD"
+        ],
+        "avg_years_when_appeared": 12.7,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "moderate": 4,
+          "severe": 4
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 11,
+        "papers": [
+          {
+            "pmid": "32224758",
+            "title": "Ischemic Stroke in Young Adults.",
+            "year": "2020",
+            "journal": "Continuum (Minneapolis, Minn.)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32224758/"
+          },
+          {
+            "pmid": "36257374",
+            "title": "Tolerability and safety of the estetrol/drospirenone combined oral contraceptive: Pooled analysis of two multicenter, open-label phase 3 trials.",
+            "year": "2022",
+            "journal": "Contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36257374/"
+          },
+          {
+            "pmid": "35677872",
+            "title": "Stable Anxiety and Depression Trajectories in Late Adolescence for Oral Contraceptive Users.",
+            "year": "2022",
+            "journal": "Frontiers in psychiatry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35677872/"
+          },
+          {
+            "pmid": "37755829",
+            "title": "Mental Health Symptoms in Oral Contraceptive Users During Short-Term Hormone Withdrawal.",
+            "year": "2023",
+            "journal": "JAMA network open",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37755829/"
+          },
+          {
+            "pmid": "26694498",
+            "title": "Postpartum Care and Contraception in Obese Women.",
+            "year": "2016",
+            "journal": "Clinical obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26694498/"
+          },
+          {
+            "pmid": "31461541",
+            "title": "Oral contraceptive use in adolescence predicts lasting vulnerability to depression in adulthood.",
+            "year": "2020",
+            "journal": "Journal of child psychology and psychiatry, and allied disciplines",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31461541/"
+          },
+          {
+            "pmid": "34812859",
+            "title": "Management of Acne Vulgaris: A Review.",
+            "year": "2021",
+            "journal": "JAMA",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34812859/"
+          },
+          {
+            "pmid": "27680324",
+            "title": "Association of Hormonal Contraception With Depression.",
+            "year": "2016",
+            "journal": "JAMA psychiatry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27680324/"
+          },
+          {
+            "pmid": "32730861",
+            "title": "Progesterone - Friend or foe?",
+            "year": "2020",
+            "journal": "Frontiers in neuroendocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32730861/"
+          },
+          {
+            "pmid": "35781795",
+            "title": "Estetrol/Drospirenone: A Review in Oral Contraception.",
+            "year": "2022",
+            "journal": "Drugs",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35781795/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "menorrhagia",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.015,
+      "reddit_data": {
+        "mention_count": 6,
+        "post_count": 5,
+        "frequency": 0.028,
+        "category": "physical",
+        "examples": [
+          "this past 3 years with it have been hellish- from heavy bleeding to volatile mood swings.",
+          "a flow so heavy that I’d bleed through an ultra tampon in less than an hour...",
+          "bleeding very heavily."
+        ],
+        "temporal_contexts": [
+          "developed over the past 3 years",
+          "appeared after starting BC and developed over time",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 13.8,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "severe": 3,
+          "moderate": 2
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 7,
+        "papers": [
+          {
+            "pmid": "25767949",
+            "title": "The management of uterine leiomyomas.",
+            "year": "2015",
+            "journal": "Journal of obstetrics and gynaecology Canada : JOGC = Journal d'obstetrique et gynecologie du Canada : JOGC",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25767949/"
+          },
+          {
+            "pmid": "26032466",
+            "title": "Fibroids (uterine myomatosis, leiomyomas).",
+            "year": "2015",
+            "journal": "BMJ clinical evidence",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26032466/"
+          },
+          {
+            "pmid": "21477393",
+            "title": "Fibroids (uterine myomatosis, leiomyomas).",
+            "year": "2011",
+            "journal": "BMJ clinical evidence",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21477393/"
+          },
+          {
+            "pmid": "25245843",
+            "title": "Levonorgestrel-releasing intrauterine system versus medical therapy for menorrhagia: a systematic review and meta-analysis.",
+            "year": "2014",
+            "journal": "Medical science monitor : international medical journal of experimental and clinical research",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25245843/"
+          },
+          {
+            "pmid": "23770812",
+            "title": "The long-term outcomes of endometrial ablation in the treatment of heavy menstrual bleeding.",
+            "year": "2013",
+            "journal": "Current opinion in obstetrics & gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23770812/"
+          },
+          {
+            "pmid": "21961824",
+            "title": "The state of hormonal contraception today: established and emerging noncontraceptive health benefits.",
+            "year": "2011",
+            "journal": "American journal of obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21961824/"
+          },
+          {
+            "pmid": "37844683",
+            "title": "Characteristics and hormonal contraception use patterns of levonorgestrel 13.5 mg intrauterine device users in Sweden 2014-2016.",
+            "year": "2024",
+            "journal": "Contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37844683/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "sexual dysfunction",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.013,
+      "reddit_data": {
+        "mention_count": 4,
+        "post_count": 4,
+        "frequency": 0.022,
+        "category": "mental",
+        "examples": [
+          "as i’ve gotten older I realised I have next to no sex drive",
+          "birth control had a lot of side effects for me and even contributed to long term sexual dysfunction even years after coming off of it",
+          "I've lost the sex drive... in the last three months I've felt less and less desire to have sex with him."
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "developed over time",
+          "started after 14 years of use"
+        ],
+        "avg_years_when_appeared": 14.0,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "moderate": 2
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 6,
+        "papers": [
+          {
+            "pmid": "29630008",
+            "title": "Ovarian Cancer Prevention and Screening.",
+            "year": "2018",
+            "journal": "Obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29630008/"
+          },
+          {
+            "pmid": "22713195",
+            "title": "[Hyperprolactinemia in mentally ill patients].",
+            "year": "2011",
+            "journal": "Acta medica portuguesa",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22713195/"
+          },
+          {
+            "pmid": "34693263",
+            "title": "Sexuality, Contraception, and Pregnancy in Kidney Transplantation.",
+            "year": "2021",
+            "journal": "Kidney medicine",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34693263/"
+          },
+          {
+            "pmid": "28711071",
+            "title": "Fertility, Contraception, and Novel Reproductive Technologies in Chronic Kidney Disease.",
+            "year": "2017",
+            "journal": "Seminars in nephrology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28711071/"
+          },
+          {
+            "pmid": "39535279",
+            "title": "Perimenopausal combined hormonal contraception: focus on sexual function.",
+            "year": "2025",
+            "journal": "Climacteric : the journal of the International Menopause Society",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39535279/"
+          },
+          {
+            "pmid": "31788320",
+            "title": "Association of Female Sexual Dysfunction and Fertility: a cross sectional study.",
+            "year": "2019",
+            "journal": "Fertility research and practice",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31788320/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "alopecia",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.012,
+      "reddit_data": {
+        "mention_count": 4,
+        "post_count": 4,
+        "frequency": 0.022,
+        "category": "physical",
+        "examples": [
+          "I have dealt with extreme hair loss",
+          "I’ve been noticing significant hair loss.",
+          "I experienced hair loss :( so not great, which I'm still dealing with today."
+        ],
+        "temporal_contexts": [
+          "started after over a decade of use",
+          "developed over time after second round of Accutane",
+          "started after stopping the pill"
+        ],
+        "avg_years_when_appeared": 17.5,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "severe": 1,
+          "moderate": 1
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 7,
+        "papers": [
+          {
+            "pmid": "27387253",
+            "title": "Androgen excess: Investigations and management.",
+            "year": "2016",
+            "journal": "Best practice & research. Clinical obstetrics & gynaecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27387253/"
+          },
+          {
+            "pmid": "38892763",
+            "title": "Safety of Antiandrogens for the Treatment of Female Androgenetic Alopecia with Respect to Gynecologic Malignancies.",
+            "year": "2024",
+            "journal": "Journal of clinical medicine",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38892763/"
+          },
+          {
+            "pmid": "40699527",
+            "title": "Non-classical congenital adrenal hyperplasia: current insights into clinical implications, diagnosis and treatment.",
+            "year": "2025",
+            "journal": "Endocrine",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40699527/"
+          },
+          {
+            "pmid": "21487083",
+            "title": "Prospective cohort study on the effects and tolerability of flutamide in patients with female pattern hair loss.",
+            "year": "2011",
+            "journal": "The Annals of pharmacotherapy",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21487083/"
+          },
+          {
+            "pmid": "33049363",
+            "title": "Patients' satisfaction following laparoscopic cornuectomy for removal of hysteroscopic sterilization devices.",
+            "year": "2021",
+            "journal": "Journal of gynecology obstetrics and human reproduction",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33049363/"
+          },
+          {
+            "pmid": "27386051",
+            "title": "Finasteride in Hidradenitis Suppurativa: A \"Male\" Therapy for a Predominantly \"Female\" Disease.",
+            "year": "2016",
+            "journal": "The Journal of clinical and aesthetic dermatology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27386051/"
+          },
+          {
+            "pmid": "33276392",
+            "title": "[GnRH agonist implants in small animal practice - what do we know 13 years following EU registration?].",
+            "year": "2020",
+            "journal": "Tierarztliche Praxis. Ausgabe K, Kleintiere/Heimtiere",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33276392/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "fatigue",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.011,
+      "reddit_data": {
+        "mention_count": 5,
+        "post_count": 5,
+        "frequency": 0.028,
+        "category": "physical",
+        "examples": [
+          "Energy levels are not as consistent and I am having some more periods of depression than I usually do this time of year.",
+          "It also solved my chronic bloat, fatigue, migraines, sleep issues, and brain fog.",
+          "lack of energy"
+        ],
+        "temporal_contexts": [
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 13.0,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 1,
+          "severe": 1
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 9,
+        "papers": [
+          {
+            "pmid": "32909630",
+            "title": "Levonorgestrel-releasing intrauterine system for endometrial hyperplasia.",
+            "year": "2020",
+            "journal": "The Cochrane database of systematic reviews",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32909630/"
+          },
+          {
+            "pmid": "30798096",
+            "title": "Inflammatory hepatocellular adenoma in a patient with Turner's syndrome: A case report.",
+            "year": "2019",
+            "journal": "International journal of surgery case reports",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30798096/"
+          },
+          {
+            "pmid": "34682353",
+            "title": "Health Status Is Affected, and Phase I/II Biotransformation Activity Altered in Young Women Using Oral Contraceptives Containing Drospirenone/Ethinyl Estradiol.",
+            "year": "2021",
+            "journal": "International journal of environmental research and public health",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34682353/"
+          },
+          {
+            "pmid": "32893960",
+            "title": "Carriers of ABCB4 gene variants show a mild clinical course, but impaired quality of life and limited risk for cholangiocarcinoma.",
+            "year": "2020",
+            "journal": "Liver international : official journal of the International Association for the Study of the Liver",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32893960/"
+          },
+          {
+            "pmid": "29683911",
+            "title": "ACOG Committee Opinion No. 736: Optimizing Postpartum Care.",
+            "year": "2018",
+            "journal": "Obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29683911/"
+          },
+          {
+            "pmid": "33199360",
+            "title": "Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app.",
+            "year": "2021",
+            "journal": "British journal of sports medicine",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33199360/"
+          },
+          {
+            "pmid": "25245997",
+            "title": "Contraception containing estradiol valerate and dienogest--advantages, adherence and user satisfaction.",
+            "year": "2014",
+            "journal": "Minerva ginecologica",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25245997/"
+          },
+          {
+            "pmid": "40120659",
+            "title": "Effects of estetrol/drospirenone on self-reported physical and emotional premenstrual and menstrual symptoms: Data from the phase 3 clinical trial in the United States and Canada.",
+            "year": "2025",
+            "journal": "Contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40120659/"
+          },
+          {
+            "pmid": "38598545",
+            "title": "Effects of Hormonal Contraception and the Menstrual Cycle on Fatigability and Recovery From an Anaerobic Exercise Test.",
+            "year": "2024",
+            "journal": "Journal of strength and conditioning research",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38598545/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "anxiety",
+      "validation_status": "Validated",
+      "clinical_significance": "High",
+      "surprise_score": 0.008,
+      "reddit_data": {
+        "mention_count": 7,
+        "post_count": 7,
+        "frequency": 0.039,
+        "category": "mental",
+        "examples": [
+          "I have dealt with... anxiety",
+          "I fear that the pill has been making my anxiety way worse than what it actually is.",
+          "I get back on after Day 7, extreme anxiety ever since."
+        ],
+        "temporal_contexts": [
+          "developed over time",
+          "appeared after returning to the pill",
+          "started after 5 years of use"
+        ],
+        "avg_years_when_appeared": 12.6,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "moderate": 2,
+          "severe": 3
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 12,
+        "papers": [
+          {
+            "pmid": "35677872",
+            "title": "Stable Anxiety and Depression Trajectories in Late Adolescence for Oral Contraceptive Users.",
+            "year": "2022",
+            "journal": "Frontiers in psychiatry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35677872/"
+          },
+          {
+            "pmid": "37755829",
+            "title": "Mental Health Symptoms in Oral Contraceptive Users During Short-Term Hormone Withdrawal.",
+            "year": "2023",
+            "journal": "JAMA network open",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37755829/"
+          },
+          {
+            "pmid": "25113319",
+            "title": "Oral contraceptive use and psychiatric disorders in a nationally representative sample of women.",
+            "year": "2015",
+            "journal": "Archives of women's mental health",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25113319/"
+          },
+          {
+            "pmid": "28135674",
+            "title": "Stress-related and basic determinants of hair cortisol in humans: A meta-analysis.",
+            "year": "2017",
+            "journal": "Psychoneuroendocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28135674/"
+          },
+          {
+            "pmid": "40932674",
+            "title": "Adolescent hyperandrogenism: diagnostic challenges and therapeutic approaches.",
+            "year": "2025",
+            "journal": "World journal of pediatrics : WJP",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40932674/"
+          },
+          {
+            "pmid": "27817838",
+            "title": "Noncontraceptive use of oral combined hormonal contraceptives in polycystic ovary syndrome-risks versus benefits.",
+            "year": "2016",
+            "journal": "Fertility and sterility",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27817838/"
+          },
+          {
+            "pmid": "26176863",
+            "title": "Determinants of hair cortisol and hair cortisone concentrations in adults.",
+            "year": "2015",
+            "journal": "Psychoneuroendocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26176863/"
+          },
+          {
+            "pmid": "29351761",
+            "title": "Selective serotonin reuptake inhibitor use and breast cancer survival: a population-based cohort study.",
+            "year": "2018",
+            "journal": "Breast cancer research : BCR",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29351761/"
+          },
+          {
+            "pmid": "34812859",
+            "title": "Management of Acne Vulgaris: A Review.",
+            "year": "2021",
+            "journal": "JAMA",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34812859/"
+          },
+          {
+            "pmid": "33199360",
+            "title": "Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app.",
+            "year": "2021",
+            "journal": "British journal of sports medicine",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33199360/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "weight gain",
+      "validation_status": "Validated",
+      "clinical_significance": "Moderate",
+      "surprise_score": 0.006,
+      "reddit_data": {
+        "mention_count": 3,
+        "post_count": 3,
+        "frequency": 0.017,
+        "category": "physical",
+        "examples": [
+          "I have noticed gradual weight gain over the year I’ve done this.",
+          "weight gain which majorly fucks with my ED related body image",
+          "I randomly gained 20 lbs after turning 30."
+        ],
+        "temporal_contexts": [
+          "appeared gradually over the year",
+          "developed over time",
+          "appeared after turning 30"
+        ],
+        "avg_years_when_appeared": 10.3,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "moderate": 2
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 10,
+        "papers": [
+          {
+            "pmid": "37523477",
+            "title": "Combined oral contraceptive pill for primary dysmenorrhoea.",
+            "year": "2023",
+            "journal": "The Cochrane database of systematic reviews",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37523477/"
+          },
+          {
+            "pmid": "40770474",
+            "title": "Natural Oil and Polycystic Ovary Syndrome: A Comprehensive Review of Therapeutic Benefits.",
+            "year": "2025",
+            "journal": "Current topics in medicinal chemistry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40770474/"
+          },
+          {
+            "pmid": "37949735",
+            "title": "High-fat diet promotes coagulation and endothelial activation in Sprague Dawley rats: Short-term effects of combined oral contraceptives.",
+            "year": "2024",
+            "journal": "Clinica e investigacion en arteriosclerosis : publicacion oficial de la Sociedad Espanola de Arteriosclerosis",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37949735/"
+          },
+          {
+            "pmid": "26694498",
+            "title": "Postpartum Care and Contraception in Obese Women.",
+            "year": "2016",
+            "journal": "Clinical obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26694498/"
+          },
+          {
+            "pmid": "24906976",
+            "title": "Adiponectin, interleukin-6, monocyte chemoattractant protein-1, and regional fat mass during 12-month randomized treatment with metformin and/or oral contraceptives in polycystic ovary syndrome.",
+            "year": "2014",
+            "journal": "Journal of endocrinological investigation",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24906976/"
+          },
+          {
+            "pmid": "20709582",
+            "title": "Relationship between weight and bone mineral density in adolescents on hormonal contraception.",
+            "year": "2011",
+            "journal": "Journal of pediatric and adolescent gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20709582/"
+          },
+          {
+            "pmid": "40120659",
+            "title": "Effects of estetrol/drospirenone on self-reported physical and emotional premenstrual and menstrual symptoms: Data from the phase 3 clinical trial in the United States and Canada.",
+            "year": "2025",
+            "journal": "Contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40120659/"
+          },
+          {
+            "pmid": "35980227",
+            "title": "Body weight changes and duration of estrogen exposure modulate the evolution of hepatocellular adenomas after contraception discontinuation.",
+            "year": "2023",
+            "journal": "Hepatology (Baltimore, Md.)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35980227/"
+          },
+          {
+            "pmid": "27567593",
+            "title": "Progestin-only contraceptives: effects on weight.",
+            "year": "2016",
+            "journal": "The Cochrane database of systematic reviews",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27567593/"
+          },
+          {
+            "pmid": "22318432",
+            "title": "Clinical practice: Contraception in adolescents.",
+            "year": "2012",
+            "journal": "European journal of pediatrics",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22318432/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "dysmenorrhea",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.003,
+      "reddit_data": {
+        "mention_count": 4,
+        "post_count": 3,
+        "frequency": 0.017,
+        "category": "physical",
+        "examples": [
+          "cramps so painful I have to grit my teeth to keep from screaming...",
+          "for the last several years it's getting worse and worse!!!",
+          "I have the worst periods of my life now."
+        ],
+        "temporal_contexts": [
+          "appeared after starting BC and developed over time",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 20.5,
+        "persists_after_stopping": null,
+        "severity_distribution": {
+          "severe": 4
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 12,
+        "papers": [
+          {
+            "pmid": "37837497",
+            "title": "Current Medical Therapy for Adenomyosis: From Bench to Bedside.",
+            "year": "2023",
+            "journal": "Drugs",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37837497/"
+          },
+          {
+            "pmid": "28162779",
+            "title": "Progestin-only pills may be a better first-line treatment for endometriosis than combined estrogen-progestin contraceptive pills.",
+            "year": "2017",
+            "journal": "Fertility and sterility",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28162779/"
+          },
+          {
+            "pmid": "25266435",
+            "title": "Contraception for adolescents.",
+            "year": "2014",
+            "journal": "Pediatrics",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25266435/"
+          },
+          {
+            "pmid": "26315257",
+            "title": "Endometriosis in teenagers.",
+            "year": "2015",
+            "journal": "Women's health (London, England)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26315257/"
+          },
+          {
+            "pmid": "19442968",
+            "title": "Long-term oral contraceptive pills and postoperative pain management after laparoscopic excision of ovarian endometrioma: a randomized controlled trial.",
+            "year": "2010",
+            "journal": "Fertility and sterility",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19442968/"
+          },
+          {
+            "pmid": "32041388",
+            "title": "Dysmenorrhea, Endometriosis and Chronic Pelvic Pain in Adolescents.",
+            "year": "2020",
+            "journal": "Journal of clinical research in pediatric endocrinology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32041388/"
+          },
+          {
+            "pmid": "30461694",
+            "title": "ACOG Committee Opinion No. 760: Dysmenorrhea and Endometriosis in the Adolescent.",
+            "year": "2018",
+            "journal": "Obstetrics and gynecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30461694/"
+          },
+          {
+            "pmid": "29386928",
+            "title": "Contraception and endometriosis: challenges, efficacy, and therapeutic importance.",
+            "year": "2015",
+            "journal": "Open access journal of contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29386928/"
+          },
+          {
+            "pmid": "28828592",
+            "title": "Drug delivery for the treatment of endometriosis and uterine fibroids.",
+            "year": "2017",
+            "journal": "Drug delivery and translational research",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28828592/"
+          },
+          {
+            "pmid": "32559803",
+            "title": "Primary Dysmenorrhea: Assessment and Treatment.",
+            "year": "2020",
+            "journal": "Revista brasileira de ginecologia e obstetricia : revista da Federacao Brasileira das Sociedades de Ginecologia e Obstetricia",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32559803/"
+          }
+        ]
+      }
+    },
+    {
+      "side_effect": "acne",
+      "validation_status": "Validated",
+      "clinical_significance": "Low",
+      "surprise_score": 0.0,
+      "reddit_data": {
+        "mention_count": 12,
+        "post_count": 11,
+        "frequency": 0.061,
+        "category": "physical",
+        "examples": [
+          "my skin’s breaking out",
+          "Hormonal acne also came back with a horrible vengeance like I haven't had since I was a teenager.",
+          "Here I am almost 34 with a jawline full of cystic breakouts... I feel like I’m gunna be 80 years old and still have pimples!!"
+        ],
+        "temporal_contexts": [
+          "developed after coming off the pill",
+          "returned after 5 years of use",
+          "developed over time"
+        ],
+        "avg_years_when_appeared": 22.4,
+        "persists_after_stopping": true,
+        "severity_distribution": {
+          "moderate": 4,
+          "severe": 3
+        }
+      },
+      "pubmed_data": {
+        "paper_count": 17,
+        "papers": [
+          {
+            "pmid": "32794179",
+            "title": "Metformin versus the combined oral contraceptive pill for hirsutism, acne, and menstrual pattern in polycystic ovary syndrome.",
+            "year": "2020",
+            "journal": "The Cochrane database of systematic reviews",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32794179/"
+          },
+          {
+            "pmid": "26642102",
+            "title": "AMERICAN ASSOCIATION OF CLINICAL ENDOCRINOLOGISTS, AMERICAN COLLEGE OF ENDOCRINOLOGY, AND ANDROGEN EXCESS AND PCOS SOCIETY DISEASE STATE CLINICAL REVIEW: GUIDE TO THE BEST PRACTICES IN THE EVALUATION AND TREATMENT OF POLYCYSTIC OVARY SYNDROME - PART 2.",
+            "year": "2015",
+            "journal": "Endocrine practice : official journal of the American College of Endocrinology and the American Association of Clinical Endocrinologists",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26642102/"
+          },
+          {
+            "pmid": "25266435",
+            "title": "Contraception for adolescents.",
+            "year": "2014",
+            "journal": "Pediatrics",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25266435/"
+          },
+          {
+            "pmid": "36257374",
+            "title": "Tolerability and safety of the estetrol/drospirenone combined oral contraceptive: Pooled analysis of two multicenter, open-label phase 3 trials.",
+            "year": "2022",
+            "journal": "Contraception",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36257374/"
+          },
+          {
+            "pmid": "39228465",
+            "title": "Pharmacological management of polycystic ovary syndrome.",
+            "year": "2024",
+            "journal": "Australian prescriber",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39228465/"
+          },
+          {
+            "pmid": "28274354",
+            "title": "Hormonal therapies for acne.",
+            "year": "2017",
+            "journal": "Clinics in dermatology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28274354/"
+          },
+          {
+            "pmid": "38108460",
+            "title": "The role of berberine in polycystic ovary syndrome - a summary of knowledge.",
+            "year": "2024",
+            "journal": "Ginekologia polska",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38108460/"
+          },
+          {
+            "pmid": "27387253",
+            "title": "Androgen excess: Investigations and management.",
+            "year": "2016",
+            "journal": "Best practice & research. Clinical obstetrics & gynaecology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27387253/"
+          },
+          {
+            "pmid": "39305432",
+            "title": "What's New After NICE Acne Guidelines.",
+            "year": "2024",
+            "journal": "Dermatology and therapy",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39305432/"
+          },
+          {
+            "pmid": "33465769",
+            "title": "Understanding Hormonal Therapies: Overview for the Dermatologist Focused on Hair.",
+            "year": "2021",
+            "journal": "Dermatology (Basel, Switzerland)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33465769/"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1232,6 +1232,196 @@ h3 {
 }
 
 /* Print styles */
+/* ========================================
+   Long-Term Side Effects Page Styles
+   ======================================== */
+
+/* Validation Status Badges */
+.validation-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-pixel);
+    border: 2px solid;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.validation-badge.green {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: #22c55e;
+    color: #15803d;
+}
+
+.validation-badge.orange {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+    color: #d97706;
+}
+
+.validation-badge.red {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #dc2626;
+}
+
+/* Clinical Significance Badges */
+.clinical-sig-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-pixel);
+    border: 2px solid;
+    font-weight: 600;
+}
+
+.clinical-sig-badge.red {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: #dc2626;
+    color: #991b1b;
+}
+
+.clinical-sig-badge.orange {
+    background: rgba(217, 119, 6, 0.1);
+    border-color: #d97706;
+    color: #92400e;
+}
+
+.clinical-sig-badge.gray {
+    background: rgba(107, 114, 128, 0.1);
+    border-color: #6b7280;
+    color: #374151;
+}
+
+/* Alert Boxes for Clinical Significance */
+.alert-box {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-pixel);
+    border: 2px solid;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.875rem;
+}
+
+.alert-box.red {
+    background: rgba(254, 202, 202, 0.3);
+    border-color: #ef4444;
+    color: #7f1d1d;
+}
+
+.alert-box.orange {
+    background: rgba(254, 215, 170, 0.3);
+    border-color: #f59e0b;
+    color: #78350f;
+}
+
+/* PubMed Sources Styling */
+.pubmed-sources {
+    margin-top: var(--spacing-sm);
+}
+
+.pubmed-paper {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: rgba(139, 172, 15, 0.03);
+    border-radius: var(--radius-pixel);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.paper-number {
+    font-weight: 700;
+    color: var(--gb-dark);
+    min-width: 1.5rem;
+}
+
+.paper-details {
+    flex: 1;
+}
+
+.paper-title {
+    color: var(--gb-dark);
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.paper-title:hover {
+    color: var(--gb-light);
+    text-decoration: underline;
+}
+
+.paper-meta {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.view-on-pubmed {
+    color: var(--gb-light);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.view-on-pubmed:hover {
+    text-decoration: underline;
+}
+
+/* No Research Warning */
+.no-research-warning {
+    background: rgba(239, 68, 68, 0.05);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-pixel);
+    padding: var(--spacing-md);
+}
+
+.no-research-warning p {
+    color: #7f1d1d;
+}
+
+/* Temporal Context Section */
+.temporal-context-section {
+    background: rgba(59, 130, 246, 0.05);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-pixel);
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    margin-top: var(--spacing-md);
+}
+
+.temporal-context-section h4 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.625rem;
+    font-weight: normal;
+    margin-bottom: var(--spacing-md);
+    color: var(--gb-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.temporal-context-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.temporal-context-section ul li {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.temporal-context-section ul li::before {
+    content: '⏱️';
+    position: absolute;
+    left: 0;
+}
+
 @media print {
     header,
     footer,
@@ -1242,4 +1432,44 @@ h3 {
     body {
         background: white;
     }
+}
+
+/* Clinical Context Cards - Retro Pixel Style */
+.clinical-context-card {
+    background: var(--bg-card);
+    border: 2px solid var(--gb-darkest);
+    border-radius: 2px;
+    box-shadow: 2px 2px 0 rgba(15, 56, 15, 0.25);
+    padding: 1.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.clinical-context-card.cancer {
+    border-color: #b91c1c; /* red-700 */
+    background: #fef2f2; /* red-50 */
+}
+
+.clinical-context-card.cardiovascular {
+    border-color: #1e40af; /* blue-700 */
+    background: #eff6ff; /* blue-50 */
+}
+
+.clinical-context-card.bone {
+    border-color: #166534; /* green-700 */
+    background: #f0fdf4; /* green-50 */
+}
+
+.clinical-context-card.mental {
+    border-color: #7c3aed; /* purple-700 */
+    background: #f5f3ff; /* purple-50 */
+}
+
+.clinical-context-card.fertility {
+    border-color: #c2410c; /* orange-700 */
+    background: #fff7ed; /* orange-50 */
+}
+
+.clinical-context-card.mortality {
+    border-color: #374151; /* gray-700 */
+    background: #f9fafb; /* gray-50 */
 }
