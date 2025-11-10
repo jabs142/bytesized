@@ -234,7 +234,7 @@ rules = miner.find_patterns(analyzed_posts)
   - Node size = symptom frequency
   - Edge thickness = relationship confidence
   - Click nodes to highlight connections
-- **Mobile-First Design**: Responsive grid layouts (Tailwind CSS), touch-friendly 44px+ buttons
+- **Mobile-First Design**: Responsive grid layouts (Custom CSS), touch-friendly 44px+ buttons
 
 **Technical Highlight**: D3.js force simulation with custom collision detection
 
@@ -254,7 +254,7 @@ rules = miner.find_patterns(analyzed_posts)
 
 ### Frontend
 - **HTML5/CSS3** - Semantic markup and styling
-- **Tailwind CSS** - Utility-first responsive design
+- **Custom CSS** - Utility classes with shared ByteSized design system
 - **Vanilla JavaScript** - No framework bloat
 - **D3.js v7** - Interactive network visualization
 
@@ -608,7 +608,7 @@ These features use **already collected data** that's currently unused:
 - ✅ **Responsive web design** (mobile-first approach)
 - ✅ **Interactive data visualization** (D3.js force-directed graphs)
 - ✅ **Vanilla JavaScript** (DOM manipulation, fetch API)
-- ✅ **CSS animations** and transitions (Tailwind CSS)
+- ✅ **CSS animations** and transitions (Custom CSS)
 - ✅ **Accessibility** considerations (keyboard nav, screen readers)
 - ✅ **Progressive enhancement** (works without JavaScript for core content)
 
