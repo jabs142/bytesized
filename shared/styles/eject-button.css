@@ -1,0 +1,124 @@
+/**
+ * Eject Button Shared Styles
+ *
+ * Fixed-position navigation button for returning to portal
+ * Consistent styling across all ByteSized cartridges
+ *
+ * Usage: Include this stylesheet after variables.css
+ * <link rel="stylesheet" href="/shared/styles/eject-button.css">
+ */
+
+/* ===== Light Theme (Default) ===== */
+.eject-button {
+  /* Positioning */
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: var(--z-eject-button, 1000);
+
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+
+  /* Typography */
+  font-family: var(--font-pixel, 'Press Start 2P', cursive);
+  font-size: var(--text-button, 0.5rem);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  /* Colors */
+  background: var(--gb-light, #8bac0f);
+  color: var(--gb-darkest, #0f380f);
+  border: var(--border-width, 2px) solid var(--gb-dark, #306230);
+  border-radius: var(--border-radius, 2px);
+
+  /* Effects */
+  box-shadow: var(--shadow-md, 4px 4px 0 rgba(0, 0, 0, 0.15));
+  transition: all var(--transition-base, 0.2s ease);
+  cursor: pointer;
+
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.eject-button:hover {
+  background: var(--gb-lightest, #9bbc0f);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg, 6px 6px 0 rgba(0, 0, 0, 0.2));
+}
+
+.eject-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm, 2px 2px 0 rgba(0, 0, 0, 0.1));
+}
+
+/* Icon within button */
+.eject-icon {
+  font-size: 0.625rem;
+  line-height: 1;
+}
+
+.eject-text {
+  line-height: 1;
+}
+
+/* ===== Dark Theme Variant ===== */
+.eject-button-dark {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+.eject-button-dark:hover {
+  background: rgba(231, 76, 60, 0.2);
+  border-color: var(--button-red, #e74c3c);
+  color: #ffffff;
+}
+
+.eject-button-dark:active {
+  background: rgba(231, 76, 60, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .eject-button {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.4375rem;
+  }
+
+  .eject-icon {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eject-button {
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+}
+
+/* ===== Accessibility ===== */
+.eject-button:focus {
+  outline: 2px solid var(--gb-dark, #306230);
+  outline-offset: 2px;
+}
+
+.eject-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== Print ===== */
+@media print {
+  .eject-button {
+    display: none;
+  }
+}

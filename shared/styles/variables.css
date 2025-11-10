@@ -1,0 +1,210 @@
+/**
+ * ByteSized Research - CSS Custom Properties
+ *
+ * Centralized design tokens for the Game Boy retro theme.
+ * All projects should import this file at the top of their CSS.
+ *
+ * Usage:
+ *   @import '/shared/styles/variables.css';
+ *
+ * Reference: /STYLE_GUIDE.md for complete design system documentation
+ *
+ * Last Updated: November 10, 2025
+ */
+
+:root {
+  /* ============================================
+     GAME BOY COLOR PALETTE (Primary)
+     ============================================ */
+
+  --gb-darkest: #0f380f;     /* Darkest green - primary text, borders */
+  --gb-dark: #306230;        /* Dark green - headers, accents */
+  --gb-light: #8bac0f;       /* Light green - interactive elements, highlights */
+  --gb-lightest: #9bbc0f;    /* Lightest green - hover states */
+
+  /* ============================================
+     BACKGROUND COLORS
+     ============================================ */
+
+  --bg-main: #E8E8E8;        /* Primary background (soft gray, not white) */
+  --bg-card: #F5F5F5;        /* Card/panel background */
+  --bg-secondary: #f7f6f3;   /* Alternate background for sections */
+
+  /* ============================================
+     TEXT COLORS
+     ============================================ */
+
+  --text-primary: #2a2a2a;   /* Main body text */
+  --text-secondary: #5a5a5a; /* Secondary/muted text */
+  --text-light: #787774;     /* Light gray text (captions) */
+
+  /* ============================================
+     DEVICE COLORS (Game Boy Console)
+     ============================================ */
+
+  --device-body: #d3d3d3;    /* Console plastic body */
+  --device-dark: #9e9e9e;    /* Shadows and depth */
+  --screen-bg: #9bbc0f;      /* Screen background */
+  --button-red: #e74c3c;     /* A button, power LED */
+  --button-gray: #5a5a5a;    /* B button */
+
+  /* ============================================
+     TIER COLORS (Surprise/Medical Context)
+     ============================================ */
+
+  --very-surprising: #6B8E23;   /* High surprise score - darker green with warmth */
+  --somewhat-surprising: #8bac0f; /* Medium surprise - Game Boy light green */
+  --expected: #A8BCC8;          /* Low surprise - light muted blue-green */
+
+  /* ============================================
+     PASTEL VISUALIZATION COLORS
+     Used for: scatter plots, bar charts, categorical data
+     Print-friendly, accessible, better contrast than monochrome
+     ============================================ */
+
+  /* Core Palette */
+  --viz-dusty-rose: #E4ACB2;
+  --viz-peach: #EABCA8;
+  --viz-cream: #FAEDCD;
+  --viz-sage: #CCD5AE;
+  --viz-blue-gray: #99BAB9;
+
+  /* Variations */
+  --viz-rose-alt: #D4A5A5;
+  --viz-peach-alt: #E8B088;
+  --viz-cream-alt: #F5E5B8;
+  --viz-sage-alt: #B8C99A;
+  --viz-blue-gray-alt: #88A5A4;
+
+  /* Light Tints */
+  --viz-light-rose: #F0D0D0;
+  --viz-light-peach: #F2D4BA;
+  --viz-light-cream: #FDF8E8;
+
+  /* ============================================
+     TYPOGRAPHY - FONT FAMILIES
+     ============================================ */
+
+  /* Headers & Retro Elements - Press Start 2P */
+  --font-pixel: 'Press Start 2P', cursive;
+
+  /* Body Text & Readable Content - System Fonts */
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+
+  /* Code & Technical Content - Monospace */
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
+
+  /* ============================================
+     TYPOGRAPHY - FONT SIZES
+     ============================================ */
+
+  /* Press Start 2P (Headers & Retro Elements) */
+  --text-h1: 1rem;           /* 16px - Main page titles */
+  --text-h2: 0.75rem;        /* 12px - Section headers */
+  --text-h3: 0.625rem;       /* 10px - Subsection headers */
+  --text-stats: 1.75rem;     /* 28px - Big stat numbers */
+  --text-button: 0.5rem;     /* 8px - Button labels */
+  --text-label: 0.5rem;      /* 8px - Small labels, legends */
+
+  /* System Fonts (Body Text) */
+  --text-body: 0.9375rem;    /* 15px - Main content */
+  --text-small: 0.875rem;    /* 14px - Secondary content */
+  --text-caption: 0.8125rem; /* 13px - Captions, footnotes */
+
+  /* ============================================
+     SPACING SYSTEM
+     Consistent spacing for padding, margins, gaps
+     ============================================ */
+
+  --space-xs: 0.5rem;   /* 8px - Tight spacing */
+  --space-sm: 1rem;     /* 16px - Element gaps */
+  --space-md: 2rem;     /* 32px - Component padding */
+  --space-lg: 3rem;     /* 48px - Section spacing */
+  --space-xl: 4rem;     /* 64px - Section margins */
+  --space-xxl: 6rem;    /* 96px - Large section breaks */
+
+  /* ============================================
+     SHADOWS (Stepped/Pixelated Style)
+     Hard-edged shadows for retro aesthetic
+     ============================================ */
+
+  --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.15);
+  --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.2);
+
+  /* ============================================
+     BORDERS
+     Minimal rounding for pixel aesthetic
+     ============================================ */
+
+  --border-radius: 2px;      /* Minimal rounding */
+  --border-width: 2px;       /* Standard border */
+  --border-width-thick: 3px; /* Accent borders */
+
+  /* ============================================
+     TRANSITIONS
+     Standard animation timing
+     ============================================ */
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* ============================================
+     Z-INDEX LAYERS
+     Consistent stacking order
+     ============================================ */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-eject-button: 1000;    /* Eject button always on top */
+  --z-tooltip: 1100;
+}
+
+/**
+ * USAGE EXAMPLES
+ *
+ * Headers (Press Start 2P font):
+ *   h1, h2, h3 {
+ *     font-family: var(--font-pixel);
+ *     color: var(--gb-dark);
+ *   }
+ *
+ * Body Text (System font):
+ *   p, li, .description {
+ *     font-family: var(--font-body);
+ *     color: var(--text-primary);
+ *     line-height: 1.6;
+ *   }
+ *
+ * Retro Card:
+ *   .card {
+ *     background: var(--bg-card);
+ *     border: var(--border-width) solid var(--gb-dark);
+ *     border-radius: var(--border-radius);
+ *     padding: var(--space-md);
+ *     box-shadow: var(--shadow-md);
+ *   }
+ *
+ * Interactive Button:
+ *   .button {
+ *     background: var(--gb-light);
+ *     border: var(--border-width) solid var(--gb-dark);
+ *     font-family: var(--font-pixel);
+ *     font-size: var(--text-button);
+ *     padding: 0.75rem 1.25rem;
+ *     transition: all var(--transition-base);
+ *   }
+ *
+ *   .button:hover {
+ *     transform: translateY(-2px);
+ *     box-shadow: var(--shadow-lg);
+ *   }
+ *
+ * Data Visualization:
+ *   .chart-bar-1 { fill: var(--viz-dusty-rose); }
+ *   .chart-bar-2 { fill: var(--viz-peach); }
+ *   .chart-bar-3 { fill: var(--viz-cream); }
+ */

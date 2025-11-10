@@ -2,7 +2,9 @@
 
 > Official design system for maintaining consistency across all ByteSized research visualizations
 
-Last Updated: October 31, 2025
+Last Updated: November 10, 2025
+
+**🎨 Quick Start:** All CSS variables are centralized in `/shared/styles/variables.css` - import this file at the top of your stylesheets!
 
 ---
 
@@ -16,6 +18,34 @@ ByteSized Research combines **retro Game Boy aesthetics** with **medical readabi
 2. **Data-Driven** - Visual design serves the data, never obscures it
 3. **Accessible** - Meets WCAG contrast standards, readable fonts for body text
 4. **Consistent** - Shared design language across all projects
+
+---
+
+## 📦 Using the Design System
+
+### Import CSS Variables
+
+**All projects must import the centralized variables file:**
+
+```css
+/* At the top of your CSS file */
+@import '/shared/styles/variables.css';
+```
+
+This file contains all design tokens defined in this guide:
+- Color palette (Game Boy, backgrounds, text)
+- Typography scale (font sizes, families)
+- Spacing system
+- Shadows and borders
+- Visualization colors
+
+**File location:** `/shared/styles/variables.css`
+
+**Benefits:**
+- Single source of truth for design tokens
+- Easy updates across all projects
+- Consistent naming conventions
+- Comprehensive documentation in comments
 
 ---
 
