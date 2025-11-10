@@ -7,12 +7,14 @@ with enhanced duration and temporal context tracking.
 
 import json
 import os
-import time
 from typing import List, Dict, Optional
 from collections import Counter, defaultdict
 from openai import OpenAI
 from dotenv import load_dotenv
 from pathlib import Path
+
+# Import shared standardization rules
+from .side_effect_standardization import standardize_side_effect, STANDARDIZATION_RULES
 
 load_dotenv()
 
@@ -169,7 +171,7 @@ Extract all long-term side effects now:"""
             print(f"   ❌ Error extracting from post {post['id']}: {e}")
             return []
 
-    def extract_from_all_posts(self, posts: List[Dict], batch_size: int = 10) -> List[Dict]:
+    def extract_from_all_posts(self, posts: List[Dict]) -> List[Dict]:
         """Extract side effects from all long-term posts."""
         print(f"\n🤖 Long-Term Side Effect Extraction")
         print("=" * 60)
@@ -194,25 +196,11 @@ Extract all long-term side effects now:"""
             # Rate limiting
             time.sleep(0.5)
 
-            # Save progress
-            if i % batch_size == 0:
-                self._save_progress(all_side_effects, i)
-
         print(f"\n✅ Extraction complete!")
         print(f"   Total side effect mentions: {len(all_side_effects)}")
         print(f"   Unique side effects: {len(set(s['side_effect'] for s in all_side_effects))}")
 
         return all_side_effects
-
-    def _save_progress(self, side_effects: List[Dict], count: int):
-        """Save incremental progress."""
-        output_dir = Path('data/analysis')
-        output_dir.mkdir(parents=True, exist_ok=True)
-
-        filename = output_dir / f'long_term_side_effects_progress_{count}.json'
-        with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(side_effects, f, indent=2, ensure_ascii=False)
-        print(f"   💾 Progress saved: {count} posts processed")
 
     def standardize_side_effects(self, side_effects: List[Dict]) -> Dict[str, List[Dict]]:
         """Standardize/cluster similar side effect names."""
@@ -305,42 +293,8 @@ Standardize now:"""
             original = side_effect['side_effect']
             standard_name = all_mappings.get(original, original)
 
-            # Apply additional post-LLM standardization rules to catch inconsistencies
-            POST_LLM_RULES = {
-                "premenstrual dysphoric disorder (PMDD)": "premenstrual dysphoric disorder",
-                "premenstrual dysphoric disorder (pmdd)": "premenstrual dysphoric disorder",
-                "PMDD": "premenstrual dysphoric disorder",
-                "severe PMDD": "premenstrual dysphoric disorder",
-                "PMDD episodes": "premenstrual dysphoric disorder",
-                "PMDD symptoms": "premenstrual dysphoric disorder",
-                "severe acne": "acne",
-                "acne exacerbation": "acne",
-                "cystic acne": "acne",
-                "hormonal acne": "acne",
-                "acne flare-ups": "acne",
-                "low libido": "decreased libido",
-                "loss of libido": "decreased libido",
-                "no sex drive": "decreased libido",
-                "reduced libido": "decreased libido",
-                "menorrhagia": "heavy menstrual flow",
-                "heavy periods": "heavy menstrual flow",
-                "excessive bleeding": "heavy menstrual flow",
-                "heavy bleeding": "heavy menstrual flow",
-                "mood instability": "mood swings",
-                "emotional instability": "mood swings",
-                "mood changes": "mood swings",
-                "emotional changes": "mood swings"
-            }
-
-            # Check if we need to apply post-LLM rules
-            if standard_name in POST_LLM_RULES:
-                standard_name = POST_LLM_RULES[standard_name]
-
-            # Also check case-insensitive matches
-            for variant, replacement in POST_LLM_RULES.items():
-                if standard_name.lower() == variant.lower():
-                    standard_name = replacement
-                    break
+            # Apply additional post-LLM standardization rules using shared module
+            standard_name = standardize_side_effect(standard_name)
 
             standardized[standard_name].append(side_effect)
 
@@ -403,36 +357,44 @@ Standardize now:"""
         return selected
 
     def save_results(self, side_effects: List[Dict], standardized: Dict[str, List[Dict]],
-                    stats: List[Dict], top_effects: List[Dict]):
-        """Save all extraction results."""
+                    stats: List[Dict], top_effects: List[Dict], save_debug: bool = False):
+        """Save extraction results. By default only saves essential files."""
         output_dir = Path('data/analysis')
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Save raw
-        with open(output_dir / 'long_term_side_effects_raw.json', 'w', encoding='utf-8') as f:
-            json.dump(side_effects, f, indent=2, ensure_ascii=False)
+        # Only save debug files if requested
+        if save_debug:
+            # Save raw
+            with open(output_dir / 'long_term_side_effects_raw.json', 'w', encoding='utf-8') as f:
+                json.dump(side_effects, f, indent=2, ensure_ascii=False)
 
-        # Save standardized
-        with open(output_dir / 'long_term_side_effects_standardized.json', 'w', encoding='utf-8') as f:
-            json.dump(standardized, f, indent=2, ensure_ascii=False)
+            # Save standardized
+            with open(output_dir / 'long_term_side_effects_standardized.json', 'w', encoding='utf-8') as f:
+                json.dump(standardized, f, indent=2, ensure_ascii=False)
 
-        # Save all stats
-        with open(output_dir / 'long_term_side_effects_stats.json', 'w', encoding='utf-8') as f:
-            json.dump(stats, f, indent=2, ensure_ascii=False)
+            # Save all stats
+            with open(output_dir / 'long_term_side_effects_stats.json', 'w', encoding='utf-8') as f:
+                json.dump(stats, f, indent=2, ensure_ascii=False)
 
-        # Save top 20 for validation
+            print("   💾 Debug files saved")
+
+        # Always save top 20 for validation (this is essential)
         with open(output_dir / 'long_term_side_effects_top20.json', 'w', encoding='utf-8') as f:
             json.dump(top_effects, f, indent=2, ensure_ascii=False)
 
         print(f"\n💾 Saved results:")
-        print(f"   data/analysis/long_term_side_effects_raw.json")
-        print(f"   data/analysis/long_term_side_effects_standardized.json")
-        print(f"   data/analysis/long_term_side_effects_stats.json")
         print(f"   data/analysis/long_term_side_effects_top20.json")
 
 
 def main():
     """Main entry point."""
+    import sys
+
+    # Check for debug flag
+    save_debug = '--debug' in sys.argv
+    if save_debug:
+        print("🐛 Debug mode enabled - will save intermediate files")
+
     project_root = Path(__file__).parent.parent.parent
 
     # Load filtered long-term posts
@@ -459,7 +421,7 @@ def main():
     extractor = LongTermSideEffectExtractor()
 
     # Extract side effects
-    side_effects = extractor.extract_from_all_posts(posts, batch_size=10)
+    side_effects = extractor.extract_from_all_posts(posts)
 
     # Standardize
     standardized = extractor.standardize_side_effects(side_effects)
@@ -471,7 +433,7 @@ def main():
     top_effects = extractor.select_top_for_validation(stats, top_n=20)
 
     # Save results
-    extractor.save_results(side_effects, standardized, stats, top_effects)
+    extractor.save_results(side_effects, standardized, stats, top_effects, save_debug=save_debug)
 
     # Print summary
     print("\n" + "=" * 60)

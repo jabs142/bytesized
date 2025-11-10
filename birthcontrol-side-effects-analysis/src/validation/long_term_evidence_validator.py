@@ -16,6 +16,11 @@ from collections import defaultdict
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from data_collection.pubmed_fetcher import PubMedFetcher
+from analysis.side_effect_standardization import standardize_side_effect, STANDARDIZATION_RULES
+
+# Constants
+DEFAULT_LONG_TERM_POSTS = 179  # Total posts from long-term users (5+ years)
+SURPRISE_MAX_PAPERS = 15  # Maximum papers for surprise score calculation
 
 
 class LongTermEvidenceValidator:
@@ -77,43 +82,13 @@ class LongTermEvidenceValidator:
         - Heavy bleeding variations
         - Mood variations
         """
-        # Mapping of variations to standardized names
-        MERGE_RULES = {
-            "premenstrual dysphoric disorder (PMDD)": "premenstrual dysphoric disorder",
-            "premenstrual dysphoric disorder (pmdd)": "premenstrual dysphoric disorder",
-            "PMDD": "premenstrual dysphoric disorder",
-            "severe PMDD": "premenstrual dysphoric disorder",
-            "PMDD episodes": "premenstrual dysphoric disorder",
-            "severe acne": "acne",
-            "acne exacerbation": "acne",
-            "cystic acne": "acne",
-            "hormonal acne": "acne",
-            "low libido": "decreased libido",
-            "loss of libido": "decreased libido",
-            "no sex drive": "decreased libido",
-            "menorrhagia": "heavy menstrual flow",
-            "heavy periods": "heavy menstrual flow",
-            "excessive bleeding": "heavy menstrual flow",
-            "mood instability": "mood swings",
-            "emotional instability": "mood swings",
-            "mood changes": "mood swings"
-        }
-
-        # Group side effects by standardized name
+        # Group side effects by standardized name using shared module
         merged = defaultdict(list)
 
         for effect in side_effects:
             original_name = effect['side_effect']
-            # Check if this effect should be merged
-            standard_name = MERGE_RULES.get(original_name, original_name)
-
-            # Also check for case-insensitive matches
-            if standard_name == original_name:
-                for variant, standard in MERGE_RULES.items():
-                    if original_name.lower() == variant.lower():
-                        standard_name = standard
-                        break
-
+            # Use shared standardization function
+            standard_name = standardize_side_effect(original_name)
             merged[standard_name].append(effect)
 
         # Combine data for merged effects
@@ -176,7 +151,7 @@ class LongTermEvidenceValidator:
                         combined['severity_distribution'][severity] = combined['severity_distribution'].get(severity, 0) + count
 
                 # Recalculate frequency
-                combined['frequency'] = round(combined['post_count'] / 179, 3)  # 179 is total long-term posts
+                combined['frequency'] = round(combined['post_count'] / DEFAULT_LONG_TERM_POSTS, 3)
 
                 deduplicated.append(combined)
 
@@ -330,8 +305,8 @@ class LongTermEvidenceValidator:
 
     def calculate_surprise_score(self, reddit_freq: float, paper_count: int) -> float:
         """Calculate surprise score for long-term effects."""
-        # Cap research coverage at 15 papers for long-term (higher threshold)
-        research_coverage = min(paper_count / 15.0, 1.0)
+        # Cap research coverage at SURPRISE_MAX_PAPERS papers for long-term (higher threshold)
+        research_coverage = min(paper_count / SURPRISE_MAX_PAPERS, 1.0)
 
         # Surprise = patient frequency × lack of research
         surprise = reddit_freq * (1 - research_coverage)
@@ -449,7 +424,32 @@ class LongTermEvidenceValidator:
             'by_clinical_significance': {},
             'high_surprise_effects': [],
             'research_gaps': [],
-            'top_effects': []
+            'top_effects': [],
+            'medical_glossary': {
+                'menorrhagia': 'heavy menstrual bleeding',
+                'premenstrual dysphoric disorder': 'severe form of PMS causing mood changes, irritability, and depression before periods',
+                'pmdd': 'severe form of PMS causing mood changes, irritability, and depression before periods',
+                'emotional lability': 'rapid mood changes',
+                'mood swings': 'cyclical changes in mood from happy to sad',
+                'emotional instability': 'difficulty regulating emotions, heightened reactions to situations',
+                'libido': 'sex drive',
+                'decreased libido': 'reduced sex drive',
+                'hirsutism': 'excessive hair growth',
+                'amenorrhea': 'absence of periods',
+                'dysmenorrhea': 'painful menstruation',
+                'oligomenorrhea': 'infrequent periods',
+                'spotting': 'light bleeding between periods',
+                'osteopenia': 'low bone density',
+                'osteoporosis': 'severe bone loss',
+                'thrombosis': 'blood clot formation',
+                'vte': 'venous thromboembolism (blood clot)',
+                'mi': 'myocardial infarction (heart attack)',
+                'perimenopause': 'transition period before menopause when hormones fluctuate',
+                'alopecia': 'hair loss',
+                'arthralgia': 'joint pain',
+                'brain fog': 'cognitive dysfunction, difficulty concentrating',
+                'cognitive dysfunction': 'difficulty with memory, concentration, or thinking clearly'
+            }
         }
 
         # Count by validation status
@@ -541,7 +541,7 @@ def main():
             filter_data = json.load(f)
             total_posts = filter_data['posts_matching_long_term']
     else:
-        total_posts = 179  # Default from our filtering
+        total_posts = DEFAULT_LONG_TERM_POSTS  # Default from our filtering
 
     # Validate all effects
     validated = validator.validate_all_long_term_effects(side_effects, total_posts)

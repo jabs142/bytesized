@@ -5,51 +5,8 @@
 
 let allLongTermEffects = [];
 let currentFilter = 'all';
+let MEDICAL_GLOSSARY = {};  // Will be loaded from backend
 
-// Medical term glossary with layman explanations
-const MEDICAL_GLOSSARY = {
-    'menorrhagia': 'heavy menstrual bleeding',
-    'premenstrual dysphoric disorder': 'severe form of PMS causing mood changes, irritability, and depression before periods',
-    'pmdd': 'severe form of PMS causing mood changes, irritability, and depression before periods',
-    'emotional lability': 'rapid mood changes',
-    'mood swings': 'cyclical changes in mood from happy to sad',
-    'emotional instability': 'difficulty regulating emotions, heightened reactions to situations',
-    'libido': 'sex drive',
-    'hirsutism': 'excessive hair growth',
-    'amenorrhea': 'absence of periods',
-    'dysmenorrhea': 'painful menstruation',
-    'oligomenorrhea': 'infrequent periods',
-    'spotting': 'light bleeding between periods',
-    'osteopenia': 'low bone density',
-    'osteoporosis': 'severe bone loss',
-    'thrombosis': 'blood clot formation',
-    'VTE': 'venous thromboembolism (blood clot)',
-    'MI': 'myocardial infarction (heart attack)',
-    'perimenopause': 'transition period before menopause when hormones fluctuate'
-};
-
-// Helper function to deduplicate temporal contexts while preserving order
-function deduplicateTemporalContexts(contexts) {
-    if (!contexts || !Array.isArray(contexts)) {
-        return [];
-    }
-
-    const seen = new Set();
-    const unique = [];
-
-    for (const context of contexts) {
-        // Normalize the context by trimming and converting to lowercase for comparison
-        const normalized = context.trim().toLowerCase();
-
-        if (normalized && !seen.has(normalized)) {
-            seen.add(normalized);
-            unique.push(context); // Add the original (not normalized) version
-        }
-    }
-
-    // Return up to 3 unique contexts
-    return unique.slice(0, 3);
-}
 
 // Load data on page load
 document.addEventListener('DOMContentLoaded', async () => {
@@ -62,6 +19,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const data = await response.json();
         allLongTermEffects = data.top_effects || [];
+
+        // Load medical glossary from backend
+        if (data.medical_glossary) {
+            MEDICAL_GLOSSARY = data.medical_glossary;
+        }
 
         displayResearchGaps(data.research_gaps || []);
         displayLongTermSideEffects(allLongTermEffects);
@@ -276,7 +238,7 @@ function displayLongTermSideEffects(effects) {
                     <div class="temporal-context-section">
                         <h4>⏱️ Timing & Duration:</h4>
                         <ul>
-                            ${deduplicateTemporalContexts(item.reddit_data.temporal_contexts).map(context => `
+                            ${item.reddit_data.temporal_contexts.map(context => `
                                 <li>${context}</li>
                             `).join('')}
                         </ul>
