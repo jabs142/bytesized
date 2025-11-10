@@ -1,14 +1,18 @@
+# NOTE: This requirements.txt is aligned with root /requirements.txt for consistency
+# All versions are standardized across ByteSized projects
+# See /requirements.txt for the consolidated dependency list
+
 # Data Collection
 praw==7.7.1  # Python Reddit API Wrapper
 prawcore==2.4.0
 
 # Data Processing & NLP
 pandas==2.1.4
-numpy==1.26.2
+numpy==1.26.4
 nltk==3.8.1
 
 # LLM APIs
-openai==1.6.1
+openai==1.54.3
 
 # Data Storage
 jsonlines==4.0.0
@@ -27,7 +31,7 @@ ipywidgets==8.1.1
 
 # Utilities
 python-dotenv==1.0.0
-tqdm==4.66.1
+tqdm==4.67.1
 requests==2.31.0
 beautifulsoup4==4.12.2
 
@@ -35,7 +39,7 @@ beautifulsoup4==4.12.2
 python-dateutil==2.8.2
 
 # Data validation
-pydantic==2.5.3
+pydantic==2.12.3
 
 # PubMed API
 biopython==1.83  # For PubMed queries

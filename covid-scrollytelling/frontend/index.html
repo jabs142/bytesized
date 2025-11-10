@@ -14,6 +14,9 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css" />
 
+    <!-- Shared Components -->
+    <script src="/shared/components/EjectButton.js"></script>
+
     <!-- External Libraries -->
     <!-- D3.js for map visualization -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -29,10 +32,7 @@
 
   <body>
     <!-- Navigation - Eject Button (Dark Theme) -->
-    <a href="/bytesized/" class="eject-button eject-button-dark">
-      <span class="eject-icon">◄</span>
-      <span class="eject-text">EJECT</span>
-    </a>
+    <eject-button theme="dark"></eject-button>
 
     <!-- Loading Screen -->
     <div id="loading-screen">

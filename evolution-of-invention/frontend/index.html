@@ -12,16 +12,15 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Shared Components -->
+    <script src="/shared/components/EjectButton.js"></script>
+
     <!-- Phaser 3 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
 </head>
 <body>
     <!-- Navigation - Eject Button -->
-    <div class="eject-button-container">
-        <a href="/bytesized/" class="eject-button">
-            <span class="eject-icon">◄</span> EJECT
-        </a>
-    </div>
+    <eject-button></eject-button>
     <div class="game-container">
         <div id="game"></div>
         <div class="info-panel">

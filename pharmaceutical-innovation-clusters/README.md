@@ -5,6 +5,8 @@
 ![Game Boy Theme](https://img.shields.io/badge/Theme-Game%20Boy-8bac0f?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
 
+> **Note**: This project follows the ByteSized design system. See `/STYLE_GUIDE.md` in the root directory for styling guidelines.
+
 ---
 
 ## Summary

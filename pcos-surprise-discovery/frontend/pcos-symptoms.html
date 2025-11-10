@@ -11,14 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Shared Components -->
+    <script src="/shared/components/EjectButton.js"></script>
 </head>
 <body>
     <!-- Eject Cartridge Button -->
-    <div class="eject-button-container">
-        <button id="ejectButton" class="eject-button">
-            <span class="eject-icon">◄</span> EJECT
-        </button>
-    </div>
+    <eject-button></eject-button>
 
     <!-- Header -->
     <header class="header">
@@ -154,21 +153,5 @@
 
     <script src="js/app.js"></script>
 
-    <!-- Eject Button Logic -->
-    <script>
-        // Eject button functionality
-        document.getElementById('ejectButton').addEventListener('click', function() {
-            // Add click effect
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 100);
-
-            // Navigate back to portal after brief delay
-            setTimeout(() => {
-                window.location.href = '/bytesized/';
-            }, 200);
-        });
-    </script>
 </body>
 </html>
