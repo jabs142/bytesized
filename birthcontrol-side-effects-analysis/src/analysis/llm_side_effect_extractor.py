@@ -55,29 +55,41 @@ class LLMSideEffectExtractor:
 
         prompt = f"""You are analyzing a Reddit post from a birth control support community. Your task is to extract ALL side effects, symptoms, and health issues mentioned that the person attributes to or experiences while on birth control.
 
+CRITICAL: Standardize symptom names by REMOVING severity qualifiers. Track severity separately.
+- "severe anxiety" → side_effect: "anxiety", severity: 3
+- "mild headache" → side_effect: "headache", severity: 1
+- "bad acne" → side_effect: "acne", severity: 2
+
 Important guidelines:
 1. Extract EVERY side effect mention, even if it seems minor or unrelated
-2. Capture the EXACT wording patients use (don't normalize yet)
-3. Include context like timing, severity, or when it started if mentioned
+2. Standardize side effect names - remove intensity words like "severe", "mild", "bad", "terrible"
+3. Rate severity separately on 1-3 scale based on language intensity
 4. Look for both obvious side effects (mood changes, acne) and surprising ones (hair loss, digestive issues, vision changes)
 5. Include both physical and mental/emotional side effects
 6. Extract even if the person is unsure if it's related to birth control
+
+Severity Scale:
+1 (Mild): "a bit", "slight", "mild", "minor", "manageable", "barely noticeable"
+2 (Moderate): "bad", "significant", "noticeable", "concerning", "strong", "pretty bad"
+3 (Severe): "severe", "terrible", "unbearable", "extreme", "debilitating", "can't function", "worst", "horrible"
 
 Reddit Post:
 {text}
 
 Return a JSON object with a "side_effects" array. For each side effect, include:
-- side_effect: the side effect name as the patient described it
+- side_effect: standardized symptom name WITHOUT severity qualifiers (e.g., "anxiety" not "severe anxiety")
+- severity: 1 (mild), 2 (moderate), or 3 (severe) based on language intensity
 - original_quote: exact quote from the post
-- context: any relevant timing, severity, or additional details (or null if none)
+- context: any relevant timing or additional details (or null if none)
 - category: "mental" or "physical" or "both"
 
 Example format:
 {{
   "side_effects": [
-    {{"side_effect": "severe anxiety", "original_quote": "I started having really bad anxiety", "context": "started 2 weeks after starting pill", "category": "mental"}},
-    {{"side_effect": "heavy bleeding", "original_quote": "my periods are super heavy now", "context": "heavier than before starting BC", "category": "physical"}},
-    {{"side_effect": "brain fog", "original_quote": "I can't focus or think clearly", "context": "constant throughout the day", "category": "mental"}}
+    {{"side_effect": "anxiety", "severity": 3, "original_quote": "I started having really bad anxiety attacks", "context": "started 2 weeks after starting pill", "category": "mental"}},
+    {{"side_effect": "bleeding", "severity": 2, "original_quote": "my periods are super heavy now", "context": "heavier than before starting BC", "category": "physical"}},
+    {{"side_effect": "brain fog", "severity": 2, "original_quote": "I can't focus or think clearly", "context": "constant throughout the day", "category": "mental"}},
+    {{"side_effect": "headache", "severity": 1, "original_quote": "mild headaches occasionally", "context": "once or twice a week", "category": "physical"}}
   ]
 }}
 
@@ -211,9 +223,14 @@ Extract side effects now:"""
 
 Your task: Group these into standardized side effect names.
 
+CRITICAL: Remove ALL severity qualifiers from standardized names.
+- "severe anxiety", "bad anxiety", "terrible anxiety" → "anxiety"
+- "mild headache", "bad headache" → "headache"
+- "horrible acne", "severe acne" → "acne"
+
 Rules:
 1. Use medical terminology when appropriate (e.g., "acne" not "breaking out")
-2. Preserve important distinctions (e.g., "severe anxiety" vs "mild anxiety" - keep severity if consistently mentioned)
+2. Remove ALL severity words (severe, mild, bad, terrible, horrible, slight, etc.)
 3. Group obvious variations (e.g., "bad acne", "pimples", "breakouts" → "acne")
 4. Keep the standardized names concise but specific
 5. Maintain distinction between physical and mental side effects
@@ -221,16 +238,20 @@ Rules:
 Side effect mentions to standardize:
 {json.dumps(batch, indent=2)}
 
-Return a JSON object mapping: original_description -> standardized_name
+Return a JSON object mapping: original_description -> standardized_name (WITHOUT severity)
 
 Example:
 {{
   "really bad anxiety": "anxiety",
   "severe anxiety attacks": "anxiety",
+  "mild anxiety": "anxiety",
   "bad breakouts": "acne",
+  "severe acne": "acne",
   "tons of pimples": "acne",
   "can't concentrate": "brain fog",
-  "foggy brain": "brain fog"
+  "foggy brain": "brain fog",
+  "horrible headaches": "headache",
+  "mild headaches": "headache"
 }}
 
 Standardize now:"""
@@ -306,12 +327,23 @@ Standardize now:"""
             category_counts = Counter(categories)
             primary_category = category_counts.most_common(1)[0][0] if category_counts else 'unknown'
 
+            # Calculate severity breakdown
+            severities = [m.get('severity', 2) for m in mentions]  # Default to moderate (2) if missing
+            severity_counts = Counter(severities)
+            avg_severity = sum(severities) / len(severities) if severities else 2.0
+
             stats.append({
                 'side_effect': side_effect_name,
                 'mention_count': len(mentions),  # Total mentions (can be multiple per post)
                 'post_count': unique_posts,      # Unique posts
                 'frequency': round(frequency, 3),
                 'category': primary_category,
+                'severity_breakdown': {
+                    'mild': severity_counts.get(1, 0),
+                    'moderate': severity_counts.get(2, 0),
+                    'severe': severity_counts.get(3, 0)
+                },
+                'avg_severity': round(avg_severity, 2),
                 'examples': [m['original_quote'] for m in mentions[:3]],  # Sample quotes
                 'contexts': [m['context'] for m in mentions[:3] if m.get('context')]
             })

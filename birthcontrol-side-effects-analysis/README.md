@@ -7,8 +7,11 @@ This project discovers hidden symptom relationships in birth control experiences
 - ✅ **Data Collection Pipeline**: 537 Reddit posts from 4 subreddits with deduplication
 - ✅ **Dual Extraction Approach**:
   - Keyword-based extraction (40+ predefined symptoms) → Pattern mining
-  - LLM-based extraction (GPT-4 unbiased discovery) → Validation pipeline
+  - LLM-based extraction (GPT-4o-mini unbiased discovery, 414 unique symptoms) → Validation pipeline
+- ✅ **Severity Tracking**: Standardized symptom names with separate severity scoring (mild/moderate/severe)
+- ✅ **Comment Validation**: LLM-based analysis of "me too" validation patterns in comments
 - ✅ **PubMed Research Validation**: Cross-reference with medical literature via E-utilities API
+- ✅ **PubMed Relevance Filtering**: LLM validates each paper's relevance to birth control side effects
 - ✅ **Evidence Tiering System**: FDA-listed → Research-backed → Patient-validated → Emerging
 - ✅ **Statistical Validation**: Spearman correlation, chi-square tests, Bonferroni correction
 - ✅ **Pattern Mining**: Association rule mining with Apriori algorithm (17 patterns discovered)
@@ -28,13 +31,15 @@ This project discovers hidden symptom relationships in birth control experiences
 
 **Total Patterns**: 17 discovered with current thresholds (min_support=7, min_confidence=0.40, min_lift=1.2)
 
-### Top Symptoms
+### Top Symptoms (LLM-Extracted with Severity Breakdown)
 
-1. **Anxiety** - 132 posts (34%)
-2. **Acne** - 94 posts (24%)
-3. **Fear** - 75 posts (19%)
-4. **Depression** - 56 posts (15%)
-5. **Cramps** - 46 posts (12%)
+1. **Anxiety** - 128 posts (23.8%) | Severity: 3 mild, 38 moderate, 90 severe
+2. **Acne** - 89 posts (16.6%) | Severity: 5 mild, 78 moderate, 23 severe
+3. **Depression** - 59 posts (11.0%) | Severity: 0 mild, 22 moderate, 37 severe
+4. **Fatigue** - 57 posts (10.6%) | Severity: 1 mild, 33 moderate, 29 severe
+5. **Bleeding** - 55 posts (10.2%) | Severity: 2 mild, 47 moderate, 19 severe
+
+**Note**: Symptom names are standardized (e.g., "anxiety" not "severe anxiety"). Severity is tracked separately on a 1-3 scale based on language intensity.
 
 ### Dataset Statistics
 
@@ -52,26 +57,36 @@ This project discovers hidden symptom relationships in birth control experiences
 
 ```bash
 # 1. View the web app
-cd frontend
 python3 -m http.server 8000
-# Open: http://localhost:8000
+# Open: http://localhost:8000/frontend/validation.html
 
-# 2. Run LLM extraction (requires OPENAI_API_KEY)
+# 2. Run full extraction pipeline (requires OPENAI_API_KEY in .env)
+bash run_full_pipeline.sh
+
+# Or run individual steps:
+
+# 3. Run LLM extraction with severity tracking
 python src/analysis/llm_side_effect_extractor.py
 
-# 3. Run PubMed validation
+# 4. Run PubMed validation
 python src/validation/evidence_validator.py
 
-# 4. Run statistical analysis
+# 5. Filter PubMed papers by relevance (LLM-based)
+python src/validation/pubmed_relevance_checker.py
+
+# 6. Analyze comment validations ("me too" patterns)
+python src/analysis/llm_comment_validator.py
+
+# 7. Run statistical analysis
 python src/analysis/statistical_validator.py
 
-# 5. View comprehensive analysis
+# 8. View comprehensive analysis
 jupyter notebook notebooks/03_validation_analysis.ipynb
 
-# 6. Run pattern mining
+# 9. Run pattern mining
 jupyter notebook notebooks/02_pattern_mining.ipynb
 
-# 7. Collect new data (requires Reddit API credentials)
+# 10. Collect new data (requires Reddit API credentials)
 python src/data_collection/reddit_collector.py
 ```
 
@@ -127,31 +142,37 @@ symptoms = extractor.extract_symptoms(text, category='all')
 
 #### **B. LLM-Based Extraction** → Validation Pipeline
 
-**Implementation**: ✅ **Used in notebooks/03_validation_analysis.ipynb**
+**Implementation**: ✅ **Used in src/analysis/llm_side_effect_extractor.py**
 
 ```python
-# GPT-4 extracts ALL side effects without predefined keywords
+# GPT-4o-mini extracts ALL side effects without predefined keywords
 llm_extractor.extract_from_posts(posts)
 ```
 
 **Advantages**:
-- Discovers side effects **without predefined keywords** (unbiased discovery)
+- Discovers side effects **without predefined keywords** (unbiased discovery of 414 unique symptoms)
 - Captures patient's exact wording and context
-- Standardizes variations (e.g., "bad anxiety" → "anxiety")
+- **Standardizes severity separately**: "severe anxiety" → symptom: "anxiety", severity: 3
+- **Severity scale**: 1 (mild), 2 (moderate), 3 (severe) based on language intensity
 - Categorizes as mental vs physical automatically
 
 **Purpose**: Find truly novel side effects that keyword approaches might miss
 
-**Results**: 79 anxiety mentions, 76 acne mentions (more conservative, requires clear attribution)
+**Results**:
+- 414 unique side effects discovered
+- 128 posts mention anxiety (23.8% of all posts)
+- Severity breakdown tracked for each symptom
+- Example: Anxiety - 3 mild, 38 moderate, 90 severe
 
-**Why Different Counts?**
+**Why Different Counts from Keyword Method?**
 - Keyword method is more permissive (catches all variants)
 - LLM is more conservative (requires clear attribution to birth control)
+- LLM now separates severity from symptom name for cleaner data
 - This is by design - two complementary approaches strengthen findings
 
 ### 3. PubMed Research Validation
 
-**Implementation**: ✅ **Fully Working**
+**Implementation**: ✅ **Fully Working** (src/validation/evidence_validator.py)
 
 - Searches PubMed for each side effect + birth control using E-utilities API
 - Fetches paper details: title, abstract, authors, year, PMID, DOI
@@ -159,6 +180,50 @@ llm_extractor.extract_from_posts(posts)
 - Identifies research gaps (high patient reports, low research coverage)
 
 **Output**: Cross-referenced database linking patient experiences with medical literature
+
+### 3.5. PubMed Relevance Filtering
+
+**Implementation**: ✅ **New Feature** (src/validation/pubmed_relevance_checker.py)
+
+**Problem Solved**: PubMed searches sometimes return irrelevant papers (e.g., "chronic pain" linking to abortion studies)
+
+**Solution**: LLM validates each paper's relevance to birth control side effects
+
+```python
+# LLM assesses if paper is actually about side_effect + birth control
+checker.assess_relevance(side_effect, paper)
+# Returns: relevance_score (0-1), reason, connection
+```
+
+**Filtering**: Papers with relevance_score < 0.7 are excluded
+
+**Output**: Each retained paper includes:
+- `relevance_score`: 0.0-1.0 confidence score
+- `relevance_reason`: "Why this paper is relevant" (1 sentence)
+- `relevance_connection`: How it relates to BC side effects
+
+### 3.6. Comment Validation Analysis
+
+**Implementation**: ✅ **New Feature** (src/analysis/llm_comment_validator.py)
+
+**Purpose**: Analyze "me too" validation patterns in comments to measure community agreement
+
+**How it Works**:
+- LLM analyzes each comment to detect validation patterns
+- Understands social media slang: "fr tho same" = "for real, same experience"
+- Categories: `validation`, `additional_info`, `counter`, `unrelated`
+- Weighted by comment upvotes for credibility
+
+**Example Analysis**:
+```
+Comment: "omg same my anxiety is so bad"
+→ Type: validation (confidence: 0.95)
+→ Reason: "Clear agreement with original poster's experience"
+```
+
+**Output**:
+- `comment_validations.json`: Per-post validation results
+- `symptom_validation_stats.json`: Aggregated validation rates by symptom
 
 ### 4. Evidence Tiering System
 

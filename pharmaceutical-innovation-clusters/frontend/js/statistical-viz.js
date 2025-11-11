@@ -38,28 +38,21 @@ function renderPoissonTests(stats) {
                     <span class="stat-icon">📈</span>
                     <span class="stat-text">Coefficient of Variation: <strong>${cv}</strong></span>
                 </div>
-                <div class="stat-badge">
-                    <span class="stat-icon">✓</span>
-                    <span class="stat-text">Confidence: <strong>${confidencePercent}</strong></span>
-                </div>
             </div>
             <p>
                 Statistical analysis proves innovations do NOT occur randomly—they come in waves, with
                 some periods seeing <strong>5-10x more approvals</strong> than others.
             </p>
 
-            <!-- What These Numbers Mean Dropdown -->
+            <!-- What This Number Means Dropdown -->
             <div style="margin-top: var(--spacing-md); border: 2px solid var(--gb-light); border-radius: var(--radius-pixel); overflow: hidden;">
                 <button onclick="toggleDropdown('explain-numbers')" style="width: 100%; padding: var(--spacing-md); background: rgba(139, 172, 15, 0.08); border: none; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center;">
-                    <h4 style="font-family: var(--font-pixel); font-size: 0.65rem; margin: 0; color: var(--gb-dark);">📚 What These Numbers Mean</h4>
+                    <h4 style="font-family: var(--font-pixel); font-size: 0.65rem; margin: 0; color: var(--gb-dark);">📚 What This Number Means</h4>
                     <span id="explain-numbers-icon" style="font-size: 1.2rem; transition: transform 0.3s;">▼</span>
                 </button>
                 <div id="explain-numbers-content" style="display: none; padding: var(--spacing-md); background: rgba(139, 172, 15, 0.04);">
                     <p style="font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem;">
                         <strong>Coefficient of Variation (${cv}):</strong> Think of this as a "consistency score." A low number (below 0.3) means approvals happen at a steady, predictable rate. A high number (above 0.7) means they're all over the place—some years explode with approvals, others are quiet. Our score of ${cv} proves innovations come in unpredictable waves, not steadily over time.
-                    </p>
-                    <p style="font-size: 0.875rem; line-height: 1.7; margin: 0;">
-                        <strong>Confidence (${confidencePercent}):</strong> This is how certain we are that this pattern isn't just random luck. ${confidencePercent} confidence means we're essentially 100% sure this clustering is real—there's virtually zero chance this happened by accident.
                     </p>
                 </div>
             </div>

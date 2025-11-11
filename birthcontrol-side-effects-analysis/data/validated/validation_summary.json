@@ -1,10 +1,16 @@
 {
   "total_side_effects": 30,
   "by_tier": {
-    "⚠️ Emerging Pattern": 2,
-    "✅ Research-Backed": 22,
+    "⚠️ Emerging Pattern": 4,
+    "✅ Research-Backed": 20,
     "🏆 FDA-Listed": 6
   },
   "high_surprise": [],
-  "research_gaps": []
+  "research_gaps": [
+    {
+      "side_effect": "brain fog",
+      "reddit_mentions": 21,
+      "pubmed_papers": 1
+    }
+  ]
 }

@@ -160,9 +160,6 @@ function displayHighSurpriseSideEffects(hiddenGems) {
                 <div class="flex-1">
                     <div class="flex items-center gap-2 mb-2">
                         <h3 class="text-lg font-semibold text-gray-900 capitalize">${addMedicalTooltips(item.side_effect)}</h3>
-                        <span class="text-sm px-2 py-1 rounded ${getTierBadgeClass(item.tier_label)}">
-                            ${item.tier_label}
-                        </span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-sm">
                         <div>
@@ -264,6 +261,19 @@ function displayValidatedSideEffects(sideEffects) {
                             ${item.fda_listed !== undefined ? `<li>FDA Official Documentation: <strong>${item.fda_listed ? 'Yes' : 'No'}</strong></li>` : ''}
                         </ul>
                     </div>
+
+                    <!-- Severity Breakdown Section -->
+                    ${item.severity_breakdown ? `
+                    <div class="evidence-section">
+                        <h4>🔢 Severity Breakdown:</h4>
+                        <ul>
+                            <li><strong>Mild:</strong> ${item.severity_breakdown.mild || 0} cases</li>
+                            <li><strong>Moderate:</strong> ${item.severity_breakdown.moderate || 0} cases</li>
+                            <li><strong>Severe:</strong> ${item.severity_breakdown.severe || 0} cases</li>
+                            ${item.avg_severity ? `<li><strong>Average Severity:</strong> ${item.avg_severity.toFixed(2)} / 3.0</li>` : ''}
+                        </ul>
+                    </div>
+                    ` : ''}
 
                     <!-- Why This Matters Section -->
                     ${item.surprise_factors.length > 0 ? `
