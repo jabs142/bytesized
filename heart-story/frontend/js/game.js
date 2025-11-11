@@ -16,7 +16,15 @@ class HeartStoryGame {
       DAY_SIM_INTRO: 'day_sim_intro',
       DAY_SIM_ROOM: 'day_sim_room',
       DAY_SIM_CHOICE: 'day_sim_choice',
-      DAY_SIM_SUMMARY: 'day_sim_summary'
+      DAY_SIM_SUMMARY: 'day_sim_summary',
+      // Educational pages (part of life story)
+      HUMAN_HR_COMPARE: 'human_hr_compare',
+      CONDITIONS_INTRO: 'conditions_intro',
+      CONDITION_1: 'condition_1',
+      CONDITION_2: 'condition_2',
+      CONDITION_3: 'condition_3',
+      ANIMAL_INTRO: 'animal_intro',
+      ANIMAL_FINAL: 'animal_final'
     };
 
     this.currentState = this.STATE.MODE_SELECT;
@@ -175,6 +183,15 @@ class HeartStoryGame {
       case this.STATE.DAY_SIM_SUMMARY:
         this.scrollSummary(-50);
         break;
+      case this.STATE.HUMAN_HR_COMPARE:
+      case this.STATE.CONDITIONS_INTRO:
+      case this.STATE.CONDITION_1:
+      case this.STATE.CONDITION_2:
+      case this.STATE.CONDITION_3:
+      case this.STATE.ANIMAL_INTRO:
+      case this.STATE.ANIMAL_FINAL:
+        this.scrollEducationalPage(-50);
+        break;
     }
   }
 
@@ -196,6 +213,15 @@ class HeartStoryGame {
         break;
       case this.STATE.DAY_SIM_SUMMARY:
         this.scrollSummary(50);
+        break;
+      case this.STATE.HUMAN_HR_COMPARE:
+      case this.STATE.CONDITIONS_INTRO:
+      case this.STATE.CONDITION_1:
+      case this.STATE.CONDITION_2:
+      case this.STATE.CONDITION_3:
+      case this.STATE.ANIMAL_INTRO:
+      case this.STATE.ANIMAL_FINAL:
+        this.scrollEducationalPage(50);
         break;
     }
   }
@@ -239,6 +265,27 @@ class HeartStoryGame {
         this.showMilestonesScreen();
         break;
       case this.STATE.MILESTONES:
+        this.showHumanHRComparison();
+        break;
+      case this.STATE.HUMAN_HR_COMPARE:
+        this.showConditionsIntro();
+        break;
+      case this.STATE.CONDITIONS_INTRO:
+        this.showCondition1();
+        break;
+      case this.STATE.CONDITION_1:
+        this.showCondition2();
+        break;
+      case this.STATE.CONDITION_2:
+        this.showCondition3();
+        break;
+      case this.STATE.CONDITION_3:
+        this.showAnimalIntro();
+        break;
+      case this.STATE.ANIMAL_INTRO:
+        this.showAnimalFinal();
+        break;
+      case this.STATE.ANIMAL_FINAL:
         this.showModeSelection();
         break;
       case this.STATE.DAY_SIM_INTRO:
@@ -269,6 +316,27 @@ class HeartStoryGame {
         break;
       case this.STATE.MILESTONES:
         this.showLiveMonitorScreen();
+        break;
+      case this.STATE.HUMAN_HR_COMPARE:
+        this.showMilestonesScreen();
+        break;
+      case this.STATE.CONDITIONS_INTRO:
+        this.showHumanHRComparison();
+        break;
+      case this.STATE.CONDITION_1:
+        this.showConditionsIntro();
+        break;
+      case this.STATE.CONDITION_2:
+        this.showCondition1();
+        break;
+      case this.STATE.CONDITION_3:
+        this.showCondition2();
+        break;
+      case this.STATE.ANIMAL_INTRO:
+        this.showCondition3();
+        break;
+      case this.STATE.ANIMAL_FINAL:
+        this.showAnimalIntro();
         break;
       case this.STATE.BIRTH_ENTRY:
       case this.STATE.DAY_SIM_INTRO:
@@ -338,6 +406,15 @@ class HeartStoryGame {
   }
 
   /**
+   * Convert birthDate object {month, day, year} to Date object
+   */
+  getBirthDateAsDate() {
+    if (!this.birthDate) return null;
+    // birthDate is stored as {month, day, year}
+    return new Date(this.birthDate.year, this.birthDate.month - 1, this.birthDate.day);
+  }
+
+  /**
    * Calculate conception date (birth - 38 weeks = 266 days)
    */
   calculateConceptionDate(birthDate) {
@@ -358,16 +435,82 @@ class HeartStoryGame {
   }
 
   /**
-   * Calculate total heartbeats from first beat to now
+   * Calculate total heartbeats from first beat to now (age-based)
    */
   calculateTotalBeats(firstBeatDate) {
     const now = new Date();
-    const daysSinceFirstBeat = Math.floor((now - firstBeatDate) / (1000 * 60 * 60 * 24));
+    const birthDate = this.getBirthDateAsDate(); // Convert {month,day,year} to Date object
 
-    // Average heart beats per day varies by age
-    // Baby/child: ~120 bpm, Teen: ~90 bpm, Adult: ~70 bpm
-    // Simplified: use 100,000 beats per day average
-    return daysSinceFirstBeat * 100000;
+    if (!birthDate) {
+      console.error('BirthDate not set');
+      return 0;
+    }
+
+    // Age stages with appropriate BPM
+    const stages = [
+      { minAge: -0.73, maxAge: 0, avgBPM: 140, label: 'FETAL' },      // Fetal period (conception to birth)
+      { minAge: 0, maxAge: 1, avgBPM: 120, label: 'INFANT' },         // 0-1 years
+      { minAge: 1, maxAge: 5, avgBPM: 100, label: 'TODDLER' },        // 1-5 years
+      { minAge: 5, maxAge: 12, avgBPM: 85, label: 'CHILD' },          // 5-12 years
+      { minAge: 12, maxAge: 18, avgBPM: 75, label: 'TEEN' },          // 12-18 years
+      { minAge: 18, maxAge: 65, avgBPM: 70, label: 'ADULT' },         // 18-65 years
+      { minAge: 65, maxAge: 120, avgBPM: 72, label: 'SENIOR' }        // 65+ years
+    ];
+
+    let totalBeats = 0;
+    const msPerDay = 1000 * 60 * 60 * 24;
+    const daysPerYear = 365.25;
+
+    // Calculate beats for each life stage
+    for (const stage of stages) {
+      // Calculate age boundaries in milliseconds from birth
+      const stageStartMs = birthDate.getTime() + (stage.minAge * daysPerYear * msPerDay);
+      const stageEndMs = birthDate.getTime() + (stage.maxAge * daysPerYear * msPerDay);
+
+      // Find overlap between this stage and the person's actual lifetime
+      const actualStartMs = Math.max(firstBeatDate.getTime(), stageStartMs);
+      const actualEndMs = Math.min(now.getTime(), stageEndMs);
+
+      // If there's overlap, calculate beats for this period
+      if (actualStartMs < actualEndMs) {
+        const daysInPeriod = (actualEndMs - actualStartMs) / msPerDay;
+        const beatsPerDay = stage.avgBPM * 60 * 24; // BPM * 60 min * 24 hours
+        totalBeats += daysInPeriod * beatsPerDay;
+      }
+    }
+
+    return Math.floor(totalBeats);
+  }
+
+
+  /**
+   * Calculate max heart rate using age-based formula
+   */
+  calculateMaxHR(birthDate) {
+    const now = new Date();
+    const ageInYears = Math.floor((now - birthDate) / (1000 * 60 * 60 * 24 * 365.25));
+    return 220 - ageInYears;
+  }
+
+  /**
+   * Calculate exercise intensity zone based on current BPM and max HR
+   */
+  getExerciseIntensity(currentBPM, maxHR) {
+    const percentMax = (currentBPM / maxHR) * 100;
+
+    if (percentMax < 50) {
+      return { zone: 'VERY LIGHT', range: '<50%', description: 'Warm-up intensity' };
+    } else if (percentMax < 60) {
+      return { zone: 'LIGHT', range: '50-60%', description: 'Easy pace, fat burning' };
+    } else if (percentMax < 70) {
+      return { zone: 'MODERATE', range: '60-70%', description: 'Aerobic training zone' };
+    } else if (percentMax < 80) {
+      return { zone: 'VIGOROUS', range: '70-80%', description: 'Cardio fitness zone' };
+    } else if (percentMax < 90) {
+      return { zone: 'HARD', range: '80-90%', description: 'Anaerobic threshold' };
+    } else {
+      return { zone: 'MAXIMUM', range: '90-100%', description: 'Peak performance' };
+    }
   }
 
   /**
@@ -614,6 +757,106 @@ class HeartStoryGame {
   }
 
   /**
+   * Show human heart rate comparison screen
+   */
+  showHumanHRComparison() {
+    this.currentState = this.STATE.HUMAN_HR_COMPARE;
+
+    const individuals = [
+      { name: 'HEALTHY ATHLETE', bpm: '~50 BPM', emoji: '💪', explanation: 'Regular training strengthens heart efficiency' },
+      { name: 'AVERAGE ADULT', bpm: '~70 BPM', emoji: '❤️', explanation: 'Normal resting heart rate for most people' },
+      { name: 'HIGH-STRUNG/ANXIOUS', bpm: '~85 BPM', emoji: '😰', explanation: 'Stress hormones increase heart rate' },
+      { name: 'HEART FAILURE', bpm: '~100+ BPM', emoji: '🚨', explanation: 'Weakened heart works harder to pump blood' }
+    ];
+
+    const individualsHTML = individuals.map(person => `
+      <div style="
+        background: rgba(155, 188, 15, 0.2);
+        border: 2px solid var(--gb-light);
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 12px;
+        text-align: center;
+      ">
+        <div style="font-size: 24px; margin-bottom: 8px;">${person.emoji}</div>
+        <p class="pixel-text" style="font-weight: bold; margin-bottom: 4px;">${person.name}</p>
+        <p class="pixel-text" style="color: #e60012; margin-bottom: 8px;">${person.bpm}</p>
+        <p class="pixel-text-xs" style="color: var(--gb-light); margin: 0; line-height: 1.4;">
+          ${person.explanation}
+        </p>
+      </div>
+    `).join('');
+
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">HUMAN HEART RATES</p>
+
+        <div class="pokemon-textbox" style="margin-bottom: 10px;">
+          <p class="pixel-text-xs">RESTING HEART RATE VARIES</p>
+          <p class="pixel-text-xs">BY FITNESS & HEALTH STATUS</p>
+        </div>
+
+        ${individualsHTML}
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">▲▼ SCROLL  A TO NEXT  B TO BACK</p>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Show common heart conditions intro page
+   */
+  showConditionsIntro() {
+    this.currentState = this.STATE.CONDITIONS_INTRO;
+
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">💔 HEART CONDITIONS</p>
+
+        <div class="pokemon-textbox" style="margin-bottom: 10px;">
+          <p class="pixel-text-sm">Heart disease is the</p>
+          <p class="pixel-text-sm">#1 cause of death globally</p>
+        </div>
+
+        <div style="background: rgba(155, 188, 15, 0.3); border: 2px solid var(--gb-light); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+          <p class="pixel-text-sm" style="line-height: 1.6; text-align: left;">
+            <strong>📊 KEY STATISTICS:</strong><br><br>
+            • 1 in 4 deaths in the US from heart disease<br><br>
+            • Affects 18+ million Americans<br><br>
+            • Many conditions are preventable with healthy lifestyle choices
+          </p>
+        </div>
+
+        <div class="pokemon-textbox">
+          <p class="pixel-text-sm">LET'S EXPLORE 3</p>
+          <p class="pixel-text-sm">COMMON CONDITIONS...</p>
+        </div>
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">A TO CONTINUE  B TO GO BACK</p>
+          <p class="pixel-text-xs">▲▼ SCROLL</p>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
    * ===========================================
    * MODE SELECTION AND DAY SIMULATOR METHODS
    * ===========================================
@@ -667,7 +910,7 @@ class HeartStoryGame {
     if (this.selectedModeIndex === 0) {
       this.gameMode = 'story';
       this.showBirthEntryScreen();
-    } else {
+    } else if (this.selectedModeIndex === 1) {
       this.gameMode = 'day_sim';
       this.showDaySimIntro();
     }
@@ -701,12 +944,21 @@ class HeartStoryGame {
    * Start day simulator - reset data and show first scene
    */
   startDaySimulator() {
+    // Calculate max HR (assume age 30 for standalone day simulator, or use actual age if available)
+    const birthDateObj = this.getBirthDateAsDate();
+    const age = birthDateObj
+      ? Math.floor((new Date() - birthDateObj) / (1000 * 60 * 60 * 24 * 365.25))
+      : 30; // Default to 30 years old if no birthdate
+    const maxHR = 220 - age;
+
     // Reset day simulator data
     this.daySimData = {
       currentRoom: 'kitchen',
       currentTime: '7:30 AM',
       currentBPM: 65,
       restingBPM: 65,
+      maxHR: maxHR,
+      age: age,
       statusEffects: [],
       activeEffects: [],
       choices: [],
@@ -781,11 +1033,19 @@ class HeartStoryGame {
         return;
       }
 
-      // Calculate remaining effect with linear decay
+      // Calculate remaining effect based on decay type
       let remainingEffect = effect.bpmChange;
+
       if (effect.decayType === 'linear' && effect.duration > 0) {
+        // Linear decay: effect decreases proportionally over time
         const remainingPercent = 1 - (hoursPassed / effect.duration);
         remainingEffect = effect.bpmChange * Math.max(0, remainingPercent);
+      } else if (effect.decayType === 'exponential' && effect.duration > 0) {
+        // Exponential decay: models first-order kinetics (e.g., caffeine half-life)
+        // Using half-life formula: N(t) = N0 * e^(-kt) where k = ln(2) / half-life
+        const halfLife = effect.duration; // Duration represents half-life for exponential
+        const decayConstant = Math.log(2) / halfLife;
+        remainingEffect = effect.bpmChange * Math.exp(-decayConstant * hoursPassed);
       }
 
       bpm += remainingEffect;
@@ -813,9 +1073,9 @@ class HeartStoryGame {
       '7:30 AM',
       'CHOOSE BREAKFAST',
       [
-        { text: 'COFFEE', bpmChange: 20, status: '☕CAFFEINATED', fact: 'Caffeine peaks in 1 hour, lasts 3-5 hours. Moderate use (1-2 cups daily) is safe for most people!', duration: 4, decayType: 'linear', choiceType: 'neutral', icon: '💛' },
+        { text: 'COFFEE', bpmChange: 20, status: '☕CAFFEINATED', fact: 'Caffeine peaks in 1 hour, half-life 4 hours. Decays exponentially! Moderate use (1-2 cups daily) is safe for most people!', duration: 4, decayType: 'exponential', choiceType: 'neutral', icon: '💛' },
         { text: 'WATER', bpmChange: 0, status: '💧HYDRATED', fact: 'EXCELLENT! Staying hydrated supports healthy heart function and is the best morning choice!', duration: 0, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
-        { text: 'ENERGY DRINK', bpmChange: 35, status: '⚡WIRED', fact: 'High caffeine (80-300mg) + sugar spikes HR. Limit to avoid heart palpitations!', duration: 5, decayType: 'linear', choiceType: 'unhealthy', icon: '⚠️' }
+        { text: 'ENERGY DRINK', bpmChange: 35, status: '⚡WIRED', fact: 'High caffeine (80-300mg) + sugar spikes HR. Half-life ~5hrs. Limit to avoid heart palpitations!', duration: 5, decayType: 'exponential', choiceType: 'unhealthy', icon: '⚠️' }
       ],
       () => this.showCommuteChoice()
     );
@@ -893,7 +1153,7 @@ class HeartStoryGame {
       '3:00 PM',
       'AFTERNOON SLUMP',
       [
-        { text: 'MORE COFFEE', bpmChange: 20, status: '☕BUZZING', fact: 'Second coffee = ~300mg caffeine total. Over 400mg/day may cause palpitations and anxiety!', duration: 4, decayType: 'linear', choiceType: 'unhealthy', icon: '⚠️' },
+        { text: 'MORE COFFEE', bpmChange: 20, status: '☕BUZZING', fact: 'Second coffee = ~300mg caffeine total. Effects compound! Over 400mg/day may cause palpitations and anxiety!', duration: 4, decayType: 'exponential', choiceType: 'unhealthy', icon: '⚠️' },
         { text: 'QUICK WALK', bpmChange: 30, status: '🚶ENERGIZED', fact: 'PERFECT! Movement combats afternoon slump. Even 5-10 min boosts energy and heart health!', duration: 1, decayType: 'immediate', choiceType: 'healthy', icon: '💚' },
         { text: 'POWER NAP', bpmChange: -10, status: '😴RESTED', fact: 'GOOD CHOICE! 20-30 min naps lower HR temporarily and improve afternoon performance without disrupting night sleep.', duration: 1, decayType: 'linear', choiceType: 'healthy', icon: '💚' }
       ],
@@ -1098,6 +1358,21 @@ class HeartStoryGame {
       context = `<p class="pixel-text-xs" style="margin-top: 8px;">Effect lasts ~${choice.duration} hour${choice.duration > 1 ? 's' : ''}</p>`;
     }
 
+    // Add max HR zone info for exercise choices
+    let exerciseZoneInfo = '';
+    if (choice.decayType === 'immediate' && choice.bpmChange > 30) { // Exercise choices
+      const maxHR = this.daySimData.maxHR;
+      const intensity = this.getExerciseIntensity(Math.round(newBPM), maxHR);
+      const percentMax = Math.round((newBPM / maxHR) * 100);
+      exerciseZoneInfo = `<p class="pixel-text-xs" style="margin-top: 8px;">Zone: ${intensity.zone} (${percentMax}% of max ${maxHR})</p>`;
+    }
+
+    // Build fact text with optional zone info
+    let factText = choice.fact;
+    if (exerciseZoneInfo) {
+      factText += `\n\nMAX HR: ${this.daySimData.maxHR} BPM (age ${this.daySimData.age})`;
+    }
+
     this.screen.innerHTML = `
       <div class="screen-fade-in" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
         <p class="pixel-text-md">CHOICE: ${choice.text}</p>
@@ -1106,17 +1381,18 @@ class HeartStoryGame {
           <p class="pixel-text-md" style="color: ${indicatorColor};">
             ${indicatorText}
           </p>
-          <p class="pixel-text-lg" style="margin-top: 8px; color: ${choice.choiceType === 'healthy' ? 'var(--gb-lightest)' : (choice.choiceType === 'unhealthy' ? 'var(--gb-dark)' : 'var(--gb-light)')};">
+          <p class="pixel-text-xl" style="margin-top: 8px; white-space: nowrap; color: ${choice.choiceType === 'healthy' ? 'var(--gb-lightest)' : (choice.choiceType === 'unhealthy' ? 'var(--gb-dark)' : 'var(--gb-light)')};">
             ${changeText} BPM ${choice.decayType === 'immediate' && choice.bpmChange > 0 ? '(DURING)' : ''}
           </p>
-          <p class="pixel-text-sm" style="margin-top: 4px;">
+          <p class="pixel-text-sm" style="margin-top: 10px;">
             ${oldBPM} → ${Math.round(newBPM)} BPM
           </p>
           ${context}
+          ${exerciseZoneInfo}
         </div>
 
         <div class="pokemon-textbox">
-          <p>${choice.fact}</p>
+          <p>${factText}</p>
           <p style="margin-top: 8px;">A TO CONTINUE</p>
         </div>
       </div>
@@ -1185,6 +1461,18 @@ class HeartStoryGame {
           </div>
         </div>
 
+        <div style="background: rgba(155, 188, 15, 0.3); border: 2px solid var(--gb-light); border-radius: 8px; padding: 12px; margin: 12px 0;">
+          <p class="pixel-text-sm" style="font-weight: bold; margin-bottom: 8px; text-align: left;">💪 LONG-TERM BENEFITS:</p>
+          <p class="pixel-text-xs" style="line-height: 1.6; text-align: left; margin-bottom: 6px;">
+            Assuming average resting HR of 70 BPM:
+          </p>
+          <p class="pixel-text-xs" style="line-height: 1.6; text-align: left;">
+            • <strong>Consistent cardio (30 days)</strong> can reduce resting HR by 5-8 BPM<br><br>
+            • <strong>Regular exercise (3-6 months)</strong> may lower HR by 10-15 BPM<br><br>
+            • <strong>Trained athletes</strong> often have resting rates of 40-60 BPM - up to 30% lower than average!
+          </p>
+        </div>
+
         <div class="health-tips">
           <p style="font-weight: bold; margin-bottom: 6px;">HEALTH TIPS:</p>
           ${tips.map(tip => `<p>• ${tip}</p>`).join('')}
@@ -1199,11 +1487,38 @@ class HeartStoryGame {
   }
 
   /**
-   * Calculate total beats in a day
+   * Calculate total beats in a day based on actual BPM throughout simulated hours
    */
   calculateDayBeats() {
-    // Average 100,000 beats per day (rough estimate)
-    return 100000;
+    // Time periods we simulate: 7:30 AM to 8:00 PM = 12.5 hours
+    // Remaining 11.5 hours assumed at resting BPM (sleep + early morning)
+
+    const timePoints = [
+      '7:30 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
+      '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM',
+      '7:00 PM', '8:00 PM'
+    ];
+
+    let totalBeats = 0;
+
+    // Calculate beats for each simulated hour
+    for (let i = 0; i < timePoints.length - 1; i++) {
+      const currentTime = timePoints[i];
+      const nextTime = timePoints[i + 1];
+      const hoursInPeriod = this.calculateHoursDiff(currentTime, nextTime);
+      const bpmAtThisTime = this.calculateCurrentBPM(currentTime);
+
+      // Beats in this period = BPM * minutes in period
+      const minutesInPeriod = hoursInPeriod * 60;
+      totalBeats += bpmAtThisTime * minutesInPeriod;
+    }
+
+    // Add sleep/rest period (11.5 hours at resting BPM, typically lower ~55 BPM during sleep)
+    const sleepHours = 11.5;
+    const sleepBPM = Math.max(50, this.daySimData.restingBPM - 10); // Sleep HR is ~10 BPM lower
+    totalBeats += sleepBPM * sleepHours * 60;
+
+    return Math.round(totalBeats);
   }
 
   /**
@@ -1274,6 +1589,223 @@ class HeartStoryGame {
         behavior: 'smooth'
       });
     }
+  }
+
+  /**
+   * Scroll educational pages (conditions and animal final)
+   */
+  scrollEducationalPage(amount) {
+    const container = document.querySelector('.educational-page');
+    if (container) {
+      container.scrollBy({
+        top: amount,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  /**
+   * Show Condition 1: Atrial Fibrillation
+   */
+  showCondition1() {
+    this.currentState = this.STATE.CONDITION_1;
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">⚡ ATRIAL FIBRILLATION</p>
+
+        <div style="background: rgba(155, 188, 15, 0.3); border: 2px solid var(--gb-light); border-radius: 8px; padding: 12px;">
+          <p class="pixel-text-sm" style="line-height: 1.6;">
+            <strong>WHAT:</strong> Heart's upper chambers beat chaotically, out of sync.<br><br>
+            <strong>SYMPTOMS:</strong> Pounding heart, fluttering chest, dizziness, fatigue. Some have no symptoms.<br><br>
+            <strong>WHY IT MATTERS:</strong> 5x stroke risk from blood clots forming in heart.<br><br>
+            <strong>TREATMENT:</strong> Medications, blood thinners, lifestyle changes, or procedures to reset rhythm.
+          </p>
+        </div>
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">A TO CONTINUE  B TO GO BACK</p>
+          <p class="pixel-text-xs">▲▼ SCROLL</p>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Show Condition 2: High Blood Pressure
+   */
+  showCondition2() {
+    this.currentState = this.STATE.CONDITION_2;
+
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">💔 HIGH BLOOD PRESSURE</p>
+
+        <div style="background: rgba(155, 188, 15, 0.3); border: 2px solid var(--gb-light); border-radius: 8px; padding: 12px;">
+          <p class="pixel-text-sm" style="line-height: 1.6;">
+            <strong>WHAT:</strong> Force of blood against artery walls too high. Damages blood vessels over time.<br><br>
+            <strong>SYMPTOMS:</strong> Often NO symptoms! Called "silent killer." Normal is &lt;120/80.<br><br>
+            <strong>WHY IT MATTERS:</strong> Causes heart attack, stroke, kidney damage, heart failure.<br><br>
+            <strong>TREATMENT:</strong> Reduce salt, exercise regularly, healthy weight, manage stress, medications.
+          </p>
+        </div>
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">A TO CONTINUE  B TO GO BACK</p>
+          <p class="pixel-text-xs">▲▼ SCROLL</p>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Show Condition 3: Coronary Artery Disease
+   */
+  showCondition3() {
+    this.currentState = this.STATE.CONDITION_3;
+
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">🫀 CORONARY ARTERY DISEASE</p>
+
+        <div style="background: rgba(155, 188, 15, 0.3); border: 2px solid var(--gb-light); border-radius: 8px; padding: 12px;">
+          <p class="pixel-text-sm" style="line-height: 1.6;">
+            <strong>WHAT:</strong> Plaque buildup in heart's arteries blocks blood flow. Like clogged pipes.<br><br>
+            <strong>SYMPTOMS:</strong> Chest pain/pressure, shortness of breath, fatigue. Heart attack warning: crushing chest pain - CALL 911!<br><br>
+            <strong>WHY IT MATTERS:</strong> #1 cause of death. Risk factors: high cholesterol, smoking, diabetes, sedentary life.<br><br>
+            <strong>TREATMENT:</strong> Healthy diet, exercise, quit smoking, statins, angioplasty, or bypass surgery.
+          </p>
+        </div>
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">A TO CONTINUE  B TO GO BACK</p>
+          <p class="pixel-text-xs">▲▼ SCROLL</p>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Show animal heart rate introduction/transition page
+   */
+  showAnimalIntro() {
+    this.currentState = this.STATE.ANIMAL_INTRO;
+
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">🔬 HEART RATE & BODY SIZE</p>
+
+        <div class="pokemon-textbox" style="margin-bottom: 10px;">
+          <p class="pixel-text-sm">Heart rate is closely tied to</p>
+          <p class="pixel-text-sm">body size and metabolism</p>
+        </div>
+
+        <div style="background: rgba(155, 188, 15, 0.3); border: 2px solid var(--gb-light); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+          <p class="pixel-text-sm" style="line-height: 1.6; text-align: left;">
+            <strong>THE RELATIONSHIP:</strong><br><br>
+            Smaller animals have FASTER hearts because they lose heat more quickly and need higher metabolic rates to maintain body temperature.<br><br>
+            Larger animals are more energy-efficient with SLOWER hearts. An elephant's heart beats just 30 times per minute!<br><br>
+            This pattern holds true across the entire animal kingdom.
+          </p>
+        </div>
+
+        <div class="pokemon-textbox">
+          <p class="pixel-text-sm">LET'S COMPARE HEARTS ACROSS</p>
+          <p class="pixel-text-sm">THE ANIMAL KINGDOM...</p>
+        </div>
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">A TO CONTINUE  B TO GO BACK</p>
+          <p class="pixel-text-xs">▲▼ SCROLL</p>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Show animal comparisons final page
+   */
+  showAnimalFinal() {
+    this.currentState = this.STATE.ANIMAL_FINAL;
+
+    const animals = [
+      { name: 'BLUE WHALE', bpm: 8, emoji: '🐋' },
+      { name: 'ELEPHANT', bpm: 30, emoji: '🐘' },
+      { name: 'HORSE', bpm: 40, emoji: '🐴' },
+      { name: 'HUMAN (ADULT)', bpm: 70, emoji: '❤️' },
+      { name: 'DOG', bpm: 100, emoji: '🐕' },
+      { name: 'CAT', bpm: 150, emoji: '🐱' },
+      { name: 'RABBIT', bpm: 200, emoji: '🐰' },
+      { name: 'HAMSTER', bpm: 450, emoji: '🐹' },
+      { name: 'HUMMINGBIRD', bpm: 1200, emoji: '🐦' }
+    ];
+
+    const animalListHTML = animals.map(animal => `
+      <div style="
+        background: rgba(155, 188, 15, 0.2);
+        border: 2px solid var(--gb-light);
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 12px;
+        text-align: center;
+      ">
+        <div style="font-size: 24px; margin-bottom: 8px;">${animal.emoji}</div>
+        <p class="pixel-text" style="font-weight: bold; margin-bottom: 4px;">${animal.name}</p>
+        <p class="pixel-text" style="color: #e60012; margin: 0;">${animal.bpm} BPM</p>
+      </div>
+    `).join('');
+
+    this.screen.innerHTML = `
+      <div class="educational-page screen-fade-in" style="
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+      ">
+        <p class="pixel-text-lg" style="text-align: center;">🐾 ANIMAL HEART RATES</p>
+
+        <div class="pokemon-textbox" style="margin-bottom: 10px;">
+          <p class="pixel-text-xs">BODY SIZE & METABOLISM</p>
+          <p class="pixel-text-xs">Larger = Slower HR</p>
+        </div>
+
+        ${animalListHTML}
+
+        <div class="pokemon-textbox" style="margin-top: auto;">
+          <p class="pixel-text-xs">A TO FINISH  B TO GO BACK</p>
+          <p class="pixel-text-xs">▲▼ SCROLL</p>
+        </div>
+      </div>
+    `;
   }
 }
 

@@ -377,6 +377,9 @@ body.game-body {
   text-align: center;
   line-height: 1.6;
   text-shadow: 2px 2px 0 var(--gb-dark);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .pixel-text-lg {
@@ -385,6 +388,9 @@ body.game-body {
   text-align: center;
   line-height: 1.5;
   text-shadow: 2px 2px 0 var(--gb-dark);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .pixel-text-md {
@@ -508,32 +514,68 @@ body.game-body {
   color: var(--gb-light);
 }
 
-/* Pixel Heart Animation */
+/* Pixel Heart Animation - Simple Shape Heart ♥ */
 .pixel-heart {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   position: relative;
   animation: heartbeat 1.2s ease-in-out infinite;
-}
-
-.pixel-heart::before,
-.pixel-heart::after {
-  content: '';
-  position: absolute;
-  background: var(--gb-light);
+  margin: 0 auto;
 }
 
 .pixel-heart::before {
-  width: 32px;
-  height: 24px;
-  top: 8px;
-  left: 0;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background:
-    linear-gradient(var(--gb-light) 0 0) 0 0/8px 8px,
-    linear-gradient(var(--gb-light) 0 0) 8px 0/16px 8px,
-    linear-gradient(var(--gb-light) 0 0) 24px 0/8px 8px,
-    linear-gradient(var(--gb-light) 0 0) 0 8px/32px 8px,
-    linear-gradient(var(--gb-light) 0 0) 4px 16px/24px 8px;
+    /* Row 1: Two bumps at top */
+    linear-gradient(var(--gb-light) 0 0) 4px 0/8px 4px,
+    linear-gradient(var(--gb-light) 0 0) 28px 0/8px 4px,
+
+    /* Row 2: Connect the bumps */
+    linear-gradient(var(--gb-light) 0 0) 0 4px/16px 4px,
+    linear-gradient(var(--gb-light) 0 0) 24px 4px/16px 4px,
+
+    /* Row 3: Full width heart */
+    linear-gradient(var(--gb-light) 0 0) 0 8px/40px 4px,
+
+    /* Row 4: Start tapering */
+    linear-gradient(var(--gb-light) 0 0) 0 12px/40px 4px,
+
+    /* Row 5: More taper */
+    linear-gradient(var(--gb-light) 0 0) 4px 16px/32px 4px,
+
+    /* Row 6: Continuing taper */
+    linear-gradient(var(--gb-light) 0 0) 8px 20px/24px 4px,
+
+    /* Row 7: Narrowing */
+    linear-gradient(var(--gb-light) 0 0) 12px 24px/16px 4px,
+
+    /* Row 8: Almost point */
+    linear-gradient(var(--gb-light) 0 0) 16px 28px/8px 4px,
+
+    /* Row 9: Point */
+    linear-gradient(var(--gb-light) 0 0) 18px 32px/4px 4px;
+  background-repeat: no-repeat;
+}
+
+/* Add shading for depth on right side */
+.pixel-heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    /* Darker pixels on right for 3D effect */
+    linear-gradient(var(--gb-dark) 0 0) 32px 0/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 36px 4px/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 36px 8px/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 36px 12px/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 32px 16px/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 28px 20px/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 24px 24px/4px 4px,
+    linear-gradient(var(--gb-dark) 0 0) 20px 28px/4px 4px;
   background-repeat: no-repeat;
 }
 
