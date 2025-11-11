@@ -55,18 +55,6 @@
             </p>
         </div>
 
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow p-6 mb-8">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">💡 Understanding the Evidence Tiers</h2>
-            <p class="text-gray-700 mb-3">
-                This analysis uses a 4-tier validation system:
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li><strong>Tier 1 (FDA-Listed):</strong> Officially documented by the FDA in drug labeling</li>
-                <li><strong>Tier 2 (Research-Backed):</strong> Validated by 3+ peer-reviewed medical papers</li>
-                <li><strong>Tier 3 (Patient-Validated):</strong> High patient reports (50+) with limited research</li>
-                <li><strong>Tier 4 (Emerging Pattern):</strong> Lower patient reports requiring investigation</li>
-            </ul>
-        </div>
 
         <!-- Legend -->
         <section class="bg-white rounded-lg shadow p-6 mb-8">
@@ -133,33 +121,65 @@
             </div>
         </section>
 
-        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg shadow p-6 mb-8">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">📊 What Does "Surprise Score" Mean?</h2>
-            <p class="text-gray-700 mb-3">
-                Each side effect has a <strong>surprise score</strong> that measures the gap between patient reports and research coverage. This helps identify symptoms that deserve more medical attention.
-            </p>
-            <div class="bg-white rounded-lg p-4 mb-3">
-                <p class="text-gray-800 font-mono text-sm mb-2">
-                    <strong>Formula:</strong> surprise_score = patient_frequency × (1 - research_coverage)
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg shadow mb-8">
+            <button
+                onclick="toggleSurpriseScore()"
+                class="w-full text-left p-6 flex items-center justify-between hover:bg-opacity-80 transition-all"
+                aria-expanded="false"
+                aria-controls="surprise-score-content"
+            >
+                <h2 class="text-xl font-bold text-gray-900">📊 What Does "Surprise Score" Mean?</h2>
+                <svg id="surprise-score-chevron" class="w-6 h-6 text-gray-700 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div id="surprise-score-content" class="hidden px-6 pb-6">
+                <p class="text-gray-700 mb-3">
+                    Each side effect has a <strong>surprise score</strong> that measures the gap between patient reports and research coverage. This helps identify symptoms that deserve more medical attention.
                 </p>
-                <p class="text-gray-600 text-sm">
-                    where research_coverage = min(paper_count / 10, 1.0)
+                <div class="bg-white rounded-lg p-4 mb-3">
+                    <p class="text-gray-800 font-mono text-sm mb-2">
+                        <strong>Formula:</strong> surprise_score = patient_frequency × (1 - research_coverage)
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        where research_coverage = min(paper_count / 10, 1.0)
+                    </p>
+                </div>
+                <p class="text-gray-700 mb-3">
+                    <strong>Why can research-backed symptoms be "Very Surprising"?</strong>
+                </p>
+                <p class="text-gray-700 mb-3">
+                    A symptom can have research papers but still be surprising if patient reports greatly outnumber the research. For example:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-3">
+                    <li><strong>Anxiety:</strong> 9 research papers found, but appears in 14.7% of patient posts (86 mentions) - suggesting the research may not fully capture how prevalent this experience is</li>
+                    <li><strong>PMDD Symptoms:</strong> 4 papers = only 40% research coverage (we'd want 10+ for full coverage), combined with 3.2% patient frequency creates a research gap</li>
+                </ul>
+                <p class="text-gray-700">
+                    <strong>Classification levels:</strong> 🔥 Very Surprising (≥0.015), ⚠️ Somewhat Surprising (≥0.008), ✓ Expected (&lt;0.008)
                 </p>
             </div>
-            <p class="text-gray-700 mb-3">
-                <strong>Why can research-backed symptoms be "Very Surprising"?</strong>
-            </p>
-            <p class="text-gray-700 mb-3">
-                A symptom can have research papers but still be surprising if patient reports greatly outnumber the research. For example:
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-3">
-                <li><strong>Anxiety:</strong> 9 research papers found, but appears in 14.7% of patient posts (86 mentions) - suggesting the research may not fully capture how prevalent this experience is</li>
-                <li><strong>PMDD Symptoms:</strong> 4 papers = only 40% research coverage (we'd want 10+ for full coverage), combined with 3.2% patient frequency creates a research gap</li>
-            </ul>
-            <p class="text-gray-700">
-                <strong>Classification levels:</strong> 🔥 Very Surprising (≥0.015), ⚠️ Somewhat Surprising (≥0.008), ✓ Expected (&lt;0.008)
-            </p>
         </div>
+
+        <script>
+        function toggleSurpriseScore() {
+            const content = document.getElementById('surprise-score-content');
+            const chevron = document.getElementById('surprise-score-chevron');
+            const button = content.previousElementSibling;
+
+            const isHidden = content.classList.contains('hidden');
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+                button.setAttribute('aria-expanded', 'true');
+            } else {
+                content.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+                button.setAttribute('aria-expanded', 'false');
+            }
+        }
+        </script>
 
         <!-- Validated Side Effects List -->
         <section class="bg-white rounded-lg shadow p-6">

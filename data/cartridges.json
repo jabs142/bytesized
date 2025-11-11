@@ -7,13 +7,13 @@
     "icon": "💊",
     "pattern": "timeline",
     "labelText": "Pharma",
-    "description": "Discover temporal clustering in 71,149 FDA drug approvals (1938-2024)",
+    "description": "71,149 FDA drug approvals",
     "url": "./pharmaceutical-innovation-clusters/frontend/index.html",
     "status": "available"
   },
   {
     "id": "birth-control",
-    "title": "Birth Control Network",
+    "title": "Birth Control Side Effects",
     "subtitle": "Side Effect Analysis",
     "color": "#4CAF50",
     "icon": "💊",
@@ -43,7 +43,7 @@
     "icon": "❤️",
     "pattern": "medical",
     "labelText": "Medical",
-    "description": "Watch your heart's journey from newborn to senior. See how heart rate changes with age, celebrate milestones, and compare with nature",
+    "description": "Your heart's coming-of-age journey.",
     "url": "./heart-story/frontend/index.html",
     "status": "available"
   },
@@ -81,6 +81,18 @@
     "labelText": "History",
     "description": "Explore human innovation from stone tools to the printing press",
     "url": "./evolution-of-invention/frontend/index.html",
+    "status": "available"
+  },
+  {
+    "id": "privilege",
+    "title": "Global Privilege Calculator",
+    "subtitle": "Statistical Life Analysis",
+    "color": "#9B59B6",
+    "icon": "🌍",
+    "pattern": "network",
+    "labelText": "Social",
+    "description": "Calculate your statistical privilege using global data and conditional probability",
+    "url": "./privilege/frontend/index.html",
     "status": "available"
   }
 ]

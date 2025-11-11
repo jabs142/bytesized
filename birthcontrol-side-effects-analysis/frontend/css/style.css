@@ -4,6 +4,11 @@
 /* Import shared design tokens */
 @import '/shared/styles/variables.css';
 
+/* Universal box-sizing fix for form inputs */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     /* Project-specific overrides (if needed) */
 
