@@ -120,6 +120,9 @@ class TherapeuticAnalyzer:
         # Decade-by-decade breakdown
         decade_breakdown = self._decade_breakdown(df)
 
+        # Calculate peak concentration ranking
+        peak_concentration_ranking = self._calculate_peak_concentration_ranking(trends)
+
         # Compile results
         results = {
             'total_drugs_analyzed': len(df),
@@ -127,6 +130,7 @@ class TherapeuticAnalyzer:
             'neglect_analysis': neglect_analysis,
             'approval_rates_by_decade': approval_rates,
             'decade_breakdown': decade_breakdown,
+            'peak_concentration_ranking': peak_concentration_ranking,
             'summary': self._generate_summary(df, trends, neglect_analysis)
         }
 
@@ -343,6 +347,54 @@ class TherapeuticAnalyzer:
                     breakdown[f"{decade}s"]['therapeutic_areas'][category] = count
 
         return breakdown
+
+    def _calculate_peak_concentration_ranking(self, trends: Dict) -> List[Dict]:
+        """Calculate peak decade concentration for each therapeutic area
+
+        For each therapeutic area, identifies which decade had the highest
+        concentration of approvals and calculates what percentage of that area's
+        total approvals occurred in the peak decade.
+
+        Returns:
+            List of dicts sorted by concentration percentage (highest first)
+        """
+        peak_rankings = []
+
+        for area, data in trends.items():
+            # Skip areas with no decade breakdown
+            by_decade = data.get('by_decade', {})
+            if not by_decade:
+                continue
+
+            total_approvals = data.get('total_approvals', 0)
+            if total_approvals == 0:
+                continue
+
+            # Find peak decade (decade with most approvals)
+            peak_decade_str = max(by_decade, key=by_decade.get)
+            peak_decade_count = by_decade[peak_decade_str]
+
+            # Calculate concentration percentage
+            concentration_percent = (peak_decade_count / total_approvals) * 100
+
+            # Create decade label (e.g., "1980" -> "1980s")
+            decade_label = f"{peak_decade_str}s"
+
+            peak_rankings.append({
+                'area': area,
+                'peak_decade': {
+                    'decade': peak_decade_str,
+                    'decade_label': decade_label,
+                    'concentration_percent': round(concentration_percent, 1),
+                    'count': peak_decade_count,
+                    'total_for_area': total_approvals
+                }
+            })
+
+        # Sort by concentration percentage (highest first)
+        peak_rankings.sort(key=lambda x: x['peak_decade']['concentration_percent'], reverse=True)
+
+        return peak_rankings
 
     def _generate_summary(self, df: pd.DataFrame, trends: Dict, neglect: Dict) -> Dict:
         """Generate executive summary"""

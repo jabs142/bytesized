@@ -154,6 +154,7 @@ def main():
     print("\n[5/6] Exporting frontend data...")
     frontend_exporter = FrontendDataExporter()
     frontend_exporter.export()
+    frontend_exporter.export_enriched()
     print(f"  ✓ Frontend JSON data ready")
 
     # Step 6: Print three-view comparison

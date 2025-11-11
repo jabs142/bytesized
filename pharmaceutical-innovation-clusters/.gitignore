@@ -17,10 +17,13 @@ ENV/
 data/raw/
 data/processed/
 data/validated/
-frontend/data/*.json
 *.csv
-*.json
 *.parquet
+
+# JSON files - ignore all except frontend data
+*.json
+# Exception: Allow frontend data files to be served by live-server
+!frontend/data/*.json
 
 # Outputs
 outputs/

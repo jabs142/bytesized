@@ -1,0 +1,45 @@
+{
+  "clusters": [
+    {
+      "period": "1978-1987",
+      "title": "The Hatch-Waxman Era",
+      "subtitle": "Generic Drug Revolution",
+      "description": "This decade was defined by the Drug Price Competition and Patent Term Restoration Act of 1984 (Hatch-Waxman Act), which fundamentally transformed the pharmaceutical landscape. The legislation created the Abbreviated New Drug Application (ANDA) pathway, dramatically lowering barriers for generic drug approvals. This led to an explosion of drug applications as companies rushed to bring affordable generic versions of off-patent medications to market, while also establishing modern patent protections for innovator drugs.",
+      "key_events": [
+        "1984: Hatch-Waxman Act revolutionizes generic drug approval process",
+        "1982: FDA establishes orphan drug program for rare diseases",
+        "1987: First statins approved for cholesterol management",
+        "Peak year 1981: 1,835 drug approvals in a single year"
+      ],
+      "notable_drug_classes": [
+        "Benzodiazepines for anxiety and sleep disorders",
+        "Corticosteroids for inflammation management",
+        "Calcium channel blockers for hypertension",
+        "H2 receptor antagonists for ulcers",
+        "First generation ACE inhibitors"
+      ],
+      "why_it_matters": "This cluster represents a pivotal shift toward accessible medications. The Hatch-Waxman Act balanced innovation incentives with affordable access, creating the modern generic drug industry that now accounts for 90% of US prescriptions. The 16,104 approvals in this period laid the foundation for today's pharmaceutical ecosystem."
+    },
+    {
+      "period": "1998-2002",
+      "title": "The Biotech Boom",
+      "subtitle": "Blockbuster Drug Era",
+      "description": "The turn of the millennium marked the golden age of pharmaceutical innovation, driven by advances in biotechnology, genomics, and rational drug design. The FDA Modernization Act of 1997 streamlined approval processes, while the completion of the Human Genome Project opened new therapeutic frontiers. This era saw the rise of blockbuster drugs generating billions in annual revenue, including breakthrough treatments for chronic conditions affecting millions of Americans.",
+      "key_events": [
+        "1997: FDA Modernization Act accelerates drug approvals",
+        "2000: Human Genome Project first draft completed",
+        "1998: Viagra launches, becoming fastest drug to reach $1B in sales",
+        "2001: Lipitor becomes world's best-selling drug at $8B annually",
+        "Peak year 2002: 1,621 drug approvals"
+      ],
+      "notable_drug_classes": [
+        "Statins dominate cholesterol management",
+        "COX-2 inhibitors for pain management",
+        "Selective serotonin reuptake inhibitors (SSRIs) for depression",
+        "Protease inhibitors revolutionize HIV treatment",
+        "Monoclonal antibodies for cancer and autoimmune diseases"
+      ],
+      "why_it_matters": "This cluster exemplifies peak pharmaceutical profitability and innovation convergence. The 7,727 approvals reflected intense competition to develop chronic disease treatments for aging populations in developed nations. However, this era also foreshadowed challenges ahead: rising drug costs, patent cliffs, and questions about therapeutic innovation versus market segmentation."
+    }
+  ]
+}

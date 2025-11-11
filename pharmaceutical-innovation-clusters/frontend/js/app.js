@@ -201,7 +201,7 @@ function renderFDAClusters() {
         const therapeuticHtml = cluster.therapeutic_breakdown
             ? cluster.therapeutic_breakdown.slice(0, 5).map(area => `
                 <div class="therapeutic-item">
-                    <div class="therapeutic-label">${area.area}</div>
+                    <div class="therapeutic-label">${area.area.replace(/\s*\[EPC\]/g, '')}</div>
                     <div class="therapeutic-bar-container">
                         <div class="therapeutic-bar" style="width: ${area.percentage}%"></div>
                         <div class="therapeutic-value">${area.percentage}% (${area.count.toLocaleString()})</div>
