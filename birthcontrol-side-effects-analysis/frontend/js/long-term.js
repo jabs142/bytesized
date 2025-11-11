@@ -65,6 +65,12 @@ python -m src.validation.long_term_evidence_validator
 function displayResearchGaps(gaps) {
     const container = document.getElementById('research-gaps-list');
 
+    // Handle case where section was removed from HTML
+    if (!container) {
+        console.log('Research gaps section not found, skipping...');
+        return;
+    }
+
     if (!gaps || gaps.length === 0) {
         container.innerHTML = '<p class="text-gray-600 text-center">No significant research gaps identified.</p>';
         return;

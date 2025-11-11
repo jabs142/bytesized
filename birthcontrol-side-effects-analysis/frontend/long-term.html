@@ -41,38 +41,6 @@
 
     <!-- Important Disclaimers -->
     <main class="max-w-6xl mx-auto px-4 py-8">
-        <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg shadow p-6 mb-8">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">⚠️ Important Disclaimers</h2>
-            <div class="space-y-3 text-gray-800">
-                <p>
-                    <strong>1. Many Different Formulations:</strong> There are MANY different oral contraceptive pills with varying hormone types, doses, and formulations. This analysis generalizes across all hormonal birth control pills discussed in our dataset. Your specific pill may have different risks and benefits.
-                </p>
-                <p>
-                    <strong>2. We Present Information, Not Medical Claims:</strong> When discussing serious health risks (like cancer, bone density, cardiovascular effects), we are presenting findings from peer-reviewed medical literature and patient-reported experiences. We do NOT make medical claims - we provide sources so you can evaluate the evidence yourself.
-                </p>
-                <p>
-                    <strong>3. Always Consult Your Healthcare Provider:</strong> This analysis is for informational purposes only. Do not make decisions about birth control based solely on this data. Discuss any concerns with your doctor.
-                </p>
-            </div>
-        </div>
-
-        <!-- Surprise Score Explanation -->
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-lg shadow p-6 mb-8">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">📊 Understanding the Surprise Score</h2>
-            <div class="text-gray-800">
-                <p class="mb-3">
-                    <strong>Surprise Score</strong> indicates how unexpected a side effect is based on patient reports versus available research:
-                </p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>High surprise (0.02-0.05+):</strong> Frequently reported by patients but lacks research</li>
-                    <li><strong>Moderate surprise (0.01-0.02):</strong> Some patient reports with limited research</li>
-                    <li><strong>Low surprise (0-0.01):</strong> Well-researched or rarely reported</li>
-                </ul>
-                <p class="mt-3 text-sm italic">
-                    Formula: Surprise = Patient Frequency × (1 - Research Coverage)
-                </p>
-            </div>
-        </div>
 
         <!-- About Long-Term Analysis -->
         <div class="bg-white rounded-lg shadow p-6 mb-8">
@@ -95,42 +63,6 @@
                 <li>Classified by validation status: Validated (3+ papers), Limited Evidence (1-2 papers), or No Research Found</li>
                 <li>Assessed for clinical significance based on severity and health impact</li>
             </ul>
-        </div>
-
-        <!-- Perimenopause & Anti-Androgen Research Section -->
-        <div class="bg-purple-50 border-l-4 border-purple-400 rounded-lg shadow p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">🔬 Research Gap: Perimenopause & Anti-Androgen Contraceptives</h2>
-
-            <div class="mb-6">
-                <h3 class="text-lg font-bold text-gray-900 mb-3">Long-Term BC Use & Perimenopause Interaction</h3>
-                <div class="text-gray-800 space-y-2">
-                    <p><strong>Critical Issue:</strong> Many long-term users (5+ years) are women in their late 30s-40s who may be experiencing perimenopause.</p>
-                    <p><strong>The Challenge:</strong> It's difficult to distinguish between:</p>
-                    <ul class="list-disc list-inside ml-4 text-sm">
-                        <li>Side effects from long-term birth control use</li>
-                        <li>Natural perimenopause symptoms being masked by BC</li>
-                        <li>Perimenopause symptoms revealed when stopping BC</li>
-                        <li>Interaction effects between BC hormones and natural hormonal changes</li>
-                    </ul>
-                    <p class="text-sm italic mt-3">
-                        <strong>Patient reports mention:</strong> "BC was masking perimenopause", "symptoms got worse in my 40s", "didn't realize I was in perimenopause until stopping BC"
-                    </p>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text-lg font-bold text-gray-900 mb-3">Anti-Androgen Contraceptives</h3>
-                <div class="text-gray-800 space-y-2">
-                    <p><strong>Limited Data:</strong> Our analysis found minimal specific data on anti-androgen formulations (like Yasmin/Yaz with drospirenone).</p>
-                    <p><strong>What are they?</strong> Birth control pills containing progestins that block male hormones (androgens), often prescribed for:</p>
-                    <ul class="list-disc list-inside ml-4 text-sm">
-                        <li>Acne reduction</li>
-                        <li>Hirsutism (excessive hair growth)</li>
-                        <li>PCOS symptoms</li>
-                    </ul>
-                    <p><strong>Research Needed:</strong> Do anti-androgen BCs have different long-term side effect profiles? Current data doesn't distinguish between formulation types.</p>
-                </div>
-            </div>
         </div>
 
         <!-- Clinical Context Cards -->
@@ -230,6 +162,42 @@
             </div>
         </div>
 
+                <!-- Perimenopause & Anti-Androgen Research Section -->
+                <div class="bg-purple-50 border-l-4 border-purple-400 rounded-lg shadow p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">🔬 Research Gap: Perimenopause & Anti-Androgen Contraceptives</h2>
+        
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Long-Term BC Use & Perimenopause Interaction</h3>
+                        <div class="text-gray-800 space-y-2">
+                            <p><strong>Critical Issue:</strong> Many long-term users (5+ years) are women in their late 30s-40s who may be experiencing perimenopause.</p>
+                            <p><strong>The Challenge:</strong> It's difficult to distinguish between:</p>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Side effects from long-term birth control use</li>
+                                <li>Natural perimenopause symptoms being masked by BC</li>
+                                <li>Perimenopause symptoms revealed when stopping BC</li>
+                                <li>Interaction effects between BC hormones and natural hormonal changes</li>
+                            </ul>
+                            <p class="text-sm italic mt-3">
+                                <strong>Patient reports mention:</strong> "BC was masking perimenopause", "symptoms got worse in my 40s", "didn't realize I was in perimenopause until stopping BC"
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Anti-Androgen Contraceptives</h3>
+                        <div class="text-gray-800 space-y-2">
+                            <p><strong>Limited Data:</strong> Our analysis found minimal specific data on anti-androgen formulations (like Yasmin/Yaz with drospirenone).</p>
+                            <p><strong>What are they?</strong> Birth control pills containing progestins that block male hormones (androgens), often prescribed for:</p>
+                            <ul class="list-disc list-inside ml-4 text-sm">
+                                <li>Acne reduction</li>
+                                <li>Hirsutism (excessive hair growth)</li>
+                                <li>PCOS symptoms</li>
+                            </ul>
+                            <p><strong>Research Needed:</strong> Do anti-androgen BCs have different long-term side effect profiles? Current data doesn't distinguish between formulation types.</p>
+                        </div>
+                    </div>
+                </div>
+
         <!-- Filter Controls -->
         <section class="bg-white rounded-lg shadow p-6 mb-6">
             <h2 class="text-xl font-bold text-gray-900 mb-4">Filter by Validation Status</h2>
@@ -249,50 +217,59 @@
             </div>
         </section>
 
-        <!-- Clinical Significance Explanation -->
-        <section class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-4 mb-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">📊 How We Categorize Clinical Significance</h3>
-            <div class="text-sm text-gray-700 space-y-2">
-                <p class="mb-3">
-                    Clinical significance indicates the potential health impact and severity of reported side effects:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="bg-white rounded p-3 border border-red-200">
-                        <div class="font-semibold text-red-600 mb-1">🔴 High Significance</div>
-                        <p class="text-xs">
-                            Potentially serious health conditions (cancer risk, cardiovascular issues, severe mental health impacts, chronic pain conditions). Requires medical attention.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded p-3 border border-orange-200">
-                        <div class="font-semibold text-orange-600 mb-1">🟠 Moderate Significance</div>
-                        <p class="text-xs">
-                            Conditions affecting quality of life (moderate depression, anxiety, menstrual irregularities, skin issues). May warrant discussion with healthcare provider.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded p-3 border border-gray-200">
-                        <div class="font-semibold text-gray-600 mb-1">⚪ Low Significance</div>
-                        <p class="text-xs">
-                            Mild symptoms that are generally manageable (mild mood changes, minor skin changes, temporary discomfort). Usually not requiring medical intervention.
-                        </p>
-                    </div>
-                </div>
-                <p class="text-xs italic mt-2">
-                    Note: These categories are based on reported severity in patient experiences and medical literature. Individual experiences may vary significantly.
-                </p>
-            </div>
-        </section>
+        <!-- Combined Methodology Section (Collapsible) -->
+        <details class="bg-blue-50 border-l-4 border-blue-500 rounded-lg mb-6 overflow-hidden">
+            <summary class="cursor-pointer p-4 text-lg font-semibold text-gray-900 hover:bg-blue-100 transition-colors">
+                📊 Methodology: How We Analyze Side Effects <span class="text-sm font-normal text-gray-600">(Click to expand)</span>
+            </summary>
+            <div class="p-4 pt-0 text-sm text-gray-700 space-y-4">
 
-        <!-- Research Gaps Section -->
-        <section id="research-gaps-section" class="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg shadow p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">🔍 Research Gaps</h2>
-            <p class="text-gray-700 mb-4">
-                Side effects frequently mentioned by long-term users but lacking research validation.
-                <strong>Absence of research doesn't mean these effects don't exist</strong> - it may indicate areas needing more study.
-            </p>
-            <div id="research-gaps-list" class="space-y-3">
-                <div class="text-center py-4 text-gray-500">Loading...</div>
+                <!-- Clinical Significance Section -->
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">📊 Clinical Significance Categories</h4>
+                    <p class="mb-3">
+                        Clinical significance indicates the potential health impact and severity of reported side effects:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-2">
+                        <div class="bg-white rounded p-3 border border-red-200">
+                            <div class="font-semibold text-red-600 mb-1">🔴 High Significance</div>
+                            <p class="text-xs">
+                                Potentially serious health conditions (cancer risk, cardiovascular issues, severe mental health impacts, chronic pain conditions). Requires medical attention.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded p-3 border border-orange-200">
+                            <div class="font-semibold text-orange-600 mb-1">🟠 Moderate Significance</div>
+                            <p class="text-xs">
+                                Conditions affecting quality of life (moderate depression, anxiety, menstrual irregularities, skin issues). May warrant discussion with healthcare provider.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded p-3 border border-gray-200">
+                            <div class="font-semibold text-gray-600 mb-1">⚪ Low Significance</div>
+                            <p class="text-xs">
+                                Mild symptoms that are generally manageable (mild mood changes, minor skin changes, temporary discomfort). Usually not requiring medical intervention.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-xs italic">
+                        Note: These categories are based on reported severity in patient experiences and medical literature. Individual experiences may vary significantly.
+                    </p>
+                </div>
+
+                <!-- Surprise Score Section -->
+                <div class="border-t border-blue-200 pt-4">
+                    <h4 class="font-semibold text-gray-900 mb-2">🎯 How We Calculate Surprise Score</h4>
+                    <p class="mb-2">
+                        The surprise score identifies side effects frequently reported by patients but lacking research validation:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 ml-4 text-xs">
+                        <li><strong>High Score:</strong> Common in patient reports, rare in medical literature (potential research gap)</li>
+                        <li><strong>Low Score:</strong> Either well-validated by research or rarely reported</li>
+                        <li><strong>Formula:</strong> (Reddit frequency) × (1 - PubMed validation rate)</li>
+                    </ul>
+                </div>
+
             </div>
-        </section>
+        </details>
 
         <!-- Validated Long-Term Side Effects List -->
         <section class="bg-white rounded-lg shadow p-6">
@@ -304,15 +281,19 @@
     </main>
 
     <!-- Footer with Medical Disclaimer -->
+
     <footer class="bg-gray-800 text-white mt-12">
-        <div class="max-w-6xl mx-auto px-4 py-8">
-            <div class="text-center">
-                <p class="text-gray-300 mb-2">
-                    Data: 179 Reddit posts from long-term users (5+ years) • Validated with PubMed research
-                </p>
-                <p class="text-gray-400 text-sm">
-                    LLM extraction + Multi-query PubMed validation + Statistical analysis
-                </p>
+        <div class="max-w-4xl mx-auto px-4 py-8">
+            <!-- Medical Disclaimer -->
+            <div class="bg-yellow-900 bg-opacity-30 border border-yellow-600 rounded-lg p-4 mb-6">
+                <h3 class="text-yellow-300 font-bold text-sm mb-2">⚠️ Important Medical Disclaimer</h3>
+                <div class="text-gray-300 text-sm leading-relaxed space-y-3">
+                    <p><strong>1. Many Different Formulations:</strong> There are MANY different oral contraceptive pills with varying hormone types, doses, and formulations. This analysis generalizes across all hormonal birth control pills discussed in our dataset. Your specific pill may have different risks and benefits.</p>
+
+                    <p><strong>2. We Present Information, Not Medical Claims:</strong> When discussing serious health risks (like cancer, bone density, cardiovascular effects), we are presenting findings from peer-reviewed medical literature and patient-reported experiences. We do NOT make medical claims - we provide sources so you can evaluate the evidence yourself.</p>
+
+                    <p><strong>3. Always Consult Your Healthcare Provider:</strong> This analysis is for informational purposes only. Do not make decisions about birth control based solely on this data. Discuss any concerns with your doctor.</p>
+                </div>
             </div>
         </div>
     </footer>
