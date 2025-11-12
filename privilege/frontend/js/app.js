@@ -5,23 +5,29 @@
 
 // Quiz state
 let currentQuestion = 0;
+let currentAnswerIndex = 0;
 let answers = {};
 let quizData = {};
 let calculator = null;
 let countriesData = null;
+let answerBreakdown = []; // Store breakdown data for answer screens
 
 // DOM elements
 const welcomeScreen = document.getElementById('welcomeScreen');
 const questionScreen = document.getElementById('questionScreen');
 const resultsScreen = document.getElementById('resultsScreen');
+const answerScreen = document.getElementById('answerScreen');
+const finalScreen = document.getElementById('finalScreen');
 const startButton = document.getElementById('startQuiz');
 const retakeButton = document.getElementById('retakeQuiz');
+const viewAnswersButton = document.getElementById('viewAnswers');
+const nextAnswerButton = document.getElementById('nextAnswer');
 const progressFill = document.getElementById('progressFill');
 const progressText = document.getElementById('progressText');
 const questionText = document.getElementById('questionText');
 const optionsContainer = document.getElementById('optionsContainer');
 const privilegeScore = document.getElementById('privilegeScore');
-const breakdownContainer = document.getElementById('breakdownContainer');
+const answerContent = document.getElementById('answerContent');
 
 // Quiz questions with global statistics
 // Each question includes:
@@ -149,6 +155,61 @@ async function init() {
 
     startButton.addEventListener('click', startQuiz);
     retakeButton.addEventListener('click', resetQuiz);
+    viewAnswersButton.addEventListener('click', () => {
+        currentAnswerIndex = 0;
+        showAnswerScreen(0);
+    });
+    nextAnswerButton.addEventListener('click', handleNextAnswer);
+}
+
+// Handle next answer navigation
+function handleNextAnswer() {
+    currentAnswerIndex++;
+    if (currentAnswerIndex < answerBreakdown.length) {
+        showAnswerScreen(currentAnswerIndex);
+    } else {
+        // All answers shown, go to final screen
+        showScreen('final');
+    }
+}
+
+// Show individual answer screen
+function showAnswerScreen(index) {
+    const item = answerBreakdown[index];
+
+    // Get custom visual for this factor
+    const visual = getFactorVisual(item.category, item.globalPercentage || 50);
+
+    // Get contextual description
+    const description = item.globalPercentage ?
+        getFactorDescription(item.category, item.globalPercentage, item.answer) : '';
+
+    // Update answer content
+    answerContent.innerHTML = `
+        <div class="answer-card-full">
+            <div class="card-question">${item.category}</div>
+            <div class="card-visual">${visual}</div>
+            <div class="card-answer">${item.answer}</div>
+            ${description ? `
+                <div class="card-stat">${description}</div>
+                <div class="card-source">Source: ${item.source}</div>
+            ` : ''}
+            <div class="card-counter">${index + 1} / ${answerBreakdown.length}</div>
+        </div>
+    `;
+
+    // Update button text for last answer
+    const nextBtn = document.getElementById('nextAnswer');
+    if (index === answerBreakdown.length - 1) {
+        nextBtn.querySelector('.btn-text').textContent = 'FINISH';
+        nextBtn.querySelector('.btn-icon').textContent = '✓';
+    } else {
+        nextBtn.querySelector('.btn-text').textContent = 'NEXT';
+        nextBtn.querySelector('.btn-icon').textContent = '▶';
+    }
+
+    // Show answer screen
+    showScreen('answer');
 }
 
 // Start quiz
@@ -476,89 +537,6 @@ function getFactorDescription(question, percentage, answer) {
     }
 }
 
-// Create interactive answer cards with custom visuals
-function createAnswerCards(breakdown) {
-    const answersSection = document.createElement('div');
-    answersSection.className = 'answer-cards-section';
-    answersSection.innerHTML = '<h3 class="section-header">📋 Your Answers</h3>';
-
-    // Create cards container
-    const cardsContainer = document.createElement('div');
-    cardsContainer.className = 'answer-cards-container';
-
-    let currentCardIndex = 0;
-
-    // Create a card for each answer
-    breakdown.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = `answer-card ${index === 0 ? 'active' : ''}`;
-        card.dataset.index = index;
-
-        // Get custom visual for this factor
-        const visual = getFactorVisual(item.category, item.globalPercentage || 50);
-
-        // Get contextual description
-        const description = item.globalPercentage ?
-            getFactorDescription(item.category, item.globalPercentage, item.answer) : '';
-
-        card.innerHTML = `
-            <div class="card-question">${item.category}</div>
-            <div class="card-visual">${visual}</div>
-            <div class="card-answer">${item.answer}</div>
-            ${description ? `
-                <div class="card-stat">${description}</div>
-                <div class="card-source">Source: ${item.source}</div>
-            ` : ''}
-            <div class="card-counter">${index + 1} / ${breakdown.length}</div>
-        `;
-
-        cardsContainer.appendChild(card);
-    });
-
-    // Add navigation buttons
-    const navContainer = document.createElement('div');
-    navContainer.className = 'card-navigation';
-    navContainer.innerHTML = `
-        <button class="card-nav-btn card-prev" id="cardPrev">◀ Previous</button>
-        <button class="card-nav-btn card-next" id="cardNext">Next ▶</button>
-    `;
-
-    answersSection.appendChild(cardsContainer);
-    answersSection.appendChild(navContainer);
-    breakdownContainer.appendChild(answersSection);
-
-    // Add navigation handlers
-    const cards = cardsContainer.querySelectorAll('.answer-card');
-    const prevBtn = document.getElementById('cardPrev');
-    const nextBtn = document.getElementById('cardNext');
-
-    function showCard(index) {
-        cards.forEach((card, i) => {
-            card.classList.toggle('active', i === index);
-        });
-        currentCardIndex = index;
-
-        // Update button states
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === cards.length - 1;
-    }
-
-    prevBtn.addEventListener('click', () => {
-        if (currentCardIndex > 0) {
-            showCard(currentCardIndex - 1);
-        }
-    });
-
-    nextBtn.addEventListener('click', () => {
-        if (currentCardIndex < cards.length - 1) {
-            showCard(currentCardIndex + 1);
-        }
-    });
-
-    // Initialize button states
-    showCard(0);
-}
-
 // Generate custom visual for each factor
 function getFactorVisual(question, percentile) {
     const percentage = percentile || 50;
@@ -677,11 +655,8 @@ function showResults() {
         </div>
     `;
 
-    // Display breakdown
-    breakdownContainer.innerHTML = '';
-
-    // Add interactive answer cards section
-    createAnswerCards(quizData.breakdown);
+    // Store breakdown data for answer screens
+    answerBreakdown = quizData.breakdown;
 
     // Add comprehensive methodology explanation
     const methodologyNote = document.createElement('details');
@@ -867,6 +842,8 @@ function showScreen(screen) {
     welcomeScreen.classList.remove('active');
     questionScreen.classList.remove('active');
     resultsScreen.classList.remove('active');
+    answerScreen.classList.remove('active');
+    finalScreen.classList.remove('active');
 
     switch(screen) {
         case 'welcome':
@@ -877,6 +854,12 @@ function showScreen(screen) {
             break;
         case 'results':
             resultsScreen.classList.add('active');
+            break;
+        case 'answer':
+            answerScreen.classList.add('active');
+            break;
+        case 'final':
+            finalScreen.classList.add('active');
             break;
     }
 }

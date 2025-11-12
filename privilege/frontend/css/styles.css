@@ -126,6 +126,9 @@ body {
     background-color: #2a2a2a;
     border-radius: 4px;
     padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .screen-glass {
@@ -175,6 +178,40 @@ body {
 }
 
 /* ============================================
+   PIXEL TEXT STYLES (Game Boy Aesthetic)
+   ============================================ */
+
+.pixel-text-lg {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    color: var(--gb-darkest);
+    text-shadow: 1px 1px 0 var(--gb-light);
+    line-height: 1.6;
+}
+
+.pixel-text-md {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    color: var(--gb-darkest);
+    text-shadow: 1px 1px 0 var(--gb-light);
+    line-height: 1.6;
+}
+
+.pixel-text-sm {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.625rem;
+    color: var(--gb-darkest);
+    line-height: 1.8;
+}
+
+.pixel-text-xs {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    color: var(--gb-darkest);
+    line-height: 1.8;
+}
+
+/* ============================================
    QUIZ SCREENS
    ============================================ */
 
@@ -200,7 +237,7 @@ body {
 
 .screen-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .pixel-header {
@@ -383,13 +420,13 @@ body {
 .results-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
 .privilege-score {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     width: 100%;
@@ -403,9 +440,9 @@ body {
 
 .score-number {
     font-family: 'Press Start 2P', monospace;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--gb-darkest);
-    margin: 1rem 0;
+    margin: 0.75rem 0;
 }
 
 .score-sublabel {
@@ -633,8 +670,8 @@ body {
    ============================================ */
 
 .confidence-interval-display {
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     text-align: center;
@@ -642,25 +679,26 @@ body {
 
 .ci-label {
     font-family: var(--font-pixel);
-    font-size: 0.625rem;
+    font-size: 0.5rem;
     color: var(--gb-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .ci-range {
     font-family: var(--font-pixel);
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: var(--gb-darkest);
-    margin: 0.5rem 0;
+    margin: 0.35rem 0;
 }
 
 .ci-explanation {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     color: var(--gb-dark);
     opacity: 0.9;
-    margin-top: 0.5rem;
+    margin-top: 0.35rem;
+    line-height: 1.4;
 }
 
 /* ============================================
@@ -824,6 +862,21 @@ body {
 
 .answer-cards-section {
     margin: 2rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.answer-cards-section.highlighted {
+    transform: scale(1.02);
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(139, 172, 15, 0);
+    }
+    50% {
+        box-shadow: 0 0 20px 5px rgba(139, 172, 15, 0.4);
+    }
 }
 
 .answer-cards-container {
@@ -927,6 +980,137 @@ body {
 }
 
 /* ============================================
+   ANSWER SCREEN (Full-Screen Individual Answers)
+   ============================================ */
+
+#answerScreen .screen-content {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.answer-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.answer-card-full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.3rem;
+    width: 100%;
+    animation: fadeIn 0.3s ease-in;
+    padding: 0.4rem;
+}
+
+.answer-card-full .card-question {
+    font-size: 0.75rem;
+    color: var(--gb-darkest);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.4;
+}
+
+.answer-card-full .card-visual {
+    margin: 0.2rem 0;
+}
+
+.answer-card-full .card-answer {
+    font-size: 0.75rem;
+    color: var(--gb-darkest);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.4;
+    text-shadow: 1px 1px 0 var(--gb-light);
+}
+
+.answer-card-full .card-stat {
+    font-size: 0.55rem;
+    color: var(--gb-darkest);
+    line-height: 1.3;
+    max-width: 95%;
+    margin: 0.25rem 0;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.answer-card-full .card-source {
+    font-size: 0.5rem;
+    color: var(--gb-dark);
+    font-style: normal;
+    font-family: 'Press Start 2P', monospace;
+    margin-top: 0.2rem;
+}
+
+.answer-card-full .card-counter {
+    margin-top: 0.4rem;
+    font-size: 0.5rem;
+    color: var(--gb-dark);
+    font-weight: 600;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.answer-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.answer-navigation .nav-btn {
+    min-width: 120px;
+    padding: 0.75rem 1rem;
+}
+
+/* ============================================
+   FINAL SCREEN (Quiz Complete)
+   ============================================ */
+
+#finalScreen .screen-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.final-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.final-content .pixel-header {
+    margin-bottom: 0.5rem;
+}
+
+.completion-message {
+    margin-bottom: 0.5rem;
+}
+
+.completion-message .pixel-text-sm {
+    color: var(--gb-darkest);
+    line-height: 1.8;
+}
+
+/* ============================================
    VISUAL COMPONENTS WITH PROGRESS BARS
    ============================================ */
 
@@ -940,31 +1124,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 250px;
 }
 
 .icon-display {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
 }
 
 .progress-bar-container {
     width: 100%;
-    height: 30px;
-    background: #e0e0e0;
-    border-radius: 15px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--gb-darkest);
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    background: linear-gradient(90deg, #0F5132, #198754);
     transition: width 0.8s ease-out;
-    border-radius: 15px;
+    border-radius: 13px;
     position: relative;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    min-width: 3%;
 }
 
 .progress-bar-fill::after {
@@ -972,12 +1160,12 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
+    width: 100%;
     background: linear-gradient(
         90deg,
         transparent 0%,
-        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.15) 50%,
         transparent 100%
     );
     animation: shimmer 2s infinite;
@@ -993,7 +1181,7 @@ body {
 }
 
 .percentage-label {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--accent-color);
 }
@@ -1015,14 +1203,17 @@ body {
 
 .generic-bar-fill {
     height: 100%;
-    background: var(--accent-color);
+    background: linear-gradient(90deg, #0F5132, #198754);
     transition: width 0.5s ease;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
 }
 
 .generic-percentage {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--accent-color);
+    color: var(--gb-darkest);
 }
 
 /* ============================================

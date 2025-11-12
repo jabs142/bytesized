@@ -91,14 +91,40 @@
                                         <div id="privilegeScore" class="score-number">0%</div>
                                         <div class="score-sublabel">of the global population</div>
                                     </div>
-                                    <div id="breakdownContainer" class="breakdown-container">
-                                        <!-- Detailed breakdown will be inserted here -->
-                                    </div>
                                     <div class="action-buttons">
-                                        <button id="retakeQuiz" class="btn-secondary">
-                                            <span class="btn-text">RETAKE QUIZ</span>
+                                        <button id="viewAnswers" class="btn-primary">
+                                            <span class="btn-text">VIEW ANSWERS</span>
+                                            <span class="btn-icon">▶</span>
                                         </button>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- Answer Screen (Individual Answers) -->
+                            <div id="answerScreen" class="quiz-screen">
+                                <div id="answerContent" class="answer-content">
+                                    <!-- Dynamic answer card content will be inserted here -->
+                                </div>
+                                <div class="answer-navigation">
+                                    <button id="nextAnswer" class="btn-primary nav-btn">
+                                        <span class="btn-text">NEXT</span>
+                                        <span class="btn-icon">▶</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Final Screen (Quiz Complete) -->
+                            <div id="finalScreen" class="quiz-screen">
+                                <div class="final-content">
+                                    <div class="pixel-header">
+                                        <div class="pixel-text-lg">QUIZ COMPLETE</div>
+                                    </div>
+                                    <div class="completion-message">
+                                        <p class="pixel-text-sm">Thanks for exploring!</p>
+                                    </div>
+                                    <button id="retakeQuiz" class="btn-primary">
+                                        <span class="btn-text">RETAKE QUIZ</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
