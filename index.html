@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/game-boy-frame.css">
     <link rel="stylesheet" href="./css/cartridge-styles.css">
     <link rel="stylesheet" href="./css/screen-effects.css">
+    <link rel="stylesheet" href="./shared/styles/about-modal.css">
 </head>
 <body class="portal-body">
     <!-- Boot Sequence (shows on first load) -->
@@ -119,10 +120,16 @@
             </div>
         </div>
 
-        <!-- Audio Controls -->
-        <div class="audio-controls">
-            <button id="muteToggle" class="mute-btn" aria-label="Toggle sound">
-                <span class="sound-icon">🔊</span>
+        <!-- System Controls -->
+        <div class="system-controls">
+            <!-- Audio Toggle -->
+            <button id="muteToggle" class="mute-btn system-btn" aria-label="Toggle sound">
+                <span class="btn-icon">🔊</span>
+            </button>
+
+            <!-- About Button -->
+            <button id="aboutToggle" class="about-btn system-btn" aria-label="About ByteSized">
+                <span class="btn-icon">ℹ️</span>
             </button>
         </div>
     </main>
@@ -135,9 +142,14 @@
         </div>
     </div>
 
+    <!-- About Modal -->
+    <about-modal id="aboutModal" aria-hidden="true"></about-modal>
+
     <!-- JavaScript -->
+    <script src="./shared/components/AboutModal.js"></script>
     <script src="./js/audio-manager.js"></script>
     <script src="./js/animations.js"></script>
     <script src="./js/portal.js"></script>
+    <script src="./js/about-modal-handler.js"></script>
 </body>
 </html>
