@@ -1,0 +1,39 @@
+{
+  "name": "global-life-statistics-quiz",
+  "version": "1.0.0",
+  "description": "Interactive quiz to calculate your global life statistics percentile",
+  "main": "frontend/js/app.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:calculator": "jest test/calculator.test.js",
+    "test:integration": "jest test/integration.test.js",
+    "test:validation": "jest test/data-validation.test.js test/score-validation.test.js",
+    "test:verbose": "jest --verbose"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "frontend/js/**/*.js",
+      "!frontend/js/**/*.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "verbose": true
+  },
+  "keywords": [
+    "statistics",
+    "quiz",
+    "global",
+    "percentile",
+    "privilege"
+  ],
+  "author": "ByteSized",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
