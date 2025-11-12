@@ -1,0 +1,717 @@
+{
+  "total_drugs_analyzed": 71203,
+  "therapeutic_trends": {
+    "Cardiovascular": {
+      "total_approvals": 1712,
+      "first_approval_year": 1954,
+      "latest_approval_year": 2024,
+      "peak_year": 2012,
+      "peak_count": 62,
+      "by_decade": {
+        "1950": 2,
+        "1960": 7,
+        "1970": 132,
+        "1980": 288,
+        "1990": 341,
+        "2000": 382,
+        "2010": 403,
+        "2020": 157
+      },
+      "trend": "growing",
+      "avg_per_year": 24.112676056338028
+    },
+    "Oncology": {
+      "total_approvals": 734,
+      "first_approval_year": 1954,
+      "latest_approval_year": 2024,
+      "peak_year": 2021,
+      "peak_count": 60,
+      "by_decade": {
+        "1950": 2,
+        "1960": 2,
+        "1970": 12,
+        "1980": 16,
+        "1990": 48,
+        "2000": 128,
+        "2010": 283,
+        "2020": 243
+      },
+      "trend": "growing",
+      "avg_per_year": 10.338028169014084
+    },
+    "CNS & Neurology": {
+      "total_approvals": 562,
+      "first_approval_year": 1981,
+      "latest_approval_year": 2024,
+      "peak_year": 2011,
+      "peak_count": 33,
+      "by_decade": {
+        "1980": 28,
+        "1990": 72,
+        "2000": 164,
+        "2010": 200,
+        "2020": 98
+      },
+      "trend": "growing",
+      "avg_per_year": 12.772727272727273
+    },
+    "Pain & Analgesia": {
+      "total_approvals": 1189,
+      "first_approval_year": 1943,
+      "latest_approval_year": 2024,
+      "peak_year": 2018,
+      "peak_count": 103,
+      "by_decade": {
+        "1940": 1,
+        "1980": 99,
+        "1990": 140,
+        "2000": 300,
+        "2010": 421,
+        "2020": 228
+      },
+      "trend": "growing",
+      "avg_per_year": 14.5
+    },
+    "Infectious Disease": {
+      "total_approvals": 2045,
+      "first_approval_year": 1952,
+      "latest_approval_year": 2024,
+      "peak_year": 1997,
+      "peak_count": 64,
+      "by_decade": {
+        "1950": 34,
+        "1960": 192,
+        "1970": 184,
+        "1980": 154,
+        "1990": 389,
+        "2000": 402,
+        "2010": 422,
+        "2020": 268
+      },
+      "trend": "growing",
+      "avg_per_year": 28.013698630136986
+    },
+    "Diabetes & Endocrine": {
+      "total_approvals": 2132,
+      "first_approval_year": 1942,
+      "latest_approval_year": 2024,
+      "peak_year": 2014,
+      "peak_count": 86,
+      "by_decade": {
+        "1940": 2,
+        "1950": 5,
+        "1960": 13,
+        "1970": 145,
+        "1980": 301,
+        "1990": 404,
+        "2000": 482,
+        "2010": 568,
+        "2020": 212
+      },
+      "trend": "growing",
+      "avg_per_year": 25.686746987951807
+    },
+    "Respiratory": {
+      "total_approvals": 108,
+      "first_approval_year": 1989,
+      "latest_approval_year": 2023,
+      "peak_year": 2016,
+      "peak_count": 10,
+      "by_decade": {
+        "1980": 3,
+        "1990": 31,
+        "2000": 32,
+        "2010": 34,
+        "2020": 8
+      },
+      "trend": "growing",
+      "avg_per_year": 3.085714285714286
+    },
+    "Gastrointestinal": {
+      "total_approvals": 868,
+      "first_approval_year": 1973,
+      "latest_approval_year": 2024,
+      "peak_year": 2015,
+      "peak_count": 48,
+      "by_decade": {
+        "1970": 7,
+        "1980": 55,
+        "1990": 105,
+        "2000": 244,
+        "2010": 316,
+        "2020": 141
+      },
+      "trend": "growing",
+      "avg_per_year": 16.692307692307693
+    },
+    "Immunology & Rheumatology": {
+      "total_approvals": 954,
+      "first_approval_year": 1981,
+      "latest_approval_year": 2024,
+      "peak_year": 2006,
+      "peak_count": 59,
+      "by_decade": {
+        "1980": 76,
+        "1990": 135,
+        "2000": 335,
+        "2010": 255,
+        "2020": 153
+      },
+      "trend": "growing",
+      "avg_per_year": 21.681818181818183
+    },
+    "Psychiatry": {
+      "total_approvals": 703,
+      "first_approval_year": 1963,
+      "latest_approval_year": 2024,
+      "peak_year": 2021,
+      "peak_count": 34,
+      "by_decade": {
+        "1960": 2,
+        "1970": 37,
+        "1980": 100,
+        "1990": 152,
+        "2000": 161,
+        "2010": 156,
+        "2020": 95
+      },
+      "trend": "growing",
+      "avg_per_year": 11.338709677419354
+    },
+    "Alzheimer's & Dementia": {
+      "total_approvals": 93,
+      "first_approval_year": 1996,
+      "latest_approval_year": 2024,
+      "peak_year": 2015,
+      "peak_count": 10,
+      "by_decade": {
+        "1990": 7,
+        "2000": 16,
+        "2010": 60,
+        "2020": 10
+      },
+      "trend": "growing",
+      "avg_per_year": 3.206896551724138
+    },
+    "Rare & Orphan Diseases": {
+      "total_approvals": 21,
+      "first_approval_year": 2015,
+      "latest_approval_year": 2024,
+      "peak_year": 2016,
+      "peak_count": 7,
+      "by_decade": {
+        "2010": 15,
+        "2020": 6
+      },
+      "trend": "declining",
+      "avg_per_year": 2.1
+    }
+  },
+  "neglect_analysis": {
+    "most_developed": [
+      {
+        "area": "Diabetes & Endocrine",
+        "approvals": 2132
+      },
+      {
+        "area": "Infectious Disease",
+        "approvals": 2045
+      },
+      {
+        "area": "Cardiovascular",
+        "approvals": 1712
+      },
+      {
+        "area": "Pain & Analgesia",
+        "approvals": 1189
+      },
+      {
+        "area": "Immunology & Rheumatology",
+        "approvals": 954
+      }
+    ],
+    "least_developed": [
+      {
+        "area": "Psychiatry",
+        "approvals": 703
+      },
+      {
+        "area": "CNS & Neurology",
+        "approvals": 562
+      },
+      {
+        "area": "Respiratory",
+        "approvals": 108
+      },
+      {
+        "area": "Alzheimer's & Dementia",
+        "approvals": 93
+      },
+      {
+        "area": "Rare & Orphan Diseases",
+        "approvals": 21
+      }
+    ],
+    "all_counts": {
+      "Cardiovascular": 1712,
+      "Oncology": 734,
+      "CNS & Neurology": 562,
+      "Pain & Analgesia": 1189,
+      "Infectious Disease": 2045,
+      "Diabetes & Endocrine": 2132,
+      "Respiratory": 108,
+      "Gastrointestinal": 868,
+      "Immunology & Rheumatology": 954,
+      "Psychiatry": 703,
+      "Alzheimer's & Dementia": 93,
+      "Rare & Orphan Diseases": 21
+    }
+  },
+  "approval_rates_by_decade": {
+    "1940": {
+      "total_approvals": 77,
+      "avg_per_year": 7.7,
+      "by_therapeutic_area": {
+        "Pain & Analgesia": 1,
+        "Diabetes & Endocrine": 2
+      }
+    },
+    "1950": {
+      "total_approvals": 382,
+      "avg_per_year": 38.2,
+      "by_therapeutic_area": {
+        "Cardiovascular": 2,
+        "Oncology": 2,
+        "Infectious Disease": 34,
+        "Diabetes & Endocrine": 5
+      }
+    },
+    "1960": {
+      "total_approvals": 936,
+      "avg_per_year": 93.6,
+      "by_therapeutic_area": {
+        "Cardiovascular": 7,
+        "Oncology": 2,
+        "Infectious Disease": 192,
+        "Diabetes & Endocrine": 13,
+        "Psychiatry": 2
+      }
+    },
+    "1970": {
+      "total_approvals": 7534,
+      "avg_per_year": 753.4,
+      "by_therapeutic_area": {
+        "Cardiovascular": 132,
+        "Oncology": 12,
+        "Infectious Disease": 184,
+        "Diabetes & Endocrine": 145,
+        "Gastrointestinal": 7,
+        "Psychiatry": 37
+      }
+    },
+    "1980": {
+      "total_approvals": 15987,
+      "avg_per_year": 1598.7,
+      "by_therapeutic_area": {
+        "Cardiovascular": 288,
+        "Oncology": 16,
+        "CNS & Neurology": 28,
+        "Pain & Analgesia": 99,
+        "Infectious Disease": 154,
+        "Diabetes & Endocrine": 301,
+        "Respiratory": 3,
+        "Gastrointestinal": 55,
+        "Immunology & Rheumatology": 76,
+        "Psychiatry": 100
+      }
+    },
+    "1990": {
+      "total_approvals": 14739,
+      "avg_per_year": 1473.9,
+      "by_therapeutic_area": {
+        "Cardiovascular": 341,
+        "Oncology": 48,
+        "CNS & Neurology": 72,
+        "Pain & Analgesia": 140,
+        "Infectious Disease": 389,
+        "Diabetes & Endocrine": 404,
+        "Respiratory": 31,
+        "Gastrointestinal": 105,
+        "Immunology & Rheumatology": 135,
+        "Psychiatry": 152,
+        "Alzheimer's & Dementia": 7
+      }
+    },
+    "2000": {
+      "total_approvals": 13228,
+      "avg_per_year": 1322.8,
+      "by_therapeutic_area": {
+        "Cardiovascular": 382,
+        "Oncology": 128,
+        "CNS & Neurology": 164,
+        "Pain & Analgesia": 300,
+        "Infectious Disease": 402,
+        "Diabetes & Endocrine": 482,
+        "Respiratory": 32,
+        "Gastrointestinal": 244,
+        "Immunology & Rheumatology": 335,
+        "Psychiatry": 161,
+        "Alzheimer's & Dementia": 16
+      }
+    },
+    "2010": {
+      "total_approvals": 12575,
+      "avg_per_year": 1257.5,
+      "by_therapeutic_area": {
+        "Cardiovascular": 403,
+        "Oncology": 283,
+        "CNS & Neurology": 200,
+        "Pain & Analgesia": 421,
+        "Infectious Disease": 422,
+        "Diabetes & Endocrine": 568,
+        "Respiratory": 34,
+        "Gastrointestinal": 316,
+        "Immunology & Rheumatology": 255,
+        "Psychiatry": 156,
+        "Alzheimer's & Dementia": 60,
+        "Rare & Orphan Diseases": 15
+      }
+    },
+    "2020": {
+      "total_approvals": 5738,
+      "avg_per_year": 573.8,
+      "by_therapeutic_area": {
+        "Cardiovascular": 157,
+        "Oncology": 243,
+        "CNS & Neurology": 98,
+        "Pain & Analgesia": 228,
+        "Infectious Disease": 268,
+        "Diabetes & Endocrine": 212,
+        "Respiratory": 8,
+        "Gastrointestinal": 141,
+        "Immunology & Rheumatology": 153,
+        "Psychiatry": 95,
+        "Alzheimer's & Dementia": 10,
+        "Rare & Orphan Diseases": 6
+      }
+    }
+  },
+  "decade_breakdown": {
+    "1940s": {
+      "total": 77,
+      "therapeutic_areas": {
+        "Pain & Analgesia": 1,
+        "Diabetes & Endocrine": 2
+      },
+      "top_sponsors": {
+        "LILLY": 6,
+        "NOVARTIS": 5,
+        "PFIZER": 4,
+        "SANOFI AVENTIS US": 4,
+        "LEDERLE": 4
+      }
+    },
+    "1950s": {
+      "total": 382,
+      "therapeutic_areas": {
+        "Cardiovascular": 2,
+        "Oncology": 2,
+        "Infectious Disease": 34,
+        "Diabetes & Endocrine": 5
+      },
+      "top_sponsors": {
+        "LEDERLE": 41,
+        "KING PHARMS LLC": 33,
+        "PARKEDALE": 21,
+        "MERCK": 18,
+        "PFIZER": 17
+      }
+    },
+    "1960s": {
+      "total": 936,
+      "therapeutic_areas": {
+        "Cardiovascular": 7,
+        "Oncology": 2,
+        "Infectious Disease": 192,
+        "Diabetes & Endocrine": 13,
+        "Psychiatry": 2
+      },
+      "top_sponsors": {
+        "KING PHARMS LLC": 188,
+        "LEDERLE": 107,
+        "PFIZER": 71,
+        "MONARCH PHARMS": 63,
+        "PHARMACIA AND UPJOHN": 49
+      }
+    },
+    "1970s": {
+      "total": 7534,
+      "therapeutic_areas": {
+        "Cardiovascular": 132,
+        "Oncology": 12,
+        "Infectious Disease": 184,
+        "Diabetes & Endocrine": 145,
+        "Gastrointestinal": 7,
+        "Psychiatry": 37
+      },
+      "top_sponsors": {
+        "BAXTER HLTHCARE": 532,
+        "OTSUKA ICU MEDCL": 452,
+        "PFIZER": 398,
+        "NOVARTIS": 213,
+        "HOSPIRA": 209
+      }
+    },
+    "1980s": {
+      "total": 15987,
+      "therapeutic_areas": {
+        "Cardiovascular": 288,
+        "Oncology": 16,
+        "CNS & Neurology": 28,
+        "Pain & Analgesia": 99,
+        "Infectious Disease": 154,
+        "Diabetes & Endocrine": 301,
+        "Respiratory": 3,
+        "Gastrointestinal": 55,
+        "Immunology & Rheumatology": 76,
+        "Psychiatry": 100
+      },
+      "top_sponsors": {
+        "BAXTER HLTHCARE": 1050,
+        "OTSUKA ICU MEDCL": 855,
+        "WATSON LABS": 724,
+        "HOSPIRA": 685,
+        "B BRAUN": 454
+      }
+    },
+    "1990s": {
+      "total": 14739,
+      "therapeutic_areas": {
+        "Cardiovascular": 341,
+        "Oncology": 48,
+        "CNS & Neurology": 72,
+        "Pain & Analgesia": 140,
+        "Infectious Disease": 389,
+        "Diabetes & Endocrine": 404,
+        "Respiratory": 31,
+        "Gastrointestinal": 105,
+        "Immunology & Rheumatology": 135,
+        "Psychiatry": 152,
+        "Alzheimer's & Dementia": 7
+      },
+      "top_sponsors": {
+        "WATSON LABS": 834,
+        "HOSPIRA": 531,
+        "TEVA": 517,
+        "HIKMA": 403,
+        "OTSUKA ICU MEDCL": 361
+      }
+    },
+    "2000s": {
+      "total": 13228,
+      "therapeutic_areas": {
+        "Cardiovascular": 382,
+        "Oncology": 128,
+        "CNS & Neurology": 164,
+        "Pain & Analgesia": 300,
+        "Infectious Disease": 402,
+        "Diabetes & Endocrine": 482,
+        "Respiratory": 32,
+        "Gastrointestinal": 244,
+        "Immunology & Rheumatology": 335,
+        "Psychiatry": 161,
+        "Alzheimer's & Dementia": 16
+      },
+      "top_sponsors": {
+        "SANDOZ": 373,
+        "HIKMA": 350,
+        "HOSPIRA": 309,
+        "TEVA": 306,
+        "WATSON LABS": 274
+      }
+    },
+    "2010s": {
+      "total": 12575,
+      "therapeutic_areas": {
+        "Cardiovascular": 403,
+        "Oncology": 283,
+        "CNS & Neurology": 200,
+        "Pain & Analgesia": 421,
+        "Infectious Disease": 422,
+        "Diabetes & Endocrine": 568,
+        "Respiratory": 34,
+        "Gastrointestinal": 316,
+        "Immunology & Rheumatology": 255,
+        "Psychiatry": 156,
+        "Alzheimer's & Dementia": 60,
+        "Rare & Orphan Diseases": 15
+      },
+      "top_sponsors": {
+        "HIKMA": 275,
+        "SANDOZ": 268,
+        "ABBVIE": 260,
+        "NOVARTIS": 232,
+        "PFIZER": 165
+      }
+    },
+    "2020s": {
+      "total": 5738,
+      "therapeutic_areas": {
+        "Cardiovascular": 157,
+        "Oncology": 243,
+        "CNS & Neurology": 98,
+        "Pain & Analgesia": 228,
+        "Infectious Disease": 268,
+        "Diabetes & Endocrine": 212,
+        "Respiratory": 8,
+        "Gastrointestinal": 141,
+        "Immunology & Rheumatology": 153,
+        "Psychiatry": 95,
+        "Alzheimer's & Dementia": 10,
+        "Rare & Orphan Diseases": 6
+      },
+      "top_sponsors": {
+        "HIKMA": 145,
+        "SUN PHARM": 96,
+        "SANDOZ": 92,
+        "AUROBINDO PHARMA": 91,
+        "FRESENIUS KABI USA": 81
+      }
+    }
+  },
+  "peak_concentration_ranking": [
+    {
+      "area": "Rare & Orphan Diseases",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 71.4,
+        "count": 15,
+        "total_for_area": 21
+      }
+    },
+    {
+      "area": "Alzheimer's & Dementia",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 64.5,
+        "count": 60,
+        "total_for_area": 93
+      }
+    },
+    {
+      "area": "Oncology",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 38.6,
+        "count": 283,
+        "total_for_area": 734
+      }
+    },
+    {
+      "area": "Gastrointestinal",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 36.4,
+        "count": 316,
+        "total_for_area": 868
+      }
+    },
+    {
+      "area": "CNS & Neurology",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 35.6,
+        "count": 200,
+        "total_for_area": 562
+      }
+    },
+    {
+      "area": "Pain & Analgesia",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 35.4,
+        "count": 421,
+        "total_for_area": 1189
+      }
+    },
+    {
+      "area": "Immunology & Rheumatology",
+      "peak_decade": {
+        "decade": "2000",
+        "decade_label": "2000s",
+        "concentration_percent": 35.1,
+        "count": 335,
+        "total_for_area": 954
+      }
+    },
+    {
+      "area": "Respiratory",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 31.5,
+        "count": 34,
+        "total_for_area": 108
+      }
+    },
+    {
+      "area": "Diabetes & Endocrine",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 26.6,
+        "count": 568,
+        "total_for_area": 2132
+      }
+    },
+    {
+      "area": "Cardiovascular",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 23.5,
+        "count": 403,
+        "total_for_area": 1712
+      }
+    },
+    {
+      "area": "Psychiatry",
+      "peak_decade": {
+        "decade": "2000",
+        "decade_label": "2000s",
+        "concentration_percent": 22.9,
+        "count": 161,
+        "total_for_area": 703
+      }
+    },
+    {
+      "area": "Infectious Disease",
+      "peak_decade": {
+        "decade": "2010",
+        "decade_label": "2010s",
+        "concentration_percent": 20.6,
+        "count": 422,
+        "total_for_area": 2045
+      }
+    }
+  ],
+  "summary": {
+    "total_drugs": 71203,
+    "date_range": "1939-2024",
+    "therapeutic_areas_identified": 12,
+    "most_developed_area": {
+      "area": "Diabetes & Endocrine",
+      "approvals": 2132
+    },
+    "least_developed_area": {
+      "area": "Psychiatry",
+      "approvals": 703
+    }
+  }
+}

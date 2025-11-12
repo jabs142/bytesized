@@ -13,7 +13,7 @@ async function renderDecadeBreakdown() {
 
     try {
         // Load decade breakdown data
-        const response = await fetch('../data/processed/decade_breakdown.json');
+        const response = await fetch('data/decade_breakdown.json');
         if (!response.ok) {
             throw new Error('Failed to load decade breakdown data');
         }

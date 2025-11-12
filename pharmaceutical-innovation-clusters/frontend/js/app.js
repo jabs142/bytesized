@@ -34,11 +34,11 @@ async function loadData() {
         // Load all pharmaceutical data files in parallel
         const [clustersRes, statsRes, therapeuticRes, neglectRes, timelineRes, fdaPharmRes, enrichedClustersRes, clusterContextRes] = await Promise.all([
             fetch('data/clusters.json'),
-            fetch('../data/processed/statistical_results.json').catch(() => null),
-            fetch('../data/processed/therapeutic_trends.json').catch(() => null),
-            fetch('../data/unique_angles/neglected_diseases.json').catch(() => null),
-            fetch('../data/processed/therapeutic_timeline.json').catch(() => null),
-            fetch('../data/processed/fda_pharm_classes.json').catch(() => null),
+            fetch('data/statistical_results.json').catch(() => null),
+            fetch('data/therapeutic_trends.json').catch(() => null),
+            fetch('data/neglected_diseases.json').catch(() => null),
+            fetch('data/therapeutic_timeline.json').catch(() => null),
+            fetch('data/fda_pharm_classes.json').catch(() => null),
             fetch('data/enriched_clusters.json').catch(() => null),
             fetch('data/cluster_context.json').catch(() => null)
         ]);

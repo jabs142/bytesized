@@ -1,0 +1,1131 @@
+{
+  "neglected_diseases": {
+    "Alzheimer's Disease": {
+      "total_approvals": 111,
+      "first_approval": 1996,
+      "latest_approval": 2024,
+      "by_decade": {
+        "1990": 7,
+        "2000": 17,
+        "2010": 74,
+        "2020": 13
+      },
+      "drugs": [
+        {
+          "drug_name": "ARICEPT",
+          "year": 1996,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 1998,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 1998,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 1998,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 1998,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 1999,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 1999,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 2000,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 2000,
+          "sponsor_name": "EISAI INC"
+        },
+        {
+          "drug_name": "ARICEPT",
+          "year": 2000,
+          "sponsor_name": "EISAI INC"
+        }
+      ],
+      "category": "neglected"
+    },
+    "Parkinson's Disease": {
+      "total_approvals": 104,
+      "first_approval": 1975,
+      "latest_approval": 2024,
+      "by_decade": {
+        "1970": 9,
+        "1980": 18,
+        "1990": 5,
+        "2000": 24,
+        "2010": 33,
+        "2020": 15
+      },
+      "drugs": [
+        {
+          "drug_name": "SINEMET",
+          "year": 1975,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "CARBIDOPA",
+          "year": 1977,
+          "sponsor_name": "ATON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1977,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "CARBIDOPA",
+          "year": 1977,
+          "sponsor_name": "ATON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1978,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1978,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1978,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1978,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1979,
+          "sponsor_name": "ORGANON"
+        },
+        {
+          "drug_name": "SINEMET",
+          "year": 1980,
+          "sponsor_name": "ORGANON"
+        }
+      ],
+      "category": "neglected"
+    },
+    "ALS (Lou Gehrig's)": {
+      "total_approvals": 6,
+      "first_approval": 2016,
+      "latest_approval": 2022,
+      "by_decade": {
+        "2010": 3,
+        "2020": 3
+      },
+      "drugs": [
+        {
+          "drug_name": "RILUZOLE",
+          "year": 2016,
+          "sponsor_name": "ALKEM LABS LTD"
+        },
+        {
+          "drug_name": "TIGLUTIK",
+          "year": 2018,
+          "sponsor_name": "ITALFARMACO SA"
+        },
+        {
+          "drug_name": "TIGLUTIK",
+          "year": 2019,
+          "sponsor_name": "ITALFARMACO SA"
+        },
+        {
+          "drug_name": "TIGLUTIK",
+          "year": 2020,
+          "sponsor_name": "ITALFARMACO SA"
+        },
+        {
+          "drug_name": "RILUZOLE",
+          "year": 2021,
+          "sponsor_name": "ALKEM LABS LTD"
+        },
+        {
+          "drug_name": "RADICAVA ORS",
+          "year": 2022,
+          "sponsor_name": "KK BCJ-94"
+        }
+      ],
+      "category": "neglected"
+    },
+    "Huntington's Disease": {
+      "total_approvals": 1,
+      "first_approval": 2020,
+      "latest_approval": 2020,
+      "by_decade": {
+        "2020": 1
+      },
+      "drugs": [
+        {
+          "drug_name": "TETRABENAZINE",
+          "year": 2020,
+          "sponsor_name": "ADAPTIS"
+        }
+      ],
+      "category": "neglected"
+    },
+    "Cystic Fibrosis": {
+      "total_approvals": 29,
+      "first_approval": 2015,
+      "latest_approval": 2024,
+      "by_decade": {
+        "2010": 18,
+        "2020": 11
+      },
+      "drugs": [
+        {
+          "drug_name": "KALYDECO",
+          "year": 2015,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "ORKAMBI",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "ORKAMBI",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "ORKAMBI",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "KALYDECO",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "ORKAMBI",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "ORKAMBI",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "ORKAMBI",
+          "year": 2016,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "KALYDECO",
+          "year": 2017,
+          "sponsor_name": "VERTEX PHARMS INC"
+        },
+        {
+          "drug_name": "KALYDECO",
+          "year": 2017,
+          "sponsor_name": "VERTEX PHARMS INC"
+        }
+      ],
+      "category": "neglected"
+    },
+    "Sickle Cell Disease": {
+      "total_approvals": 16,
+      "first_approval": 1967,
+      "latest_approval": 2024,
+      "by_decade": {
+        "1960": 1,
+        "1970": 1,
+        "1980": 1,
+        "1990": 5,
+        "2000": 5,
+        "2010": 2,
+        "2020": 1
+      },
+      "drugs": [
+        {
+          "drug_name": "DROXIA",
+          "year": 1967,
+          "sponsor_name": "WAYLIS THERAP"
+        },
+        {
+          "drug_name": "DROXIA",
+          "year": 1977,
+          "sponsor_name": "WAYLIS THERAP"
+        },
+        {
+          "drug_name": "DROXIA",
+          "year": 1980,
+          "sponsor_name": "WAYLIS THERAP"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 1998,
+          "sponsor_name": "BARR"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 1999,
+          "sponsor_name": "BARR"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 1999,
+          "sponsor_name": "BARR"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 1999,
+          "sponsor_name": "BARR"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 1999,
+          "sponsor_name": "BARR"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 2000,
+          "sponsor_name": "BARR"
+        },
+        {
+          "drug_name": "HYDROXYUREA",
+          "year": 2000,
+          "sponsor_name": "BARR"
+        }
+      ],
+      "category": "neglected"
+    },
+    "Rare Cancers": {
+      "total_approvals": 0,
+      "first_approval": null,
+      "latest_approval": null,
+      "by_decade": {},
+      "drugs": [],
+      "category": "neglected"
+    },
+    "Muscular Dystrophy": {
+      "total_approvals": 2,
+      "first_approval": 2018,
+      "latest_approval": 2018,
+      "by_decade": {
+        "2010": 2
+      },
+      "drugs": [
+        {
+          "drug_name": "EXONDYS 51",
+          "year": 2018,
+          "sponsor_name": "SAREPTA THERAPS INC"
+        },
+        {
+          "drug_name": "EXONDYS 51",
+          "year": 2018,
+          "sponsor_name": "SAREPTA THERAPS INC"
+        }
+      ],
+      "category": "neglected"
+    }
+  },
+  "common_diseases": {
+    "Type 2 Diabetes": {
+      "total_approvals": 580,
+      "first_approval": 1982,
+      "latest_approval": 2024,
+      "by_decade": {
+        "1980": 29,
+        "1990": 66,
+        "2000": 165,
+        "2010": 257,
+        "2020": 63
+      },
+      "drugs": [
+        {
+          "drug_name": "HUMULIN N",
+          "year": 1982,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN R",
+          "year": 1982,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN N",
+          "year": 1982,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN R",
+          "year": 1982,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN R",
+          "year": 1983,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN N",
+          "year": 1983,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN R",
+          "year": 1983,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN N",
+          "year": 1983,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN R",
+          "year": 1983,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "HUMULIN R",
+          "year": 1983,
+          "sponsor_name": "LILLY"
+        }
+      ],
+      "category": "common"
+    },
+    "Hypertension": {
+      "total_approvals": 367,
+      "first_approval": 1988,
+      "latest_approval": 2024,
+      "by_decade": {
+        "1980": 9,
+        "1990": 86,
+        "2000": 97,
+        "2010": 153,
+        "2020": 22
+      },
+      "drugs": [
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1988,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1988,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1988,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1989,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1989,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTORETIC",
+          "year": 1989,
+          "sponsor_name": "ALMATICA"
+        },
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1989,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTRIL",
+          "year": 1989,
+          "sponsor_name": "TWI PHARMS"
+        },
+        {
+          "drug_name": "ZESTORETIC",
+          "year": 1989,
+          "sponsor_name": "ALMATICA"
+        },
+        {
+          "drug_name": "ZESTORETIC",
+          "year": 1990,
+          "sponsor_name": "ALMATICA"
+        }
+      ],
+      "category": "common"
+    },
+    "Depression": {
+      "total_approvals": 14,
+      "first_approval": 1992,
+      "latest_approval": 2014,
+      "by_decade": {
+        "1990": 6,
+        "2000": 7,
+        "2010": 1
+      },
+      "drugs": [
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 1992,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 1993,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 1993,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 1994,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 1995,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 1998,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 2001,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 2001,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 2002,
+          "sponsor_name": "WATSON LABS"
+        },
+        {
+          "drug_name": "AMOXAPINE",
+          "year": 2002,
+          "sponsor_name": "WATSON LABS"
+        }
+      ],
+      "category": "common"
+    },
+    "Erectile Dysfunction": {
+      "total_approvals": 69,
+      "first_approval": 2003,
+      "latest_approval": 2024,
+      "by_decade": {
+        "2000": 17,
+        "2010": 41,
+        "2020": 11
+      },
+      "drugs": [
+        {
+          "drug_name": "CIALIS",
+          "year": 2003,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "CIALIS",
+          "year": 2005,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "REVATIO",
+          "year": 2005,
+          "sponsor_name": "VIATRIS"
+        },
+        {
+          "drug_name": "CIALIS",
+          "year": 2005,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "REVATIO",
+          "year": 2005,
+          "sponsor_name": "VIATRIS"
+        },
+        {
+          "drug_name": "CIALIS",
+          "year": 2006,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "REVATIO",
+          "year": 2006,
+          "sponsor_name": "VIATRIS"
+        },
+        {
+          "drug_name": "REVATIO",
+          "year": 2006,
+          "sponsor_name": "VIATRIS"
+        },
+        {
+          "drug_name": "CIALIS",
+          "year": 2006,
+          "sponsor_name": "LILLY"
+        },
+        {
+          "drug_name": "CIALIS",
+          "year": 2007,
+          "sponsor_name": "LILLY"
+        }
+      ],
+      "category": "common"
+    }
+  },
+  "timelines": {
+    "Alzheimer's Disease": {
+      "years": [
+        1996,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "counts": [
+        1,
+        4,
+        2,
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        5,
+        3,
+        7,
+        10,
+        5,
+        13,
+        12,
+        3,
+        6,
+        10,
+        6,
+        1,
+        2,
+        2,
+        2
+      ],
+      "total": 111
+    },
+    "Parkinson's Disease": {
+      "years": [
+        1975,
+        1977,
+        1978,
+        1979,
+        1980,
+        1981,
+        1983,
+        1985,
+        1986,
+        1993,
+        1995,
+        1996,
+        1998,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "counts": [
+        1,
+        3,
+        4,
+        1,
+        7,
+        4,
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        5,
+        5,
+        7,
+        4,
+        2,
+        6,
+        2,
+        1,
+        5,
+        7,
+        2,
+        4,
+        3,
+        3,
+        4,
+        3,
+        2
+      ],
+      "total": 104
+    },
+    "ALS (Lou Gehrig's)": {
+      "years": [
+        2016,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total": 6
+    },
+    "Huntington's Disease": {
+      "years": [
+        2020
+      ],
+      "counts": [
+        1
+      ],
+      "total": 1
+    },
+    "Cystic Fibrosis": {
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2024
+      ],
+      "counts": [
+        1,
+        7,
+        3,
+        4,
+        3,
+        3,
+        1,
+        5,
+        2
+      ],
+      "total": 29
+    },
+    "Sickle Cell Disease": {
+      "years": [
+        1967,
+        1977,
+        1980,
+        1998,
+        1999,
+        2000,
+        2001,
+        2005,
+        2006,
+        2011,
+        2013,
+        2024
+      ],
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total": 16
+    },
+    "Muscular Dystrophy": {
+      "years": [
+        2018
+      ],
+      "counts": [
+        2
+      ],
+      "total": 2
+    },
+    "Type 2 Diabetes": {
+      "years": [
+        1982,
+        1983,
+        1984,
+        1985,
+        1987,
+        1989,
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "counts": [
+        4,
+        9,
+        8,
+        1,
+        5,
+        2,
+        5,
+        3,
+        3,
+        1,
+        10,
+        8,
+        8,
+        13,
+        7,
+        8,
+        17,
+        13,
+        31,
+        22,
+        11,
+        19,
+        5,
+        19,
+        10,
+        18,
+        13,
+        9,
+        12,
+        53,
+        39,
+        33,
+        21,
+        24,
+        23,
+        30,
+        6,
+        14,
+        17,
+        15,
+        11
+      ],
+      "total": 580
+    },
+    "Hypertension": {
+      "years": [
+        1988,
+        1989,
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2024
+      ],
+      "counts": [
+        3,
+        6,
+        5,
+        7,
+        6,
+        9,
+        6,
+        21,
+        8,
+        6,
+        10,
+        8,
+        15,
+        8,
+        10,
+        8,
+        8,
+        8,
+        14,
+        12,
+        4,
+        10,
+        13,
+        20,
+        21,
+        23,
+        20,
+        16,
+        11,
+        14,
+        7,
+        8,
+        8,
+        3,
+        9,
+        2
+      ],
+      "total": 367
+    },
+    "Depression": {
+      "years": [
+        1992,
+        1993,
+        1994,
+        1995,
+        1998,
+        2001,
+        2002,
+        2005,
+        2007,
+        2008,
+        2014
+      ],
+      "counts": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total": 14
+    },
+    "Erectile Dysfunction": {
+      "years": [
+        2003,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "counts": [
+        1,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3,
+        1,
+        4,
+        2,
+        7,
+        5,
+        3,
+        2,
+        3,
+        11,
+        4,
+        2,
+        3,
+        1,
+        1
+      ],
+      "total": 69
+    }
+  },
+  "neglect_metrics": {
+    "total_neglected_approvals": 269,
+    "total_common_approvals": 1030,
+    "neglected_percentage": 0.3777930705166917,
+    "common_percentage": 1.4465682625732061,
+    "ratio_common_to_neglected": 3.828996282527881,
+    "diseases_with_zero_approvals": [
+      "Rare Cancers"
+    ],
+    "avg_approvals_per_neglected_disease": 33.625,
+    "avg_approvals_per_common_disease": 257.5,
+    "disparity_ratio": 7.657992565055762
+  },
+  "gaps_and_opportunities": [
+    {
+      "disease": "Sickle Cell Disease",
+      "gap_start": 1980,
+      "gap_end": 1998,
+      "gap_duration": 18,
+      "description": "18-year gap in approvals"
+    },
+    {
+      "disease": "Sickle Cell Disease",
+      "gap_start": 2013,
+      "gap_end": 2024,
+      "gap_duration": 11,
+      "description": "11-year gap in approvals"
+    },
+    {
+      "disease": "Sickle Cell Disease",
+      "gap_start": 1967,
+      "gap_end": 1977,
+      "gap_duration": 10,
+      "description": "10-year gap in approvals"
+    }
+  ],
+  "summary": {
+    "total_drugs_analyzed": 71203,
+    "neglected_diseases_tracked": 8,
+    "neglected_with_approvals": 7,
+    "completely_neglected": 1,
+    "most_developed_neglected_disease": "Alzheimer's Disease",
+    "most_developed_count": 111,
+    "least_developed_neglected_disease": "Huntington's Disease",
+    "least_developed_count": 1
+  }
+}

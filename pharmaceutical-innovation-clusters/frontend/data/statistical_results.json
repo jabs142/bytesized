@@ -1,0 +1,167 @@
+{
+  "poisson_tests": {
+    "fda_drugs": {
+      "coefficient_of_variation": 0.7932837152679838,
+      "variance_to_mean_ratio": 521.023028654724,
+      "is_random": false,
+      "is_clustered": "True",
+      "interpretation": "Clustered",
+      "mean_rate": 827.9418604651163,
+      "std_rate": 656.7927950956541,
+      "confidence": 1.0,
+      "confidence_percent": "100%"
+    }
+  },
+  "significant_clusters": [
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1977-1981",
+      "start_year": 1977,
+      "end_year": 1981,
+      "avg_per_year": 1536.0,
+      "total_count": 7680,
+      "sigma_above_mean": 1.0706254499931138
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1978-1982",
+      "start_year": 1978,
+      "end_year": 1982,
+      "avg_per_year": 1644.2,
+      "total_count": 8221,
+      "sigma_above_mean": 1.2370949713966304
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1979-1983",
+      "start_year": 1979,
+      "end_year": 1983,
+      "avg_per_year": 1636.2,
+      "total_count": 8181,
+      "sigma_above_mean": 1.2247866888529324
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1980-1984",
+      "start_year": 1980,
+      "end_year": 1984,
+      "avg_per_year": 1673.2,
+      "total_count": 8366,
+      "sigma_above_mean": 1.281712495617536
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1981-1985",
+      "start_year": 1981,
+      "end_year": 1985,
+      "avg_per_year": 1669.4,
+      "total_count": 8347,
+      "sigma_above_mean": 1.2758660614092796
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1982-1986",
+      "start_year": 1982,
+      "end_year": 1986,
+      "avg_per_year": 1600.6,
+      "total_count": 8003,
+      "sigma_above_mean": 1.1700148315334757
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1983-1987",
+      "start_year": 1983,
+      "end_year": 1987,
+      "avg_per_year": 1576.6,
+      "total_count": 7883,
+      "sigma_above_mean": 1.1330899839023814
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1984-1988",
+      "start_year": 1984,
+      "end_year": 1988,
+      "avg_per_year": 1571.2,
+      "total_count": 7856,
+      "sigma_above_mean": 1.1247818931853855
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1985-1989",
+      "start_year": 1985,
+      "end_year": 1989,
+      "avg_per_year": 1524.2,
+      "total_count": 7621,
+      "sigma_above_mean": 1.0524707332411591
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1994-1998",
+      "start_year": 1994,
+      "end_year": 1998,
+      "avg_per_year": 1494.2,
+      "total_count": 7471,
+      "sigma_above_mean": 1.0063146737022914
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1995-1999",
+      "start_year": 1995,
+      "end_year": 1999,
+      "avg_per_year": 1502.2,
+      "total_count": 7511,
+      "sigma_above_mean": 1.0186229562459894
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1996-2000",
+      "start_year": 1996,
+      "end_year": 2000,
+      "avg_per_year": 1512.4,
+      "total_count": 7562,
+      "sigma_above_mean": 1.0343160164892047
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1997-2001",
+      "start_year": 1997,
+      "end_year": 2001,
+      "avg_per_year": 1513.0,
+      "total_count": 7565,
+      "sigma_above_mean": 1.0352391376799819
+    },
+    {
+      "category": "fda_drugs",
+      "category_name": "FDA Drugs",
+      "period": "1998-2002",
+      "start_year": 1998,
+      "end_year": 2002,
+      "avg_per_year": 1545.4,
+      "total_count": 7727,
+      "sigma_above_mean": 1.0850876819819593
+    }
+  ],
+  "peak_years": {
+    "fda_drugs": 1981
+  },
+  "metadata": {
+    "analysis_date": "2025-11-12T16:15:36.924315",
+    "sliding_window_size": 5,
+    "threshold_sigma": 1.0,
+    "drug_type_filter": "all",
+    "total_records_analyzed": 71203
+  }
+}

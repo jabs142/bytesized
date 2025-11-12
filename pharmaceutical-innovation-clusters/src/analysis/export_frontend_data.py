@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import sys
 import pandas as pd
+import shutil
 
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
@@ -22,6 +23,16 @@ class FrontendDataExporter:
         self.enriched_output_path = Config.FRONTEND_DATA_DIR / 'enriched_clusters.json'
         self.fda_raw_path = Config.RAW_DATA_DIR / 'fda_drugs_raw.csv'
         self.fda_df = None
+
+        # Define paths for all processed data files that frontend needs
+        self.data_files_to_copy = [
+            ('statistical_results.json', Config.PROCESSED_DATA_DIR),
+            ('therapeutic_trends.json', Config.PROCESSED_DATA_DIR),
+            ('therapeutic_timeline.json', Config.PROCESSED_DATA_DIR),
+            ('decade_breakdown.json', Config.PROCESSED_DATA_DIR),
+            ('fda_pharm_classes.json', Config.PROCESSED_DATA_DIR),
+            ('neglected_diseases.json', Config.DATA_DIR / 'unique_angles'),
+        ]
 
     def export(self):
         """Export data to frontend JSON format"""
@@ -238,12 +249,43 @@ class FrontendDataExporter:
         print(f"\n✅ Enriched cluster data exported to {self.enriched_output_path}")
         print(f"   Contains {len(enriched_data.get('clusters', []))} enriched clusters")
 
+    def copy_processed_data_files(self):
+        """Copy all processed data files needed by frontend to frontend/data/ directory"""
+
+        print("\n" + "="*60)
+        print("COPYING PROCESSED DATA FILES TO FRONTEND")
+        print("="*60)
+
+        copied_count = 0
+        missing_files = []
+
+        for filename, source_dir in self.data_files_to_copy:
+            source_path = source_dir / filename
+            dest_path = Config.FRONTEND_DATA_DIR / filename
+
+            if source_path.exists():
+                shutil.copy2(source_path, dest_path)
+                print(f"✓ Copied {filename}")
+                copied_count += 1
+            else:
+                print(f"⚠️  Missing: {filename} (expected at {source_path})")
+                missing_files.append(filename)
+
+        print(f"\n✅ Copied {copied_count}/{len(self.data_files_to_copy)} data files to {Config.FRONTEND_DATA_DIR}")
+
+        if missing_files:
+            print(f"\n⚠️  {len(missing_files)} files were not found:")
+            for f in missing_files:
+                print(f"   - {f}")
+            print("\nThese files may not have been generated yet. Run the full analysis pipeline to generate them.")
+
 
 def main():
     """Run data export"""
     exporter = FrontendDataExporter()
     exporter.export()
     exporter.export_enriched()
+    exporter.copy_processed_data_files()
 
 
 if __name__ == '__main__':
