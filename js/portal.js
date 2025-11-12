@@ -82,12 +82,22 @@ class Portal {
    */
   createCartridgeElement(cartridge, index) {
     const div = document.createElement('div');
-    div.className = `cartridge ${cartridge.status === 'coming_soon' ? 'coming-soon' : ''}`;
+    const statusClass = cartridge.status === 'coming_soon' ? 'coming-soon' :
+                        cartridge.wip === true ? 'wip' : '';
+    div.className = `cartridge ${statusClass}`;
     div.dataset.id = cartridge.id;
     div.dataset.index = index;
 
     // Create connector pins (8 gold contacts)
     const pinsHTML = Array(8).fill('<div class="connector-pin"></div>').join('');
+
+    // Determine badge HTML based on status/wip flag
+    let badgeHTML = '';
+    if (cartridge.status === 'coming_soon') {
+      badgeHTML = '<div class="coming-soon-badge">COMING SOON</div>';
+    } else if (cartridge.wip === true) {
+      badgeHTML = '<div class="wip-badge">🚧 WIP</div>';
+    }
 
     div.innerHTML = `
       <div class="cartridge-body ${cartridge.pattern ? `pattern-${cartridge.pattern}` : ''}" style="--cartridge-glow: ${cartridge.color}50;">
@@ -104,10 +114,7 @@ class Portal {
             ${pinsHTML}
           </div>
         </div>
-        ${cartridge.status === 'coming_soon' ?
-          '<div class="coming-soon-badge">COMING SOON</div>' :
-          ''
-        }
+        ${badgeHTML}
       </div>
     `;
 

@@ -1,0 +1,131 @@
+/**
+ * WIP Banner Styles
+ * Shared styles for the work-in-progress banner component
+ * Uses ByteSized Design System variables
+ */
+
+/* Banner Container */
+.wip-banner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #FFB86C 0%, #FF9933 100%);
+  border-bottom: 3px solid #CC7722;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+
+.wip-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* Banner Icon */
+.wip-banner-icon {
+  font-size: 24px;
+  line-height: 1;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Banner Text */
+.wip-banner-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wip-banner-text strong {
+  font-size: 10px;
+  color: #2a2a2a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wip-banner-message {
+  font-size: 7px;
+  color: #4a4a4a;
+  line-height: 1.4;
+}
+
+/* Close Button */
+.wip-banner-close {
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: #2a2a2a;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.wip-banner-close:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.wip-banner-close:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .wip-banner-content {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .wip-banner-icon {
+    font-size: 20px;
+  }
+
+  .wip-banner-text strong {
+    font-size: 8px;
+  }
+
+  .wip-banner-message {
+    font-size: 6px;
+  }
+
+  .wip-banner-close {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+}

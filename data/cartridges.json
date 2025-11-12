@@ -9,7 +9,8 @@
     "labelText": "Pharma",
     "description": "71,149 FDA drug approvals",
     "url": "./pharmaceutical-innovation-clusters/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "birth-control",
@@ -21,7 +22,8 @@
     "labelText": "Women's Health",
     "description": "Network analysis of birth control side effects",
     "url": "./birthcontrol-side-effects-analysis/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "covid-timeline",
@@ -33,7 +35,8 @@
     "labelText": "Medical",
     "description": "Interactive timeline of the COVID-19 pandemic",
     "url": "./covid-scrollytelling/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "heart-story",
@@ -45,7 +48,8 @@
     "labelText": "Medical",
     "description": "Your heart's coming-of-age journey.",
     "url": "./heart-story/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "eds-syndrome",
@@ -57,7 +61,8 @@
     "labelText": "Medical",
     "description": "Discovering patterns in Ehlers-Danlos Syndrome",
     "url": "./eds-symptom-discovery/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "pcos-symptoms",
@@ -69,7 +74,8 @@
     "labelText": "Women's Health",
     "description": "Discover which PCOS symptoms are surprisingly connected but rarely discussed",
     "url": "./pcos-surprise-discovery/frontend/pcos-symptoms.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "evolution-invention",
@@ -81,7 +87,8 @@
     "labelText": "History",
     "description": "Explore human innovation from stone tools to the printing press",
     "url": "./evolution-of-invention/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": false
   },
   {
     "id": "privilege",
@@ -93,6 +100,7 @@
     "labelText": "Social",
     "description": "Calculate your statistical privilege using global data and conditional probability",
     "url": "./privilege/frontend/index.html",
-    "status": "available"
+    "status": "available",
+    "wip": true
   }
 ]

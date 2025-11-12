@@ -275,6 +275,22 @@
   }
 }
 
+/* Work in Progress Badge */
+.wip-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 140, 0, 0.9);
+  color: #2a2a2a;
+  font-size: 6px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 165, 0, 0.8);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 /* Cartridge Selection Highlight */
 .cartridge.selected .cartridge-body {
   border: 3px solid var(--gb-lightest);
