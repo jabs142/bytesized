@@ -275,6 +275,41 @@ Where:
 
 ---
 
+## Testing Strategy
+
+This project includes comprehensive test coverage to ensure statistical accuracy and data pipeline reliability.
+
+### Test Organization
+
+**Unit Tests** (`tests/test_statistical_clustering.py`):
+- Coefficient of Variation (CV) calculation accuracy
+- Variance-to-Mean Ratio (VMR) for overdispersion detection
+- Clustering detection threshold validation
+- Sliding window analysis correctness
+- Edge cases: empty data, single-year data, small datasets
+
+**Configuration Tests** (`tests/test_config.py`):
+- Environment variable handling
+- Directory creation and validation
+- API credential validation
+- Configuration parameter bounds checking
+
+**Integration Tests** (`tests/test_integration.py`):
+- Complete pipeline execution with mock FDA data
+- Poisson test clustering detection on synthetic data
+- Drug type filtering (innovative vs. generic)
+- Output file generation and JSON serialization
+- Error handling for missing/corrupted data
+
+### Continuous Validation
+
+Statistical validation is built into the analysis pipeline:
+- **Data integrity checks**: Validates FDA data structure before analysis
+- **Threshold validation**: Ensures clustering parameters are within valid ranges
+- **Output validation**: Confirms JSON serializability and data type correctness
+
+---
+
 ## Limitations & Caveats
 
 ### 1. Correlation ≠ Causation
