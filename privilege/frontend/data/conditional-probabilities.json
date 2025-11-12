@@ -1,0 +1,395 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-11-11",
+    "description": "Conditional probability tables for Global Privilege Calculator",
+    "methodology": "Based on published aggregate statistics from World Bank, UNESCO, WHO, ITU, and UN sources. Where exact conditional probabilities are unavailable, values are estimated from cross-tabulated data and regional averages.",
+    "confidence_level": "moderate - uses published aggregates, not microdata",
+    "update_frequency": "annual"
+  },
+
+  "location_base_probabilities": {
+    "_source": "World Bank Country Income Classifications 2024",
+    "_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/906519",
+    "_retrieved": "2025-11-11",
+    "_note": "DEPRECATED: These are population percentages, not privilege scores. Use location_percentile_base instead.",
+    "high-income": 0.16,
+    "upper-middle-income": 0.35,
+    "lower-middle-income": 0.40,
+    "low-income": 0.09
+  },
+
+  "location_percentile_base": {
+    "_source": "Calculated from World Bank Country Income Classifications 2024",
+    "_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/906519",
+    "_retrieved": "2025-11-11",
+    "_note": "Base percentile for each income group. Represents 'more privileged than X% of world' floor. Additional factors boost within income group.",
+    "_methodology": "Cumulative distribution: low-income (9%) → 0-9th percentile, lower-middle (40%) → 9-49th, upper-middle (35%) → 49-84th, high-income (16%) → 84-100th",
+    "high-income": 84,
+    "upper-middle-income": 49,
+    "lower-middle-income": 9,
+    "low-income": 1
+  },
+
+  "education_given_location": {
+    "_source": "World Bank EdStats & UNESCO Institute for Statistics",
+    "_url": "https://data.worldbank.org/topic/education",
+    "_retrieved": "2025-11-11",
+    "_note": "Tertiary education attainment rates for population 25+ by income group",
+    "high-income": {
+      "university": 0.45,
+      "secondary": 0.35,
+      "primary": 0.15,
+      "none": 0.05
+    },
+    "upper-middle-income": {
+      "university": 0.25,
+      "secondary": 0.45,
+      "primary": 0.25,
+      "none": 0.05
+    },
+    "lower-middle-income": {
+      "university": 0.10,
+      "secondary": 0.48,
+      "primary": 0.32,
+      "none": 0.10
+    },
+    "low-income": {
+      "university": 0.05,
+      "secondary": 0.25,
+      "primary": 0.40,
+      "none": 0.30
+    }
+  },
+
+  "water_given_location": {
+    "_source": "WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation and Hygiene (JMP) 2024",
+    "_url": "https://washdata.org/data",
+    "_retrieved": "2025-11-11",
+    "_note": "Percentage with safely managed drinking water services",
+    "high-income": {
+      "always": 0.99,
+      "sometimes_unreliable": 0.01,
+      "must_collect": 0.00
+    },
+    "upper-middle-income": {
+      "always": 0.85,
+      "sometimes_unreliable": 0.12,
+      "must_collect": 0.03
+    },
+    "lower-middle-income": {
+      "always": 0.60,
+      "sometimes_unreliable": 0.28,
+      "must_collect": 0.12
+    },
+    "low-income": {
+      "always": 0.30,
+      "sometimes_unreliable": 0.35,
+      "must_collect": 0.35
+    }
+  },
+
+  "healthcare_given_location": {
+    "_source": "WHO Global Health Observatory & World Bank Health Nutrition and Population Stats",
+    "_url": "https://www.who.int/data/gho",
+    "_retrieved": "2025-11-11",
+    "_note": "Ability to afford healthcare when needed, based on out-of-pocket health expenditure and UHC service coverage index",
+    "high-income": {
+      "easily": 0.70,
+      "financial_strain": 0.25,
+      "cannot_afford": 0.05
+    },
+    "upper-middle-income": {
+      "easily": 0.35,
+      "financial_strain": 0.45,
+      "cannot_afford": 0.20
+    },
+    "lower-middle-income": {
+      "easily": 0.20,
+      "financial_strain": 0.40,
+      "cannot_afford": 0.40
+    },
+    "low-income": {
+      "easily": 0.10,
+      "financial_strain": 0.25,
+      "cannot_afford": 0.65
+    }
+  },
+
+  "internet_given_location": {
+    "_source": "ITU World Telecommunication/ICT Indicators Database 2024",
+    "_url": "https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx",
+    "_retrieved": "2025-11-11",
+    "_note": "Individuals using the Internet by country income level",
+    "high-income": {
+      "high_speed_home": 0.82,
+      "limited_mobile": 0.15,
+      "none": 0.03
+    },
+    "upper-middle-income": {
+      "high_speed_home": 0.58,
+      "limited_mobile": 0.32,
+      "none": 0.10
+    },
+    "lower-middle-income": {
+      "high_speed_home": 0.28,
+      "limited_mobile": 0.38,
+      "none": 0.34
+    },
+    "low-income": {
+      "high_speed_home": 0.08,
+      "limited_mobile": 0.18,
+      "none": 0.74
+    }
+  },
+
+  "income_given_education_and_location": {
+    "_source": "World Bank Poverty and Equity Database & Global Income Distribution",
+    "_url": "https://pip.worldbank.org/",
+    "_retrieved": "2025-11-11",
+    "_note": "Household income brackets conditional on education level within income group. USD purchasing power parity.",
+    "high-income": {
+      "university": {
+        "above_50k": 0.60,
+        "20k_to_50k": 0.30,
+        "5k_to_20k": 0.08,
+        "below_5k": 0.02
+      },
+      "secondary": {
+        "above_50k": 0.35,
+        "20k_to_50k": 0.45,
+        "5k_to_20k": 0.18,
+        "below_5k": 0.02
+      },
+      "primary_or_less": {
+        "above_50k": 0.10,
+        "20k_to_50k": 0.30,
+        "5k_to_20k": 0.45,
+        "below_5k": 0.15
+      }
+    },
+    "upper-middle-income": {
+      "university": {
+        "above_50k": 0.25,
+        "20k_to_50k": 0.40,
+        "5k_to_20k": 0.30,
+        "below_5k": 0.05
+      },
+      "secondary": {
+        "above_50k": 0.08,
+        "20k_to_50k": 0.30,
+        "5k_to_20k": 0.50,
+        "below_5k": 0.12
+      },
+      "primary_or_less": {
+        "above_50k": 0.02,
+        "20k_to_50k": 0.15,
+        "5k_to_20k": 0.55,
+        "below_5k": 0.28
+      }
+    },
+    "lower-middle-income": {
+      "university": {
+        "above_50k": 0.08,
+        "20k_to_50k": 0.25,
+        "5k_to_20k": 0.55,
+        "below_5k": 0.12
+      },
+      "secondary": {
+        "above_50k": 0.02,
+        "20k_to_50k": 0.12,
+        "5k_to_20k": 0.60,
+        "below_5k": 0.26
+      },
+      "primary_or_less": {
+        "above_50k": 0.01,
+        "20k_to_50k": 0.05,
+        "5k_to_20k": 0.50,
+        "below_5k": 0.44
+      }
+    },
+    "low-income": {
+      "university": {
+        "above_50k": 0.05,
+        "20k_to_50k": 0.15,
+        "5k_to_20k": 0.50,
+        "below_5k": 0.30
+      },
+      "secondary": {
+        "above_50k": 0.01,
+        "20k_to_50k": 0.05,
+        "5k_to_20k": 0.40,
+        "below_5k": 0.54
+      },
+      "primary_or_less": {
+        "above_50k": 0.00,
+        "20k_to_50k": 0.02,
+        "5k_to_20k": 0.28,
+        "below_5k": 0.70
+      }
+    }
+  },
+
+  "internet_access_given_birth_year": {
+    "_source": "ITU World Telecommunication/ICT Indicators Database - Historical Time Series",
+    "_url": "https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx",
+    "_retrieved": "2025-11-11",
+    "_note": "Global internet penetration rates by year. Values represent % of world population with internet access at age 10 (formative technology exposure period).",
+    "temporal_series": {
+      "2024": 0.67,
+      "2020": 0.59,
+      "2015": 0.43,
+      "2010": 0.29,
+      "2005": 0.16,
+      "2000": 0.07,
+      "1995": 0.01,
+      "1990": 0.00,
+      "1985": 0.00,
+      "1980": 0.00
+    }
+  },
+
+  "education_access_given_birth_year": {
+    "_source": "UNESCO Institute for Statistics - Historical Education Attainment",
+    "_url": "http://data.uis.unesco.org/",
+    "_retrieved": "2025-11-11",
+    "_note": "Global secondary school completion rates by cohort birth year",
+    "temporal_series": {
+      "2014": 0.65,
+      "2010": 0.62,
+      "2005": 0.57,
+      "2000": 0.52,
+      "1995": 0.46,
+      "1990": 0.40,
+      "1985": 0.35,
+      "1980": 0.30,
+      "1975": 0.26,
+      "1970": 0.22,
+      "1965": 0.18,
+      "1960": 0.15
+    }
+  },
+
+  "hunger_given_location": {
+    "_source": "FAO State of Food Security and Nutrition in the World 2024",
+    "_url": "https://www.fao.org/publications/sofi/",
+    "_retrieved": "2025-11-11",
+    "_note": "Food insecurity prevalence by country income level",
+    "high-income": {
+      "never": 0.90,
+      "occasionally": 0.08,
+      "frequently": 0.02
+    },
+    "upper-middle-income": {
+      "never": 0.70,
+      "occasionally": 0.22,
+      "frequently": 0.08
+    },
+    "lower-middle-income": {
+      "never": 0.50,
+      "occasionally": 0.30,
+      "frequently": 0.20
+    },
+    "low-income": {
+      "never": 0.30,
+      "occasionally": 0.35,
+      "frequently": 0.35
+    }
+  },
+
+  "savings_given_income_and_location": {
+    "_source": "World Bank Global Findex Database 2021",
+    "_url": "https://www.worldbank.org/en/publication/globalfindex",
+    "_retrieved": "2025-11-11",
+    "_note": "Emergency savings by income level and country group",
+    "high-income": {
+      "above_50k": {
+        "more_than_3mo": 0.50,
+        "about_3mo": 0.25,
+        "less_than_3mo": 0.20,
+        "none": 0.05
+      },
+      "20k_to_50k": {
+        "more_than_3mo": 0.25,
+        "about_3mo": 0.30,
+        "less_than_3mo": 0.30,
+        "none": 0.15
+      },
+      "below_20k": {
+        "more_than_3mo": 0.10,
+        "about_3mo": 0.15,
+        "less_than_3mo": 0.35,
+        "none": 0.40
+      }
+    },
+    "upper-middle-income": {
+      "above_20k": {
+        "more_than_3mo": 0.30,
+        "about_3mo": 0.25,
+        "less_than_3mo": 0.30,
+        "none": 0.15
+      },
+      "below_20k": {
+        "more_than_3mo": 0.08,
+        "about_3mo": 0.12,
+        "less_than_3mo": 0.30,
+        "none": 0.50
+      }
+    },
+    "lower-middle-income": {
+      "above_5k": {
+        "more_than_3mo": 0.15,
+        "about_3mo": 0.18,
+        "less_than_3mo": 0.32,
+        "none": 0.35
+      },
+      "below_5k": {
+        "more_than_3mo": 0.05,
+        "about_3mo": 0.08,
+        "less_than_3mo": 0.22,
+        "none": 0.65
+      }
+    },
+    "low-income": {
+      "any": {
+        "more_than_3mo": 0.03,
+        "about_3mo": 0.05,
+        "less_than_3mo": 0.17,
+        "none": 0.75
+      }
+    }
+  },
+
+  "uncertainty_parameters": {
+    "_note": "Beta distribution parameters for Monte Carlo simulation. Alpha and beta values represent concentration parameters for uncertainty in each estimate.",
+    "default_confidence": {
+      "high_confidence": {
+        "alpha": 50,
+        "beta": 50,
+        "description": "Well-documented statistics with large sample sizes (e.g., World Bank country classifications)"
+      },
+      "moderate_confidence": {
+        "alpha": 20,
+        "beta": 20,
+        "description": "Published aggregates but limited cross-tabulation (e.g., conditional probabilities estimated from marginals)"
+      },
+      "low_confidence": {
+        "alpha": 10,
+        "beta": 10,
+        "description": "Estimates based on proxy indicators or extrapolation (e.g., historical trends)"
+      }
+    },
+    "factor_confidence_levels": {
+      "location_base_probabilities": "high_confidence",
+      "education_given_location": "moderate_confidence",
+      "water_given_location": "high_confidence",
+      "healthcare_given_location": "moderate_confidence",
+      "internet_given_location": "high_confidence",
+      "income_given_education_and_location": "moderate_confidence",
+      "internet_access_given_birth_year": "high_confidence",
+      "education_access_given_birth_year": "moderate_confidence",
+      "hunger_given_location": "high_confidence",
+      "savings_given_income_and_location": "moderate_confidence"
+    }
+  }
+}
