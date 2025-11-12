@@ -1,5 +1,5 @@
 /**
- * Global Privilege Calculator - ByteSized
+ * Global Life Statistics Quiz - ByteSized
  * Styles following the ByteSized Design System
  */
 
@@ -26,6 +26,7 @@ body {
 
 .game-body {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     padding: 2rem;
@@ -38,9 +39,11 @@ body {
 
 .game-container {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 2rem;
     max-width: 1400px;
-    width: 100%;
+    margin: 0 auto;
 }
 
 /* ============================================
@@ -48,8 +51,10 @@ body {
    ============================================ */
 
 .gameboy-device {
-    flex: 1;
-    max-width: 800px;
+    flex: 0 0 auto;
+    width: 700px;
+    min-height: 800px;
+    max-width: 700px;
     background-color: var(--device-body);
     border-radius: 12px;
     padding: 2rem;
@@ -109,6 +114,8 @@ body {
    ============================================ */
 
 .screen-container {
+    height: 500px;
+    overflow: hidden;
     background-color: var(--device-dark);
     border-radius: 8px;
     padding: 1.5rem;
@@ -123,10 +130,10 @@ body {
 
 .screen-glass {
     position: relative;
+    height: 100%;
+    overflow: hidden;
     background-color: var(--screen-bg);
     border-radius: 2px;
-    min-height: 500px;
-    overflow: hidden;
 }
 
 .crt-overlay {
@@ -160,9 +167,11 @@ body {
 
 .screen-content {
     position: relative;
-    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem;
     z-index: 3;
-    min-height: 500px;
 }
 
 /* ============================================
@@ -171,11 +180,13 @@ body {
 
 .quiz-screen {
     display: none;
+    min-height: 100%;
+    flex-direction: column;
     animation: fadeIn 0.3s ease-in;
 }
 
 .quiz-screen.active {
-    display: block;
+    display: flex;
 }
 
 @keyframes fadeIn {
@@ -204,6 +215,17 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+/* Welcome Screen Button Positioning */
+#welcomeScreen .screen-body {
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+#startQuiz {
+    margin-top: auto;
+    align-self: center;
 }
 
 .intro-text {
@@ -466,7 +488,9 @@ body {
    ============================================ */
 
 .info-panel {
-    flex: 0 0 350px;
+    flex: 0 0 auto;
+    width: 350px;
+    max-width: 350px;
     background-color: var(--bg-card);
     border-radius: 8px;
     padding: 1.5rem;
@@ -795,24 +819,239 @@ body {
 }
 
 /* ============================================
-   METHODOLOGY NOTE
+   ANSWER CARDS SECTION
+   ============================================ */
+
+.answer-cards-section {
+    margin: 2rem 0;
+}
+
+.answer-cards-container {
+    position: relative;
+    min-height: 300px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.answer-card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.answer-card.active {
+    display: flex;
+}
+
+.card-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.card-visual {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-answer {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}
+
+.card-stat {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.card-source {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.card-counter {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Card Navigation */
+.card-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card-nav-btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card-nav-btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   VISUAL COMPONENTS WITH PROGRESS BARS
+   ============================================ */
+
+.visual-water,
+.visual-education,
+.visual-income,
+.visual-healthcare,
+.visual-food,
+.visual-internet,
+.visual-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 250px;
+}
+
+.icon-display {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 30px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    transition: width 0.8s ease-out;
+    border-radius: 15px;
+    position: relative;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.percentage-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Visual Styles - Generic */
+.visual-generic {
+    width: 200px;
+    text-align: center;
+}
+
+.generic-bar-bg {
+    width: 100%;
+    height: 30px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.generic-bar-fill {
+    height: 100%;
+    background: var(--accent-color);
+    transition: width 0.5s ease;
+}
+
+.generic-percentage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* ============================================
+   METHODOLOGY NOTE (OUTSIDE GAME BOY)
    ============================================ */
 
 .methodology-note {
-    margin-top: 2rem;
-    background-color: rgba(231, 76, 60, 0.1);
-    border-left: 3px solid var(--button-red);
-    border-radius: 4px;
-    padding: 1rem;
+    margin: 2rem auto;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0;
+    max-width: 1400px;
+    width: calc(100% - 4rem);
+    display: block;
+    clear: both;
+    flex-basis: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 .methodology-note summary {
-    font-family: var(--font-pixel);
-    font-size: 0.75rem;
-    color: var(--gb-darkest);
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     cursor: pointer;
     user-select: none;
-    padding: 0.5rem;
+    transition: background 0.2s ease;
     list-style: none;
 }
 
@@ -831,11 +1070,47 @@ body {
     transform: rotate(90deg);
 }
 
+.methodology-note summary:hover {
+    background: #f5f5f5;
+}
+
 .methodology-content {
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    padding: 0 1.5rem 1.5rem;
     font-size: 0.875rem;
     line-height: 1.6;
     color: var(--text-primary);
+}
+
+/* Nested Factor Impact Dropdown */
+.factor-impact-dropdown {
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+.factor-impact-dropdown summary {
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.factor-impact-dropdown summary:hover {
+    background: #f0f0f0;
+}
+
+.factor-impact-content {
+    padding: 1rem;
+}
+
+.factor-impact-dropdown .contributions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .methodology-content h4 {
@@ -981,6 +1256,8 @@ body {
 
     .gameboy-device {
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .screen-content {
@@ -1008,5 +1285,33 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+
+    /* Answer cards responsive adjustments */
+    .answer-cards-container {
+        padding: 1rem;
+        min-height: 250px;
+    }
+
+    .card-visual {
+        transform: scale(0.85);
+    }
+
+    .card-navigation {
+        flex-direction: column;
+    }
+
+    .visual-water,
+    .visual-education,
+    .visual-income,
+    .visual-healthcare,
+    .visual-food,
+    .visual-internet,
+    .visual-location {
+        width: 100%;
+    }
+
+    .icon-display {
+        font-size: 2.5rem;
     }
 }

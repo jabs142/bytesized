@@ -2,7 +2,7 @@
   "_metadata": {
     "version": "1.0.0",
     "last_updated": "2025-11-11",
-    "description": "Conditional probability tables for Global Privilege Calculator",
+    "description": "Conditional probability tables for Global Life Statistics Quiz",
     "methodology": "Based on published aggregate statistics from World Bank, UNESCO, WHO, ITU, and UN sources. Where exact conditional probabilities are unavailable, values are estimated from cross-tabulated data and regional averages.",
     "confidence_level": "moderate - uses published aggregates, not microdata",
     "update_frequency": "annual"

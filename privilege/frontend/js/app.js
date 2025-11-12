@@ -1,5 +1,5 @@
 /**
- * Global Privilege Calculator - ByteSized
+ * Global Life Statistics Quiz - ByteSized
  * Quiz logic and smart conditional probability calculations
  */
 
@@ -368,9 +368,12 @@ function calculateResults() {
                     source: question.source
                 };
             } else if (question.type === 'country') {
+                // Get location percentile from factor details
+                const locationFactor = baseResult.factorDetails.find(f => f.factor === 'location');
                 return {
                     category: question.question,
                     answer: answer.country,
+                    globalPercentage: locationFactor ? locationFactor.percentile : null,
                     source: question.source
                 };
             } else {
@@ -387,6 +390,267 @@ function calculateResults() {
         console.error('Error calculating results:', error);
         alert('Failed to calculate results. Please try again.');
         throw error;
+    }
+}
+
+// Generate contextual description for each factor
+function getFactorDescription(question, percentage, answer) {
+    const q = question.toLowerCase();
+    const pct = Math.round(percentage);
+
+    if (q.includes('country') || q.includes('live in')) {
+        return `You rank higher than ${pct}% of the global population based on your country's income level`;
+    } else if (q.includes('education')) {
+        if (answer.toLowerCase().includes('university')) {
+            return `${pct}% of the global population has a university degree`;
+        } else if (answer.toLowerCase().includes('secondary') || answer.toLowerCase().includes('high school')) {
+            return `${pct}% of the global population has completed at least secondary education`;
+        } else if (answer.toLowerCase().includes('primary')) {
+            return `${pct}% of the global population has completed at least primary education`;
+        } else {
+            return `${pct}% of the global population has no formal education`;
+        }
+    } else if (q.includes('income') || q.includes('household')) {
+        return `${pct}% of households globally earn this much or more`;
+    } else if (q.includes('water')) {
+        if (answer.toLowerCase().includes('always')) {
+            return `${pct}% of the global population has reliable access to clean water`;
+        } else if (answer.toLowerCase().includes('unreliable')) {
+            return `${pct}% of the global population has unreliable water access`;
+        } else {
+            return `${pct}% of the global population must collect water from elsewhere`;
+        }
+    } else if (q.includes('health') || q.includes('doctor') || q.includes('afford')) {
+        if (answer.toLowerCase().includes('easily')) {
+            return `${pct}% of the global population can easily afford healthcare when needed`;
+        } else if (answer.toLowerCase().includes('strain')) {
+            return `${pct}% of the global population face financial strain for healthcare`;
+        } else {
+            return `${pct}% of the global population cannot afford healthcare when needed`;
+        }
+    } else if (q.includes('food') || q.includes('hungry') || q.includes('worry')) {
+        if (answer.toLowerCase().includes('never')) {
+            return `${pct}% of the global population never worry about having enough food`;
+        } else if (answer.toLowerCase().includes('occasionally')) {
+            return `${pct}% of the global population occasionally worry about having enough food`;
+        } else {
+            return `${pct}% of the global population frequently worry about having enough food`;
+        }
+    } else if (q.includes('internet') || q.includes('online')) {
+        if (answer.toLowerCase().includes('high-speed')) {
+            return `${pct}% of the global population has high-speed internet at home`;
+        } else if (answer.toLowerCase().includes('limited')) {
+            return `${pct}% of the global population has limited or mobile-only internet access`;
+        } else {
+            return `${pct}% of the global population has no internet access`;
+        }
+    } else if (q.includes('safe') || q.includes('safety')) {
+        if (answer.toLowerCase().includes('very')) {
+            return `${pct}% of the global population feels very safe walking alone at night`;
+        } else if (answer.toLowerCase().includes('somewhat')) {
+            return `${pct}% of the global population feels somewhat safe walking alone at night`;
+        } else {
+            return `${pct}% of the global population feels unsafe walking alone at night`;
+        }
+    } else if (q.includes('discrimination')) {
+        if (answer.toLowerCase().includes('no')) {
+            return `${pct}% of the global population has not experienced discrimination in the past year`;
+        } else if (answer.toLowerCase().includes('occasionally')) {
+            return `${pct}% of the global population has occasionally experienced discrimination in the past year`;
+        } else {
+            return `${pct}% of the global population has frequently experienced discrimination in the past year`;
+        }
+    } else if (q.includes('savings') || q.includes('expenses')) {
+        if (answer.toLowerCase().includes('more than')) {
+            return `${pct}% of the global population has savings to cover more than 3 months of expenses`;
+        } else if (answer.toLowerCase().includes('about 3')) {
+            return `${pct}% of the global population has savings to cover about 3 months of expenses`;
+        } else if (answer.toLowerCase().includes('less than')) {
+            return `${pct}% of the global population has savings to cover less than 3 months of expenses`;
+        } else {
+            return `${pct}% of the global population has no savings`;
+        }
+    } else {
+        // Generic fallback
+        return `You rank at the ${pct}th percentile globally for this factor`;
+    }
+}
+
+// Create interactive answer cards with custom visuals
+function createAnswerCards(breakdown) {
+    const answersSection = document.createElement('div');
+    answersSection.className = 'answer-cards-section';
+    answersSection.innerHTML = '<h3 class="section-header">📋 Your Answers</h3>';
+
+    // Create cards container
+    const cardsContainer = document.createElement('div');
+    cardsContainer.className = 'answer-cards-container';
+
+    let currentCardIndex = 0;
+
+    // Create a card for each answer
+    breakdown.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = `answer-card ${index === 0 ? 'active' : ''}`;
+        card.dataset.index = index;
+
+        // Get custom visual for this factor
+        const visual = getFactorVisual(item.category, item.globalPercentage || 50);
+
+        // Get contextual description
+        const description = item.globalPercentage ?
+            getFactorDescription(item.category, item.globalPercentage, item.answer) : '';
+
+        card.innerHTML = `
+            <div class="card-question">${item.category}</div>
+            <div class="card-visual">${visual}</div>
+            <div class="card-answer">${item.answer}</div>
+            ${description ? `
+                <div class="card-stat">${description}</div>
+                <div class="card-source">Source: ${item.source}</div>
+            ` : ''}
+            <div class="card-counter">${index + 1} / ${breakdown.length}</div>
+        `;
+
+        cardsContainer.appendChild(card);
+    });
+
+    // Add navigation buttons
+    const navContainer = document.createElement('div');
+    navContainer.className = 'card-navigation';
+    navContainer.innerHTML = `
+        <button class="card-nav-btn card-prev" id="cardPrev">◀ Previous</button>
+        <button class="card-nav-btn card-next" id="cardNext">Next ▶</button>
+    `;
+
+    answersSection.appendChild(cardsContainer);
+    answersSection.appendChild(navContainer);
+    breakdownContainer.appendChild(answersSection);
+
+    // Add navigation handlers
+    const cards = cardsContainer.querySelectorAll('.answer-card');
+    const prevBtn = document.getElementById('cardPrev');
+    const nextBtn = document.getElementById('cardNext');
+
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('active', i === index);
+        });
+        currentCardIndex = index;
+
+        // Update button states
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === cards.length - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentCardIndex > 0) {
+            showCard(currentCardIndex - 1);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentCardIndex < cards.length - 1) {
+            showCard(currentCardIndex + 1);
+        }
+    });
+
+    // Initialize button states
+    showCard(0);
+}
+
+// Generate custom visual for each factor
+function getFactorVisual(question, percentile) {
+    const percentage = percentile || 50;
+
+    // Determine factor type from question text
+    if (question.toLowerCase().includes('water')) {
+        // Water with progress bar
+        return `
+            <div class="visual-water">
+                <div class="icon-display">💧</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else if (question.toLowerCase().includes('education')) {
+        // Graduation cap with progress bar
+        return `
+            <div class="visual-education">
+                <div class="icon-display">🎓</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else if (question.toLowerCase().includes('income') || question.toLowerCase().includes('household')) {
+        // Money with progress bar
+        return `
+            <div class="visual-income">
+                <div class="icon-display">💵</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else if (question.toLowerCase().includes('health') || question.toLowerCase().includes('medical') || question.toLowerCase().includes('doctor') || question.toLowerCase().includes('afford')) {
+        // Healthcare with progress bar
+        return `
+            <div class="visual-healthcare">
+                <div class="icon-display">🏥</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else if (question.toLowerCase().includes('food') || question.toLowerCase().includes('meals') || question.toLowerCase().includes('hungry')) {
+        // Food with progress bar
+        return `
+            <div class="visual-food">
+                <div class="icon-display">🍽️</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else if (question.toLowerCase().includes('internet') || question.toLowerCase().includes('online')) {
+        // Internet with progress bar
+        return `
+            <div class="visual-internet">
+                <div class="icon-display">📶</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else if (question.toLowerCase().includes('country') || question.toLowerCase().includes('live')) {
+        // Location with progress bar
+        return `
+            <div class="visual-location">
+                <div class="icon-display">🌍</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="percentage-label">${Math.round(percentage)}%</div>
+            </div>
+        `;
+    } else {
+        // Generic bar chart
+        return `
+            <div class="visual-generic">
+                <div class="generic-bar-bg">
+                    <div class="generic-bar-fill" style="width: ${percentage}%"></div>
+                </div>
+                <div class="generic-percentage">${Math.round(percentage)}%</div>
+            </div>
+        `;
     }
 }
 
@@ -416,64 +680,8 @@ function showResults() {
     // Display breakdown
     breakdownContainer.innerHTML = '';
 
-    // Add factor contributions section
-    const contributionsSection = document.createElement('div');
-    contributionsSection.className = 'contributions-section';
-    contributionsSection.innerHTML = `
-        <h3 class="section-header">📊 Factor Impact Analysis</h3>
-        <p class="section-description">Each factor's weighted contribution to your overall score:</p>
-    `;
-
-    const contributionsList = document.createElement('div');
-    contributionsList.className = 'contributions-list';
-
-    // Display all factor contributors with new data structure
-    const allContributors = quizData.factorContributions; // Show all factors
-    allContributors.forEach((contribution, index) => {
-        const contributionItem = document.createElement('div');
-        contributionItem.className = 'contribution-item';
-        contributionItem.innerHTML = `
-            <div class="contribution-header">
-                <span class="contribution-rank">#${index + 1}</span>
-                <span class="contribution-label">${contribution.label}</span>
-            </div>
-            <div class="contribution-answer">${contribution.userAnswer}</div>
-            <div class="contribution-details">
-                <span class="contribution-percentile">Your percentile: ${Math.round(contribution.percentile)}%</span>
-                <span class="contribution-weight">Weight: ${(contribution.weight * 100).toFixed(0)}%</span>
-            </div>
-            <div class="contribution-bar-container">
-                <div class="contribution-bar" style="width: ${Math.min(100, contribution.percentile)}%"></div>
-            </div>
-            <div class="contribution-value">Contributes ${contribution.weightedContribution.toFixed(1)} points to final score</div>
-        `;
-        contributionsList.appendChild(contributionItem);
-    });
-
-    contributionsSection.appendChild(contributionsList);
-    breakdownContainer.appendChild(contributionsSection);
-
-    // Add answers breakdown section
-    const answersSection = document.createElement('div');
-    answersSection.className = 'answers-section';
-    answersSection.innerHTML = '<h3 class="section-header">📋 Your Answers</h3>';
-
-    quizData.breakdown.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'breakdown-item';
-        div.innerHTML = `
-            <div class="breakdown-title">${item.category}</div>
-            <div class="breakdown-value">${item.answer}</div>
-            ${item.globalPercentage ? `
-                <div class="breakdown-meta">
-                    ${item.globalPercentage}% of global population • Source: ${item.source}
-                </div>
-            ` : ''}
-        `;
-        answersSection.appendChild(div);
-    });
-
-    breakdownContainer.appendChild(answersSection);
+    // Add interactive answer cards section
+    createAnswerCards(quizData.breakdown);
 
     // Add comprehensive methodology explanation
     const methodologyNote = document.createElement('details');
@@ -583,6 +791,32 @@ function showResults() {
                 <li>✅ <strong>Scientifically grounded</strong>: Weights from established development indices</li>
             </ul>
 
+            <details class="factor-impact-dropdown">
+                <summary>📊 Your Factor Impact Analysis (Click to expand)</summary>
+                <div class="factor-impact-content">
+                    <p>Each factor's weighted contribution to your overall score of ${quizData.lifeStatsScore}%:</p>
+                    <div class="contributions-list">
+                        ${quizData.factorContributions.map((contribution, index) => `
+                            <div class="contribution-item">
+                                <div class="contribution-header">
+                                    <span class="contribution-rank">#${index + 1}</span>
+                                    <span class="contribution-label">${contribution.label}</span>
+                                </div>
+                                <div class="contribution-answer">${contribution.userAnswer}</div>
+                                <div class="contribution-details">
+                                    <span class="contribution-percentile">Your percentile: ${Math.round(contribution.percentile)}%</span>
+                                    <span class="contribution-weight">Weight: ${(contribution.weight * 100).toFixed(0)}%</span>
+                                </div>
+                                <div class="contribution-bar-container">
+                                    <div class="contribution-bar" style="width: ${Math.min(100, contribution.percentile)}%"></div>
+                                </div>
+                                <div class="contribution-value">Contributes ${contribution.weightedContribution.toFixed(1)} points to final score</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </details>
+
             <h4>Confidence Intervals</h4>
             <p>We run 1,000 Monte Carlo simulations adding statistical noise (±5 percentage points per dimension) to account for measurement uncertainty. The 90% confidence interval means we're 90% confident your true percentile falls within that range.</p>
 
@@ -607,7 +841,23 @@ function showResults() {
             </ul>
         </div>
     `;
-    breakdownContainer.appendChild(methodologyNote);
+
+    // Append methodology after the entire game-container (below gameboy and info panel)
+    const gameContainer = document.querySelector('.game-container');
+
+    // Remove any existing methodology
+    const existingMethodology = document.querySelector('.methodology-note');
+    if (existingMethodology) {
+        existingMethodology.remove();
+    }
+
+    // Insert methodology after the entire game container
+    if (gameContainer) {
+        gameContainer.insertAdjacentElement('afterend', methodologyNote);
+    } else {
+        // Fallback: append to body
+        document.body.appendChild(methodologyNote);
+    }
 
     showScreen('results');
 }
