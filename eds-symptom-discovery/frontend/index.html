@@ -64,7 +64,11 @@
       <section class="chart-section">
         <h2>Top 10 Symptoms by Patient Reports</h2>
         <div class="card chart-card">
-          <canvas id="topSymptomsChart"></canvas>
+          <canvas
+            id="topSymptomsChart"
+            role="img"
+            aria-label="Bar chart showing top 10 EDS symptoms by patient report frequency. Pain is the most reported symptom with over 75 mentions, followed by fatigue, joint hypermobility, and dislocations."
+          ></canvas>
         </div>
       </section>
 
@@ -76,14 +80,18 @@
         </p>
         <div class="card">
           <div class="table-responsive">
-            <table id="hidden-gems-table">
+            <table
+              id="hidden-gems-table"
+              role="table"
+              aria-label="Research gaps table showing symptoms with high patient reports but low research coverage"
+            >
               <thead>
                 <tr>
-                  <th>Symptom</th>
-                  <th>Patient Mentions</th>
-                  <th>Research Papers</th>
-                  <th>Surprise Score</th>
-                  <th>Research Gap</th>
+                  <th scope="col">Symptom</th>
+                  <th scope="col">Patient Mentions</th>
+                  <th scope="col">Research Papers</th>
+                  <th scope="col">Surprise Score</th>
+                  <th scope="col">Research Gap</th>
                 </tr>
               </thead>
               <tbody>

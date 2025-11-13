@@ -174,8 +174,17 @@ function renderScatterPlot(decade) {
   const width = 900;
   const height = 600;
 
+  // Create accessible description
+  const description = `Scatter plot showing ${approvals.length} drug approvals across therapeutic areas in the ${decade.label}. Each dot represents one drug approval. Y-axis shows therapeutic categories, X-axis shows years within the decade.`;
+
   // Create SVG
-  const svg = d3.select(container).append('svg').attr('width', width).attr('height', height);
+  const svg = d3
+    .select(container)
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('role', 'img')
+    .attr('aria-label', description);
 
   const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 

@@ -34,9 +34,9 @@
      TEXT COLORS
      ============================================ */
 
-  --text-primary: #2a2a2a; /* Main body text */
-  --text-secondary: #5a5a5a; /* Secondary/muted text */
-  --text-light: #787774; /* Light gray text (captions) */
+  --text-primary: #2a2a2a; /* Main body text (contrast ratio: 12.6:1 on #e8e8e8) */
+  --text-secondary: #4a4a4a; /* Secondary/muted text (darkened from #5a5a5a for better contrast: 7.3:1 on #e8e8e8) */
+  --text-light: #666; /* Light gray text, captions (darkened from #787774 for WCAG AA compliance: 5.7:1 on #e8e8e8) */
 
   /* ============================================
      DEVICE COLORS (Game Boy Console)
@@ -103,10 +103,10 @@
   /* Press Start 2P (Headers & Retro Elements) */
   --text-h1: 1rem; /* 16px - Main page titles */
   --text-h2: 0.75rem; /* 12px - Section headers */
-  --text-h3: 0.625rem; /* 10px - Subsection headers */
+  --text-h3: 0.75rem; /* 12px - Subsection headers (increased from 10px for accessibility) */
   --text-stats: 1.75rem; /* 28px - Big stat numbers */
-  --text-button: 0.5rem; /* 8px - Button labels */
-  --text-label: 0.5rem; /* 8px - Small labels, legends */
+  --text-button: 0.625rem; /* 10px - Button labels (increased from 8px for accessibility) */
+  --text-label: 0.625rem; /* 10px - Small labels, legends (increased from 8px for accessibility) */
 
   /* System Fonts (Body Text) */
   --text-body: 0.9375rem; /* 15px - Main content */

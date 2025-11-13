@@ -48,14 +48,14 @@
     </div>
 
     <!-- Stats Overlay (Fixed Top Left) -->
-    <div id="stats-overlay">
+    <div id="stats-overlay" role="region" aria-live="polite" aria-atomic="false">
       <div class="stat-box">
         <div class="stat-label">Total Cases</div>
-        <div id="total-cases" class="stat-value" data-value="0">0</div>
+        <div id="total-cases" class="stat-value" data-value="0" aria-label="Total COVID-19 cases">0</div>
       </div>
       <div class="stat-box">
         <div class="stat-label">Total Deaths</div>
-        <div id="total-deaths" class="stat-value" data-value="0">0</div>
+        <div id="total-deaths" class="stat-value" data-value="0" aria-label="Total COVID-19 deaths">0</div>
       </div>
     </div>
 
@@ -72,14 +72,14 @@
     </div>
 
     <!-- Narrative Card (Fixed Bottom) -->
-    <div id="narrative-card">
+    <div id="narrative-card" role="region" aria-live="polite" aria-atomic="true">
       <div class="narrative-content">
         <p id="narrative-subtitle">December 2019</p>
         <p id="narrative-text">
           In late December 2019, mysterious pneumonia cases emerged in Wuhan, China. The world was just beginning to
           take notice of what would become the most significant pandemic in a century.
         </p>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
           <div class="scroll-arrow">↓</div>
           <div class="scroll-text">Scroll to explore</div>
         </div>

@@ -232,8 +232,12 @@ function setupEventListeners() {
   document.querySelectorAll('.filter-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       // Update active button
-      document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       e.target.classList.add('active');
+      e.target.setAttribute('aria-pressed', 'true');
 
       // Update filter and re-render
       currentFilter = e.target.dataset.filter;

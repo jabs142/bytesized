@@ -55,13 +55,13 @@
               <div class="scanlines"></div>
 
               <!-- Screen Content -->
-              <div id="screenContent" class="screen-content">
+              <div id="screenContent" class="screen-content" aria-live="polite" aria-atomic="true">
                 <div class="screen-title" id="screenTitle">
                   <div class="pixel-text-lg">BYTESIZED</div>
                 </div>
 
                 <!-- Dynamic Pixel Mascot -->
-                <div class="pixel-mascot" id="mascotContainer">
+                <div class="pixel-mascot" id="mascotContainer" aria-hidden="true">
                   <div class="mascot-character mascot-default">
                     <div class="mascot-head"></div>
                     <div class="mascot-body"></div>
@@ -110,18 +110,18 @@
       </div>
 
       <!-- Cartridge Shelf -->
-      <div class="cartridge-shelf">
+      <nav class="cartridge-shelf" aria-label="Data visualization cartridges">
         <div class="shelf-header">
           <h2 class="shelf-title pixel-text-md">CLICK TO LOAD TOPIC</h2>
           <p class="shelf-subtitle pixel-text-xs">CLICK TO LOAD TOPIC</p>
         </div>
-        <div id="cartridgeGrid" class="cartridge-grid">
+        <div id="cartridgeGrid" class="cartridge-grid" role="list">
           <!-- Cartridges will be loaded here by JavaScript -->
           <div class="loading-cartridges pixel-text-xs">
             <p>LOADING CARTRIDGES...</p>
           </div>
         </div>
-      </div>
+      </nav>
 
       <!-- System Controls -->
       <div class="system-controls">

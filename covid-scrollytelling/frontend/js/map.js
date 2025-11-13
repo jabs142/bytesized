@@ -37,7 +37,12 @@ export class MapRenderer {
       .attr('width', '100%')
       .attr('height', '100%')
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .attr('preserveAspectRatio', 'xMidYMid meet');
+      .attr('preserveAspectRatio', 'xMidYMid meet')
+      .attr('role', 'img')
+      .attr(
+        'aria-label',
+        'Interactive world map showing COVID-19 case density by country. Color intensity represents cases per million population. Map updates as you scroll through the timeline.'
+      );
 
     // Create main group
     this.g = this.svg.append('g');

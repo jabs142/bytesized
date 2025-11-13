@@ -84,18 +84,26 @@
         <!-- Surprise Classifications Filter -->
         <section class="filter-section">
           <h2>Filter by Surprise Level</h2>
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Symptoms</button>
-            <button class="filter-btn" data-filter="very">🔥 Very Surprising</button>
-            <button class="filter-btn" data-filter="somewhat">⚠️ Somewhat Surprising</button>
-            <button class="filter-btn" data-filter="expected">✓ Expected</button>
+          <div class="filter-buttons" role="group" aria-label="Filter symptoms by surprise level">
+            <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-controls="symptomsList">
+              All Symptoms
+            </button>
+            <button class="filter-btn" data-filter="very" aria-pressed="false" aria-controls="symptomsList">
+              🔥 Very Surprising
+            </button>
+            <button class="filter-btn" data-filter="somewhat" aria-pressed="false" aria-controls="symptomsList">
+              ⚠️ Somewhat Surprising
+            </button>
+            <button class="filter-btn" data-filter="expected" aria-pressed="false" aria-controls="symptomsList">
+              ✓ Expected
+            </button>
           </div>
         </section>
 
         <!-- Symptoms List -->
         <section class="symptoms-section">
           <h2>Top Symptoms Ranked by Surprise Factor</h2>
-          <div id="symptomsList" class="symptoms-list">
+          <div id="symptomsList" class="symptoms-list" role="region" aria-live="polite" aria-atomic="false">
             <!-- Symptoms will be loaded here by JavaScript -->
             <div class="loading">Loading symptoms...</div>
           </div>

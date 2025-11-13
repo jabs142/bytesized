@@ -92,7 +92,9 @@
             <p class="section-subtitle">Explore relationships between symptoms</p>
           </div>
           <div class="section-actions">
-            <button id="toggle-filters-btn" class="btn-secondary">⚙️ Filters</button>
+            <button id="toggle-filters-btn" class="btn-secondary" aria-controls="controls-panel" aria-expanded="false">
+              ⚙️ Filters
+            </button>
             <button id="reset-btn" class="btn-secondary">Reset View</button>
           </div>
         </div>
@@ -118,7 +120,10 @@
               id="symptom-search"
               placeholder="Type to find a symptom (e.g., anxiety, acne)..."
               class="form-input"
+              aria-describedby="symptom-search-help"
+              aria-controls="network-container"
             />
+            <span id="symptom-search-help" class="sr-only">Search to highlight symptoms in the network graph</span>
           </div>
 
           <!-- Filters Grid -->
@@ -138,19 +143,42 @@
               <label for="confidence-slider" class="form-label">
                 Min Confidence: <span id="confidence-value">0%</span>
               </label>
-              <input type="range" id="confidence-slider" min="0" max="100" value="0" class="w-full" />
+              <input
+                type="range"
+                id="confidence-slider"
+                min="0"
+                max="100"
+                value="0"
+                class="w-full"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                aria-label="Minimum confidence filter"
+              />
             </div>
 
             <!-- Lift Filter -->
             <div class="form-group">
               <label for="lift-slider" class="form-label"> Min Lift: <span id="lift-value">1.0x</span> </label>
-              <input type="range" id="lift-slider" min="10" max="30" value="10" step="1" class="w-full" />
+              <input
+                type="range"
+                id="lift-slider"
+                min="10"
+                max="30"
+                value="10"
+                step="1"
+                class="w-full"
+                aria-valuemin="10"
+                aria-valuemax="30"
+                aria-valuenow="10"
+                aria-label="Minimum lift filter"
+              />
             </div>
           </div>
 
           <!-- Stats Display -->
           <div class="flex justify-between items-center text-sm text-gray-600 pt-2 border-t border-gray-200">
-            <span id="visible-stats">Showing all symptoms and connections</span>
+            <span id="visible-stats" aria-live="polite" aria-atomic="true">Showing all symptoms and connections</span>
             <button id="clear-filters-btn" class="text-blue-600 hover:text-blue-800 font-medium">Clear Filters</button>
           </div>
         </div>
@@ -221,7 +249,10 @@
             id="symptom-search-checker"
             placeholder="Type to search (e.g., anxiety, acne)..."
             class="form-input"
+            aria-controls="all-symptoms"
+            aria-describedby="symptom-checker-help"
           />
+          <span id="symptom-checker-help" class="sr-only">Search to filter symptoms in the list below</span>
         </div>
 
         <!-- Selected Symptoms -->
@@ -230,6 +261,9 @@
           <div
             id="selected-symptoms"
             class="min-h-[3rem] p-3 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300"
+            role="region"
+            aria-live="polite"
+            aria-atomic="false"
           >
             <p class="text-gray-400 text-sm" id="empty-state">Select symptoms from the list below</p>
           </div>
@@ -303,6 +337,8 @@
     <!-- Tooltip for network graph -->
     <div
       id="tooltip"
+      role="tooltip"
+      aria-hidden="true"
       style="
         position: absolute;
         padding: 0.5rem;

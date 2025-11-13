@@ -67,9 +67,11 @@ function toggleFiltersPanel() {
   if (panel.classList.contains('hidden')) {
     panel.classList.remove('hidden');
     btn.textContent = '⚙️ Hide Filters';
+    btn.setAttribute('aria-expanded', 'true');
   } else {
     panel.classList.add('hidden');
     btn.textContent = '⚙️ Filters';
+    btn.setAttribute('aria-expanded', 'false');
   }
 }
 
@@ -120,6 +122,7 @@ function handleConfidenceFilter(event) {
   const value = parseInt(event.target.value);
   filters.minConfidence = value / 100;
   document.getElementById('confidence-value').textContent = value + '%';
+  event.target.setAttribute('aria-valuenow', value);
   applyFilters();
 }
 
@@ -127,6 +130,7 @@ function handleLiftFilter(event) {
   const value = parseInt(event.target.value) / 10;
   filters.minLift = value;
   document.getElementById('lift-value').textContent = value.toFixed(1) + 'x';
+  event.target.setAttribute('aria-valuenow', event.target.value);
   applyFilters();
 }
 
@@ -278,8 +282,17 @@ function initializeNetwork() {
   allNodes = networkData.nodes;
   allEdges = networkData.edges;
 
+  // Create accessible description for the visualization
+  const description = `Interactive network graph showing ${allNodes.length} symptoms and ${allEdges.length} connections. Node size represents symptom frequency, and line thickness represents connection strength. Use tab to navigate nodes, enter to select, and arrow keys to pan.`;
+
   // Create SVG
-  svg = d3.select('#network-container').append('svg').attr('width', width).attr('height', height);
+  svg = d3
+    .select('#network-container')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('role', 'img')
+    .attr('aria-label', description);
 
   // Add zoom behavior
   const zoom = d3
@@ -330,7 +343,14 @@ function initializeNetwork() {
     .attr('class', 'node')
     .attr('r', (d) => Math.max(10, Math.sqrt(d.frequency) * 3))
     .attr('fill', (d) => getNodeColor(d.id))
+    .attr('tabindex', '0')
+    .attr('role', 'button')
+    .attr('aria-label', (d) => {
+      const percentage = ((d.frequency / networkStatsData.posts_with_symptoms) * 100).toFixed(1);
+      return `${formatSymptomName(d.id)}: ${d.frequency} posts, ${percentage}%. Press enter to view connections.`;
+    })
     .on('click', handleNodeClick)
+    .on('keydown', handleNodeKeydown)
     .on('mouseover', showNodeTooltip)
     .on('mouseout', hideTooltip)
     .call(d3.drag().on('start', dragStarted).on('drag', dragged).on('end', dragEnded));
@@ -393,6 +413,7 @@ function showNodeTooltip(event, d) {
   tooltip.style.display = 'block';
   tooltip.style.left = event.pageX + 10 + 'px';
   tooltip.style.top = event.pageY - 10 + 'px';
+  tooltip.setAttribute('aria-hidden', 'false');
 }
 
 function showLinkTooltip(event, d) {
@@ -407,10 +428,22 @@ function showLinkTooltip(event, d) {
   tooltip.style.display = 'block';
   tooltip.style.left = event.pageX + 10 + 'px';
   tooltip.style.top = event.pageY - 10 + 'px';
+  tooltip.setAttribute('aria-hidden', 'false');
 }
 
 function hideTooltip() {
-  document.getElementById('tooltip').style.display = 'none';
+  const tooltip = document.getElementById('tooltip');
+  tooltip.style.display = 'none';
+  tooltip.setAttribute('aria-hidden', 'true');
+}
+
+function handleNodeKeydown(event, d) {
+  // Handle Enter and Space keys for accessibility
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    event.stopPropagation();
+    handleNodeClick(event, d);
+  }
 }
 
 function handleNodeClick(event, d) {

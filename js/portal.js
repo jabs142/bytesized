@@ -90,6 +90,20 @@ class Portal {
     div.dataset.id = cartridge.id;
     div.dataset.index = index;
 
+    // Add ARIA attributes for accessibility
+    div.setAttribute('role', 'listitem');
+    div.setAttribute('tabindex', '0');
+
+    // Create descriptive aria-label
+    let ariaLabel = `${cartridge.title}: ${cartridge.subtitle}. ${cartridge.description}`;
+    if (cartridge.status === 'coming_soon') {
+      ariaLabel += ' (Coming soon)';
+      div.setAttribute('aria-disabled', 'true');
+    } else if (cartridge.wip === true) {
+      ariaLabel += ' (Work in progress)';
+    }
+    div.setAttribute('aria-label', ariaLabel);
+
     // Create connector pins (8 gold contacts)
     const pinsHTML = Array(8).fill('<div class="connector-pin"></div>').join('');
 
