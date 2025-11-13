@@ -564,6 +564,133 @@ Open your cartridge and verify:
 
 ---
 
+## Continuous Integration (CI/CD)
+
+### GitHub Actions Workflows
+
+All code changes are automatically validated by GitHub Actions CI. Four
+workflows run on every push and pull request:
+
+**Linting** (`.github/workflows/lint.yml`)
+
+- **Runs on:** Every push and PR
+- **Checks:** ESLint, Prettier, Stylelint
+- **Enforces:** Code quality standards from STYLE_GUIDE.md
+- **Runtime:** ~2 minutes
+
+**Python Tests** (`.github/workflows/test-python.yml`)
+
+- **Runs on:** Pushes/PRs that modify Python files
+- **Tests:** All 4 backend projects with pytest
+  - pharmaceutical-innovation-clusters
+  - birthcontrol-side-effects-analysis
+  - pcos-surprise-discovery
+  - eds-symptom-discovery (stub tests, allowed to fail)
+- **Python version:** 3.11
+- **Coverage:** HTML reports generated for birthcontrol and pcos
+- **Runtime:** ~3-4 minutes
+
+**JavaScript Tests** (`.github/workflows/test-javascript.yml`)
+
+- **Runs on:** Pushes/PRs that modify `privilege/` directory
+- **Tests:** Jest test suite for calculator logic
+- **Coverage:** Configured for `frontend/js/**/*.js`
+- **Runtime:** ~1 minute
+
+**Validation** (`.github/workflows/validate.yml`)
+
+- **Runs on:** Every push and PR
+- **Checks:** All 9 cartridges load correctly (HTTP 200)
+- **Validates:**
+  - Portal homepage
+  - birthcontrol-side-effects-analysis
+  - pcos-surprise-discovery
+  - pharmaceutical-innovation-clusters
+  - eds-symptom-discovery
+  - heart-story
+  - privilege
+  - covid-scrollytelling
+  - evolution-of-invention
+- **Runtime:** ~1 minute
+
+### Running Tests Locally
+
+**JavaScript linting:**
+
+```bash
+# At repository root
+npm run lint          # Check for issues
+npm run lint:fix      # Auto-fix issues
+npm run format:check  # Check formatting
+npm run format        # Auto-format all files
+```
+
+**Python tests (example for pcos):**
+
+```bash
+cd pcos-surprise-discovery
+python -m pip install -r requirements.txt
+pytest tests/ -v --strict-markers --cov=src --cov-report=html
+```
+
+**JavaScript tests (privilege):**
+
+```bash
+cd privilege
+npm ci
+npm test              # Run tests
+npm run test:coverage # With coverage report
+```
+
+**Validate cartridge loads:**
+
+```bash
+npm start  # Visit http://localhost:8000 and click each cartridge
+```
+
+### CI Status & Pull Requests
+
+**All workflows must pass before merging PRs.**
+
+Check status on GitHub:
+
+- ✅ Green checkmark = All checks passed, safe to merge
+- ❌ Red X = Fix issues before merging
+- ⚠️ Yellow dot = Tests still running, wait for completion
+
+**If CI fails:**
+
+1. Click "Details" next to failed check
+2. Review error logs
+3. Fix locally using commands above
+4. Push fixes to same branch
+5. CI re-runs automatically
+
+**Path filtering optimization:**
+
+- Python tests only run if `**/*.py` or `**/requirements.txt` modified
+- JavaScript tests only run if `privilege/**/*.js` modified
+- Linting and validation always run (fast, catches cross-project issues)
+
+### Coverage Reports
+
+**Python projects** generate HTML coverage reports:
+
+```bash
+# After running pytest with --cov-report=html
+open htmlcov/index.html  # View coverage in browser
+```
+
+**Privilege (Jest)** generates coverage:
+
+```bash
+cd privilege
+npm run test:coverage
+open coverage/lcov-report/index.html
+```
+
+---
+
 ## Testing Guidelines
 
 ### Manual Testing Checklist

@@ -1,0 +1,48 @@
+name: JavaScript Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'privilege/**/*.js'
+      - 'privilege/package.json'
+      - '.github/workflows/test-javascript.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'privilege/**/*.js'
+      - 'privilege/package.json'
+      - '.github/workflows/test-javascript.yml'
+
+jobs:
+  test-privilege:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-privilege-${{ hashFiles('privilege/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-privilege-
+
+      - name: Install dependencies
+        working-directory: ./privilege
+        run: npm ci
+
+      - name: Run Jest tests
+        working-directory: ./privilege
+        run: npm test
+
+      - name: Generate coverage report
+        working-directory: ./privilege
+        run: npm run test:coverage
