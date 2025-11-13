@@ -5,40 +5,38 @@
 
 let allLongTermEffects = [];
 let currentFilter = 'all';
-let MEDICAL_GLOSSARY = {};  // Will be loaded from backend
-
+let MEDICAL_GLOSSARY = {}; // Will be loaded from backend
 
 // Load data on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('data/long_term_validation_summary.json');
-        if (!response.ok) {
-            displayPlaceholderMessage();
-            return;
-        }
-
-        const data = await response.json();
-        allLongTermEffects = data.top_effects || [];
-
-        // Load medical glossary from backend
-        if (data.medical_glossary) {
-            MEDICAL_GLOSSARY = data.medical_glossary;
-        }
-
-        displayResearchGaps(data.research_gaps || []);
-        displayLongTermSideEffects(allLongTermEffects);
-
-    } catch (error) {
-        console.error('Error loading long-term data:', error);
-        displayPlaceholderMessage();
+  try {
+    const response = await fetch('data/long_term_validation_summary.json');
+    if (!response.ok) {
+      displayPlaceholderMessage();
+      return;
     }
+
+    const data = await response.json();
+    allLongTermEffects = data.top_effects || [];
+
+    // Load medical glossary from backend
+    if (data.medical_glossary) {
+      MEDICAL_GLOSSARY = data.medical_glossary;
+    }
+
+    displayResearchGaps(data.research_gaps || []);
+    displayLongTermSideEffects(allLongTermEffects);
+  } catch (error) {
+    console.error('Error loading long-term data:', error);
+    displayPlaceholderMessage();
+  }
 });
 
 function displayPlaceholderMessage() {
-    const list = document.getElementById('long-term-side-effects-list');
-    const gapsList = document.getElementById('research-gaps-list');
+  const list = document.getElementById('long-term-side-effects-list');
+  const gapsList = document.getElementById('research-gaps-list');
 
-    const message = `
+  const message = `
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
             <div class="text-4xl mb-3">🔬</div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Long-Term Analysis Not Yet Run</h3>
@@ -58,25 +56,29 @@ python -m src.validation.long_term_evidence_validator
         </div>
     `;
 
-    list.innerHTML = message;
-    gapsList.innerHTML = '<p class="text-gray-600 text-center">No data available yet.</p>';
+  list.innerHTML = message;
+  gapsList.innerHTML = '<p class="text-gray-600 text-center">No data available yet.</p>';
 }
 
 function displayResearchGaps(gaps) {
-    const container = document.getElementById('research-gaps-list');
+  const container = document.getElementById('research-gaps-list');
 
-    // Handle case where section was removed from HTML
-    if (!container) {
-        console.log('Research gaps section not found, skipping...');
-        return;
-    }
+  // Handle case where section was removed from HTML
+  if (!container) {
+    // console.log('Research gaps section not found, skipping...');
+    return;
+  }
 
-    if (!gaps || gaps.length === 0) {
-        container.innerHTML = '<p class="text-gray-600 text-center">No significant research gaps identified.</p>';
-        return;
-    }
+  if (!gaps || gaps.length === 0) {
+    container.innerHTML =
+      '<p class="text-gray-600 text-center">No significant research gaps identified.</p>';
+    return;
+  }
 
-    container.innerHTML = gaps.slice(0, 10).map((gap, index) => `
+  container.innerHTML = gaps
+    .slice(0, 10)
+    .map(
+      (gap, index) => `
         <div class="bg-white rounded-lg p-4 border-l-4 border-orange-500 shadow-sm">
             <div class="flex items-start justify-between">
                 <div class="flex-1">
@@ -100,58 +102,72 @@ function displayResearchGaps(gaps) {
                 </div>
             </div>
         </div>
-    `).join('');
+    `
+    )
+    .join('');
 }
 
 function displayLongTermSideEffects(effects) {
-    const container = document.getElementById('long-term-side-effects-list');
+  const container = document.getElementById('long-term-side-effects-list');
 
-    if (!effects || effects.length === 0) {
-        container.innerHTML = '<p class="text-gray-600 text-center py-8">No long-term side effects available.</p>';
-        return;
-    }
+  if (!effects || effects.length === 0) {
+    container.innerHTML =
+      '<p class="text-gray-600 text-center py-8">No long-term side effects available.</p>';
+    return;
+  }
 
-    // Filter by status if needed
-    let filteredEffects = effects;
-    if (currentFilter !== 'all') {
-        filteredEffects = effects.filter(item => {
-            const status = item.validation_status.toLowerCase();
-            if (currentFilter === 'validated') return status === 'validated';
-            if (currentFilter === 'limited') return status.includes('limited');
-            if (currentFilter === 'no-research') return status.includes('no research');
-            return true;
-        });
-    }
+  // Filter by status if needed
+  let filteredEffects = effects;
+  if (currentFilter !== 'all') {
+    filteredEffects = effects.filter((item) => {
+      const status = item.validation_status.toLowerCase();
+      if (currentFilter === 'validated') {
+        return status === 'validated';
+      }
+      if (currentFilter === 'limited') {
+        return status.includes('limited');
+      }
+      if (currentFilter === 'no-research') {
+        return status.includes('no research');
+      }
+      return true;
+    });
+  }
 
-    if (filteredEffects.length === 0) {
-        container.innerHTML = '<p class="text-gray-600 text-center py-8">No side effects found for this filter.</p>';
-        return;
-    }
+  if (filteredEffects.length === 0) {
+    container.innerHTML =
+      '<p class="text-gray-600 text-center py-8">No side effects found for this filter.</p>';
+    return;
+  }
 
-    container.innerHTML = filteredEffects.map((item, index) => {
-        const rawName = item.side_effect.toLowerCase();
-        const displayName = item.side_effect.charAt(0).toUpperCase() + item.side_effect.slice(1);
-        const definition = MEDICAL_GLOSSARY[rawName] || '';
+  container.innerHTML = filteredEffects
+    .map((item, index) => {
+      const rawName = item.side_effect.toLowerCase();
+      const displayName = item.side_effect.charAt(0).toUpperCase() + item.side_effect.slice(1);
+      const definition = MEDICAL_GLOSSARY[rawName] || '';
 
-        // Status emoji and color
-        let statusEmoji = '✅';
-        let statusColor = 'green';
-        if (item.validation_status === 'Limited Evidence') {
-            statusEmoji = '⚠️';
-            statusColor = 'orange';
-        } else if (item.validation_status === 'No Research Found') {
-            statusEmoji = '🔍';
-            statusColor = 'red';
-        }
+      // Status emoji and color
+      let statusEmoji = '✅';
+      let statusColor = 'green';
+      if (item.validation_status === 'Limited Evidence') {
+        statusEmoji = '⚠️';
+        statusColor = 'orange';
+      } else if (item.validation_status === 'No Research Found') {
+        statusEmoji = '🔍';
+        statusColor = 'red';
+      }
 
-        // Clinical significance color
-        let sigColor = 'gray';
-        if (item.clinical_significance === 'High') sigColor = 'red';
-        else if (item.clinical_significance === 'Moderate') sigColor = 'orange';
+      // Clinical significance color
+      let sigColor = 'gray';
+      if (item.clinical_significance === 'High') {
+        sigColor = 'red';
+      } else if (item.clinical_significance === 'Moderate') {
+        sigColor = 'orange';
+      }
 
-        const surpriseScore = (item.surprise_score || 0).toFixed(3);
+      const surpriseScore = (item.surprise_score || 0).toFixed(3);
 
-        return `
+      return `
             <div class="side-effect-card" data-status="${item.validation_status.toLowerCase().replace(/ /g, '-')}">
                 <!-- Collapsed Header -->
                 <div class="side-effect-header">
@@ -178,12 +194,16 @@ function displayLongTermSideEffects(effects) {
                     </div>
 
                     <!-- Clinical Significance -->
-                    ${item.clinical_significance !== 'Low' ? `
+                    ${
+                      item.clinical_significance !== 'Low'
+                        ? `
                     <div class="alert-box ${sigColor}">
                         <strong>${item.clinical_significance} Clinical Significance:</strong>
                         This side effect may have significant health implications and warrants discussion with a healthcare provider.
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
 
                     <!-- Patient Evidence Section -->
                     <div class="evidence-section">
@@ -200,10 +220,14 @@ function displayLongTermSideEffects(effects) {
                     <!-- Research Evidence Section -->
                     <div class="evidence-section">
                         <h4>📚 Research Evidence:</h4>
-                        ${item.pubmed_data.paper_count > 0 ? `
+                        ${
+                          item.pubmed_data.paper_count > 0
+                            ? `
                             <p class="mb-2"><strong>${item.pubmed_data.paper_count}</strong> peer-reviewed papers found on PubMed:</p>
                             <div class="pubmed-sources">
-                                ${item.pubmed_data.papers.map((paper, i) => `
+                                ${item.pubmed_data.papers
+                                  .map(
+                                    (paper, i) => `
                                     <div class="pubmed-paper">
                                         <span class="paper-number">${i + 1}.</span>
                                         <div class="paper-details">
@@ -216,9 +240,12 @@ function displayLongTermSideEffects(effects) {
                                             </div>
                                         </div>
                                     </div>
-                                `).join('')}
+                                `
+                                  )
+                                  .join('')}
                             </div>
-                        ` : `
+                        `
+                            : `
                             <div class="no-research-warning">
                                 <p>⚠️ <strong>No research papers found.</strong></p>
                                 <p class="text-sm mt-2">
@@ -226,63 +253,83 @@ function displayLongTermSideEffects(effects) {
                                     This doesn't mean it's not real - it may indicate a research gap that needs more study.
                                 </p>
                             </div>
-                        `}
+                        `
+                        }
                     </div>
 
                     <!-- Patient Quotes Section -->
-                    ${item.reddit_data.examples && item.reddit_data.examples.length > 0 ? `
+                    ${
+                      item.reddit_data.examples && item.reddit_data.examples.length > 0
+                        ? `
                     <div class="quotes-section">
                         <h4>💭 What Patients Say:</h4>
-                        ${item.reddit_data.examples.slice(0, 3).map(quote => `
+                        ${item.reddit_data.examples
+                          .slice(0, 3)
+                          .map(
+                            (quote) => `
                             <blockquote>"${quote}"</blockquote>
-                        `).join('')}
+                        `
+                          )
+                          .join('')}
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
 
                     <!-- Temporal Context -->
-                    ${item.reddit_data.temporal_contexts && item.reddit_data.temporal_contexts.length > 0 ? `
+                    ${
+                      item.reddit_data.temporal_contexts &&
+                      item.reddit_data.temporal_contexts.length > 0
+                        ? `
                     <div class="temporal-context-section">
                         <h4>⏱️ Timing & Duration:</h4>
                         <ul>
-                            ${item.reddit_data.temporal_contexts.map(context => `
+                            ${item.reddit_data.temporal_contexts
+                              .map(
+                                (context) => `
                                 <li>${context}</li>
-                            `).join('')}
+                            `
+                              )
+                              .join('')}
                         </ul>
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
                 </div>
             </div>
         `;
-    }).join('');
+    })
+    .join('');
 
-    // Add click listeners for expandable cards
-    document.querySelectorAll('.side-effect-card').forEach(card => {
-        card.addEventListener('click', () => card.classList.toggle('expanded'));
-    });
+  // Add click listeners for expandable cards
+  document.querySelectorAll('.side-effect-card').forEach((card) => {
+    card.addEventListener('click', () => card.classList.toggle('expanded'));
+  });
 }
 
 function filterStatus(status) {
-    currentFilter = status;
+  currentFilter = status;
 
-    // Update button styles
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active', 'bg-indigo-600', 'text-white');
-        btn.classList.add('bg-gray-200', 'text-gray-700');
-    });
-    event.target.classList.remove('bg-gray-200', 'text-gray-700');
-    event.target.classList.add('active', 'bg-indigo-600', 'text-white');
+  // Update button styles
+  document.querySelectorAll('.filter-btn').forEach((btn) => {
+    btn.classList.remove('active', 'bg-indigo-600', 'text-white');
+    btn.classList.add('bg-gray-200', 'text-gray-700');
+  });
+  event.target.classList.remove('bg-gray-200', 'text-gray-700');
+  event.target.classList.add('active', 'bg-indigo-600', 'text-white');
 
-    displayLongTermSideEffects(allLongTermEffects);
+  displayLongTermSideEffects(allLongTermEffects);
 }
 
 function addMedicalTooltips(text) {
-    const lowerText = text.toLowerCase();
+  const lowerText = text.toLowerCase();
 
-    for (const [term, definition] of Object.entries(MEDICAL_GLOSSARY)) {
-        if (lowerText.includes(term.toLowerCase())) {
-            return `${text} <span class="medical-term-definition">(${definition})</span>`;
-        }
+  for (const [term, definition] of Object.entries(MEDICAL_GLOSSARY)) {
+    if (lowerText.includes(term.toLowerCase())) {
+      return `${text} <span class="medical-term-definition">(${definition})</span>`;
     }
+  }
 
-    return text;
+  return text;
 }

@@ -7,35 +7,37 @@
  * Load and render decade breakdown
  */
 async function renderDecadeBreakdown() {
-    const container = document.getElementById('decade-breakdown-chart');
+  const container = document.getElementById('decade-breakdown-chart');
 
-    if (!container) return;
+  if (!container) {
+    return;
+  }
 
-    try {
-        // Load decade breakdown data
-        const response = await fetch('data/decade_breakdown.json');
-        if (!response.ok) {
-            throw new Error('Failed to load decade breakdown data');
-        }
+  try {
+    // Load decade breakdown data
+    const response = await fetch('data/decade_breakdown.json');
+    if (!response.ok) {
+      throw new Error('Failed to load decade breakdown data');
+    }
 
-        const data = await response.json();
-        const decades = data.decade_breakdown;
+    const data = await response.json();
+    const decades = data.decade_breakdown;
 
-        // Color scheme
-        const innovativeColor = '#588B76'; // Teal - innovative drugs
-        const genericColor = '#E4ACB2'; // Dusty rose - generic drugs
+    // Color scheme
+    const innovativeColor = '#588B76'; // Teal - innovative drugs
+    const genericColor = '#E4ACB2'; // Dusty rose - generic drugs
 
-        let html = `
+    let html = `
             <div class="decade-breakdown-visualization">
                 <div class="breakdown-chart">
         `;
 
-        // Create stacked bar chart
-        decades.forEach(decade => {
-            const innov_pct = decade.innovative_percent;
-            const gen_pct = decade.generic_percent;
+    // Create stacked bar chart
+    decades.forEach((decade) => {
+      const innov_pct = decade.innovative_percent;
+      const gen_pct = decade.generic_percent;
 
-            html += `
+      html += `
                 <div class="decade-bar-row">
                     <div class="decade-label">${decade.decade_label}</div>
                     <div class="stacked-bar-container">
@@ -55,9 +57,9 @@ async function renderDecadeBreakdown() {
                     </div>
                 </div>
             `;
-        });
+    });
 
-        html += `
+    html += `
                 </div>
 
                 <div class="breakdown-legend">
@@ -85,7 +87,7 @@ async function renderDecadeBreakdown() {
                         </div>
                         <div class="revelation-card">
                             <div class="revelation-decade">1990s Shift</div>
-                            <div class="revelation-stat">${data.decade_breakdown.find(d => d.decade === 1990).generic_percent}% generic</div>
+                            <div class="revelation-stat">${data.decade_breakdown.find((d) => d.decade === 1990).generic_percent}% generic</div>
                             <div class="revelation-stat">Generics overtake</div>
                             <p class="revelation-text">
                                 Generic drugs <strong>overtook innovative drugs</strong> for the first time,
@@ -94,7 +96,7 @@ async function renderDecadeBreakdown() {
                         </div>
                         <div class="revelation-card">
                             <div class="revelation-decade">2000s Reality</div>
-                            <div class="revelation-stat">${data.decade_breakdown.find(d => d.decade === 2000).total.toLocaleString()} total approvals</div>
+                            <div class="revelation-stat">${data.decade_breakdown.find((d) => d.decade === 2000).total.toLocaleString()} total approvals</div>
                             <div class="revelation-stat">73% generic</div>
                             <p class="revelation-text">
                                 The decade with the <strong>highest proportion of generic drugs</strong> (73%).
@@ -115,19 +117,19 @@ async function renderDecadeBreakdown() {
             </div>
         `;
 
-        container.innerHTML = html;
-
-    } catch (error) {
-        console.error('Error loading decade breakdown:', error);
-        container.innerHTML = '<div class="loading" style="color: #e74c3c;">Failed to load decade breakdown data</div>';
-    }
+    container.innerHTML = html;
+  } catch (error) {
+    console.error('Error loading decade breakdown:', error);
+    container.innerHTML =
+      '<div class="loading" style="color: #e74c3c;">Failed to load decade breakdown data</div>';
+  }
 }
 
 // Auto-render when data is loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(renderDecadeBreakdown, 100);
-    });
-} else {
+  document.addEventListener('DOMContentLoaded', () => {
     setTimeout(renderDecadeBreakdown, 100);
+  });
+} else {
+  setTimeout(renderDecadeBreakdown, 100);
 }

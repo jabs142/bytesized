@@ -1,15 +1,21 @@
 # Walking Through Time - Evolution of Invention
 
-> An educational pixel-art game that takes players on a journey through 7 historical eras
+> An educational pixel-art game that takes players on a journey through 7
+> historical eras
 
-**Frontend-Only Cartridge** - Interactive Phaser 3 game with procedurally generated sprites
+**Frontend-Only Cartridge** - Interactive Phaser 3 game with procedurally
+generated sprites
 
 ## What's Built
 
-- **7 Historical Eras:** From Stone Age to Modern Era, each with unique environments, NPCs, and inventions
-- **Interactive Gameplay:** Talk to NPCs, collect items, explore each era at your own pace
-- **Educational Content:** Learn about key innovations and historical context through in-game dialogue
-- **Retro Pixel Art:** Procedurally generated sprites with authentic 8-bit aesthetic
+- **7 Historical Eras:** From Stone Age to Modern Era, each with unique
+  environments, NPCs, and inventions
+- **Interactive Gameplay:** Talk to NPCs, collect items, explore each era at
+  your own pace
+- **Educational Content:** Learn about key innovations and historical context
+  through in-game dialogue
+- **Retro Pixel Art:** Procedurally generated sprites with authentic 8-bit
+  aesthetic
 - **Timeline System:** Visual progress tracker showing historical progression
 
 ## Historical Eras
@@ -26,9 +32,11 @@
 
 ### Game Structure
 
-The game is built using **Phaser 3.70.0** and uses procedurally generated pixel art sprites. Each era is implemented as a separate Phaser Scene class.
+The game is built using **Phaser 3.70.0** and uses procedurally generated pixel
+art sprites. Each era is implemented as a separate Phaser Scene class.
 
 **File Structure:**
+
 - `index.html` - Main HTML entry point
 - `style.css` - Styling and layout
 - `game.js` - All game scenes and sprite generation logic
@@ -39,56 +47,56 @@ Each scene follows a consistent structure:
 
 ```javascript
 class ExampleScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'ExampleScene' });
-    }
+  constructor() {
+    super({ key: 'ExampleScene' });
+  }
 
-    create(data) {
-        // 1. Generate textures (NPCs, player, objects)
-        // 2. Setup player speed and direction
-        // 3. Create camera bounds
-        // 4. Create ground/environment
-        // 5. Create portal to next era
-        // 6. Create interactive objects
-        // 7. Create NPCs
-        // 8. Create player at spawn point
-        // 9. Setup camera follow
-        // 10. Setup controls (cursors, space, E key)
-        // 11. Create UI elements (timeline, info panel)
-        // 12. Show era title card
-    }
+  create(data) {
+    // 1. Generate textures (NPCs, player, objects)
+    // 2. Setup player speed and direction
+    // 3. Create camera bounds
+    // 4. Create ground/environment
+    // 5. Create portal to next era
+    // 6. Create interactive objects
+    // 7. Create NPCs
+    // 8. Create player at spawn point
+    // 9. Setup camera follow
+    // 10. Setup controls (cursors, space, E key)
+    // 11. Create UI elements (timeline, info panel)
+    // 12. Show era title card
+  }
 
-    createGround() {
-        // Generate terrain/floor tiles
-    }
+  createGround() {
+    // Generate terrain/floor tiles
+  }
 
-    createPortal() {
-        // Create exit portal to next era
-    }
+  createPortal() {
+    // Create exit portal to next era
+  }
 
-    createObjects() {
-        // Create interactive environmental objects
-    }
+  createObjects() {
+    // Create interactive environmental objects
+  }
 
-    createNPCs() {
-        // Create and position NPCs with animations
-    }
+  createNPCs() {
+    // Create and position NPCs with animations
+  }
 
-    createPlayer(x, y) {
-        // Create player sprite with animations
-    }
+  createPlayer(x, y) {
+    // Create player sprite with animations
+  }
 
-    update(time, delta) {
-        // Handle interactions and movement
-    }
+  update(time, delta) {
+    // Handle interactions and movement
+  }
 
-    updatePlayerMovement() {
-        // Process player input and animations
-    }
+  updatePlayerMovement() {
+    // Process player input and animations
+  }
 
-    enterNextEra() {
-        // Transition to next scene
-    }
+  enterNextEra() {
+    // Transition to next scene
+  }
 }
 ```
 
@@ -96,9 +104,11 @@ class ExampleScene extends Phaser.Scene {
 
 ### Distribution Pattern
 
-Each era should have **3-4 NPCs** spread across the map in a balanced pattern. **DO NOT** cluster NPCs together.
+Each era should have **3-4 NPCs** spread across the map in a balanced pattern.
+**DO NOT** cluster NPCs together.
 
 **Good Distribution Example (Caveman Scene):**
+
 ```
 Map (800x600):
 ┌─────────────────────────┐
@@ -116,6 +126,7 @@ Map (800x600):
 ```
 
 **Key Spacing Rules:**
+
 - Minimum 200-300 pixels between NPCs
 - Cover all four quadrants of the map
 - Each NPC should have a distinct activity
@@ -160,13 +171,15 @@ createNPCs() {
 
 ### Era-Specific Player Characters
 
-Each era should have its own player sprite to reflect the time period's clothing and appearance.
+Each era should have its own player sprite to reflect the time period's clothing
+and appearance.
 
 ### Player Sprite Generator Pattern
 
 All player sprites use a standardized canvas size and frame layout:
 
 **Specifications:**
+
 - Canvas: 96×192 pixels
 - Frame size: 32×48 pixels per character
 - Layout: 12 frames (3 frames per direction × 4 directions)
@@ -176,70 +189,70 @@ All player sprites use a standardized canvas size and frame layout:
 
 ```javascript
 function generateEraPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#skinTone';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#skinTone';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Hair
-        ctx.fillStyle = '#hairColor';
-        ctx.fillRect(centerX - 7, baseY + 2, 14, 6);
+    // Hair
+    ctx.fillStyle = '#hairColor';
+    ctx.fillRect(centerX - 7, baseY + 2, 14, 6);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Body/Clothing (era-specific styling)
-        ctx.fillStyle = '#clothingColor';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    // Body/Clothing (era-specific styling)
+    ctx.fillStyle = '#clothingColor';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
 
-        // Arms
-        ctx.fillStyle = '#skinTone';
-        ctx.fillRect(centerX - 10, baseY + 18, 3, 10);
-        ctx.fillRect(centerX + 7, baseY + 18, 3, 10);
+    // Arms
+    ctx.fillStyle = '#skinTone';
+    ctx.fillRect(centerX - 10, baseY + 18, 3, 10);
+    ctx.fillRect(centerX + 7, baseY + 18, 3, 10);
 
-        // Legs
-        ctx.fillStyle = '#pantsColor';
-        ctx.fillRect(centerX - 6, baseY + 30, 5, 14 + legOffset1);
-        ctx.fillRect(centerX + 1, baseY + 30, 5, 14 + legOffset2);
+    // Legs
+    ctx.fillStyle = '#pantsColor';
+    ctx.fillRect(centerX - 6, baseY + 30, 5, 14 + legOffset1);
+    ctx.fillRect(centerX + 1, baseY + 30, 5, 14 + legOffset2);
 
-        // Feet
-        ctx.fillStyle = '#shoeColor';
-        ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 4);
-    }
+    // Feet
+    ctx.fillStyle = '#shoeColor';
+    ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 4);
+  }
 
-    // Generate frames for each direction
-    // Row 0: Walking down (frames 0-2)
-    drawFrame(0, 0, 0, 0);   // Standing
-    drawFrame(32, 0, 2, 0);  // Left leg forward
-    drawFrame(64, 0, 0, 2);  // Right leg forward
+  // Generate frames for each direction
+  // Row 0: Walking down (frames 0-2)
+  drawFrame(0, 0, 0, 0); // Standing
+  drawFrame(32, 0, 2, 0); // Left leg forward
+  drawFrame(64, 0, 0, 2); // Right leg forward
 
-    // Row 1: Walking left (frames 3-5)
-    drawFrame(0, 48, 0, 0);
-    drawFrame(32, 48, 2, 0);
-    drawFrame(64, 48, 0, 2);
+  // Row 1: Walking left (frames 3-5)
+  drawFrame(0, 48, 0, 0);
+  drawFrame(32, 48, 2, 0);
+  drawFrame(64, 48, 0, 2);
 
-    // Row 2: Walking right (frames 6-8)
-    drawFrame(0, 96, 0, 0);
-    drawFrame(32, 96, 2, 0);
-    drawFrame(64, 96, 0, 2);
+  // Row 2: Walking right (frames 6-8)
+  drawFrame(0, 96, 0, 0);
+  drawFrame(32, 96, 2, 0);
+  drawFrame(64, 96, 0, 2);
 
-    // Row 3: Walking up (frames 9-11)
-    drawFrame(0, 144, 0, 0);
-    drawFrame(32, 144, 2, 0);
-    drawFrame(64, 144, 0, 2);
+  // Row 3: Walking up (frames 9-11)
+  drawFrame(0, 144, 0, 0);
+  drawFrame(32, 144, 2, 0);
+  drawFrame(64, 144, 0, 2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 ```
 
@@ -375,13 +388,16 @@ updatePlayerMovement() {
 Follow these patterns for consistent naming:
 
 - **Player sprites:** `player-{era}` (e.g., `player-caveman`, `player-medieval`)
-- **NPC sprites:** `{era}-{role}` (e.g., `ancient-scribe`, `industrial-engineer`)
+- **NPC sprites:** `{era}-{role}` (e.g., `ancient-scribe`,
+  `industrial-engineer`)
 - **Object sprites:** `{object-name}` (e.g., `telescope`, `anvil`)
 
 ### Animation Keys
 
-- **Player animations:** `{era}-walk-{direction}` (e.g., `caveman-walk-down`, `farming-walk-left`)
-- **NPC animations:** `{role}-work` or `{role}-{action}` (e.g., `scribe-work`, `farmer-harvest`)
+- **Player animations:** `{era}-walk-{direction}` (e.g., `caveman-walk-down`,
+  `farming-walk-left`)
+- **NPC animations:** `{role}-work` or `{role}-{action}` (e.g., `scribe-work`,
+  `farmer-harvest`)
 
 ### Scene Keys
 
@@ -419,17 +435,17 @@ Each NPC and object can have an info panel with educational content:
 
 ```javascript
 const infoData = {
-    title: "Innovation Name",
-    content: "Educational description (2-3 sentences max)",
-    impact: "Why this innovation was important"
+  title: 'Innovation Name',
+  content: 'Educational description (2-3 sentences max)',
+  impact: 'Why this innovation was important',
 };
 
 // Add to interactables array
 this.interactables.push({
-    x: npc.x,
-    y: npc.y,
-    indicator: indicatorSprite,
-    infoData: infoData
+  x: npc.x,
+  y: npc.y,
+  indicator: indicatorSprite,
+  infoData: infoData,
 });
 ```
 
@@ -490,16 +506,19 @@ Ideas for expanding the game:
 ## Troubleshooting
 
 **Player not animating:**
+
 - Check that frame configs are added after texture generation
 - Verify animation keys match the keys used in `updatePlayerMovement()`
 - Ensure texture key matches between generation and sprite creation
 
 **NPCs clustered together:**
+
 - Review NPC positions in `createNPCs()` method
 - Ensure 200-300px minimum spacing between NPCs
 - Distribute across all four map quadrants
 
 **Animation conflicts between scenes:**
+
 - Use era-specific animation key prefixes
 - Check that animation keys are unique per scene
 - Verify animation existence checks before creation
@@ -512,4 +531,5 @@ Ideas for expanding the game:
 
 ---
 
-**Created for educational purposes to teach history through interactive gameplay.**
+**Created for educational purposes to teach history through interactive
+gameplay.**

@@ -40,7 +40,7 @@ class WIPBanner extends HTMLElement {
               <strong>Work in Progress</strong>
               <span class="wip-banner-message">This page may contain bugs or incomplete features</span>
             </div>
-            ${dismissible ? '<button class="wip-banner-close" onclick="this.closest(\'.wip-banner\').remove(); localStorage.setItem(\'' + bannerId + '\', \'dismissed\');">✕</button>' : ''}
+            ${dismissible ? '<button class="wip-banner-close" onclick="this.closest(\'.wip-banner\').remove(); localStorage.setItem(\'' + bannerId + "', 'dismissed');\">✕</button>" : ''}
           </div>
         </div>
       `;

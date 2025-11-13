@@ -29,6 +29,7 @@ data/raw/reddit_bc_side_effects_TIMESTAMP.json
 **Format**: Raw JSON (no processing yet)
 
 **Structure**:
+
 ```json
 [
   {
@@ -67,6 +68,7 @@ data/raw/reddit_bc_side_effects_TIMESTAMP.json
 ### **Currently: RAW DATA** 🥩
 
 Comments are saved **exactly as extracted** from Reddit:
+
 - ✅ Original text (no cleaning)
 - ✅ Original score
 - ✅ Timestamp
@@ -81,6 +83,7 @@ After preprocessing (`text_cleaner.py`), we'll create:
 **Location**: `data/processed/cleaned_posts.json`
 
 **Changes**:
+
 ```json
 {
   "id": "abc123",
@@ -101,11 +104,13 @@ After preprocessing (`text_cleaner.py`), we'll create:
 ## Why Keep Raw + Processed Separate?
 
 ### **Raw data** (`data/raw/`):
+
 - ✅ Original source of truth
 - ✅ Can re-process differently later
 - ✅ Backup if processing goes wrong
 
 ### **Processed data** (`data/processed/`):
+
 - ✅ Ready for analysis
 - ✅ Privacy-safe (PII removed)
 - ✅ Cleaner, faster to work with

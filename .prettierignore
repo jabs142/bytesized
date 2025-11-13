@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python environments
+.venv/
+**/.venv/
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+
+# Test coverage
+coverage/
+**/coverage/
+htmlcov/
+**/htmlcov/
+.coverage
+**/.coverage
+.pytest_cache/
+**/.pytest_cache/
+
+# Data directories (gitignored, no need to format)
+data/
+**/data/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package lock files (don't format)
+package-lock.json
+**/package-lock.json

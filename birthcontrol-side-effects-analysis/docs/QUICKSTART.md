@@ -61,6 +61,7 @@ vim .env
 ```
 
 Replace these values:
+
 ```
 REDDIT_CLIENT_ID=paste_your_client_id_here
 REDDIT_CLIENT_SECRET=paste_your_client_secret_here
@@ -78,6 +79,7 @@ python src/data_collection/reddit_collector.py
 ```
 
 You should see:
+
 ```
 ✓ Connected to Reddit as: Read-Only User
 
@@ -100,6 +102,7 @@ jupyter notebook
 ```
 
 This will open your browser. Navigate to:
+
 ```
 notebooks/ → 01_exploratory_data_analysis.ipynb
 ```
@@ -107,6 +110,7 @@ notebooks/ → 01_exploratory_data_analysis.ipynb
 Click **"Run"** → **"Run All Cells"**
 
 Watch as the analysis runs! You'll see:
+
 - Data loading and inspection
 - Statistical summaries
 - Visualizations
@@ -116,6 +120,7 @@ Watch as the analysis runs! You'll see:
 ## What You Just Built
 
 Congratulations! You've:
+
 - ✅ Set up a complete ML/AI project structure
 - ✅ Collected real-world data from Reddit
 - ✅ Applied ethical data handling (PII removal)
@@ -125,6 +130,7 @@ Congratulations! You've:
 ## Next Learning Steps
 
 ### Learn Data Collection
+
 1. Open `src/data_collection/reddit_collector.py`
 2. Read the comments - they explain each concept
 3. Try modifying:
@@ -133,6 +139,7 @@ Congratulations! You've:
    - Time filter: Try 'month' or 'week'
 
 ### Learn Text Processing
+
 1. Open `src/preprocessing/text_cleaner.py`
 2. Understand PII removal patterns
 3. Try adding new patterns:
@@ -141,6 +148,7 @@ Congratulations! You've:
    - Dates
 
 ### Learn Data Analysis
+
 1. Open the Jupyter notebook
 2. Modify visualizations
 3. Add new analyses:
@@ -151,37 +159,45 @@ Congratulations! You've:
 ## Troubleshooting
 
 ### Python version error
+
 ```bash
 python --version  # Check version
 ```
+
 Needs to be 3.9 or higher. If not, install Python 3.9+
 
 ### Virtual environment not activating
+
 ```bash
 # Try absolute path
 /full/path/to/venv/bin/activate
 ```
 
 ### "Reddit credentials not found"
+
 - Did you copy `.env.example` to `.env`?
 - Did you save the file after editing?
 - Are there any spaces before/after the `=` sign?
 
 ### "401 Unauthorized" error
+
 - Double-check your `client_id` and `client_secret`
 - Make sure there are no extra spaces
 - Verify you selected "script" as app type
 
 ### No posts collected (0 posts)
+
 - The keywords might be too specific
 - Try changing `time_filter='all'` in the script
 - Check if the subreddit exists and is public
 
 ### Import errors after pip install
+
 - Make sure virtual environment is activated (`(venv)` in prompt)
 - Try: `pip install --upgrade pip` then reinstall requirements
 
 ### Jupyter notebook won't start
+
 ```bash
 # Install/reinstall Jupyter
 pip install --upgrade jupyter
@@ -193,7 +209,9 @@ jupyter notebook --port 8889
 ## Customization Ideas
 
 ### Collect from different subreddits
+
 Edit `reddit_collector.py`, line ~220:
+
 ```python
 subreddits = [
     'birthcontrol',
@@ -204,7 +222,9 @@ subreddits = [
 ```
 
 ### Change keywords
+
 Edit `reddit_collector.py`, line ~295:
+
 ```python
 symptom_keywords = [
     'depression',
@@ -218,7 +238,9 @@ symptom_keywords = [
 ```
 
 ### Collect more posts
+
 Edit `.env`:
+
 ```
 MAX_POSTS_PER_SUBREDDIT=200
 ```
@@ -228,12 +250,14 @@ MAX_POSTS_PER_SUBREDDIT=200
 ## Understanding the Code
 
 ### Where to start reading?
+
 1. **Easiest**: `src/config.py` - Simple configuration
 2. **Core logic**: `src/data_collection/reddit_collector.py`
 3. **Privacy**: `src/preprocessing/text_cleaner.py`
 4. **Analysis**: `notebooks/01_exploratory_data_analysis.ipynb`
 
 ### Key concepts in the code
+
 - **API Authentication**: How to connect to Reddit API
 - **Rate Limiting**: Being respectful to API servers
 - **Data Structuring**: Converting API responses to usable format
@@ -243,17 +267,20 @@ MAX_POSTS_PER_SUBREDDIT=200
 ## Getting Help
 
 ### Understanding a concept?
+
 - Read the code comments - they explain ML/AI concepts
 - Each function has a docstring explaining what it does
 - Look for "LEARNING:" comments for educational notes
 
 ### Error messages?
+
 1. Read the full error message
 2. Check which file and line number
 3. Look at that code section
 4. Check Troubleshooting section above
 
 ### Want to learn more?
+
 - Check `README.md` for learning resources
 - Comments in code explain concepts as you go
 - Jupyter notebook has educational cells

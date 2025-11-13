@@ -12,10 +12,7 @@
  * @returns {Promise<any>} Parsed JSON data
  */
 export async function loadJSON(url, options = {}) {
-  const {
-    errorMessage = 'Failed to load data',
-    errorContainer = null
-  } = options;
+  const { errorMessage = 'Failed to load data', errorContainer = null } = options;
 
   try {
     const response = await fetch(url);
@@ -26,7 +23,6 @@ export async function loadJSON(url, options = {}) {
 
     const data = await response.json();
     return data;
-
   } catch (error) {
     console.error(`Error loading ${url}:`, error);
 
@@ -58,9 +54,7 @@ export async function loadJSON(url, options = {}) {
  */
 export async function loadMultipleJSON(files) {
   const entries = Object.entries(files);
-  const promises = entries.map(([key, url]) =>
-    loadJSON(url).then(data => [key, data])
-  );
+  const promises = entries.map(([key, url]) => loadJSON(url).then((data) => [key, data]));
 
   const results = await Promise.all(promises);
   return Object.fromEntries(results);

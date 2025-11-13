@@ -1,10 +1,12 @@
 # 🎮 Retro Game Boy Portal - Complete!
 
-Your ByteSized Research portal has been transformed into an authentic Game Boy-style retro gaming experience!
+Your ByteSized Research portal has been transformed into an authentic Game
+Boy-style retro gaming experience!
 
 ## ✅ What's Been Built
 
 ### 🏠 Main Portal (index.html)
+
 - **Authentic Game Boy DMG-01 design** with classic pea-soup green colors
 - **Cartridge shelf system** displaying research topics as game cartridges
 - **Boot sequence** with "BYTESIZED RESEARCH" logo and loading animation
@@ -74,18 +76,22 @@ frontend/
 ## 🚀 How to Test
 
 ### Option 1: Simple HTTP Server (Recommended)
+
 ```bash
 cd frontend
 python3 -m http.server 8000
 ```
+
 Then open: http://localhost:8000
 
 ### Option 2: VS Code Live Server
+
 1. Install "Live Server" extension
 2. Right-click `index.html`
 3. Select "Open with Live Server"
 
 ### Option 3: Direct File
+
 - Open `frontend/index.html` in Chrome/Firefox
 - Note: Some browsers may block features when opened as `file://`
 
@@ -139,7 +145,7 @@ Edit `frontend/data/cartridges.json`:
   "labelText": "Your Badge Text",
   "description": "What this project does",
   "url": "your-page.html",
-  "status": "available"  // or "coming_soon"
+  "status": "available" // or "coming_soon"
 }
 ```
 
@@ -148,6 +154,7 @@ Then create `your-page.html` (copy `pcos-symptoms.html` as template).
 ## 🎵 Audio System
 
 The portal uses **Web Audio API** to generate authentic 8-bit sounds:
+
 - No external audio files needed (all procedurally generated)
 - Starts muted by default (better UX)
 - Click mute button (🔊/🔇) to enable
@@ -160,10 +167,11 @@ The portal uses **Web Audio API** to generate authentic 8-bit sounds:
 ## 🎨 Color Palette
 
 Authentic Game Boy DMG-01 colors:
-- `--gb-darkest: #0f380f`  (Black equivalent)
-- `--gb-dark: #306230`      (Dark green)
-- `--gb-light: #8bac0f`     (Light green)
-- `--gb-lightest: #9bbc0f`  (White equivalent)
+
+- `--gb-darkest: #0f380f` (Black equivalent)
+- `--gb-dark: #306230` (Dark green)
+- `--gb-light: #8bac0f` (Light green)
+- `--gb-lightest: #9bbc0f` (White equivalent)
 
 ## ♿ Accessibility
 
@@ -183,16 +191,19 @@ Authentic Game Boy DMG-01 colors:
 ## 🐛 Troubleshooting
 
 **Audio not playing?**
+
 - Click the mute button (top right)
 - Browser may block autoplay - click anywhere first
 - Check browser console for errors
 
 **Cartridges not loading?**
+
 - Check browser console for fetch errors
 - Ensure `data/cartridges.json` exists
 - Verify you're using HTTP server (not file://)
 
 **Animations stuttering?**
+
 - Check browser performance
 - Disable screen effects in `screen-effects.css` if needed
 - Some effects disabled on mobile for performance
@@ -207,9 +218,11 @@ Authentic Game Boy DMG-01 colors:
 
 ## 🎮 Enjoy Your Retro Research Portal!
 
-You now have a unique, nostalgic way to present your research projects. Each topic feels like loading a new game cartridge - perfect for showcasing multiple research areas!
+You now have a unique, nostalgic way to present your research projects. Each
+topic feels like loading a new game cartridge - perfect for showcasing multiple
+research areas!
 
 ---
 
-Built with ❤️ using vanilla HTML, CSS, and JavaScript
-No frameworks, just pure retro gaming vibes! 🕹️
+Built with ❤️ using vanilla HTML, CSS, and JavaScript No frameworks, just pure
+retro gaming vibes! 🕹️

@@ -30,7 +30,7 @@ class Portal {
       // Play boot sequence
       Animations.playBootSequence();
 
-      console.log('Portal initialized successfully');
+      // console.log('Portal initialized successfully');
     } catch (error) {
       console.error('Failed to initialize portal:', error);
       this.showError('Failed to load cartridges. Please refresh the page.');
@@ -58,7 +58,9 @@ class Portal {
    */
   renderCartridges() {
     const grid = document.getElementById('cartridgeGrid');
-    if (!grid) return;
+    if (!grid) {
+      return;
+    }
 
     grid.innerHTML = '';
 
@@ -82,8 +84,8 @@ class Portal {
    */
   createCartridgeElement(cartridge, index) {
     const div = document.createElement('div');
-    const statusClass = cartridge.status === 'coming_soon' ? 'coming-soon' :
-                        cartridge.wip === true ? 'wip' : '';
+    const statusClass =
+      cartridge.status === 'coming_soon' ? 'coming-soon' : cartridge.wip === true ? 'wip' : '';
     div.className = `cartridge ${statusClass}`;
     div.dataset.id = cartridge.id;
     div.dataset.index = index;
@@ -150,7 +152,9 @@ class Portal {
         e.stopPropagation();
 
         // Don't navigate if cartridges aren't ready yet
-        if (!this.cartridgesReady) return;
+        if (!this.cartridgesReady) {
+          return;
+        }
 
         const currentFocus = this.focusedIndex;
 
@@ -172,7 +176,9 @@ class Portal {
         e.stopPropagation();
 
         // Don't navigate if cartridges aren't ready yet
-        if (!this.cartridgesReady) return;
+        if (!this.cartridgesReady) {
+          return;
+        }
 
         const currentFocus = this.focusedIndex;
 
@@ -236,7 +242,9 @@ class Portal {
    */
   handleCartridgeHover(e) {
     const cartridge = e.target.closest('.cartridge');
-    if (!cartridge) return;
+    if (!cartridge) {
+      return;
+    }
 
     const index = parseInt(cartridge.dataset.index);
     const cartridgeData = this.cartridges[index];
@@ -254,7 +262,9 @@ class Portal {
    */
   handleCartridgeLeave(e) {
     const cartridge = e.target.closest('.cartridge');
-    if (!cartridge) return;
+    if (!cartridge) {
+      return;
+    }
 
     cartridge.classList.remove('previewing');
 
@@ -277,7 +287,9 @@ class Portal {
    */
   handleCartridgeClick(e) {
     const cartridge = e.target.closest('.cartridge');
-    if (!cartridge) return;
+    if (!cartridge) {
+      return;
+    }
 
     const index = parseInt(cartridge.dataset.index);
     const cartridgeData = this.cartridges[index];
@@ -299,7 +311,9 @@ class Portal {
    */
   selectCartridge(cartridgeElement, cartridgeData) {
     // Prevent multiple selections
-    if (this.selectedCartridge) return;
+    if (this.selectedCartridge) {
+      return;
+    }
 
     this.selectedCartridge = cartridgeData;
 
@@ -362,7 +376,7 @@ class Portal {
       const currentFocus = this.focusedIndex;
       const gridColumns = window.innerWidth <= 768 ? 2 : 4; // Match CSS grid
 
-      switch(e.key) {
+      switch (e.key) {
         case 'ArrowLeft':
           this.focusedIndex = Math.max(0, this.focusedIndex - 1);
           break;
@@ -421,7 +435,7 @@ class Portal {
     const cartridgeElements = document.querySelectorAll('.cartridge');
 
     // Remove focus from all cartridges
-    cartridgeElements.forEach(el => el.classList.remove('keyboard-focused'));
+    cartridgeElements.forEach((el) => el.classList.remove('keyboard-focused'));
 
     // Add focus to current cartridge
     const focusedElement = cartridgeElements[this.focusedIndex];

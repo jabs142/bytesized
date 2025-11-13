@@ -7,30 +7,32 @@
  * Render "When Did Each Therapeutic Area Peak?" visualization
  */
 function renderTherapeuticPeaksChart() {
-    const container = document.getElementById('therapeutic-peaks-chart');
+  const container = document.getElementById('therapeutic-peaks-chart');
 
-    if (!container) return;
+  if (!container) {
+    return;
+  }
 
-    if (!window.therapeuticData || !window.therapeuticData.peak_concentration_ranking) {
-        container.innerHTML = '<div class="loading">No therapeutic peak data available</div>';
-        return;
-    }
+  if (!window.therapeuticData || !window.therapeuticData.peak_concentration_ranking) {
+    container.innerHTML = '<div class="loading">No therapeutic peak data available</div>';
+    return;
+  }
 
-    const peaks = window.therapeuticData.peak_concentration_ranking;
+  const peaks = window.therapeuticData.peak_concentration_ranking;
 
-    // Color scheme by decade
-    const decadeColors = {
-        '1950': '#8B7355', // Brown - 1950s
-        '1960': '#A0826D', // Light brown - 1960s
-        '1970': '#9BA38C', // Olive - 1970s
-        '1980': '#99BAB9', // Blue-gray - 1980s
-        '1990': '#84A98C', // Sage green - 1990s
-        '2000': '#6F9B88', // Teal - 2000s
-        '2010': '#588B76', // Dark teal - 2010s
-        '2020': '#4A7766'  // Deep teal - 2020s
-    };
+  // Color scheme by decade
+  const decadeColors = {
+    1950: '#8B7355', // Brown - 1950s
+    1960: '#A0826D', // Light brown - 1960s
+    1970: '#9BA38C', // Olive - 1970s
+    1980: '#99BAB9', // Blue-gray - 1980s
+    1990: '#84A98C', // Sage green - 1990s
+    2000: '#6F9B88', // Teal - 2000s
+    2010: '#588B76', // Dark teal - 2010s
+    2020: '#4A7766', // Deep teal - 2020s
+  };
 
-    let html = `
+  let html = `
         <div class="peaks-visualization">
             <div class="peaks-explanation" style="margin-bottom: var(--spacing-md); padding: var(--spacing-sm); background: #f0f0f0; border-radius: var(--radius-pixel); border: 2px solid var(--gb-dark);">
                 <p style="font-size: 0.875rem; line-height: 1.6; margin: 0; color: var(--text-primary);">
@@ -42,12 +44,12 @@ function renderTherapeuticPeaksChart() {
             <div class="peaks-grid">
     `;
 
-    peaks.forEach(item => {
-        const peak = item.peak_decade;
-        const percentage = peak.concentration_percent;
-        const barColor = decadeColors[peak.decade] || '#99BAB9';
+  peaks.forEach((item) => {
+    const peak = item.peak_decade;
+    const percentage = peak.concentration_percent;
+    const barColor = decadeColors[peak.decade] || '#99BAB9';
 
-        html += `
+    html += `
             <div class="peak-row">
                 <div class="peak-label">
                     <span class="area-name">${item.area}</span>
@@ -59,9 +61,9 @@ function renderTherapeuticPeaksChart() {
                 </div>
             </div>
         `;
-    });
+  });
 
-    html += `
+  html += `
             </div>
             <div class="peaks-insight">
                 <h4>💡 Key Insight</h4>
@@ -75,14 +77,14 @@ function renderTherapeuticPeaksChart() {
         </div>
     `;
 
-    container.innerHTML = html;
+  container.innerHTML = html;
 }
 
 // Auto-render when data is loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(renderTherapeuticPeaksChart, 100);
-    });
-} else {
+  document.addEventListener('DOMContentLoaded', () => {
     setTimeout(renderTherapeuticPeaksChart, 100);
+  });
+} else {
+  setTimeout(renderTherapeuticPeaksChart, 100);
 }

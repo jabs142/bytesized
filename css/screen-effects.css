@@ -5,16 +5,13 @@
 /* CRT Overlay - Curved Glass Effect */
 .crt-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(
     ellipse at center,
     transparent 0%,
     transparent 70%,
-    rgba(0, 0, 0, 0.2) 95%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgb(0 0 0 / 20%) 95%,
+    rgb(0 0 0 / 50%) 100%
   );
   pointer-events: none;
   z-index: 10;
@@ -24,16 +21,13 @@
 /* Scanlines Effect */
 .scanlines {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.15) 0px,
+    rgb(0 0 0 / 15%) 0,
     transparent 1px,
     transparent 2px,
-    rgba(0, 0, 0, 0.15) 3px
+    rgb(0 0 0 / 15%) 3px
   );
   pointer-events: none;
   z-index: 5;
@@ -43,32 +37,34 @@
 }
 
 @keyframes scanlineMove {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(4px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
 }
 
 /* Pixel Grid Effect (Dot Matrix) */
 .screen-glass::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background:
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 2px,
-      rgba(0, 0, 0, 0.05) 2px,
-      rgba(0, 0, 0, 0.05) 4px
+      rgb(0 0 0 / 5%) 2px,
+      rgb(0 0 0 / 5%) 4px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 2px,
-      rgba(0, 0, 0, 0.05) 2px,
-      rgba(0, 0, 0, 0.05) 4px
+      rgb(0 0 0 / 5%) 2px,
+      rgb(0 0 0 / 5%) 4px
     );
   pointer-events: none;
   z-index: 3;
@@ -77,12 +73,9 @@
 
 /* Screen Flicker */
 .screen-glass::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: var(--gb-lightest);
   opacity: 0;
   pointer-events: none;
@@ -91,8 +84,16 @@
 }
 
 @keyframes screenFlicker {
-  0%, 95%, 100% { opacity: 0; }
-  96%, 98% { opacity: 0.01; }
+  0%,
+  95%,
+  100% {
+    opacity: 0;
+  }
+
+  96%,
+  98% {
+    opacity: 0.01;
+  }
 }
 
 /* Subtle Screen Glow Pulse */
@@ -101,18 +102,23 @@
 }
 
 @keyframes screenGlow {
-  0%, 100% { box-shadow: 0 0 30px var(--screen-glow); }
-  50% { box-shadow: 0 0 40px var(--screen-glow), 0 0 15px var(--screen-glow); }
+  0%,
+  100% {
+    box-shadow: 0 0 30px var(--screen-glow);
+  }
+
+  50% {
+    box-shadow:
+      0 0 40px var(--screen-glow),
+      0 0 15px var(--screen-glow);
+  }
 }
 
 /* ========== BOOT SEQUENCE ========== */
 
 .boot-sequence {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: var(--gb-darkest);
   z-index: 9999;
   display: flex;
@@ -144,6 +150,7 @@
     transform: scale(0.8);
     filter: blur(10px);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -162,8 +169,14 @@
 }
 
 @keyframes pixelTextGlow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 .boot-logo .pixel-subtitle {
@@ -186,7 +199,7 @@
   border-radius: 2px;
   overflow: hidden;
   box-shadow:
-    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgb(0 0 0 / 30%),
     0 0 10px var(--screen-glow);
 }
 
@@ -199,18 +212,20 @@
 }
 
 @keyframes loadingProgress {
-  0% { width: 0%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 /* ========== LOADING TRANSITION ========== */
 
 .loading-transition {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: var(--gb-darkest);
   z-index: 9998;
   display: flex;
@@ -228,6 +243,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -246,7 +262,9 @@
 }
 
 @keyframes loadingBlink {
-  50% { opacity: 0.3; }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 .loading-spinner {
@@ -261,17 +279,16 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ========== SCREEN FLASH EFFECT ========== */
 
 .screen-flash {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: var(--gb-lightest);
   z-index: 20;
   animation: flashEffect 0.3s ease-out;
@@ -279,8 +296,13 @@
 }
 
 @keyframes flashEffect {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ========== TEXT TYPEWRITER EFFECT ========== */
@@ -295,12 +317,19 @@
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* ========== PIXEL FADE IN ========== */
@@ -315,6 +344,7 @@
     filter: blur(4px);
     transform: scale(0.95);
   }
+
   100% {
     opacity: 1;
     filter: blur(0);
@@ -329,9 +359,25 @@
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
-  20%, 40%, 60%, 80% { transform: translateX(2px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
 }
 
 /* ========== PIXEL MASCOT (BOBBING ROBOT) ========== */
@@ -342,8 +388,14 @@
 }
 
 @keyframes bob {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Simple pixel art T-Rex design - cute front view! */
@@ -368,7 +420,7 @@
 /* T-Rex eyes - both eyes this time! */
 .mascot-head::before,
 .mascot-head::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 5px;
   height: 5px;
@@ -378,12 +430,25 @@
   animation: blink 4s infinite;
 }
 
-.mascot-head::before { left: 7px; }
-.mascot-head::after { right: 7px; }
+.mascot-head::before {
+  left: 7px;
+}
+
+.mascot-head::after {
+  right: 7px;
+}
 
 @keyframes blink {
-  0%, 96%, 100% { height: 5px; }
-  97%, 99% { height: 1px; }
+  0%,
+  96%,
+  100% {
+    height: 5px;
+  }
+
+  97%,
+  99% {
+    height: 1px;
+  }
 }
 
 /* T-Rex body - rounder and cuter */
@@ -399,7 +464,7 @@
 
 /* Cute belly spot */
 .mascot-body::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 12px;
   height: 10px;
@@ -423,7 +488,7 @@
 
 .mascot-arms::before,
 .mascot-arms::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 5px;
   height: 9px;
@@ -432,8 +497,13 @@
   top: 0;
 }
 
-.mascot-arms::before { left: 3px; }
-.mascot-arms::after { right: 3px; }
+.mascot-arms::before {
+  left: 3px;
+}
+
+.mascot-arms::after {
+  right: 3px;
+}
 
 /* ========== TOPIC-SPECIFIC MASCOTS ========== */
 
@@ -455,7 +525,7 @@
 
 /* PCOS - Stethoscope Character */
 .mascot-pcos::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 28px;
   height: 28px;
@@ -469,7 +539,7 @@
 
 /* Stethoscope ear pieces */
 .mascot-pcos::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 36px;
   height: 8px;
@@ -496,7 +566,7 @@
 
 /* COVID - Virus Blob with Spikes */
 .mascot-covid::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 32px;
   height: 32px;
@@ -510,7 +580,7 @@
 
 /* Virus spikes */
 .mascot-covid::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 40px;
@@ -528,7 +598,7 @@
 
 /* Birth Control - Pill Capsule */
 .mascot-birth-control::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 28px;
   height: 36px;
@@ -549,11 +619,11 @@
 
 /* Pill shine */
 .mascot-birth-control::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 8px;
   height: 12px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgb(255 255 255 / 30%);
   border-radius: 50%;
   top: 10px;
   left: 50%;
@@ -562,7 +632,7 @@
 
 /* EDS - DNA Double Helix (Better Design) */
 .mascot-eds::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 24px;
   height: 40px;
@@ -577,7 +647,7 @@
     radial-gradient(circle at 14px 28px, var(--gb-lightest) 3px, transparent 3px),
     radial-gradient(circle at 16px 36px, var(--gb-lightest) 3px, transparent 3px),
     /* Right strand dots */
-    radial-gradient(circle at 20px 0px, var(--gb-lightest) 3px, transparent 3px),
+      radial-gradient(circle at 20px 0, var(--gb-lightest) 3px, transparent 3px),
     radial-gradient(circle at 18px 8px, var(--gb-lightest) 3px, transparent 3px),
     radial-gradient(circle at 14px 16px, var(--gb-lightest) 3px, transparent 3px),
     radial-gradient(circle at 10px 24px, var(--gb-lightest) 3px, transparent 3px),
@@ -588,7 +658,7 @@
 
 /* DNA connecting base pairs */
 .mascot-eds::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 24px;
   height: 40px;
@@ -597,10 +667,38 @@
   transform: translateX(-50%);
   background:
     /* Horizontal connecting bars */
-    linear-gradient(90deg, transparent 5px, var(--gb-light) 5px, var(--gb-light) 19px, transparent 19px) 0 6px / 100% 2px,
-    linear-gradient(90deg, transparent 7px, var(--gb-light) 7px, var(--gb-light) 17px, transparent 17px) 0 14px / 100% 2px,
-    linear-gradient(90deg, transparent 10px, var(--gb-light) 10px, var(--gb-light) 14px, transparent 14px) 0 22px / 100% 2px,
-    linear-gradient(90deg, transparent 10px, var(--gb-light) 10px, var(--gb-light) 14px, transparent 14px) 0 30px / 100% 2px;
+    linear-gradient(
+        90deg,
+        transparent 5px,
+        var(--gb-light) 5px,
+        var(--gb-light) 19px,
+        transparent 19px
+      )
+      0 6px / 100% 2px,
+    linear-gradient(
+        90deg,
+        transparent 7px,
+        var(--gb-light) 7px,
+        var(--gb-light) 17px,
+        transparent 17px
+      )
+      0 14px / 100% 2px,
+    linear-gradient(
+        90deg,
+        transparent 10px,
+        var(--gb-light) 10px,
+        var(--gb-light) 14px,
+        transparent 14px
+      )
+      0 22px / 100% 2px,
+    linear-gradient(
+        90deg,
+        transparent 10px,
+        var(--gb-light) 10px,
+        var(--gb-light) 14px,
+        transparent 14px
+      )
+      0 30px / 100% 2px;
   background-repeat: no-repeat;
 }
 
@@ -611,17 +709,36 @@
 
 /* ========== RESPONSIVE EFFECTS ========== */
 
-@media (max-width: 768px) {
-  .boot-logo .pixel-text { font-size: 24px; }
-  .boot-logo .pixel-subtitle { font-size: 12px; }
-  .transition-content .pixel-text-lg { font-size: 20px; }
+@media (width <= 768px) {
+  .boot-logo .pixel-text {
+    font-size: 24px;
+  }
+
+  .boot-logo .pixel-subtitle {
+    font-size: 12px;
+  }
+
+  .transition-content .pixel-text-lg {
+    font-size: 20px;
+  }
 }
 
-@media (max-width: 480px) {
-  .scanlines { opacity: 0.3; }
-  .screen-glass::before { opacity: 0.2; }
-  .boot-logo .pixel-text { font-size: 20px; }
-  .boot-logo .pixel-subtitle { font-size: 10px; }
+@media (width <= 480px) {
+  .scanlines {
+    opacity: 0.3;
+  }
+
+  .screen-glass::before {
+    opacity: 0.2;
+  }
+
+  .boot-logo .pixel-text {
+    font-size: 20px;
+  }
+
+  .boot-logo .pixel-subtitle {
+    font-size: 10px;
+  }
 }
 
 /* Reduced Motion Support */
@@ -650,10 +767,7 @@
 .glitch::after {
   content: attr(data-text);
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
 }
 
 .glitch::before {
@@ -669,19 +783,53 @@
 }
 
 @keyframes glitch-1 {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
 }
 
 @keyframes glitch-2 {
-  0% { transform: translate(0); }
-  20% { transform: translate(2px, -2px); }
-  40% { transform: translate(2px, 2px); }
-  60% { transform: translate(-2px, -2px); }
-  80% { transform: translate(-2px, 2px); }
-  100% { transform: translate(0); }
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(2px, -2px);
+  }
+
+  40% {
+    transform: translate(2px, 2px);
+  }
+
+  60% {
+    transform: translate(-2px, -2px);
+  }
+
+  80% {
+    transform: translate(-2px, 2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
 }

@@ -1,279 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EDS Symptom Discovery - Research Dashboard</title>
 
     <!-- Google Fonts - Press Start 2P for retro aesthetic -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
     <!-- Shared Styles & Components -->
-    <link rel="stylesheet" href="/shared/styles/eject-button.css">
+    <link rel="stylesheet" href="/shared/styles/eject-button.css" />
     <script src="/shared/components/EjectButton.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- Navigation - Eject Button -->
-        <eject-button></eject-button>
+      <!-- Navigation - Eject Button -->
+      <eject-button></eject-button>
 
-        <!-- Header -->
-        <header class="header">
-            <h1>EDS Symptom Discovery</h1>
-            <p class="subtitle">Discovering Hidden Symptoms Through Patient Voices + Research Evidence</p>
-        </header>
+      <!-- Header -->
+      <header class="header">
+        <h1>EDS Symptom Discovery</h1>
+        <p class="subtitle">Discovering Hidden Symptoms Through Patient Voices + Research Evidence</p>
+      </header>
 
-        <!-- Methodology Badge -->
-        <div class="methodology-badge">
-            <strong>Methodology:</strong> LLM-based unbiased extraction from 257 Reddit posts + PubMed validation
+      <!-- Methodology Badge -->
+      <div class="methodology-badge">
+        <strong>Methodology:</strong> LLM-based unbiased extraction from 257 Reddit posts + PubMed validation
+      </div>
+
+      <!-- Key Findings -->
+      <section class="findings-section">
+        <h2>Key Findings</h2>
+        <div class="findings-grid">
+          <div class="finding-card">
+            <h3>LLM Discovery Success</h3>
+            <p>
+              Extracted <strong>1,500+ symptom mentions</strong> from patient posts without predefined keywords, reduced
+              to <strong>988 unique symptoms</strong> after deduplication.
+            </p>
+          </div>
+          <div class="finding-card">
+            <h3>Validation Results</h3>
+            <p>Validated <strong>30 most frequent symptoms</strong> (5+ mentions) against PubMed research database.</p>
+          </div>
+          <div class="finding-card">
+            <h3>Research Gaps Identified</h3>
+            <p>
+              Found symptoms with <strong>high patient reports but low research coverage</strong>, including
+              gastrointestinal issues (14 mentions, 2 papers) and knee pain (18 mentions, 3 papers).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Symptoms Chart -->
+      <section class="chart-section">
+        <h2>Top 10 Symptoms by Patient Reports</h2>
+        <div class="card chart-card">
+          <canvas id="topSymptomsChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Hidden Gems - Research Gaps -->
+      <section class="hidden-gems-section">
+        <h2>Research Gaps - Symptoms Needing More Study</h2>
+        <p class="section-description">
+          These symptoms have notable patient reports but relatively lower research coverage (higher surprise scores).
+        </p>
+        <div class="card">
+          <div class="table-responsive">
+            <table id="hidden-gems-table">
+              <thead>
+                <tr>
+                  <th>Symptom</th>
+                  <th>Patient Mentions</th>
+                  <th>Research Papers</th>
+                  <th>Surprise Score</th>
+                  <th>Research Gap</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistical Validation -->
+      <section class="stats-validation-section">
+        <h2>Statistical Validation</h2>
+        <p class="section-description">Rigorous statistical analysis confirms our findings are scientifically sound.</p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <!-- Correlation Analysis Card -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">📊</div>
+              <h3>Correlation Analysis</h3>
+              <span
+                class="tooltip-icon"
+                title="Spearman Correlation measures if two variables move together. Calculated using rank-based correlation between patient report frequency and PubMed paper counts. Range: -1 (perfect negative) to +1 (perfect positive). Values near 0 suggest little linear relationship."
+                >ℹ️</span
+              >
+            </div>
+            <div class="stat-body">
+              <div class="stat-value-container">
+                <span class="stat-value">ρ = -0.14</span>
+                <span class="stat-badge stat-badge-neutral">Weak Negative</span>
+              </div>
+              <p class="stat-label">Spearman Correlation (Patient Reports vs Research)</p>
+              <div class="stat-explanation">
+                <p class="stat-finding"><span class="finding-bullet">→</span> More patient reports ≠ more research</p>
+                <p class="stat-finding">
+                  <span class="finding-bullet">→</span> Research gaps exist where patients need answers
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surprise Distribution Card -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">🎯</div>
+              <h3>Surprise Distribution</h3>
+              <span
+                class="tooltip-icon"
+                title="Chi-Square Goodness-of-Fit Test checks if our surprise scores follow a uniform distribution. We categorize symptoms as low/medium/high surprise, then compare observed counts vs expected uniform distribution. Formula: χ² = Σ((Observed - Expected)² / Expected). p < 0.05 means distribution is significantly non-uniform."
+                >ℹ️</span
+              >
+            </div>
+            <div class="stat-body">
+              <div class="stat-value-container">
+                <span class="stat-value">p < 0.0001</span>
+                <span class="stat-badge stat-badge-success">Significant</span>
+              </div>
+              <p class="stat-label">Chi-Square Test (Non-Uniform Distribution)</p>
+              <div class="stat-explanation">
+                <p class="stat-finding">
+                  <span class="finding-bullet">→</span> 97% of symptoms have low surprise scores
+                </p>
+                <p class="stat-finding"><span class="finding-bullet">→</span> Common symptoms ARE well-researched</p>
+                <p class="stat-finding"><span class="finding-bullet">→</span> Gaps exist in less common symptoms</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multiple Testing Card -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon">✅</div>
+              <h3>Core EDS Symptoms</h3>
+              <span
+                class="tooltip-icon"
+                title="Bonferroni Correction prevents false positives when running multiple tests. For each symptom, we test if its frequency differs from mean using binomial test. Then we adjust p-values: p_adjusted = p_original × number_of_tests. Only symptoms with p_adjusted < 0.05 are considered significant. This controls family-wise error rate at 5%."
+                >ℹ️</span
+              >
+            </div>
+            <div class="stat-body">
+              <div class="stat-value-container">
+                <span class="stat-value">2 of 30</span>
+                <span class="stat-badge stat-badge-info">Validated</span>
+              </div>
+              <p class="stat-label">Bonferroni-Corrected Significance Test</p>
+              <div class="stat-explanation">
+                <div class="core-symptom-item">
+                  <span class="symptom-name">Pain</span>
+                  <span class="symptom-percent">30%</span>
+                </div>
+                <div class="core-symptom-item">
+                  <span class="symptom-name">Fatigue</span>
+                  <span class="symptom-percent">12%</span>
+                </div>
+                <p class="stat-finding" style="margin-top: 0.5rem">
+                  <span class="finding-bullet">→</span> Statistically proven as hallmark EDS symptoms
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-
-        <!-- Key Findings -->
-        <section class="findings-section">
-            <h2>Key Findings</h2>
-            <div class="findings-grid">
-                <div class="finding-card">
-                    <h3>LLM Discovery Success</h3>
-                    <p>Extracted <strong>1,500+ symptom mentions</strong> from patient posts without predefined keywords, reduced to <strong>988 unique symptoms</strong> after deduplication.</p>
-                </div>
-                <div class="finding-card">
-                    <h3>Validation Results</h3>
-                    <p>Validated <strong>30 most frequent symptoms</strong> (5+ mentions) against PubMed research database.</p>
-                </div>
-                <div class="finding-card">
-                    <h3>Research Gaps Identified</h3>
-                    <p>Found symptoms with <strong>high patient reports but low research coverage</strong>, including gastrointestinal issues (14 mentions, 2 papers) and knee pain (18 mentions, 3 papers).</p>
-                </div>
+        <!-- Correlation Chart -->
+        <div class="card correlation-chart-card">
+          <div class="chart-header">
+            <h3>Patient Frequency vs Research Coverage</h3>
+            <p class="chart-subtitle">Each dot = one symptom | Red line = trend</p>
+          </div>
+          <div class="chart-image-container">
+            <img src="data/correlation_analysis.png" alt="Correlation Analysis" />
+          </div>
+          <div class="chart-insights">
+            <div class="insight-box">
+              <span class="insight-icon">💡</span>
+              <p>
+                <strong>Key Insight:</strong> More frequently reported symptoms don't necessarily have more research.
+                This reveals research gaps where patient experiences outpace scientific investigation.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Top Symptoms Chart -->
-        <section class="chart-section">
-            <h2>Top 10 Symptoms by Patient Reports</h2>
-            <div class="card chart-card">
-                <canvas id="topSymptomsChart"></canvas>
-            </div>
-        </section>
+      <!-- Surprise Score Distribution -->
+      <section class="chart-section">
+        <h2>Patient Reports vs Research Coverage (Top 30 Symptoms)</h2>
+        <p class="section-description">
+          Bubble size = surprise score. <strong>Bottom-right quadrant = research gaps</strong> (high patient reports,
+          low research).
+        </p>
+        <div class="card chart-card">
+          <canvas id="surpriseScatterChart"></canvas>
+        </div>
+      </section>
 
-        <!-- Hidden Gems - Research Gaps -->
-        <section class="hidden-gems-section">
-            <h2>Research Gaps - Symptoms Needing More Study</h2>
-            <p class="section-description">
-                These symptoms have notable patient reports but relatively lower research coverage (higher surprise scores).
-            </p>
-            <div class="card">
-                <div class="table-responsive">
-                    <table id="hidden-gems-table">
-                        <thead>
-                            <tr>
-                                <th>Symptom</th>
-                                <th>Patient Mentions</th>
-                                <th>Research Papers</th>
-                                <th>Surprise Score</th>
-                                <th>Research Gap</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Populated by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+      <!-- Unique/Most Surprising Symptoms -->
+      <section class="outliers-section">
+        <h2>Unique & Most Surprising Symptoms</h2>
+        <p class="section-description">
+          Outlier symptoms mentioned only once - these are the most unexpected findings that could reveal hidden
+          connections.
+        </p>
+        <div class="card">
+          <div class="outliers-grid" id="outliers-grid">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </section>
 
-        <!-- Statistical Validation -->
-        <section class="stats-validation-section">
-            <h2>Statistical Validation</h2>
-            <p class="section-description">
-                Rigorous statistical analysis confirms our findings are scientifically sound.
-            </p>
+      <!-- All Symptoms Table -->
+      <section class="all-symptoms-section">
+        <h2>All Discovered Symptoms (751 Total)</h2>
+        <p class="section-description">
+          Cleaned medical symptoms (237 non-medical terms removed). <strong>Note:</strong> Only symptoms with 5+
+          mentions were validated against PubMed research.
+        </p>
+        <div class="card">
+          <div class="filter-controls">
+            <label>
+              <input type="checkbox" id="filterValidated" checked />
+              Show validated symptoms (30)
+            </label>
+            <label>
+              <input type="checkbox" id="filterUnvalidated" checked />
+              Show unvalidated symptoms (721)
+            </label>
+          </div>
+          <div class="table-responsive">
+            <table id="all-symptoms-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Symptom</th>
+                  <th>Mentions</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination-controls">
+            <button id="prevPage" class="btn-pagination">← Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage" class="btn-pagination">Next →</button>
+            <select id="pageSize" class="page-size-select">
+              <option value="25">25 per page</option>
+              <option value="50" selected>50 per page</option>
+              <option value="100">100 per page</option>
+              <option value="988">Show all</option>
+            </select>
+          </div>
+        </div>
+      </section>
 
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <!-- Correlation Analysis Card -->
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon">📊</div>
-                        <h3>Correlation Analysis</h3>
-                        <span class="tooltip-icon" title="Spearman Correlation measures if two variables move together. Calculated using rank-based correlation between patient report frequency and PubMed paper counts. Range: -1 (perfect negative) to +1 (perfect positive). Values near 0 suggest little linear relationship.">ℹ️</span>
-                    </div>
-                    <div class="stat-body">
-                        <div class="stat-value-container">
-                            <span class="stat-value">ρ = -0.14</span>
-                            <span class="stat-badge stat-badge-neutral">Weak Negative</span>
-                        </div>
-                        <p class="stat-label">Spearman Correlation (Patient Reports vs Research)</p>
-                        <div class="stat-explanation">
-                            <p class="stat-finding">
-                                <span class="finding-bullet">→</span> More patient reports ≠ more research
-                            </p>
-                            <p class="stat-finding">
-                                <span class="finding-bullet">→</span> Research gaps exist where patients need answers
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Surprise Distribution Card -->
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon">🎯</div>
-                        <h3>Surprise Distribution</h3>
-                        <span class="tooltip-icon" title="Chi-Square Goodness-of-Fit Test checks if our surprise scores follow a uniform distribution. We categorize symptoms as low/medium/high surprise, then compare observed counts vs expected uniform distribution. Formula: χ² = Σ((Observed - Expected)² / Expected). p < 0.05 means distribution is significantly non-uniform.">ℹ️</span>
-                    </div>
-                    <div class="stat-body">
-                        <div class="stat-value-container">
-                            <span class="stat-value">p < 0.0001</span>
-                            <span class="stat-badge stat-badge-success">Significant</span>
-                        </div>
-                        <p class="stat-label">Chi-Square Test (Non-Uniform Distribution)</p>
-                        <div class="stat-explanation">
-                            <p class="stat-finding">
-                                <span class="finding-bullet">→</span> 97% of symptoms have low surprise scores
-                            </p>
-                            <p class="stat-finding">
-                                <span class="finding-bullet">→</span> Common symptoms ARE well-researched
-                            </p>
-                            <p class="stat-finding">
-                                <span class="finding-bullet">→</span> Gaps exist in less common symptoms
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Multiple Testing Card -->
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon">✅</div>
-                        <h3>Core EDS Symptoms</h3>
-                        <span class="tooltip-icon" title="Bonferroni Correction prevents false positives when running multiple tests. For each symptom, we test if its frequency differs from mean using binomial test. Then we adjust p-values: p_adjusted = p_original × number_of_tests. Only symptoms with p_adjusted < 0.05 are considered significant. This controls family-wise error rate at 5%.">ℹ️</span>
-                    </div>
-                    <div class="stat-body">
-                        <div class="stat-value-container">
-                            <span class="stat-value">2 of 30</span>
-                            <span class="stat-badge stat-badge-info">Validated</span>
-                        </div>
-                        <p class="stat-label">Bonferroni-Corrected Significance Test</p>
-                        <div class="stat-explanation">
-                            <div class="core-symptom-item">
-                                <span class="symptom-name">Pain</span>
-                                <span class="symptom-percent">30%</span>
-                            </div>
-                            <div class="core-symptom-item">
-                                <span class="symptom-name">Fatigue</span>
-                                <span class="symptom-percent">12%</span>
-                            </div>
-                            <p class="stat-finding" style="margin-top: 0.5rem;">
-                                <span class="finding-bullet">→</span> Statistically proven as hallmark EDS symptoms
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Correlation Chart -->
-            <div class="card correlation-chart-card">
-                <div class="chart-header">
-                    <h3>Patient Frequency vs Research Coverage</h3>
-                    <p class="chart-subtitle">Each dot = one symptom | Red line = trend</p>
-                </div>
-                <div class="chart-image-container">
-                    <img src="data/correlation_analysis.png" alt="Correlation Analysis">
-                </div>
-                <div class="chart-insights">
-                    <div class="insight-box">
-                        <span class="insight-icon">💡</span>
-                        <p><strong>Key Insight:</strong> More frequently reported symptoms don't necessarily have more research. This reveals research gaps where patient experiences outpace scientific investigation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Surprise Score Distribution -->
-        <section class="chart-section">
-            <h2>Patient Reports vs Research Coverage (Top 30 Symptoms)</h2>
-            <p class="section-description">
-                Bubble size = surprise score. <strong>Bottom-right quadrant = research gaps</strong> (high patient reports, low research).
-            </p>
-            <div class="card chart-card">
-                <canvas id="surpriseScatterChart"></canvas>
-            </div>
-        </section>
-
-        <!-- Unique/Most Surprising Symptoms -->
-        <section class="outliers-section">
-            <h2>Unique & Most Surprising Symptoms</h2>
-            <p class="section-description">
-                Outlier symptoms mentioned only once - these are the most unexpected findings that could reveal hidden connections.
-            </p>
-            <div class="card">
-                <div class="outliers-grid" id="outliers-grid">
-                    <!-- Populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- All Symptoms Table -->
-        <section class="all-symptoms-section">
-            <h2>All Discovered Symptoms (751 Total)</h2>
-            <p class="section-description">
-                Cleaned medical symptoms (237 non-medical terms removed). <strong>Note:</strong> Only symptoms with 5+ mentions were validated against PubMed research.
-            </p>
-            <div class="card">
-                <div class="filter-controls">
-                    <label>
-                        <input type="checkbox" id="filterValidated" checked>
-                        Show validated symptoms (30)
-                    </label>
-                    <label>
-                        <input type="checkbox" id="filterUnvalidated" checked>
-                        Show unvalidated symptoms (721)
-                    </label>
-                </div>
-                <div class="table-responsive">
-                    <table id="all-symptoms-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Symptom</th>
-                                <th>Mentions</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Populated by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="pagination-controls">
-                    <button id="prevPage" class="btn-pagination">← Previous</button>
-                    <span id="pageInfo">Page 1</span>
-                    <button id="nextPage" class="btn-pagination">Next →</button>
-                    <select id="pageSize" class="page-size-select">
-                        <option value="25">25 per page</option>
-                        <option value="50" selected>50 per page</option>
-                        <option value="100">100 per page</option>
-                        <option value="988">Show all</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>Data Source: 257 Reddit posts from r/ehlersdanlos + PubMed research database</p>
-            <p>Surprise Score = (Patient Frequency) × (1 - Research Coverage)</p>
-        </footer>
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Data Source: 257 Reddit posts from r/ehlersdanlos + PubMed research database</p>
+        <p>Surprise Score = (Patient Frequency) × (1 - Research Coverage)</p>
+      </footer>
     </div>
 
     <script src="js/app.js"></script>
-</body>
+  </body>
 </html>

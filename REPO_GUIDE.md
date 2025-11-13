@@ -1,6 +1,7 @@
 # ByteSized Research - Repository Guide
 
-> **Your blueprint for creating new "cartridge" projects with consistency and speed**
+> **Your blueprint for creating new "cartridge" projects with consistency and
+> speed**
 
 Last Updated: November 13, 2025
 
@@ -75,14 +76,17 @@ python3 -m http.server 8000
 ### Detailed Setup
 
 **Step 1: Name Your Cartridge**
+
 - Use kebab-case: `birth-control-analysis` ✅ not `BirthControlAnalysis` ❌
 - Be descriptive but concise
 - Check `data/cartridges.json` for existing names
 
 **Step 2: Choose Your Template Type**
+
 - See [Decision Tree](#decision-tree-what-type-of-cartridge) below
 
 **Step 3: Initialize Git Ignore**
+
 ```bash
 # Already included in template, but verify:
 cat .gitignore
@@ -90,6 +94,7 @@ cat .gitignore
 ```
 
 **Step 4: Configure Environment**
+
 ```bash
 # If using Python analysis:
 cp .env.example .env
@@ -97,6 +102,7 @@ cp .env.example .env
 ```
 
 **Step 5: Install Dependencies**
+
 ```bash
 # Python (if needed):
 pip install -r ../requirements.txt
@@ -113,11 +119,13 @@ npm start
 ### Question 1: Do I need data collection/analysis?
 
 **YES → Full-Stack Cartridge**
+
 - Examples: Birth Control, PCOS, Pharmaceutical Clusters, EDS
 - Structure: Python analysis → JSON export → Frontend viz
 - Go to: [Full-Stack Template](#full-stack-template)
 
 **NO → Frontend-Only Cartridge**
+
 - Examples: Evolution of Invention, Heart Story
 - Structure: Interactive visualization or game
 - Go to: [Frontend-Only Template](#frontend-only-template)
@@ -125,16 +133,19 @@ npm start
 ### Question 2: What kind of visualization?
 
 **Interactive Dashboard**
+
 - Multiple charts, filters, data tables
 - Examples: Birth Control, PCOS, Pharmaceutical Clusters
 - Tech: HTML + CSS + vanilla JS (or D3.js for charts)
 
 **Scrollytelling Narrative**
+
 - Story-driven, scroll-triggered animations
 - Example: COVID Timeline
 - Tech: Scrollama.js + D3.js
 
 **Interactive Game**
+
 - Player controls, game mechanics
 - Examples: Evolution, Heart Story
 - Tech: Phaser.js or vanilla canvas
@@ -142,16 +153,19 @@ npm start
 ### Question 3: What data source?
 
 **Reddit Posts**
+
 - Use `praw` library
 - Pattern: `src/data_collection/reddit_collector.py`
 - Examples: Birth Control, PCOS, EDS
 
 **Public APIs**
+
 - FDA, PubMed, government data
 - Pattern: `src/data_collection/api_collector.py`
 - Example: Pharmaceutical Clusters (FDA OpenFDA API)
 
 **Static Dataset**
+
 - CSV, JSON files
 - No Python analysis needed
 - Example: COVID (pre-processed WHO data)
@@ -163,6 +177,7 @@ npm start
 ### Every Cartridge MUST Have:
 
 #### 1. Eject Button
+
 ```html
 <head>
   <!-- REQUIRED: Load shared component -->
@@ -178,16 +193,21 @@ npm start
 ```
 
 #### 2. Press Start 2P Font
+
 ```html
 <head>
   <!-- REQUIRED: Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
 </head>
 ```
 
 #### 3. CSS Variables (Game Boy Theme)
+
 ```css
 /* Import shared variables */
 @import '/shared/styles/variables.css';
@@ -207,6 +227,7 @@ h1 {
 ```
 
 #### 4. README.md
+
 ```markdown
 # Your Cartridge Name
 
@@ -220,19 +241,18 @@ h1 {
 
 ## Data Pipeline (if applicable)
 
-\`\`\`
-raw → processed → analyzed → validated → frontend
-\`\`\`
+\`\`\` raw → processed → analyzed → validated → frontend \`\`\`
 ```
 
 #### 5. Entry in Portal
+
 ```json
 // /data/cartridges.json
 {
   "id": "your-cartridge-slug",
   "title": "Your Cartridge Title",
   "description": "One sentence description shown on portal",
-  "color": "#8bac0f",  // Game Boy green or pastel from STYLE_GUIDE
+  "color": "#8bac0f", // Game Boy green or pastel from STYLE_GUIDE
   "path": "/your-cartridge-name/frontend/index.html",
   "status": "active"
 }
@@ -244,7 +264,8 @@ raw → processed → analyzed → validated → frontend
 
 ### Full-Stack Template
 
-**Use when:** You need Reddit/API data collection + LLM analysis + PubMed validation
+**Use when:** You need Reddit/API data collection + LLM analysis + PubMed
+validation
 
 ```
 my-cartridge/
@@ -310,6 +331,7 @@ my-interactive-story/
 ### 1. Dependency Management
 
 **DO:**
+
 ```bash
 # Use root requirements.txt for shared dependencies
 pip install -r ../requirements.txt
@@ -322,12 +344,14 @@ biopython==1.83  # For PubMed API (PCOS project only)
 ```
 
 **DON'T:**
+
 ```bash
 # Don't create a full requirements.txt with version drift
 openai==1.6.1  # ❌ Root has 1.54.3!
 ```
 
 **Current Standard Versions:**
+
 - `openai==1.54.3` (NOT 1.6.1 - breaking changes!)
 - `praw==7.7.1`
 - `pandas==2.1.4`
@@ -337,6 +361,7 @@ openai==1.6.1  # ❌ Root has 1.54.3!
 ### 2. Shared Component Usage
 
 **DO:**
+
 ```javascript
 // Import shared utilities
 import { loadJSON } from '/shared/utils/dataLoader.js';
@@ -349,19 +374,21 @@ async function init() {
 ```
 
 **DON'T:**
+
 ```javascript
 // Don't reimplement data loading
 async function loadData() {
   try {
-    const response = await fetch('data/results.json');  // ❌ Use shared dataLoader!
+    const response = await fetch('data/results.json'); // ❌ Use shared dataLoader!
     // ...error handling...
-  } catch (e) { }
+  } catch (e) {}
 }
 ```
 
 ### 3. Styling Consistency
 
 **DO:**
+
 ```css
 /* Import shared variables first */
 @import '/shared/styles/variables.css';
@@ -376,37 +403,43 @@ async function loadData() {
 }
 
 /* Use Press Start 2P ONLY for headers */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-pixel);
 }
 
 /* System fonts for body text */
-p, li, .description {
+p,
+li,
+.description {
   font-family: var(--font-body);
   line-height: 1.6;
 }
 ```
 
 **DON'T:**
+
 ```css
 /* Don't use utility frameworks */
 <script src="https://cdn.tailwindcss.com"></script>  /* ❌ Breaks retro theme */
 
 /* Don't hardcode colors */
 .card {
-  background: #f5f5f5;  /* ❌ Use var(--bg-card) */
-  border: 2px solid #306230;  /* ❌ Use var(--gb-dark) */
+  background: #f5f5f5; /* ❌ Use var(--bg-card) */
+  border: 2px solid #306230; /* ❌ Use var(--gb-dark) */
 }
 
 /* Don't use Press Start 2P for paragraphs */
 p {
-  font-family: 'Press Start 2P';  /* ❌ Unreadable! */
+  font-family: 'Press Start 2P'; /* ❌ Unreadable! */
 }
 ```
 
 ### 4. Data Pipeline Pattern
 
 **Standard Flow:**
+
 ```
 1. COLLECT   → data/raw/source_YYYYMMDD_HHMMSS.json
 2. EXTRACT   → data/analysis/extracted_patterns.json
@@ -416,6 +449,7 @@ p {
 ```
 
 **Python Example:**
+
 ```python
 # src/config.py
 from pathlib import Path
@@ -443,6 +477,7 @@ REDDIT_CLIENT_SECRET = os.getenv("REDDIT_CLIENT_SECRET")
 ### 5. LLM Prompt Best Practices
 
 **Unbiased Extraction Pattern:**
+
 ```python
 # DON'T give the LLM a predefined list
 prompt = f"""
@@ -461,6 +496,7 @@ Post: {post_text}
 ```
 
 **Validation Pattern:**
+
 ```python
 # Cross-reference with authoritative sources
 def validate_symptom(symptom):
@@ -484,15 +520,26 @@ def validate_symptom(symptom):
 
 ### Pre-Commit Checklist
 
-Before you commit, verify:
+**Automated Checks** ✅ (run automatically via pre-commit hooks):
+
+- [x] **Code formatting** (Prettier enforces 2-space indentation, quotes, line
+      width)
+- [x] **JavaScript linting** (ESLint blocks console.log, enforces const/let,
+      detects unused vars)
+- [x] **CSS linting** (Stylelint validates best practices and property order)
+
+**Manual Checks** (verify before committing):
 
 - [ ] **Eject button uses shared component** (`<eject-button></eject-button>`)
 - [ ] **Press Start 2P only in headers** (not body text)
-- [ ] **CSS imports shared variables** (`@import '/shared/styles/variables.css'`)
+- [ ] **CSS imports shared variables**
+      (`@import '/shared/styles/variables.css'`)
 - [ ] **No utility frameworks** (no Tailwind, Bootstrap, etc.)
 - [ ] **Uses Game Boy color palette** (var(--gb-dark), var(--gb-light))
 - [ ] **Backgrounds are soft** (var(--bg-main) not pure white)
 - [ ] **System fonts for readability** (body text uses var(--font-body))
+
+**Tip:** Run `npm run lint:fix` before staging to catch automated issues early.
 
 ### Style Validation Script
 
@@ -522,6 +569,7 @@ Open your cartridge and verify:
 ### Manual Testing Checklist
 
 **Functionality:**
+
 - [ ] All data loads without errors (check browser console)
 - [ ] Interactive elements respond (buttons, filters, charts)
 - [ ] Eject button navigates back to portal
@@ -529,12 +577,14 @@ Open your cartridge and verify:
 - [ ] No console errors or warnings
 
 **Data Integrity:**
+
 - [ ] Numbers match source data (spot-check)
 - [ ] No NaN or undefined values displayed
 - [ ] Date formatting correct
 - [ ] Percentages sum to 100% (if applicable)
 
 **Performance:**
+
 - [ ] Page loads in < 3 seconds
 - [ ] Large datasets don't freeze browser
 - [ ] Images optimized (< 500KB each)
@@ -543,6 +593,7 @@ Open your cartridge and verify:
 ### Browser Testing
 
 Test in:
+
 - [ ] Chrome/Edge (primary)
 - [ ] Firefox
 - [ ] Safari (Mac)
@@ -564,24 +615,28 @@ Test in:
 ### Before Adding to Portal
 
 **1. Content Review**
+
 - [ ] README.md complete with methodology
 - [ ] Data sources cited
 - [ ] Limitations/disclaimers included
 - [ ] No medical claims without sources
 
 **2. Data Privacy**
+
 - [ ] No personally identifiable information (PII)
 - [ ] Reddit usernames anonymized (if applicable)
 - [ ] API keys in .env (not committed)
 - [ ] .gitignore properly configured
 
 **3. File Optimization**
+
 - [ ] Remove unused CSS/JS
 - [ ] Compress images
 - [ ] Minify large JSON (if > 1MB)
 - [ ] Remove console.log statements
 
 **4. Documentation**
+
 - [ ] Code comments for complex logic
 - [ ] Data pipeline documented
 - [ ] API rate limits noted (if applicable)
@@ -589,13 +644,14 @@ Test in:
 ### Adding to Portal
 
 **Step 1: Add Cartridge Entry**
+
 ```json
 // /data/cartridges.json
 {
   "id": "my-cartridge",
   "title": "My Cartridge Title",
   "description": "One compelling sentence",
-  "color": "#E4ACB2",  // Use STYLE_GUIDE pastel colors
+  "color": "#E4ACB2", // Use STYLE_GUIDE pastel colors
   "path": "/my-cartridge/frontend/index.html",
   "status": "active",
   "tags": ["data-analysis", "medical"],
@@ -604,6 +660,7 @@ Test in:
 ```
 
 **Step 2: Test Portal Integration**
+
 ```bash
 cd /Users/jabelle/Code/repos/bytesized
 npm start
@@ -613,14 +670,17 @@ npm start
 ```
 
 **Step 3: Update Main README**
+
 ```markdown
 <!-- /README.md -->
+
 ## Current Cartridges
 
 - **My Cartridge** - Brief description
 ```
 
 **Step 4: Git Commit**
+
 ```bash
 git add .
 git commit -m "Add my-cartridge: Brief description
@@ -807,10 +867,10 @@ async function init() {
 function setupFilters() {
   const filterButtons = document.querySelectorAll('.filter-btn');
 
-  filterButtons.forEach(btn => {
+  filterButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       // Update active state
-      filterButtons.forEach(b => b.classList.remove('active'));
+      filterButtons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
 
       // Filter data
@@ -824,9 +884,14 @@ function setupFilters() {
 function filterSymptoms(tier) {
   if (tier === 'all') return allSymptoms;
 
-  return allSymptoms.filter(s => {
+  return allSymptoms.filter((s) => {
     if (tier === 'very' && s.surprise_score > 0.7) return true;
-    if (tier === 'somewhat' && s.surprise_score > 0.3 && s.surprise_score <= 0.7) return true;
+    if (
+      tier === 'somewhat' &&
+      s.surprise_score > 0.3 &&
+      s.surprise_score <= 0.7
+    )
+      return true;
     if (tier === 'expected' && s.surprise_score <= 0.3) return true;
     return false;
   });
@@ -835,7 +900,9 @@ function filterSymptoms(tier) {
 function renderSymptoms(symptoms) {
   const container = document.getElementById('symptoms-container');
 
-  container.innerHTML = symptoms.map(s => `
+  container.innerHTML = symptoms
+    .map(
+      (s) => `
     <div class="symptom-card">
       <h3>${s.symptom}</h3>
       <div class="stats">
@@ -844,7 +911,9 @@ function renderSymptoms(symptoms) {
         <span>Surprise: ${(s.surprise_score * 100).toFixed(1)}%</span>
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join('');
 }
 
 init();
@@ -857,6 +926,7 @@ init();
 ### Common Issues
 
 **Issue: Eject button doesn't appear**
+
 ```html
 <!-- Check that you loaded the component -->
 <script src="/shared/components/EjectButton.js"></script>
@@ -868,26 +938,29 @@ init();
 ```
 
 **Issue: CSS variables not working**
+
 ```css
 /* Did you import shared variables? */
 @import '/shared/styles/variables.css';
 
 /* Are you using the correct variable names? */
-background: var(--bg-main);  /* ✓ Correct */
-background: var(--background-main);  /* ✗ Wrong name */
+background: var(--bg-main); /* ✓ Correct */
+background: var(--background-main); /* ✗ Wrong name */
 ```
 
 **Issue: Data not loading**
+
 ```javascript
 // Check your path is correct
-const data = await loadJSON('data/results.json');  // ✓ Relative path
-const data = await loadJSON('/frontend/data/results.json');  // ✗ Absolute (wrong)
+const data = await loadJSON('data/results.json'); // ✓ Relative path
+const data = await loadJSON('/frontend/data/results.json'); // ✗ Absolute (wrong)
 
 // Check file actually exists
 // Open browser console → Network tab → Look for 404 errors
 ```
 
 **Issue: API rate limits**
+
 ```python
 # PubMed: 3 requests per second without API key
 import time
@@ -898,6 +971,7 @@ time.sleep(0.34)  # Between each request
 ```
 
 **Issue: Python dependencies conflict**
+
 ```bash
 # Make sure you're using root requirements.txt versions
 pip install -r ../requirements.txt
@@ -911,7 +985,8 @@ pip show openai  # Should be 1.54.3, not 1.6.1
 1. **Check existing projects**: Look at PCOS or Pharma for reference
 2. **Review STYLE_GUIDE.md**: Design system documentation
 3. **Check shared/ README**: Component usage examples
-4. **Browser DevTools**: Console for JavaScript errors, Network for failed requests
+4. **Browser DevTools**: Console for JavaScript errors, Network for failed
+   requests
 
 ---
 
@@ -929,42 +1004,47 @@ pip show openai  # Should be 1.54.3, not 1.6.1
 ### Essential Code Snippets
 
 **HTML Template:**
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cartridge - ByteSized Research</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cartridge - ByteSized Research</title>
 
-  <!-- Retro Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Retro Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Shared Components -->
-  <script src="/shared/components/EjectButton.js"></script>
-</head>
-<body>
-  <eject-button></eject-button>
+    <!-- Shared Components -->
+    <script src="/shared/components/EjectButton.js"></script>
+  </head>
+  <body>
+    <eject-button></eject-button>
 
-  <header>
-    <h1>Your Title</h1>
-    <p class="subtitle">Your description</p>
-  </header>
+    <header>
+      <h1>Your Title</h1>
+      <p class="subtitle">Your description</p>
+    </header>
 
-  <main>
-    <!-- Your content -->
-  </main>
+    <main>
+      <!-- Your content -->
+    </main>
 
-  <script type="module" src="js/app.js"></script>
-</body>
+    <script type="module" src="js/app.js"></script>
+  </body>
 </html>
 ```
 
 **CSS Template:**
+
 ```css
 /* Import shared variables */
 @import '/shared/styles/variables.css';
@@ -979,7 +1059,9 @@ body {
 }
 
 /* Headers with pixel font */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-pixel);
   color: var(--gb-dark);
   line-height: 1.4;
@@ -1013,6 +1095,7 @@ h1, h2, h3 {
 ```
 
 **JavaScript Template:**
+
 ```javascript
 // frontend/js/app.js
 import { loadJSON } from '/shared/utils/dataLoader.js';
@@ -1026,7 +1109,6 @@ async function init() {
     // Render UI
     renderStats(data.metadata);
     renderContent(data.symptoms);
-
   } catch (error) {
     console.error('Failed to initialize:', error);
     showError('Failed to load data. Please refresh.');
@@ -1034,8 +1116,9 @@ async function init() {
 }
 
 function renderStats(metadata) {
-  document.getElementById('total-count').textContent =
-    formatNumber(metadata.total_symptoms);
+  document.getElementById('total-count').textContent = formatNumber(
+    metadata.total_symptoms
+  );
 }
 
 function showError(message) {

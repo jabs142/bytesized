@@ -23,7 +23,7 @@
   padding: 0.75rem 1.25rem;
 
   /* Typography */
-  font-family: var(--font-pixel, 'Press Start 2P', cursive);
+  font-family: var(--font-pixel, "Press Start 2P", cursive);
   font-size: var(--text-button, 0.5rem);
   text-decoration: none;
   text-transform: uppercase;
@@ -36,24 +36,23 @@
   border-radius: var(--border-radius, 2px);
 
   /* Effects */
-  box-shadow: var(--shadow-md, 4px 4px 0 rgba(0, 0, 0, 0.15));
+  box-shadow: var(--shadow-md, 4px 4px 0 rgb(0 0 0 / 15%));
   transition: all var(--transition-base, 0.2s ease);
   cursor: pointer;
 
   /* Prevent text selection */
   user-select: none;
-  -webkit-user-select: none;
 }
 
 .eject-button:hover {
   background: var(--gb-lightest, #9bbc0f);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg, 6px 6px 0 rgba(0, 0, 0, 0.2));
+  box-shadow: var(--shadow-lg, 6px 6px 0 rgb(0 0 0 / 20%));
 }
 
 .eject-button:active {
   transform: translateY(0);
-  box-shadow: var(--shadow-sm, 2px 2px 0 rgba(0, 0, 0, 0.1));
+  box-shadow: var(--shadow-sm, 2px 2px 0 rgb(0 0 0 / 10%));
 }
 
 /* Icon within button */
@@ -68,24 +67,24 @@
 
 /* ===== Dark Theme Variant ===== */
 .eject-button-dark {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
+  background: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 30%);
+  color: #fff;
   backdrop-filter: blur(10px);
 }
 
 .eject-button-dark:hover {
-  background: rgba(231, 76, 60, 0.2);
+  background: rgb(231 76 60 / 20%);
   border-color: var(--button-red, #e74c3c);
-  color: #ffffff;
+  color: #fff;
 }
 
 .eject-button-dark:active {
-  background: rgba(231, 76, 60, 0.3);
+  background: rgb(231 76 60 / 30%);
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .eject-button {
     top: 1rem;
     left: 1rem;
@@ -98,7 +97,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .eject-button {
     top: 0.75rem;
     left: 0.75rem;

@@ -1,145 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ByteSized Research - Retro Gaming Portal</title>
-    <meta name="description" content="Research topics presented as Game Boy cartridges - an interactive retro gaming experience">
+    <meta
+      name="description"
+      content="Research topics presented as Game Boy cartridges - an interactive retro gaming experience"
+    />
 
     <!-- Google Fonts - Press Start 2P for authentic 8-bit feel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./css/game-boy-frame.css">
-    <link rel="stylesheet" href="./css/cartridge-styles.css">
-    <link rel="stylesheet" href="./css/screen-effects.css">
-    <link rel="stylesheet" href="./shared/styles/about-modal.css">
-</head>
-<body class="portal-body">
+    <link rel="stylesheet" href="./css/game-boy-frame.css" />
+    <link rel="stylesheet" href="./css/cartridge-styles.css" />
+    <link rel="stylesheet" href="./css/screen-effects.css" />
+    <link rel="stylesheet" href="./shared/styles/about-modal.css" />
+  </head>
+  <body class="portal-body">
     <!-- Boot Sequence (shows on first load) -->
     <div id="bootSequence" class="boot-sequence">
-        <div class="boot-logo">
-            <div class="pixel-text">BYTESIZED</div>
-            <div class="pixel-subtitle">INTERNET RABBIT HOLES, VISUALIZED</div>
+      <div class="boot-logo">
+        <div class="pixel-text">BYTESIZED</div>
+        <div class="pixel-subtitle">INTERNET RABBIT HOLES, VISUALIZED</div>
+      </div>
+      <div class="boot-loading">
+        <div class="loading-bar">
+          <div class="loading-fill"></div>
         </div>
-        <div class="boot-loading">
-            <div class="loading-bar">
-                <div class="loading-fill"></div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- Main Portal -->
     <main class="portal-container">
-        <!-- Game Boy Device -->
-        <div class="gameboy-device">
-            <!-- Device Header -->
-            <div class="device-header">
-                <div class="power-indicator">
-                    <div class="led-light"></div>
-                    <span class="power-label">POWER</span>
-                </div>
-            </div>
-
-            <!-- Screen Container -->
-            <div class="screen-container">
-                <div class="screen-bezel">
-                    <div class="screen-glass">
-                        <!-- CRT Effects Overlay -->
-                        <div class="crt-overlay"></div>
-                        <div class="scanlines"></div>
-
-                        <!-- Screen Content -->
-                        <div id="screenContent" class="screen-content">
-                            <div class="screen-title" id="screenTitle">
-                                <div class="pixel-text-lg">BYTESIZED</div>
-                            </div>
-
-                            <!-- Dynamic Pixel Mascot -->
-                            <div class="pixel-mascot" id="mascotContainer">
-                                <div class="mascot-character mascot-default">
-                                    <div class="mascot-head"></div>
-                                    <div class="mascot-body"></div>
-                                    <div class="mascot-arms"></div>
-                                </div>
-                            </div>
-
-                            <div class="screen-subtitle" id="screenSubtitle">
-                                <p class="pixel-text-sm">SELECT A CARTRIDGE</p>
-                                <p class="pixel-text-xs">◄ ► TO SCROLL  •  ENTER TO SELECT</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Device Controls -->
-            <div class="device-controls">
-                <div class="dpad-container">
-                    <div class="dpad">
-                        <button class="dpad-btn dpad-up" aria-label="D-pad up"></button>
-                        <button class="dpad-btn dpad-right" aria-label="D-pad right"></button>
-                        <button class="dpad-btn dpad-down" aria-label="D-pad down"></button>
-                        <button class="dpad-btn dpad-left" aria-label="D-pad left"></button>
-                    </div>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn-b" aria-label="B button">
-                        <span class="btn-label">B</span>
-                    </button>
-                    <button class="btn-a" aria-label="A button">
-                        <span class="btn-label">A</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Device Footer -->
-            <div class="device-footer">
-                <div class="speaker-grille">
-                    <div class="speaker-holes"></div>
-                </div>
-                <div class="device-text">
-                    <span class="model-number">© 2025 BYTESIZED</span>
-                </div>
-            </div>
+      <!-- Game Boy Device -->
+      <div class="gameboy-device">
+        <!-- Device Header -->
+        <div class="device-header">
+          <div class="power-indicator">
+            <div class="led-light"></div>
+            <span class="power-label">POWER</span>
+          </div>
         </div>
 
-        <!-- Cartridge Shelf -->
-        <div class="cartridge-shelf">
-            <div class="shelf-header">
-                <h2 class="shelf-title pixel-text-md">CLICK TO LOAD TOPIC</h2>
-                <p class="shelf-subtitle pixel-text-xs">CLICK TO LOAD TOPIC</p>
-            </div>
-            <div id="cartridgeGrid" class="cartridge-grid">
-                <!-- Cartridges will be loaded here by JavaScript -->
-                <div class="loading-cartridges pixel-text-xs">
-                    <p>LOADING CARTRIDGES...</p>
+        <!-- Screen Container -->
+        <div class="screen-container">
+          <div class="screen-bezel">
+            <div class="screen-glass">
+              <!-- CRT Effects Overlay -->
+              <div class="crt-overlay"></div>
+              <div class="scanlines"></div>
+
+              <!-- Screen Content -->
+              <div id="screenContent" class="screen-content">
+                <div class="screen-title" id="screenTitle">
+                  <div class="pixel-text-lg">BYTESIZED</div>
                 </div>
+
+                <!-- Dynamic Pixel Mascot -->
+                <div class="pixel-mascot" id="mascotContainer">
+                  <div class="mascot-character mascot-default">
+                    <div class="mascot-head"></div>
+                    <div class="mascot-body"></div>
+                    <div class="mascot-arms"></div>
+                  </div>
+                </div>
+
+                <div class="screen-subtitle" id="screenSubtitle">
+                  <p class="pixel-text-sm">SELECT A CARTRIDGE</p>
+                  <p class="pixel-text-xs">◄ ► TO SCROLL • ENTER TO SELECT</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
 
-        <!-- System Controls -->
-        <div class="system-controls">
-            <!-- Audio Toggle -->
-            <button id="muteToggle" class="mute-btn system-btn" aria-label="Toggle sound">
-                <span class="btn-icon">🔊</span>
+        <!-- Device Controls -->
+        <div class="device-controls">
+          <div class="dpad-container">
+            <div class="dpad">
+              <button class="dpad-btn dpad-up" aria-label="D-pad up"></button>
+              <button class="dpad-btn dpad-right" aria-label="D-pad right"></button>
+              <button class="dpad-btn dpad-down" aria-label="D-pad down"></button>
+              <button class="dpad-btn dpad-left" aria-label="D-pad left"></button>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-b" aria-label="B button">
+              <span class="btn-label">B</span>
             </button>
-
-            <!-- About Button -->
-            <button id="aboutToggle" class="about-btn system-btn" aria-label="About ByteSized">
-                <span class="btn-icon">ℹ️</span>
+            <button class="btn-a" aria-label="A button">
+              <span class="btn-label">A</span>
             </button>
+          </div>
         </div>
+
+        <!-- Device Footer -->
+        <div class="device-footer">
+          <div class="speaker-grille">
+            <div class="speaker-holes"></div>
+          </div>
+          <div class="device-text">
+            <span class="model-number">© 2025 BYTESIZED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cartridge Shelf -->
+      <div class="cartridge-shelf">
+        <div class="shelf-header">
+          <h2 class="shelf-title pixel-text-md">CLICK TO LOAD TOPIC</h2>
+          <p class="shelf-subtitle pixel-text-xs">CLICK TO LOAD TOPIC</p>
+        </div>
+        <div id="cartridgeGrid" class="cartridge-grid">
+          <!-- Cartridges will be loaded here by JavaScript -->
+          <div class="loading-cartridges pixel-text-xs">
+            <p>LOADING CARTRIDGES...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Controls -->
+      <div class="system-controls">
+        <!-- Audio Toggle -->
+        <button id="muteToggle" class="mute-btn system-btn" aria-label="Toggle sound">
+          <span class="btn-icon">🔊</span>
+        </button>
+
+        <!-- About Button -->
+        <button id="aboutToggle" class="about-btn system-btn" aria-label="About ByteSized">
+          <span class="btn-icon">ℹ️</span>
+        </button>
+      </div>
     </main>
 
     <!-- Loading Transition Screen -->
     <div id="loadingTransition" class="loading-transition hidden">
-        <div class="transition-content">
-            <div class="pixel-text-lg">LOADING...</div>
-            <div class="loading-spinner"></div>
-        </div>
+      <div class="transition-content">
+        <div class="pixel-text-lg">LOADING...</div>
+        <div class="loading-spinner"></div>
+      </div>
     </div>
 
     <!-- About Modal -->
@@ -151,5 +154,5 @@
     <script src="./js/animations.js"></script>
     <script src="./js/portal.js"></script>
     <script src="./js/about-modal-handler.js"></script>
-</body>
+  </body>
 </html>

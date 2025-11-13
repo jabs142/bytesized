@@ -65,6 +65,7 @@ Tests are marked with pytest markers for easy filtering:
 ### Current Test Modules
 
 **test_side_effect_standardization.py** (16 tests)
+
 - ✅ PMDD variations
 - ✅ Acne variations
 - ✅ Libido variations
@@ -79,6 +80,7 @@ Tests are marked with pytest markers for easy filtering:
 - ✅ Idempotence
 
 **test_text_cleaner.py** (14 tests)
+
 - ✅ Email removal
 - ✅ Phone number removal
 - ✅ SSN removal
@@ -90,6 +92,7 @@ Tests are marked with pytest markers for easy filtering:
 - ✅ Comment thread cleaning
 
 **test_data_validation.py** (11 tests)
+
 - ✅ File existence checks
 - ✅ JSON structure validation
 - ✅ Reddit data structure
@@ -143,6 +146,7 @@ class TestFeatureName:
 ## Test Data
 
 Tests use:
+
 - **Mock data** for unit tests (no external files needed)
 - **Fixtures** for integration tests
 - **Real data files** for validation tests (optional - tests skip if not found)
@@ -150,6 +154,7 @@ Tests use:
 ## Continuous Integration
 
 Tests are designed to run in CI/CD environments:
+
 - No API keys required for basic tests
 - Data validation tests skip if files don't exist
 - Fast execution time (~2 seconds for full suite)
@@ -157,6 +162,7 @@ Tests are designed to run in CI/CD environments:
 ## Coverage Goals
 
 Target coverage by module:
+
 - **Core analysis modules**: 80%+ coverage
 - **Data collection**: 60%+ coverage (requires mocking APIs)
 - **Preprocessing**: 90%+ coverage
@@ -165,6 +171,7 @@ Target coverage by module:
 ## Future Test Additions
 
 Planned test modules:
+
 - `test_statistical_validator.py` - Statistical calculation tests
 - `test_association_rules.py` - Association rule mining tests
 - `test_medical_term_extractor.py` - Medical terminology tests
@@ -173,14 +180,17 @@ Planned test modules:
 ## Troubleshooting
 
 **ImportError: No module named 'src'**
+
 - Ensure pytest is run from project root
 - Check `pytest.ini` has `pythonpath = .`
 
 **Tests skipped**
+
 - Some tests skip if data files don't exist (this is expected)
 - Use `-v` flag to see skip reasons
 
 **Coverage not working**
+
 - Install: `pip install pytest-cov`
 - Run: `pytest --cov=src`
 

@@ -26,6 +26,7 @@ nano .env  # or use your favorite editor
 ```
 
 Add your credentials:
+
 ```
 REDDIT_CLIENT_ID=your_client_id_here
 REDDIT_CLIENT_SECRET=your_secret_here
@@ -35,6 +36,7 @@ NCBI_EMAIL=your_email@example.com
 ```
 
 **Where to get API keys:**
+
 - **Reddit**: https://www.reddit.com/prefs/apps (create a "script" app)
 - **OpenAI**: https://platform.openai.com/api-keys
 - **NCBI**: Just use your email (no signup needed)
@@ -48,6 +50,7 @@ NCBI_EMAIL=your_email@example.com
 ```
 
 This runs all phases automatically:
+
 1. Collects 500 Reddit posts (3-5 min)
 2. Extracts symptoms with LLM (5-7 min)
 3. Validates top 30 with PubMed (5-10 min)
@@ -155,6 +158,7 @@ Open `data/validated/surprise_rankings.json` to see:
 ```
 
 **Classifications:**
+
 - 🔥 **VERY SURPRISING** (score > 2.0): Hidden connection doctors rarely mention
 - ⚠️ **SOMEWHAT SURPRISING** (score > 1.0): Underappreciated connection
 - ✓ **EXPECTED**: Known PCOS symptom
@@ -162,21 +166,25 @@ Open `data/validated/surprise_rankings.json` to see:
 ## Troubleshooting
 
 ### "Reddit credentials not found"
+
 - Make sure you created a Reddit app at https://www.reddit.com/prefs/apps
 - App type should be "script"
 - Copy client ID and secret to .env
 
 ### "OpenAI API key not found"
+
 - Get key from https://platform.openai.com/api-keys
 - Add $5 credit if new account
 - Paste into .env file
 
 ### "Rate limit exceeded"
+
 - Reddit API: Wait 1 minute, then retry
 - OpenAI API: You may need to add more credits
 - PubMed API: Increase RATE_LIMIT_DELAY in config
 
 ### "No module named 'praw'"
+
 - Make sure virtual environment is activated: `source venv/bin/activate`
 - Reinstall: `pip install -r requirements.txt`
 
@@ -190,12 +198,14 @@ Open `data/validated/surprise_rankings.json` to see:
 ## Research Notes
 
 This project follows your established methodology:
+
 - ✅ LLM-based extraction (not keyword matching)
 - ✅ PubMed validation
 - ✅ Statistical rigor
 - ✅ Patient-centered approach
 
-**New Innovation**: Surprise factor calculation to identify hidden symptom connections!
+**New Innovation**: Surprise factor calculation to identify hidden symptom
+connections!
 
 ## Questions?
 

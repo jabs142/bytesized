@@ -4,67 +4,67 @@
  */
 
 /* ===== Font Import ===== */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 /* ===== CSS Reset & Base ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    /* Game Boy Color Palette */
-    --gb-darkest: #0f380f;
-    --gb-dark: #306230;
-    --gb-light: #8bac0f;
-    --gb-lightest: #9bbc0f;
+  /* Game Boy Color Palette */
+  --gb-darkest: #0f380f;
+  --gb-dark: #306230;
+  --gb-light: #8bac0f;
+  --gb-lightest: #9bbc0f;
 
-    /* Retro Medical Theme Colors */
-    --primary: var(--gb-light);
-    --primary-dark: var(--gb-dark);
-    --very-surprising: #6B8E23;  /* Darker green with warmth */
-    --somewhat-surprising: var(--gb-light);  /* Medium green */
-    --expected: #A8BCC8;  /* Light muted green-blue */
+  /* Retro Medical Theme Colors */
+  --primary: var(--gb-light);
+  --primary-dark: var(--gb-dark);
+  --very-surprising: #6b8e23; /* Darker green with warmth */
+  --somewhat-surprising: var(--gb-light); /* Medium green */
+  --expected: #a8bcc8; /* Light muted green-blue */
+  --bg-main: #e8e8e8; /* Light gray, easier on eyes than white */
+  --bg-card: #f5f5f5; /* Slightly darker for cards */
+  --text-primary: #2a2a2a; /* Dark gray, readable */
+  --text-secondary: #5a5a5a; /* Medium gray */
+  --border-color: var(--gb-darkest); /* Pixel borders */
+  --screen-glow: rgb(139 172 15 / 30%); /* Subtle Game Boy glow */
 
-    --bg-main: #E8E8E8;  /* Light gray, easier on eyes than white */
-    --bg-card: #F5F5F5;  /* Slightly darker for cards */
-    --text-primary: #2a2a2a;  /* Dark gray, readable */
-    --text-secondary: #5a5a5a;  /* Medium gray */
-    --border-color: var(--gb-darkest);  /* Pixel borders */
-    --screen-glow: rgba(139, 172, 15, 0.3);  /* Subtle Game Boy glow */
+  /* Spacing - generous whitespace maintained */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
 
-    /* Spacing - generous whitespace maintained */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+  /* Retro UI Elements */
+  --pixel-border: 2px solid var(--gb-darkest);
+  --radius-pixel: 2px; /* Minimal radius for retro feel */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
 
-    /* Retro UI Elements */
-    --pixel-border: 2px solid var(--gb-darkest);
-    --radius-pixel: 2px;  /* Minimal radius for retro feel */
-    --radius-sm: 0.375rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-
-    /* Retro shadows - subtle depth */
-    --shadow-sm: 0 2px 0 rgba(15, 56, 15, 0.2);
-    --shadow-md: 0 3px 0 rgba(15, 56, 15, 0.25);
-    --shadow-lg: 0 4px 0 rgba(15, 56, 15, 0.3);
-    --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Retro shadows - subtle depth */
+  --shadow-sm: 0 2px 0 rgb(15 56 15 / 20%);
+  --shadow-md: 0 3px 0 rgb(15 56 15 / 25%);
+  --shadow-lg: 0 4px 0 rgb(15 56 15 / 30%);
+  --shadow-inset: inset 0 2px 4px rgb(0 0 0 / 20%);
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    line-height: 1.6;
-    font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-code, pre {
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+code,
+pre {
+  font-family: "SF Mono", Monaco, Inconsolata, "Fira Code", monospace;
 }
 
 /* ===== Pixel Font Utilities ===== */
@@ -73,1010 +73,1037 @@ code, pre {
 .pixel-text-sm,
 .pixel-text-md,
 .pixel-text-lg {
-    font-family: 'Press Start 2P', cursive;
-    line-height: 1.6;
-    letter-spacing: -0.05em;
+  font-family: "Press Start 2P", cursive;
+  line-height: 1.6;
+  letter-spacing: -0.05em;
 }
 
-.pixel-text-xs { font-size: 0.5rem; }
-.pixel-text-sm { font-size: 0.625rem; }
-.pixel-text { font-size: 0.75rem; }
-.pixel-text-md { font-size: 0.875rem; }
-.pixel-text-lg { font-size: 1rem; }
+.pixel-text-xs {
+  font-size: 0.5rem;
+}
+
+.pixel-text-sm {
+  font-size: 0.625rem;
+}
+
+.pixel-text {
+  font-size: 0.75rem;
+}
+
+.pixel-text-md {
+  font-size: 0.875rem;
+}
+
+.pixel-text-lg {
+  font-size: 1rem;
+}
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
 }
 
 /* ===== Retro Game HUD Header ===== */
 .header {
-    background: var(--gb-darkest);
-    color: var(--gb-lightest);
-    padding: var(--spacing-md) 0;
-    border-bottom: 4px solid var(--gb-dark);
-    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
-    position: relative;
+  background: var(--gb-darkest);
+  color: var(--gb-lightest);
+  padding: var(--spacing-md) 0;
+  border-bottom: 4px solid var(--gb-dark);
+  box-shadow: 0 4px 0 rgb(0 0 0 / 30%);
+  position: relative;
 }
 
 .header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--gb-light) 0px,
-        var(--gb-light) 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    opacity: 0.3;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gb-light) 0,
+    var(--gb-light) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.3;
 }
 
 .header h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
-    font-weight: normal;
-    margin-bottom: var(--spacing-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-shadow: 2px 2px 0 var(--gb-dark);
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 0 var(--gb-dark);
 }
 
 .subtitle {
-    font-size: 0.75rem;
-    color: var(--gb-light);
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto;
+  font-size: 0.75rem;
+  color: var(--gb-light);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* ===== Main Content ===== */
 .main-content {
-    padding: var(--spacing-lg) 0;
+  padding: var(--spacing-lg) 0;
 }
 
 /* ===== Intro Section - Retro Info Panel ===== */
 .intro-section {
-    margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .intro-card {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
-    box-shadow: var(--shadow-md);
-    position: relative;
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  position: relative;
 }
 
 /* Corner accents - retro detail */
 .intro-card::before,
 .intro-card::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border: 2px solid var(--gb-light);
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--gb-light);
 }
 
 .intro-card::before {
-    top: -2px;
-    left: -2px;
-    border-right: none;
-    border-bottom: none;
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
 }
 
 .intro-card::after {
-    bottom: -2px;
-    right: -2px;
-    border-left: none;
-    border-top: none;
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
 }
 
 .intro-card h2 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.75rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--gb-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--gb-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .intro-card p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.9375rem;
 }
 
 /* ===== Stats Section - Game Stats Display ===== */
 .stats-section {
-    margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
 }
 
 .stat-card {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
-    text-align: center;
-    box-shadow: var(--shadow-inset), var(--shadow-md);
-    position: relative;
-    overflow: hidden;
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-md);
+  text-align: center;
+  box-shadow: var(--shadow-inset), var(--shadow-md);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Stats card header accent */
 .stat-card::before {
-    content: '▼';
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: var(--gb-light);
-    opacity: 0.5;
+  content: "▼";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  color: var(--gb-light);
+  opacity: 0.5;
 }
 
 .stat-number {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.75rem;
-    font-weight: normal;
-    color: var(--gb-dark);
-    line-height: 1.4;
-    margin-top: var(--spacing-sm);
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.75rem;
+  font-weight: normal;
+  color: var(--gb-dark);
+  line-height: 1.4;
+  margin-top: var(--spacing-sm);
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 10%);
 }
 
 .stat-label {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: var(--text-secondary);
-    margin-top: var(--spacing-sm);
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.6;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-sm);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
 }
 
 /* ===== Filter Section - RPG Menu Style ===== */
 .filter-section {
-    margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .filter-section h2 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    margin-bottom: var(--spacing-md);
-    text-transform: uppercase;
-    color: var(--gb-dark);
-    letter-spacing: 0.05em;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  color: var(--gb-dark);
+  letter-spacing: 0.05em;
 }
 
 .filter-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 .filter-btn {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    font-weight: normal;
-    cursor: pointer;
-    transition: all 0.1s;
-    white-space: nowrap;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    text-transform: uppercase;
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.1s;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  text-transform: uppercase;
 }
 
 .filter-btn::before {
-    content: '►';
-    position: absolute;
-    left: 8px;
-    opacity: 0;
-    transition: opacity 0.1s;
+  content: "►";
+  position: absolute;
+  left: 8px;
+  opacity: 0;
+  transition: opacity 0.1s;
 }
 
 .filter-btn:hover {
-    border-color: var(--gb-light);
-    box-shadow: 0 0 8px var(--screen-glow), var(--shadow-md);
-    transform: translateY(-1px);
+  border-color: var(--gb-light);
+  box-shadow:
+    0 0 8px var(--screen-glow),
+    var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .filter-btn.active {
-    background: var(--gb-dark);
-    color: var(--gb-lightest);
-    border-color: var(--gb-dark);
-    box-shadow: var(--shadow-inset);
-    transform: translateY(1px);
+  background: var(--gb-dark);
+  color: var(--gb-lightest);
+  border-color: var(--gb-dark);
+  box-shadow: var(--shadow-inset);
+  transform: translateY(1px);
 }
 
 .filter-btn.active::before {
-    opacity: 1;
-    left: 4px;
+  opacity: 1;
+  left: 4px;
 }
 
 /* ===== Symptoms Section - Pokédex Style ===== */
 .symptoms-section {
-    margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .symptoms-section h2 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    margin-bottom: var(--spacing-md);
-    text-transform: uppercase;
-    color: var(--gb-dark);
-    letter-spacing: 0.05em;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  color: var(--gb-dark);
+  letter-spacing: 0.05em;
 }
 
 .symptoms-list {
-    display: grid;
-    gap: var(--spacing-md);
+  display: grid;
+  gap: var(--spacing-md);
 }
 
 /* ===== Symptom Card - Item/Pokédex Card Style ===== */
 .symptom-card {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    box-shadow: var(--shadow-md);
-    cursor: pointer;
-    transition: all 0.15s;
-    overflow: hidden;
-    position: relative;
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.15s;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Top accent strip based on surprise level */
 .symptom-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--expected);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--expected);
 }
 
 .symptom-card.very-surprising::before {
-    background: var(--very-surprising);
+  background: var(--very-surprising);
 }
 
 .symptom-card.somewhat-surprising::before {
-    background: var(--somewhat-surprising);
+  background: var(--somewhat-surprising);
 }
 
 /* Corner brackets - Pokédex style */
 .symptom-card::after {
-    content: '';
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid var(--gb-light);
-    border-right: 2px solid var(--gb-light);
-    opacity: 0.4;
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--gb-light);
+  border-right: 2px solid var(--gb-light);
+  opacity: 0.4;
 }
 
 .symptom-card:hover {
-    box-shadow: 0 0 12px var(--screen-glow), var(--shadow-md);
-    transform: translateY(-2px);
+  box-shadow:
+    0 0 12px var(--screen-glow),
+    var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .symptom-card:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 .symptom-header {
-    display: flex;
-    align-items: center;
-    padding: var(--spacing-md);
-    gap: var(--spacing-md);
-    background: linear-gradient(180deg, rgba(139, 172, 15, 0.05) 0%, transparent 100%);
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+  background: linear-gradient(180deg, rgb(139 172 15 / 5%) 0%, transparent 100%);
 }
 
 .symptom-rank {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.75rem;
-    font-weight: normal;
-    color: var(--gb-dark);
-    min-width: 3.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: var(--gb-dark);
+  min-width: 3.5rem;
 }
 
 .symptom-rank::before {
-    content: '#';
-    opacity: 0.5;
+  content: "#";
+  opacity: 0.5;
 }
 
 .symptom-info {
-    flex: 1;
+  flex: 1;
 }
 
 .symptom-info h3 {
-    font-size: 1.0625rem;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-primary);
-    font-weight: 600;
+  font-size: 1.0625rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .medical-term-definition {
-    display: block;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    font-weight: normal;
-    margin-top: 0.25rem;
-    font-style: italic;
-    line-height: 1.4;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: normal;
+  margin-top: 0.25rem;
+  font-style: italic;
+  line-height: 1.4;
 }
 
 .symptom-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    font-size: 0.875rem;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  font-size: 0.875rem;
+  align-items: center;
 }
 
 .surprise-score {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    background: transparent;
-    color: var(--gb-dark);
-    padding: 0;
-    border-radius: 0;
-    font-weight: normal;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  background: transparent;
+  color: var(--gb-dark);
+  padding: 0;
+  border-radius: 0;
+  font-weight: normal;
 }
 
 .tier-badge {
-    font-family: 'Press Start 2P', cursive;
-    padding: 0.375rem 0.625rem;
-    border: 2px solid var(--gb-dark);
-    border-radius: var(--radius-pixel);
-    font-size: 0.4375rem;
-    font-weight: normal;
-    text-transform: uppercase;
-    background: var(--bg-card);
-    box-shadow: var(--shadow-sm);
+  font-family: "Press Start 2P", cursive;
+  padding: 0.375rem 0.625rem;
+  border: 2px solid var(--gb-dark);
+  border-radius: var(--radius-pixel);
+  font-size: 0.4375rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
 }
 
 .tier-badge.tier-1 {
-    border-color: var(--gb-dark);
-    color: var(--gb-dark);
+  border-color: var(--gb-dark);
+  color: var(--gb-dark);
 }
 
 .tier-badge.tier-2 {
-    border-color: var(--gb-light);
-    color: var(--gb-light);
+  border-color: var(--gb-light);
+  color: var(--gb-light);
 }
 
 .tier-badge.tier-3 {
-    border-color: var(--expected);
-    color: var(--expected);
+  border-color: var(--expected);
+  color: var(--expected);
 }
 
 .tier-badge.tier-3 {
-    background: rgba(133, 176, 154, 0.15);
-    color: #85B09A;
+  background: rgb(133 176 154 / 15%);
+  color: #85b09a;
 }
 
 .expand-icon {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    transition: transform 0.15s;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  transition: transform 0.15s;
 }
 
 .symptom-card.expanded .expand-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* ===== Symptom Details (Hidden by default) ===== */
 .symptom-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding: 0 var(--spacing-md);
-    border-top: 1px solid transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 var(--spacing-md);
+  border-top: 1px solid transparent;
 }
 
 .symptom-card.expanded .symptom-details {
-    max-height: 2000px;
-    padding: var(--spacing-md);
-    border-top: 1px solid var(--gb-light);
-    background: linear-gradient(180deg, rgba(139, 172, 15, 0.02) 0%, transparent 100%);
+  max-height: 2000px;
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--gb-light);
+  background: linear-gradient(180deg, rgb(139 172 15 / 2%) 0%, transparent 100%);
 }
 
 .classification-badge {
-    display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 2px solid;
-    border-radius: var(--radius-pixel);
-    font-family: 'Press Start 2P', cursive;
-    font-weight: normal;
-    font-size: 0.5rem;
-    margin-bottom: var(--spacing-sm);
-    text-transform: uppercase;
-    box-shadow: var(--shadow-sm);
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 2px solid;
+  border-radius: var(--radius-pixel);
+  font-family: "Press Start 2P", cursive;
+  font-weight: normal;
+  font-size: 0.5rem;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
 }
 
 .classification-badge.very-surprising {
-    background: transparent;
-    border-color: var(--very-surprising);
-    color: var(--very-surprising);
+  background: transparent;
+  border-color: var(--very-surprising);
+  color: var(--very-surprising);
 }
 
 .classification-badge.somewhat-surprising {
-    background: transparent;
-    border-color: var(--somewhat-surprising);
-    color: var(--somewhat-surprising);
+  background: transparent;
+  border-color: var(--somewhat-surprising);
+  color: var(--somewhat-surprising);
 }
 
 .classification-badge.expected {
-    background: transparent;
-    border-color: var(--expected);
-    color: var(--expected);
+  background: transparent;
+  border-color: var(--expected);
+  color: var(--expected);
 }
 
 .tier-description {
-    font-style: normal;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-sm);
-    background: var(--bg-main);
-    border-left: 3px solid var(--gb-light);
-    border-radius: var(--radius-pixel);
-    font-size: 0.875rem;
-    line-height: 1.6;
+  font-style: normal;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--bg-main);
+  border-left: 3px solid var(--gb-light);
+  border-radius: var(--radius-pixel);
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .evidence-section,
 .surprise-factors-section,
 .quotes-section {
-    margin-top: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .symptom-details h4 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--gb-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--gb-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .symptom-details ul {
-    list-style-position: inside;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 0.9375rem;
+  list-style-position: inside;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 0.9375rem;
 }
 
 .symptom-details li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .symptom-details li::marker {
-    color: var(--gb-light);
+  color: var(--gb-light);
 }
 
 blockquote {
-    border-left: 3px solid var(--gb-light);
-    padding: var(--spacing-sm) var(--spacing-md);
-    margin: var(--spacing-md) 0;
-    font-style: italic;
-    color: var(--text-secondary);
-    background: rgba(139, 172, 15, 0.03);
-    border-radius: var(--radius-pixel);
-    font-size: 0.9375rem;
-    line-height: 1.7;
+  border-left: 3px solid var(--gb-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: rgb(139 172 15 / 3%);
+  border-radius: var(--radius-pixel);
+  font-size: 0.9375rem;
+  line-height: 1.7;
 }
 
 /* ===== Legend Section - Game Manual Style ===== */
 .legend-section {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-lg);
-    box-shadow: var(--shadow-md);
-    margin-bottom: var(--spacing-xl);
-    position: relative;
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
 }
 
 .legend-section::before {
-    content: 'INFO';
-    position: absolute;
-    top: -10px;
-    left: var(--spacing-md);
-    background: var(--bg-main);
-    padding: 0 var(--spacing-xs);
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: var(--gb-dark);
+  content: "INFO";
+  position: absolute;
+  top: -10px;
+  left: var(--spacing-md);
+  background: var(--bg-main);
+  padding: 0 var(--spacing-xs);
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  color: var(--gb-dark);
 }
 
 .legend-section h3 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    margin-bottom: var(--spacing-lg);
-    text-transform: uppercase;
-    color: var(--gb-dark);
-    letter-spacing: 0.05em;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  color: var(--gb-dark);
+  letter-spacing: 0.05em;
 }
 
 .legend-grid {
-    display: grid;
-    gap: var(--spacing-md);
+  display: grid;
+  gap: var(--spacing-md);
 }
 
 .legend-item {
-    display: flex;
-    gap: var(--spacing-md);
-    align-items: start;
-    padding: var(--spacing-sm);
-    border-left: 3px solid var(--gb-light);
-    background: linear-gradient(90deg, rgba(139, 172, 15, 0.05) 0%, transparent 100%);
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: start;
+  padding: var(--spacing-sm);
+  border-left: 3px solid var(--gb-light);
+  background: linear-gradient(90deg, rgb(139 172 15 / 5%) 0%, transparent 100%);
 }
 
 .legend-icon {
-    font-size: 1.5rem;
-    min-width: 2.5rem;
-    text-align: center;
+  font-size: 1.5rem;
+  min-width: 2.5rem;
+  text-align: center;
 }
 
 .legend-item strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: var(--gb-dark);
-    text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  color: var(--gb-dark);
+  text-transform: uppercase;
 }
 
 .legend-item p {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.7;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.7;
 }
 
 /* ===== Footer - Retro Credits ===== */
 .footer {
-    background: var(--gb-darkest);
-    padding: var(--spacing-lg) 0;
-    text-align: center;
-    border-top: 4px solid var(--gb-dark);
-    margin-top: var(--spacing-xl);
+  background: var(--gb-darkest);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  border-top: 4px solid var(--gb-dark);
+  margin-top: var(--spacing-xl);
 }
 
 .footer p {
-    color: var(--gb-light);
-    font-size: 0.75rem;
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.8;
+  color: var(--gb-light);
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.8;
 }
 
 .footer a {
-    color: var(--gb-lightest);
-    text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
+  color: var(--gb-lightest);
+  text-decoration: none;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
 }
 
 .footer a:hover {
-    text-shadow: 0 0 8px var(--screen-glow);
+  text-shadow: 0 0 8px var(--screen-glow);
 }
 
 /* ===== Navigation - Eject Button ===== */
 .eject-button-container {
-    position: fixed;
-    top: 1rem;
-    left: 20px;
-    z-index: 10000;
+  position: fixed;
+  top: 1rem;
+  left: 20px;
+  z-index: 10000;
 }
 
 .eject-button {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    background: var(--gb-darkest);
-    color: var(--gb-lightest);
-    border: 3px solid var(--gb-light);
-    padding: 12px 20px;
-    border-radius: var(--radius-pixel);
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow:
-        var(--shadow-md),
-        0 0 15px var(--screen-glow);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-transform: uppercase;
-    position: relative;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  background: var(--gb-darkest);
+  color: var(--gb-lightest);
+  border: 3px solid var(--gb-light);
+  padding: 12px 20px;
+  border-radius: var(--radius-pixel);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow:
+    var(--shadow-md),
+    0 0 15px var(--screen-glow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .eject-button::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    height: 2px;
-    background: var(--gb-light);
-    opacity: 0.3;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  height: 2px;
+  background: var(--gb-light);
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .eject-button:hover {
-    background: var(--gb-dark);
-    transform: translateY(-3px);
-    box-shadow:
-        0 6px 0 rgba(15, 56, 15, 0.3),
-        0 0 25px var(--screen-glow);
-    border-color: var(--gb-lightest);
+  background: var(--gb-dark);
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 0 rgb(15 56 15 / 30%),
+    0 0 25px var(--screen-glow);
+  border-color: var(--gb-lightest);
 }
 
 .eject-button:active {
-    transform: translateY(-1px);
-    box-shadow:
-        0 2px 0 rgba(15, 56, 15, 0.3),
-        0 0 10px var(--screen-glow);
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 0 rgb(15 56 15 / 30%),
+    0 0 10px var(--screen-glow);
 }
 
 .eject-icon {
-    font-size: 0.875rem;
-    animation: blinkArrow 2s infinite;
+  font-size: 0.875rem;
+  animation: blinkArrow 2s infinite;
 }
 
 @keyframes blinkArrow {
-    0%, 90%, 100% { opacity: 1; }
-    95% { opacity: 0.3; }
+  0%,
+  90%,
+  100% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0.3;
+  }
 }
 
 /* Legacy breadcrumb support */
 .nav-breadcrumb {
-    padding: var(--spacing-sm) 0;
+  padding: var(--spacing-sm) 0;
 }
 
 .back-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: opacity 0.2s;
-    display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+  display: inline-block;
 }
 
 .back-link:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 /* ===== Utility Classes ===== */
 .loading {
-    text-align: center;
-    padding: var(--spacing-xl);
-    color: var(--text-secondary);
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
 }
 
 .error-message {
-    background: rgba(220, 38, 38, 0.1);
-    border: 2px solid var(--very-surprising);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    text-align: center;
+  background: rgb(220 38 38 / 10%);
+  border: 2px solid var(--very-surprising);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
 }
 
 .error-message h3 {
-    color: var(--very-surprising);
-    margin-bottom: var(--spacing-sm);
+  color: var(--very-surprising);
+  margin-bottom: var(--spacing-sm);
 }
 
 .error-message code {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius-sm);
-    font-family: monospace;
+  background: rgb(0 0 0 / 5%);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
 }
 
 .no-results {
-    text-align: center;
-    padding: var(--spacing-xl);
-    color: var(--text-secondary);
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 480px) {
-    /* Mobile-first adjustments for retro UI */
-    .eject-button {
-        font-size: 0.5rem;
-        padding: 10px 15px;
-        gap: 8px;
-    }
+@media (width <= 480px) {
+  /* Mobile-first adjustments for retro UI */
+  .eject-button {
+    font-size: 0.5rem;
+    padding: 10px 15px;
+    gap: 8px;
+  }
 
-    .eject-button-container {
-        top: 15px;
-        left: 15px;
-    }
+  .eject-button-container {
+    top: 15px;
+    left: 15px;
+  }
 
-    .header h1 {
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
+  .header h1 {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
 
-    .subtitle {
-        font-size: 0.625rem;
-    }
+  .subtitle {
+    font-size: 0.625rem;
+  }
 
-    .filter-btn {
-        font-size: 0.45rem;
-        padding: var(--spacing-xs) var(--spacing-sm);
-    }
+  .filter-btn {
+    font-size: 0.45rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
 
-    .stat-number {
-        font-size: 1.5rem;
-    }
+  .stat-number {
+    font-size: 1.5rem;
+  }
 
-    .symptom-rank {
-        font-size: 0.625rem;
-    }
+  .symptom-rank {
+    font-size: 0.625rem;
+  }
 
-    .legend-section::before {
-        font-size: 0.45rem;
-    }
+  .legend-section::before {
+    font-size: 0.45rem;
+  }
 }
 
-@media (min-width: 640px) {
-    .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media (width >= 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    .header h1 {
-        font-size: 1rem;
-    }
+  .header h1 {
+    font-size: 1rem;
+  }
 
-    .subtitle {
-        font-size: 0.75rem;
-    }
+  .subtitle {
+    font-size: 0.75rem;
+  }
 }
 
-@media (min-width: 768px) {
-    .container {
-        padding: 0 var(--spacing-lg);
-    }
+@media (width >= 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
 
-    .symptom-info h3 {
-        font-size: 1.25rem;
-    }
+  .symptom-info h3 {
+    font-size: 1.25rem;
+  }
 
-    .legend-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .legend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .eject-button {
-        font-size: 0.625rem;
-    }
+  .eject-button {
+    font-size: 0.625rem;
+  }
 }
 
-@media (min-width: 1024px) {
-    .main-content {
-        padding: var(--spacing-xl) 0;
-    }
+@media (width >= 1024px) {
+  .main-content {
+    padding: var(--spacing-xl) 0;
+  }
 
-    .header h1 {
-        font-size: 1.125rem;
-    }
+  .header h1 {
+    font-size: 1.125rem;
+  }
 }
 
 /* ===== PCOS Background Section ===== */
 .pcos-background-section {
-    margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .background-card,
 .criteria-card,
 .study-context-card {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    box-shadow: var(--shadow-sm);
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .background-card h2,
 .criteria-card h2,
 .study-context-card h2 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.875rem;
-    color: var(--gb-darkest);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.875rem;
+  color: var(--gb-darkest);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
 }
 
 .criteria-section {
-    margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .criteria-section:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .criteria-section h3 {
-    font-size: 0.95rem;
-    color: var(--gb-dark);
-    margin-bottom: var(--spacing-xs);
-    font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gb-dark);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
 }
 
 .criteria-section p {
-    margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
 }
 
 .criteria-section ol {
-    margin-left: var(--spacing-md);
-    margin-top: var(--spacing-xs);
+  margin-left: var(--spacing-md);
+  margin-top: var(--spacing-xs);
 }
 
 .criteria-section ol li {
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.8;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.8;
 }
 
 .study-context-card code {
-    background: rgba(15, 56, 15, 0.1);
-    padding: 0.15rem 0.4rem;
-    border-radius: var(--radius-pixel);
-    font-size: 0.875em;
-    border: 1px solid var(--gb-light);
+  background: rgb(15 56 15 / 10%);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-pixel);
+  font-size: 0.875em;
+  border: 1px solid var(--gb-light);
 }
 
 /* ===== Statistics Section ===== */
 .stats-section {
-    margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
 }
 
 .stat-card {
-    background: var(--bg-card);
-    border: var(--pixel-border);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.2s ease;
+  background: var(--bg-card);
+  border: var(--pixel-border);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
 }
 
 .stat-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .stat-value {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5rem;
-    color: var(--gb-darkest);
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.4;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  color: var(--gb-darkest);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.4;
 }
 
 .stat-label {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* ===== Methodology Section ===== */
 .methodology-section {
-    background: var(--gb-darkest);
-    color: var(--gb-lightest);
-    padding: var(--spacing-lg) 0;
-    margin-top: var(--spacing-xl);
+  background: var(--gb-darkest);
+  color: var(--gb-lightest);
+  padding: var(--spacing-lg) 0;
+  margin-top: var(--spacing-xl);
 }
 
 .methodology-section h2 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.875rem;
-    color: var(--gb-lightest);
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-    line-height: 1.6;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.875rem;
+  color: var(--gb-lightest);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  line-height: 1.6;
 }
 
 .methodology-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .method-card {
-    background: rgba(139, 172, 15, 0.15);
-    border: 2px solid var(--gb-light);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
+  background: rgb(139 172 15 / 15%);
+  border: 2px solid var(--gb-light);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-md);
 }
 
 .method-card h3 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    color: var(--gb-lightest);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  color: var(--gb-lightest);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
 }
 
 .method-card ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .method-card ul li {
-    padding-left: var(--spacing-sm);
-    margin-bottom: var(--spacing-xs);
-    position: relative;
-    line-height: 1.8;
+  padding-left: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+  line-height: 1.8;
 }
 
 .method-card ul li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--gb-light);
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--gb-light);
 }
 
 .disclaimer-card {
-    background: rgba(139, 172, 15, 0.2);
-    border: 2px solid var(--gb-lightest);
-    border-radius: var(--radius-pixel);
-    padding: var(--spacing-md);
-    margin-top: var(--spacing-md);
+  background: rgb(139 172 15 / 20%);
+  border: 2px solid var(--gb-lightest);
+  border-radius: var(--radius-pixel);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .disclaimer-card h3 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.625rem;
-    color: var(--gb-lightest);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.625rem;
+  color: var(--gb-lightest);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
 }
 
 .disclaimer-card p {
-    line-height: 1.8;
-    font-size: 0.9rem;
+  line-height: 1.8;
+  font-size: 0.9rem;
 }
 
 /* ===== Print Styles ===== */
 @media print {
-    .header, .filter-section, .footer {
-        display: none;
-    }
+  .header,
+  .filter-section,
+  .footer {
+    display: none;
+  }
 
-    .symptom-card {
-        break-inside: avoid;
-    }
+  .symptom-card {
+    break-inside: avoid;
+  }
 
-    .symptom-details {
-        max-height: none !important;
-        padding: var(--spacing-md) !important;
-    }
+  .symptom-details {
+    max-height: none !important;
+    padding: var(--spacing-md) !important;
+  }
 }

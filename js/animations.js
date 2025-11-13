@@ -8,7 +8,9 @@ const Animations = {
    */
   playBootSequence() {
     const bootElement = document.getElementById('bootSequence');
-    if (!bootElement) return;
+    if (!bootElement) {
+      return;
+    }
 
     // Play power on sound
     setTimeout(() => {
@@ -43,7 +45,7 @@ const Animations = {
     const gameBoy = document.querySelector('.gameboy-device');
     const gameBoyRect = gameBoy.getBoundingClientRect();
 
-    const deltaX = gameBoyRect.left + (gameBoyRect.width / 2) - cartridgeRect.left;
+    const deltaX = gameBoyRect.left + gameBoyRect.width / 2 - cartridgeRect.left;
     const deltaY = gameBoyRect.top - cartridgeRect.top;
 
     // Set CSS custom property for animation
@@ -59,7 +61,9 @@ const Animations = {
 
     // Call callback after full animation
     setTimeout(() => {
-      if (callback) callback();
+      if (callback) {
+        callback();
+      }
     }, 2000);
   },
 
@@ -68,7 +72,9 @@ const Animations = {
    */
   screenFlash() {
     const screen = document.querySelector('.screen-glass');
-    if (!screen) return;
+    if (!screen) {
+      return;
+    }
 
     const flash = document.createElement('div');
     flash.className = 'screen-flash';
@@ -110,7 +116,7 @@ const Animations = {
       'covid-timeline': 'mascot-covid',
       'birth-control': 'mascot-birth-control',
       'eds-syndrome': 'mascot-eds',
-      'evolution-invention': 'mascot-evolution'
+      'evolution-invention': 'mascot-evolution',
     };
     return mascotMap[cartridgeId] || 'mascot-default';
   },
@@ -124,7 +130,9 @@ const Animations = {
     const mascotContainer = document.getElementById('mascotContainer');
     const screenSubtitle = document.getElementById('screenSubtitle');
 
-    if (!screenTitle || !mascotContainer || !screenSubtitle) return;
+    if (!screenTitle || !mascotContainer || !screenSubtitle) {
+      return;
+    }
 
     // Update title with cartridge name
     screenTitle.innerHTML = `
@@ -154,9 +162,10 @@ const Animations = {
     screenSubtitle.innerHTML = `
       <p class="pixel-text-sm" style="margin-bottom: 6px;">${cartridgeData.subtitle}</p>
       <p class="pixel-text-xs" style="opacity: 0.8; line-height: 1.5;">${cartridgeData.description}</p>
-      ${cartridgeData.status === 'coming_soon' ?
-        '<p class="pixel-text-xs" style="margin-top: 8px; color: var(--gb-dark);">COMING SOON</p>' :
-        '<p class="pixel-text-xs" style="margin-top: 8px;">PRESS ENTER TO START</p>'
+      ${
+        cartridgeData.status === 'coming_soon'
+          ? '<p class="pixel-text-xs" style="margin-top: 8px; color: var(--gb-dark);">COMING SOON</p>'
+          : '<p class="pixel-text-xs" style="margin-top: 8px;">PRESS ENTER TO START</p>'
       }
     `;
 
@@ -178,7 +187,9 @@ const Animations = {
     const mascotContainer = document.getElementById('mascotContainer');
     const screenSubtitle = document.getElementById('screenSubtitle');
 
-    if (!screenTitle || !mascotContainer || !screenSubtitle) return;
+    if (!screenTitle || !mascotContainer || !screenSubtitle) {
+      return;
+    }
 
     // Restore default title
     screenTitle.innerHTML = `
@@ -213,7 +224,9 @@ const Animations = {
    */
   screenShake() {
     const screen = document.querySelector('.screen-glass');
-    if (!screen) return;
+    if (!screen) {
+      return;
+    }
 
     audioManager.playError();
     screen.classList.add('screen-shake');
@@ -273,7 +286,9 @@ const Animations = {
    */
   ledBlink() {
     const led = document.querySelector('.led-light');
-    if (!led) return;
+    if (!led) {
+      return;
+    }
 
     led.style.animation = 'none';
     setTimeout(() => {
@@ -295,7 +310,7 @@ const Animations = {
       element.classList.remove('glitch');
       element.removeAttribute('data-text');
     }, duration);
-  }
+  },
 };
 
 // Export for use in other scripts

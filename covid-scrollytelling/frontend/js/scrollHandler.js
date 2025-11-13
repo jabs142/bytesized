@@ -49,7 +49,7 @@ export class ScrollHandler {
       this.mapRenderer.resize();
     });
 
-    console.log('✓ Scroll handler initialized with progress tracking');
+    // console.log('✓ Scroll handler initialized with progress tracking');
   }
 
   /**
@@ -59,7 +59,7 @@ export class ScrollHandler {
   handleStepEnter(response) {
     const { index, direction } = response;
 
-    console.log(`Scene ${index} entered (${direction})`);
+    // console.log(`Scene ${index} entered (${direction})`);
 
     this.currentSceneIndex = index;
     const scene = SCENES[index];
@@ -117,7 +117,7 @@ export class ScrollHandler {
 
       // Calculate interpolated date
       const timeDiff = nextDate - currentDate;
-      const interpolatedTime = currentDate.getTime() + (timeDiff * progress);
+      const interpolatedTime = currentDate.getTime() + timeDiff * progress;
       const interpolatedDate = new Date(interpolatedTime);
       const dateString = interpolatedDate.toISOString().split('T')[0];
 
@@ -125,11 +125,14 @@ export class ScrollHandler {
       const interpolatedData = this.dataLoader.getClosestData(dateString);
 
       // Update map smoothly (no transition since we're updating frequently)
-      this.mapRenderer.updateMapSmooth(dateString, currentScene.showVaccinations || nextScene.showVaccinations);
+      this.mapRenderer.updateMapSmooth(
+        dateString,
+        currentScene.showVaccinations || nextScene.showVaccinations
+      );
 
       // Update stats smoothly INCLUDING the date display
-      const globalData = this.dataLoader.getGlobalForDate(dateString) ||
-                        this.dataLoader.getClosestData(dateString);
+      const globalData =
+        this.dataLoader.getGlobalForDate(dateString) || this.dataLoader.getClosestData(dateString);
 
       if (globalData) {
         // Update counters and date without animation (too frequent)
@@ -167,7 +170,9 @@ export class ScrollHandler {
     const textEl = document.querySelector('#narrative-text');
     const scrollIndicator = document.querySelector('.scroll-indicator');
 
-    if (!subtitleEl || !textEl) return;
+    if (!subtitleEl || !textEl) {
+      return;
+    }
 
     // Fade out
     subtitleEl.style.opacity = '0';
@@ -208,7 +213,9 @@ export class ScrollHandler {
   updateStatsInstant(date) {
     const globalData = this.dataLoader.getGlobalForDate(date);
 
-    if (!globalData) return;
+    if (!globalData) {
+      return;
+    }
 
     // Update counters instantly
     const casesEl = document.querySelector('#total-cases');
@@ -231,7 +238,9 @@ export class ScrollHandler {
    */
   animateCounter(selector, target) {
     const element = document.querySelector(selector);
-    if (!element) return;
+    if (!element) {
+      return;
+    }
 
     const current = parseInt(element.dataset.value || 0);
 
@@ -272,7 +281,9 @@ export class ScrollHandler {
     const progressBar = document.querySelector('.timeline-progress');
     const timelineContainer = document.querySelector('#timeline');
 
-    if (!progressBar || !timelineContainer) return;
+    if (!progressBar || !timelineContainer) {
+      return;
+    }
 
     // Find the currently active month marker
     const activeMonth = document.querySelector('.timeline-month.active');

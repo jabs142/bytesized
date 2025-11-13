@@ -134,7 +134,7 @@ export const SCENES = [
   {
     index: 7,
     date: '2021-04-30',
-    title: 'India\'s Crisis',
+    title: "India's Crisis",
     subtitle: 'April 2021',
     narrative: `
       The Delta variant triggered a catastrophic surge in India. Over 400,000 daily

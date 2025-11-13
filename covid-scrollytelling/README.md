@@ -1,20 +1,26 @@
 # COVID-19: The Invisible Epidemic
 
-An interactive scrollytelling visualization showing the global spread of COVID-19 from 2020-2024.
+An interactive scrollytelling visualization showing the global spread of
+COVID-19 from 2020-2024.
 
 ## Features
 
-- **Interactive World Map**: D3.js-powered visualization showing COVID-19 spread across 58 major countries
+- **Interactive World Map**: D3.js-powered visualization showing COVID-19 spread
+  across 58 major countries
 - **Scrollytelling Narrative**: 13 scenes covering key moments in the pandemic
-- **Real-time Statistics**: Sticky counter displaying total cases, deaths, and vaccinations
-- **Timeline Marker**: Visual timeline on the right side showing your progress through the story
+- **Real-time Statistics**: Sticky counter displaying total cases, deaths, and
+  vaccinations
+- **Timeline Marker**: Visual timeline on the right side showing your progress
+  through the story
 - **Event Cards**: Important milestones appear dynamically as you scroll
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Dark Theme**: Dramatic visual presentation with red (infection) and blue (vaccination) color schemes
+- **Dark Theme**: Dramatic visual presentation with red (infection) and blue
+  (vaccination) color schemes
 
 ## Data Sources
 
-- **Our World in Data (OWID)**: COVID-19 dataset (cases, deaths, vaccinations by country)
+- **Our World in Data (OWID)**: COVID-19 dataset (cases, deaths, vaccinations by
+  country)
 - **World Health Organization (WHO)**: Timeline of key pandemic events
 - **Natural Earth**: World map data (TopoJSON format)
 
@@ -51,11 +57,13 @@ covid-scrollytelling/
 ## Data Processing
 
 The visualization uses data from 58 major countries including:
+
 - G20 nations
 - Hardest-hit countries during different waves
 - Geographic diversity across all continents
 
 Raw CSV data is processed into optimized JSON format:
+
 - **Total size**: 19.7 MB (compressed from 152 MB CSV)
 - **Time range**: January 1, 2020 - December 31, 2024
 - **Data points**: 105,792 timeline entries
@@ -63,6 +71,7 @@ Raw CSV data is processed into optimized JSON format:
 ## Development
 
 ### Prerequisites
+
 - Python 3.x (for data processing)
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - Local web server (Python HTTP server, Node.js serve, etc.)
@@ -70,18 +79,21 @@ Raw CSV data is processed into optimized JSON format:
 ### Setup
 
 1. Process the data (if needed):
+
 ```bash
 cd covid-scrollytelling
 python3 process_data.py
 ```
 
 2. Start a local web server:
+
 ```bash
 # From the root directory
 python3 -m http.server 8000
 ```
 
 3. Open in browser:
+
 ```
 http://localhost:8000/covid-scrollytelling/frontend/
 ```
@@ -136,9 +148,9 @@ http://localhost:8000/covid-scrollytelling/frontend/
 
 ## License
 
-Data: CC BY 4.0 (Our World in Data)
-Code: MIT (if applicable)
+Data: CC BY 4.0 (Our World in Data) Code: MIT (if applicable)
 
 ---
 
-**Note**: This visualization is part of the Symptom Discovery Research Hub, exploring data-driven medical insights through interactive visualizations.
+**Note**: This visualization is part of the Symptom Discovery Research Hub,
+exploring data-driven medical insights through interactive visualizations.

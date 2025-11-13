@@ -4,7 +4,9 @@ Reusable components and utilities for all ByteSized cartridge projects.
 
 ## 🎯 Purpose
 
-This shared library eliminates code duplication across cartridge projects by providing:
+This shared library eliminates code duplication across cartridge projects by
+providing:
+
 - **Web Components** for common UI patterns (no framework needed!)
 - **Utility functions** for data loading and formatting
 - **Consistent styling** aligned with the retro Game Boy aesthetic
@@ -31,6 +33,7 @@ shared/
 Display statistics with the retro card aesthetic.
 
 **Usage:**
+
 ```html
 <!-- Include the component -->
 <script src="/shared/components/StatCard.js"></script>
@@ -41,11 +44,13 @@ Display statistics with the retro card aesthetic.
 ```
 
 **Attributes:**
+
 - `value` - The numeric value to display (can include commas)
 - `label` - The label text below the value
 - `color` - Optional color accent (CSS color value)
 
 **Dynamic Updates:**
+
 ```javascript
 const card = document.querySelector('stat-card');
 card.setAttribute('value', '2,468'); // Updates instantly!
@@ -58,6 +63,7 @@ card.setAttribute('value', '2,468'); // Updates instantly!
 Navigation button to return to the cartridge portal.
 
 **Usage:**
+
 ```html
 <!-- Include the component -->
 <script src="/shared/components/EjectButton.js"></script>
@@ -73,6 +79,7 @@ Navigation button to return to the cartridge portal.
 ```
 
 **Attributes:**
+
 - `href` - URL to navigate to (default: "/")
 - `theme` - "light" (default) or "dark"
 
@@ -85,13 +92,19 @@ Navigation button to return to the cartridge portal.
 Standardized data fetching with error handling.
 
 **Import:**
+
 ```javascript
-import { loadJSON, loadMultipleJSON, withLoading } from '/shared/utils/dataLoader.js';
+import {
+  loadJSON,
+  loadMultipleJSON,
+  withLoading,
+} from '/shared/utils/dataLoader.js';
 ```
 
 **Usage:**
 
 **Basic Loading:**
+
 ```javascript
 // Load a single JSON file
 const data = await loadJSON('data/symptoms.json');
@@ -99,23 +112,25 @@ const data = await loadJSON('data/symptoms.json');
 // With error handling
 const data = await loadJSON('data/symptoms.json', {
   errorMessage: 'Failed to load symptoms',
-  errorContainer: document.getElementById('content')
+  errorContainer: document.getElementById('content'),
 });
 ```
 
 **Load Multiple Files:**
+
 ```javascript
 // Load multiple files in parallel
 const data = await loadMultipleJSON({
   stats: 'data/stats.json',
   symptoms: 'data/symptoms.json',
-  rankings: 'data/rankings.json'
+  rankings: 'data/rankings.json',
 });
 
 // Access: data.stats, data.symptoms, data.rankings
 ```
 
 **With Loading State:**
+
 ```javascript
 const container = document.getElementById('results');
 const data = await withLoading(container, async () => {
@@ -130,13 +145,14 @@ const data = await withLoading(container, async () => {
 Common formatting functions.
 
 **Import:**
+
 ```javascript
 import {
   formatNumber,
   formatPercent,
   formatCompact,
   truncate,
-  pluralize
+  pluralize,
 } from '/shared/utils/formatters.js';
 ```
 
@@ -144,23 +160,23 @@ import {
 
 ```javascript
 // Number formatting
-formatNumber(1234567)        // "1,234,567"
-formatCompact(1234567)       // "1.2M"
-formatCompact(45300)         // "45.3K"
+formatNumber(1234567); // "1,234,567"
+formatCompact(1234567); // "1.2M"
+formatCompact(45300); // "45.3K"
 
 // Percentages
-formatPercent(0.453)         // "45.3%"
-formatPercent(45.3, 2, false) // "45.30%"
+formatPercent(0.453); // "45.3%"
+formatPercent(45.3, 2, false); // "45.30%"
 
 // Text
-truncate("Long text here", 10)  // "Long te..."
-pluralize(1, 'symptom')         // "1 symptom"
-pluralize(5, 'symptom')         // "5 symptoms"
-pluralize(3, 'child', 'children') // "3 children"
+truncate('Long text here', 10); // "Long te..."
+pluralize(1, 'symptom'); // "1 symptom"
+pluralize(5, 'symptom'); // "5 symptoms"
+pluralize(3, 'child', 'children'); // "3 children"
 
 // Dates
-formatDate(new Date())       // "Nov 1, 2025"
-formatDate('2024-01-15')     // "Jan 15, 2024"
+formatDate(new Date()); // "Nov 1, 2025"
+formatDate('2024-01-15'); // "Jan 15, 2024"
 ```
 
 ---
@@ -170,6 +186,7 @@ formatDate('2024-01-15')     // "Jan 15, 2024"
 Here's how to refactor an existing cartridge to use shared components:
 
 ### Before:
+
 ```html
 <!-- pcos-symptoms.html -->
 <div class="stat-card">
@@ -200,6 +217,7 @@ async function loadData() {
 ```
 
 ### After:
+
 ```html
 <!-- pcos-symptoms.html -->
 <script src="/shared/components/StatCard.js"></script>
@@ -216,7 +234,7 @@ import { formatNumber } from '/shared/utils/formatters.js';
 
 async function loadData() {
   const data = await loadJSON('data/stats.json', {
-    errorContainer: document.getElementById('content')
+    errorContainer: document.getElementById('content'),
   });
 
   const statCard = document.getElementById('stat-posts');
@@ -261,12 +279,14 @@ your-cartridge/
 ### Loading Shared Components
 
 **Option 1: In HTML (Web Components)**
+
 ```html
 <script src="/shared/components/StatCard.js"></script>
 <script src="/shared/components/EjectButton.js"></script>
 ```
 
 **Option 2: In JavaScript (Utilities)**
+
 ```javascript
 import { loadJSON } from '/shared/utils/dataLoader.js';
 import { formatNumber } from '/shared/utils/formatters.js';
@@ -281,42 +301,44 @@ import { formatNumber } from '/shared/utils/formatters.js';
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My Cartridge</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Cartridge</title>
+    <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Load Web Components -->
-  <script src="/shared/components/StatCard.js"></script>
-  <script src="/shared/components/EjectButton.js"></script>
-</head>
-<body>
-  <eject-button></eject-button>
+    <!-- Load Web Components -->
+    <script src="/shared/components/StatCard.js"></script>
+    <script src="/shared/components/EjectButton.js"></script>
+  </head>
+  <body>
+    <eject-button></eject-button>
 
-  <div class="stats-container">
-    <stat-card id="total" value="0" label="Total Items"></stat-card>
-    <stat-card id="validated" value="0" label="Validated"></stat-card>
-  </div>
+    <div class="stats-container">
+      <stat-card id="total" value="0" label="Total Items"></stat-card>
+      <stat-card id="validated" value="0" label="Validated"></stat-card>
+    </div>
 
-  <div id="content"></div>
+    <div id="content"></div>
 
-  <script type="module">
-    import { loadJSON } from '/shared/utils/dataLoader.js';
-    import { formatNumber, formatPercent } from '/shared/utils/formatters.js';
+    <script type="module">
+      import { loadJSON } from '/shared/utils/dataLoader.js';
+      import { formatNumber, formatPercent } from '/shared/utils/formatters.js';
 
-    async function init() {
-      const data = await loadJSON('data/stats.json');
+      async function init() {
+        const data = await loadJSON('data/stats.json');
 
-      // Update stat cards
-      document.getElementById('total')
-        .setAttribute('value', formatNumber(data.total));
-      document.getElementById('validated')
-        .setAttribute('value', formatNumber(data.validated));
-    }
+        // Update stat cards
+        document
+          .getElementById('total')
+          .setAttribute('value', formatNumber(data.total));
+        document
+          .getElementById('validated')
+          .setAttribute('value', formatNumber(data.validated));
+      }
 
-    init();
-  </script>
-</body>
+      init();
+    </script>
+  </body>
 </html>
 ```
 
@@ -350,4 +372,6 @@ import { formatNumber } from '/shared/utils/formatters.js';
 
 ## 🎮 Happy Coding!
 
-You're now equipped to build new cartridges faster with less code duplication. Each component is framework-agnostic and works with vanilla JavaScript. Add React later to one cartridge if needed - these components will still work!
+You're now equipped to build new cartridges faster with less code duplication.
+Each component is framework-agnostic and works with vanilla JavaScript. Add
+React later to one cartridge if needed - these components will still work!

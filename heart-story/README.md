@@ -1,21 +1,28 @@
 # Your Heart's Life Story
 
-> An interactive Game Boy-styled experience that visualizes your heart's journey from conception to now
+> An interactive Game Boy-styled experience that visualizes your heart's journey
+> from conception to now
 
-**Frontend-Only Cartridge** - Pure vanilla JavaScript game with no backend data pipeline
+**Frontend-Only Cartridge** - Pure vanilla JavaScript game with no backend data
+pipeline
 
 ## What's Built
 
-- **Life Story Mode:** Calculate total heartbeats since birth with real-time monitoring and educational milestones
-- **Day Simulator Mode:** Interactive 8-bit RPG where daily activities affect heart rate in real-time
-- **Educational Content:** Heart rate comparisons across species and cardiovascular health information
-- **Retro Gaming Aesthetic:** Pixel-perfect Game Boy styling with 8-bit sound effects
+- **Life Story Mode:** Calculate total heartbeats since birth with real-time
+  monitoring and educational milestones
+- **Day Simulator Mode:** Interactive 8-bit RPG where daily activities affect
+  heart rate in real-time
+- **Educational Content:** Heart rate comparisons across species and
+  cardiovascular health information
+- **Retro Gaming Aesthetic:** Pixel-perfect Game Boy styling with 8-bit sound
+  effects
 
 ## Features
 
 ### Two Game Modes
 
 **1. Life Story Mode**
+
 - Calculate total heartbeats since birth
 - Live heart monitor with real-time beat counting
 - Educational milestones and comparisons
@@ -23,6 +30,7 @@
 - Cardiovascular health conditions information
 
 **2. Day Simulator Mode**
+
 - Interactive 8-bit RPG-style game
 - Experience how daily activities affect heart rate
 - Make choices throughout a typical day
@@ -34,12 +42,14 @@
 ### Architecture
 
 **Frontend Stack:**
+
 - Pure vanilla JavaScript (no frameworks)
 - CSS Grid and Flexbox for layout
 - Web Audio API for 8-bit sound effects
 - Pixel-perfect Game Boy aesthetic
 
 **File Structure:**
+
 ```
 heart-story/
 ├── frontend/
@@ -56,6 +66,7 @@ heart-story/
 The game uses a finite state machine with the following states:
 
 **Main Flow:**
+
 1. `MODE_SELECT` - Choose between Life Story or Day Simulator
 2. `BIRTH_ENTRY` - Enter birth date (month/day/year)
 3. `FIRST_BEAT` - Calculate first heartbeat (18 days after conception)
@@ -63,12 +74,14 @@ The game uses a finite state machine with the following states:
 5. `MILESTONES` - Display total beats and interesting facts
 
 **Day Simulator Flow:**
+
 1. `DAY_SIM_INTRO` - Introduction to day simulator
 2. `DAY_SIM_ROOM` - Navigate pixel character through rooms
 3. `DAY_SIM_CHOICE` - Make activity choices (affects heart rate)
 4. `DAY_SIM_SUMMARY` - View day summary and heart health score
 
 **Educational Pages:**
+
 - `HUMAN_HR_COMPARE` - Compare heart rates across age groups
 - `CONDITIONS_INTRO` - Introduction to heart conditions
 - `CONDITION_1/2/3` - Detailed condition information
@@ -77,6 +90,7 @@ The game uses a finite state machine with the following states:
 ### Heart Rate Calculations
 
 **First Beat Calculation:**
+
 ```javascript
 // Heart starts beating ~18 days after conception
 // Conception ~14 days before birth date
@@ -87,6 +101,7 @@ firstBeat.setDate(firstBeat.getDate() + 18);
 ```
 
 **Total Beats Calculation:**
+
 ```javascript
 // Days since first beat × average BPM × 60 min × 24 hrs
 const daysSince = (Date.now() - firstBeatDate) / (1000 * 60 * 60 * 24);
@@ -94,27 +109,31 @@ const totalBeats = Math.floor(daysSince * avgBPM * 60 * 24);
 ```
 
 **Live Counter:**
+
 - Updates every second based on average resting heart rate (70 BPM)
 - Displays in retro digital format with leading zeros
 
 ### Day Simulator Mechanics
 
 **Room Navigation:**
+
 - 8×8 tile grid for each room (bedroom, kitchen, living room, gym)
 - Character moves with D-pad controls
 - Interaction zones trigger activity choices
 
 **Heart Rate Modifiers:**
+
 ```javascript
 const activities = {
   exercise: { bpmChange: +30, duration: 5, healthScore: +2 },
   meditation: { bpmChange: -10, duration: 3, healthScore: +1 },
   coffee: { bpmChange: +15, duration: 2, healthScore: -1 },
-  rest: { bpmChange: -5, duration: 1, healthScore: +1 }
+  rest: { bpmChange: -5, duration: 1, healthScore: +1 },
 };
 ```
 
 **Status Effects:**
+
 - Temporary BPM modifiers with durations
 - Visual feedback in status bar
 - Cumulative effects for realistic simulation
@@ -122,6 +141,7 @@ const activities = {
 ### Educational Content
 
 **Species Heart Rate Comparisons:**
+
 - Shrew: 600-700 BPM (smallest mammal heart)
 - Mouse: 400-600 BPM
 - Cat: 120-140 BPM
@@ -132,6 +152,7 @@ const activities = {
 - Blue Whale: 8-10 BPM (largest heart on Earth)
 
 **Heart Conditions Covered:**
+
 - Arrhythmias
 - Tachycardia
 - Bradycardia
@@ -141,11 +162,13 @@ const activities = {
 ## Controls
 
 ### Keyboard
+
 - **Arrow Keys** - Navigate menus, move character (Day Sim)
 - **Enter/Space** - Select/Confirm (A button)
 - **Escape** - Cancel/Back (B button)
 
 ### On-Screen Buttons
+
 - **D-Pad** - Up/Down/Left/Right navigation
 - **A Button** - Select/Confirm
 - **B Button** - Cancel/Back
@@ -155,18 +178,21 @@ const activities = {
 Follows the **ByteSized Research Design System**:
 
 **Visual Style:**
+
 - Game Boy Classic green color scheme (#9bbc0f, #8bac0f, #306230, #0f380f)
 - Press Start 2P font for authentic 8-bit typography
 - CRT scanline effects and screen glow
 - Pixel-perfect borders and shadows
 
 **Components:**
+
 - Game Boy device bezel with power LED
 - Screen container with glass reflection effect
 - D-pad and action buttons (fully functional)
 - Speaker grille details
 
 **Responsive Design:**
+
 - Scales appropriately for different screen sizes
 - Maintains aspect ratio of original Game Boy
 - Touch-friendly button targets on mobile
@@ -176,11 +202,13 @@ Follows the **ByteSized Research Design System**:
 ### Running Locally
 
 1. Serve from ByteSized root directory:
+
 ```bash
 python3 -m http.server 8000
 ```
 
 2. Open in browser:
+
 ```
 http://localhost:8000/heart-story/frontend/index.html
 ```
@@ -195,6 +223,7 @@ http://localhost:8000/heart-story/frontend/index.html
 ## Educational Goals
 
 This project aims to:
+
 - Make cardiovascular health engaging and accessible
 - Visualize the heart's incredible lifetime work
 - Teach how daily activities affect heart rate
@@ -213,6 +242,7 @@ This project aims to:
 ## Future Enhancements
 
 Potential additions:
+
 - Exercise tracking integration (connect to fitness devices)
 - Historical heart health data visualization
 - Multiplayer comparison mode (compare stats with friends)
@@ -244,4 +274,6 @@ Potential additions:
 
 ---
 
-**Note**: This tool is for educational and entertainment purposes only. It is not a medical device and does not provide actual heart rate monitoring or medical advice. For health concerns, consult a qualified healthcare provider.
+**Note**: This tool is for educational and entertainment purposes only. It is
+not a medical device and does not provide actual heart rate monitoring or
+medical advice. For health concerns, consult a qualified healthcare provider.

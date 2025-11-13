@@ -76,7 +76,9 @@ export function truncate(text, maxLength, suffix = '...') {
  * @returns {string} Capitalized string
  */
 export function capitalize(str) {
-  if (!str) return '';
+  if (!str) {
+    return '';
+  }
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
@@ -90,7 +92,7 @@ export function formatDate(date, options = {}) {
   const defaultOptions = {
     year: 'numeric',
     month: 'short',
-    day: 'numeric'
+    day: 'numeric',
   };
 
   const dateObj = date instanceof Date ? date : new Date(date);
@@ -129,6 +131,6 @@ export function toFixed(num, precision = 2) {
  * @returns {string} Pluralized word with count
  */
 export function pluralize(count, singular, plural = null) {
-  const word = count === 1 ? singular : (plural || singular + 's');
+  const word = count === 1 ? singular : plural || singular + 's';
   return `${formatNumber(count)} ${word}`;
 }

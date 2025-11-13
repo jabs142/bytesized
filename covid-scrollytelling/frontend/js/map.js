@@ -66,7 +66,7 @@ export class MapRenderer {
     // Create tooltip
     this.createTooltip();
 
-    console.log('✓ Map renderer initialized');
+    // console.log('✓ Map renderer initialized');
   }
 
   /**
@@ -78,7 +78,7 @@ export class MapRenderer {
     // Convert TopoJSON to GeoJSON
     const countries = topojson.feature(worldData, worldData.objects.countries);
 
-    console.log('Rendering world map with', countries.features.length, 'countries');
+    // console.log('Rendering world map with', countries.features.length, 'countries');
 
     // Draw countries
     this.countries = this.g
@@ -95,7 +95,7 @@ export class MapRenderer {
       .on('mousemove', (event, d) => this.onCountryMouseMove(event, d))
       .on('mouseleave', (event, d) => this.onCountryMouseLeave(event, d));
 
-    console.log('✓ World map rendered');
+    // console.log('✓ World map rendered');
   }
 
   /**
@@ -107,7 +107,7 @@ export class MapRenderer {
     this.currentDate = date;
     const data = this.dataLoader.getDataForDate(date);
 
-    console.log(`Updating map for ${date}, vaccination mode: ${showVaccinations}`);
+    // console.log(`Updating map for ${date}, vaccination mode: ${showVaccinations}`);
 
     // Update country colors with transition
     this.countries
@@ -285,7 +285,6 @@ export class MapRenderer {
       705: 'SVN', // Slovenia
       70: 'BIH', // Bosnia and Herzegovina
       8: 'ALB', // Albania
-      191: 'HRV', // Croatia
       498: 'MDA', // Moldova
       112: 'BLR', // Belarus
       440: 'LTU', // Lithuania
@@ -388,12 +387,16 @@ export class MapRenderer {
    */
   onCountryMouseEnter(event, feature) {
     const countryCode = this.getCountryCode(feature);
-    if (!countryCode) return;
+    if (!countryCode) {
+      return;
+    }
 
     const data = this.dataLoader.getDataForDate(this.currentDate);
     const countryData = data[countryCode];
 
-    if (!countryData) return;
+    if (!countryData) {
+      return;
+    }
 
     // Highlight country
     d3.select(event.target)
@@ -425,9 +428,7 @@ export class MapRenderer {
    * Handle country mouse move
    */
   onCountryMouseMove(event, feature) {
-    this.tooltip
-      .style('top', event.pageY + 10 + 'px')
-      .style('left', event.pageX + 10 + 'px');
+    this.tooltip.style('top', event.pageY + 10 + 'px').style('left', event.pageX + 10 + 'px');
   }
 
   /**

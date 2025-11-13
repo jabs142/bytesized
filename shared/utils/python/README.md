@@ -5,6 +5,7 @@ Common Python utilities shared across ByteSized research projects.
 ## Overview
 
 This package provides reusable base classes and helper functions for:
+
 - Reddit data collection
 - LLM-based extraction and validation
 - PubMed research fetching
@@ -41,6 +42,7 @@ from shared.utils.python import PubMedFetcher, create_search_queries
 Base class for Reddit data collectors using PRAW.
 
 **Features:**
+
 - PRAW authentication
 - Rate limiting
 - Subreddit collection
@@ -76,6 +78,7 @@ collector.save_to_json(posts, Path("output.json"))
 LLM extraction and validation utilities.
 
 **Features:**
+
 - OpenAI and Anthropic support
 - JSON mode extraction
 - Batch processing with rate limiting
@@ -107,6 +110,7 @@ symptoms = symptom_extractor.extract_symptoms(
 PubMed API utilities for research paper fetching.
 
 **Features:**
+
 - PubMed E-utilities integration
 - Search and fetch operations
 - Rate limiting
@@ -145,7 +149,9 @@ for query in queries:
 pip install -r /path/to/bytesized/requirements.txt
 ```
 
-The shared utilities require these packages (versions managed in root requirements.txt):
+The shared utilities require these packages (versions managed in root
+requirements.txt):
+
 - `praw` - Reddit API wrapper
 - `openai` - OpenAI API client
 - `anthropic` - Anthropic Claude API client
@@ -155,18 +161,21 @@ The shared utilities require these packages (versions managed in root requiremen
 ## Best Practices
 
 ### Reddit Collection
+
 - Always set a reasonable `rate_limit_delay` (1-2 seconds)
 - Implement custom `process_post()` for your specific needs
 - Use date filtering to avoid reprocessing old data
 - Save intermediate results to avoid data loss
 
 ### LLM Extraction
+
 - Use `gpt-4o-mini` for cost efficiency
 - Set `temperature=0` for consistent results
 - Implement retry logic for production use
 - Monitor API costs with batch operations
 
 ### PubMed Fetching
+
 - Provide an email (NCBI recommendation)
 - Use API key for higher rate limits
 - Batch fetch details (200 PMIDs max per call)
@@ -175,11 +184,13 @@ The shared utilities require these packages (versions managed in root requiremen
 ## Error Handling
 
 All modules include basic error handling:
+
 - API errors are caught and logged
 - Failed operations return empty results or error dictionaries
 - Rate limiting is enforced automatically
 
 For production use, consider adding:
+
 - Exponential backoff
 - Persistent retry queues
 - Detailed logging
@@ -188,6 +199,7 @@ For production use, consider adding:
 ## Examples
 
 See individual module files for complete examples:
+
 - `reddit_collector_base.py`: `ExampleRedditCollector` class
 - `llm_helpers.py`: `PubMedRelevanceChecker` and `SymptomExtractor` classes
 - `pubmed_helpers.py`: `create_search_queries()` function
@@ -195,6 +207,7 @@ See individual module files for complete examples:
 ## Contributing
 
 When adding new shared utilities:
+
 1. Follow existing patterns and naming conventions
 2. Include docstrings for all functions and classes
 3. Add usage examples in docstrings
@@ -210,6 +223,7 @@ When adding new shared utilities:
 ## Version History
 
 **1.0.0** (2025-01-12)
+
 - Initial release
 - Reddit collector base class
 - LLM helpers (OpenAI + Anthropic)

@@ -1,11 +1,30 @@
 {
   "name": "bytesized",
   "version": "1.0.0",
+  "type": "module",
   "description": "Interactive research stories presented as retro Game Boy cartridges",
   "scripts": {
     "start": "live-server --port=8000 --open=/",
     "dev": "live-server --port=8000 --open=/ --watch=.",
-    "serve": "python3 -m http.server 8000"
+    "serve": "python3 -m http.server 8000",
+    "prepare": "husky",
+    "lint": "eslint . --ext .js && stylelint '**/*.css'",
+    "lint:fix": "eslint . --ext .js --fix && stylelint '**/*.css' --fix",
+    "format": "prettier --write \"**/*.{js,css,html,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,css,html,json,md}\""
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{html,json,md}": [
+      "prettier --write"
+    ]
   },
   "keywords": [
     "data-visualization",
@@ -15,5 +34,15 @@
   ],
   "author": "",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-prettier": "^5.0.3"
+  }
 }

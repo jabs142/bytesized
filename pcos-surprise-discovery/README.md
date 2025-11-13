@@ -1,15 +1,21 @@
 # PCOS Surprising Symptom Discovery Tool
 
-AI-powered discovery of unexpected PCOS symptom connections that doctors rarely mention.
+AI-powered discovery of unexpected PCOS symptom connections that doctors rarely
+mention.
 
 ## Mission
 
-PCOS affects 10% of women but doctors often focus only on obvious symptoms (irregular periods, fertility). This tool uses LLM to **discover** which symptoms women actually discuss, then identifies which ones are surprisingly connected to PCOS but rarely acknowledged.
+PCOS affects 10% of women but doctors often focus only on obvious symptoms
+(irregular periods, fertility). This tool uses LLM to **discover** which
+symptoms women actually discuss, then identifies which ones are surprisingly
+connected to PCOS but rarely acknowledged.
 
 ## Key Innovation
 
-- **Organic Discovery**: No predefined keyword lists - let LLM discover symptoms naturally
-- **Surprise Factor**: Calculate which symptoms are strongly associated but rarely discussed
+- **Organic Discovery**: No predefined keyword lists - let LLM discover symptoms
+  naturally
+- **Surprise Factor**: Calculate which symptoms are strongly associated but
+  rarely discussed
 - **Actionable**: Show what treatments actually helped real patients
 - **Efficient**: Only 500 posts, validate top 30 symptoms
 
@@ -54,6 +60,7 @@ cp .env.example .env
 ```
 
 Edit `.env`:
+
 ```
 REDDIT_CLIENT_ID=your_reddit_client_id
 REDDIT_CLIENT_SECRET=your_reddit_client_secret
@@ -84,18 +91,21 @@ python src/validation/surprise_score_calculator.py       # Calculate surprise sc
 ### Phase 1: Data Collection
 
 **Reddit Collection** - 500 posts from 4 subreddits:
+
 - r/PCOS (300 posts)
 - r/PCOSloseit (100 posts)
 - r/Hirsutism (50 posts)
 - r/TwoXChromosomes (50 posts with "PCOS" search)
 
 **Official Criteria** - Baseline for what's "expected":
+
 - Rotterdam Criteria
 - NIH Criteria
 
 ### Phase 2: LLM-Powered Discovery
 
 **Symptom Extraction** - GPT-4o-mini extracts ALL symptoms mentioned:
+
 - Physical symptoms (specific locations: "knee pain", not just "pain")
 - Mental health symptoms
 - Skin issues
@@ -103,12 +113,14 @@ python src/validation/surprise_score_calculator.py       # Calculate surprise sc
 - **Surprise signals**: When patients say "didn't know" or "surprising"
 
 **Solution Extraction** - What helped:
+
 - Medications (dosage, timeframe, effectiveness)
 - Supplements
 - Lifestyle changes
 - Side effects mentioned
 
 **Aggregation** - Combine all findings:
+
 - Count frequencies
 - Track surprise signals
 - Categorize symptoms
@@ -116,10 +128,12 @@ python src/validation/surprise_score_calculator.py       # Calculate surprise sc
 ### Phase 3: Surprise Factor Calculation
 
 **Top 30 Selection** - Focus validation efforts:
+
 - Mentioned in 5%+ of posts (25+)
 - OR high surprise signal count (20+)
 
 **PubMed Validation** - Check medical literature:
+
 - Search: "PCOS [symptom]"
 - Extract: Paper count, prevalence rates
 - Last 10 years only
@@ -140,11 +154,13 @@ if research_validated:
 ```
 
 **Classification**:
+
 - 🔥 **VERY SURPRISING** (score > 2.0): Hidden connection
 - ⚠️ **SOMEWHAT SURPRISING** (score > 1.0): Underappreciated
 - ✓ **EXPECTED**: Known PCOS symptom
 
 **Evidence Tiers**:
+
 - **Tier 1**: In diagnostic criteria
 - **Tier 2**: Research-backed (PubMed papers)
 - **Tier 3**: Strong patient signal (high Reddit mentions)
@@ -223,7 +239,8 @@ Based on your existing EDS & Birth Control projects:
 
 - **For Patients**: Discover symptoms they didn't know were related
 - **For Doctors**: Learn what patients actually experience
-- **For Researchers**: Identify research gaps where patient experience outpaces science
+- **For Researchers**: Identify research gaps where patient experience outpaces
+  science
 
 ## License
 
@@ -231,8 +248,10 @@ For educational and research purposes.
 
 ## Contact
 
-Built by someone with pharmacy degree + SWE experience, learning modern AI research methods.
+Built by someone with pharmacy degree + SWE experience, learning modern AI
+research methods.
 
 ---
 
-**Note**: This tool discovers patterns in patient discussions, not medical advice. Always consult healthcare providers.
+**Note**: This tool discovers patterns in patient discussions, not medical
+advice. Always consult healthcare providers.

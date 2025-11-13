@@ -3,19 +3,19 @@
  * Displays README content in a Game Boy styled modal overlay
  */
 class AboutModal extends HTMLElement {
-    constructor() {
-        super();
-        this.isOpen = false;
-        this.focusedElementBeforeModal = null;
-    }
+  constructor() {
+    super();
+    this.isOpen = false;
+    this.focusedElementBeforeModal = null;
+  }
 
-    connectedCallback() {
-        this.render();
-        this.setupEventListeners();
-    }
+  connectedCallback() {
+    this.render();
+    this.setupEventListeners();
+  }
 
-    render() {
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
             <div class="about-modal-backdrop" id="aboutBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
                 <div class="about-modal-container">
                     <!-- Modal Header -->
@@ -104,108 +104,116 @@ class AboutModal extends HTMLElement {
                 </div>
             </div>
         `;
+  }
+
+  setupEventListeners() {
+    // Close button
+    const closeBtn = this.querySelector('#closeModal');
+    const closeBtnFooter = this.querySelector('#closeModalBtn');
+    const backdrop = this.querySelector('#aboutBackdrop');
+
+    closeBtn?.addEventListener('click', () => this.close());
+    closeBtnFooter?.addEventListener('click', () => this.close());
+
+    // Click outside to close
+    backdrop?.addEventListener('click', (e) => {
+      if (e.target === backdrop) {
+        this.close();
+      }
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
+
+    // Trap focus within modal
+    backdrop?.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab' && this.isOpen) {
+        this.trapFocus(e);
+      }
+    });
+  }
+
+  open() {
+    const backdrop = this.querySelector('#aboutBackdrop');
+    if (!backdrop) {
+      return;
     }
 
-    setupEventListeners() {
-        // Close button
-        const closeBtn = this.querySelector('#closeModal');
-        const closeBtnFooter = this.querySelector('#closeModalBtn');
-        const backdrop = this.querySelector('#aboutBackdrop');
+    // Save currently focused element
+    this.focusedElementBeforeModal = document.activeElement;
 
-        closeBtn?.addEventListener('click', () => this.close());
-        closeBtnFooter?.addEventListener('click', () => this.close());
+    // Show modal
+    backdrop.classList.add('active');
+    this.isOpen = true;
 
-        // Click outside to close
-        backdrop?.addEventListener('click', (e) => {
-            if (e.target === backdrop) {
-                this.close();
-            }
-        });
+    // Lock body scroll
+    document.body.style.overflow = 'hidden';
 
-        // ESC key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.isOpen) {
-                this.close();
-            }
-        });
+    // Focus first focusable element
+    setTimeout(() => {
+      const firstFocusable = backdrop.querySelector(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      firstFocusable?.focus();
+    }, 100);
 
-        // Trap focus within modal
-        backdrop?.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab' && this.isOpen) {
-                this.trapFocus(e);
-            }
-        });
+    // Announce to screen readers
+    this.setAttribute('aria-hidden', 'false');
+  }
+
+  close() {
+    const backdrop = this.querySelector('#aboutBackdrop');
+    if (!backdrop) {
+      return;
     }
 
-    open() {
-        const backdrop = this.querySelector('#aboutBackdrop');
-        if (!backdrop) return;
+    // Hide modal
+    backdrop.classList.remove('active');
+    this.isOpen = false;
 
-        // Save currently focused element
-        this.focusedElementBeforeModal = document.activeElement;
+    // Unlock body scroll
+    document.body.style.overflow = '';
 
-        // Show modal
-        backdrop.classList.add('active');
-        this.isOpen = true;
-
-        // Lock body scroll
-        document.body.style.overflow = 'hidden';
-
-        // Focus first focusable element
-        setTimeout(() => {
-            const firstFocusable = backdrop.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            firstFocusable?.focus();
-        }, 100);
-
-        // Announce to screen readers
-        this.setAttribute('aria-hidden', 'false');
+    // Return focus to trigger button
+    if (this.focusedElementBeforeModal) {
+      this.focusedElementBeforeModal.focus();
     }
 
-    close() {
-        const backdrop = this.querySelector('#aboutBackdrop');
-        if (!backdrop) return;
+    // Announce to screen readers
+    this.setAttribute('aria-hidden', 'true');
+  }
 
-        // Hide modal
-        backdrop.classList.remove('active');
-        this.isOpen = false;
-
-        // Unlock body scroll
-        document.body.style.overflow = '';
-
-        // Return focus to trigger button
-        if (this.focusedElementBeforeModal) {
-            this.focusedElementBeforeModal.focus();
-        }
-
-        // Announce to screen readers
-        this.setAttribute('aria-hidden', 'true');
+  trapFocus(event) {
+    const backdrop = this.querySelector('#aboutBackdrop');
+    if (!backdrop) {
+      return;
     }
 
-    trapFocus(event) {
-        const backdrop = this.querySelector('#aboutBackdrop');
-        if (!backdrop) return;
+    const focusableElements = backdrop.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
 
-        const focusableElements = backdrop.querySelectorAll(
-            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
 
-        const firstFocusable = focusableElements[0];
-        const lastFocusable = focusableElements[focusableElements.length - 1];
-
-        if (event.shiftKey) {
-            // Shift + Tab
-            if (document.activeElement === firstFocusable) {
-                lastFocusable.focus();
-                event.preventDefault();
-            }
-        } else {
-            // Tab
-            if (document.activeElement === lastFocusable) {
-                firstFocusable.focus();
-                event.preventDefault();
-            }
-        }
+    if (event.shiftKey) {
+      // Shift + Tab
+      if (document.activeElement === firstFocusable) {
+        lastFocusable.focus();
+        event.preventDefault();
+      }
+    } else {
+      // Tab
+      if (document.activeElement === lastFocusable) {
+        firstFocusable.focus();
+        event.preventDefault();
+      }
     }
+  }
 }
 
 // Define custom element

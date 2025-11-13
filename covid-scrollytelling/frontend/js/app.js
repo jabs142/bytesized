@@ -20,31 +20,31 @@ class COVIDStoryApp {
    * Initialize application
    */
   async init() {
-    console.log('COVID-19 Scrollytelling Visualization');
-    console.log('=====================================');
+    // console.log('COVID-19 Scrollytelling Visualization');
+    // console.log('=====================================');
 
     try {
       // Show loading screen
       this.showLoading(true);
 
       // Step 1: Load data
-      console.log('\n1. Loading data...');
+      // console.log('\n1. Loading data...');
       this.dataLoader = new DataLoader();
       await this.dataLoader.loadAll();
 
       // Step 2: Initialize map
-      console.log('\n2. Initializing map...');
+      // console.log('\n2. Initializing map...');
       this.mapRenderer = new MapRenderer('#map-container', this.dataLoader);
       this.mapRenderer.renderMap();
 
       // Step 3: Set initial state (first scene)
-      console.log('\n3. Setting initial scene...');
+      // console.log('\n3. Setting initial scene...');
       const firstScene = SCENES[0];
       this.mapRenderer.updateMap(firstScene.date, firstScene.showVaccinations);
       this.updateStats(firstScene.date);
 
       // Step 4: Initialize scroll handler
-      console.log('\n4. Initializing scroll handler...');
+      // console.log('\n4. Initializing scroll handler...');
       this.scrollHandler = new ScrollHandler(this.mapRenderer, this.dataLoader);
       this.scrollHandler.init();
 
@@ -54,15 +54,15 @@ class COVIDStoryApp {
       });
 
       // Step 5: Generate timeline markers
-      console.log('\n5. Generating timeline...');
+      // console.log('\n5. Generating timeline...');
       this.generateTimelineMarkers();
 
       // Hide loading screen
       this.showLoading(false);
 
       this.isReady = true;
-      console.log('\n✓ Application ready!');
-      console.log('Scroll down to begin the journey...\n');
+      // console.log('\n✓ Application ready!');
+      // console.log('Scroll down to begin the journey...\n');
 
       // Optional: Show intro animation
       this.playIntroAnimation();
@@ -78,8 +78,7 @@ class COVIDStoryApp {
    * @param {number} index - Scene index
    */
   onSceneChange(scene, index) {
-    console.log(`Scene ${index}: ${scene.title} (${scene.date})`);
-
+    // console.log(`Scene ${index}: ${scene.title} (${scene.date})`);
     // Optional: Track analytics, update URL hash, etc.
     // window.location.hash = `scene-${index}`;
   }
@@ -146,7 +145,7 @@ class COVIDStoryApp {
       // Format: "Jan 2020"
       const monthLabel = currentDate.toLocaleDateString('en-US', {
         month: 'short',
-        year: 'numeric'
+        year: 'numeric',
       });
 
       month.innerHTML = `
@@ -161,7 +160,7 @@ class COVIDStoryApp {
       monthCount++;
     }
 
-    console.log(`✓ Generated ${monthCount} monthly timeline markers`);
+    // console.log(`✓ Generated ${monthCount} monthly timeline markers`);
   }
 
   /**
@@ -237,9 +236,9 @@ if (document.readyState === 'loading') {
 // Handle page visibility changes (pause/resume animations if needed)
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    console.log('Page hidden');
+    // console.log('Page hidden');
   } else {
-    console.log('Page visible');
+    // console.log('Page visible');
     // Optional: Resume any paused animations
   }
 });

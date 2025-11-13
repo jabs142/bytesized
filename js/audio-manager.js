@@ -16,12 +16,14 @@ class AudioManager {
    * Must be called after user interaction due to browser autoplay policies
    */
   async init() {
-    if (this.initialized) return;
+    if (this.initialized) {
+      return;
+    }
 
     try {
       this.context = new (window.AudioContext || window.webkitAudioContext)();
       this.initialized = true;
-      console.log('Audio system initialized');
+      // console.log('Audio system initialized');
     } catch (error) {
       console.warn('Could not initialize audio:', error);
     }
@@ -34,7 +36,9 @@ class AudioManager {
    * @param {string} type - Waveform type ('square', 'triangle', 'sine', 'sawtooth')
    */
   playBeep(frequency = 440, duration = 0.1, type = 'square') {
-    if (this.isMuted || !this.initialized) return;
+    if (this.isMuted || !this.initialized) {
+      return;
+    }
 
     const oscillator = this.context.createOscillator();
     const gainNode = this.context.createGain();
@@ -64,7 +68,9 @@ class AudioManager {
    * Play selection sound (confirm)
    */
   playSelect() {
-    if (this.isMuted || !this.initialized) return;
+    if (this.isMuted || !this.initialized) {
+      return;
+    }
 
     // Two-tone confirmation sound
     this.playBeep(600, 0.08, 'square');
@@ -77,7 +83,9 @@ class AudioManager {
    * Play cartridge insert sound
    */
   playInsert() {
-    if (this.isMuted || !this.initialized) return;
+    if (this.isMuted || !this.initialized) {
+      return;
+    }
 
     // Cartridge click + startup chime
     this.playBeep(200, 0.05, 'square');
@@ -90,13 +98,15 @@ class AudioManager {
    * Play Game Boy startup chime (iconic ding!)
    */
   playStartupChime() {
-    if (this.isMuted || !this.initialized) return;
+    if (this.isMuted || !this.initialized) {
+      return;
+    }
 
     const notes = [
-      { freq: 988, duration: 0.1 },   // B5
+      { freq: 988, duration: 0.1 }, // B5
       { freq: 1319, duration: 0.15 }, // E6
-      { freq: 1976, duration: 0.1 },  // B6
-      { freq: 2637, duration: 0.4 }   // E7 (held)
+      { freq: 1976, duration: 0.1 }, // B6
+      { freq: 2637, duration: 0.4 }, // E7 (held)
     ];
 
     let currentTime = this.context.currentTime;
@@ -132,7 +142,9 @@ class AudioManager {
    * Play error/cancel sound
    */
   playError() {
-    if (this.isMuted || !this.initialized) return;
+    if (this.isMuted || !this.initialized) {
+      return;
+    }
 
     this.playBeep(200, 0.15, 'sawtooth');
   }
@@ -141,7 +153,9 @@ class AudioManager {
    * Play power on sound
    */
   playPowerOn() {
-    if (this.isMuted || !this.initialized) return;
+    if (this.isMuted || !this.initialized) {
+      return;
+    }
 
     // Rising frequency sweep
     const oscillator = this.context.createOscillator();
@@ -188,9 +202,13 @@ class AudioManager {
 const audioManager = new AudioManager();
 
 // Initialize on first user interaction
-document.addEventListener('click', () => {
-  audioManager.init();
-}, { once: true });
+document.addEventListener(
+  'click',
+  () => {
+    audioManager.init();
+  },
+  { once: true }
+);
 
 // Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {

@@ -1,20 +1,26 @@
 # ByteSized Research - Style Guide
 
-> Official design system for maintaining consistency across all ByteSized research visualizations
+> Official design system for maintaining consistency across all ByteSized
+> research visualizations
 
 Last Updated: November 10, 2025
 
-**🎨 Quick Start:** All CSS variables are centralized in `/shared/styles/variables.css` - import this file at the top of your stylesheets!
+**🎨 Quick Start:** All CSS variables are centralized in
+`/shared/styles/variables.css` - import this file at the top of your
+stylesheets!
 
 ---
 
 ## Design Philosophy
 
-ByteSized Research combines **retro Game Boy aesthetics** with **medical readability** to create an engaging, nostalgic experience while maintaining professional credibility and accessibility.
+ByteSized Research combines **retro Game Boy aesthetics** with **medical
+readability** to create an engaging, nostalgic experience while maintaining
+professional credibility and accessibility.
 
 ### Core Principles
 
-1. **Nostalgic but Professional** - Retro gaming aesthetic without compromising readability
+1. **Nostalgic but Professional** - Retro gaming aesthetic without compromising
+   readability
 2. **Data-Driven** - Visual design serves the data, never obscures it
 3. **Accessible** - Meets WCAG contrast standards, readable fonts for body text
 4. **Consistent** - Shared design language across all projects
@@ -33,6 +39,7 @@ ByteSized Research combines **retro Game Boy aesthetics** with **medical readabi
 ```
 
 This file contains all design tokens defined in this guide:
+
 - Color palette (Game Boy, backgrounds, text)
 - Typography scale (font sizes, families)
 - Spacing system
@@ -42,6 +49,7 @@ This file contains all design tokens defined in this guide:
 **File location:** `/shared/styles/variables.css`
 
 **Benefits:**
+
 - Single source of truth for design tokens
 - Easy updates across all projects
 - Consistent naming conventions
@@ -68,33 +76,38 @@ This file contains all design tokens defined in this guide:
 
 ```html
 <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+  rel="stylesheet"
+/>
 ```
 
 ### Type Scale
 
 ```css
 /* Press Start 2P (Headers) */
---text-h1: 1rem;           /* Main page titles */
---text-h2: 0.75rem;        /* Section headers */
---text-h3: 0.625rem;       /* Subsection headers */
---text-stats: 1.75rem;     /* Big stat numbers */
---text-button: 0.5rem;     /* Button labels */
---text-label: 0.5rem;      /* Small labels, legends */
+--text-h1: 1rem; /* Main page titles */
+--text-h2: 0.75rem; /* Section headers */
+--text-h3: 0.625rem; /* Subsection headers */
+--text-stats: 1.75rem; /* Big stat numbers */
+--text-button: 0.5rem; /* Button labels */
+--text-label: 0.5rem; /* Small labels, legends */
 
 /* System Fonts (Body) */
---text-body: 0.9375rem;    /* Main content */
---text-small: 0.875rem;    /* Secondary content */
+--text-body: 0.9375rem; /* Main content */
+--text-small: 0.875rem; /* Secondary content */
 --text-caption: 0.8125rem; /* Captions, footnotes */
 ```
 
 ### Usage Guidelines
 
-- **Press Start 2P**: Use for h1, h2, h3, stat numbers, button text, legend items
+- **Press Start 2P**: Use for h1, h2, h3, stat numbers, button text, legend
+  items
 - **System Fonts**: Use for all body text, descriptions, long-form content
-- **Never use Press Start 2P for paragraphs** - it's intentionally hard to read at length
+- **Never use Press Start 2P for paragraphs** - it's intentionally hard to read
+  at length
 - **Line height**: 1.6 for body text, 1.2-1.4 for pixel fonts
 
 ---
@@ -105,94 +118,97 @@ This file contains all design tokens defined in this guide:
 
 ```css
 /* Core Game Boy Colors */
---gb-darkest: #0f380f;     /* Darkest green */
---gb-dark: #306230;        /* Dark green */
---gb-light: #8bac0f;       /* Light green */
---gb-lightest: #9bbc0f;    /* Lightest green */
+--gb-darkest: #0f380f; /* Darkest green */
+--gb-dark: #306230; /* Dark green */
+--gb-light: #8bac0f; /* Light green */
+--gb-lightest: #9bbc0f; /* Lightest green */
 ```
 
 ### Background Colors
 
 ```css
---bg-main: #E8E8E8;        /* Primary background (not pure white) */
---bg-card: #F5F5F5;        /* Card background */
---bg-secondary: #f7f6f3;   /* Alternate background */
+--bg-main: #e8e8e8; /* Primary background (not pure white) */
+--bg-card: #f5f5f5; /* Card background */
+--bg-secondary: #f7f6f3; /* Alternate background */
 ```
 
 ### Text Colors
 
 ```css
---text-primary: #2a2a2a;   /* Main text color */
+--text-primary: #2a2a2a; /* Main text color */
 --text-secondary: #5a5a5a; /* Secondary/muted text */
---text-light: #787774;     /* Light gray text */
+--text-light: #787774; /* Light gray text */
 ```
 
 ### Device Colors (Game Boy Console)
 
 ```css
---device-body: #d3d3d3;    /* Console plastic */
---device-dark: #9e9e9e;    /* Shadows/depth */
---screen-bg: #9bbc0f;      /* Screen background */
---button-red: #e74c3c;     /* A button, power LED */
---button-gray: #5a5a5a;    /* B button */
+--device-body: #d3d3d3; /* Console plastic */
+--device-dark: #9e9e9e; /* Shadows/depth */
+--screen-bg: #9bbc0f; /* Screen background */
+--button-red: #e74c3c; /* A button, power LED */
+--button-gray: #5a5a5a; /* B button */
 ```
 
 ### Surprise/Tier Colors (Medical Context)
 
 ```css
---very-surprising: #6B8E23;   /* Darker green with warmth */
+--very-surprising: #6b8e23; /* Darker green with warmth */
 --somewhat-surprising: #8bac0f; /* Medium green */
---expected: #A8BCC8;          /* Light muted blue-green */
+--expected: #a8bcc8; /* Light muted blue-green */
 ```
 
 ### Pastel Color Scheme (Data Visualizations)
 
-Use this pastel color palette for **scatter plots, bar charts, data points, and any categorical data visualizations**. These colors provide better contrast than monochrome Game Boy greens and are accessible and print-friendly.
+Use this pastel color palette for **scatter plots, bar charts, data points, and
+any categorical data visualizations**. These colors provide better contrast than
+monochrome Game Boy greens and are accessible and print-friendly.
 
 ```javascript
 const VISUALIZATION_COLORS = {
-    "Category 1": "#E4ACB2",    // Dusty rose
-    "Category 2": "#EABCA8",    // Peach
-    "Category 3": "#FAEDCD",    // Cream
-    "Category 4": "#CCD5AE",    // Sage green
-    "Category 5": "#99BAB9",    // Blue gray
-    "Category 6": "#D4A5A5",    // Rose variation
-    "Category 7": "#E8B088",    // Peach variation
-    "Category 8": "#F5E5B8",    // Cream variation
-    "Category 9": "#B8C99A",    // Sage variation
-    "Category 10": "#88A5A4",   // Blue gray variation
-    "Category 11": "#F0D0D0",   // Light rose
-    "Category 12": "#F2D4BA",   // Light peach
-    "Category 13": "#FDF8E8"    // Light cream
+  'Category 1': '#E4ACB2', // Dusty rose
+  'Category 2': '#EABCA8', // Peach
+  'Category 3': '#FAEDCD', // Cream
+  'Category 4': '#CCD5AE', // Sage green
+  'Category 5': '#99BAB9', // Blue gray
+  'Category 6': '#D4A5A5', // Rose variation
+  'Category 7': '#E8B088', // Peach variation
+  'Category 8': '#F5E5B8', // Cream variation
+  'Category 9': '#B8C99A', // Sage variation
+  'Category 10': '#88A5A4', // Blue gray variation
+  'Category 11': '#F0D0D0', // Light rose
+  'Category 12': '#F2D4BA', // Light peach
+  'Category 13': '#FDF8E8', // Light cream
 };
 
 // Example usage for therapeutic areas (pharmaceutical project):
 const THERAPEUTIC_COLORS = {
-    "Alzheimer's & Dementia": "#E4ACB2",
-    "CNS & Neurology": "#EABCA8",
-    "Cardiovascular": "#FAEDCD",
-    "Diabetes & Endocrine": "#CCD5AE",
-    "Gastrointestinal": "#99BAB9",
-    "Infectious Disease": "#D4A5A5",
-    "Oncology": "#E8B088",
-    "Pain & Analgesia": "#F5E5B8",
-    "Rare & Orphan Diseases": "#B8C99A",
-    "Respiratory": "#88A5A4",
-    "Immunology & Rheumatology": "#F0D0D0",
-    "Psychiatry": "#F2D4BA",
-    "Dermatology": "#FDF8E8"
+  "Alzheimer's & Dementia": '#E4ACB2',
+  'CNS & Neurology': '#EABCA8',
+  Cardiovascular: '#FAEDCD',
+  'Diabetes & Endocrine': '#CCD5AE',
+  Gastrointestinal: '#99BAB9',
+  'Infectious Disease': '#D4A5A5',
+  Oncology: '#E8B088',
+  'Pain & Analgesia': '#F5E5B8',
+  'Rare & Orphan Diseases': '#B8C99A',
+  Respiratory: '#88A5A4',
+  'Immunology & Rheumatology': '#F0D0D0',
+  Psychiatry: '#F2D4BA',
+  Dermatology: '#FDF8E8',
 };
 
 // Example usage for side effect categories (birth control project):
 const SIDE_EFFECT_COLORS = {
-    "mental": "#E4ACB2",        // Dusty rose
-    "physical": "#99BAB9",      // Blue gray
-    "both": "#CCD5AE",          // Sage green
-    "unknown": "#D4A5A5"        // Rose variation
+  mental: '#E4ACB2', // Dusty rose
+  physical: '#99BAB9', // Blue gray
+  both: '#CCD5AE', // Sage green
+  unknown: '#D4A5A5', // Rose variation
 };
 ```
 
 **When to use:**
+
 - Scatter plots showing categorical data
 - Bar charts with multiple categories
 - Data points in timeline visualizations
@@ -200,6 +216,7 @@ const SIDE_EFFECT_COLORS = {
 - Any visualization where color encodes categorical information
 
 **Do NOT use for:**
+
 - Backgrounds (use `--bg-main`, `--bg-card` instead)
 - Interactive UI elements (use Game Boy greens instead)
 - Text (use `--text-primary`, `--text-secondary` instead)
@@ -218,12 +235,12 @@ const SIDE_EFFECT_COLORS = {
 Consistent spacing creates visual rhythm and hierarchy.
 
 ```css
---space-xs: 0.5rem;   /* 8px */
---space-sm: 1rem;     /* 16px */
---space-md: 2rem;     /* 32px */
---space-lg: 3rem;     /* 48px */
---space-xl: 4rem;     /* 64px */
---space-xxl: 6rem;    /* 96px */
+--space-xs: 0.5rem; /* 8px */
+--space-sm: 1rem; /* 16px */
+--space-md: 2rem; /* 32px */
+--space-lg: 3rem; /* 48px */
+--space-xl: 4rem; /* 64px */
+--space-xxl: 6rem; /* 96px */
 ```
 
 ### Application
@@ -500,8 +517,9 @@ Appears on the Game Boy console in the main portal:
   height: 8px;
   background: var(--button-red);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(231, 76, 60, 0.8),
-              inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 0 10px rgba(231, 76, 60, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .power-label {
@@ -521,25 +539,39 @@ Context-aware pixel cursors for retro feel:
 ```css
 /* Default cursor (arrow) */
 * {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="white" stroke="black" d="M0,0 L0,12 L4,8 L7,13 L9,12 L6,7 L11,7 Z"/></svg>') 0 0, auto;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="white" stroke="black" d="M0,0 L0,12 L4,8 L7,13 L9,12 L6,7 L11,7 Z"/></svg>')
+      0 0,
+    auto;
 }
 
 /* Pointer cursor (hand) for links/buttons */
-a, button, .clickable {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="white" stroke="black" d="M7,0 L7,6 L5,6 L5,3 L4,3 L4,8 L3,8 L3,4 L2,4 L2,9 L1,9 L1,6 L0,6 L0,11 L6,11 L6,9 L10,9 L10,7 L9,7 L9,6 L8,6 L8,0 Z"/></svg>') 8 0, pointer;
+a,
+button,
+.clickable {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="white" stroke="black" d="M7,0 L7,6 L5,6 L5,3 L4,3 L4,8 L3,8 L3,4 L2,4 L2,9 L1,9 L1,6 L0,6 L0,11 L6,11 L6,9 L10,9 L10,7 L9,7 L9,6 L8,6 L8,0 Z"/></svg>')
+      8 0,
+    pointer;
 }
 
 /* Text cursor (I-beam) */
-input[type="text"],
-input[type="email"],
+input[type='text'],
+input[type='email'],
 textarea,
 .text-select {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill="black" x="7" y="0" width="2" height="16"/><rect fill="black" x="5" y="0" width="6" height="2"/><rect fill="black" x="5" y="14" width="6" height="2"/></svg>') 8 8, text;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill="black" x="7" y="0" width="2" height="16"/><rect fill="black" x="5" y="0" width="6" height="2"/><rect fill="black" x="5" y="14" width="6" height="2"/></svg>')
+      8 8,
+    text;
 }
 
 /* Grab cursor for draggable items */
 .draggable {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="white" stroke="black" d="M8,0 L8,4 L10,4 L10,2 L11,2 L11,7 L12,7 L12,3 L13,3 L13,8 L14,8 L14,5 L15,5 L15,10 L9,10 L9,12 L5,12 L5,10 L2,10 L2,8 L4,8 L4,0 Z"/></svg>') 8 8, grab;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="white" stroke="black" d="M8,0 L8,4 L10,4 L10,2 L11,2 L11,7 L12,7 L12,3 L13,3 L13,8 L14,8 L14,5 L15,5 L15,10 L9,10 L9,12 L5,12 L5,10 L2,10 L2,8 L4,8 L4,0 Z"/></svg>')
+      8 8,
+    grab;
 }
 ```
 
@@ -613,18 +645,26 @@ Body: System fonts, 0.9375rem, line-height 1.6
 ```css
 /* Mobile */
 @media (max-width: 768px) {
-  .container { padding: 0 1rem; }
-  .grid { grid-template-columns: 1fr; }
+  .container {
+    padding: 0 1rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Desktop */
 @media (min-width: 1025px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 ```
 
@@ -701,13 +741,16 @@ transition: all 0.2s ease;
 ```html
 <head>
   <!-- 1. Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- 2. Cursor System -->
-  <link rel="stylesheet" href="/css/cursors.css">
+  <link rel="stylesheet" href="/css/cursors.css" />
 
   <!-- 3. Project Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 ```
 
@@ -718,7 +761,7 @@ transition: all 0.2s ease;
   /* Colors */
   --gb-light: #8bac0f;
   --gb-dark: #306230;
-  --bg-main: #E8E8E8;
+  --bg-main: #e8e8e8;
   --text-primary: #2a2a2a;
 
   /* Fonts */
@@ -736,6 +779,75 @@ transition: all 0.2s ease;
 
 ---
 
+## Automated Code Quality
+
+ByteSized uses automated tooling to enforce code quality standards and reduce
+manual review burden.
+
+### Tools
+
+**ESLint** - JavaScript linting and code quality
+
+- Blocks console.log statements (allows console.error/warn)
+- Enforces const/let over var
+- Detects unused variables
+- Validates best practices
+
+**Prettier** - Code formatting
+
+- Enforces 2-space indentation
+- Single quotes for JS, double quotes for CSS
+- 100-char line width (JS), 120-char (HTML), 80-char (MD)
+- Automatic semicolons and trailing commas
+
+**Stylelint** - CSS linting
+
+- Enforces standard CSS best practices
+- Validates property order
+- Detects duplicate selectors
+
+**Husky + lint-staged** - Pre-commit hooks
+
+- Auto-fixes formatting on commit
+- Blocks commits with errors
+- Only processes staged files (fast)
+
+### Commands
+
+```bash
+# Run linters manually
+npm run lint              # Check all files
+npm run lint:fix          # Auto-fix linting issues
+
+# Run formatters manually
+npm run format            # Format all files
+npm run format:check      # Check formatting without changes
+```
+
+### VS Code Setup
+
+Install recommended extensions when prompted, or manually:
+
+- ESLint (dbaeumer.vscode-eslint)
+- Prettier (esbenp.prettier-vscode)
+- Stylelint (stylelint.vscode-stylelint)
+
+Settings are pre-configured in `.vscode/settings.json` for auto-format on save.
+
+### Pre-Commit Behavior
+
+When you commit, lint-staged will:
+
+1. Auto-fix JavaScript with ESLint
+2. Auto-format all staged files with Prettier
+3. Auto-fix CSS with Stylelint
+4. Re-stage the fixed files
+5. Block commit if unfixable errors remain
+
+**Tip:** Run `npm run lint:fix` before committing to catch issues early.
+
+---
+
 ## Version History
 
 - **v1.0** (Oct 31, 2025) - Initial style guide creation
@@ -749,4 +861,6 @@ transition: all 0.2s ease;
 
 ## Questions?
 
-For design questions or suggestions, refer to this guide. All new components should follow these patterns to maintain consistency across the ByteSized Research platform.
+For design questions or suggestions, refer to this guide. All new components
+should follow these patterns to maintain consistency across the ByteSized
+Research platform.

@@ -16,11 +16,11 @@
   --device-highlight: #f0f0f0;
   --screen-bezel: #2a2a2a;
   --button-gray: #5a5a5a;
-  --button-red: #cc3333;
+  --button-red: #c33;
 
   /* Effects */
-  --screen-glow: rgba(139, 172, 15, 0.3);
-  --led-glow: rgba(255, 0, 0, 0.6);
+  --screen-glow: rgb(139 172 15 / 30%);
+  --led-glow: rgb(255 0 0 / 60%);
 }
 
 /* Reset & Base Styles */
@@ -31,7 +31,7 @@
 }
 
 .portal-body {
-  font-family: 'Press Start 2P', monospace;
+  font-family: "Press Start 2P", monospace;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   min-height: 100vh;
   display: flex;
@@ -57,10 +57,10 @@
   width: 100%;
   max-width: 450px;
   background: var(--device-body);
-  border-radius: 12px 12px 40px 12px;
+  border-radius: 12px 12px 40px;
   padding: 30px 25px;
   box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.5),
+    0 10px 40px rgb(0 0 0 / 50%),
     inset 0 2px 0 var(--device-highlight),
     inset 0 -2px 0 var(--device-shadow);
   position: relative;
@@ -86,8 +86,9 @@
   background: var(--button-red);
   border-radius: 50%;
   box-shadow:
-    0 0 10px rgba(231, 76, 60, 0.8),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+    0 0 10px rgb(231 76 60 / 80%),
+    inset 0 -2px 4px rgb(0 0 0 / 30%);
+
   /* Static glow - no animation */
 }
 
@@ -105,8 +106,8 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow:
-    inset 0 4px 12px rgba(0, 0, 0, 0.6),
-    0 2px 0 rgba(255, 255, 255, 0.1);
+    inset 0 4px 12px rgb(0 0 0 / 60%),
+    0 2px 0 rgb(255 255 255 / 10%);
   margin-bottom: 25px;
 }
 
@@ -114,7 +115,7 @@
   background: #1a1a1a;
   padding: 12px;
   border-radius: 6px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 20px rgb(0 0 0 / 90%);
 }
 
 .screen-glass {
@@ -213,7 +214,7 @@
   border: none;
   box-shadow:
     0 3px 0 #333,
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    inset 0 1px 0 rgb(255 255 255 / 20%);
   cursor: pointer;
   transition: all 0.1s;
 }
@@ -222,10 +223,11 @@
   transform: translateY(2px);
   box-shadow:
     0 1px 0 #333,
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    inset 0 1px 0 rgb(255 255 255 / 20%);
 }
 
-.dpad-up, .dpad-down {
+.dpad-up,
+.dpad-down {
   width: 28px;
   height: 24px;
   left: 50%;
@@ -233,13 +235,17 @@
   border-radius: 4px 4px 0 0;
 }
 
-.dpad-up { top: 0; }
+.dpad-up {
+  top: 0;
+}
+
 .dpad-down {
   bottom: 0;
   border-radius: 0 0 4px 4px;
 }
 
-.dpad-left, .dpad-right {
+.dpad-left,
+.dpad-right {
   width: 24px;
   height: 28px;
   top: 50%;
@@ -247,7 +253,10 @@
   border-radius: 4px 0 0 4px;
 }
 
-.dpad-left { left: 0; }
+.dpad-left {
+  left: 0;
+}
+
 .dpad-right {
   right: 0;
   border-radius: 0 4px 4px 0;
@@ -262,7 +271,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 40%);
 }
 
 /* Action Buttons */
@@ -273,7 +282,8 @@
   transform: rotate(-20deg);
 }
 
-.btn-a, .btn-b {
+.btn-a,
+.btn-b {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -281,8 +291,8 @@
   background: #9c3c3c;
   box-shadow:
     0 4px 0 #6b2626,
-    inset 0 -2px 4px rgba(0, 0, 0, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    inset 0 -2px 4px rgb(0 0 0 / 30%),
+    inset 0 2px 4px rgb(255 255 255 / 20%);
   cursor: pointer;
   transition: all 0.1s;
   display: flex;
@@ -291,21 +301,27 @@
   position: relative;
 }
 
-.btn-a { transform: translateY(10px); }
-.btn-b { transform: translateY(-10px); }
+.btn-a {
+  transform: translateY(10px);
+}
 
-.btn-a:active, .btn-b:active {
+.btn-b {
+  transform: translateY(-10px);
+}
+
+.btn-a:active,
+.btn-b:active {
   transform: translateY(12px);
   box-shadow:
     0 2px 0 #6b2626,
-    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+    inset 0 -2px 4px rgb(0 0 0 / 30%);
 }
 
 .btn-label {
   font-size: 10px;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: rgb(255 255 255 / 90%);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 50%);
 }
 
 /* ========== DEVICE FOOTER ========== */
@@ -315,7 +331,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 15px;
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgb(0 0 0 / 10%);
 }
 
 .speaker-grille {
@@ -324,7 +340,7 @@
   background: var(--device-shadow);
   border-radius: 20px;
   padding: 8px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 30%);
 }
 
 .speaker-holes {
@@ -336,7 +352,7 @@
 
 .speaker-holes::before,
 .speaker-holes::after {
-  content: '';
+  content: "";
   display: block;
   background: #666;
   border-radius: 50%;
@@ -352,29 +368,41 @@
 
 /* ========== RESPONSIVE DESIGN ========== */
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .gameboy-device {
     max-width: 380px;
     padding: 25px 20px;
   }
 
-  .pixel-text-lg { font-size: 14px; }
-  .pixel-text-md { font-size: 9px; }
-  .pixel-text-sm { font-size: 7px; }
-  .pixel-text-xs { font-size: 5px; }
+  .pixel-text-lg {
+    font-size: 14px;
+  }
+
+  .pixel-text-md {
+    font-size: 9px;
+  }
+
+  .pixel-text-sm {
+    font-size: 7px;
+  }
+
+  .pixel-text-xs {
+    font-size: 5px;
+  }
 
   .dpad-container {
     width: 70px;
     height: 70px;
   }
 
-  .btn-a, .btn-b {
+  .btn-a,
+  .btn-b {
     width: 45px;
     height: 45px;
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .gameboy-device {
     max-width: 100%;
     padding: 20px 15px;
@@ -399,21 +427,21 @@
 
 /* Shared button styles */
 .system-btn {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(0 0 0 / 70%);
   border: 2px solid var(--gb-light);
   border-radius: 8px;
   padding: 10px 15px;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgb(0 0 0 / 30%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .system-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(0 0 0 / 90%);
   transform: scale(1.1);
 }
 
@@ -428,7 +456,7 @@
 
 /* Audio toggle specific */
 .mute-btn.muted .btn-icon::before {
-  content: '🔇';
+  content: "🔇";
 }
 
 /* About button specific */
@@ -441,7 +469,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .system-controls {
     top: 10px;
     right: 10px;

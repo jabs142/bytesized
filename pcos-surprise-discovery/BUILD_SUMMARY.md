@@ -41,6 +41,7 @@ pcos-surprise-discovery/
 ### 🔧 Core Scripts (Phases 1-3)
 
 #### Phase 1: Data Collection
+
 1. **reddit_collector.py** - Collects 500 PCOS posts
    - 4 subreddits (PCOS, PCOSloseit, Hirsutism, TwoX)
    - Last 12 months of posts
@@ -53,6 +54,7 @@ pcos-surprise-discovery/
    - Expected vs. surprising symptoms
 
 #### Phase 2: LLM Discovery
+
 3. **llm_symptom_extractor.py** - Organic symptom discovery
    - Uses GPT-4o-mini ($2-3 cost)
    - No predefined keywords
@@ -71,6 +73,7 @@ pcos-surprise-discovery/
    - Creates master symptom list
 
 #### Phase 3: Surprise Analysis
+
 6. **top_symptom_selector.py** - Selects top 30
    - Frequency threshold (5%+)
    - Surprise signal boost
@@ -92,6 +95,7 @@ pcos-surprise-discovery/
 ### 📊 Configuration System
 
 **config.py** - Centralized settings management
+
 - API credentials (Reddit, OpenAI, PubMed)
 - Collection parameters (500 posts, 4 subreddits)
 - LLM settings (model, temperature)
@@ -125,12 +129,15 @@ pcos-surprise-discovery/
 ### 🚀 Execution Options
 
 1. **One-Command Pipeline**
+
    ```bash
    ./run_pipeline.sh
    ```
+
    Runs all phases automatically (~15 minutes)
 
 2. **Step-by-Step**
+
    ```bash
    python src/data_collection/reddit_collector.py
    python src/analysis/llm_symptom_extractor.py
@@ -160,18 +167,21 @@ if research_validated:
 ```
 
 #### 2. Organic Discovery
+
 - NO predefined symptom lists
 - LLM discovers patterns naturally
 - Captures specific details
 - Finds unexpected connections
 
 #### 3. Multi-Level Validation
+
 - LLM extraction with quotes
 - PubMed research validation
 - Statistical frequency analysis
 - Patient surprise signals
 
 #### 4. Efficiency Focus
+
 - Only 500 posts (sufficient for patterns)
 - Validate top 30 only (not all symptoms)
 - ~$2-3 total cost
@@ -215,6 +225,7 @@ After running the pipeline, you'll have:
 ## Comparison to Your Existing Projects
 
 ### Matches Your Style ✅
+
 - Config class (not module-level imports)
 - Educational "LEARNING CONCEPTS" sections
 - Detailed inline comments
@@ -223,12 +234,14 @@ After running the pipeline, you'll have:
 - Progress reporting
 
 ### New Innovations 🆕
+
 - **Surprise factor calculation** - Novel algorithm
 - **Patient surprise signals** - Explicit tracking
 - **Multi-factor scoring** - Combines 4 evidence sources
 - **Evidence tiers** - Clear classification system
 
 ### Scale Improvements 📈
+
 - **Efficient**: 500 posts (vs 257 for EDS)
 - **Focused**: Top 30 validation (vs all symptoms)
 - **Cheaper**: ~$2-3 (GPT-4o-mini vs GPT-4)
@@ -260,11 +273,13 @@ After running the pipeline, you'll have:
 ## What's Coming Next 🚧
 
 ### Phase 4: Pattern Mining (To Be Built)
+
 - Association rules mining (symptom clusters)
 - Treatment effectiveness rankings
 - Co-occurrence analysis
 
 ### Phase 5: Web Interface (To Be Built)
+
 - Mobile-first design
 - Symptom input interface
 - Surprising connections display
@@ -273,12 +288,14 @@ After running the pipeline, you'll have:
 ## How to Start
 
 ### 1. Quick Test
+
 ```bash
 cd pcos-surprise-discovery
 python src/config.py  # Verify setup
 ```
 
 ### 2. Setup Environment
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -288,11 +305,13 @@ cp .env.example .env
 ```
 
 ### 3. Run Pipeline
+
 ```bash
 ./run_pipeline.sh
 ```
 
 ### 4. View Results
+
 ```bash
 cat data/validated/surprise_rankings.json | head -50
 ```
@@ -300,12 +319,14 @@ cat data/validated/surprise_rankings.json | head -50
 ## Success Criteria
 
 ### Minimum Viable ✅
+
 - 500 posts collected
 - 100+ unique symptoms
 - 30 symptoms validated
 - Top 10 surprising symptoms
 
 ### Ideal Goal 🎯
+
 - 200+ unique symptoms
 - 30 with research papers
 - 10+ very surprising (score > 2.0)
@@ -313,6 +334,7 @@ cat data/validated/surprise_rankings.json | head -50
 - Treatment rankings
 
 ### Research Impact 🚀
+
 - Publishable findings
 - Help 1000+ PCOS patients
 - Identify research gaps
@@ -358,6 +380,7 @@ cat data/validated/surprise_rankings.json | head -50
 **🎉 CONGRATULATIONS! 🎉**
 
 You now have a complete, production-ready PCOS Surprise Discovery pipeline that:
+
 - Implements a novel "surprise factor" algorithm
 - Follows your established methodology
 - Is ready to run today

@@ -7,27 +7,30 @@
  * Render clustering analysis results - Unified design
  */
 function renderPoissonTests(stats) {
-    const container = document.getElementById('poisson-results');
+  const container = document.getElementById('poisson-results');
 
-    if (!stats || !stats.poisson_tests) {
-        container.innerHTML = '<div class="loading">No statistical test data available</div>';
-        return;
-    }
+  if (!stats || !stats.poisson_tests) {
+    container.innerHTML = '<div class="loading">No statistical test data available</div>';
+    return;
+  }
 
-    const tests = stats.poisson_tests;
-    const result = Object.values(tests)[0]; // Get the first test result
+  const tests = stats.poisson_tests;
+  const result = Object.values(tests)[0]; // Get the first test result
 
-    if (!result) return;
+  if (!result) {
+    return;
+  }
 
-    const isClustered = result.is_clustered || !result.is_random;
-    const cv = result.coefficient_of_variation ? result.coefficient_of_variation.toFixed(2) : 'N/A';
-    const confidencePercent = result.confidence_percent || `${(result.confidence * 100).toFixed(0)}%`;
-    const clusterCount = stats.significant_clusters ? stats.significant_clusters.length : 0;
-    const peakDecade = stats.peak_years?.fda_drugs ?
-        `${Math.floor(stats.peak_years.fda_drugs / 10) * 10}s` : '1980s';
+  const isClustered = result.is_clustered || !result.is_random;
+  const cv = result.coefficient_of_variation ? result.coefficient_of_variation.toFixed(2) : 'N/A';
+  const confidencePercent = result.confidence_percent || `${(result.confidence * 100).toFixed(0)}%`;
+  const clusterCount = stats.significant_clusters ? stats.significant_clusters.length : 0;
+  const peakDecade = stats.peak_years?.fda_drugs
+    ? `${Math.floor(stats.peak_years.fda_drugs / 10) * 10}s`
+    : '1980s';
 
-    // Create unified analysis card
-    const unifiedCard = `
+  // Create unified analysis card
+  const unifiedCard = `
         <div class="statistical-summary">
             <h3>📊 Statistical Analysis Results</h3>
             <p>
@@ -81,40 +84,43 @@ function renderPoissonTests(stats) {
         </div>
     `;
 
-    container.innerHTML = unifiedCard;
+  container.innerHTML = unifiedCard;
 }
 
 /**
  * Format category name for display
  */
 function formatCategoryName(category) {
-    const nameMap = {
-        'fda_drugs': 'FDA Drug Approvals',
-        'semiconductors': 'Semiconductors',
-        'telecommunications': 'Telecommunications',
-        'computing': 'Computing',
-        'pharmaceuticals': 'Pharma Patents'
-    };
+  const nameMap = {
+    fda_drugs: 'FDA Drug Approvals',
+    semiconductors: 'Semiconductors',
+    telecommunications: 'Telecommunications',
+    computing: 'Computing',
+    pharmaceuticals: 'Pharma Patents',
+  };
 
-    return nameMap[category] || category.replace(/_/g, ' ')
-        .split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+  return (
+    nameMap[category] ||
+    category
+      .replace(/_/g, ' ')
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+  );
 }
 
 /**
  * Toggle dropdown visibility
  */
 function toggleDropdown(id) {
-    const content = document.getElementById(`${id}-content`);
-    const icon = document.getElementById(`${id}-icon`);
+  const content = document.getElementById(`${id}-content`);
+  const icon = document.getElementById(`${id}-icon`);
 
-    if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        icon.style.transform = 'rotate(180deg)';
-    } else {
-        content.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
-    }
+  if (content.style.display === 'none' || content.style.display === '') {
+    content.style.display = 'block';
+    icon.style.transform = 'rotate(180deg)';
+  } else {
+    content.style.display = 'none';
+    icon.style.transform = 'rotate(0deg)';
+  }
 }
-

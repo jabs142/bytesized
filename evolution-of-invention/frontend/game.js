@@ -9,95 +9,95 @@
  * Generate an improved dirt tile texture
  */
 function generateDirtTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base dirt colors (multiple shades)
-    const dirtColors = ['#8b7355', '#7a6348', '#6b5642', '#9a826d'];
-    ctx.fillStyle = dirtColors[Math.floor(Math.random() * dirtColors.length)];
-    ctx.fillRect(0, 0, 32, 32);
+  // Base dirt colors (multiple shades)
+  const dirtColors = ['#8b7355', '#7a6348', '#6b5642', '#9a826d'];
+  ctx.fillStyle = dirtColors[Math.floor(Math.random() * dirtColors.length)];
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Add darker patches for depth
-    for (let i = 0; i < 25; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 32);
-        const size = Math.floor(Math.random() * 4) + 1;
-        ctx.fillStyle = `rgba(60, 48, 38, ${Math.random() * 0.4 + 0.2})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Add darker patches for depth
+  for (let i = 0; i < 25; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 32);
+    const size = Math.floor(Math.random() * 4) + 1;
+    ctx.fillStyle = `rgba(60, 48, 38, ${Math.random() * 0.4 + 0.2})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    // Add small pebbles/highlights
-    for (let i = 0; i < 10; i++) {
-        const x = Math.floor(Math.random() * 30) + 1;
-        const y = Math.floor(Math.random() * 30) + 1;
-        ctx.fillStyle = `rgba(150, 130, 110, ${Math.random() * 0.3})`;
-        ctx.fillRect(x, y, 2, 2);
-    }
+  // Add small pebbles/highlights
+  for (let i = 0; i < 10; i++) {
+    const x = Math.floor(Math.random() * 30) + 1;
+    const y = Math.floor(Math.random() * 30) + 1;
+    ctx.fillStyle = `rgba(150, 130, 110, ${Math.random() * 0.3})`;
+    ctx.fillRect(x, y, 2, 2);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate an improved stone tile texture
  */
 function generateStoneTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base stone color with gradient
-    const gradient = ctx.createLinearGradient(0, 0, 32, 32);
-    gradient.addColorStop(0, '#787774');
-    gradient.addColorStop(1, '#5a5956');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 32, 32);
+  // Base stone color with gradient
+  const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+  gradient.addColorStop(0, '#787774');
+  gradient.addColorStop(1, '#5a5956');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Add cracks/lines
-    ctx.strokeStyle = 'rgba(40, 40, 40, 0.4)';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 5; i++) {
-        ctx.beginPath();
-        ctx.moveTo(Math.random() * 32, Math.random() * 32);
-        ctx.lineTo(Math.random() * 32, Math.random() * 32);
-        ctx.stroke();
-    }
+  // Add cracks/lines
+  ctx.strokeStyle = 'rgba(40, 40, 40, 0.4)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 5; i++) {
+    ctx.beginPath();
+    ctx.moveTo(Math.random() * 32, Math.random() * 32);
+    ctx.lineTo(Math.random() * 32, Math.random() * 32);
+    ctx.stroke();
+  }
 
-    // Add texture variation
-    for (let i = 0; i < 20; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 32);
-        const size = Math.floor(Math.random() * 3) + 1;
-        ctx.fillStyle = `rgba(96, 96, 92, ${Math.random() * 0.3 + 0.1})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Add texture variation
+  for (let i = 0; i < 20; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 32);
+    const size = Math.floor(Math.random() * 3) + 1;
+    ctx.fillStyle = `rgba(96, 96, 92, ${Math.random() * 0.3 + 0.1})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate a cave wall texture with gradient
  */
 function generateCaveWallTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 64);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 64);
+  const ctx = canvas.getContext();
 
-    // Dark gradient for depth
-    const gradient = ctx.createLinearGradient(0, 0, 0, 64);
-    gradient.addColorStop(0, '#2a2a2a');
-    gradient.addColorStop(0.5, '#1a1a1a');
-    gradient.addColorStop(1, '#0a0a0a');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 32, 64);
+  // Dark gradient for depth
+  const gradient = ctx.createLinearGradient(0, 0, 0, 64);
+  gradient.addColorStop(0, '#2a2a2a');
+  gradient.addColorStop(0.5, '#1a1a1a');
+  gradient.addColorStop(1, '#0a0a0a');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 32, 64);
 
-    // Rocky highlights
-    for (let i = 0; i < 15; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 64);
-        const size = Math.floor(Math.random() * 4) + 1;
-        ctx.fillStyle = `rgba(74, 74, 74, ${Math.random() * 0.3})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Rocky highlights
+  for (let i = 0; i < 15; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 64);
+    const size = Math.floor(Math.random() * 4) + 1;
+    ctx.fillStyle = `rgba(74, 74, 74, ${Math.random() * 0.3})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
@@ -107,1053 +107,1127 @@ function generateCaveWallTexture(scene, key) {
  * @param {Object} colors - Color scheme { skin, fur, hair }
  */
 function generateCharacterSprite(scene, key, colors = {}) {
-    // Default caveman colors - animal skins/furs
-    const skin = colors.skin || '#d4a574';
-    const fur = colors.fur || '#8b6f47'; // Tan animal skin
-    const furDark = colors.furDark || '#6b5642'; // Darker patches
-    const hair = colors.hair || '#3d2817';
+  // Default caveman colors - animal skins/furs
+  const skin = colors.skin || '#d4a574';
+  const fur = colors.fur || '#8b6f47'; // Tan animal skin
+  const furDark = colors.furDark || '#6b5642'; // Darker patches
+  const hair = colors.hair || '#3d2817';
 
-    // Create sprite sheet: 3 frames × 4 directions = 12 frames
-    // Layout: 96×192 (3 columns, 4 rows)
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  // Create sprite sheet: 3 frames × 4 directions = 12 frames
+  // Layout: 96×192 (3 columns, 4 rows)
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    const frameWidth = 32;
-    const frameHeight = 48;
+  const frameWidth = 32;
+  const frameHeight = 48;
 
-    // Helper function to draw a humanoid frame
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  // Helper function to draw a humanoid frame
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Wild, messy hair
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
-        ctx.fillRect(centerX - 8, baseY + 4, 2, 4); // Left side messy
-        ctx.fillRect(centerX + 6, baseY + 4, 2, 4); // Right side messy
+    // Wild, messy hair
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+    ctx.fillRect(centerX - 8, baseY + 4, 2, 4); // Left side messy
+    ctx.fillRect(centerX + 6, baseY + 4, 2, 4); // Right side messy
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Beard/facial hair
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 4, baseY + 12, 8, 3);
+    // Beard/facial hair
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 4, baseY + 12, 8, 3);
 
-        // Animal skin wrap on torso (ragged edges)
-        ctx.fillStyle = fur;
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 12);
+    // Animal skin wrap on torso (ragged edges)
+    ctx.fillStyle = fur;
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 12);
 
-        // Darker fur patches for texture
-        ctx.fillStyle = furDark;
-        ctx.fillRect(centerX - 6, baseY + 17, 4, 3);
-        ctx.fillRect(centerX + 1, baseY + 21, 3, 4);
+    // Darker fur patches for texture
+    ctx.fillStyle = furDark;
+    ctx.fillRect(centerX - 6, baseY + 17, 4, 3);
+    ctx.fillRect(centerX + 1, baseY + 21, 3, 4);
 
-        // Ragged bottom edge of fur wrap
-        ctx.fillRect(centerX - 7, baseY + 28, 3, 2);
-        ctx.fillRect(centerX - 2, baseY + 28, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 28, 3, 2);
+    // Ragged bottom edge of fur wrap
+    ctx.fillRect(centerX - 7, baseY + 28, 3, 2);
+    ctx.fillRect(centerX - 2, baseY + 28, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 28, 3, 2);
 
-        // Bare arms (primitive)
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
+    // Bare arms (primitive)
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
 
-        // Animal skin loincloth/wrap on legs
-        ctx.fillStyle = fur;
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+    // Animal skin loincloth/wrap on legs
+    ctx.fillStyle = fur;
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
 
-        // Bare lower legs
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 6, baseY + 40 + legOffset1, 5, 6);
-        ctx.fillRect(centerX + 1, baseY + 40 + legOffset2, 5, 6);
+    // Bare lower legs
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 6, baseY + 40 + legOffset1, 5, 6);
+    ctx.fillRect(centerX + 1, baseY + 40 + legOffset2, 5, 6);
 
-        // Bare feet (no shoes)
-        ctx.fillStyle = '#b8956a';
-        ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 3);
-        ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 3);
-    }
+    // Bare feet (no shoes)
+    ctx.fillStyle = '#b8956a';
+    ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 3);
+    ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 3);
+  }
 
-    // Generate frames for each direction
-    // Row 0: Walk Down
-    drawFrame(0, 0, 0, 0);      // Idle
-    drawFrame(32, 0, -2, 2);    // Left leg forward
-    drawFrame(64, 0, 2, -2);    // Right leg forward
+  // Generate frames for each direction
+  // Row 0: Walk Down
+  drawFrame(0, 0, 0, 0); // Idle
+  drawFrame(32, 0, -2, 2); // Left leg forward
+  drawFrame(64, 0, 2, -2); // Right leg forward
 
-    // Row 1: Walk Left
-    for (let frame = 0; frame < 3; frame++) {
-        const x = frame * frameWidth;
-        const y = frameHeight;
-        const legOffset = frame === 1 ? -2 : frame === 2 ? 2 : 0;
+  // Row 1: Walk Left
+  for (let frame = 0; frame < 3; frame++) {
+    const x = frame * frameWidth;
+    const y = frameHeight;
+    const legOffset = frame === 1 ? -2 : frame === 2 ? 2 : 0;
 
-        drawFrame(x, y, legOffset, -legOffset);
-    }
+    drawFrame(x, y, legOffset, -legOffset);
+  }
 
-    // Row 2: Walk Right (mirror of left)
-    for (let frame = 0; frame < 3; frame++) {
-        const x = frame * frameWidth;
-        const y = frameHeight * 2;
-        const legOffset = frame === 1 ? -2 : frame === 2 ? 2 : 0;
+  // Row 2: Walk Right (mirror of left)
+  for (let frame = 0; frame < 3; frame++) {
+    const x = frame * frameWidth;
+    const y = frameHeight * 2;
+    const legOffset = frame === 1 ? -2 : frame === 2 ? 2 : 0;
 
-        drawFrame(x, y, legOffset, -legOffset);
-    }
+    drawFrame(x, y, legOffset, -legOffset);
+  }
 
-    // Row 3: Walk Up (back view)
-    drawFrame(0, frameHeight * 3, 0, 0);      // Idle
-    drawFrame(32, frameHeight * 3, -2, 2);    // Left leg forward
-    drawFrame(64, frameHeight * 3, 2, -2);    // Right leg forward
+  // Row 3: Walk Up (back view)
+  drawFrame(0, frameHeight * 3, 0, 0); // Idle
+  drawFrame(32, frameHeight * 3, -2, 2); // Left leg forward
+  drawFrame(64, frameHeight * 3, 2, -2); // Right leg forward
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== ERA-SPECIFIC PLAYER CHARACTER GENERATORS =====
 
 function generateAncientPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#c49a6c';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#c49a6c';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Egyptian headdress/hair
-        ctx.fillStyle = '#2a1a0a';
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 6);
+    // Egyptian headdress/hair
+    ctx.fillStyle = '#2a1a0a';
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 6);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // White linen tunic
-        ctx.fillStyle = '#f4e4c1';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
+    // White linen tunic
+    ctx.fillStyle = '#f4e4c1';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
 
-        // Belt
-        ctx.fillStyle = '#8b7355';
-        ctx.fillRect(centerX - 8, baseY + 26, 16, 2);
+    // Belt
+    ctx.fillStyle = '#8b7355';
+    ctx.fillRect(centerX - 8, baseY + 26, 16, 2);
 
-        // Arms
-        ctx.fillStyle = '#c49a6c';
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
+    // Arms
+    ctx.fillStyle = '#c49a6c';
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
 
-        // Legs (linen skirt)
-        ctx.fillStyle = '#f4e4c1';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+    // Legs (linen skirt)
+    ctx.fillStyle = '#f4e4c1';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
 
-        // Sandals
-        ctx.fillStyle = '#8b7355';
-        ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 2);
-        ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 2);
-    }
+    // Sandals
+    ctx.fillStyle = '#8b7355';
+    ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 2);
+    ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 2);
+  }
 
-    // Generate frames (same pattern as original)
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames (same pattern as original)
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 function generateIndustrialPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#d4a574';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#d4a574';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Worker's cap
-        ctx.fillStyle = '#3a3a3a';
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+    // Worker's cap
+    ctx.fillStyle = '#3a3a3a';
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Work shirt (dark)
-        ctx.fillStyle = '#4a4a4a';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    // Work shirt (dark)
+    ctx.fillStyle = '#4a4a4a';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
 
-        // Belt
-        ctx.fillStyle = '#2a2a2a';
-        ctx.fillRect(centerX - 8, baseY + 28, 16, 2);
+    // Belt
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(centerX - 8, baseY + 28, 16, 2);
 
-        // Arms
-        ctx.fillStyle = '#d4a574';
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
+    // Arms
+    ctx.fillStyle = '#d4a574';
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 12);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 12);
 
-        // Work pants
-        ctx.fillStyle = '#2a2a2a';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+    // Work pants
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
 
-        // Work boots
-        ctx.fillStyle = '#1a1a1a';
-        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
-    }
+    // Work boots
+    ctx.fillStyle = '#1a1a1a';
+    ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+  }
 
-    // Generate frames
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 function generateModernPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#d4a574';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#d4a574';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Modern hair
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
+    // Modern hair
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // T-shirt (blue)
-        ctx.fillStyle = '#2a4a6a';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    // T-shirt (blue)
+    ctx.fillStyle = '#2a4a6a';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
 
-        // Arms
-        ctx.fillStyle = '#d4a574';
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 8);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 8);
+    // Arms
+    ctx.fillStyle = '#d4a574';
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 8);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 8);
 
-        // Jeans
-        ctx.fillStyle = '#3a5a7a';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+    // Jeans
+    ctx.fillStyle = '#3a5a7a';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
 
-        // Sneakers
-        ctx.fillStyle = '#f4f4f4';
-        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
-    }
+    // Sneakers
+    ctx.fillStyle = '#f4f4f4';
+    ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+  }
 
-    // Generate frames
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== ERA-SPECIFIC PLAYER CHARACTER GENERATORS (CONTINUED) =====
 
 function generateCavemanPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#c49a6c';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#c49a6c';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Wild, unkempt hair
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(centerX - 8, baseY + 2, 16, 6); // Larger, messy hair
-        ctx.fillRect(centerX - 7, baseY + 6, 3, 2); // Left hair strand
-        ctx.fillRect(centerX + 4, baseY + 6, 3, 2); // Right hair strand
+    // Wild, unkempt hair
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(centerX - 8, baseY + 2, 16, 6); // Larger, messy hair
+    ctx.fillRect(centerX - 7, baseY + 6, 3, 2); // Left hair strand
+    ctx.fillRect(centerX + 4, baseY + 6, 3, 2); // Right hair strand
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Animal fur tunic (ragged)
-        ctx.fillStyle = '#7a6348';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
-        // Fur shadows/texture
-        ctx.fillStyle = '#5a4838';
-        ctx.fillRect(centerX - 7, baseY + 18, 2, 2);
-        ctx.fillRect(centerX + 5, baseY + 20, 2, 2);
-        ctx.fillRect(centerX - 4, baseY + 24, 2, 2);
+    // Animal fur tunic (ragged)
+    ctx.fillStyle = '#7a6348';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    // Fur shadows/texture
+    ctx.fillStyle = '#5a4838';
+    ctx.fillRect(centerX - 7, baseY + 18, 2, 2);
+    ctx.fillRect(centerX + 5, baseY + 20, 2, 2);
+    ctx.fillRect(centerX - 4, baseY + 24, 2, 2);
 
-        // Arms (bare)
-        ctx.fillStyle = '#c49a6c';
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
+    // Arms (bare)
+    ctx.fillStyle = '#c49a6c';
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
 
-        // Fur wrap/skirt
-        ctx.fillStyle = '#7a6348';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+    // Fur wrap/skirt
+    ctx.fillStyle = '#7a6348';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
 
-        // Bare feet/wrapped feet
-        ctx.fillStyle = '#8b7355';
-        ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 2);
-        ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 2);
-    }
+    // Bare feet/wrapped feet
+    ctx.fillStyle = '#8b7355';
+    ctx.fillRect(centerX - 6, baseY + 44 + legOffset1, 5, 2);
+    ctx.fillRect(centerX + 1, baseY + 44 + legOffset2, 5, 2);
+  }
 
-    // Generate frames (down, left, right, up)
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames (down, left, right, up)
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 function generateFarmingPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#c49a6c';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#c49a6c';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Simple farmer's hair/cap
-        ctx.fillStyle = '#5a4a3a';
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
+    // Simple farmer's hair/cap
+    ctx.fillStyle = '#5a4a3a';
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Earth-tone tunic
-        ctx.fillStyle = '#8a7a5a';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    // Earth-tone tunic
+    ctx.fillStyle = '#8a7a5a';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
 
-        // Rope belt
-        ctx.fillStyle = '#6a5a4a';
-        ctx.fillRect(centerX - 8, baseY + 26, 16, 2);
+    // Rope belt
+    ctx.fillStyle = '#6a5a4a';
+    ctx.fillRect(centerX - 8, baseY + 26, 16, 2);
 
-        // Arms (visible, rolled sleeves)
-        ctx.fillStyle = '#c49a6c';
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
+    // Arms (visible, rolled sleeves)
+    ctx.fillStyle = '#c49a6c';
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
 
-        // Work pants
-        ctx.fillStyle = '#7a6a4a';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+    // Work pants
+    ctx.fillStyle = '#7a6a4a';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
 
-        // Brown boots
-        ctx.fillStyle = '#5a4a3a';
-        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
-    }
+    // Brown boots
+    ctx.fillStyle = '#5a4a3a';
+    ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+  }
 
-    // Generate frames
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 function generateMedievalPlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#d4a574';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#d4a574';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Medieval hair
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+    // Medieval hair
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Off-white undershirt sleeves
-        ctx.fillStyle = '#f4e4c1';
-        ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
-        ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
+    // Off-white undershirt sleeves
+    ctx.fillStyle = '#f4e4c1';
+    ctx.fillRect(centerX - 11, baseY + 18, 3, 10);
+    ctx.fillRect(centerX + 8, baseY + 18, 3, 10);
 
-        // Burgundy tunic over undershirt
-        ctx.fillStyle = '#7a4a4a';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
+    // Burgundy tunic over undershirt
+    ctx.fillStyle = '#7a4a4a';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
 
-        // Leather belt
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(centerX - 8, baseY + 27, 16, 3);
+    // Leather belt
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(centerX - 8, baseY + 27, 16, 3);
 
-        // Brown pants
-        ctx.fillStyle = '#5a4a3a';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
+    // Brown pants
+    ctx.fillStyle = '#5a4a3a';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 12);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 12);
 
-        // Leather boots
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 5);
-        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 5);
-    }
+    // Leather boots
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 5);
+    ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 5);
+  }
 
-    // Generate frames
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 function generateRenaissancePlayerSprite(scene, key) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, 96, 192);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, 96, 192);
+  const ctx = canvas.getContext();
 
-    function drawFrame(x, y, legOffset1, legOffset2) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFrame(x, y, legOffset1, legOffset2) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = '#d4a574';
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = '#d4a574';
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Styled Renaissance hair
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
+    // Styled Renaissance hair
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 4);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // White/cream undershirt
-        ctx.fillStyle = '#f4f4e4';
-        ctx.fillRect(centerX - 9, baseY + 18, 4, 10); // Left sleeve
-        ctx.fillRect(centerX + 5, baseY + 18, 4, 10); // Right sleeve
+    // White/cream undershirt
+    ctx.fillStyle = '#f4f4e4';
+    ctx.fillRect(centerX - 9, baseY + 18, 4, 10); // Left sleeve
+    ctx.fillRect(centerX + 5, baseY + 18, 4, 10); // Right sleeve
 
-        // Renaissance doublet (rich brown/purple)
-        ctx.fillStyle = '#6a4a3a';
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    // Renaissance doublet (rich brown/purple)
+    ctx.fillStyle = '#6a4a3a';
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
 
-        // Decorative belt
-        ctx.fillStyle = '#8b7355';
-        ctx.fillRect(centerX - 8, baseY + 27, 16, 2);
+    // Decorative belt
+    ctx.fillStyle = '#8b7355';
+    ctx.fillRect(centerX - 8, baseY + 27, 16, 2);
 
-        // Breeches (dark brown, fitted)
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
-        ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
+    // Breeches (dark brown, fitted)
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(centerX - 6, baseY + 30 + legOffset1, 5, 10);
+    ctx.fillRect(centerX + 1, baseY + 30 + legOffset2, 5, 10);
 
-        // Black dress shoes
-        ctx.fillStyle = '#2a1a0a';
-        ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
-    }
+    // Black dress shoes
+    ctx.fillStyle = '#2a1a0a';
+    ctx.fillRect(centerX - 6, baseY + 42 + legOffset1, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 42 + legOffset2, 5, 4);
+  }
 
-    // Generate frames
-    drawFrame(0, 0, 0, 0);
-    drawFrame(32, 0, -2, 2);
-    drawFrame(64, 0, 2, -2);
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    for (let frame = 0; frame < 3; frame++) {
-        drawFrame(frame * frameWidth, frameHeight * 2, frame === 1 ? -2 : frame === 2 ? 2 : 0, frame === 1 ? 2 : frame === 2 ? -2 : 0);
-    }
-    drawFrame(0, frameHeight * 3, 0, 0);
-    drawFrame(32, frameHeight * 3, -2, 2);
-    drawFrame(64, frameHeight * 3, 2, -2);
+  // Generate frames
+  drawFrame(0, 0, 0, 0);
+  drawFrame(32, 0, -2, 2);
+  drawFrame(64, 0, 2, -2);
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  for (let frame = 0; frame < 3; frame++) {
+    drawFrame(
+      frame * frameWidth,
+      frameHeight * 2,
+      frame === 1 ? -2 : frame === 2 ? 2 : 0,
+      frame === 1 ? 2 : frame === 2 ? -2 : 0
+    );
+  }
+  drawFrame(0, frameHeight * 3, 0, 0);
+  drawFrame(32, frameHeight * 3, -2, 2);
+  drawFrame(64, frameHeight * 3, 2, -2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate NPC sprites (different color variations)
  */
 function generateNPCSprite(scene, key, variant = 0) {
-    const variants = [
-        { skin: '#c49a6c', fur: '#7a6348', furDark: '#5a4838', hair: '#4a3a2a' },
-        { skin: '#d4a574', fur: '#9a826d', furDark: '#7a6348', hair: '#3d2817' },
-        { skin: '#b8956a', fur: '#6b5642', furDark: '#4a3a2a', hair: '#2a1a0a' },
-        { skin: '#c9a876', fur: '#8b7355', furDark: '#6b5642', hair: '#594a3a' }
-    ];
-    generateCharacterSprite(scene, key, variants[variant % variants.length]);
+  const variants = [
+    { skin: '#c49a6c', fur: '#7a6348', furDark: '#5a4838', hair: '#4a3a2a' },
+    { skin: '#d4a574', fur: '#9a826d', furDark: '#7a6348', hair: '#3d2817' },
+    { skin: '#b8956a', fur: '#6b5642', furDark: '#4a3a2a', hair: '#2a1a0a' },
+    { skin: '#c9a876', fur: '#8b7355', furDark: '#6b5642', hair: '#594a3a' },
+  ];
+  generateCharacterSprite(scene, key, variants[variant % variants.length]);
 }
 
 /**
  * Generate work animation frames for activity-specific poses
  */
 function generateWorkFrames(scene, key, colors, activity) {
-    const skin = colors.skin || '#d4a574';
-    const fur = colors.fur || '#8b6f47';
-    const furDark = colors.furDark || '#6b5642';
-    const hair = colors.hair || '#3d2817';
+  const skin = colors.skin || '#d4a574';
+  const fur = colors.fur || '#8b6f47';
+  const furDark = colors.furDark || '#6b5642';
+  const hair = colors.hair || '#3d2817';
 
-    const frameWidth = 32;
-    const frameHeight = 48;
-    let numFrames = 3; // Default
+  const frameWidth = 32;
+  const frameHeight = 48;
+  let numFrames = 3; // Default
 
-    if (activity === 'fire') numFrames = 3;
-    else if (activity === 'spear') numFrames = 4;
-    else if (activity === 'crafting') numFrames = 4;
+  if (activity === 'fire') {
+    numFrames = 3;
+  } else if (activity === 'spear') {
+    numFrames = 4;
+  } else if (activity === 'crafting') {
+    numFrames = 4;
+  }
 
-    const canvas = scene.textures.createCanvas(key, frameWidth * numFrames, frameHeight);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, frameWidth * numFrames, frameHeight);
+  const ctx = canvas.getContext();
 
-    // Helper to draw body parts
-    function drawBodyBase(x, y) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  // Helper to draw body parts
+  function drawBodyBase(x, y) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Hair
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
-        ctx.fillRect(centerX - 8, baseY + 4, 2, 4);
-        ctx.fillRect(centerX + 6, baseY + 4, 2, 4);
+    // Hair
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+    ctx.fillRect(centerX - 8, baseY + 4, 2, 4);
+    ctx.fillRect(centerX + 6, baseY + 4, 2, 4);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Beard
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 4, baseY + 12, 8, 3);
+    // Beard
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 4, baseY + 12, 8, 3);
 
-        // Torso
-        ctx.fillStyle = fur;
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 12);
-        ctx.fillStyle = furDark;
-        ctx.fillRect(centerX - 6, baseY + 17, 4, 3);
-        ctx.fillRect(centerX + 1, baseY + 21, 3, 4);
+    // Torso
+    ctx.fillStyle = fur;
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 12);
+    ctx.fillStyle = furDark;
+    ctx.fillRect(centerX - 6, baseY + 17, 4, 3);
+    ctx.fillRect(centerX + 1, baseY + 21, 3, 4);
 
-        // Legs
-        ctx.fillStyle = fur;
-        ctx.fillRect(centerX - 6, baseY + 30, 5, 10);
-        ctx.fillRect(centerX + 1, baseY + 30, 5, 10);
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 6, baseY + 40, 5, 6);
-        ctx.fillRect(centerX + 1, baseY + 40, 5, 6);
-        ctx.fillStyle = '#b8956a';
-        ctx.fillRect(centerX - 6, baseY + 44, 5, 3);
-        ctx.fillRect(centerX + 1, baseY + 44, 5, 3);
+    // Legs
+    ctx.fillStyle = fur;
+    ctx.fillRect(centerX - 6, baseY + 30, 5, 10);
+    ctx.fillRect(centerX + 1, baseY + 30, 5, 10);
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 6, baseY + 40, 5, 6);
+    ctx.fillRect(centerX + 1, baseY + 40, 5, 6);
+    ctx.fillStyle = '#b8956a';
+    ctx.fillRect(centerX - 6, baseY + 44, 5, 3);
+    ctx.fillRect(centerX + 1, baseY + 44, 5, 3);
 
-        return { centerX, baseY };
-    }
+    return { centerX, baseY };
+  }
 
-    if (activity === 'fire') {
-        // Frame 0: Idle
-        const pos0 = drawBodyBase(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 18, 3, 12);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 18, 3, 12);
+  if (activity === 'fire') {
+    // Frame 0: Idle
+    const pos0 = drawBodyBase(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 18, 3, 12);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 18, 3, 12);
 
-        // Frame 1: Right arm reaching down
-        const pos1 = drawBodyBase(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 18, 3, 12); // Left arm normal
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 24, 3, 14); // Right arm down
+    // Frame 1: Right arm reaching down
+    const pos1 = drawBodyBase(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 18, 3, 12); // Left arm normal
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 24, 3, 14); // Right arm down
 
-        // Frame 2: Right arm lower (poking fire)
-        const pos2 = drawBodyBase(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 18, 3, 12); // Left arm normal
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 28, 3, 16); // Right arm further down
-    } else if (activity === 'spear') {
-        // Frame 0: Holding spear horizontally
-        const pos0 = drawBodyBase(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 20, 3, 8);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 20, 3, 8);
+    // Frame 2: Right arm lower (poking fire)
+    const pos2 = drawBodyBase(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 18, 3, 12); // Left arm normal
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 28, 3, 16); // Right arm further down
+  } else if (activity === 'spear') {
+    // Frame 0: Holding spear horizontally
+    const pos0 = drawBodyBase(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 20, 3, 8);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 20, 3, 8);
 
-        // Frame 1: Right hand down (sharpening)
-        const pos1 = drawBodyBase(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 20, 3, 8);
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 26, 3, 10);
+    // Frame 1: Right hand down (sharpening)
+    const pos1 = drawBodyBase(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 20, 3, 8);
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 26, 3, 10);
 
-        // Frame 2: Right hand mid
-        const pos2 = drawBodyBase(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 20, 3, 8);
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 23, 3, 9);
+    // Frame 2: Right hand mid
+    const pos2 = drawBodyBase(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 20, 3, 8);
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 23, 3, 9);
 
-        // Frame 3: Right hand up
-        const pos3 = drawBodyBase(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 8);
-        ctx.fillRect(pos3.centerX + 8, pos3.baseY + 18, 3, 8);
-    } else if (activity === 'crafting') {
-        // Frame 0: Arms raised overhead
-        const pos0 = drawBodyBase(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 10, 3, 8);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 10, 3, 8);
+    // Frame 3: Right hand up
+    const pos3 = drawBodyBase(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 8);
+    ctx.fillRect(pos3.centerX + 8, pos3.baseY + 18, 3, 8);
+  } else if (activity === 'crafting') {
+    // Frame 0: Arms raised overhead
+    const pos0 = drawBodyBase(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 10, 3, 8);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 10, 3, 8);
 
-        // Frame 1: Arms mid-swing
-        const pos1 = drawBodyBase(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 16, 3, 10);
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 16, 3, 10);
+    // Frame 1: Arms mid-swing
+    const pos1 = drawBodyBase(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 16, 3, 10);
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 16, 3, 10);
 
-        // Frame 2: Arms at bottom (impact)
-        const pos2 = drawBodyBase(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 24, 3, 12);
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 24, 3, 12);
+    // Frame 2: Arms at bottom (impact)
+    const pos2 = drawBodyBase(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 24, 3, 12);
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 24, 3, 12);
 
-        // Frame 3: Arms starting to rise
-        const pos3 = drawBodyBase(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 11, pos3.baseY + 18, 3, 10);
-        ctx.fillRect(pos3.centerX + 8, pos3.baseY + 18, 3, 10);
-    }
+    // Frame 3: Arms starting to rise
+    const pos3 = drawBodyBase(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 11, pos3.baseY + 18, 3, 10);
+    ctx.fillRect(pos3.centerX + 8, pos3.baseY + 18, 3, 10);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate wood/logs for fire base
  */
 function generateWoodLogs(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 48, 24);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 48, 24);
+  const ctx = canvas.getContext();
 
-    // Dark brown logs
-    ctx.fillStyle = '#4a3a2a';
+  // Dark brown logs
+  ctx.fillStyle = '#4a3a2a';
 
-    // Log 1 (horizontal)
-    ctx.fillRect(4, 12, 40, 8);
-    // Wood texture lines
-    ctx.strokeStyle = '#3a2a1a';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(8, 14);
-    ctx.lineTo(40, 14);
-    ctx.stroke();
+  // Log 1 (horizontal)
+  ctx.fillRect(4, 12, 40, 8);
+  // Wood texture lines
+  ctx.strokeStyle = '#3a2a1a';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(8, 14);
+  ctx.lineTo(40, 14);
+  ctx.stroke();
 
-    // Log 2 (angled)
-    ctx.fillStyle = '#5a4a3a';
-    ctx.fillRect(8, 6, 32, 8);
+  // Log 2 (angled)
+  ctx.fillStyle = '#5a4a3a';
+  ctx.fillRect(8, 6, 32, 8);
 
-    // Bark texture
-    for (let i = 0; i < 6; i++) {
-        const x = 10 + i * 6;
-        ctx.fillStyle = 'rgba(58, 42, 26, 0.5)';
-        ctx.fillRect(x, 7, 2, 6);
-    }
+  // Bark texture
+  for (let i = 0; i < 6; i++) {
+    const x = 10 + i * 6;
+    ctx.fillStyle = 'rgba(58, 42, 26, 0.5)';
+    ctx.fillRect(x, 7, 2, 6);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate spear prop (bigger and more visible)
  */
 function generateSpear(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 16, 48);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 16, 48);
+  const ctx = canvas.getContext();
 
-    // Stone spearhead (brighter, sharper)
-    ctx.fillStyle = '#a0a09c';
-    ctx.fillRect(6, 0, 4, 10);
-    ctx.fillRect(4, 2, 8, 6);
+  // Stone spearhead (brighter, sharper)
+  ctx.fillStyle = '#a0a09c';
+  ctx.fillRect(6, 0, 4, 10);
+  ctx.fillRect(4, 2, 8, 6);
 
-    // Dark outline for spearhead
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(4, 2, 8, 6);
+  // Dark outline for spearhead
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(4, 2, 8, 6);
 
-    // Brown binding where stone meets shaft
-    ctx.fillStyle = '#4a3a2a';
-    ctx.fillRect(5, 10, 6, 3);
+  // Brown binding where stone meets shaft
+  ctx.fillStyle = '#4a3a2a';
+  ctx.fillRect(5, 10, 6, 3);
 
-    // Wooden shaft (thicker, darker)
-    ctx.fillStyle = '#6b5642';
-    ctx.fillRect(5, 13, 6, 35);
+  // Wooden shaft (thicker, darker)
+  ctx.fillStyle = '#6b5642';
+  ctx.fillRect(5, 13, 6, 35);
 
-    // Wood grain texture
-    ctx.strokeStyle = '#5a4a32';
-    ctx.lineWidth = 1;
-    for (let i = 15; i < 48; i += 8) {
-        ctx.beginPath();
-        ctx.moveTo(6, i);
-        ctx.lineTo(10, i);
-        ctx.stroke();
-    }
+  // Wood grain texture
+  ctx.strokeStyle = '#5a4a32';
+  ctx.lineWidth = 1;
+  for (let i = 15; i < 48; i += 8) {
+    ctx.beginPath();
+    ctx.moveTo(6, i);
+    ctx.lineTo(10, i);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate stone/tool props (bigger, more visible, distinct shapes)
  */
 function generateStoneTool(scene, key, type = 'hammerstone') {
-    const canvas = scene.textures.createCanvas(key, 28, 20);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 28, 20);
+  const ctx = canvas.getContext();
 
-    // Use tan/beige to contrast with gray ground
-    const baseColor = '#b8956a';
-    const darkColor = '#8b7355';
-    const highlightColor = '#d4c4a0';
+  // Use tan/beige to contrast with gray ground
+  const baseColor = '#b8956a';
+  const darkColor = '#8b7355';
+  const highlightColor = '#d4c4a0';
 
-    if (type === 'hammerstone') {
-        // Oval hammerstone
-        ctx.fillStyle = baseColor;
-        ctx.fillRect(6, 4, 16, 12);
-        ctx.fillRect(8, 2, 12, 16);
-        ctx.fillRect(10, 1, 8, 18);
+  if (type === 'hammerstone') {
+    // Oval hammerstone
+    ctx.fillStyle = baseColor;
+    ctx.fillRect(6, 4, 16, 12);
+    ctx.fillRect(8, 2, 12, 16);
+    ctx.fillRect(10, 1, 8, 18);
 
-        // Dark patches
-        ctx.fillStyle = darkColor;
-        ctx.fillRect(8, 6, 4, 4);
-        ctx.fillRect(16, 10, 4, 4);
+    // Dark patches
+    ctx.fillStyle = darkColor;
+    ctx.fillRect(8, 6, 4, 4);
+    ctx.fillRect(16, 10, 4, 4);
 
-        // Highlights
-        ctx.fillStyle = highlightColor;
-        ctx.fillRect(12, 5, 6, 3);
-    } else if (type === 'scraper') {
-        // Sharp-edged scraper
-        ctx.fillStyle = baseColor;
-        ctx.fillRect(8, 6, 14, 10);
-        ctx.fillRect(10, 4, 12, 12);
+    // Highlights
+    ctx.fillStyle = highlightColor;
+    ctx.fillRect(12, 5, 6, 3);
+  } else if (type === 'scraper') {
+    // Sharp-edged scraper
+    ctx.fillStyle = baseColor;
+    ctx.fillRect(8, 6, 14, 10);
+    ctx.fillRect(10, 4, 12, 12);
 
-        // Sharp edge (one side)
-        ctx.fillStyle = darkColor;
-        ctx.fillRect(8, 7, 2, 8);
+    // Sharp edge (one side)
+    ctx.fillStyle = darkColor;
+    ctx.fillRect(8, 7, 2, 8);
 
-        // Highlight on flat side
-        ctx.fillStyle = highlightColor;
-        ctx.fillRect(15, 8, 5, 4);
-    } else if (type === 'flake') {
-        // Rough flake
-        ctx.fillStyle = baseColor;
-        ctx.fillRect(10, 8, 12, 8);
-        ctx.fillRect(8, 10, 14, 6);
+    // Highlight on flat side
+    ctx.fillStyle = highlightColor;
+    ctx.fillRect(15, 8, 5, 4);
+  } else if (type === 'flake') {
+    // Rough flake
+    ctx.fillStyle = baseColor;
+    ctx.fillRect(10, 8, 12, 8);
+    ctx.fillRect(8, 10, 14, 6);
 
-        // Dark edge
-        ctx.fillStyle = darkColor;
-        ctx.fillRect(10, 8, 2, 8);
+    // Dark edge
+    ctx.fillStyle = darkColor;
+    ctx.fillRect(10, 8, 2, 8);
 
-        // Highlight
-        ctx.fillStyle = highlightColor;
-        ctx.fillRect(16, 11, 4, 3);
-    }
+    // Highlight
+    ctx.fillStyle = highlightColor;
+    ctx.fillRect(16, 11, 4, 3);
+  }
 
-    // Black outline for all types
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(8, 4, 14, 12);
+  // Black outline for all types
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(8, 4, 14, 12);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate wood stick for fire tending
  */
 function generateStick(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 6, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 6, 40);
+  const ctx = canvas.getContext();
 
-    // Brown stick
-    ctx.fillStyle = '#6b5642';
-    ctx.fillRect(1, 0, 4, 40);
+  // Brown stick
+  ctx.fillStyle = '#6b5642';
+  ctx.fillRect(1, 0, 4, 40);
 
-    // Darker end (burned from fire)
-    ctx.fillStyle = '#3a2a1a';
-    ctx.fillRect(1, 35, 4, 5);
+  // Darker end (burned from fire)
+  ctx.fillStyle = '#3a2a1a';
+  ctx.fillRect(1, 35, 4, 5);
 
-    // Wood texture
-    ctx.strokeStyle = '#5a4a32';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 40; i += 8) {
-        ctx.beginPath();
-        ctx.moveTo(2, i);
-        ctx.lineTo(4, i);
-        ctx.stroke();
-    }
+  // Wood texture
+  ctx.strokeStyle = '#5a4a32';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 40; i += 8) {
+    ctx.beginPath();
+    ctx.moveTo(2, i);
+    ctx.lineTo(4, i);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate realistic cave entrance texture with natural formations
  */
 function generateCaveTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 80, 80);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 80, 80);
+  const ctx = canvas.getContext();
 
-    // Dark cave opening with deep gradient
-    const gradient = ctx.createRadialGradient(40, 45, 5, 40, 45, 35);
-    gradient.addColorStop(0, '#000000');
-    gradient.addColorStop(0.7, '#0a0a0a');
-    gradient.addColorStop(1, '#1a1a1a');
-    ctx.fillStyle = gradient;
+  // Dark cave opening with deep gradient
+  const gradient = ctx.createRadialGradient(40, 45, 5, 40, 45, 35);
+  gradient.addColorStop(0, '#000000');
+  gradient.addColorStop(0.7, '#0a0a0a');
+  gradient.addColorStop(1, '#1a1a1a');
+  ctx.fillStyle = gradient;
 
-    // Irregular cave opening shape (organic, not rectangular)
-    ctx.beginPath();
-    ctx.ellipse(40, 40, 30, 35, 0, 0, Math.PI * 2);
-    ctx.fill();
+  // Irregular cave opening shape (organic, not rectangular)
+  ctx.beginPath();
+  ctx.ellipse(40, 40, 30, 35, 0, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Rocky cave walls (irregular stone formations)
-    ctx.fillStyle = '#4a4238';
+  // Rocky cave walls (irregular stone formations)
+  ctx.fillStyle = '#4a4238';
 
-    // Top rocky overhang
-    ctx.beginPath();
-    ctx.moveTo(10, 10);
-    ctx.lineTo(15, 5);
-    ctx.lineTo(25, 8);
-    ctx.lineTo(35, 4);
-    ctx.lineTo(45, 6);
-    ctx.lineTo(55, 4);
-    ctx.lineTo(65, 8);
-    ctx.lineTo(70, 5);
-    ctx.lineTo(75, 12);
-    ctx.lineTo(60, 20);
-    ctx.lineTo(50, 15);
-    ctx.lineTo(40, 18);
-    ctx.lineTo(30, 16);
-    ctx.lineTo(20, 20);
-    ctx.closePath();
-    ctx.fill();
+  // Top rocky overhang
+  ctx.beginPath();
+  ctx.moveTo(10, 10);
+  ctx.lineTo(15, 5);
+  ctx.lineTo(25, 8);
+  ctx.lineTo(35, 4);
+  ctx.lineTo(45, 6);
+  ctx.lineTo(55, 4);
+  ctx.lineTo(65, 8);
+  ctx.lineTo(70, 5);
+  ctx.lineTo(75, 12);
+  ctx.lineTo(60, 20);
+  ctx.lineTo(50, 15);
+  ctx.lineTo(40, 18);
+  ctx.lineTo(30, 16);
+  ctx.lineTo(20, 20);
+  ctx.closePath();
+  ctx.fill();
 
-    // Left rocky wall
-    ctx.beginPath();
-    ctx.moveTo(5, 15);
-    ctx.lineTo(8, 25);
-    ctx.lineTo(12, 35);
-    ctx.lineTo(10, 45);
-    ctx.lineTo(15, 55);
-    ctx.lineTo(20, 50);
-    ctx.lineTo(18, 40);
-    ctx.lineTo(15, 30);
-    ctx.lineTo(12, 20);
-    ctx.closePath();
-    ctx.fill();
+  // Left rocky wall
+  ctx.beginPath();
+  ctx.moveTo(5, 15);
+  ctx.lineTo(8, 25);
+  ctx.lineTo(12, 35);
+  ctx.lineTo(10, 45);
+  ctx.lineTo(15, 55);
+  ctx.lineTo(20, 50);
+  ctx.lineTo(18, 40);
+  ctx.lineTo(15, 30);
+  ctx.lineTo(12, 20);
+  ctx.closePath();
+  ctx.fill();
 
-    // Right rocky wall
-    ctx.beginPath();
-    ctx.moveTo(75, 15);
-    ctx.lineTo(72, 25);
-    ctx.lineTo(68, 35);
-    ctx.lineTo(70, 45);
-    ctx.lineTo(65, 55);
-    ctx.lineTo(60, 50);
-    ctx.lineTo(62, 40);
-    ctx.lineTo(65, 30);
-    ctx.lineTo(68, 20);
-    ctx.closePath();
-    ctx.fill();
+  // Right rocky wall
+  ctx.beginPath();
+  ctx.moveTo(75, 15);
+  ctx.lineTo(72, 25);
+  ctx.lineTo(68, 35);
+  ctx.lineTo(70, 45);
+  ctx.lineTo(65, 55);
+  ctx.lineTo(60, 50);
+  ctx.lineTo(62, 40);
+  ctx.lineTo(65, 30);
+  ctx.lineTo(68, 20);
+  ctx.closePath();
+  ctx.fill();
 
-    // Stalagmites at bottom (pointy rocks coming up from ground)
-    ctx.fillStyle = '#5a5248';
+  // Stalagmites at bottom (pointy rocks coming up from ground)
+  ctx.fillStyle = '#5a5248';
 
-    // Left stalagmite
-    ctx.beginPath();
-    ctx.moveTo(18, 75);
-    ctx.lineTo(22, 55);
-    ctx.lineTo(26, 75);
-    ctx.closePath();
-    ctx.fill();
+  // Left stalagmite
+  ctx.beginPath();
+  ctx.moveTo(18, 75);
+  ctx.lineTo(22, 55);
+  ctx.lineTo(26, 75);
+  ctx.closePath();
+  ctx.fill();
 
-    // Center-left stalagmite
-    ctx.beginPath();
-    ctx.moveTo(32, 78);
-    ctx.lineTo(35, 60);
-    ctx.lineTo(38, 78);
-    ctx.closePath();
-    ctx.fill();
+  // Center-left stalagmite
+  ctx.beginPath();
+  ctx.moveTo(32, 78);
+  ctx.lineTo(35, 60);
+  ctx.lineTo(38, 78);
+  ctx.closePath();
+  ctx.fill();
 
-    // Center-right stalagmite
-    ctx.beginPath();
-    ctx.moveTo(46, 78);
-    ctx.lineTo(48, 62);
-    ctx.lineTo(50, 78);
-    ctx.closePath();
-    ctx.fill();
+  // Center-right stalagmite
+  ctx.beginPath();
+  ctx.moveTo(46, 78);
+  ctx.lineTo(48, 62);
+  ctx.lineTo(50, 78);
+  ctx.closePath();
+  ctx.fill();
 
-    // Right stalagmite
-    ctx.beginPath();
-    ctx.moveTo(58, 76);
-    ctx.lineTo(61, 58);
-    ctx.lineTo(64, 76);
-    ctx.closePath();
-    ctx.fill();
+  // Right stalagmite
+  ctx.beginPath();
+  ctx.moveTo(58, 76);
+  ctx.lineTo(61, 58);
+  ctx.lineTo(64, 76);
+  ctx.closePath();
+  ctx.fill();
 
-    // Add rocky texture and depth
-    for (let i = 0; i < 80; i++) {
-        const x = Math.floor(Math.random() * 80);
-        const y = Math.floor(Math.random() * 80);
-        const distFromCenter = Math.sqrt((x - 40) ** 2 + (y - 40) ** 2);
+  // Add rocky texture and depth
+  for (let i = 0; i < 80; i++) {
+    const x = Math.floor(Math.random() * 80);
+    const y = Math.floor(Math.random() * 80);
+    const distFromCenter = Math.sqrt((x - 40) ** 2 + (y - 40) ** 2);
 
-        // Only add texture to rock areas (not cave opening)
-        if (distFromCenter > 30) {
-            const size = Math.floor(Math.random() * 3) + 1;
-            ctx.fillStyle = `rgba(90, 82, 72, ${Math.random() * 0.4 + 0.2})`;
-            ctx.fillRect(x, y, size, size);
-        }
+    // Only add texture to rock areas (not cave opening)
+    if (distFromCenter > 30) {
+      const size = Math.floor(Math.random() * 3) + 1;
+      ctx.fillStyle = `rgba(90, 82, 72, ${Math.random() * 0.4 + 0.2})`;
+      ctx.fillRect(x, y, size, size);
     }
+  }
 
-    // Darker cracks in the rock
-    ctx.strokeStyle = 'rgba(30, 25, 20, 0.6)';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 12; i++) {
-        ctx.beginPath();
-        const startX = Math.random() * 80;
-        const startY = Math.random() * 30;
-        ctx.moveTo(startX, startY);
-        ctx.lineTo(startX + (Math.random() * 20 - 10), startY + Math.random() * 40);
-        ctx.stroke();
-    }
+  // Darker cracks in the rock
+  ctx.strokeStyle = 'rgba(30, 25, 20, 0.6)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 12; i++) {
+    ctx.beginPath();
+    const startX = Math.random() * 80;
+    const startY = Math.random() * 30;
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(startX + (Math.random() * 20 - 10), startY + Math.random() * 40);
+    ctx.stroke();
+  }
 
-    // Highlights on rock edges
-    ctx.fillStyle = 'rgba(120, 110, 100, 0.3)';
-    ctx.fillRect(12, 8, 4, 12);
-    ctx.fillRect(66, 10, 3, 10);
-    ctx.fillRect(8, 18, 3, 8);
-    ctx.fillRect(70, 20, 3, 8);
+  // Highlights on rock edges
+  ctx.fillStyle = 'rgba(120, 110, 100, 0.3)';
+  ctx.fillRect(12, 8, 4, 12);
+  ctx.fillRect(66, 10, 3, 10);
+  ctx.fillRect(8, 18, 3, 8);
+  ctx.fillRect(70, 20, 3, 8);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate fire particles (multiple colors)
  */
 function generateFireParticles(scene) {
-    // Red particle
-    const redCanvas = scene.textures.createCanvas('fire-red', 8, 8);
-    const redCtx = redCanvas.getContext();
-    redCtx.fillStyle = '#ff0000';
-    redCtx.beginPath();
-    redCtx.arc(4, 4, 4, 0, Math.PI * 2);
-    redCtx.fill();
-    redCanvas.refresh();
+  // Red particle
+  const redCanvas = scene.textures.createCanvas('fire-red', 8, 8);
+  const redCtx = redCanvas.getContext();
+  redCtx.fillStyle = '#ff0000';
+  redCtx.beginPath();
+  redCtx.arc(4, 4, 4, 0, Math.PI * 2);
+  redCtx.fill();
+  redCanvas.refresh();
 
-    // Orange particle
-    const orangeCanvas = scene.textures.createCanvas('fire-orange', 8, 8);
-    const orangeCtx = orangeCanvas.getContext();
-    orangeCtx.fillStyle = '#ff6b00';
-    orangeCtx.beginPath();
-    orangeCtx.arc(4, 4, 4, 0, Math.PI * 2);
-    orangeCtx.fill();
-    orangeCanvas.refresh();
+  // Orange particle
+  const orangeCanvas = scene.textures.createCanvas('fire-orange', 8, 8);
+  const orangeCtx = orangeCanvas.getContext();
+  orangeCtx.fillStyle = '#ff6b00';
+  orangeCtx.beginPath();
+  orangeCtx.arc(4, 4, 4, 0, Math.PI * 2);
+  orangeCtx.fill();
+  orangeCanvas.refresh();
 
-    // Yellow particle
-    const yellowCanvas = scene.textures.createCanvas('fire-yellow', 8, 8);
-    const yellowCtx = yellowCanvas.getContext();
-    yellowCtx.fillStyle = '#ffff00';
-    yellowCtx.beginPath();
-    yellowCtx.arc(4, 4, 4, 0, Math.PI * 2);
-    yellowCtx.fill();
-    yellowCanvas.refresh();
+  // Yellow particle
+  const yellowCanvas = scene.textures.createCanvas('fire-yellow', 8, 8);
+  const yellowCtx = yellowCanvas.getContext();
+  yellowCtx.fillStyle = '#ffff00';
+  yellowCtx.beginPath();
+  yellowCtx.arc(4, 4, 4, 0, Math.PI * 2);
+  yellowCtx.fill();
+  yellowCanvas.refresh();
 
-    // Smoke particle
-    const smokeCanvas = scene.textures.createCanvas('fire-smoke', 8, 8);
-    const smokeCtx = smokeCanvas.getContext();
-    smokeCtx.fillStyle = '#666666';
-    smokeCtx.beginPath();
-    smokeCtx.arc(4, 4, 4, 0, Math.PI * 2);
-    smokeCtx.fill();
-    smokeCanvas.refresh();
+  // Smoke particle
+  const smokeCanvas = scene.textures.createCanvas('fire-smoke', 8, 8);
+  const smokeCtx = smokeCanvas.getContext();
+  smokeCtx.fillStyle = '#666666';
+  smokeCtx.beginPath();
+  smokeCtx.arc(4, 4, 4, 0, Math.PI * 2);
+  smokeCtx.fill();
+  smokeCanvas.refresh();
 }
 
 // ===== FARMING ERA TEXTURES =====
@@ -1162,465 +1236,465 @@ function generateFireParticles(scene) {
  * Generate grass texture for farming era
  */
 function generateGrassTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base grass colors (multiple shades of green)
-    const grassColors = ['#4a7c3a', '#5a8c4a', '#3a6c2a', '#6a9c5a'];
-    ctx.fillStyle = grassColors[Math.floor(Math.random() * grassColors.length)];
-    ctx.fillRect(0, 0, 32, 32);
+  // Base grass colors (multiple shades of green)
+  const grassColors = ['#4a7c3a', '#5a8c4a', '#3a6c2a', '#6a9c5a'];
+  ctx.fillStyle = grassColors[Math.floor(Math.random() * grassColors.length)];
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Add darker grass patches for depth
-    for (let i = 0; i < 30; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 32);
-        const size = Math.floor(Math.random() * 3) + 1;
-        ctx.fillStyle = `rgba(40, 80, 30, ${Math.random() * 0.3 + 0.2})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Add darker grass patches for depth
+  for (let i = 0; i < 30; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 32);
+    const size = Math.floor(Math.random() * 3) + 1;
+    ctx.fillStyle = `rgba(40, 80, 30, ${Math.random() * 0.3 + 0.2})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    // Add lighter highlights (grass blades catching light)
-    for (let i = 0; i < 15; i++) {
-        const x = Math.floor(Math.random() * 30) + 1;
-        const y = Math.floor(Math.random() * 30) + 1;
-        ctx.fillStyle = `rgba(140, 180, 120, ${Math.random() * 0.4})`;
-        ctx.fillRect(x, y, 2, 2);
-    }
+  // Add lighter highlights (grass blades catching light)
+  for (let i = 0; i < 15; i++) {
+    const x = Math.floor(Math.random() * 30) + 1;
+    const y = Math.floor(Math.random() * 30) + 1;
+    ctx.fillStyle = `rgba(140, 180, 120, ${Math.random() * 0.4})`;
+    ctx.fillRect(x, y, 2, 2);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate farmland (tilled soil) texture
  */
 function generateFarmlandTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Dark brown tilled soil
-    ctx.fillStyle = '#5a4a3a';
-    ctx.fillRect(0, 0, 32, 32);
+  // Dark brown tilled soil
+  ctx.fillStyle = '#5a4a3a';
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Horizontal furrow lines
-    for (let y = 4; y < 32; y += 8) {
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(0, y, 32, 3);
-        ctx.fillStyle = '#6a5a4a';
-        ctx.fillRect(0, y + 3, 32, 1);
-    }
+  // Horizontal furrow lines
+  for (let y = 4; y < 32; y += 8) {
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(0, y, 32, 3);
+    ctx.fillStyle = '#6a5a4a';
+    ctx.fillRect(0, y + 3, 32, 1);
+  }
 
-    // Add soil texture
-    for (let i = 0; i < 25; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 32);
-        const size = Math.floor(Math.random() * 2) + 1;
-        ctx.fillStyle = `rgba(70, 60, 50, ${Math.random() * 0.4})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Add soil texture
+  for (let i = 0; i < 25; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 32);
+    const size = Math.floor(Math.random() * 2) + 1;
+    ctx.fillStyle = `rgba(70, 60, 50, ${Math.random() * 0.4})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate wheat stalk texture
  */
 function generateWheatTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 16, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 16, 32);
+  const ctx = canvas.getContext();
 
-    // Golden wheat color
-    const wheatColor = '#d4a832';
-    const wheatDark = '#b48822';
-    const stalkColor = '#8a7a4a';
+  // Golden wheat color
+  const wheatColor = '#d4a832';
+  const wheatDark = '#b48822';
+  const stalkColor = '#8a7a4a';
 
-    // Stalk
-    ctx.fillStyle = stalkColor;
-    ctx.fillRect(7, 12, 2, 20);
+  // Stalk
+  ctx.fillStyle = stalkColor;
+  ctx.fillRect(7, 12, 2, 20);
 
-    // Wheat head (cluster at top)
+  // Wheat head (cluster at top)
+  ctx.fillStyle = wheatColor;
+  ctx.fillRect(5, 6, 6, 10);
+  ctx.fillRect(6, 4, 4, 12);
+
+  // Dark shading
+  ctx.fillStyle = wheatDark;
+  ctx.fillRect(5, 8, 2, 6);
+  ctx.fillRect(9, 10, 2, 4);
+
+  // Individual grains
+  for (let i = 0; i < 6; i++) {
+    const x = 5 + (i % 2) * 4;
+    const y = 6 + Math.floor(i / 2) * 3;
     ctx.fillStyle = wheatColor;
-    ctx.fillRect(5, 6, 6, 10);
-    ctx.fillRect(6, 4, 4, 12);
+    ctx.fillRect(x, y, 2, 2);
+  }
 
-    // Dark shading
-    ctx.fillStyle = wheatDark;
-    ctx.fillRect(5, 8, 2, 6);
-    ctx.fillRect(9, 10, 2, 4);
-
-    // Individual grains
-    for (let i = 0; i < 6; i++) {
-        const x = 5 + (i % 2) * 4;
-        const y = 6 + Math.floor(i / 2) * 3;
-        ctx.fillStyle = wheatColor;
-        ctx.fillRect(x, y, 2, 2);
-    }
-
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate wooden barn texture for portal
  */
 function generateBarnTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 96, 96);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 96, 96);
+  const ctx = canvas.getContext();
 
-    // Barn roof (wooden shingles)
-    ctx.fillStyle = '#6a4a3a';
+  // Barn roof (wooden shingles)
+  ctx.fillStyle = '#6a4a3a';
+  ctx.beginPath();
+  ctx.moveTo(10, 24);
+  ctx.lineTo(48, 4);
+  ctx.lineTo(86, 24);
+  ctx.lineTo(86, 32);
+  ctx.lineTo(48, 12);
+  ctx.lineTo(10, 32);
+  ctx.closePath();
+  ctx.fill();
+
+  // Darker roof shading
+  ctx.fillStyle = '#5a3a2a';
+  ctx.beginPath();
+  ctx.moveTo(48, 4);
+  ctx.lineTo(86, 24);
+  ctx.lineTo(86, 32);
+  ctx.lineTo(48, 12);
+  ctx.closePath();
+  ctx.fill();
+
+  // Roof shingles texture
+  ctx.strokeStyle = '#4a2a1a';
+  ctx.lineWidth = 1;
+  for (let y = 12; y < 30; y += 4) {
     ctx.beginPath();
-    ctx.moveTo(10, 24);
-    ctx.lineTo(48, 4);
-    ctx.lineTo(86, 24);
-    ctx.lineTo(86, 32);
-    ctx.lineTo(48, 12);
-    ctx.lineTo(10, 32);
-    ctx.closePath();
-    ctx.fill();
+    ctx.moveTo(48 - (30 - y) * 1.3, y);
+    ctx.lineTo(48 + (30 - y) * 1.3, y);
+    ctx.stroke();
+  }
 
-    // Darker roof shading
-    ctx.fillStyle = '#5a3a2a';
-    ctx.beginPath();
-    ctx.moveTo(48, 4);
-    ctx.lineTo(86, 24);
-    ctx.lineTo(86, 32);
-    ctx.lineTo(48, 12);
-    ctx.closePath();
-    ctx.fill();
+  // Main barn wall (red/brown wood)
+  ctx.fillStyle = '#8a4a3a';
+  ctx.fillRect(14, 28, 68, 58);
 
-    // Roof shingles texture
-    ctx.strokeStyle = '#4a2a1a';
+  // Vertical wooden planks
+  ctx.fillStyle = '#7a3a2a';
+  for (let i = 0; i < 8; i++) {
+    const x = 16 + i * 8.5;
+    ctx.fillRect(x, 28, 6, 58);
+  }
+
+  // Wood grain texture
+  for (let i = 0; i < 7; i++) {
+    const x = 18 + i * 8.5;
+    ctx.strokeStyle = 'rgba(60, 30, 20, 0.4)';
     ctx.lineWidth = 1;
-    for (let y = 12; y < 30; y += 4) {
-        ctx.beginPath();
-        ctx.moveTo(48 - (30 - y) * 1.3, y);
-        ctx.lineTo(48 + (30 - y) * 1.3, y);
-        ctx.stroke();
+    for (let y = 30; y < 84; y += 6) {
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + 4, y);
+      ctx.stroke();
     }
+  }
 
-    // Main barn wall (red/brown wood)
-    ctx.fillStyle = '#8a4a3a';
-    ctx.fillRect(14, 28, 68, 58);
+  // Large barn doors (slightly open, showing darkness inside)
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(32, 48, 32, 38);
 
-    // Vertical wooden planks
-    ctx.fillStyle = '#7a3a2a';
-    for (let i = 0; i < 8; i++) {
-        const x = 16 + i * 8.5;
-        ctx.fillRect(x, 28, 6, 58);
-    }
+  // Left door (wooden planks)
+  ctx.fillStyle = '#6a3a2a';
+  ctx.fillRect(28, 48, 18, 38);
+  // Door planks
+  ctx.fillStyle = '#5a2a1a';
+  for (let i = 0; i < 3; i++) {
+    ctx.fillRect(30, 50 + i * 12, 14, 10);
+  }
+  // Door handle
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(42, 66, 3, 6);
 
-    // Wood grain texture
-    for (let i = 0; i < 7; i++) {
-        const x = 18 + i * 8.5;
-        ctx.strokeStyle = 'rgba(60, 30, 20, 0.4)';
-        ctx.lineWidth = 1;
-        for (let y = 30; y < 84; y += 6) {
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.lineTo(x + 4, y);
-            ctx.stroke();
-        }
-    }
+  // Right door (wooden planks)
+  ctx.fillStyle = '#6a3a2a';
+  ctx.fillRect(50, 48, 18, 38);
+  // Door planks
+  ctx.fillStyle = '#5a2a1a';
+  for (let i = 0; i < 3; i++) {
+    ctx.fillRect(52, 50 + i * 12, 14, 10);
+  }
+  // Door handle
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(52, 66, 3, 6);
 
-    // Large barn doors (slightly open, showing darkness inside)
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(32, 48, 32, 38);
+  // X-shaped door bracing
+  ctx.strokeStyle = '#4a2a1a';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(30, 52);
+  ctx.lineTo(44, 82);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(44, 52);
+  ctx.lineTo(30, 82);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(52, 52);
+  ctx.lineTo(66, 82);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(66, 52);
+  ctx.lineTo(52, 82);
+  ctx.stroke();
 
-    // Left door (wooden planks)
-    ctx.fillStyle = '#6a3a2a';
-    ctx.fillRect(28, 48, 18, 38);
-    // Door planks
-    ctx.fillStyle = '#5a2a1a';
-    for (let i = 0; i < 3; i++) {
-        ctx.fillRect(30, 50 + i * 12, 14, 10);
-    }
-    // Door handle
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(42, 66, 3, 6);
+  // Hay loft window at top
+  ctx.fillStyle = '#2a2a2a';
+  ctx.fillRect(40, 32, 16, 10);
+  // Window frame
+  ctx.strokeStyle = '#5a3a2a';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(40, 32, 16, 10);
 
-    // Right door (wooden planks)
-    ctx.fillStyle = '#6a3a2a';
-    ctx.fillRect(50, 48, 18, 38);
-    // Door planks
-    ctx.fillStyle = '#5a2a1a';
-    for (let i = 0; i < 3; i++) {
-        ctx.fillRect(52, 50 + i * 12, 14, 10);
-    }
-    // Door handle
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(52, 66, 3, 6);
-
-    // X-shaped door bracing
-    ctx.strokeStyle = '#4a2a1a';
-    ctx.lineWidth = 2;
+  // Hay bales in front of barn (left side)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(8, 78, 14, 10);
+  ctx.fillRect(10, 70, 12, 8);
+  // Hay texture (lines)
+  ctx.strokeStyle = '#b48822';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 3; i++) {
     ctx.beginPath();
-    ctx.moveTo(30, 52);
-    ctx.lineTo(44, 82);
+    ctx.moveTo(10, 72 + i * 3);
+    ctx.lineTo(20, 72 + i * 3);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(44, 52);
-    ctx.lineTo(30, 82);
+    ctx.moveTo(9, 80 + i * 3);
+    ctx.lineTo(20, 80 + i * 3);
+    ctx.stroke();
+  }
+
+  // Hay bales (right side)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(74, 78, 14, 10);
+  ctx.fillRect(76, 72, 10, 6);
+  // Hay texture
+  for (let i = 0; i < 2; i++) {
+    ctx.beginPath();
+    ctx.moveTo(76, 74 + i * 3);
+    ctx.lineTo(84, 74 + i * 3);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(52, 52);
-    ctx.lineTo(66, 82);
+    ctx.moveTo(75, 80 + i * 3);
+    ctx.lineTo(86, 80 + i * 3);
     ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(66, 52);
-    ctx.lineTo(52, 82);
-    ctx.stroke();
+  }
 
-    // Hay loft window at top
-    ctx.fillStyle = '#2a2a2a';
-    ctx.fillRect(40, 32, 16, 10);
-    // Window frame
-    ctx.strokeStyle = '#5a3a2a';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(40, 32, 16, 10);
-
-    // Hay bales in front of barn (left side)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(8, 78, 14, 10);
-    ctx.fillRect(10, 70, 12, 8);
-    // Hay texture (lines)
-    ctx.strokeStyle = '#b48822';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 3; i++) {
-        ctx.beginPath();
-        ctx.moveTo(10, 72 + i * 3);
-        ctx.lineTo(20, 72 + i * 3);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(9, 80 + i * 3);
-        ctx.lineTo(20, 80 + i * 3);
-        ctx.stroke();
-    }
-
-    // Hay bales (right side)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(74, 78, 14, 10);
-    ctx.fillRect(76, 72, 10, 6);
-    // Hay texture
-    for (let i = 0; i < 2; i++) {
-        ctx.beginPath();
-        ctx.moveTo(76, 74 + i * 3);
-        ctx.lineTo(84, 74 + i * 3);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(75, 80 + i * 3);
-        ctx.lineTo(86, 80 + i * 3);
-        ctx.stroke();
-    }
-
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate hoe tool for farming
  */
 function generateHoe(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 20, 48);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 20, 48);
+  const ctx = canvas.getContext();
 
-    // Wooden handle
-    ctx.fillStyle = '#6b5642';
-    ctx.fillRect(9, 12, 2, 36);
+  // Wooden handle
+  ctx.fillStyle = '#6b5642';
+  ctx.fillRect(9, 12, 2, 36);
 
-    // Wood grain
-    ctx.strokeStyle = '#5a4a32';
-    ctx.lineWidth = 1;
-    for (let i = 15; i < 48; i += 8) {
-        ctx.beginPath();
-        ctx.moveTo(9, i);
-        ctx.lineTo(11, i);
-        ctx.stroke();
-    }
+  // Wood grain
+  ctx.strokeStyle = '#5a4a32';
+  ctx.lineWidth = 1;
+  for (let i = 15; i < 48; i += 8) {
+    ctx.beginPath();
+    ctx.moveTo(9, i);
+    ctx.lineTo(11, i);
+    ctx.stroke();
+  }
 
-    // Metal hoe head
-    ctx.fillStyle = '#787774';
-    ctx.fillRect(0, 8, 16, 4);
-    ctx.fillRect(1, 6, 14, 2);
+  // Metal hoe head
+  ctx.fillStyle = '#787774';
+  ctx.fillRect(0, 8, 16, 4);
+  ctx.fillRect(1, 6, 14, 2);
 
-    // Metal highlight
-    ctx.fillStyle = '#a0a09c';
-    ctx.fillRect(2, 7, 10, 1);
+  // Metal highlight
+  ctx.fillStyle = '#a0a09c';
+  ctx.fillRect(2, 7, 10, 1);
 
-    // Dark outline
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(0, 6, 16, 6);
+  // Dark outline
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0, 6, 16, 6);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate sickle tool for harvesting
  */
 function generateSickle(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 24, 24);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 24, 24);
+  const ctx = canvas.getContext();
 
-    // Wooden handle
-    ctx.fillStyle = '#6b5642';
-    ctx.fillRect(4, 14, 6, 10);
+  // Wooden handle
+  ctx.fillStyle = '#6b5642';
+  ctx.fillRect(4, 14, 6, 10);
 
-    // Curved blade
-    ctx.fillStyle = '#787774';
-    ctx.beginPath();
-    ctx.arc(12, 8, 8, 0, Math.PI);
-    ctx.fill();
+  // Curved blade
+  ctx.fillStyle = '#787774';
+  ctx.beginPath();
+  ctx.arc(12, 8, 8, 0, Math.PI);
+  ctx.fill();
 
-    // Blade inner curve (hollow)
-    ctx.fillStyle = '#4a4a4a';
-    ctx.beginPath();
-    ctx.arc(12, 8, 5, 0, Math.PI);
-    ctx.fill();
+  // Blade inner curve (hollow)
+  ctx.fillStyle = '#4a4a4a';
+  ctx.beginPath();
+  ctx.arc(12, 8, 5, 0, Math.PI);
+  ctx.fill();
 
-    // Sharp edge highlight
-    ctx.strokeStyle = '#a0a09c';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(12, 8, 8, 0, Math.PI);
-    ctx.stroke();
+  // Sharp edge highlight
+  ctx.strokeStyle = '#a0a09c';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(12, 8, 8, 0, Math.PI);
+  ctx.stroke();
 
-    // Black outline
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.arc(12, 8, 8, 0, Math.PI);
-    ctx.stroke();
+  // Black outline
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(12, 8, 8, 0, Math.PI);
+  ctx.stroke();
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate work frames for farming activities
  */
 function generateFarmingWorkFrames(scene, key, colors, activity) {
-    const skin = colors.skin || '#d4a574';
-    const shirt = colors.shirt || '#8b7355'; // Simple tunic
-    const shirtDark = colors.shirtDark || '#6b5642';
-    const pants = colors.pants || '#5a4a3a';
-    const hair = colors.hair || '#3d2817';
+  const skin = colors.skin || '#d4a574';
+  const shirt = colors.shirt || '#8b7355'; // Simple tunic
+  const shirtDark = colors.shirtDark || '#6b5642';
+  const pants = colors.pants || '#5a4a3a';
+  const hair = colors.hair || '#3d2817';
 
-    const frameWidth = 32;
-    const frameHeight = 48;
-    let numFrames = 4;
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const numFrames = 4;
 
-    const canvas = scene.textures.createCanvas(key, frameWidth * numFrames, frameHeight);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, frameWidth * numFrames, frameHeight);
+  const ctx = canvas.getContext();
 
-    function drawFarmerBody(x, y) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawFarmerBody(x, y) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Hair
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+    // Hair
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Simple tunic (peasant shirt)
-        ctx.fillStyle = shirt;
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
-        ctx.fillStyle = shirtDark;
-        ctx.fillRect(centerX - 7, baseY + 18, 4, 3);
-        ctx.fillRect(centerX + 2, baseY + 20, 4, 3);
+    // Simple tunic (peasant shirt)
+    ctx.fillStyle = shirt;
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 14);
+    ctx.fillStyle = shirtDark;
+    ctx.fillRect(centerX - 7, baseY + 18, 4, 3);
+    ctx.fillRect(centerX + 2, baseY + 20, 4, 3);
 
-        // Pants
-        ctx.fillStyle = pants;
-        ctx.fillRect(centerX - 6, baseY + 30, 5, 12);
-        ctx.fillRect(centerX + 1, baseY + 30, 5, 12);
+    // Pants
+    ctx.fillStyle = pants;
+    ctx.fillRect(centerX - 6, baseY + 30, 5, 12);
+    ctx.fillRect(centerX + 1, baseY + 30, 5, 12);
 
-        // Bare feet/simple shoes
-        ctx.fillStyle = '#8b7355';
-        ctx.fillRect(centerX - 6, baseY + 42, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 42, 5, 4);
+    // Bare feet/simple shoes
+    ctx.fillStyle = '#8b7355';
+    ctx.fillRect(centerX - 6, baseY + 42, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 42, 5, 4);
 
-        return { centerX, baseY };
-    }
+    return { centerX, baseY };
+  }
 
-    if (activity === 'planting') {
-        // Frame 0: Standing with seeds
-        const pos0 = drawFarmerBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 18, 3, 10);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 22, 3, 8);
+  if (activity === 'planting') {
+    // Frame 0: Standing with seeds
+    const pos0 = drawFarmerBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 18, 3, 10);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 22, 3, 8);
 
-        // Frame 1: Bending down
-        const pos1 = drawFarmerBody(frameWidth, 2);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 20, 3, 12);
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 26, 3, 10);
+    // Frame 1: Bending down
+    const pos1 = drawFarmerBody(frameWidth, 2);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 20, 3, 12);
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 26, 3, 10);
 
-        // Frame 2: Hand to ground
-        const pos2 = drawFarmerBody(frameWidth * 2, 4);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 22, 3, 14);
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 30, 3, 12);
+    // Frame 2: Hand to ground
+    const pos2 = drawFarmerBody(frameWidth * 2, 4);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 22, 3, 14);
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 30, 3, 12);
 
-        // Frame 3: Rising back up
-        const pos3 = drawFarmerBody(frameWidth * 3, 2);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 11);
-        ctx.fillRect(pos3.centerX + 8, pos3.baseY + 24, 3, 9);
-    } else if (activity === 'harvesting') {
-        // Frame 0: Arms raised with sickle
-        const pos0 = drawFarmerBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 14, 3, 8);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 14, 3, 8);
+    // Frame 3: Rising back up
+    const pos3 = drawFarmerBody(frameWidth * 3, 2);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 11);
+    ctx.fillRect(pos3.centerX + 8, pos3.baseY + 24, 3, 9);
+  } else if (activity === 'harvesting') {
+    // Frame 0: Arms raised with sickle
+    const pos0 = drawFarmerBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 14, 3, 8);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 14, 3, 8);
 
-        // Frame 1: Swinging down
-        const pos1 = drawFarmerBody(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 18, 3, 10);
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 18, 3, 10);
+    // Frame 1: Swinging down
+    const pos1 = drawFarmerBody(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 18, 3, 10);
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 18, 3, 10);
 
-        // Frame 2: At bottom of swing
-        const pos2 = drawFarmerBody(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 24, 3, 12);
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 24, 3, 12);
+    // Frame 2: At bottom of swing
+    const pos2 = drawFarmerBody(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 24, 3, 12);
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 24, 3, 12);
 
-        // Frame 3: Pulling back
-        const pos3 = drawFarmerBody(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 10);
-        ctx.fillRect(pos3.centerX + 8, pos3.baseY + 20, 3, 10);
-    } else if (activity === 'tilling') {
-        // Frame 0: Hoe raised
-        const pos0 = drawFarmerBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 16, 3, 10);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 16, 3, 10);
+    // Frame 3: Pulling back
+    const pos3 = drawFarmerBody(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 10);
+    ctx.fillRect(pos3.centerX + 8, pos3.baseY + 20, 3, 10);
+  } else if (activity === 'tilling') {
+    // Frame 0: Hoe raised
+    const pos0 = drawFarmerBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 16, 3, 10);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 16, 3, 10);
 
-        // Frame 1: Swinging down
-        const pos1 = drawFarmerBody(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 20, 3, 12);
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 20, 3, 12);
+    // Frame 1: Swinging down
+    const pos1 = drawFarmerBody(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 20, 3, 12);
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 20, 3, 12);
 
-        // Frame 2: Impact with ground
-        const pos2 = drawFarmerBody(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 26, 3, 10);
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 26, 3, 10);
+    // Frame 2: Impact with ground
+    const pos2 = drawFarmerBody(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 26, 3, 10);
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 26, 3, 10);
 
-        // Frame 3: Pulling back
-        const pos3 = drawFarmerBody(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 11, pos3.baseY + 22, 3, 11);
-        ctx.fillRect(pos3.centerX + 8, pos3.baseY + 22, 3, 11);
-    }
+    // Frame 3: Pulling back
+    const pos3 = drawFarmerBody(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 11, pos3.baseY + 22, 3, 11);
+    ctx.fillRect(pos3.centerX + 8, pos3.baseY + 22, 3, 11);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== MEDIEVAL ERA TEXTURES =====
@@ -1629,441 +1703,441 @@ function generateFarmingWorkFrames(scene, key, colors, activity) {
  * Generate cobblestone texture
  */
 function generateCobblestoneTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base stone color
-    ctx.fillStyle = '#6a6a64';
-    ctx.fillRect(0, 0, 32, 32);
+  // Base stone color
+  ctx.fillStyle = '#6a6a64';
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Individual cobbles (4x4 grid)
-    const cobbleSize = 7;
-    const gap = 1;
-    for (let row = 0; row < 4; row++) {
-        for (let col = 0; col < 4; col++) {
-            const x = col * (cobbleSize + gap) + 1;
-            const y = row * (cobbleSize + gap) + 1;
+  // Individual cobbles (4x4 grid)
+  const cobbleSize = 7;
+  const gap = 1;
+  for (let row = 0; row < 4; row++) {
+    for (let col = 0; col < 4; col++) {
+      const x = col * (cobbleSize + gap) + 1;
+      const y = row * (cobbleSize + gap) + 1;
 
-            // Stone cobble
-            ctx.fillStyle = row + col % 2 === 0 ? '#787874' : '#6a6a64';
-            ctx.fillRect(x, y, cobbleSize, cobbleSize);
+      // Stone cobble
+      ctx.fillStyle = row + (col % 2) === 0 ? '#787874' : '#6a6a64';
+      ctx.fillRect(x, y, cobbleSize, cobbleSize);
 
-            // Darker shading
-            ctx.fillStyle = 'rgba(50, 50, 50, 0.3)';
-            ctx.fillRect(x, y + cobbleSize - 2, cobbleSize, 2);
-            ctx.fillRect(x + cobbleSize - 2, y, 2, cobbleSize);
+      // Darker shading
+      ctx.fillStyle = 'rgba(50, 50, 50, 0.3)';
+      ctx.fillRect(x, y + cobbleSize - 2, cobbleSize, 2);
+      ctx.fillRect(x + cobbleSize - 2, y, 2, cobbleSize);
 
-            // Highlight
-            ctx.fillStyle = 'rgba(140, 140, 134, 0.4)';
-            ctx.fillRect(x, y, 2, 2);
-        }
+      // Highlight
+      ctx.fillStyle = 'rgba(140, 140, 134, 0.4)';
+      ctx.fillRect(x, y, 2, 2);
     }
+  }
 
-    // Mortar gaps
-    ctx.fillStyle = '#5a5a54';
-    for (let i = 0; i < 4; i++) {
-        const pos = i * (cobbleSize + gap) + cobbleSize + 1;
-        ctx.fillRect(0, pos, 32, gap);
-        ctx.fillRect(pos, 0, gap, 32);
-    }
+  // Mortar gaps
+  ctx.fillStyle = '#5a5a54';
+  for (let i = 0; i < 4; i++) {
+    const pos = i * (cobbleSize + gap) + cobbleSize + 1;
+    ctx.fillRect(0, pos, 32, gap);
+    ctx.fillRect(pos, 0, gap, 32);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate castle wall texture
  */
 function generateCastleWallTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 64, 96);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 64, 96);
+  const ctx = canvas.getContext();
 
-    // Stone blocks
-    ctx.fillStyle = '#787774';
-    ctx.fillRect(0, 0, 64, 96);
+  // Stone blocks
+  ctx.fillStyle = '#787774';
+  ctx.fillRect(0, 0, 64, 96);
 
-    // Darker mortar lines between blocks
-    ctx.fillStyle = '#4a4a48';
-    ctx.fillRect(0, 24, 64, 2);
-    ctx.fillRect(0, 48, 64, 2);
-    ctx.fillRect(0, 72, 64, 2);
-    ctx.fillRect(32, 0, 2, 96);
+  // Darker mortar lines between blocks
+  ctx.fillStyle = '#4a4a48';
+  ctx.fillRect(0, 24, 64, 2);
+  ctx.fillRect(0, 48, 64, 2);
+  ctx.fillRect(0, 72, 64, 2);
+  ctx.fillRect(32, 0, 2, 96);
 
-    // Stone texture
-    for (let i = 0; i < 30; i++) {
-        const x = Math.floor(Math.random() * 64);
-        const y = Math.floor(Math.random() * 96);
-        const size = Math.floor(Math.random() * 3) + 1;
-        ctx.fillStyle = `rgba(100, 100, 96, ${Math.random() * 0.4})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Stone texture
+  for (let i = 0; i < 30; i++) {
+    const x = Math.floor(Math.random() * 64);
+    const y = Math.floor(Math.random() * 96);
+    const size = Math.floor(Math.random() * 3) + 1;
+    ctx.fillStyle = `rgba(100, 100, 96, ${Math.random() * 0.4})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    // Cracks
-    ctx.strokeStyle = 'rgba(60, 60, 58, 0.6)';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 5; i++) {
-        ctx.beginPath();
-        ctx.moveTo(Math.random() * 64, Math.random() * 96);
-        ctx.lineTo(Math.random() * 64, Math.random() * 96);
-        ctx.stroke();
-    }
+  // Cracks
+  ctx.strokeStyle = 'rgba(60, 60, 58, 0.6)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 5; i++) {
+    ctx.beginPath();
+    ctx.moveTo(Math.random() * 64, Math.random() * 96);
+    ctx.lineTo(Math.random() * 64, Math.random() * 96);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate grand castle entrance with flanking towers (portal)
  */
 function generateCastleGateTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 160, 128);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 160, 128);
+  const ctx = canvas.getContext();
 
-    // === LEFT TOWER ===
-    // Tower base (stone blocks)
-    ctx.fillStyle = '#6a6a64';
-    ctx.fillRect(0, 24, 40, 104);
+  // === LEFT TOWER ===
+  // Tower base (stone blocks)
+  ctx.fillStyle = '#6a6a64';
+  ctx.fillRect(0, 24, 40, 104);
 
-    // Stone block masonry lines
-    ctx.strokeStyle = '#4a4a48';
-    ctx.lineWidth = 2;
-    for (let y = 40; y < 128; y += 16) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(40, y);
-        ctx.stroke();
-    }
-    // Vertical mortar line
+  // Stone block masonry lines
+  ctx.strokeStyle = '#4a4a48';
+  ctx.lineWidth = 2;
+  for (let y = 40; y < 128; y += 16) {
     ctx.beginPath();
-    ctx.moveTo(20, 24);
-    ctx.lineTo(20, 128);
+    ctx.moveTo(0, y);
+    ctx.lineTo(40, y);
     ctx.stroke();
+  }
+  // Vertical mortar line
+  ctx.beginPath();
+  ctx.moveTo(20, 24);
+  ctx.lineTo(20, 128);
+  ctx.stroke();
 
-    // Battlements (crenellations) on left tower
-    ctx.fillStyle = '#6a6a64';
-    ctx.fillRect(0, 16, 8, 12);
-    ctx.fillRect(16, 16, 8, 12);
-    ctx.fillRect(32, 16, 8, 12);
-    // Stone texture on battlements
-    ctx.fillStyle = '#5a5a54';
-    ctx.fillRect(1, 18, 6, 2);
-    ctx.fillRect(17, 18, 6, 2);
-    ctx.fillRect(33, 18, 6, 2);
+  // Battlements (crenellations) on left tower
+  ctx.fillStyle = '#6a6a64';
+  ctx.fillRect(0, 16, 8, 12);
+  ctx.fillRect(16, 16, 8, 12);
+  ctx.fillRect(32, 16, 8, 12);
+  // Stone texture on battlements
+  ctx.fillStyle = '#5a5a54';
+  ctx.fillRect(1, 18, 6, 2);
+  ctx.fillRect(17, 18, 6, 2);
+  ctx.fillRect(33, 18, 6, 2);
 
-    // Arrow slits in left tower
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(16, 50, 4, 16);
-    ctx.fillRect(16, 80, 4, 16);
+  // Arrow slits in left tower
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(16, 50, 4, 16);
+  ctx.fillRect(16, 80, 4, 16);
 
-    // === RIGHT TOWER ===
-    // Tower base (stone blocks)
-    ctx.fillStyle = '#6a6a64';
-    ctx.fillRect(120, 24, 40, 104);
+  // === RIGHT TOWER ===
+  // Tower base (stone blocks)
+  ctx.fillStyle = '#6a6a64';
+  ctx.fillRect(120, 24, 40, 104);
 
-    // Stone block masonry lines
-    for (let y = 40; y < 128; y += 16) {
-        ctx.beginPath();
-        ctx.moveTo(120, y);
-        ctx.lineTo(160, y);
-        ctx.stroke();
-    }
-    // Vertical mortar line
+  // Stone block masonry lines
+  for (let y = 40; y < 128; y += 16) {
     ctx.beginPath();
-    ctx.moveTo(140, 24);
-    ctx.lineTo(140, 128);
+    ctx.moveTo(120, y);
+    ctx.lineTo(160, y);
     ctx.stroke();
+  }
+  // Vertical mortar line
+  ctx.beginPath();
+  ctx.moveTo(140, 24);
+  ctx.lineTo(140, 128);
+  ctx.stroke();
 
-    // Battlements on right tower
-    ctx.fillStyle = '#6a6a64';
-    ctx.fillRect(120, 16, 8, 12);
-    ctx.fillRect(136, 16, 8, 12);
-    ctx.fillRect(152, 16, 8, 12);
-    // Stone texture
-    ctx.fillStyle = '#5a5a54';
-    ctx.fillRect(121, 18, 6, 2);
-    ctx.fillRect(137, 18, 6, 2);
-    ctx.fillRect(153, 18, 6, 2);
+  // Battlements on right tower
+  ctx.fillStyle = '#6a6a64';
+  ctx.fillRect(120, 16, 8, 12);
+  ctx.fillRect(136, 16, 8, 12);
+  ctx.fillRect(152, 16, 8, 12);
+  // Stone texture
+  ctx.fillStyle = '#5a5a54';
+  ctx.fillRect(121, 18, 6, 2);
+  ctx.fillRect(137, 18, 6, 2);
+  ctx.fillRect(153, 18, 6, 2);
 
-    // Arrow slits in right tower
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(140, 50, 4, 16);
-    ctx.fillRect(140, 80, 4, 16);
+  // Arrow slits in right tower
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(140, 50, 4, 16);
+  ctx.fillRect(140, 80, 4, 16);
 
-    // === CENTER ARCHWAY ===
-    // Stone archway structure
-    ctx.fillStyle = '#787774';
-    ctx.fillRect(40, 32, 80, 96);
+  // === CENTER ARCHWAY ===
+  // Stone archway structure
+  ctx.fillStyle = '#787774';
+  ctx.fillRect(40, 32, 80, 96);
 
-    // Arched opening (larger and more imposing)
-    const gradient = ctx.createRadialGradient(80, 80, 15, 80, 80, 50);
-    gradient.addColorStop(0, '#000000');
-    gradient.addColorStop(0.8, '#0a0a0a');
-    gradient.addColorStop(1, '#1a1a2a');
-    ctx.fillStyle = gradient;
+  // Arched opening (larger and more imposing)
+  const gradient = ctx.createRadialGradient(80, 80, 15, 80, 80, 50);
+  gradient.addColorStop(0, '#000000');
+  gradient.addColorStop(0.8, '#0a0a0a');
+  gradient.addColorStop(1, '#1a1a2a');
+  ctx.fillStyle = gradient;
 
-    // Draw arch shape
+  // Draw arch shape
+  ctx.beginPath();
+  ctx.arc(80, 90, 32, Math.PI, 0, false);
+  ctx.rect(48, 90, 64, 38);
+  ctx.fill();
+
+  // Portcullis (metal gate) showing at top of opening
+  ctx.strokeStyle = '#3a3a3a';
+  ctx.lineWidth = 3;
+  for (let i = 0; i < 6; i++) {
+    const x = 52 + i * 12;
     ctx.beginPath();
-    ctx.arc(80, 90, 32, Math.PI, 0, false);
-    ctx.rect(48, 90, 64, 38);
-    ctx.fill();
-
-    // Portcullis (metal gate) showing at top of opening
-    ctx.strokeStyle = '#3a3a3a';
-    ctx.lineWidth = 3;
-    for (let i = 0; i < 6; i++) {
-        const x = 52 + i * 12;
-        ctx.beginPath();
-        ctx.moveTo(x, 68);
-        ctx.lineTo(x, 88);
-        ctx.stroke();
-    }
-    // Horizontal bars
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(52, 74);
-    ctx.lineTo(112, 74);
+    ctx.moveTo(x, 68);
+    ctx.lineTo(x, 88);
     ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(52, 82);
-    ctx.lineTo(112, 82);
-    ctx.stroke();
+  }
+  // Horizontal bars
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(52, 74);
+  ctx.lineTo(112, 74);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(52, 82);
+  ctx.lineTo(112, 82);
+  ctx.stroke();
 
-    // Wooden gate door (partially visible behind portcullis)
-    ctx.fillStyle = '#4a3a2a';
-    ctx.fillRect(52, 90, 56, 38);
+  // Wooden gate door (partially visible behind portcullis)
+  ctx.fillStyle = '#4a3a2a';
+  ctx.fillRect(52, 90, 56, 38);
 
-    // Vertical planks on door
-    ctx.fillStyle = '#3a2a1a';
-    for (let i = 0; i < 6; i++) {
-        const x = 54 + i * 9;
-        ctx.fillRect(x, 90, 6, 38);
+  // Vertical planks on door
+  ctx.fillStyle = '#3a2a1a';
+  for (let i = 0; i < 6; i++) {
+    const x = 54 + i * 9;
+    ctx.fillRect(x, 90, 6, 38);
+  }
+
+  // Metal bands across door
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(52, 100, 56, 4);
+  ctx.fillRect(52, 115, 56, 4);
+
+  // === DECORATIVE ELEMENTS ===
+  // Stone archway detail above gate
+  ctx.fillStyle = '#8a8a84';
+  ctx.fillRect(44, 32, 72, 8);
+
+  // Heraldic banners hanging from towers
+  // Left banner (red)
+  ctx.fillStyle = '#8a2a2a';
+  ctx.fillRect(8, 32, 16, 24);
+  // Banner pattern (simple cross)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(14, 36, 4, 16);
+  ctx.fillRect(10, 42, 12, 4);
+
+  // Right banner (blue)
+  ctx.fillStyle = '#2a2a8a';
+  ctx.fillRect(136, 32, 16, 24);
+  // Banner pattern (simple cross)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(142, 36, 4, 16);
+  ctx.fillRect(138, 42, 12, 4);
+
+  // Stone texture variations for depth
+  for (let i = 0; i < 50; i++) {
+    const x = Math.floor(Math.random() * 160);
+    const y = Math.floor(Math.random() * 128);
+    // Only add texture to stone areas
+    if ((x < 40 && y > 24) || (x > 120 && y > 24) || (x >= 40 && x <= 120 && y > 32 && y < 68)) {
+      const size = Math.floor(Math.random() * 2) + 1;
+      ctx.fillStyle = `rgba(100, 100, 96, ${Math.random() * 0.3})`;
+      ctx.fillRect(x, y, size, size);
     }
+  }
 
-    // Metal bands across door
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(52, 100, 56, 4);
-    ctx.fillRect(52, 115, 56, 4);
-
-    // === DECORATIVE ELEMENTS ===
-    // Stone archway detail above gate
-    ctx.fillStyle = '#8a8a84';
-    ctx.fillRect(44, 32, 72, 8);
-
-    // Heraldic banners hanging from towers
-    // Left banner (red)
-    ctx.fillStyle = '#8a2a2a';
-    ctx.fillRect(8, 32, 16, 24);
-    // Banner pattern (simple cross)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(14, 36, 4, 16);
-    ctx.fillRect(10, 42, 12, 4);
-
-    // Right banner (blue)
-    ctx.fillStyle = '#2a2a8a';
-    ctx.fillRect(136, 32, 16, 24);
-    // Banner pattern (simple cross)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(142, 36, 4, 16);
-    ctx.fillRect(138, 42, 12, 4);
-
-    // Stone texture variations for depth
-    for (let i = 0; i < 50; i++) {
-        const x = Math.floor(Math.random() * 160);
-        const y = Math.floor(Math.random() * 128);
-        // Only add texture to stone areas
-        if ((x < 40 && y > 24) || (x > 120 && y > 24) || (x >= 40 && x <= 120 && y > 32 && y < 68)) {
-            const size = Math.floor(Math.random() * 2) + 1;
-            ctx.fillStyle = `rgba(100, 100, 96, ${Math.random() * 0.3})`;
-            ctx.fillRect(x, y, size, size);
-        }
-    }
-
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate torch texture for ambient lighting
  */
 function generateTorchTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 16, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 16, 32);
+  const ctx = canvas.getContext();
 
-    // Wooden handle
-    ctx.fillStyle = '#5a4a32';
-    ctx.fillRect(6, 12, 4, 20);
+  // Wooden handle
+  ctx.fillStyle = '#5a4a32';
+  ctx.fillRect(6, 12, 4, 20);
 
-    // Torch head (wrapped cloth)
-    ctx.fillStyle = '#6a5a42';
-    ctx.fillRect(4, 8, 8, 6);
+  // Torch head (wrapped cloth)
+  ctx.fillStyle = '#6a5a42';
+  ctx.fillRect(4, 8, 8, 6);
 
-    // Flame (orange-red)
-    ctx.fillStyle = '#ff6b00';
-    ctx.fillRect(5, 2, 6, 8);
+  // Flame (orange-red)
+  ctx.fillStyle = '#ff6b00';
+  ctx.fillRect(5, 2, 6, 8);
 
-    // Yellow flame tip
-    ctx.fillStyle = '#ffcc00';
-    ctx.fillRect(6, 0, 4, 5);
+  // Yellow flame tip
+  ctx.fillStyle = '#ffcc00';
+  ctx.fillRect(6, 0, 4, 5);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate anvil prop for blacksmith
  */
 function generateAnvil(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 24);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 24);
+  const ctx = canvas.getContext();
 
-    // Dark metal base
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(8, 16, 16, 8);
+  // Dark metal base
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(8, 16, 16, 8);
 
-    // Anvil body
-    ctx.fillStyle = '#5a5a5a';
-    ctx.fillRect(4, 8, 24, 8);
+  // Anvil body
+  ctx.fillStyle = '#5a5a5a';
+  ctx.fillRect(4, 8, 24, 8);
 
-    // Horn (tapered end)
-    ctx.fillRect(2, 10, 4, 4);
+  // Horn (tapered end)
+  ctx.fillRect(2, 10, 4, 4);
 
-    // Darker shading
-    ctx.fillStyle = '#4a4a4a';
-    ctx.fillRect(5, 13, 22, 3);
+  // Darker shading
+  ctx.fillStyle = '#4a4a4a';
+  ctx.fillRect(5, 13, 22, 3);
 
-    // Highlight on top
-    ctx.fillStyle = '#7a7a7a';
-    ctx.fillRect(6, 8, 20, 2);
+  // Highlight on top
+  ctx.fillStyle = '#7a7a7a';
+  ctx.fillRect(6, 8, 20, 2);
 
-    // Black outline
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(4, 8, 24, 8);
+  // Black outline
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(4, 8, 24, 8);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate hammer prop for blacksmith
  */
 function generateHammer(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 24, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 24, 32);
+  const ctx = canvas.getContext();
 
-    // Wooden handle
-    ctx.fillStyle = '#6b5642';
-    ctx.fillRect(10, 12, 4, 20);
+  // Wooden handle
+  ctx.fillStyle = '#6b5642';
+  ctx.fillRect(10, 12, 4, 20);
 
-    // Metal hammerhead
-    ctx.fillStyle = '#5a5a5a';
-    ctx.fillRect(4, 8, 16, 8);
+  // Metal hammerhead
+  ctx.fillStyle = '#5a5a5a';
+  ctx.fillRect(4, 8, 16, 8);
 
-    // Darker side
-    ctx.fillStyle = '#4a4a4a';
-    ctx.fillRect(5, 13, 14, 3);
+  // Darker side
+  ctx.fillStyle = '#4a4a4a';
+  ctx.fillRect(5, 13, 14, 3);
 
-    // Highlight
-    ctx.fillStyle = '#7a7a7a';
-    ctx.fillRect(6, 8, 12, 2);
+  // Highlight
+  ctx.fillStyle = '#7a7a7a';
+  ctx.fillRect(6, 8, 12, 2);
 
-    // Black outline
-    ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(4, 8, 16, 8);
+  // Black outline
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(4, 8, 16, 8);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate work frames for medieval activities
  */
 function generateMedievalWorkFrames(scene, key, colors, activity) {
-    const skin = colors.skin || '#d4a574';
-    const tunic = colors.tunic || '#8a4a4a'; // Red/brown medieval tunic
-    const tunicDark = colors.tunicDark || '#6a3a3a';
-    const pants = colors.pants || '#5a4a3a';
-    const hair = colors.hair || '#3d2817';
+  const skin = colors.skin || '#d4a574';
+  const tunic = colors.tunic || '#8a4a4a'; // Red/brown medieval tunic
+  const tunicDark = colors.tunicDark || '#6a3a3a';
+  const pants = colors.pants || '#5a4a3a';
+  const hair = colors.hair || '#3d2817';
 
-    const frameWidth = 32;
-    const frameHeight = 48;
-    let numFrames = 4;
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const numFrames = 4;
 
-    const canvas = scene.textures.createCanvas(key, frameWidth * numFrames, frameHeight);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, frameWidth * numFrames, frameHeight);
+  const ctx = canvas.getContext();
 
-    function drawMedievalBody(x, y) {
-        const centerX = x + frameWidth / 2;
-        const baseY = y;
+  function drawMedievalBody(x, y) {
+    const centerX = x + frameWidth / 2;
+    const baseY = y;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 6, baseY + 4, 12, 12);
 
-        // Hair
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
+    // Hair
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 7, baseY + 3, 14, 5);
 
-        // Eyes
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
-        ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
+    // Eyes
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(centerX - 4, baseY + 8, 2, 2);
+    ctx.fillRect(centerX + 2, baseY + 8, 2, 2);
 
-        // Medieval tunic
-        ctx.fillStyle = tunic;
-        ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
-        ctx.fillStyle = tunicDark;
-        ctx.fillRect(centerX - 7, baseY + 18, 4, 4);
-        ctx.fillRect(centerX + 2, baseY + 20, 4, 4);
+    // Medieval tunic
+    ctx.fillStyle = tunic;
+    ctx.fillRect(centerX - 8, baseY + 16, 16, 16);
+    ctx.fillStyle = tunicDark;
+    ctx.fillRect(centerX - 7, baseY + 18, 4, 4);
+    ctx.fillRect(centerX + 2, baseY + 20, 4, 4);
 
-        // Belt
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 8, baseY + 30, 16, 2);
+    // Belt
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 8, baseY + 30, 16, 2);
 
-        // Pants
-        ctx.fillStyle = pants;
-        ctx.fillRect(centerX - 6, baseY + 32, 5, 12);
-        ctx.fillRect(centerX + 1, baseY + 32, 5, 12);
+    // Pants
+    ctx.fillStyle = pants;
+    ctx.fillRect(centerX - 6, baseY + 32, 5, 12);
+    ctx.fillRect(centerX + 1, baseY + 32, 5, 12);
 
-        // Boots
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 6, baseY + 42, 5, 4);
-        ctx.fillRect(centerX + 1, baseY + 42, 5, 4);
+    // Boots
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 6, baseY + 42, 5, 4);
+    ctx.fillRect(centerX + 1, baseY + 42, 5, 4);
 
-        return { centerX, baseY };
+    return { centerX, baseY };
+  }
+
+  if (activity === 'blacksmith') {
+    // Frame 0: Hammer raised
+    const pos0 = drawMedievalBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 11, pos0.baseY + 14, 3, 8);
+    ctx.fillRect(pos0.centerX + 8, pos0.baseY + 14, 3, 8);
+
+    // Frame 1: Swinging down
+    const pos1 = drawMedievalBody(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 11, pos1.baseY + 18, 3, 10);
+    ctx.fillRect(pos1.centerX + 8, pos1.baseY + 18, 3, 10);
+
+    // Frame 2: Impact on anvil
+    const pos2 = drawMedievalBody(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 11, pos2.baseY + 24, 3, 10);
+    ctx.fillRect(pos2.centerX + 8, pos2.baseY + 24, 3, 10);
+
+    // Frame 3: Raising back up
+    const pos3 = drawMedievalBody(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 9);
+    ctx.fillRect(pos3.centerX + 8, pos3.baseY + 20, 3, 9);
+  } else if (activity === 'guarding') {
+    // Standing animations with spear
+    for (let i = 0; i < 4; i++) {
+      const pos = drawMedievalBody(frameWidth * i, 0);
+      ctx.fillStyle = skin;
+      // Holding spear upright
+      ctx.fillRect(pos.centerX - 11, pos.baseY + 18, 3, 12);
+      ctx.fillRect(pos.centerX + 8, pos.baseY + 20, 3, 10);
     }
+  }
 
-    if (activity === 'blacksmith') {
-        // Frame 0: Hammer raised
-        const pos0 = drawMedievalBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 11, pos0.baseY + 14, 3, 8);
-        ctx.fillRect(pos0.centerX + 8, pos0.baseY + 14, 3, 8);
-
-        // Frame 1: Swinging down
-        const pos1 = drawMedievalBody(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 11, pos1.baseY + 18, 3, 10);
-        ctx.fillRect(pos1.centerX + 8, pos1.baseY + 18, 3, 10);
-
-        // Frame 2: Impact on anvil
-        const pos2 = drawMedievalBody(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 11, pos2.baseY + 24, 3, 10);
-        ctx.fillRect(pos2.centerX + 8, pos2.baseY + 24, 3, 10);
-
-        // Frame 3: Raising back up
-        const pos3 = drawMedievalBody(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 11, pos3.baseY + 20, 3, 9);
-        ctx.fillRect(pos3.centerX + 8, pos3.baseY + 20, 3, 9);
-    } else if (activity === 'guarding') {
-        // Standing animations with spear
-        for (let i = 0; i < 4; i++) {
-            const pos = drawMedievalBody(frameWidth * i, 0);
-            ctx.fillStyle = skin;
-            // Holding spear upright
-            ctx.fillRect(pos.centerX - 11, pos.baseY + 18, 3, 12);
-            ctx.fillRect(pos.centerX + 8, pos.baseY + 20, 3, 10);
-        }
-    }
-
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== RENAISSANCE ERA TEXTURES =====
@@ -2072,389 +2146,389 @@ function generateMedievalWorkFrames(scene, key, colors, activity) {
  * Generate marble tile texture for Renaissance ground
  */
 function generateMarbleTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base marble color (cream/beige)
-    ctx.fillStyle = '#f5f3e8';
-    ctx.fillRect(0, 0, 32, 32);
+  // Base marble color (cream/beige)
+  ctx.fillStyle = '#f5f3e8';
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Darker marble variations
-    ctx.fillStyle = '#e8e5d5';
-    ctx.fillRect(1, 1, 14, 14);
-    ctx.fillRect(17, 17, 14, 14);
+  // Darker marble variations
+  ctx.fillStyle = '#e8e5d5';
+  ctx.fillRect(1, 1, 14, 14);
+  ctx.fillRect(17, 17, 14, 14);
 
-    // Lighter highlights
-    ctx.fillStyle = '#faf8f0';
-    ctx.fillRect(17, 1, 14, 14);
-    ctx.fillRect(1, 17, 14, 14);
+  // Lighter highlights
+  ctx.fillStyle = '#faf8f0';
+  ctx.fillRect(17, 1, 14, 14);
+  ctx.fillRect(1, 17, 14, 14);
 
-    // Grout lines
-    ctx.strokeStyle = '#c8c5b8';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(0, 0, 32, 32);
+  // Grout lines
+  ctx.strokeStyle = '#c8c5b8';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0, 0, 32, 32);
 
-    // Marble veining (random organic lines)
-    ctx.strokeStyle = 'rgba(150, 140, 120, 0.3)';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 5; i++) {
-        ctx.beginPath();
-        const startX = Math.random() * 32;
-        const startY = Math.random() * 32;
-        const endX = startX + (Math.random() - 0.5) * 20;
-        const endY = startY + (Math.random() - 0.5) * 20;
-        ctx.moveTo(startX, startY);
-        ctx.lineTo(endX, endY);
-        ctx.stroke();
-    }
+  // Marble veining (random organic lines)
+  ctx.strokeStyle = 'rgba(150, 140, 120, 0.3)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 5; i++) {
+    ctx.beginPath();
+    const startX = Math.random() * 32;
+    const startY = Math.random() * 32;
+    const endX = startX + (Math.random() - 0.5) * 20;
+    const endY = startY + (Math.random() - 0.5) * 20;
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(endX, endY);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate Renaissance library portal (classical architecture)
  */
 function generateLibraryPortalTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 128, 144);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 128, 144);
+  const ctx = canvas.getContext();
 
-    // === BACKGROUND (stone wall) ===
-    ctx.fillStyle = '#d4c4a8';
-    ctx.fillRect(0, 0, 128, 144);
+  // === BACKGROUND (stone wall) ===
+  ctx.fillStyle = '#d4c4a8';
+  ctx.fillRect(0, 0, 128, 144);
 
-    // === DOME ROOF ===
-    ctx.fillStyle = '#8a6a4a';
+  // === DOME ROOF ===
+  ctx.fillStyle = '#8a6a4a';
+  ctx.beginPath();
+  ctx.ellipse(64, 20, 50, 25, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Dome highlight
+  ctx.fillStyle = '#a8886a';
+  ctx.beginPath();
+  ctx.ellipse(64, 18, 30, 15, 0, 0, Math.PI);
+  ctx.fill();
+
+  // Dome top ornament
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(62, 0, 4, 12);
+  ctx.beginPath();
+  ctx.arc(64, 0, 6, 0, Math.PI * 2);
+  ctx.fill();
+
+  // === CLASSICAL COLUMNS (Ionic style) ===
+  // Left column
+  ctx.fillStyle = '#e8dcc8';
+  ctx.fillRect(20, 40, 16, 90);
+  // Column fluting (vertical grooves)
+  ctx.strokeStyle = '#c8bca8';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 3; i++) {
     ctx.beginPath();
-    ctx.ellipse(64, 20, 50, 25, 0, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Dome highlight
-    ctx.fillStyle = '#a8886a';
-    ctx.beginPath();
-    ctx.ellipse(64, 18, 30, 15, 0, 0, Math.PI);
-    ctx.fill();
-
-    // Dome top ornament
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(62, 0, 4, 12);
-    ctx.beginPath();
-    ctx.arc(64, 0, 6, 0, Math.PI * 2);
-    ctx.fill();
-
-    // === CLASSICAL COLUMNS (Ionic style) ===
-    // Left column
-    ctx.fillStyle = '#e8dcc8';
-    ctx.fillRect(20, 40, 16, 90);
-    // Column fluting (vertical grooves)
-    ctx.strokeStyle = '#c8bca8';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 3; i++) {
-        ctx.beginPath();
-        ctx.moveTo(22 + i * 5, 45);
-        ctx.lineTo(22 + i * 5, 125);
-        ctx.stroke();
-    }
-    // Capital (top of column)
-    ctx.fillStyle = '#f5f0e0';
-    ctx.fillRect(16, 38, 24, 8);
-    // Base
-    ctx.fillRect(16, 128, 24, 6);
-
-    // Right column (mirrored)
-    ctx.fillStyle = '#e8dcc8';
-    ctx.fillRect(92, 40, 16, 90);
-    ctx.strokeStyle = '#c8bca8';
-    for (let i = 0; i < 3; i++) {
-        ctx.beginPath();
-        ctx.moveTo(94 + i * 5, 45);
-        ctx.lineTo(94 + i * 5, 125);
-        ctx.stroke();
-    }
-    ctx.fillStyle = '#f5f0e0';
-    ctx.fillRect(88, 38, 24, 8);
-    ctx.fillRect(88, 128, 24, 6);
-
-    // === ARCHWAY ===
-    ctx.fillStyle = '#4a3a2a';
-    ctx.beginPath();
-    ctx.arc(64, 100, 28, 0, Math.PI, true);
-    ctx.fill();
-    ctx.fillRect(36, 100, 56, 44);
-
-    // Archway decorative molding
-    ctx.strokeStyle = '#d4a832';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(64, 100, 30, 0, Math.PI, true);
+    ctx.moveTo(22 + i * 5, 45);
+    ctx.lineTo(22 + i * 5, 125);
     ctx.stroke();
+  }
+  // Capital (top of column)
+  ctx.fillStyle = '#f5f0e0';
+  ctx.fillRect(16, 38, 24, 8);
+  // Base
+  ctx.fillRect(16, 128, 24, 6);
 
-    // === WOODEN DOUBLE DOORS ===
-    ctx.fillStyle = '#5a3a1a';
-    ctx.fillRect(40, 105, 22, 39);
-    ctx.fillRect(66, 105, 22, 39);
-
-    // Door panels
-    ctx.strokeStyle = '#3a2a0a';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(42, 108, 18, 15);
-    ctx.strokeRect(42, 126, 18, 15);
-    ctx.strokeRect(68, 108, 18, 15);
-    ctx.strokeRect(68, 126, 18, 15);
-
-    // Door handles (golden)
-    ctx.fillStyle = '#d4a832';
+  // Right column (mirrored)
+  ctx.fillStyle = '#e8dcc8';
+  ctx.fillRect(92, 40, 16, 90);
+  ctx.strokeStyle = '#c8bca8';
+  for (let i = 0; i < 3; i++) {
     ctx.beginPath();
-    ctx.arc(58, 122, 2, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(70, 122, 2, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.moveTo(94 + i * 5, 45);
+    ctx.lineTo(94 + i * 5, 125);
+    ctx.stroke();
+  }
+  ctx.fillStyle = '#f5f0e0';
+  ctx.fillRect(88, 38, 24, 8);
+  ctx.fillRect(88, 128, 24, 6);
 
-    // === DECORATIVE FRIEZE above columns ===
-    ctx.fillStyle = '#e8dcc8';
-    ctx.fillRect(16, 36, 96, 6);
+  // === ARCHWAY ===
+  ctx.fillStyle = '#4a3a2a';
+  ctx.beginPath();
+  ctx.arc(64, 100, 28, 0, Math.PI, true);
+  ctx.fill();
+  ctx.fillRect(36, 100, 56, 44);
 
-    // Geometric pattern on frieze
-    ctx.fillStyle = '#d4a832';
-    for (let i = 0; i < 8; i++) {
-        ctx.fillRect(20 + i * 12, 38, 4, 2);
-    }
+  // Archway decorative molding
+  ctx.strokeStyle = '#d4a832';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(64, 100, 30, 0, Math.PI, true);
+  ctx.stroke();
 
-    // === BOOKS visible through archway ===
-    // Bookshelves in background
-    ctx.fillStyle = '#2a1a0a';
-    ctx.fillRect(44, 85, 18, 12);
-    ctx.fillRect(66, 85, 18, 12);
+  // === WOODEN DOUBLE DOORS ===
+  ctx.fillStyle = '#5a3a1a';
+  ctx.fillRect(40, 105, 22, 39);
+  ctx.fillRect(66, 105, 22, 39);
 
-    // Individual books (colorful spines)
-    const bookColors = ['#8a2a2a', '#2a4a8a', '#2a6a2a', '#8a6a2a'];
-    for (let i = 0; i < 6; i++) {
-        ctx.fillStyle = bookColors[i % bookColors.length];
-        ctx.fillRect(45 + i * 3, 86, 2, 10);
-    }
-    for (let i = 0; i < 6; i++) {
-        ctx.fillStyle = bookColors[(i + 2) % bookColors.length];
-        ctx.fillRect(67 + i * 3, 86, 2, 10);
-    }
+  // Door panels
+  ctx.strokeStyle = '#3a2a0a';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(42, 108, 18, 15);
+  ctx.strokeRect(42, 126, 18, 15);
+  ctx.strokeRect(68, 108, 18, 15);
+  ctx.strokeRect(68, 126, 18, 15);
 
-    // Stone texture details
-    for (let i = 0; i < 100; i++) {
-        const x = Math.floor(Math.random() * 128);
-        const y = Math.floor(Math.random() * 144);
-        const size = Math.floor(Math.random() * 2) + 1;
-        ctx.fillStyle = `rgba(180, 160, 140, ${Math.random() * 0.2})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Door handles (golden)
+  ctx.fillStyle = '#d4a832';
+  ctx.beginPath();
+  ctx.arc(58, 122, 2, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(70, 122, 2, 0, Math.PI * 2);
+  ctx.fill();
 
-    canvas.refresh();
+  // === DECORATIVE FRIEZE above columns ===
+  ctx.fillStyle = '#e8dcc8';
+  ctx.fillRect(16, 36, 96, 6);
+
+  // Geometric pattern on frieze
+  ctx.fillStyle = '#d4a832';
+  for (let i = 0; i < 8; i++) {
+    ctx.fillRect(20 + i * 12, 38, 4, 2);
+  }
+
+  // === BOOKS visible through archway ===
+  // Bookshelves in background
+  ctx.fillStyle = '#2a1a0a';
+  ctx.fillRect(44, 85, 18, 12);
+  ctx.fillRect(66, 85, 18, 12);
+
+  // Individual books (colorful spines)
+  const bookColors = ['#8a2a2a', '#2a4a8a', '#2a6a2a', '#8a6a2a'];
+  for (let i = 0; i < 6; i++) {
+    ctx.fillStyle = bookColors[i % bookColors.length];
+    ctx.fillRect(45 + i * 3, 86, 2, 10);
+  }
+  for (let i = 0; i < 6; i++) {
+    ctx.fillStyle = bookColors[(i + 2) % bookColors.length];
+    ctx.fillRect(67 + i * 3, 86, 2, 10);
+  }
+
+  // Stone texture details
+  for (let i = 0; i < 100; i++) {
+    const x = Math.floor(Math.random() * 128);
+    const y = Math.floor(Math.random() * 144);
+    const size = Math.floor(Math.random() * 2) + 1;
+    ctx.fillStyle = `rgba(180, 160, 140, ${Math.random() * 0.2})`;
+    ctx.fillRect(x, y, size, size);
+  }
+
+  canvas.refresh();
 }
 
 /**
  * Generate printing press texture
  */
 function generatePrintingPressTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 48, 56);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 48, 56);
+  const ctx = canvas.getContext();
 
-    // Wooden frame
-    ctx.fillStyle = '#5a3a1a';
-    ctx.fillRect(8, 8, 32, 40);
+  // Wooden frame
+  ctx.fillStyle = '#5a3a1a';
+  ctx.fillRect(8, 8, 32, 40);
 
-    // Press screw (vertical)
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(22, 0, 4, 20);
+  // Press screw (vertical)
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(22, 0, 4, 20);
 
-    // Screw handle
-    ctx.fillStyle = '#4a2a0a';
-    ctx.fillRect(12, 8, 24, 4);
+  // Screw handle
+  ctx.fillStyle = '#4a2a0a';
+  ctx.fillRect(12, 8, 24, 4);
 
-    // Press plate (metal)
-    ctx.fillStyle = '#6a6a64';
-    ctx.fillRect(10, 18, 28, 4);
+  // Press plate (metal)
+  ctx.fillStyle = '#6a6a64';
+  ctx.fillRect(10, 18, 28, 4);
 
-    // Paper on press bed
-    ctx.fillStyle = '#f5f3e8';
-    ctx.fillRect(14, 26, 20, 16);
+  // Paper on press bed
+  ctx.fillStyle = '#f5f3e8';
+  ctx.fillRect(14, 26, 20, 16);
 
-    // Ink on paper (printed text)
-    ctx.fillStyle = '#1a1a1a';
-    for (let i = 0; i < 6; i++) {
-        ctx.fillRect(16, 28 + i * 2, 16, 1);
-    }
+  // Ink on paper (printed text)
+  ctx.fillStyle = '#1a1a1a';
+  for (let i = 0; i < 6; i++) {
+    ctx.fillRect(16, 28 + i * 2, 16, 1);
+  }
 
-    // Press bed
-    ctx.fillStyle = '#4a3a2a';
-    ctx.fillRect(6, 42, 36, 6);
+  // Press bed
+  ctx.fillStyle = '#4a3a2a';
+  ctx.fillRect(6, 42, 36, 6);
 
-    // Support legs
-    ctx.fillStyle = '#3a2a1a';
-    ctx.fillRect(8, 48, 4, 8);
-    ctx.fillRect(36, 48, 4, 8);
+  // Support legs
+  ctx.fillStyle = '#3a2a1a';
+  ctx.fillRect(8, 48, 4, 8);
+  ctx.fillRect(36, 48, 4, 8);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate easel with canvas texture
  */
 function generateEaselTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 40, 56);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 40, 56);
+  const ctx = canvas.getContext();
 
-    // Wooden easel frame (tripod)
-    ctx.strokeStyle = '#5a3a1a';
-    ctx.lineWidth = 3;
+  // Wooden easel frame (tripod)
+  ctx.strokeStyle = '#5a3a1a';
+  ctx.lineWidth = 3;
 
-    // Left leg
-    ctx.beginPath();
-    ctx.moveTo(8, 56);
-    ctx.lineTo(15, 12);
-    ctx.stroke();
+  // Left leg
+  ctx.beginPath();
+  ctx.moveTo(8, 56);
+  ctx.lineTo(15, 12);
+  ctx.stroke();
 
-    // Right leg
-    ctx.beginPath();
-    ctx.moveTo(32, 56);
-    ctx.lineTo(25, 12);
-    ctx.stroke();
+  // Right leg
+  ctx.beginPath();
+  ctx.moveTo(32, 56);
+  ctx.lineTo(25, 12);
+  ctx.stroke();
 
-    // Back leg (center)
-    ctx.beginPath();
-    ctx.moveTo(20, 56);
-    ctx.lineTo(20, 14);
-    ctx.stroke();
+  // Back leg (center)
+  ctx.beginPath();
+  ctx.moveTo(20, 56);
+  ctx.lineTo(20, 14);
+  ctx.stroke();
 
-    // Canvas on easel (white with painting)
-    ctx.fillStyle = '#f8f8f8';
-    ctx.fillRect(10, 12, 20, 24);
+  // Canvas on easel (white with painting)
+  ctx.fillStyle = '#f8f8f8';
+  ctx.fillRect(10, 12, 20, 24);
 
-    // Simple Renaissance-style portrait on canvas
-    // Background (blue sky)
-    ctx.fillStyle = '#6a9ac4';
-    ctx.fillRect(11, 13, 18, 10);
+  // Simple Renaissance-style portrait on canvas
+  // Background (blue sky)
+  ctx.fillStyle = '#6a9ac4';
+  ctx.fillRect(11, 13, 18, 10);
 
-    // Landscape (green hills)
-    ctx.fillStyle = '#4a8a4a';
-    ctx.fillRect(11, 20, 18, 6);
+  // Landscape (green hills)
+  ctx.fillStyle = '#4a8a4a';
+  ctx.fillRect(11, 20, 18, 6);
 
-    // Figure (person - simple shape)
-    ctx.fillStyle = '#d4a88a';
-    ctx.beginPath();
-    ctx.arc(20, 30, 3, 0, Math.PI * 2);
-    ctx.fill();
+  // Figure (person - simple shape)
+  ctx.fillStyle = '#d4a88a';
+  ctx.beginPath();
+  ctx.arc(20, 30, 3, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Body
-    ctx.fillStyle = '#8a2a2a';
-    ctx.fillRect(17, 32, 6, 4);
+  // Body
+  ctx.fillStyle = '#8a2a2a';
+  ctx.fillRect(17, 32, 6, 4);
 
-    // Canvas frame
-    ctx.strokeStyle = '#4a3a2a';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(10, 12, 20, 24);
+  // Canvas frame
+  ctx.strokeStyle = '#4a3a2a';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(10, 12, 20, 24);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate globe/astrolabe texture
  */
 function generateGlobeTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 40);
+  const ctx = canvas.getContext();
 
-    // Wooden stand
-    ctx.fillStyle = '#5a3a1a';
-    ctx.fillRect(14, 32, 4, 8);
+  // Wooden stand
+  ctx.fillStyle = '#5a3a1a';
+  ctx.fillRect(14, 32, 4, 8);
 
-    // Stand base
-    ctx.fillStyle = '#4a2a0a';
-    ctx.beginPath();
-    ctx.ellipse(16, 40, 8, 3, 0, 0, Math.PI * 2);
-    ctx.fill();
+  // Stand base
+  ctx.fillStyle = '#4a2a0a';
+  ctx.beginPath();
+  ctx.ellipse(16, 40, 8, 3, 0, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Globe (sphere)
-    ctx.fillStyle = '#d4c4a8';
-    ctx.beginPath();
-    ctx.arc(16, 16, 12, 0, Math.PI * 2);
-    ctx.fill();
+  // Globe (sphere)
+  ctx.fillStyle = '#d4c4a8';
+  ctx.beginPath();
+  ctx.arc(16, 16, 12, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Globe continents (simplified)
-    ctx.fillStyle = '#6a9a6a';
-    ctx.beginPath();
-    ctx.arc(12, 14, 5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(20, 18, 4, 0, Math.PI * 2);
-    ctx.fill();
+  // Globe continents (simplified)
+  ctx.fillStyle = '#6a9a6a';
+  ctx.beginPath();
+  ctx.arc(12, 14, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(20, 18, 4, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Meridian ring (metal)
-    ctx.strokeStyle = '#8a6a4a';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.arc(16, 16, 12, 0, Math.PI * 2);
-    ctx.stroke();
+  // Meridian ring (metal)
+  ctx.strokeStyle = '#8a6a4a';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(16, 16, 12, 0, Math.PI * 2);
+  ctx.stroke();
 
-    // Horizon ring
-    ctx.strokeStyle = '#8a6a4a';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.ellipse(16, 16, 12, 4, 0, 0, Math.PI * 2);
-    ctx.stroke();
+  // Horizon ring
+  ctx.strokeStyle = '#8a6a4a';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.ellipse(16, 16, 12, 4, 0, 0, Math.PI * 2);
+  ctx.stroke();
 
-    // Axis rod
-    ctx.strokeStyle = '#4a4a44';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(16, 4);
-    ctx.lineTo(16, 28);
-    ctx.stroke();
+  // Axis rod
+  ctx.strokeStyle = '#4a4a44';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(16, 4);
+  ctx.lineTo(16, 28);
+  ctx.stroke();
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate manuscript/book texture
  */
 function generateManuscriptTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 24, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 24, 32);
+  const ctx = canvas.getContext();
 
-    // Book cover (leather-bound)
-    ctx.fillStyle = '#6a3a1a';
-    ctx.fillRect(0, 0, 24, 32);
+  // Book cover (leather-bound)
+  ctx.fillStyle = '#6a3a1a';
+  ctx.fillRect(0, 0, 24, 32);
 
-    // Cover decoration (gold)
-    ctx.strokeStyle = '#d4a832';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(2, 2, 20, 28);
+  // Cover decoration (gold)
+  ctx.strokeStyle = '#d4a832';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(2, 2, 20, 28);
 
-    // Decorative cross
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(11, 8, 2, 16);
-    ctx.fillRect(6, 15, 12, 2);
+  // Decorative cross
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(11, 8, 2, 16);
+  ctx.fillRect(6, 15, 12, 2);
 
-    // Pages (visible from side)
-    ctx.fillStyle = '#f5f3e8';
-    ctx.fillRect(22, 2, 2, 28);
+  // Pages (visible from side)
+  ctx.fillStyle = '#f5f3e8';
+  ctx.fillRect(22, 2, 2, 28);
 
-    // Page lines
-    ctx.strokeStyle = '#d4c4a8';
-    ctx.lineWidth = 0.5;
-    for (let i = 0; i < 10; i++) {
-        ctx.beginPath();
-        ctx.moveTo(22, 4 + i * 2.5);
-        ctx.lineTo(24, 4 + i * 2.5);
-        ctx.stroke();
-    }
+  // Page lines
+  ctx.strokeStyle = '#d4c4a8';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i < 10; i++) {
+    ctx.beginPath();
+    ctx.moveTo(22, 4 + i * 2.5);
+    ctx.lineTo(24, 4 + i * 2.5);
+    ctx.stroke();
+  }
 
-    // Leather texture
-    for (let i = 0; i < 30; i++) {
-        const x = Math.floor(Math.random() * 20) + 2;
-        const y = Math.floor(Math.random() * 28) + 2;
-        ctx.fillStyle = `rgba(90, 50, 20, ${Math.random() * 0.2})`;
-        ctx.fillRect(x, y, 1, 1);
-    }
+  // Leather texture
+  for (let i = 0; i < 30; i++) {
+    const x = Math.floor(Math.random() * 20) + 2;
+    const y = Math.floor(Math.random() * 28) + 2;
+    ctx.fillStyle = `rgba(90, 50, 20, ${Math.random() * 0.2})`;
+    ctx.fillRect(x, y, 1, 1);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== ANCIENT CIVILIZATIONS ERA TEXTURES =====
@@ -2463,159 +2537,159 @@ function generateManuscriptTexture(scene, key) {
  * Generate sandstone tile texture
  */
 function generateSandstoneTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base sandstone color with gradient
-    const gradient = ctx.createLinearGradient(0, 0, 32, 32);
-    gradient.addColorStop(0, '#d4c4a0');
-    gradient.addColorStop(1, '#c4b490');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 32, 32);
+  // Base sandstone color with gradient
+  const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+  gradient.addColorStop(0, '#d4c4a0');
+  gradient.addColorStop(1, '#c4b490');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Add texture variation (sand grains)
-    for (let i = 0; i < 40; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 32);
-        const size = Math.floor(Math.random() * 2) + 1;
-        ctx.fillStyle = `rgba(180, 160, 120, ${Math.random() * 0.3})`;
-        ctx.fillRect(x, y, size, size);
-    }
+  // Add texture variation (sand grains)
+  for (let i = 0; i < 40; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 32);
+    const size = Math.floor(Math.random() * 2) + 1;
+    ctx.fillStyle = `rgba(180, 160, 120, ${Math.random() * 0.3})`;
+    ctx.fillRect(x, y, size, size);
+  }
 
-    // Add darker grain lines
-    ctx.strokeStyle = 'rgba(160, 140, 100, 0.2)';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 5; i++) {
-        ctx.beginPath();
-        ctx.moveTo(Math.random() * 32, 0);
-        ctx.lineTo(Math.random() * 32, 32);
-        ctx.stroke();
-    }
+  // Add darker grain lines
+  ctx.strokeStyle = 'rgba(160, 140, 100, 0.2)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 5; i++) {
+    ctx.beginPath();
+    ctx.moveTo(Math.random() * 32, 0);
+    ctx.lineTo(Math.random() * 32, 32);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate pyramid entrance texture
  */
 function generatePyramidTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 120, 120);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 120, 120);
+  const ctx = canvas.getContext();
 
-    // Dark entrance
-    const gradient = ctx.createRadialGradient(60, 80, 10, 60, 80, 40);
-    gradient.addColorStop(0, '#000000');
-    gradient.addColorStop(0.8, '#1a1a1a');
-    gradient.addColorStop(1, '#c4b490');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(20, 40, 80, 60);
+  // Dark entrance
+  const gradient = ctx.createRadialGradient(60, 80, 10, 60, 80, 40);
+  gradient.addColorStop(0, '#000000');
+  gradient.addColorStop(0.8, '#1a1a1a');
+  gradient.addColorStop(1, '#c4b490');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(20, 40, 80, 60);
 
-    // Stone blocks
-    ctx.strokeStyle = '#9a8a70';
-    ctx.lineWidth = 2;
+  // Stone blocks
+  ctx.strokeStyle = '#9a8a70';
+  ctx.lineWidth = 2;
 
-    // Horizontal lines
-    for (let y = 40; y < 100; y += 20) {
-        ctx.beginPath();
-        ctx.moveTo(20, y);
-        ctx.lineTo(100, y);
-        ctx.stroke();
-    }
+  // Horizontal lines
+  for (let y = 40; y < 100; y += 20) {
+    ctx.beginPath();
+    ctx.moveTo(20, y);
+    ctx.lineTo(100, y);
+    ctx.stroke();
+  }
 
-    // Vertical lines (irregular)
-    for (let x = 30; x < 100; x += 25) {
-        ctx.beginPath();
-        ctx.moveTo(x, 40);
-        ctx.lineTo(x, 100);
-        ctx.stroke();
-    }
+  // Vertical lines (irregular)
+  for (let x = 30; x < 100; x += 25) {
+    ctx.beginPath();
+    ctx.moveTo(x, 40);
+    ctx.lineTo(x, 100);
+    ctx.stroke();
+  }
 
-    // Add simple hieroglyphs
-    ctx.fillStyle = '#8a7a60';
-    ctx.fillRect(25, 45, 3, 10); // Vertical line
-    ctx.fillRect(35, 48, 8, 3); // Horizontal line
-    ctx.fillRect(50, 45, 5, 5); // Square
-    ctx.fillRect(60, 48, 6, 3); // Eye shape
-    ctx.fillRect(60, 51, 6, 3);
+  // Add simple hieroglyphs
+  ctx.fillStyle = '#8a7a60';
+  ctx.fillRect(25, 45, 3, 10); // Vertical line
+  ctx.fillRect(35, 48, 8, 3); // Horizontal line
+  ctx.fillRect(50, 45, 5, 5); // Square
+  ctx.fillRect(60, 48, 6, 3); // Eye shape
+  ctx.fillRect(60, 51, 6, 3);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate papyrus scroll texture
  */
 function generatePapyrusTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 24, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 24, 32);
+  const ctx = canvas.getContext();
 
-    // Papyrus color
-    ctx.fillStyle = '#e8d8b8';
-    ctx.fillRect(4, 2, 16, 28);
+  // Papyrus color
+  ctx.fillStyle = '#e8d8b8';
+  ctx.fillRect(4, 2, 16, 28);
 
-    // Rolled edges
-    ctx.fillStyle = '#d4c4a0';
-    ctx.fillRect(0, 2, 4, 28);
-    ctx.fillRect(20, 2, 4, 28);
+  // Rolled edges
+  ctx.fillStyle = '#d4c4a0';
+  ctx.fillRect(0, 2, 4, 28);
+  ctx.fillRect(20, 2, 4, 28);
 
-    // Add papyrus texture lines
-    ctx.strokeStyle = '#c4b490';
-    ctx.lineWidth = 1;
-    for (let y = 4; y < 30; y += 3) {
-        ctx.beginPath();
-        ctx.moveTo(4, y);
-        ctx.lineTo(20, y);
-        ctx.stroke();
-    }
+  // Add papyrus texture lines
+  ctx.strokeStyle = '#c4b490';
+  ctx.lineWidth = 1;
+  for (let y = 4; y < 30; y += 3) {
+    ctx.beginPath();
+    ctx.moveTo(4, y);
+    ctx.lineTo(20, y);
+    ctx.stroke();
+  }
 
-    // Add some writing marks
-    ctx.strokeStyle = '#4a3a2a';
-    ctx.lineWidth = 1;
-    for (let y = 8; y < 26; y += 4) {
-        ctx.beginPath();
-        ctx.moveTo(6, y);
-        ctx.lineTo(18, y);
-        ctx.stroke();
-    }
+  // Add some writing marks
+  ctx.strokeStyle = '#4a3a2a';
+  ctx.lineWidth = 1;
+  for (let y = 8; y < 26; y += 4) {
+    ctx.beginPath();
+    ctx.moveTo(6, y);
+    ctx.lineTo(18, y);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate pottery vessel texture
  */
 function generatePotteryTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 24, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 24, 32);
+  const ctx = canvas.getContext();
 
-    // Pot body
-    ctx.fillStyle = '#a67c52';
-    ctx.beginPath();
-    ctx.ellipse(12, 24, 10, 6, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillRect(2, 12, 20, 12);
-    ctx.beginPath();
-    ctx.ellipse(12, 12, 10, 6, 0, 0, Math.PI * 2);
-    ctx.fill();
+  // Pot body
+  ctx.fillStyle = '#a67c52';
+  ctx.beginPath();
+  ctx.ellipse(12, 24, 10, 6, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillRect(2, 12, 20, 12);
+  ctx.beginPath();
+  ctx.ellipse(12, 12, 10, 6, 0, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Pot neck
-    ctx.fillStyle = '#b68c62';
-    ctx.fillRect(8, 4, 8, 8);
+  // Pot neck
+  ctx.fillStyle = '#b68c62';
+  ctx.fillRect(8, 4, 8, 8);
 
-    // Pot rim
-    ctx.fillStyle = '#c49c72';
-    ctx.beginPath();
-    ctx.ellipse(12, 4, 5, 3, 0, 0, Math.PI * 2);
-    ctx.fill();
+  // Pot rim
+  ctx.fillStyle = '#c49c72';
+  ctx.beginPath();
+  ctx.ellipse(12, 4, 5, 3, 0, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Decorative pattern
-    ctx.strokeStyle = '#4a3a2a';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(4, 16);
-    ctx.lineTo(20, 16);
-    ctx.stroke();
+  // Decorative pattern
+  ctx.strokeStyle = '#4a3a2a';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(4, 16);
+  ctx.lineTo(20, 16);
+  ctx.stroke();
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== INDUSTRIAL REVOLUTION ERA TEXTURES =====
@@ -2624,155 +2698,155 @@ function generatePotteryTexture(scene, key) {
  * Generate brick pavement texture
  */
 function generateBrickTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Base brick color
-    ctx.fillStyle = '#7a4a3a';
-    ctx.fillRect(0, 0, 32, 32);
+  // Base brick color
+  ctx.fillStyle = '#7a4a3a';
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Individual bricks with mortar
-    const brickWidth = 15;
-    const brickHeight = 7;
-    const mortarSize = 1;
+  // Individual bricks with mortar
+  const brickWidth = 15;
+  const brickHeight = 7;
+  const mortarSize = 1;
 
-    for (let y = 0; y < 32; y += brickHeight + mortarSize) {
-        const offset = (Math.floor(y / (brickHeight + mortarSize)) % 2) * (brickWidth / 2);
-        for (let x = -brickWidth; x < 32; x += brickWidth + mortarSize) {
-            // Brick color variation
-            const shade = Math.random() * 20 - 10;
-            const r = Math.min(255, Math.max(0, 122 + shade));
-            const g = Math.min(255, Math.max(0, 74 + shade));
-            const b = Math.min(255, Math.max(0, 58 + shade));
-            ctx.fillStyle = `rgb(${r},${g},${b})`;
-            ctx.fillRect(x + offset, y, brickWidth, brickHeight);
-        }
+  for (let y = 0; y < 32; y += brickHeight + mortarSize) {
+    const offset = (Math.floor(y / (brickHeight + mortarSize)) % 2) * (brickWidth / 2);
+    for (let x = -brickWidth; x < 32; x += brickWidth + mortarSize) {
+      // Brick color variation
+      const shade = Math.random() * 20 - 10;
+      const r = Math.min(255, Math.max(0, 122 + shade));
+      const g = Math.min(255, Math.max(0, 74 + shade));
+      const b = Math.min(255, Math.max(0, 58 + shade));
+      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      ctx.fillRect(x + offset, y, brickWidth, brickHeight);
     }
+  }
 
-    // Mortar lines
-    ctx.fillStyle = '#5a4a4a';
-    for (let y = brickHeight; y < 32; y += brickHeight + mortarSize) {
-        ctx.fillRect(0, y, 32, mortarSize);
-    }
+  // Mortar lines
+  ctx.fillStyle = '#5a4a4a';
+  for (let y = brickHeight; y < 32; y += brickHeight + mortarSize) {
+    ctx.fillRect(0, y, 32, mortarSize);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate steam engine texture
  */
 function generateSteamEngineTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 64, 64);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 64, 64);
+  const ctx = canvas.getContext();
 
-    // Engine body
-    ctx.fillStyle = '#4a4a4a';
-    ctx.fillRect(12, 20, 40, 30);
+  // Engine body
+  ctx.fillStyle = '#4a4a4a';
+  ctx.fillRect(12, 20, 40, 30);
 
-    // Boiler (cylinder)
-    ctx.fillStyle = '#5a5a5a';
+  // Boiler (cylinder)
+  ctx.fillStyle = '#5a5a5a';
+  ctx.beginPath();
+  ctx.arc(32, 32, 15, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Piston
+  ctx.fillStyle = '#6a6a6a';
+  ctx.fillRect(45, 28, 12, 8);
+
+  // Pipes
+  ctx.strokeStyle = '#3a3a3a';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(32, 17);
+  ctx.lineTo(32, 8);
+  ctx.stroke();
+
+  // Wheels/gears
+  ctx.strokeStyle = '#7a7a7a';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(20, 50, 8, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(44, 50, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Spokes
+  ctx.strokeStyle = '#6a6a6a';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 4; i++) {
+    const angle = (i * Math.PI) / 2;
     ctx.beginPath();
-    ctx.arc(32, 32, 15, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Piston
-    ctx.fillStyle = '#6a6a6a';
-    ctx.fillRect(45, 28, 12, 8);
-
-    // Pipes
-    ctx.strokeStyle = '#3a3a3a';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(32, 17);
-    ctx.lineTo(32, 8);
+    ctx.moveTo(20, 50);
+    ctx.lineTo(20 + Math.cos(angle) * 6, 50 + Math.sin(angle) * 6);
     ctx.stroke();
+  }
 
-    // Wheels/gears
-    ctx.strokeStyle = '#7a7a7a';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(20, 50, 8, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(44, 50, 8, 0, Math.PI * 2);
-    ctx.stroke();
-
-    // Spokes
-    ctx.strokeStyle = '#6a6a6a';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 4; i++) {
-        const angle = (i * Math.PI) / 2;
-        ctx.beginPath();
-        ctx.moveTo(20, 50);
-        ctx.lineTo(20 + Math.cos(angle) * 6, 50 + Math.sin(angle) * 6);
-        ctx.stroke();
-    }
-
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate factory smokestack texture
  */
 function generateSmokestackTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 64);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 64);
+  const ctx = canvas.getContext();
 
-    // Stack body
-    const gradient = ctx.createLinearGradient(0, 0, 32, 0);
-    gradient.addColorStop(0, '#5a4a4a');
-    gradient.addColorStop(0.5, '#6a5a5a');
-    gradient.addColorStop(1, '#5a4a4a');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(8, 10, 16, 54);
+  // Stack body
+  const gradient = ctx.createLinearGradient(0, 0, 32, 0);
+  gradient.addColorStop(0, '#5a4a4a');
+  gradient.addColorStop(0.5, '#6a5a5a');
+  gradient.addColorStop(1, '#5a4a4a');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(8, 10, 16, 54);
 
-    // Top rim
-    ctx.fillStyle = '#4a3a3a';
-    ctx.fillRect(6, 8, 20, 4);
+  // Top rim
+  ctx.fillStyle = '#4a3a3a';
+  ctx.fillRect(6, 8, 20, 4);
 
-    // Brick lines
-    ctx.strokeStyle = '#4a3a3a';
-    ctx.lineWidth = 1;
-    for (let y = 15; y < 60; y += 8) {
-        ctx.beginPath();
-        ctx.moveTo(8, y);
-        ctx.lineTo(24, y);
-        ctx.stroke();
-    }
+  // Brick lines
+  ctx.strokeStyle = '#4a3a3a';
+  ctx.lineWidth = 1;
+  for (let y = 15; y < 60; y += 8) {
+    ctx.beginPath();
+    ctx.moveTo(8, y);
+    ctx.lineTo(24, y);
+    ctx.stroke();
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate gear/cog texture
  */
 function generateGearTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Gear body
-    ctx.fillStyle = '#6a6a6a';
-    ctx.beginPath();
-    ctx.arc(16, 16, 12, 0, Math.PI * 2);
-    ctx.fill();
+  // Gear body
+  ctx.fillStyle = '#6a6a6a';
+  ctx.beginPath();
+  ctx.arc(16, 16, 12, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Teeth
-    ctx.fillStyle = '#7a7a7a';
-    const teeth = 8;
-    for (let i = 0; i < teeth; i++) {
-        const angle = (i * Math.PI * 2) / teeth;
-        const x = 16 + Math.cos(angle) * 10;
-        const y = 16 + Math.sin(angle) * 10;
-        ctx.fillRect(x - 2, y - 2, 4, 4);
-    }
+  // Teeth
+  ctx.fillStyle = '#7a7a7a';
+  const teeth = 8;
+  for (let i = 0; i < teeth; i++) {
+    const angle = (i * Math.PI * 2) / teeth;
+    const x = 16 + Math.cos(angle) * 10;
+    const y = 16 + Math.sin(angle) * 10;
+    ctx.fillRect(x - 2, y - 2, 4, 4);
+  }
 
-    // Center hole
-    ctx.fillStyle = '#2a2a2a';
-    ctx.beginPath();
-    ctx.arc(16, 16, 4, 0, Math.PI * 2);
-    ctx.fill();
+  // Center hole
+  ctx.fillStyle = '#2a2a2a';
+  ctx.beginPath();
+  ctx.arc(16, 16, 4, 0, Math.PI * 2);
+  ctx.fill();
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== MODERN/DIGITAL AGE ERA TEXTURES =====
@@ -2781,146 +2855,146 @@ function generateGearTexture(scene, key) {
  * Generate modern floor tile texture
  */
 function generateModernFloorTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Clean white/gray tile
-    ctx.fillStyle = '#e8e8e8';
-    ctx.fillRect(0, 0, 32, 32);
+  // Clean white/gray tile
+  ctx.fillStyle = '#e8e8e8';
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Tile border (grout line)
-    ctx.strokeStyle = '#d0d0d0';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(0, 0, 32, 32);
+  // Tile border (grout line)
+  ctx.strokeStyle = '#d0d0d0';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0, 0, 32, 32);
 
-    // Subtle texture
-    for (let i = 0; i < 10; i++) {
-        const x = Math.floor(Math.random() * 32);
-        const y = Math.floor(Math.random() * 32);
-        ctx.fillStyle = `rgba(200, 200, 200, ${Math.random() * 0.1})`;
-        ctx.fillRect(x, y, 2, 2);
-    }
+  // Subtle texture
+  for (let i = 0; i < 10; i++) {
+    const x = Math.floor(Math.random() * 32);
+    const y = Math.floor(Math.random() * 32);
+    ctx.fillStyle = `rgba(200, 200, 200, ${Math.random() * 0.1})`;
+    ctx.fillRect(x, y, 2, 2);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate computer monitor texture
  */
 function generateComputerTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 48, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 48, 40);
+  const ctx = canvas.getContext();
 
-    // Monitor frame
-    ctx.fillStyle = '#2a2a2a';
-    ctx.fillRect(0, 0, 48, 40);
+  // Monitor frame
+  ctx.fillStyle = '#2a2a2a';
+  ctx.fillRect(0, 0, 48, 40);
 
-    // Screen (blue glow)
-    const gradient = ctx.createRadialGradient(24, 20, 5, 24, 20, 18);
-    gradient.addColorStop(0, '#4a6a8a');
-    gradient.addColorStop(1, '#2a4a6a');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(4, 4, 40, 28);
+  // Screen (blue glow)
+  const gradient = ctx.createRadialGradient(24, 20, 5, 24, 20, 18);
+  gradient.addColorStop(0, '#4a6a8a');
+  gradient.addColorStop(1, '#2a4a6a');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(4, 4, 40, 28);
 
-    // Screen reflection
-    ctx.fillStyle = 'rgba(200, 220, 255, 0.1)';
-    ctx.fillRect(6, 6, 15, 10);
+  // Screen reflection
+  ctx.fillStyle = 'rgba(200, 220, 255, 0.1)';
+  ctx.fillRect(6, 6, 15, 10);
 
-    // Base stand
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(18, 32, 12, 8);
+  // Base stand
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(18, 32, 12, 8);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate server rack texture
  */
 function generateServerTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 40, 64);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 40, 64);
+  const ctx = canvas.getContext();
 
-    // Rack frame
-    ctx.fillStyle = '#1a1a1a';
-    ctx.fillRect(0, 0, 40, 64);
+  // Rack frame
+  ctx.fillStyle = '#1a1a1a';
+  ctx.fillRect(0, 0, 40, 64);
 
-    // Server units (horizontal sections)
-    for (let y = 4; y < 60; y += 12) {
-        // Unit body
-        ctx.fillStyle = '#2a2a2a';
-        ctx.fillRect(2, y, 36, 10);
+  // Server units (horizontal sections)
+  for (let y = 4; y < 60; y += 12) {
+    // Unit body
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(2, y, 36, 10);
 
-        // LED indicators
-        const colors = ['#00ff00', '#ffaa00', '#0080ff'];
-        for (let i = 0; i < 3; i++) {
-            ctx.fillStyle = colors[i];
-            ctx.fillRect(4 + i * 4, y + 3, 2, 2);
-        }
-
-        // Vents
-        ctx.strokeStyle = '#1a1a1a';
-        ctx.lineWidth = 1;
-        for (let x = 18; x < 36; x += 3) {
-            ctx.beginPath();
-            ctx.moveTo(x, y + 2);
-            ctx.lineTo(x, y + 8);
-            ctx.stroke();
-        }
+    // LED indicators
+    const colors = ['#00ff00', '#ffaa00', '#0080ff'];
+    for (let i = 0; i < 3; i++) {
+      ctx.fillStyle = colors[i];
+      ctx.fillRect(4 + i * 4, y + 3, 2, 2);
     }
 
-    canvas.refresh();
+    // Vents
+    ctx.strokeStyle = '#1a1a1a';
+    ctx.lineWidth = 1;
+    for (let x = 18; x < 36; x += 3) {
+      ctx.beginPath();
+      ctx.moveTo(x, y + 2);
+      ctx.lineTo(x, y + 8);
+      ctx.stroke();
+    }
+  }
+
+  canvas.refresh();
 }
 
 /**
  * Generate circuit board texture
  */
 function generateCircuitBoardTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Board base (green)
-    ctx.fillStyle = '#2a5a3a';
-    ctx.fillRect(0, 0, 32, 32);
+  // Board base (green)
+  ctx.fillStyle = '#2a5a3a';
+  ctx.fillRect(0, 0, 32, 32);
 
-    // Circuit traces (copper)
-    ctx.strokeStyle = '#d4a832';
-    ctx.lineWidth = 2;
+  // Circuit traces (copper)
+  ctx.strokeStyle = '#d4a832';
+  ctx.lineWidth = 2;
 
-    // Horizontal traces
-    ctx.beginPath();
-    ctx.moveTo(0, 8);
-    ctx.lineTo(32, 8);
-    ctx.moveTo(0, 16);
-    ctx.lineTo(32, 16);
-    ctx.moveTo(0, 24);
-    ctx.lineTo(32, 24);
-    ctx.stroke();
+  // Horizontal traces
+  ctx.beginPath();
+  ctx.moveTo(0, 8);
+  ctx.lineTo(32, 8);
+  ctx.moveTo(0, 16);
+  ctx.lineTo(32, 16);
+  ctx.moveTo(0, 24);
+  ctx.lineTo(32, 24);
+  ctx.stroke();
 
-    // Vertical traces
-    ctx.beginPath();
-    ctx.moveTo(10, 0);
-    ctx.lineTo(10, 32);
-    ctx.moveTo(22, 0);
-    ctx.lineTo(22, 32);
-    ctx.stroke();
+  // Vertical traces
+  ctx.beginPath();
+  ctx.moveTo(10, 0);
+  ctx.lineTo(10, 32);
+  ctx.moveTo(22, 0);
+  ctx.lineTo(22, 32);
+  ctx.stroke();
 
-    // Components (chips/resistors)
-    ctx.fillStyle = '#1a1a1a';
-    ctx.fillRect(4, 4, 6, 6);
-    ctx.fillRect(14, 12, 4, 4);
-    ctx.fillRect(24, 20, 6, 6);
+  // Components (chips/resistors)
+  ctx.fillStyle = '#1a1a1a';
+  ctx.fillRect(4, 4, 6, 6);
+  ctx.fillRect(14, 12, 4, 4);
+  ctx.fillRect(24, 20, 6, 6);
 
-    // Solder points
-    ctx.fillStyle = '#c0c0c0';
-    for (let x = 6; x < 30; x += 8) {
-        for (let y = 6; y < 30; y += 8) {
-            ctx.beginPath();
-            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-            ctx.fill();
-        }
+  // Solder points
+  ctx.fillStyle = '#c0c0c0';
+  for (let x = 6; x < 30; x += 8) {
+    for (let y = 6; y < 30; y += 8) {
+      ctx.beginPath();
+      ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+      ctx.fill();
     }
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== INTERACTIVE OBJECT TEXTURES =====
@@ -2929,830 +3003,828 @@ function generateCircuitBoardTexture(scene, key) {
  * Generate wooden sign post with placard
  */
 function generateSignPostTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 48);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 48);
+  const ctx = canvas.getContext();
 
-    // Wooden post
-    ctx.fillStyle = '#5a3a1a';
-    ctx.fillRect(14, 16, 4, 32);
+  // Wooden post
+  ctx.fillStyle = '#5a3a1a';
+  ctx.fillRect(14, 16, 4, 32);
 
-    // Placard (hanging sign)
-    ctx.fillStyle = '#8a6a4a';
-    ctx.fillRect(6, 12, 20, 16);
+  // Placard (hanging sign)
+  ctx.fillStyle = '#8a6a4a';
+  ctx.fillRect(6, 12, 20, 16);
 
-    // Placard border
-    ctx.strokeStyle = '#4a2a0a';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(6, 12, 20, 16);
+  // Placard border
+  ctx.strokeStyle = '#4a2a0a';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(6, 12, 20, 16);
 
-    // Wheat icon on placard
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(15, 16, 2, 6);
-    ctx.fillRect(13, 16, 2, 4);
-    ctx.fillRect(17, 16, 2, 4);
+  // Wheat icon on placard
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(15, 16, 2, 6);
+  ctx.fillRect(13, 16, 2, 4);
+  ctx.fillRect(17, 16, 2, 4);
 
-    // Post texture
-    for (let i = 0; i < 5; i++) {
-        ctx.fillStyle = 'rgba(70, 40, 20, 0.2)';
-        ctx.fillRect(14, 20 + i * 5, 4, 1);
-    }
+  // Post texture
+  for (let i = 0; i < 5; i++) {
+    ctx.fillStyle = 'rgba(70, 40, 20, 0.2)';
+    ctx.fillRect(14, 20 + i * 5, 4, 1);
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate milestone marker stone
  */
 function generateMilestoneTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 32);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 32);
+  const ctx = canvas.getContext();
 
-    // Stone base (gray)
-    ctx.fillStyle = '#6a6a64';
-    ctx.beginPath();
-    ctx.moveTo(16, 8);
-    ctx.lineTo(24, 16);
-    ctx.lineTo(22, 28);
-    ctx.lineTo(10, 28);
-    ctx.lineTo(8, 16);
-    ctx.closePath();
-    ctx.fill();
+  // Stone base (gray)
+  ctx.fillStyle = '#6a6a64';
+  ctx.beginPath();
+  ctx.moveTo(16, 8);
+  ctx.lineTo(24, 16);
+  ctx.lineTo(22, 28);
+  ctx.lineTo(10, 28);
+  ctx.lineTo(8, 16);
+  ctx.closePath();
+  ctx.fill();
 
-    // Stone highlights
-    ctx.fillStyle = '#8a8a84';
-    ctx.fillRect(12, 12, 8, 4);
+  // Stone highlights
+  ctx.fillStyle = '#8a8a84';
+  ctx.fillRect(12, 12, 8, 4);
 
-    // Stone cracks
-    ctx.strokeStyle = '#4a4a44';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(16, 10);
-    ctx.lineTo(14, 18);
-    ctx.stroke();
+  // Stone cracks
+  ctx.strokeStyle = '#4a4a44';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(16, 10);
+  ctx.lineTo(14, 18);
+  ctx.stroke();
 
-    // Roman numeral
-    ctx.fillStyle = '#3a3a3a';
-    ctx.font = 'bold 12px serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('I', 16, 22);
+  // Roman numeral
+  ctx.fillStyle = '#3a3a3a';
+  ctx.font = 'bold 12px serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('I', 16, 22);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate hanging banner/flag
  */
 function generateBannerTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 24, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 24, 40);
+  const ctx = canvas.getContext();
 
-    // Pole
-    ctx.fillStyle = '#4a3a2a';
-    ctx.fillRect(10, 0, 4, 40);
+  // Pole
+  ctx.fillStyle = '#4a3a2a';
+  ctx.fillRect(10, 0, 4, 40);
 
-    // Banner fabric (red)
-    ctx.fillStyle = '#8a2a2a';
-    ctx.fillRect(14, 4, 10, 24);
+  // Banner fabric (red)
+  ctx.fillStyle = '#8a2a2a';
+  ctx.fillRect(14, 4, 10, 24);
 
-    // Banner pattern (golden stripe)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(14, 12, 10, 4);
+  // Banner pattern (golden stripe)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(14, 12, 10, 4);
 
-    // Banner shadow/fold
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
-    ctx.fillRect(20, 4, 4, 24);
+  // Banner shadow/fold
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+  ctx.fillRect(20, 4, 4, 24);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate market stall/cart
  */
 function generateMarketStallTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 48, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 48, 40);
+  const ctx = canvas.getContext();
 
-    // Cart bed (brown wood)
-    ctx.fillStyle = '#5a3a1a';
-    ctx.fillRect(8, 20, 32, 12);
+  // Cart bed (brown wood)
+  ctx.fillStyle = '#5a3a1a';
+  ctx.fillRect(8, 20, 32, 12);
 
-    // Cart sides
-    ctx.fillStyle = '#4a2a0a';
-    ctx.fillRect(8, 20, 2, 12);
-    ctx.fillRect(38, 20, 2, 12);
+  // Cart sides
+  ctx.fillStyle = '#4a2a0a';
+  ctx.fillRect(8, 20, 2, 12);
+  ctx.fillRect(38, 20, 2, 12);
 
-    // Canopy (striped)
-    ctx.fillStyle = '#6a4a8a';
-    ctx.beginPath();
-    ctx.moveTo(4, 12);
-    ctx.lineTo(24, 4);
-    ctx.lineTo(44, 12);
-    ctx.lineTo(40, 20);
-    ctx.lineTo(8, 20);
-    ctx.closePath();
-    ctx.fill();
+  // Canopy (striped)
+  ctx.fillStyle = '#6a4a8a';
+  ctx.beginPath();
+  ctx.moveTo(4, 12);
+  ctx.lineTo(24, 4);
+  ctx.lineTo(44, 12);
+  ctx.lineTo(40, 20);
+  ctx.lineTo(8, 20);
+  ctx.closePath();
+  ctx.fill();
 
-    // Canopy stripes
-    ctx.fillStyle = '#f3f4f6';
-    for (let i = 0; i < 3; i++) {
-        ctx.fillRect(12 + i * 8, 12, 4, 8);
-    }
+  // Canopy stripes
+  ctx.fillStyle = '#f3f4f6';
+  for (let i = 0; i < 3; i++) {
+    ctx.fillRect(12 + i * 8, 12, 4, 8);
+  }
 
-    // Wheels
-    ctx.fillStyle = '#3a2a1a';
-    ctx.beginPath();
-    ctx.arc(14, 34, 5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(34, 34, 5, 0, Math.PI * 2);
-    ctx.fill();
+  // Wheels
+  ctx.fillStyle = '#3a2a1a';
+  ctx.beginPath();
+  ctx.arc(14, 34, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(34, 34, 5, 0, Math.PI * 2);
+  ctx.fill();
 
-    // Wheel spokes
-    ctx.strokeStyle = '#2a1a0a';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(14, 29);
-    ctx.lineTo(14, 39);
-    ctx.moveTo(9, 34);
-    ctx.lineTo(19, 34);
-    ctx.stroke();
+  // Wheel spokes
+  ctx.strokeStyle = '#2a1a0a';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(14, 29);
+  ctx.lineTo(14, 39);
+  ctx.moveTo(9, 34);
+  ctx.lineTo(19, 34);
+  ctx.stroke();
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate guild sign (hanging shop sign)
  */
 function generateGuildSignTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 40);
+  const ctx = canvas.getContext();
 
-    // Mounting arm
-    ctx.fillStyle = '#3a3a3a';
-    ctx.fillRect(4, 4, 12, 2);
-    ctx.fillRect(14, 2, 2, 8);
+  // Mounting arm
+  ctx.fillStyle = '#3a3a3a';
+  ctx.fillRect(4, 4, 12, 2);
+  ctx.fillRect(14, 2, 2, 8);
 
-    // Hanging chain
-    ctx.strokeStyle = '#3a3a3a';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(8, 6);
-    ctx.lineTo(8, 12);
-    ctx.moveTo(12, 6);
-    ctx.lineTo(12, 12);
-    ctx.stroke();
+  // Hanging chain
+  ctx.strokeStyle = '#3a3a3a';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(8, 6);
+  ctx.lineTo(8, 12);
+  ctx.moveTo(12, 6);
+  ctx.lineTo(12, 12);
+  ctx.stroke();
 
-    // Sign board (wooden)
-    ctx.fillStyle = '#6a3a1a';
-    ctx.fillRect(2, 12, 28, 20);
+  // Sign board (wooden)
+  ctx.fillStyle = '#6a3a1a';
+  ctx.fillRect(2, 12, 28, 20);
 
-    // Sign border (metal)
-    ctx.strokeStyle = '#4a4a44';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(2, 12, 28, 20);
+  // Sign border (metal)
+  ctx.strokeStyle = '#4a4a44';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(2, 12, 28, 20);
 
-    // Guild symbol (hammer and tongs)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(14, 16, 4, 12); // Hammer handle
-    ctx.fillRect(12, 16, 8, 4); // Hammer head
+  // Guild symbol (hammer and tongs)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(14, 16, 4, 12); // Hammer handle
+  ctx.fillRect(12, 16, 8, 4); // Hammer head
 
-    ctx.fillRect(22, 18, 2, 8); // Tongs
-    ctx.fillRect(20, 18, 6, 2);
+  ctx.fillRect(22, 18, 2, 8); // Tongs
+  ctx.fillRect(20, 18, 6, 2);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate coat of arms/heraldic shield
  */
 function generateCoatOfArmsTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 32, 40);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 32, 40);
+  const ctx = canvas.getContext();
 
-    // Shield shape (blue)
-    ctx.fillStyle = '#2a4a8a';
-    ctx.beginPath();
-    ctx.moveTo(16, 4);
-    ctx.lineTo(28, 8);
-    ctx.lineTo(28, 24);
-    ctx.lineTo(16, 36);
-    ctx.lineTo(4, 24);
-    ctx.lineTo(4, 8);
-    ctx.closePath();
-    ctx.fill();
+  // Shield shape (blue)
+  ctx.fillStyle = '#2a4a8a';
+  ctx.beginPath();
+  ctx.moveTo(16, 4);
+  ctx.lineTo(28, 8);
+  ctx.lineTo(28, 24);
+  ctx.lineTo(16, 36);
+  ctx.lineTo(4, 24);
+  ctx.lineTo(4, 8);
+  ctx.closePath();
+  ctx.fill();
 
-    // Shield border (gold)
-    ctx.strokeStyle = '#d4a832';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(16, 4);
-    ctx.lineTo(28, 8);
-    ctx.lineTo(28, 24);
-    ctx.lineTo(16, 36);
-    ctx.lineTo(4, 24);
-    ctx.lineTo(4, 8);
-    ctx.closePath();
-    ctx.stroke();
+  // Shield border (gold)
+  ctx.strokeStyle = '#d4a832';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(16, 4);
+  ctx.lineTo(28, 8);
+  ctx.lineTo(28, 24);
+  ctx.lineTo(16, 36);
+  ctx.lineTo(4, 24);
+  ctx.lineTo(4, 8);
+  ctx.closePath();
+  ctx.stroke();
 
-    // Heraldic cross (gold)
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(14, 12, 4, 16);
-    ctx.fillRect(10, 18, 12, 4);
+  // Heraldic cross (gold)
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(14, 12, 4, 16);
+  ctx.fillRect(10, 18, 12, 4);
 
-    // Crown at top
-    ctx.fillStyle = '#d4a832';
-    ctx.fillRect(12, 10, 8, 3);
-    ctx.fillRect(13, 7, 2, 3);
-    ctx.fillRect(17, 7, 2, 3);
+  // Crown at top
+  ctx.fillStyle = '#d4a832';
+  ctx.fillRect(12, 10, 8, 3);
+  ctx.fillRect(13, 7, 2, 3);
+  ctx.fillRect(17, 7, 2, 3);
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate telescope on stand
  */
 function generateTelescopeTexture(scene, key) {
-    const canvas = scene.textures.createCanvas(key, 48, 56);
-    const ctx = canvas.getContext();
+  const canvas = scene.textures.createCanvas(key, 48, 56);
+  const ctx = canvas.getContext();
 
-    // Tripod legs (wooden)
-    ctx.strokeStyle = '#5a3a1a';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(10, 56);
-    ctx.lineTo(20, 28);
-    ctx.moveTo(38, 56);
-    ctx.lineTo(28, 28);
-    ctx.moveTo(24, 56);
-    ctx.lineTo(24, 28);
-    ctx.stroke();
+  // Tripod legs (wooden)
+  ctx.strokeStyle = '#5a3a1a';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(10, 56);
+  ctx.lineTo(20, 28);
+  ctx.moveTo(38, 56);
+  ctx.lineTo(28, 28);
+  ctx.moveTo(24, 56);
+  ctx.lineTo(24, 28);
+  ctx.stroke();
 
-    // Center mount
-    ctx.fillStyle = '#4a4a44';
-    ctx.fillRect(22, 24, 4, 8);
+  // Center mount
+  ctx.fillStyle = '#4a4a44';
+  ctx.fillRect(22, 24, 4, 8);
 
-    // Telescope tube (brass)
-    ctx.fillStyle = '#8a6a4a';
-    ctx.save();
-    ctx.translate(24, 24);
-    ctx.rotate(-Math.PI / 6); // Angle upward
-    ctx.fillRect(-3, -20, 6, 24);
+  // Telescope tube (brass)
+  ctx.fillStyle = '#8a6a4a';
+  ctx.save();
+  ctx.translate(24, 24);
+  ctx.rotate(-Math.PI / 6); // Angle upward
+  ctx.fillRect(-3, -20, 6, 24);
 
-    // Telescope lens end (darker)
-    ctx.fillStyle = '#4a3a2a';
-    ctx.fillRect(-4, -22, 8, 3);
+  // Telescope lens end (darker)
+  ctx.fillStyle = '#4a3a2a';
+  ctx.fillRect(-4, -22, 8, 3);
 
-    // Lens (glass)
-    ctx.fillStyle = '#a8c8d8';
-    ctx.fillRect(-2, -21, 4, 1);
+  // Lens (glass)
+  ctx.fillStyle = '#a8c8d8';
+  ctx.fillRect(-2, -21, 4, 1);
 
-    ctx.restore();
+  ctx.restore();
 
-    // Brass bands on telescope
-    ctx.fillStyle = '#d4a832';
-    ctx.save();
-    ctx.translate(24, 24);
-    ctx.rotate(-Math.PI / 6);
-    ctx.fillRect(-3, -12, 6, 1);
-    ctx.fillRect(-3, -4, 6, 1);
-    ctx.restore();
+  // Brass bands on telescope
+  ctx.fillStyle = '#d4a832';
+  ctx.save();
+  ctx.translate(24, 24);
+  ctx.rotate(-Math.PI / 6);
+  ctx.fillRect(-3, -12, 6, 1);
+  ctx.fillRect(-3, -4, 6, 1);
+  ctx.restore();
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 /**
  * Generate small walking character sprite for timeline
  */
 function generateWalkingSpriteTexture(scene, key) {
-    const frameWidth = 16;
-    const frameHeight = 16;
-    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
-    const ctx = canvas.getContext();
+  const frameWidth = 16;
+  const frameHeight = 16;
+  const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+  const ctx = canvas.getContext();
 
-    // Simple stick figure walking animation (4 frames)
-    for (let frame = 0; frame < 4; frame++) {
-        const offsetX = frame * frameWidth;
-        const centerX = offsetX + 8;
-        const baseY = 14;
+  // Simple stick figure walking animation (4 frames)
+  for (let frame = 0; frame < 4; frame++) {
+    const offsetX = frame * frameWidth;
+    const centerX = offsetX + 8;
+    const baseY = 14;
 
-        // Head
-        ctx.fillStyle = '#d4a88a';
-        ctx.beginPath();
-        ctx.arc(centerX, baseY - 10, 2, 0, Math.PI * 2);
-        ctx.fill();
+    // Head
+    ctx.fillStyle = '#d4a88a';
+    ctx.beginPath();
+    ctx.arc(centerX, baseY - 10, 2, 0, Math.PI * 2);
+    ctx.fill();
 
-        // Body
-        ctx.strokeStyle = '#5C9EAD';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(centerX, baseY - 8);
-        ctx.lineTo(centerX, baseY - 2);
-        ctx.stroke();
+    // Body
+    ctx.strokeStyle = '#5C9EAD';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(centerX, baseY - 8);
+    ctx.lineTo(centerX, baseY - 2);
+    ctx.stroke();
 
-        // Legs (alternating for walking animation)
-        if (frame % 2 === 0) {
-            // Left leg forward
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 2);
-            ctx.lineTo(centerX - 2, baseY + 2);
-            ctx.stroke();
-            // Right leg back
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 2);
-            ctx.lineTo(centerX + 2, baseY);
-            ctx.stroke();
-        } else {
-            // Right leg forward
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 2);
-            ctx.lineTo(centerX + 2, baseY + 2);
-            ctx.stroke();
-            // Left leg back
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 2);
-            ctx.lineTo(centerX - 2, baseY);
-            ctx.stroke();
-        }
-
-        // Arms (alternating opposite to legs)
-        ctx.lineWidth = 1;
-        if (frame % 2 === 0) {
-            // Left arm back
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 6);
-            ctx.lineTo(centerX - 2, baseY - 4);
-            ctx.stroke();
-            // Right arm forward
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 6);
-            ctx.lineTo(centerX + 2, baseY - 8);
-            ctx.stroke();
-        } else {
-            // Right arm back
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 6);
-            ctx.lineTo(centerX + 2, baseY - 4);
-            ctx.stroke();
-            // Left arm forward
-            ctx.beginPath();
-            ctx.moveTo(centerX, baseY - 6);
-            ctx.lineTo(centerX - 2, baseY - 8);
-            ctx.stroke();
-        }
+    // Legs (alternating for walking animation)
+    if (frame % 2 === 0) {
+      // Left leg forward
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 2);
+      ctx.lineTo(centerX - 2, baseY + 2);
+      ctx.stroke();
+      // Right leg back
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 2);
+      ctx.lineTo(centerX + 2, baseY);
+      ctx.stroke();
+    } else {
+      // Right leg forward
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 2);
+      ctx.lineTo(centerX + 2, baseY + 2);
+      ctx.stroke();
+      // Left leg back
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 2);
+      ctx.lineTo(centerX - 2, baseY);
+      ctx.stroke();
     }
 
-    canvas.refresh();
+    // Arms (alternating opposite to legs)
+    ctx.lineWidth = 1;
+    if (frame % 2 === 0) {
+      // Left arm back
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 6);
+      ctx.lineTo(centerX - 2, baseY - 4);
+      ctx.stroke();
+      // Right arm forward
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 6);
+      ctx.lineTo(centerX + 2, baseY - 8);
+      ctx.stroke();
+    } else {
+      // Right arm back
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 6);
+      ctx.lineTo(centerX + 2, baseY - 4);
+      ctx.stroke();
+      // Left arm forward
+      ctx.beginPath();
+      ctx.moveTo(centerX, baseY - 6);
+      ctx.lineTo(centerX - 2, baseY - 8);
+      ctx.stroke();
+    }
+  }
+
+  canvas.refresh();
 }
 
 /**
  * Generate Renaissance NPC sprite sheet (artists, scholars, inventors)
  */
 function generateRenaissanceNPCTexture(scene, key, activity) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+  const ctx = canvas.getContext();
 
-    const skin = '#d4a88a';
-    const hairColors = {
-        'artist': '#4a3a2a',
-        'scholar': '#6a6a6a',
-        'inventor': '#8a6a4a'
-    };
-    const clothingColors = {
-        'artist': '#6a4a8a', // Purple (artist's smock)
-        'scholar': '#2a2a4a', // Dark blue (scholar's robe)
-        'inventor': '#6a5a3a' // Brown (inventor's tunic)
-    };
+  const skin = '#d4a88a';
+  const hairColors = {
+    artist: '#4a3a2a',
+    scholar: '#6a6a6a',
+    inventor: '#8a6a4a',
+  };
+  const clothingColors = {
+    artist: '#6a4a8a', // Purple (artist's smock)
+    scholar: '#2a2a4a', // Dark blue (scholar's robe)
+    inventor: '#6a5a3a', // Brown (inventor's tunic)
+  };
 
-    const hair = hairColors[activity] || '#4a3a2a';
-    const clothing = clothingColors[activity] || '#6a4a8a';
+  const hair = hairColors[activity] || '#4a3a2a';
+  const clothing = clothingColors[activity] || '#6a4a8a';
 
-    // Helper function to draw basic Renaissance person body
-    function drawRenaissanceBody(offsetX, offsetY) {
-        const centerX = offsetX + frameWidth / 2;
-        const baseY = offsetY + frameHeight - 8;
+  // Helper function to draw basic Renaissance person body
+  function drawRenaissanceBody(offsetX, offsetY) {
+    const centerX = offsetX + frameWidth / 2;
+    const baseY = offsetY + frameHeight - 8;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
 
-        // Hair (Renaissance style - shoulder length)
-        ctx.fillStyle = hair;
-        ctx.fillRect(centerX - 5, baseY - 34, 10, 4); // Top
-        ctx.fillRect(centerX - 5, baseY - 30, 2, 6); // Left side
-        ctx.fillRect(centerX + 3, baseY - 30, 2, 6); // Right side
+    // Hair (Renaissance style - shoulder length)
+    ctx.fillStyle = hair;
+    ctx.fillRect(centerX - 5, baseY - 34, 10, 4); // Top
+    ctx.fillRect(centerX - 5, baseY - 30, 2, 6); // Left side
+    ctx.fillRect(centerX + 3, baseY - 30, 2, 6); // Right side
 
-        // Body (Renaissance tunic/robe)
-        ctx.fillStyle = clothing;
-        ctx.fillRect(centerX - 6, baseY - 24, 12, 16); // Torso
+    // Body (Renaissance tunic/robe)
+    ctx.fillStyle = clothing;
+    ctx.fillRect(centerX - 6, baseY - 24, 12, 16); // Torso
 
-        // Legs (pants/leggings)
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(centerX - 5, baseY - 8, 4, 8); // Left leg
-        ctx.fillRect(centerX + 1, baseY - 8, 4, 8); // Right leg
+    // Legs (pants/leggings)
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(centerX - 5, baseY - 8, 4, 8); // Left leg
+    ctx.fillRect(centerX + 1, baseY - 8, 4, 8); // Right leg
 
-        // Shoes
-        ctx.fillStyle = '#2a1a0a';
-        ctx.fillRect(centerX - 5, baseY, 4, 2);
-        ctx.fillRect(centerX + 1, baseY, 4, 2);
+    // Shoes
+    ctx.fillStyle = '#2a1a0a';
+    ctx.fillRect(centerX - 5, baseY, 4, 2);
+    ctx.fillRect(centerX + 1, baseY, 4, 2);
 
-        // Belt/sash
-        ctx.fillStyle = '#8a6a4a';
-        ctx.fillRect(centerX - 6, baseY - 12, 12, 2);
+    // Belt/sash
+    ctx.fillStyle = '#8a6a4a';
+    ctx.fillRect(centerX - 6, baseY - 12, 12, 2);
 
-        return { centerX, baseY };
+    return { centerX, baseY };
+  }
+
+  if (activity === 'artist') {
+    // Artist painting (holding brush, moving arm)
+    // Frame 0: Arm extended to canvas
+    const pos0 = drawRenaissanceBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 10, pos0.baseY - 20, 3, 10); // Left arm extended
+    ctx.fillRect(pos0.centerX + 7, pos0.baseY - 22, 3, 8); // Right arm holding palette
+
+    // Frame 1: Arm pulling back
+    const pos1 = drawRenaissanceBody(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 9, pos1.baseY - 22, 3, 10);
+    ctx.fillRect(pos1.centerX + 7, pos1.baseY - 22, 3, 8);
+
+    // Frame 2: Arm at center
+    const pos2 = drawRenaissanceBody(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 8, pos2.baseY - 22, 3, 10);
+    ctx.fillRect(pos2.centerX + 7, pos2.baseY - 22, 3, 8);
+
+    // Frame 3: Arm extending again
+    const pos3 = drawRenaissanceBody(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 9, pos3.baseY - 21, 3, 10);
+    ctx.fillRect(pos3.centerX + 7, pos3.baseY - 22, 3, 8);
+  } else if (activity === 'scholar') {
+    // Scholar reading/writing (holding quill and book)
+    for (let i = 0; i < 4; i++) {
+      const pos = drawRenaissanceBody(frameWidth * i, 0);
+      ctx.fillStyle = skin;
+
+      // Left arm holding book
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8);
+
+      // Right arm with quill (slight movement for writing)
+      const armOffset = i % 2 === 0 ? 0 : 2;
+      ctx.fillRect(pos.centerX + 7, pos.baseY - 22 + armOffset, 3, 10);
+
+      // Book in hand (small rectangle)
+      ctx.fillStyle = '#8a3a1a';
+      ctx.fillRect(pos.centerX - 14, pos.baseY - 22, 6, 8);
     }
+  } else if (activity === 'inventor') {
+    // Inventor tinkering with tools (hammering/adjusting)
+    // Frame 0: Arm raised with tool
+    const pos0 = drawRenaissanceBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 10, pos0.baseY - 28, 3, 10);
+    ctx.fillRect(pos0.centerX + 7, pos0.baseY - 22, 3, 8);
 
-    if (activity === 'artist') {
-        // Artist painting (holding brush, moving arm)
-        // Frame 0: Arm extended to canvas
-        const pos0 = drawRenaissanceBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 10, pos0.baseY - 20, 3, 10); // Left arm extended
-        ctx.fillRect(pos0.centerX + 7, pos0.baseY - 22, 3, 8); // Right arm holding palette
+    // Frame 1: Arm down (working)
+    const pos1 = drawRenaissanceBody(frameWidth, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos1.centerX - 10, pos1.baseY - 18, 3, 10);
+    ctx.fillRect(pos1.centerX + 7, pos1.baseY - 22, 3, 8);
 
-        // Frame 1: Arm pulling back
-        const pos1 = drawRenaissanceBody(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 9, pos1.baseY - 22, 3, 10);
-        ctx.fillRect(pos1.centerX + 7, pos1.baseY - 22, 3, 8);
+    // Frame 2: Arm raised again
+    const pos2 = drawRenaissanceBody(frameWidth * 2, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos2.centerX - 10, pos2.baseY - 28, 3, 10);
+    ctx.fillRect(pos2.centerX + 7, pos2.baseY - 22, 3, 8);
 
-        // Frame 2: Arm at center
-        const pos2 = drawRenaissanceBody(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 8, pos2.baseY - 22, 3, 10);
-        ctx.fillRect(pos2.centerX + 7, pos2.baseY - 22, 3, 8);
+    // Frame 3: Arm at middle position
+    const pos3 = drawRenaissanceBody(frameWidth * 3, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos3.centerX - 10, pos3.baseY - 23, 3, 10);
+    ctx.fillRect(pos3.centerX + 7, pos3.baseY - 22, 3, 8);
+  }
 
-        // Frame 3: Arm extending again
-        const pos3 = drawRenaissanceBody(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 9, pos3.baseY - 21, 3, 10);
-        ctx.fillRect(pos3.centerX + 7, pos3.baseY - 22, 3, 8);
-
-    } else if (activity === 'scholar') {
-        // Scholar reading/writing (holding quill and book)
-        for (let i = 0; i < 4; i++) {
-            const pos = drawRenaissanceBody(frameWidth * i, 0);
-            ctx.fillStyle = skin;
-
-            // Left arm holding book
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8);
-
-            // Right arm with quill (slight movement for writing)
-            const armOffset = (i % 2 === 0) ? 0 : 2;
-            ctx.fillRect(pos.centerX + 7, pos.baseY - 22 + armOffset, 3, 10);
-
-            // Book in hand (small rectangle)
-            ctx.fillStyle = '#8a3a1a';
-            ctx.fillRect(pos.centerX - 14, pos.baseY - 22, 6, 8);
-        }
-
-    } else if (activity === 'inventor') {
-        // Inventor tinkering with tools (hammering/adjusting)
-        // Frame 0: Arm raised with tool
-        const pos0 = drawRenaissanceBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 10, pos0.baseY - 28, 3, 10);
-        ctx.fillRect(pos0.centerX + 7, pos0.baseY - 22, 3, 8);
-
-        // Frame 1: Arm down (working)
-        const pos1 = drawRenaissanceBody(frameWidth, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos1.centerX - 10, pos1.baseY - 18, 3, 10);
-        ctx.fillRect(pos1.centerX + 7, pos1.baseY - 22, 3, 8);
-
-        // Frame 2: Arm raised again
-        const pos2 = drawRenaissanceBody(frameWidth * 2, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos2.centerX - 10, pos2.baseY - 28, 3, 10);
-        ctx.fillRect(pos2.centerX + 7, pos2.baseY - 22, 3, 8);
-
-        // Frame 3: Arm at middle position
-        const pos3 = drawRenaissanceBody(frameWidth * 3, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos3.centerX - 10, pos3.baseY - 23, 3, 10);
-        ctx.fillRect(pos3.centerX + 7, pos3.baseY - 22, 3, 8);
-    }
-
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== ANCIENT ERA NPC TEXTURES =====
 
 function generateAncientNPCTexture(scene, key, activity) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+  const ctx = canvas.getContext();
 
-    const skin = '#c49a6c';
-    const clothing = activity === 'scribe' ? '#f4e4c1' : '#8b7355'; // Light linen or brown
+  const skin = '#c49a6c';
+  const clothing = activity === 'scribe' ? '#f4e4c1' : '#8b7355'; // Light linen or brown
 
-    function drawAncientBody(offsetX, offsetY) {
-        const centerX = offsetX + frameWidth / 2;
-        const baseY = offsetY + frameHeight - 8;
+  function drawAncientBody(offsetX, offsetY) {
+    const centerX = offsetX + frameWidth / 2;
+    const baseY = offsetY + frameHeight - 8;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
 
-        // Black hair
-        ctx.fillStyle = '#2a1a0a';
-        ctx.fillRect(centerX - 5, baseY - 34, 10, 3);
+    // Black hair
+    ctx.fillStyle = '#2a1a0a';
+    ctx.fillRect(centerX - 5, baseY - 34, 10, 3);
 
-        // Simple tunic
-        ctx.fillStyle = clothing;
-        ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
+    // Simple tunic
+    ctx.fillStyle = clothing;
+    ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
 
-        // Legs
-        ctx.fillStyle = '#6a5a4a';
-        ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
-        ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
+    // Legs
+    ctx.fillStyle = '#6a5a4a';
+    ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
+    ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
 
-        // Feet
-        ctx.fillStyle = '#4a3a2a';
-        ctx.fillRect(centerX - 5, baseY, 4, 2);
-        ctx.fillRect(centerX + 1, baseY, 4, 2);
+    // Feet
+    ctx.fillStyle = '#4a3a2a';
+    ctx.fillRect(centerX - 5, baseY, 4, 2);
+    ctx.fillRect(centerX + 1, baseY, 4, 2);
 
-        return { centerX, baseY };
+    return { centerX, baseY };
+  }
+
+  if (activity === 'scribe') {
+    // Frame 0: Writing
+    const pos0 = drawAncientBody(0, 0);
+    ctx.fillStyle = skin;
+    ctx.fillRect(pos0.centerX - 10, pos0.baseY - 20, 3, 8); // Left arm down
+    ctx.fillRect(pos0.centerX + 2, pos0.baseY - 22, 3, 10); // Right arm writing
+    // Papyrus scroll
+    ctx.fillStyle = '#f4e4c1';
+    ctx.fillRect(pos0.centerX - 6, pos0.baseY - 18, 8, 6);
+
+    // Frame 1-3: Slight variations
+    for (let i = 1; i < 4; i++) {
+      const pos = drawAncientBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8);
+      ctx.fillRect(pos.centerX + 2, pos.baseY - 21 + (i % 2), 3, 10);
+      ctx.fillStyle = '#f4e4c1';
+      ctx.fillRect(pos.centerX - 6, pos.baseY - 18, 8, 6);
     }
-
-    if (activity === 'scribe') {
-        // Frame 0: Writing
-        const pos0 = drawAncientBody(0, 0);
-        ctx.fillStyle = skin;
-        ctx.fillRect(pos0.centerX - 10, pos0.baseY - 20, 3, 8); // Left arm down
-        ctx.fillRect(pos0.centerX + 2, pos0.baseY - 22, 3, 10); // Right arm writing
-        // Papyrus scroll
-        ctx.fillStyle = '#f4e4c1';
-        ctx.fillRect(pos0.centerX - 6, pos0.baseY - 18, 8, 6);
-
-        // Frame 1-3: Slight variations
-        for (let i = 1; i < 4; i++) {
-            const pos = drawAncientBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8);
-            ctx.fillRect(pos.centerX + 2, pos.baseY - 21 + (i % 2), 3, 10);
-            ctx.fillStyle = '#f4e4c1';
-            ctx.fillRect(pos.centerX - 6, pos.baseY - 18, 8, 6);
-        }
-    } else if (activity === 'pottery') {
-        // Frame 0-3: Shaping pottery
-        for (let i = 0; i < 4; i++) {
-            const pos = drawAncientBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Arms working pottery
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
-            ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
-            // Pottery vessel
-            ctx.fillStyle = '#8b4513';
-            ctx.fillRect(pos.centerX - 4, pos.baseY - 14 + (i % 2), 8, 6);
-        }
-    } else if (activity === 'merchant') {
-        // Walking frames for merchant (similar to player walking frames)
-        for (let i = 0; i < 4; i++) {
-            const pos = drawAncientBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Arms in walking position
-            if (i % 2 === 0) {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
-            } else {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
-            }
-            // Merchant bag
-            ctx.fillStyle = '#8b7355';
-            ctx.fillRect(pos.centerX + 6, pos.baseY - 16, 6, 8);
-        }
-    } else if (activity === 'farmer') {
-        // Frame 0-3: Planting/hoeing motion
-        for (let i = 0; i < 4; i++) {
-            const pos = drawAncientBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Arms in hoeing/planting motion
-            if (i < 2) {
-                // Raising hoe
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 24, 3, 10);
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 24, 3, 10);
-            } else {
-                // Lowering hoe to ground
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
-            }
-        }
+  } else if (activity === 'pottery') {
+    // Frame 0-3: Shaping pottery
+    for (let i = 0; i < 4; i++) {
+      const pos = drawAncientBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Arms working pottery
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+      ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+      // Pottery vessel
+      ctx.fillStyle = '#8b4513';
+      ctx.fillRect(pos.centerX - 4, pos.baseY - 14 + (i % 2), 8, 6);
     }
+  } else if (activity === 'merchant') {
+    // Walking frames for merchant (similar to player walking frames)
+    for (let i = 0; i < 4; i++) {
+      const pos = drawAncientBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Arms in walking position
+      if (i % 2 === 0) {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
+      } else {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
+      }
+      // Merchant bag
+      ctx.fillStyle = '#8b7355';
+      ctx.fillRect(pos.centerX + 6, pos.baseY - 16, 6, 8);
+    }
+  } else if (activity === 'farmer') {
+    // Frame 0-3: Planting/hoeing motion
+    for (let i = 0; i < 4; i++) {
+      const pos = drawAncientBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Arms in hoeing/planting motion
+      if (i < 2) {
+        // Raising hoe
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 24, 3, 10);
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 24, 3, 10);
+      } else {
+        // Lowering hoe to ground
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+      }
+    }
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== INDUSTRIAL ERA NPC TEXTURES =====
 
 function generateIndustrialNPCTexture(scene, key, activity) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+  const ctx = canvas.getContext();
 
-    const skin = '#d4a574';
-    const clothing = '#4a4a4a'; // Dark work clothes
+  const skin = '#d4a574';
+  const clothing = '#4a4a4a'; // Dark work clothes
 
-    function drawIndustrialBody(offsetX, offsetY) {
-        const centerX = offsetX + frameWidth / 2;
-        const baseY = offsetY + frameHeight - 8;
+  function drawIndustrialBody(offsetX, offsetY) {
+    const centerX = offsetX + frameWidth / 2;
+    const baseY = offsetY + frameHeight - 8;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
 
-        // Hair/cap
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 5, baseY - 34, 10, 4);
+    // Hair/cap
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 5, baseY - 34, 10, 4);
 
-        // Work shirt
-        ctx.fillStyle = clothing;
-        ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
+    // Work shirt
+    ctx.fillStyle = clothing;
+    ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
 
-        // Pants
-        ctx.fillStyle = '#2a2a2a';
-        ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
-        ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
+    // Pants
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
+    ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
 
-        // Boots
-        ctx.fillStyle = '#1a1a1a';
-        ctx.fillRect(centerX - 5, baseY, 4, 2);
-        ctx.fillRect(centerX + 1, baseY, 4, 2);
+    // Boots
+    ctx.fillStyle = '#1a1a1a';
+    ctx.fillRect(centerX - 5, baseY, 4, 2);
+    ctx.fillRect(centerX + 1, baseY, 4, 2);
 
-        return { centerX, baseY };
+    return { centerX, baseY };
+  }
+
+  if (activity === 'worker') {
+    // Shoveling animation
+    for (let i = 0; i < 4; i++) {
+      const pos = drawIndustrialBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      const armAngle = i < 2 ? -2 : 2;
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 16 + armAngle, 3, 10);
+      ctx.fillRect(pos.centerX + 7, pos.baseY - 18 + armAngle, 3, 10);
+      // Shovel
+      ctx.fillStyle = '#8b7355';
+      ctx.fillRect(pos.centerX + 8, pos.baseY - 10 + armAngle * 2, 2, 12);
     }
-
-    if (activity === 'worker') {
-        // Shoveling animation
-        for (let i = 0; i < 4; i++) {
-            const pos = drawIndustrialBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            const armAngle = i < 2 ? -2 : 2;
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 16 + armAngle, 3, 10);
-            ctx.fillRect(pos.centerX + 7, pos.baseY - 18 + armAngle, 3, 10);
-            // Shovel
-            ctx.fillStyle = '#8b7355';
-            ctx.fillRect(pos.centerX + 8, pos.baseY - 10 + armAngle * 2, 2, 12);
-        }
-    } else if (activity === 'engineer') {
-        // Checking gauges
-        for (let i = 0; i < 4; i++) {
-            const pos = drawIndustrialBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10);
-            ctx.fillRect(pos.centerX + 4, pos.baseY - 20 + (i % 2), 4, 8);
-        }
-    } else if (activity === 'assembly') {
-        // Assembly line worker packing boxes
-        for (let i = 0; i < 4; i++) {
-            const pos = drawIndustrialBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Arms moving boxes
-            if (i < 2) {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm reaching
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm reaching
-            } else {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 16, 3, 8); // Arms down
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 16, 3, 8);
-            }
-            // Box in hands
-            if (i >= 2) {
-                ctx.fillStyle = '#8b7355';
-                ctx.fillRect(pos.centerX - 4, pos.baseY - 14, 8, 6);
-            }
-        }
-    } else if (activity === 'foreman') {
-        // Walking foreman with clipboard
-        for (let i = 0; i < 4; i++) {
-            const pos = drawIndustrialBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Walking arms
-            if (i % 2 === 0) {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
-            } else {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
-            }
-            // Clipboard in hand
-            ctx.fillStyle = '#d4a832';
-            ctx.fillRect(pos.centerX - 8, pos.baseY - 18, 4, 6);
-        }
+  } else if (activity === 'engineer') {
+    // Checking gauges
+    for (let i = 0; i < 4; i++) {
+      const pos = drawIndustrialBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10);
+      ctx.fillRect(pos.centerX + 4, pos.baseY - 20 + (i % 2), 4, 8);
     }
+  } else if (activity === 'assembly') {
+    // Assembly line worker packing boxes
+    for (let i = 0; i < 4; i++) {
+      const pos = drawIndustrialBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Arms moving boxes
+      if (i < 2) {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm reaching
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm reaching
+      } else {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 16, 3, 8); // Arms down
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 16, 3, 8);
+      }
+      // Box in hands
+      if (i >= 2) {
+        ctx.fillStyle = '#8b7355';
+        ctx.fillRect(pos.centerX - 4, pos.baseY - 14, 8, 6);
+      }
+    }
+  } else if (activity === 'foreman') {
+    // Walking foreman with clipboard
+    for (let i = 0; i < 4; i++) {
+      const pos = drawIndustrialBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Walking arms
+      if (i % 2 === 0) {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
+      } else {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
+      }
+      // Clipboard in hand
+      ctx.fillStyle = '#d4a832';
+      ctx.fillRect(pos.centerX - 8, pos.baseY - 18, 4, 6);
+    }
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== MODERN ERA NPC TEXTURES =====
 
 function generateModernNPCTexture(scene, key, activity) {
-    const frameWidth = 32;
-    const frameHeight = 48;
-    const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
-    const ctx = canvas.getContext();
+  const frameWidth = 32;
+  const frameHeight = 48;
+  const canvas = scene.textures.createCanvas(key, frameWidth * 4, frameHeight);
+  const ctx = canvas.getContext();
 
-    const skin = '#d4a574';
-    const clothing = activity === 'programmer' ? '#2a4a6a' : '#4a4a4a'; // Blue shirt or gray
+  const skin = '#d4a574';
+  const clothing = activity === 'programmer' ? '#2a4a6a' : '#4a4a4a'; // Blue shirt or gray
 
-    function drawModernBody(offsetX, offsetY) {
-        const centerX = offsetX + frameWidth / 2;
-        const baseY = offsetY + frameHeight - 8;
+  function drawModernBody(offsetX, offsetY) {
+    const centerX = offsetX + frameWidth / 2;
+    const baseY = offsetY + frameHeight - 8;
 
-        // Head
-        ctx.fillStyle = skin;
-        ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
+    // Head
+    ctx.fillStyle = skin;
+    ctx.fillRect(centerX - 4, baseY - 32, 8, 8);
 
-        // Hair
-        ctx.fillStyle = '#3a2a1a';
-        ctx.fillRect(centerX - 5, baseY - 34, 10, 3);
+    // Hair
+    ctx.fillStyle = '#3a2a1a';
+    ctx.fillRect(centerX - 5, baseY - 34, 10, 3);
 
-        // Shirt/clothing
-        ctx.fillStyle = clothing;
-        ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
+    // Shirt/clothing
+    ctx.fillStyle = clothing;
+    ctx.fillRect(centerX - 6, baseY - 24, 12, 16);
 
-        // Pants
-        ctx.fillStyle = '#2a2a2a';
-        ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
-        ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
+    // Pants
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(centerX - 5, baseY - 8, 4, 8);
+    ctx.fillRect(centerX + 1, baseY - 8, 4, 8);
 
-        // Shoes
-        ctx.fillStyle = '#1a1a1a';
-        ctx.fillRect(centerX - 5, baseY, 4, 2);
-        ctx.fillRect(centerX + 1, baseY, 4, 2);
+    // Shoes
+    ctx.fillStyle = '#1a1a1a';
+    ctx.fillRect(centerX - 5, baseY, 4, 2);
+    ctx.fillRect(centerX + 1, baseY, 4, 2);
 
-        return { centerX, baseY };
+    return { centerX, baseY };
+  }
+
+  if (activity === 'programmer') {
+    // Typing animation
+    for (let i = 0; i < 4; i++) {
+      const pos = drawModernBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Arms typing
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+      ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+      // Laptop
+      ctx.fillStyle = '#6a6a6a';
+      ctx.fillRect(pos.centerX - 6, pos.baseY - 12, 12, 2);
+      // Screen glow
+      if (i % 2 === 0) {
+        ctx.fillStyle = '#4a6a8a';
+        ctx.fillRect(pos.centerX - 4, pos.baseY - 18, 8, 4);
+      }
     }
-
-    if (activity === 'programmer') {
-        // Typing animation
-        for (let i = 0; i < 4; i++) {
-            const pos = drawModernBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Arms typing
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
-            ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
-            // Laptop
-            ctx.fillStyle = '#6a6a6a';
-            ctx.fillRect(pos.centerX - 6, pos.baseY - 12, 12, 2);
-            // Screen glow
-            if (i % 2 === 0) {
-                ctx.fillStyle = '#4a6a8a';
-                ctx.fillRect(pos.centerX - 4, pos.baseY - 18, 8, 4);
-            }
-        }
-    } else if (activity === 'tech') {
-        // Checking servers
-        for (let i = 0; i < 4; i++) {
-            const pos = drawModernBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10);
-            ctx.fillRect(pos.centerX + 4, pos.baseY - 20 + (i % 2), 4, 8);
-        }
-    } else if (activity === 'desk') {
-        // Desk worker typing
-        for (let i = 0; i < 4; i++) {
-            const pos = drawModernBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Arms on keyboard
-            ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
-            ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
-            // Keyboard
-            ctx.fillStyle = '#4a4a4a';
-            ctx.fillRect(pos.centerX - 8, pos.baseY - 14, 16, 4);
-            // Monitor (above)
-            ctx.fillStyle = '#2a2a2a';
-            ctx.fillRect(pos.centerX - 6, pos.baseY - 28, 12, 10);
-            // Screen content
-            if (i % 2 === 0) {
-                ctx.fillStyle = '#4a8a6a';
-                ctx.fillRect(pos.centerX - 5, pos.baseY - 27, 10, 8);
-            }
-        }
-    } else if (activity === 'it-tech') {
-        // Walking IT tech with laptop
-        for (let i = 0; i < 4; i++) {
-            const pos = drawModernBody(i * frameWidth, 0);
-            ctx.fillStyle = skin;
-            // Walking arms
-            if (i % 2 === 0) {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
-            } else {
-                ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
-                ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
-            }
-            // Laptop in hand
-            ctx.fillStyle = '#6a6a6a';
-            ctx.fillRect(pos.centerX - 6, pos.baseY - 18, 10, 6);
-        }
+  } else if (activity === 'tech') {
+    // Checking servers
+    for (let i = 0; i < 4; i++) {
+      const pos = drawModernBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10);
+      ctx.fillRect(pos.centerX + 4, pos.baseY - 20 + (i % 2), 4, 8);
     }
+  } else if (activity === 'desk') {
+    // Desk worker typing
+    for (let i = 0; i < 4; i++) {
+      const pos = drawModernBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Arms on keyboard
+      ctx.fillRect(pos.centerX - 10, pos.baseY - 18, 3, 8);
+      ctx.fillRect(pos.centerX + 7, pos.baseY - 18, 3, 8);
+      // Keyboard
+      ctx.fillStyle = '#4a4a4a';
+      ctx.fillRect(pos.centerX - 8, pos.baseY - 14, 16, 4);
+      // Monitor (above)
+      ctx.fillStyle = '#2a2a2a';
+      ctx.fillRect(pos.centerX - 6, pos.baseY - 28, 12, 10);
+      // Screen content
+      if (i % 2 === 0) {
+        ctx.fillStyle = '#4a8a6a';
+        ctx.fillRect(pos.centerX - 5, pos.baseY - 27, 10, 8);
+      }
+    }
+  } else if (activity === 'it-tech') {
+    // Walking IT tech with laptop
+    for (let i = 0; i < 4; i++) {
+      const pos = drawModernBody(i * frameWidth, 0);
+      ctx.fillStyle = skin;
+      // Walking arms
+      if (i % 2 === 0) {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 22, 3, 10); // Left arm forward
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 20, 3, 8); // Right arm back
+      } else {
+        ctx.fillRect(pos.centerX - 10, pos.baseY - 20, 3, 8); // Left arm back
+        ctx.fillRect(pos.centerX + 7, pos.baseY - 22, 3, 10); // Right arm forward
+      }
+      // Laptop in hand
+      ctx.fillStyle = '#6a6a6a';
+      ctx.fillRect(pos.centerX - 6, pos.baseY - 18, 10, 6);
+    }
+  }
 
-    canvas.refresh();
+  canvas.refresh();
 }
 
 // ===== INFO PANEL SYSTEM =====
@@ -3761,4339 +3833,4619 @@ function generateModernNPCTexture(scene, key, activity) {
  * Educational Info Panel that displays fun facts
  */
 class InfoPanel {
-    constructor(scene) {
-        this.scene = scene;
-        this.isVisible = false;
-        this.currentInfo = null;
+  constructor(scene) {
+    this.scene = scene;
+    this.isVisible = false;
+    this.currentInfo = null;
 
-        // Create panel container
-        this.panel = scene.add.container(400, 150).setDepth(200).setVisible(false);
+    // Create panel container
+    this.panel = scene.add.container(400, 150).setDepth(200).setVisible(false);
 
-        // Semi-transparent background
-        this.background = scene.add.rectangle(0, 0, 500, 220, 0x000000, 0.9);
-        this.background.setStrokeStyle(3, 0x5C9EAD);
+    // Semi-transparent background
+    this.background = scene.add.rectangle(0, 0, 500, 220, 0x000000, 0.9);
+    this.background.setStrokeStyle(3, 0x5c9ead);
 
-        // Title text
-        this.titleText = scene.add.text(0, -90, '', {
-            fontSize: '18px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold',
-            align: 'center',
-            wordWrap: { width: 460 }
-        }).setOrigin(0.5);
+    // Title text
+    this.titleText = scene.add
+      .text(0, -90, '', {
+        fontSize: '18px',
+        fill: '#5C9EAD',
+        fontStyle: 'bold',
+        align: 'center',
+        wordWrap: { width: 460 },
+      })
+      .setOrigin(0.5);
 
-        // Icon text (emoji)
-        this.iconText = scene.add.text(-220, -90, '', {
-            fontSize: '24px'
-        });
+    // Icon text (emoji)
+    this.iconText = scene.add.text(-220, -90, '', {
+      fontSize: '24px',
+    });
 
-        // Content text
-        this.contentText = scene.add.text(0, -20, '', {
-            fontSize: '14px',
-            fill: '#f3f4f6',
-            align: 'center',
-            lineSpacing: 8,
-            wordWrap: { width: 460 }
-        }).setOrigin(0.5);
+    // Content text
+    this.contentText = scene.add
+      .text(0, -20, '', {
+        fontSize: '14px',
+        fill: '#f3f4f6',
+        align: 'center',
+        lineSpacing: 8,
+        wordWrap: { width: 460 },
+      })
+      .setOrigin(0.5);
 
-        // Close instruction
-        this.closeText = scene.add.text(0, 95, 'Press E to close', {
-            fontSize: '12px',
-            fill: '#9ca3af',
-            align: 'center'
-        }).setOrigin(0.5);
+    // Close instruction
+    this.closeText = scene.add
+      .text(0, 95, 'Press E to close', {
+        fontSize: '12px',
+        fill: '#9ca3af',
+        align: 'center',
+      })
+      .setOrigin(0.5);
 
-        // Add all elements to container
-        this.panel.add([this.background, this.iconText, this.titleText, this.contentText, this.closeText]);
+    // Add all elements to container
+    this.panel.add([
+      this.background,
+      this.iconText,
+      this.titleText,
+      this.contentText,
+      this.closeText,
+    ]);
+  }
+
+  show(title, content, icon = '📚') {
+    this.titleText.setText(title);
+    this.contentText.setText(content);
+    this.iconText.setText(icon);
+    this.panel.setVisible(true);
+    this.isVisible = true;
+  }
+
+  hide() {
+    this.panel.setVisible(false);
+    this.isVisible = false;
+    this.currentInfo = null;
+  }
+
+  toggle(info) {
+    if (this.isVisible && this.currentInfo === info) {
+      this.hide();
+    } else {
+      this.show(info.title, info.content, info.icon);
+      this.currentInfo = info;
     }
-
-    show(title, content, icon = '📚') {
-        this.titleText.setText(title);
-        this.contentText.setText(content);
-        this.iconText.setText(icon);
-        this.panel.setVisible(true);
-        this.isVisible = true;
-    }
-
-    hide() {
-        this.panel.setVisible(false);
-        this.isVisible = false;
-        this.currentInfo = null;
-    }
-
-    toggle(info) {
-        if (this.isVisible && this.currentInfo === info) {
-            this.hide();
-        } else {
-            this.show(info.title, info.content, info.icon);
-            this.currentInfo = info;
-        }
-    }
+  }
 }
 
 /**
  * Timeline Bar - Persistent UI showing progress through eras
  */
 class TimelineBar {
-    constructor(scene, currentEra) {
-        this.scene = scene;
-        this.currentEra = currentEra; // 'caveman', 'farming', 'ancient', 'medieval', 'renaissance', 'industrial', 'modern'
+  constructor(scene, currentEra) {
+    this.scene = scene;
+    this.currentEra = currentEra; // 'caveman', 'farming', 'ancient', 'medieval', 'renaissance', 'industrial', 'modern'
 
-        // Era data
-        this.eras = [
-            { key: 'caveman', label: 'CAVEMAN', x: 150 },
-            { key: 'farming', label: 'FARMING', x: 230 },
-            { key: 'ancient', label: 'ANCIENT', x: 310 },
-            { key: 'medieval', label: 'MEDIEVAL', x: 390 },
-            { key: 'renaissance', label: 'RENAISSANCE', x: 470 },
-            { key: 'industrial', label: 'INDUSTRIAL', x: 550 },
-            { key: 'modern', label: 'MODERN', x: 630 }
-        ];
+    // Era data
+    this.eras = [
+      { key: 'caveman', label: 'CAVEMAN', x: 150 },
+      { key: 'farming', label: 'FARMING', x: 230 },
+      { key: 'ancient', label: 'ANCIENT', x: 310 },
+      { key: 'medieval', label: 'MEDIEVAL', x: 390 },
+      { key: 'renaissance', label: 'RENAISSANCE', x: 470 },
+      { key: 'industrial', label: 'INDUSTRIAL', x: 550 },
+      { key: 'modern', label: 'MODERN', x: 630 },
+    ];
 
-        this.barY = 530;
-        this.container = scene.add.container(0, 0).setDepth(150);
+    this.barY = 530;
+    this.container = scene.add.container(0, 0).setDepth(150);
 
-        this.createTimeline();
-        this.createWalkingSprite();
-    }
+    this.createTimeline();
+    this.createWalkingSprite();
+  }
 
-    createTimeline() {
-        // Draw horizontal timeline bar
-        const graphics = this.scene.add.graphics();
-        graphics.lineStyle(3, 0x5C9EAD);
-        graphics.beginPath();
-        graphics.moveTo(150, this.barY);
-        graphics.lineTo(630, this.barY);
-        graphics.strokePath();
-        this.container.add(graphics);
+  createTimeline() {
+    // Draw horizontal timeline bar
+    const graphics = this.scene.add.graphics();
+    graphics.lineStyle(3, 0x5c9ead);
+    graphics.beginPath();
+    graphics.moveTo(150, this.barY);
+    graphics.lineTo(630, this.barY);
+    graphics.strokePath();
+    this.container.add(graphics);
 
-        // Map era keys to scene names
-        const sceneMap = {
-            'caveman': 'CavemanScene',
-            'farming': 'FarmingScene',
-            'ancient': 'AncientScene',
-            'medieval': 'MedievalScene',
-            'renaissance': 'RenaissanceScene',
-            'industrial': 'IndustrialScene',
-            'modern': 'ModernScene'
+    // Map era keys to scene names
+    const sceneMap = {
+      caveman: 'CavemanScene',
+      farming: 'FarmingScene',
+      ancient: 'AncientScene',
+      medieval: 'MedievalScene',
+      renaissance: 'RenaissanceScene',
+      industrial: 'IndustrialScene',
+      modern: 'ModernScene',
+    };
+
+    // Draw era milestones
+    this.eras.forEach((era, index) => {
+      // Milestone dot
+      const dot = this.scene.add.circle(era.x, this.barY, 6, 0x5c9ead);
+      this.container.add(dot);
+
+      // Era label
+      const label = this.scene.add
+        .text(era.x, this.barY + 15, era.label, {
+          fontSize: '10px',
+          fill: '#9ca3af',
+          align: 'center',
+        })
+        .setOrigin(0.5);
+      this.container.add(label);
+
+      // Highlight current era
+      if (era.key === this.currentEra) {
+        dot.setFillStyle(0xd4a832);
+        label.setStyle({ fill: '#5C9EAD', fontStyle: 'bold' });
+      } else {
+        // Make other eras clickable
+        label.setInteractive({ useHandCursor: true });
+        dot.setInteractive({ useHandCursor: true });
+
+        // Hover effects for label
+        label.on('pointerover', () => {
+          label.setStyle({ fill: '#5C9EAD' });
+        });
+        label.on('pointerout', () => {
+          label.setStyle({ fill: '#9ca3af' });
+        });
+
+        // Click to jump to era
+        const jumpToEra = () => {
+          this.scene.cameras.main.fadeOut(500, 0, 0, 0);
+          this.scene.time.delayedCall(500, () => {
+            this.scene.scene.start(sceneMap[era.key], { spawnX: 400, spawnY: 500 });
+          });
         };
 
-        // Draw era milestones
-        this.eras.forEach((era, index) => {
-            // Milestone dot
-            const dot = this.scene.add.circle(era.x, this.barY, 6, 0x5C9EAD);
-            this.container.add(dot);
+        label.on('pointerdown', jumpToEra);
+        dot.on('pointerdown', jumpToEra);
 
-            // Era label
-            const label = this.scene.add.text(era.x, this.barY + 15, era.label, {
-                fontSize: '10px',
-                fill: '#9ca3af',
-                align: 'center'
-            }).setOrigin(0.5);
-            this.container.add(label);
-
-            // Highlight current era
-            if (era.key === this.currentEra) {
-                dot.setFillStyle(0xd4a832);
-                label.setStyle({ fill: '#5C9EAD', fontStyle: 'bold' });
-            } else {
-                // Make other eras clickable
-                label.setInteractive({ useHandCursor: true });
-                dot.setInteractive({ useHandCursor: true });
-
-                // Hover effects for label
-                label.on('pointerover', () => {
-                    label.setStyle({ fill: '#5C9EAD' });
-                });
-                label.on('pointerout', () => {
-                    label.setStyle({ fill: '#9ca3af' });
-                });
-
-                // Click to jump to era
-                const jumpToEra = () => {
-                    this.scene.cameras.main.fadeOut(500, 0, 0, 0);
-                    this.scene.time.delayedCall(500, () => {
-                        this.scene.scene.start(sceneMap[era.key], { spawnX: 400, spawnY: 500 });
-                    });
-                };
-
-                label.on('pointerdown', jumpToEra);
-                dot.on('pointerdown', jumpToEra);
-
-                // Hover effect for dot
-                dot.on('pointerover', () => {
-                    dot.setFillStyle(0x8bac0f);
-                    label.setStyle({ fill: '#5C9EAD' });
-                });
-                dot.on('pointerout', () => {
-                    dot.setFillStyle(0x5C9EAD);
-                    label.setStyle({ fill: '#9ca3af' });
-                });
-            }
+        // Hover effect for dot
+        dot.on('pointerover', () => {
+          dot.setFillStyle(0x8bac0f);
+          label.setStyle({ fill: '#5C9EAD' });
         });
-    }
-
-    createWalkingSprite() {
-        // Find current era index
-        const eraIndex = this.eras.findIndex(e => e.key === this.currentEra);
-        const targetX = this.eras[eraIndex].x;
-
-        // Create walking sprite at current era position
-        this.walkingSprite = this.scene.add.sprite(targetX, this.barY - 20, 'walking-sprite');
-        this.walkingSprite.setDepth(151);
-        this.container.add(this.walkingSprite);
-
-        // Create walking animation if it doesn't exist
-        if (!this.scene.anims.exists('timeline-walk')) {
-            this.scene.anims.create({
-                key: 'timeline-walk',
-                frames: this.scene.anims.generateFrameNumbers('walking-sprite', { start: 0, end: 3 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        // Play walking animation
-        this.walkingSprite.play('timeline-walk');
-    }
-
-    moveToNextEra(nextEraKey) {
-        const nextEra = this.eras.find(e => e.key === nextEraKey);
-        if (!nextEra) return;
-
-        // Animate sprite walking to next position
-        this.scene.tweens.add({
-            targets: this.walkingSprite,
-            x: nextEra.x,
-            duration: 1000,
-            ease: 'Linear'
+        dot.on('pointerout', () => {
+          dot.setFillStyle(0x5c9ead);
+          label.setStyle({ fill: '#9ca3af' });
         });
+      }
+    });
+  }
+
+  createWalkingSprite() {
+    // Find current era index
+    const eraIndex = this.eras.findIndex((e) => e.key === this.currentEra);
+    const targetX = this.eras[eraIndex].x;
+
+    // Create walking sprite at current era position
+    this.walkingSprite = this.scene.add.sprite(targetX, this.barY - 20, 'walking-sprite');
+    this.walkingSprite.setDepth(151);
+    this.container.add(this.walkingSprite);
+
+    // Create walking animation if it doesn't exist
+    if (!this.scene.anims.exists('timeline-walk')) {
+      this.scene.anims.create({
+        key: 'timeline-walk',
+        frames: this.scene.anims.generateFrameNumbers('walking-sprite', { start: 0, end: 3 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    destroy() {
-        this.container.destroy();
+    // Play walking animation
+    this.walkingSprite.play('timeline-walk');
+  }
+
+  moveToNextEra(nextEraKey) {
+    const nextEra = this.eras.find((e) => e.key === nextEraKey);
+    if (!nextEra) {
+      return;
     }
+
+    // Animate sprite walking to next position
+    this.scene.tweens.add({
+      targets: this.walkingSprite,
+      x: nextEra.x,
+      duration: 1000,
+      ease: 'Linear',
+    });
+  }
+
+  destroy() {
+    this.container.destroy();
+  }
 }
 
 /**
  * Create an interactable object with 'E' prompt
  */
 function createInteractable(scene, x, y, width, height, info) {
-    const interactable = scene.add.zone(x, y, width, height);
-    scene.physics.world.enable(interactable);
-    interactable.body.setImmovable(true);
-    interactable.infoData = info;
+  const interactable = scene.add.zone(x, y, width, height);
+  scene.physics.world.enable(interactable);
+  interactable.body.setImmovable(true);
+  interactable.infoData = info;
 
-    // Create 'E' indicator
-    const indicator = scene.add.text(x, y - height/2 - 20, 'E', {
-        fontSize: '16px',
-        fill: '#ffffff',
-        backgroundColor: '#5C9EAD',
-        padding: { x: 6, y: 4 }
-    }).setOrigin(0.5).setDepth(100).setVisible(false);
+  // Create 'E' indicator
+  const indicator = scene.add
+    .text(x, y - height / 2 - 20, 'E', {
+      fontSize: '16px',
+      fill: '#ffffff',
+      backgroundColor: '#5C9EAD',
+      padding: { x: 6, y: 4 },
+    })
+    .setOrigin(0.5)
+    .setDepth(100)
+    .setVisible(false);
 
-    interactable.indicator = indicator;
+  interactable.indicator = indicator;
 
-    return interactable;
+  return interactable;
 }
 
 // ===== CAVEMAN SCENE =====
 
 class CavemanScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'CavemanScene' });
+  constructor() {
+    super({ key: 'CavemanScene' });
+  }
+
+  create() {
+    // Generate all textures procedurally
+    generateDirtTexture(this, 'dirt');
+    generateStoneTexture(this, 'stone');
+    generateCaveWallTexture(this, 'cave-wall');
+
+    // Generate caveman era player character
+    if (!this.textures.exists('player-caveman')) {
+      generateCavemanPlayerSprite(this, 'player-caveman');
     }
 
-    create() {
-        // Generate all textures procedurally
-        generateDirtTexture(this, 'dirt');
-        generateStoneTexture(this, 'stone');
-        generateCaveWallTexture(this, 'cave-wall');
+    // Generate multiple NPC variants
+    const npcVariants = [
+      { skin: '#c49a6c', fur: '#7a6348', furDark: '#5a4838', hair: '#4a3a2a' },
+      { skin: '#d4a574', fur: '#9a826d', furDark: '#7a6348', hair: '#3d2817' },
+      { skin: '#b8956a', fur: '#6b5642', furDark: '#4a3a2a', hair: '#2a1a0a' },
+      { skin: '#c9a876', fur: '#8b7355', furDark: '#6b5642', hair: '#594a3a' },
+    ];
 
-        // Generate caveman era player character
-        if (!this.textures.exists('player-caveman')) {
-            generateCavemanPlayerSprite(this, 'player-caveman');
-        }
+    generateNPCSprite(this, 'npc-char-1', 0);
+    generateWorkFrames(this, 'npc-work-1', npcVariants[0], 'fire');
 
-        // Generate multiple NPC variants
-        const npcVariants = [
-            { skin: '#c49a6c', fur: '#7a6348', furDark: '#5a4838', hair: '#4a3a2a' },
-            { skin: '#d4a574', fur: '#9a826d', furDark: '#7a6348', hair: '#3d2817' },
-            { skin: '#b8956a', fur: '#6b5642', furDark: '#4a3a2a', hair: '#2a1a0a' },
-            { skin: '#c9a876', fur: '#8b7355', furDark: '#6b5642', hair: '#594a3a' }
-        ];
+    generateNPCSprite(this, 'npc-char-2', 1);
+    generateWorkFrames(this, 'npc-work-2', npcVariants[1], 'spear');
 
-        generateNPCSprite(this, 'npc-char-1', 0);
-        generateWorkFrames(this, 'npc-work-1', npcVariants[0], 'fire');
+    generateNPCSprite(this, 'npc-char-3', 2);
+    generateWorkFrames(this, 'npc-work-3', npcVariants[2], 'crafting');
 
-        generateNPCSprite(this, 'npc-char-2', 1);
-        generateWorkFrames(this, 'npc-work-2', npcVariants[1], 'spear');
+    generateNPCSprite(this, 'npc-char-4', 3);
 
-        generateNPCSprite(this, 'npc-char-3', 2);
-        generateWorkFrames(this, 'npc-work-3', npcVariants[2], 'crafting');
+    generateCaveTexture(this, 'cave');
+    generateFireParticles(this);
 
-        generateNPCSprite(this, 'npc-char-4', 3);
+    // Generate props
+    generateWoodLogs(this, 'wood-logs');
+    generateSpear(this, 'spear');
+    generateStoneTool(this, 'stone-hammerstone', 'hammerstone');
+    generateStoneTool(this, 'stone-scraper', 'scraper');
+    generateStoneTool(this, 'stone-flake', 'flake');
+    generateStick(this, 'fire-stick');
 
-        generateCaveTexture(this, 'cave');
-        generateFireParticles(this);
+    // Generate walking sprite for timeline
+    generateWalkingSpriteTexture(this, 'walking-sprite');
 
-        // Generate props
-        generateWoodLogs(this, 'wood-logs');
-        generateSpear(this, 'spear');
-        generateStoneTool(this, 'stone-hammerstone', 'hammerstone');
-        generateStoneTool(this, 'stone-scraper', 'scraper');
-        generateStoneTool(this, 'stone-flake', 'flake');
-        generateStick(this, 'fire-stick');
-
-        // Generate walking sprite for timeline
-        generateWalkingSpriteTexture(this, 'walking-sprite');
-
-        // Add frames for walking sprite (4 frames of 16x16 pixels)
-        for (let i = 0; i < 4; i++) {
-            this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-        }
-
-        // Add sprite sheet frame configs
-        // Add frames for player character sprite sheet
-        if (!this.textures.get('player-caveman').has(0)) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-caveman').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // Add frames for all NPC character sprite sheets
-        for (let npcNum = 1; npcNum <= 4; npcNum++) {
-            const key = `npc-char-${npcNum}`;
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get(key).add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // Add frames for work animation sprite sheets
-        for (let npcNum = 1; npcNum <= 3; npcNum++) {
-            const key = `npc-work-${npcNum}`;
-            const numFrames = npcNum === 1 ? 3 : 4; // Fire has 3, spear and crafting have 4
-            for (let i = 0; i < numFrames; i++) {
-                this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
-            }
-        }
-
-        // World bounds
-        this.physics.world.setBounds(0, 0, 800, 600);
-
-        // Create tile-based ground
-        this.createGround();
-
-        // Create cave walls
-        this.createCaveWalls();
-
-        // Create cave entrance (portal to next era)
-        this.createCaveEntrance();
-
-        // Create enhanced fire
-        this.createFire();
-
-        // Create player with animations
-        this.createPlayer();
-
-        // Create NPC
-        this.createNPC();
-
-        // Set up camera
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.spaceKey = this.input.keyboard.addKey('SPACE');
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Create info panel system
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Create timeline bar
-        this.timelineBar = new TimelineBar(this, 'caveman');
-
-        // Interaction text (moved down to accommodate timeline)
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Era title card
-        this.showEraTitleCard('CAVEMAN ERA', '2.5 Million BCE');
-
-        // Track last direction
-        this.lastDirection = 'down';
+    // Add frames for walking sprite (4 frames of 16x16 pixels)
+    for (let i = 0; i < 4; i++) {
+      this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
     }
 
-    createInteractables() {
-        // Spear sharpener NPC interactable
-        const spearInfo = {
-            title: 'Stone Tools',
-            content: 'Early humans spent hours crafting hand axes and spears from flint. A well-made stone blade could last for years and was often traded between tribes.',
-            icon: '🔧'
-        };
-        const spearZone = createInteractable(this, 180, 450, 60, 60, spearInfo);
-        this.interactables.push(spearZone);
-
-        // Fire tender NPC interactable
-        const fireTenderInfo = {
-            title: 'Fire Keepers',
-            content: 'Controlling fire (~1.5 million years ago) was humanity\'s first major technological breakthrough. In prehistoric communities, keeping the fire alive was a sacred duty. Losing your fire meant starting over, which was difficult and dangerous.',
-            icon: '🔥'
-        };
-        const fireTenderZone = createInteractable(this, 380, 110, 60, 60, fireTenderInfo);
-        this.interactables.push(fireTenderZone);
-
-        // Stone crafter NPC interactable
-        const crafterInfo = {
-            title: 'Tool Innovation',
-            content: 'The stone hand axe was used for over 1 million years - making it the longest-used tool in human history!',
-            icon: '📈'
-        };
-        const crafterZone = createInteractable(this, 620, 480, 60, 60, crafterInfo);
-        this.interactables.push(crafterZone);
+    // Add sprite sheet frame configs
+    // Add frames for player character sprite sheet
+    if (!this.textures.get('player-caveman').has(0)) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-caveman').add(i, 0, col * 32, row * 48, 32, 48);
+      }
     }
 
-    showEraTitleCard(title, subtitle) {
-        // Title card background
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-
-        // Main title
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        // Subtitle
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        // Fade out after 3 seconds
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
-        });
+    // Add frames for all NPC character sprite sheets
+    for (let npcNum = 1; npcNum <= 4; npcNum++) {
+      const key = `npc-char-${npcNum}`;
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get(key).add(i, 0, col * 32, row * 48, 32, 48);
+      }
     }
 
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
-
-        // Create more organic pattern
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                // Use pseudo-random for natural variation
-                const rand = (x * 7 + y * 13) % 100;
-                const texture = rand > 75 ? 'stone' : 'dirt';
-                this.add.image(x * tileSize + 16, y * tileSize + 16, texture);
-            }
-        }
+    // Add frames for work animation sprite sheets
+    for (let npcNum = 1; npcNum <= 3; npcNum++) {
+      const key = `npc-work-${npcNum}`;
+      const numFrames = npcNum === 1 ? 3 : 4; // Fire has 3, spear and crafting have 4
+      for (let i = 0; i < numFrames; i++) {
+        this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+      }
     }
 
-    createCaveWalls() {
-        // Add cave walls around the cave entrance
-        const wallPositions = [
-            { x: 320, y: 48 }, { x: 352, y: 48 }, { x: 384, y: 48 },
-            { x: 416, y: 48 }, { x: 448, y: 48 }, { x: 480, y: 48 }
-        ];
+    // World bounds
+    this.physics.world.setBounds(0, 0, 800, 600);
 
-        wallPositions.forEach(pos => {
-            this.add.image(pos.x, pos.y, 'cave-wall');
-        });
+    // Create tile-based ground
+    this.createGround();
+
+    // Create cave walls
+    this.createCaveWalls();
+
+    // Create cave entrance (portal to next era)
+    this.createCaveEntrance();
+
+    // Create enhanced fire
+    this.createFire();
+
+    // Create player with animations
+    this.createPlayer();
+
+    // Create NPC
+    this.createNPC();
+
+    // Set up camera
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.spaceKey = this.input.keyboard.addKey('SPACE');
+    this.eKey = this.input.keyboard.addKey('E');
+
+    // Create info panel system
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
+
+    // Create timeline bar
+    this.timelineBar = new TimelineBar(this, 'caveman');
+
+    // Interaction text (moved down to accommodate timeline)
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
+
+    // Era title card
+    this.showEraTitleCard('CAVEMAN ERA', '2.5 Million BCE');
+
+    // Track last direction
+    this.lastDirection = 'down';
+  }
+
+  createInteractables() {
+    // Spear sharpener NPC interactable
+    const spearInfo = {
+      title: 'Stone Tools',
+      content:
+        'Early humans spent hours crafting hand axes and spears from flint. A well-made stone blade could last for years and was often traded between tribes.',
+      icon: '🔧',
+    };
+    const spearZone = createInteractable(this, 180, 450, 60, 60, spearInfo);
+    this.interactables.push(spearZone);
+
+    // Fire tender NPC interactable
+    const fireTenderInfo = {
+      title: 'Fire Keepers',
+      content:
+        "Controlling fire (~1.5 million years ago) was humanity's first major technological breakthrough. In prehistoric communities, keeping the fire alive was a sacred duty. Losing your fire meant starting over, which was difficult and dangerous.",
+      icon: '🔥',
+    };
+    const fireTenderZone = createInteractable(this, 380, 110, 60, 60, fireTenderInfo);
+    this.interactables.push(fireTenderZone);
+
+    // Stone crafter NPC interactable
+    const crafterInfo = {
+      title: 'Tool Innovation',
+      content:
+        'The stone hand axe was used for over 1 million years - making it the longest-used tool in human history!',
+      icon: '📈',
+    };
+    const crafterZone = createInteractable(this, 620, 480, 60, 60, crafterInfo);
+    this.interactables.push(crafterZone);
+  }
+
+  showEraTitleCard(title, subtitle) {
+    // Title card background
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+
+    // Main title
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#5C9EAD',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    // Subtitle
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    // Fade out after 3 seconds
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
+
+    // Create more organic pattern
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        // Use pseudo-random for natural variation
+        const rand = (x * 7 + y * 13) % 100;
+        const texture = rand > 75 ? 'stone' : 'dirt';
+        this.add.image(x * tileSize + 16, y * tileSize + 16, texture);
+      }
+    }
+  }
+
+  createCaveWalls() {
+    // Add cave walls around the cave entrance
+    const wallPositions = [
+      { x: 320, y: 48 },
+      { x: 352, y: 48 },
+      { x: 384, y: 48 },
+      { x: 416, y: 48 },
+      { x: 448, y: 48 },
+      { x: 480, y: 48 },
+    ];
+
+    wallPositions.forEach((pos) => {
+      this.add.image(pos.x, pos.y, 'cave-wall');
+    });
+  }
+
+  createCaveEntrance() {
+    const caveX = 400;
+    const caveY = 80;
+
+    // Cave sprite
+    this.cave = this.physics.add.sprite(caveX, caveY, 'cave');
+    this.cave.setImmovable(true);
+
+    // Add sign above cave
+    this.add
+      .text(caveX, caveY - 50, '⬆ CAVE\nNext Era', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
+
+  createFire() {
+    const fireX = 350;
+    const fireY = 100;
+
+    // Wood logs underneath fire
+    this.add.image(fireX, fireY + 8, 'wood-logs').setDepth(1);
+
+    // Red/hot coals at base (on top of logs)
+    this.add.particles(fireX, fireY + 5, 'fire-red', {
+      speed: { min: 10, max: 20 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.8, end: 0.3 },
+      alpha: { start: 0.8, end: 0 },
+      lifespan: 800,
+      frequency: 80,
+      gravityY: -30,
+      blendMode: 'ADD',
+    });
+
+    // Orange flames (main fire)
+    this.fireOrange = this.add.particles(fireX, fireY, 'fire-orange', {
+      speed: { min: 25, max: 45 },
+      angle: { min: 250, max: 290 },
+      scale: { start: 1.2, end: 0 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 1000,
+      frequency: 40,
+      gravityY: -60,
+      blendMode: 'ADD',
+    });
+
+    // Yellow tips
+    this.add.particles(fireX, fireY - 10, 'fire-yellow', {
+      speed: { min: 30, max: 50 },
+      angle: { min: 250, max: 290 },
+      scale: { start: 0.8, end: 0 },
+      alpha: { start: 0.8, end: 0 },
+      lifespan: 600,
+      frequency: 60,
+      gravityY: -70,
+      blendMode: 'ADD',
+    });
+
+    // Smoke
+    this.add.particles(fireX, fireY - 20, 'fire-smoke', {
+      speed: { min: 10, max: 20 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.5, end: 1.5 },
+      alpha: { start: 0.3, end: 0 },
+      lifespan: 2000,
+      frequency: 200,
+      gravityY: -20,
+    });
+
+    // Flickering animation
+    this.time.addEvent({
+      delay: 100,
+      callback: () => {
+        const intensity = Math.random() * 0.3 + 0.6;
+        this.fireOrange.setAlpha({ start: intensity, end: 0 });
+      },
+      loop: true,
+    });
+  }
+
+  createPlayer() {
+    // Create player sprite
+    this.player = this.physics.add.sprite(400, 400, 'player-caveman');
+    this.player.setCollideWorldBounds(true);
+    this.player.setSize(24, 40);
+    this.player.setOffset(4, 8);
+    this.player.setDepth(50);
+
+    // Add frame configs for caveman player (if not already added)
+    if (!this.textures.get('player-caveman').has(0)) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-caveman').add(i, 0, col * 32, row * 48, 32, 48);
+      }
     }
 
-    createCaveEntrance() {
-        const caveX = 400;
-        const caveY = 80;
-
-        // Cave sprite
-        this.cave = this.physics.add.sprite(caveX, caveY, 'cave');
-        this.cave.setImmovable(true);
-
-        // Add sign above cave
-        this.add.text(caveX, caveY - 50, '⬆ CAVE\nNext Era', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#4a4a4a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
+    // Create animations for each direction
+    if (!this.anims.exists('caveman-walk-down')) {
+      this.anims.create({
+        key: 'caveman-walk-down',
+        frames: [
+          { key: 'player-caveman', frame: 0 },
+          { key: 'player-caveman', frame: 1 },
+          { key: 'player-caveman', frame: 2 },
+        ],
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    createFire() {
-        const fireX = 350;
-        const fireY = 100;
-
-        // Wood logs underneath fire
-        this.add.image(fireX, fireY + 8, 'wood-logs').setDepth(1);
-
-        // Red/hot coals at base (on top of logs)
-        this.add.particles(fireX, fireY + 5, 'fire-red', {
-            speed: { min: 10, max: 20 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.8, end: 0.3 },
-            alpha: { start: 0.8, end: 0 },
-            lifespan: 800,
-            frequency: 80,
-            gravityY: -30,
-            blendMode: 'ADD'
-        });
-
-        // Orange flames (main fire)
-        this.fireOrange = this.add.particles(fireX, fireY, 'fire-orange', {
-            speed: { min: 25, max: 45 },
-            angle: { min: 250, max: 290 },
-            scale: { start: 1.2, end: 0 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 1000,
-            frequency: 40,
-            gravityY: -60,
-            blendMode: 'ADD'
-        });
-
-        // Yellow tips
-        this.add.particles(fireX, fireY - 10, 'fire-yellow', {
-            speed: { min: 30, max: 50 },
-            angle: { min: 250, max: 290 },
-            scale: { start: 0.8, end: 0 },
-            alpha: { start: 0.8, end: 0 },
-            lifespan: 600,
-            frequency: 60,
-            gravityY: -70,
-            blendMode: 'ADD'
-        });
-
-        // Smoke
-        this.add.particles(fireX, fireY - 20, 'fire-smoke', {
-            speed: { min: 10, max: 20 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.5, end: 1.5 },
-            alpha: { start: 0.3, end: 0 },
-            lifespan: 2000,
-            frequency: 200,
-            gravityY: -20
-        });
-
-        // Flickering animation
-        this.time.addEvent({
-            delay: 100,
-            callback: () => {
-                const intensity = Math.random() * 0.3 + 0.6;
-                this.fireOrange.setAlpha({ start: intensity, end: 0 });
-            },
-            loop: true
-        });
+    if (!this.anims.exists('caveman-walk-left')) {
+      this.anims.create({
+        key: 'caveman-walk-left',
+        frames: this.anims.generateFrameNumbers('player-caveman', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    createPlayer() {
-        // Create player sprite
-        this.player = this.physics.add.sprite(400, 400, 'player-caveman');
-        this.player.setCollideWorldBounds(true);
-        this.player.setSize(24, 40);
-        this.player.setOffset(4, 8);
-        this.player.setDepth(50);
-
-        // Add frame configs for caveman player (if not already added)
-        if (!this.textures.get('player-caveman').has(0)) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-caveman').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // Create animations for each direction
-        if (!this.anims.exists('caveman-walk-down')) {
-            this.anims.create({
-                key: 'caveman-walk-down',
-                frames: [
-                    { key: 'player-caveman', frame: 0 },
-                    { key: 'player-caveman', frame: 1 },
-                    { key: 'player-caveman', frame: 2 }
-                ],
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        if (!this.anims.exists('caveman-walk-left')) {
-            this.anims.create({
-                key: 'caveman-walk-left',
-                frames: this.anims.generateFrameNumbers('player-caveman', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        if (!this.anims.exists('caveman-walk-right')) {
-            this.anims.create({
-                key: 'caveman-walk-right',
-                frames: this.anims.generateFrameNumbers('player-caveman', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        if (!this.anims.exists('caveman-walk-up')) {
-            this.anims.create({
-                key: 'caveman-walk-up',
-                frames: this.anims.generateFrameNumbers('player-caveman', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        // Enable collision with cave
-        this.physics.add.overlap(this.player, this.cave, this.handleCaveInteraction, null, this);
-
-        // Player properties
-        this.playerSpeed = 140;
-        this.nearCave = false;
+    if (!this.anims.exists('caveman-walk-right')) {
+      this.anims.create({
+        key: 'caveman-walk-right',
+        frames: this.anims.generateFrameNumbers('player-caveman', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    createNPC() {
-        this.npcs = [];
-        this.npcProps = []; // Track props that move with NPCs
-
-        // NPC 1: Tending the fire (near fire)
-        const npc1 = this.add.sprite(380, 110, 'npc-work-1');
-        npc1.setDepth(50);
-        npc1.activity = 'fire';
-        npc1.workFrame = 0;
-        this.npcs.push(npc1);
-
-        // Fire stick prop (follows NPC 1's hand)
-        const fireStick = this.add.image(390, 120, 'fire-stick').setDepth(49);
-        npc1.prop = fireStick;
-
-        // Animate NPC 1: Fire tending cycle
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                npc1.workFrame = (npc1.workFrame + 1) % 3;
-                npc1.setFrame(npc1.workFrame);
-
-                // Move stick with hand position
-                if (npc1.workFrame === 0) {
-                    fireStick.setPosition(390, 120); // At side
-                } else if (npc1.workFrame === 1) {
-                    fireStick.setPosition(392, 130); // Reaching down
-                } else if (npc1.workFrame === 2) {
-                    fireStick.setPosition(393, 135); // Poking fire
-                }
-            },
-            loop: true
-        });
-
-        // NPC 2: Sharpening spear (bottom left)
-        const npc2 = this.add.sprite(180, 450, 'npc-work-2');
-        npc2.setDepth(50);
-        npc2.activity = 'spear';
-        npc2.workFrame = 0;
-        this.npcs.push(npc2);
-
-        // Spear prop (in NPC 2's hands)
-        const spear = this.add.image(180, 445, 'spear').setDepth(49);
-        spear.setAngle(90); // Horizontal
-        npc2.prop = spear;
-
-        // Sharpening stone on ground
-        this.add.image(170, 465, 'stone-scraper').setDepth(48);
-
-        // Animate NPC 2: Spear sharpening cycle
-        this.time.addEvent({
-            delay: 500,
-            callback: () => {
-                npc2.workFrame = (npc2.workFrame + 1) % 4;
-                npc2.setFrame(npc2.workFrame);
-
-                // Move spear with sharpening motion
-                if (npc2.workFrame === 0) {
-                    spear.setPosition(180, 445);
-                    spear.setAngle(90);
-                } else if (npc2.workFrame === 1) {
-                    spear.setPosition(180, 450); // Scraping down
-                    spear.setAngle(85);
-                } else if (npc2.workFrame === 2) {
-                    spear.setPosition(180, 448); // Mid scrape
-                    spear.setAngle(88);
-                } else if (npc2.workFrame === 3) {
-                    spear.setPosition(180, 443); // Up
-                    spear.setAngle(92);
-                }
-            },
-            loop: true
-        });
-
-        // NPC 3: Crafting with stones (bottom right)
-        const npc3 = this.add.sprite(620, 480, 'npc-work-3');
-        npc3.setDepth(50);
-        npc3.activity = 'crafting';
-        npc3.workFrame = 0;
-        this.npcs.push(npc3);
-
-        // Stone tools workspace
-        const groundStone = this.add.image(620, 495, 'stone-hammerstone').setDepth(48);
-        this.add.image(600, 490, 'stone-flake').setDepth(48);
-        this.add.image(635, 490, 'stone-scraper').setDepth(48);
-
-        // Held stone (follows hands)
-        const heldStone = this.add.image(620, 465, 'stone-hammerstone').setDepth(51);
-        npc3.prop = heldStone;
-
-        // Particle emitter for stone impacts
-        const impactParticles = this.add.particles(620, 495, 'fire-yellow', {
-            speed: { min: 20, max: 40 },
-            angle: { min: 0, max: 360 },
-            scale: { start: 0.5, end: 0 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 300,
-            frequency: -1, // Manual emission
-            gravityY: 100
-        });
-
-        // Animate NPC 3: Stone crafting cycle
-        this.time.addEvent({
-            delay: 400,
-            callback: () => {
-                npc3.workFrame = (npc3.workFrame + 1) % 4;
-                npc3.setFrame(npc3.workFrame);
-
-                // Move held stone with arms
-                if (npc3.workFrame === 0) {
-                    heldStone.setPosition(620, 460); // Raised overhead
-                } else if (npc3.workFrame === 1) {
-                    heldStone.setPosition(620, 475); // Mid-swing
-                } else if (npc3.workFrame === 2) {
-                    heldStone.setPosition(620, 490); // Impact!
-                    // Emit impact particles
-                    impactParticles.emitParticle(5);
-                } else if (npc3.workFrame === 3) {
-                    heldStone.setPosition(620, 470); // Rising
-                }
-            },
-            loop: true
-        });
-
-        // NPC 4: Walking patrol (gathering)
-        const npc4 = this.physics.add.sprite(500, 300, 'npc-char-4');
-        npc4.setDepth(50);
-        npc4.activity = 'patrol';
-        npc4.patrolMinX = 450;
-        npc4.patrolMaxX = 700;
-        npc4.patrolDirection = 1;
-        this.npcs.push(npc4);
-
-        // Create animations for patrolling NPC
-        this.anims.create({
-            key: 'npc4-walk-left',
-            frames: this.anims.generateFrameNumbers('npc-char-4', { start: 3, end: 5 }),
-            frameRate: 5,
-            repeat: -1
-        });
-
-        this.anims.create({
-            key: 'npc4-walk-right',
-            frames: this.anims.generateFrameNumbers('npc-char-4', { start: 6, end: 8 }),
-            frameRate: 5,
-            repeat: -1
-        });
-
-        npc4.play('npc4-walk-right');
+    if (!this.anims.exists('caveman-walk-up')) {
+      this.anims.create({
+        key: 'caveman-walk-up',
+        frames: this.anims.generateFrameNumbers('player-caveman', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    handleCaveInteraction() {
-        this.nearCave = true;
+    // Enable collision with cave
+    this.physics.add.overlap(this.player, this.cave, this.handleCaveInteraction, null, this);
+
+    // Player properties
+    this.playerSpeed = 140;
+    this.nearCave = false;
+  }
+
+  createNPC() {
+    this.npcs = [];
+    this.npcProps = []; // Track props that move with NPCs
+
+    // NPC 1: Tending the fire (near fire)
+    const npc1 = this.add.sprite(380, 110, 'npc-work-1');
+    npc1.setDepth(50);
+    npc1.activity = 'fire';
+    npc1.workFrame = 0;
+    this.npcs.push(npc1);
+
+    // Fire stick prop (follows NPC 1's hand)
+    const fireStick = this.add.image(390, 120, 'fire-stick').setDepth(49);
+    npc1.prop = fireStick;
+
+    // Animate NPC 1: Fire tending cycle
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        npc1.workFrame = (npc1.workFrame + 1) % 3;
+        npc1.setFrame(npc1.workFrame);
+
+        // Move stick with hand position
+        if (npc1.workFrame === 0) {
+          fireStick.setPosition(390, 120); // At side
+        } else if (npc1.workFrame === 1) {
+          fireStick.setPosition(392, 130); // Reaching down
+        } else if (npc1.workFrame === 2) {
+          fireStick.setPosition(393, 135); // Poking fire
+        }
+      },
+      loop: true,
+    });
+
+    // NPC 2: Sharpening spear (bottom left)
+    const npc2 = this.add.sprite(180, 450, 'npc-work-2');
+    npc2.setDepth(50);
+    npc2.activity = 'spear';
+    npc2.workFrame = 0;
+    this.npcs.push(npc2);
+
+    // Spear prop (in NPC 2's hands)
+    const spear = this.add.image(180, 445, 'spear').setDepth(49);
+    spear.setAngle(90); // Horizontal
+    npc2.prop = spear;
+
+    // Sharpening stone on ground
+    this.add.image(170, 465, 'stone-scraper').setDepth(48);
+
+    // Animate NPC 2: Spear sharpening cycle
+    this.time.addEvent({
+      delay: 500,
+      callback: () => {
+        npc2.workFrame = (npc2.workFrame + 1) % 4;
+        npc2.setFrame(npc2.workFrame);
+
+        // Move spear with sharpening motion
+        if (npc2.workFrame === 0) {
+          spear.setPosition(180, 445);
+          spear.setAngle(90);
+        } else if (npc2.workFrame === 1) {
+          spear.setPosition(180, 450); // Scraping down
+          spear.setAngle(85);
+        } else if (npc2.workFrame === 2) {
+          spear.setPosition(180, 448); // Mid scrape
+          spear.setAngle(88);
+        } else if (npc2.workFrame === 3) {
+          spear.setPosition(180, 443); // Up
+          spear.setAngle(92);
+        }
+      },
+      loop: true,
+    });
+
+    // NPC 3: Crafting with stones (bottom right)
+    const npc3 = this.add.sprite(620, 480, 'npc-work-3');
+    npc3.setDepth(50);
+    npc3.activity = 'crafting';
+    npc3.workFrame = 0;
+    this.npcs.push(npc3);
+
+    // Stone tools workspace
+    const groundStone = this.add.image(620, 495, 'stone-hammerstone').setDepth(48);
+    this.add.image(600, 490, 'stone-flake').setDepth(48);
+    this.add.image(635, 490, 'stone-scraper').setDepth(48);
+
+    // Held stone (follows hands)
+    const heldStone = this.add.image(620, 465, 'stone-hammerstone').setDepth(51);
+    npc3.prop = heldStone;
+
+    // Particle emitter for stone impacts
+    const impactParticles = this.add.particles(620, 495, 'fire-yellow', {
+      speed: { min: 20, max: 40 },
+      angle: { min: 0, max: 360 },
+      scale: { start: 0.5, end: 0 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 300,
+      frequency: -1, // Manual emission
+      gravityY: 100,
+    });
+
+    // Animate NPC 3: Stone crafting cycle
+    this.time.addEvent({
+      delay: 400,
+      callback: () => {
+        npc3.workFrame = (npc3.workFrame + 1) % 4;
+        npc3.setFrame(npc3.workFrame);
+
+        // Move held stone with arms
+        if (npc3.workFrame === 0) {
+          heldStone.setPosition(620, 460); // Raised overhead
+        } else if (npc3.workFrame === 1) {
+          heldStone.setPosition(620, 475); // Mid-swing
+        } else if (npc3.workFrame === 2) {
+          heldStone.setPosition(620, 490); // Impact!
+          // Emit impact particles
+          impactParticles.emitParticle(5);
+        } else if (npc3.workFrame === 3) {
+          heldStone.setPosition(620, 470); // Rising
+        }
+      },
+      loop: true,
+    });
+
+    // NPC 4: Walking patrol (gathering)
+    const npc4 = this.physics.add.sprite(500, 300, 'npc-char-4');
+    npc4.setDepth(50);
+    npc4.activity = 'patrol';
+    npc4.patrolMinX = 450;
+    npc4.patrolMaxX = 700;
+    npc4.patrolDirection = 1;
+    this.npcs.push(npc4);
+
+    // Create animations for patrolling NPC
+    this.anims.create({
+      key: 'npc4-walk-left',
+      frames: this.anims.generateFrameNumbers('npc-char-4', { start: 3, end: 5 }),
+      frameRate: 5,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'npc4-walk-right',
+      frames: this.anims.generateFrameNumbers('npc-char-4', { start: 6, end: 8 }),
+      frameRate: 5,
+      repeat: -1,
+    });
+
+    npc4.play('npc4-walk-right');
+  }
+
+  handleCaveInteraction() {
+    this.nearCave = true;
+  }
+
+  update() {
+    this.nearCave = false;
+
+    // Check for nearby interactables
+    let nearInteractable = null;
+    for (const interactable of this.interactables) {
+      const dist = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
+
+      if (dist < 80) {
+        nearInteractable = interactable;
+        interactable.indicator.setVisible(true);
+      } else {
+        interactable.indicator.setVisible(false);
+      }
     }
 
-    update() {
-        this.nearCave = false;
-
-        // Check for nearby interactables
-        let nearInteractable = null;
-        for (let interactable of this.interactables) {
-            const dist = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
-
-            if (dist < 80) {
-                nearInteractable = interactable;
-                interactable.indicator.setVisible(true);
-            } else {
-                interactable.indicator.setVisible(false);
-            }
-        }
-
-        // Handle E key press for interactables
-        if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-            this.infoPanel.toggle(nearInteractable.infoData);
-        }
-
-        // Check distance to cave
-        const distToCave = Phaser.Math.Distance.Between(
-            this.player.x, this.player.y,
-            this.cave.x, this.cave.y
-        );
-
-        if (distToCave < 80) {
-            this.nearCave = true;
-            this.interactionText.setText('Press SPACE to enter cave and travel forward in time!');
-            this.interactionText.setVisible(true);
-
-            // Check for space key
-            if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-                this.enterNextEra();
-            }
-        } else if (!nearInteractable) {
-            this.interactionText.setVisible(false);
-        }
-
-        // Player movement with animation
-        this.player.setVelocity(0);
-        let moving = false;
-        let newDirection = this.lastDirection;
-
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-this.playerSpeed);
-            newDirection = 'left';
-            moving = true;
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(this.playerSpeed);
-            newDirection = 'right';
-            moving = true;
-        }
-
-        if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-this.playerSpeed);
-            newDirection = 'up';
-            moving = true;
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(this.playerSpeed);
-            newDirection = 'down';
-            moving = true;
-        }
-
-        // Normalize diagonal movement
-        if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
-            this.player.body.velocity.normalize().scale(this.playerSpeed);
-        }
-
-        // Update animation
-        if (moving) {
-            if (newDirection !== this.lastDirection) {
-                this.player.play(`caveman-walk-${newDirection}`);
-                this.lastDirection = newDirection;
-            }
-        } else {
-            this.player.stop();
-            // Show idle frame for current direction
-            const frameMap = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(frameMap[this.lastDirection]);
-        }
-
-        // Update NPC
-        this.updateNPC();
+    // Handle E key press for interactables
+    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
+      this.infoPanel.toggle(nearInteractable.infoData);
     }
 
-    updateNPC() {
-        // Only update the patrolling NPC (NPC 4) - others are animated by timers
-        const patrolNPC = this.npcs.find(npc => npc.activity === 'patrol');
-        if (patrolNPC) {
-            const speed = 50;
-            if (patrolNPC.patrolDirection === 1) {
-                patrolNPC.setVelocityX(speed);
-                if (patrolNPC.x > patrolNPC.patrolMaxX) {
-                    patrolNPC.patrolDirection = -1;
-                    patrolNPC.play('npc4-walk-left');
-                }
-            } else {
-                patrolNPC.setVelocityX(-speed);
-                if (patrolNPC.x < patrolNPC.patrolMinX) {
-                    patrolNPC.patrolDirection = 1;
-                    patrolNPC.play('npc4-walk-right');
-                }
-            }
+    // Check distance to cave
+    const distToCave = Phaser.Math.Distance.Between(
+      this.player.x,
+      this.player.y,
+      this.cave.x,
+      this.cave.y
+    );
+
+    if (distToCave < 80) {
+      this.nearCave = true;
+      this.interactionText.setText('Press SPACE to enter cave and travel forward in time!');
+      this.interactionText.setVisible(true);
+
+      // Check for space key
+      if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+        this.enterNextEra();
+      }
+    } else if (!nearInteractable) {
+      this.interactionText.setVisible(false);
+    }
+
+    // Player movement with animation
+    this.player.setVelocity(0);
+    let moving = false;
+    let newDirection = this.lastDirection;
+
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-this.playerSpeed);
+      newDirection = 'left';
+      moving = true;
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(this.playerSpeed);
+      newDirection = 'right';
+      moving = true;
+    }
+
+    if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-this.playerSpeed);
+      newDirection = 'up';
+      moving = true;
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(this.playerSpeed);
+      newDirection = 'down';
+      moving = true;
+    }
+
+    // Normalize diagonal movement
+    if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
+      this.player.body.velocity.normalize().scale(this.playerSpeed);
+    }
+
+    // Update animation
+    if (moving) {
+      if (newDirection !== this.lastDirection) {
+        this.player.play(`caveman-walk-${newDirection}`);
+        this.lastDirection = newDirection;
+      }
+    } else {
+      this.player.stop();
+      // Show idle frame for current direction
+      const frameMap = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(frameMap[this.lastDirection]);
+    }
+
+    // Update NPC
+    this.updateNPC();
+  }
+
+  updateNPC() {
+    // Only update the patrolling NPC (NPC 4) - others are animated by timers
+    const patrolNPC = this.npcs.find((npc) => npc.activity === 'patrol');
+    if (patrolNPC) {
+      const speed = 50;
+      if (patrolNPC.patrolDirection === 1) {
+        patrolNPC.setVelocityX(speed);
+        if (patrolNPC.x > patrolNPC.patrolMaxX) {
+          patrolNPC.patrolDirection = -1;
+          patrolNPC.play('npc4-walk-left');
         }
+      } else {
+        patrolNPC.setVelocityX(-speed);
+        if (patrolNPC.x < patrolNPC.patrolMinX) {
+          patrolNPC.patrolDirection = 1;
+          patrolNPC.play('npc4-walk-right');
+        }
+      }
     }
+  }
 
-    enterNextEra() {
-        // Hide interaction text
-        this.interactionText.setVisible(false);
+  enterNextEra() {
+    // Hide interaction text
+    this.interactionText.setVisible(false);
 
-        // Fade camera to black over 1 second
-        this.cameras.main.fadeOut(1000, 0, 0, 0);
+    // Fade camera to black over 1 second
+    this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        // After fade completes, transition directly to Farming Scene
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('FarmingScene');
-        });
-    }
+    // After fade completes, transition directly to Farming Scene
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.start('FarmingScene');
+    });
+  }
 }
 
 // ===== FARMING SCENE =====
 
 class FarmingScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'FarmingScene' });
+  constructor() {
+    super({ key: 'FarmingScene' });
+  }
+
+  create(data) {
+    // Generate farming era textures
+    generateGrassTexture(this, 'grass');
+    generateFarmlandTexture(this, 'farmland');
+    generateWheatTexture(this, 'wheat');
+    generateBarnTexture(this, 'barn');
+
+    // Generate farming tools
+    generateHoe(this, 'hoe');
+    generateSickle(this, 'sickle');
+
+    // Generate farmer NPCs with different colors
+    const farmerVariants = [
+      {
+        skin: '#c49a6c',
+        shirt: '#8b7355',
+        shirtDark: '#6b5642',
+        pants: '#5a4a3a',
+        hair: '#4a3a2a',
+      },
+      {
+        skin: '#d4a574',
+        shirt: '#9a826d',
+        shirtDark: '#7a6348',
+        pants: '#4a3a2a',
+        hair: '#3d2817',
+      },
+      {
+        skin: '#b8956a',
+        shirt: '#7a6348',
+        shirtDark: '#5a4838',
+        pants: '#3a2a1a',
+        hair: '#2a1a0a',
+      },
+    ];
+
+    generateFarmingWorkFrames(this, 'farmer-work-1', farmerVariants[0], 'planting');
+    generateFarmingWorkFrames(this, 'farmer-work-2', farmerVariants[1], 'harvesting');
+    generateFarmingWorkFrames(this, 'farmer-work-3', farmerVariants[2], 'tilling');
+
+    // Generate farming era player character
+    if (!this.textures.exists('player-farming')) {
+      generateFarmingPlayerSprite(this, 'player-farming');
     }
 
-    create(data) {
-        // Generate farming era textures
-        generateGrassTexture(this, 'grass');
-        generateFarmlandTexture(this, 'farmland');
-        generateWheatTexture(this, 'wheat');
-        generateBarnTexture(this, 'barn');
+    // Generate interactive object sprites
+    generateSignPostTexture(this, 'sign-post');
 
-        // Generate farming tools
-        generateHoe(this, 'hoe');
-        generateSickle(this, 'sickle');
-
-        // Generate farmer NPCs with different colors
-        const farmerVariants = [
-            { skin: '#c49a6c', shirt: '#8b7355', shirtDark: '#6b5642', pants: '#5a4a3a', hair: '#4a3a2a' },
-            { skin: '#d4a574', shirt: '#9a826d', shirtDark: '#7a6348', pants: '#4a3a2a', hair: '#3d2817' },
-            { skin: '#b8956a', shirt: '#7a6348', shirtDark: '#5a4838', pants: '#3a2a1a', hair: '#2a1a0a' }
-        ];
-
-        generateFarmingWorkFrames(this, 'farmer-work-1', farmerVariants[0], 'planting');
-        generateFarmingWorkFrames(this, 'farmer-work-2', farmerVariants[1], 'harvesting');
-        generateFarmingWorkFrames(this, 'farmer-work-3', farmerVariants[2], 'tilling');
-
-        // Generate farming era player character
-        if (!this.textures.exists('player-farming')) {
-            generateFarmingPlayerSprite(this, 'player-farming');
-        }
-
-        // Generate interactive object sprites
-        generateSignPostTexture(this, 'sign-post');
-
-        // Generate walking sprite for timeline (shared across scenes)
-        if (!this.textures.exists('walking-sprite')) {
-            generateWalkingSpriteTexture(this, 'walking-sprite');
-            // Add frames for walking sprite (4 frames of 16x16 pixels)
-            for (let i = 0; i < 4; i++) {
-                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-            }
-        }
-
-        // Get spawn position from previous scene (or default)
-        const spawnX = data?.spawnX || 400;
-        const spawnY = data?.spawnY || 500;
-
-        // Fade in effect when entering scene
-        this.cameras.main.fadeIn(1000, 0, 0, 0);
-
-        // Add frame configs for work animations
-        for (let i = 1; i <= 3; i++) {
-            const key = `farmer-work-${i}`;
-            const numFrames = 4;
-            for (let f = 0; f < numFrames; f++) {
-                this.textures.get(key).add(f, 0, f * 32, 0, 32, 48);
-            }
-        }
-
-        // Add frame configs for player (if not already added)
-        if (!this.anims.exists('farming-walk-down')) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-farming').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // World bounds
-        this.physics.world.setBounds(0, 0, 800, 600);
-
-        // Create scene elements
-        this.createGround();
-        this.createWheatField();
-        this.createBarnPortal();
-
-        // Add sign post for wheat field interactable
-        this.add.image(150, 300, 'sign-post').setDepth(10);
-
-        this.createFarmers();
-        this.createPlayer(spawnX, spawnY);
-
-        // Camera setup
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.spaceKey = this.input.keyboard.addKey('SPACE');
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Create info panel system
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Create timeline bar
-        this.timelineBar = new TimelineBar(this, 'farming');
-
-        // Interaction text (moved down to accommodate timeline)
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Era title card
-        this.showEraTitleCard('FARMING ERA', '10,000 BCE');
-
-        // Track player direction
-        this.lastDirection = 'down';
-        this.playerSpeed = 140;
+    // Generate walking sprite for timeline (shared across scenes)
+    if (!this.textures.exists('walking-sprite')) {
+      generateWalkingSpriteTexture(this, 'walking-sprite');
+      // Add frames for walking sprite (4 frames of 16x16 pixels)
+      for (let i = 0; i < 4; i++) {
+        this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+      }
     }
 
-    createInteractables() {
-        // Wheat field interactable
-        const wheatInfo = {
-            title: 'Agricultural Revolution',
-            content: 'The shift from hunting-gathering to farming (~10,000 BCE) was humanity\'s most important transition. It allowed permanent settlements, population growth, and the birth of civilization.',
-            icon: '🌾'
-        };
-        const wheatZone = createInteractable(this, 150, 300, 120, 100, wheatInfo);
-        this.interactables.push(wheatZone);
+    // Get spawn position from previous scene (or default)
+    const spawnX = data?.spawnX || 400;
+    const spawnY = data?.spawnY || 500;
 
-        // Planter NPC interactable
-        const planterInfo = {
-            title: 'Early Farming',
-            content: 'The first farmers planted wild seeds they had collected. Over generations, they selectively saved seeds from the best plants, slowly domesticating crops like wheat and barley.',
-            icon: '🔧'
-        };
-        const planterZone = createInteractable(this, 300, 450, 60, 60, planterInfo);
-        this.interactables.push(planterZone);
+    // Fade in effect when entering scene
+    this.cameras.main.fadeIn(1000, 0, 0, 0);
 
-        // Harvester NPC interactable
-        const harvesterInfo = {
-            title: 'Harvest Season',
-            content: 'In agricultural societies, the harvest was the most critical time of year. A failed harvest meant famine, so entire communities worked together to bring in crops.',
-            icon: '🏛️'
-        };
-        const harvesterZone = createInteractable(this, 200, 300, 60, 60, harvesterInfo);
-        this.interactables.push(harvesterZone);
-
-        // Tiller NPC interactable
-        const tillerInfo = {
-            title: 'Timeline: Neolithic Revolution',
-            content: 'Agriculture began in the Fertile Crescent around 10,000 BCE and spread to Europe by 7,000 BCE. This "Neolithic Revolution" changed human society forever.',
-            icon: '📅'
-        };
-        const tillerZone = createInteractable(this, 620, 480, 60, 60, tillerInfo);
-        this.interactables.push(tillerZone);
-
-        // Barn portal interactable
-        const barnInfo = {
-            title: 'Food Storage Revolution',
-            content: 'The ability to store surplus grain through winter was revolutionary. It freed people from constant food gathering and allowed specialization into other crafts and trades.',
-            icon: '📈'
-        };
-        const barnZone = createInteractable(this, 400, 80, 96, 96, barnInfo);
-        this.interactables.push(barnZone);
+    // Add frame configs for work animations
+    for (let i = 1; i <= 3; i++) {
+      const key = `farmer-work-${i}`;
+      const numFrames = 4;
+      for (let f = 0; f < numFrames; f++) {
+        this.textures.get(key).add(f, 0, f * 32, 0, 32, 48);
+      }
     }
 
-    showEraTitleCard(title, subtitle) {
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
-        });
+    // Add frame configs for player (if not already added)
+    if (!this.anims.exists('farming-walk-down')) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-farming').add(i, 0, col * 32, row * 48, 32, 48);
+      }
     }
 
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
+    // World bounds
+    this.physics.world.setBounds(0, 0, 800, 600);
 
-        // Create grass and farmland pattern
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                const rand = (x * 7 + y * 13) % 100;
-                // More farmland in bottom half
-                const isFarmland = (y > 10 && rand < 40) || (y > 14 && rand < 70);
-                const texture = isFarmland ? 'farmland' : 'grass';
-                this.add.image(x * tileSize + 16, y * tileSize + 16, texture);
-            }
+    // Create scene elements
+    this.createGround();
+    this.createWheatField();
+    this.createBarnPortal();
+
+    // Add sign post for wheat field interactable
+    this.add.image(150, 300, 'sign-post').setDepth(10);
+
+    this.createFarmers();
+    this.createPlayer(spawnX, spawnY);
+
+    // Camera setup
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.spaceKey = this.input.keyboard.addKey('SPACE');
+    this.eKey = this.input.keyboard.addKey('E');
+
+    // Create info panel system
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
+
+    // Create timeline bar
+    this.timelineBar = new TimelineBar(this, 'farming');
+
+    // Interaction text (moved down to accommodate timeline)
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
+
+    // Era title card
+    this.showEraTitleCard('FARMING ERA', '10,000 BCE');
+
+    // Track player direction
+    this.lastDirection = 'down';
+    this.playerSpeed = 140;
+  }
+
+  createInteractables() {
+    // Wheat field interactable
+    const wheatInfo = {
+      title: 'Agricultural Revolution',
+      content:
+        "The shift from hunting-gathering to farming (~10,000 BCE) was humanity's most important transition. It allowed permanent settlements, population growth, and the birth of civilization.",
+      icon: '🌾',
+    };
+    const wheatZone = createInteractable(this, 150, 300, 120, 100, wheatInfo);
+    this.interactables.push(wheatZone);
+
+    // Planter NPC interactable
+    const planterInfo = {
+      title: 'Early Farming',
+      content:
+        'The first farmers planted wild seeds they had collected. Over generations, they selectively saved seeds from the best plants, slowly domesticating crops like wheat and barley.',
+      icon: '🔧',
+    };
+    const planterZone = createInteractable(this, 300, 450, 60, 60, planterInfo);
+    this.interactables.push(planterZone);
+
+    // Harvester NPC interactable
+    const harvesterInfo = {
+      title: 'Harvest Season',
+      content:
+        'In agricultural societies, the harvest was the most critical time of year. A failed harvest meant famine, so entire communities worked together to bring in crops.',
+      icon: '🏛️',
+    };
+    const harvesterZone = createInteractable(this, 200, 300, 60, 60, harvesterInfo);
+    this.interactables.push(harvesterZone);
+
+    // Tiller NPC interactable
+    const tillerInfo = {
+      title: 'Timeline: Neolithic Revolution',
+      content:
+        'Agriculture began in the Fertile Crescent around 10,000 BCE and spread to Europe by 7,000 BCE. This "Neolithic Revolution" changed human society forever.',
+      icon: '📅',
+    };
+    const tillerZone = createInteractable(this, 620, 480, 60, 60, tillerInfo);
+    this.interactables.push(tillerZone);
+
+    // Barn portal interactable
+    const barnInfo = {
+      title: 'Food Storage Revolution',
+      content:
+        'The ability to store surplus grain through winter was revolutionary. It freed people from constant food gathering and allowed specialization into other crafts and trades.',
+      icon: '📈',
+    };
+    const barnZone = createInteractable(this, 400, 80, 96, 96, barnInfo);
+    this.interactables.push(barnZone);
+  }
+
+  showEraTitleCard(title, subtitle) {
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#5C9EAD',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
+
+    // Create grass and farmland pattern
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const rand = (x * 7 + y * 13) % 100;
+        // More farmland in bottom half
+        const isFarmland = (y > 10 && rand < 40) || (y > 14 && rand < 70);
+        const texture = isFarmland ? 'farmland' : 'grass';
+        this.add.image(x * tileSize + 16, y * tileSize + 16, texture);
+      }
+    }
+  }
+
+  createWheatField() {
+    // Create a cluster of wheat stalks
+    this.wheatStalks = [];
+
+    // Wheat field in the middle-left area
+    for (let row = 0; row < 4; row++) {
+      for (let col = 0; col < 8; col++) {
+        const x = 100 + col * 20 + Math.random() * 8;
+        const y = 250 + row * 24 + Math.random() * 8;
+        const wheat = this.add.image(x, y, 'wheat').setDepth(5);
+        wheat.baseY = y;
+        wheat.swayOffset = Math.random() * Math.PI * 2; // Random starting phase
+        this.wheatStalks.push(wheat);
+      }
+    }
+
+    // Another wheat patch in the bottom-right
+    for (let row = 0; row < 3; row++) {
+      for (let col = 0; col < 6; col++) {
+        const x = 550 + col * 20 + Math.random() * 8;
+        const y = 420 + row * 24 + Math.random() * 8;
+        const wheat = this.add.image(x, y, 'wheat').setDepth(5);
+        wheat.baseY = y;
+        wheat.swayOffset = Math.random() * Math.PI * 2;
+        this.wheatStalks.push(wheat);
+      }
+    }
+  }
+
+  createBarnPortal() {
+    const barnX = 400;
+    const barnY = 80;
+
+    // Barn sprite (portal to medieval era)
+    this.barn = this.physics.add.sprite(barnX, barnY, 'barn');
+    this.barn.setImmovable(true);
+
+    // Add sign above barn
+    this.add
+      .text(barnX, barnY - 60, '⬆ BARN\nNext Era', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
+
+  createFarmers() {
+    this.farmers = [];
+
+    // Farmer 1: Planting seeds (in farmland area)
+    const farmer1 = this.add.sprite(300, 450, 'farmer-work-1');
+    farmer1.setDepth(50);
+    farmer1.activity = 'planting';
+    farmer1.workFrame = 0;
+    this.farmers.push(farmer1);
+
+    // Animate planting cycle
+    this.time.addEvent({
+      delay: 700,
+      callback: () => {
+        farmer1.workFrame = (farmer1.workFrame + 1) % 4;
+        farmer1.setFrame(farmer1.workFrame);
+      },
+      loop: true,
+    });
+
+    // Farmer 2: Harvesting wheat (near wheat field)
+    const farmer2 = this.add.sprite(200, 300, 'farmer-work-2');
+    farmer2.setDepth(50);
+    farmer2.activity = 'harvesting';
+    farmer2.workFrame = 0;
+    this.farmers.push(farmer2);
+
+    // Sickle prop (follows farmer 2's hand)
+    const sickle = this.add.image(210, 290, 'sickle').setDepth(51);
+    farmer2.prop = sickle;
+
+    // Animate harvesting cycle
+    this.time.addEvent({
+      delay: 500,
+      callback: () => {
+        farmer2.workFrame = (farmer2.workFrame + 1) % 4;
+        farmer2.setFrame(farmer2.workFrame);
+
+        // Move sickle with swinging motion
+        if (farmer2.workFrame === 0) {
+          sickle.setPosition(210, 280); // Raised
+          sickle.setAngle(-20);
+        } else if (farmer2.workFrame === 1) {
+          sickle.setPosition(210, 295); // Mid swing
+          sickle.setAngle(-10);
+        } else if (farmer2.workFrame === 2) {
+          sickle.setPosition(210, 310); // Bottom of swing
+          sickle.setAngle(5);
+        } else if (farmer2.workFrame === 3) {
+          sickle.setPosition(210, 300); // Pulling back
+          sickle.setAngle(-5);
         }
+      },
+      loop: true,
+    });
+
+    // Farmer 3: Tilling soil (farmland area)
+    const farmer3 = this.add.sprite(620, 480, 'farmer-work-3');
+    farmer3.setDepth(50);
+    farmer3.activity = 'tilling';
+    farmer3.workFrame = 0;
+    this.farmers.push(farmer3);
+
+    // Hoe prop (follows farmer 3's hand)
+    const hoe = this.add.image(630, 470, 'hoe').setDepth(51);
+    farmer3.prop = hoe;
+
+    // Animate tilling cycle
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        farmer3.workFrame = (farmer3.workFrame + 1) % 4;
+        farmer3.setFrame(farmer3.workFrame);
+
+        // Move hoe with tilling motion
+        if (farmer3.workFrame === 0) {
+          hoe.setPosition(630, 465); // Raised
+          hoe.setAngle(-30);
+        } else if (farmer3.workFrame === 1) {
+          hoe.setPosition(630, 480); // Swinging down
+          hoe.setAngle(-10);
+        } else if (farmer3.workFrame === 2) {
+          hoe.setPosition(630, 495); // Impact with ground
+          hoe.setAngle(10);
+        } else if (farmer3.workFrame === 3) {
+          hoe.setPosition(630, 485); // Pulling back
+          hoe.setAngle(0);
+        }
+      },
+      loop: true,
+    });
+  }
+
+  createPlayer(x, y) {
+    // Create player sprite
+    this.player = this.physics.add.sprite(x, y, 'player-farming');
+    this.player.setCollideWorldBounds(true);
+    this.player.setSize(24, 40);
+    this.player.setOffset(4, 8);
+    this.player.setDepth(50);
+
+    // Create animations if they don't exist yet
+    if (!this.anims.exists('farming-walk-down')) {
+      this.anims.create({
+        key: 'farming-walk-down',
+        frames: [
+          { key: 'player-farming', frame: 0 },
+          { key: 'player-farming', frame: 1 },
+          { key: 'player-farming', frame: 2 },
+        ],
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'farming-walk-left',
+        frames: this.anims.generateFrameNumbers('player-farming', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'farming-walk-right',
+        frames: this.anims.generateFrameNumbers('player-farming', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'farming-walk-up',
+        frames: this.anims.generateFrameNumbers('player-farming', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    createWheatField() {
-        // Create a cluster of wheat stalks
-        this.wheatStalks = [];
+    // Enable collision with barn
+    this.physics.add.overlap(this.player, this.barn, this.handleBarnInteraction, null, this);
 
-        // Wheat field in the middle-left area
-        for (let row = 0; row < 4; row++) {
-            for (let col = 0; col < 8; col++) {
-                const x = 100 + col * 20 + Math.random() * 8;
-                const y = 250 + row * 24 + Math.random() * 8;
-                const wheat = this.add.image(x, y, 'wheat').setDepth(5);
-                wheat.baseY = y;
-                wheat.swayOffset = Math.random() * Math.PI * 2; // Random starting phase
-                this.wheatStalks.push(wheat);
-            }
-        }
+    this.nearBarn = false;
+  }
 
-        // Another wheat patch in the bottom-right
-        for (let row = 0; row < 3; row++) {
-            for (let col = 0; col < 6; col++) {
-                const x = 550 + col * 20 + Math.random() * 8;
-                const y = 420 + row * 24 + Math.random() * 8;
-                const wheat = this.add.image(x, y, 'wheat').setDepth(5);
-                wheat.baseY = y;
-                wheat.swayOffset = Math.random() * Math.PI * 2;
-                this.wheatStalks.push(wheat);
-            }
-        }
+  handleBarnInteraction() {
+    this.nearBarn = true;
+  }
+
+  update(time, delta) {
+    this.nearBarn = false;
+
+    // Check for nearby interactables
+    let nearInteractable = null;
+    for (const interactable of this.interactables) {
+      const dist = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
+
+      if (dist < 80) {
+        nearInteractable = interactable;
+        interactable.indicator.setVisible(true);
+      } else {
+        interactable.indicator.setVisible(false);
+      }
     }
 
-    createBarnPortal() {
-        const barnX = 400;
-        const barnY = 80;
-
-        // Barn sprite (portal to medieval era)
-        this.barn = this.physics.add.sprite(barnX, barnY, 'barn');
-        this.barn.setImmovable(true);
-
-        // Add sign above barn
-        this.add.text(barnX, barnY - 60, '⬆ BARN\nNext Era', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#4a4a4a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
+    // Handle E key press for interactables
+    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
+      this.infoPanel.toggle(nearInteractable.infoData);
     }
 
-    createFarmers() {
-        this.farmers = [];
+    // Check distance to barn
+    const distToBarn = Phaser.Math.Distance.Between(
+      this.player.x,
+      this.player.y,
+      this.barn.x,
+      this.barn.y
+    );
 
-        // Farmer 1: Planting seeds (in farmland area)
-        const farmer1 = this.add.sprite(300, 450, 'farmer-work-1');
-        farmer1.setDepth(50);
-        farmer1.activity = 'planting';
-        farmer1.workFrame = 0;
-        this.farmers.push(farmer1);
+    if (distToBarn < 90) {
+      this.nearBarn = true;
+      this.interactionText.setText('Press SPACE to enter barn and travel to Medieval Era!');
+      this.interactionText.setVisible(true);
 
-        // Animate planting cycle
-        this.time.addEvent({
-            delay: 700,
-            callback: () => {
-                farmer1.workFrame = (farmer1.workFrame + 1) % 4;
-                farmer1.setFrame(farmer1.workFrame);
-            },
-            loop: true
-        });
-
-        // Farmer 2: Harvesting wheat (near wheat field)
-        const farmer2 = this.add.sprite(200, 300, 'farmer-work-2');
-        farmer2.setDepth(50);
-        farmer2.activity = 'harvesting';
-        farmer2.workFrame = 0;
-        this.farmers.push(farmer2);
-
-        // Sickle prop (follows farmer 2's hand)
-        const sickle = this.add.image(210, 290, 'sickle').setDepth(51);
-        farmer2.prop = sickle;
-
-        // Animate harvesting cycle
-        this.time.addEvent({
-            delay: 500,
-            callback: () => {
-                farmer2.workFrame = (farmer2.workFrame + 1) % 4;
-                farmer2.setFrame(farmer2.workFrame);
-
-                // Move sickle with swinging motion
-                if (farmer2.workFrame === 0) {
-                    sickle.setPosition(210, 280); // Raised
-                    sickle.setAngle(-20);
-                } else if (farmer2.workFrame === 1) {
-                    sickle.setPosition(210, 295); // Mid swing
-                    sickle.setAngle(-10);
-                } else if (farmer2.workFrame === 2) {
-                    sickle.setPosition(210, 310); // Bottom of swing
-                    sickle.setAngle(5);
-                } else if (farmer2.workFrame === 3) {
-                    sickle.setPosition(210, 300); // Pulling back
-                    sickle.setAngle(-5);
-                }
-            },
-            loop: true
-        });
-
-        // Farmer 3: Tilling soil (farmland area)
-        const farmer3 = this.add.sprite(620, 480, 'farmer-work-3');
-        farmer3.setDepth(50);
-        farmer3.activity = 'tilling';
-        farmer3.workFrame = 0;
-        this.farmers.push(farmer3);
-
-        // Hoe prop (follows farmer 3's hand)
-        const hoe = this.add.image(630, 470, 'hoe').setDepth(51);
-        farmer3.prop = hoe;
-
-        // Animate tilling cycle
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                farmer3.workFrame = (farmer3.workFrame + 1) % 4;
-                farmer3.setFrame(farmer3.workFrame);
-
-                // Move hoe with tilling motion
-                if (farmer3.workFrame === 0) {
-                    hoe.setPosition(630, 465); // Raised
-                    hoe.setAngle(-30);
-                } else if (farmer3.workFrame === 1) {
-                    hoe.setPosition(630, 480); // Swinging down
-                    hoe.setAngle(-10);
-                } else if (farmer3.workFrame === 2) {
-                    hoe.setPosition(630, 495); // Impact with ground
-                    hoe.setAngle(10);
-                } else if (farmer3.workFrame === 3) {
-                    hoe.setPosition(630, 485); // Pulling back
-                    hoe.setAngle(0);
-                }
-            },
-            loop: true
-        });
+      if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+        this.enterNextEra();
+      }
+    } else if (!nearInteractable) {
+      this.interactionText.setVisible(false);
     }
 
-    createPlayer(x, y) {
-        // Create player sprite
-        this.player = this.physics.add.sprite(x, y, 'player-farming');
-        this.player.setCollideWorldBounds(true);
-        this.player.setSize(24, 40);
-        this.player.setOffset(4, 8);
-        this.player.setDepth(50);
+    // Update wheat swaying animation
+    this.updateWheatSway(time);
 
-        // Create animations if they don't exist yet
-        if (!this.anims.exists('farming-walk-down')) {
-            this.anims.create({
-                key: 'farming-walk-down',
-                frames: [
-                    { key: 'player-farming', frame: 0 },
-                    { key: 'player-farming', frame: 1 },
-                    { key: 'player-farming', frame: 2 }
-                ],
-                frameRate: 8,
-                repeat: -1
-            });
+    // Player movement
+    this.updatePlayerMovement();
+  }
 
-            this.anims.create({
-                key: 'farming-walk-left',
-                frames: this.anims.generateFrameNumbers('player-farming', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
+  updateWheatSway(time) {
+    // Ambient wheat swaying animation
+    const swayAmount = 2; // pixels
+    const swaySpeed = 0.002; // speed of sway
 
-            this.anims.create({
-                key: 'farming-walk-right',
-                frames: this.anims.generateFrameNumbers('player-farming', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
+    this.wheatStalks.forEach((wheat) => {
+      const sway = Math.sin(time * swaySpeed + wheat.swayOffset) * swayAmount;
+      wheat.x = wheat.x + sway * 0.1; // Very subtle horizontal sway
+      wheat.setAngle(sway * 3); // More visible rotation sway
+    });
+  }
 
-            this.anims.create({
-                key: 'farming-walk-up',
-                frames: this.anims.generateFrameNumbers('player-farming', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
+  updatePlayerMovement() {
+    // Player movement logic (same as caveman era)
+    this.player.setVelocity(0);
+    let moving = false;
+    let newDirection = this.lastDirection;
 
-        // Enable collision with barn
-        this.physics.add.overlap(this.player, this.barn, this.handleBarnInteraction, null, this);
-
-        this.nearBarn = false;
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-this.playerSpeed);
+      newDirection = 'left';
+      moving = true;
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(this.playerSpeed);
+      newDirection = 'right';
+      moving = true;
     }
 
-    handleBarnInteraction() {
-        this.nearBarn = true;
+    if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-this.playerSpeed);
+      newDirection = 'up';
+      moving = true;
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(this.playerSpeed);
+      newDirection = 'down';
+      moving = true;
     }
 
-    update(time, delta) {
-        this.nearBarn = false;
-
-        // Check for nearby interactables
-        let nearInteractable = null;
-        for (let interactable of this.interactables) {
-            const dist = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
-
-            if (dist < 80) {
-                nearInteractable = interactable;
-                interactable.indicator.setVisible(true);
-            } else {
-                interactable.indicator.setVisible(false);
-            }
-        }
-
-        // Handle E key press for interactables
-        if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-            this.infoPanel.toggle(nearInteractable.infoData);
-        }
-
-        // Check distance to barn
-        const distToBarn = Phaser.Math.Distance.Between(
-            this.player.x, this.player.y,
-            this.barn.x, this.barn.y
-        );
-
-        if (distToBarn < 90) {
-            this.nearBarn = true;
-            this.interactionText.setText('Press SPACE to enter barn and travel to Medieval Era!');
-            this.interactionText.setVisible(true);
-
-            if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-                this.enterNextEra();
-            }
-        } else if (!nearInteractable) {
-            this.interactionText.setVisible(false);
-        }
-
-        // Update wheat swaying animation
-        this.updateWheatSway(time);
-
-        // Player movement
-        this.updatePlayerMovement();
+    // Normalize diagonal movement
+    if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
+      this.player.body.velocity.normalize().scale(this.playerSpeed);
     }
 
-    updateWheatSway(time) {
-        // Ambient wheat swaying animation
-        const swayAmount = 2; // pixels
-        const swaySpeed = 0.002; // speed of sway
-
-        this.wheatStalks.forEach(wheat => {
-            const sway = Math.sin(time * swaySpeed + wheat.swayOffset) * swayAmount;
-            wheat.x = wheat.x + sway * 0.1; // Very subtle horizontal sway
-            wheat.setAngle(sway * 3); // More visible rotation sway
-        });
+    // Update animation
+    if (moving) {
+      if (newDirection !== this.lastDirection) {
+        this.player.play(`farming-walk-${newDirection}`);
+        this.lastDirection = newDirection;
+      }
+    } else {
+      this.player.stop();
+      const frameMap = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(frameMap[this.lastDirection]);
     }
+  }
 
-    updatePlayerMovement() {
-        // Player movement logic (same as caveman era)
-        this.player.setVelocity(0);
-        let moving = false;
-        let newDirection = this.lastDirection;
+  enterNextEra() {
+    // Hide interaction text
+    this.interactionText.setVisible(false);
 
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-this.playerSpeed);
-            newDirection = 'left';
-            moving = true;
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(this.playerSpeed);
-            newDirection = 'right';
-            moving = true;
-        }
+    // Fade to black
+    this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-this.playerSpeed);
-            newDirection = 'up';
-            moving = true;
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(this.playerSpeed);
-            newDirection = 'down';
-            moving = true;
-        }
-
-        // Normalize diagonal movement
-        if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
-            this.player.body.velocity.normalize().scale(this.playerSpeed);
-        }
-
-        // Update animation
-        if (moving) {
-            if (newDirection !== this.lastDirection) {
-                this.player.play(`farming-walk-${newDirection}`);
-                this.lastDirection = newDirection;
-            }
-        } else {
-            this.player.stop();
-            const frameMap = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(frameMap[this.lastDirection]);
-        }
-    }
-
-    enterNextEra() {
-        // Hide interaction text
-        this.interactionText.setVisible(false);
-
-        // Fade to black
-        this.cameras.main.fadeOut(1000, 0, 0, 0);
-
-        // After fade, transition directly to Ancient Civilizations Scene
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('AncientScene');
-        });
-    }
+    // After fade, transition directly to Ancient Civilizations Scene
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.start('AncientScene');
+    });
+  }
 }
 
 // ===== MEDIEVAL SCENE =====
 
 class MedievalScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'MedievalScene' });
+  constructor() {
+    super({ key: 'MedievalScene' });
+  }
+
+  create(data) {
+    // Generate medieval era textures
+    generateCobblestoneTexture(this, 'cobblestone');
+    generateCastleWallTexture(this, 'castle-wall');
+    generateCastleGateTexture(this, 'castle-gate');
+    generateTorchTexture(this, 'torch');
+
+    // Generate medieval props
+    generateAnvil(this, 'anvil');
+    generateHammer(this, 'blacksmith-hammer');
+    generateSpear(this, 'guard-spear'); // Reuse spear from caveman era
+
+    // Generate medieval character variants
+    const medievalVariants = [
+      {
+        skin: '#c49a6c',
+        tunic: '#8a4a4a',
+        tunicDark: '#6a3a3a',
+        pants: '#5a4a3a',
+        hair: '#4a3a2a',
+      },
+      {
+        skin: '#d4a574',
+        tunic: '#6a5a4a',
+        tunicDark: '#5a4a3a',
+        pants: '#4a3a2a',
+        hair: '#3d2817',
+      },
+    ];
+
+    generateMedievalWorkFrames(this, 'medieval-work-1', medievalVariants[0], 'blacksmith');
+    generateMedievalWorkFrames(this, 'medieval-work-2', medievalVariants[1], 'guarding');
+
+    // Generate medieval era player character
+    if (!this.textures.exists('player-medieval')) {
+      generateMedievalPlayerSprite(this, 'player-medieval');
     }
 
-    create(data) {
-        // Generate medieval era textures
-        generateCobblestoneTexture(this, 'cobblestone');
-        generateCastleWallTexture(this, 'castle-wall');
-        generateCastleGateTexture(this, 'castle-gate');
-        generateTorchTexture(this, 'torch');
-
-        // Generate medieval props
-        generateAnvil(this, 'anvil');
-        generateHammer(this, 'blacksmith-hammer');
-        generateSpear(this, 'guard-spear'); // Reuse spear from caveman era
-
-        // Generate medieval character variants
-        const medievalVariants = [
-            { skin: '#c49a6c', tunic: '#8a4a4a', tunicDark: '#6a3a3a', pants: '#5a4a3a', hair: '#4a3a2a' },
-            { skin: '#d4a574', tunic: '#6a5a4a', tunicDark: '#5a4a3a', pants: '#4a3a2a', hair: '#3d2817' }
-        ];
-
-        generateMedievalWorkFrames(this, 'medieval-work-1', medievalVariants[0], 'blacksmith');
-        generateMedievalWorkFrames(this, 'medieval-work-2', medievalVariants[1], 'guarding');
-
-        // Generate medieval era player character
-        if (!this.textures.exists('player-medieval')) {
-            generateMedievalPlayerSprite(this, 'player-medieval');
-        }
-
-        // Generate fire particles for torch flames
-        if (!this.textures.exists('fire-orange')) {
-            generateFireParticles(this);
-        }
-
-        // Generate interactive object sprites
-        generateMilestoneTexture(this, 'milestone');
-        generateBannerTexture(this, 'banner');
-        generateMarketStallTexture(this, 'market-stall');
-        generateGuildSignTexture(this, 'guild-sign');
-        generateCoatOfArmsTexture(this, 'coat-of-arms');
-
-        // Generate walking sprite for timeline (shared across scenes)
-        if (!this.textures.exists('walking-sprite')) {
-            generateWalkingSpriteTexture(this, 'walking-sprite');
-            // Add frames for walking sprite (4 frames of 16x16 pixels)
-            for (let i = 0; i < 4; i++) {
-                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-            }
-        }
-
-        // Get spawn position
-        const spawnX = data?.spawnX || 400;
-        const spawnY = data?.spawnY || 500;
-
-        // Fade in effect
-        this.cameras.main.fadeIn(1000, 0, 0, 0);
-
-        // Add frame configs for work animations
-        for (let i = 1; i <= 2; i++) {
-            const key = `medieval-work-${i}`;
-            const numFrames = 4;
-            for (let f = 0; f < numFrames; f++) {
-                this.textures.get(key).add(f, 0, f * 32, 0, 32, 48);
-            }
-        }
-
-        // Add frame configs for player (if not already added)
-        if (!this.anims.exists('medieval-walk-down')) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-medieval').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // World bounds
-        this.physics.world.setBounds(0, 0, 800, 600);
-
-        // Create scene elements
-        this.createGround();
-        this.createCastleWalls();
-        this.createTorches();
-        this.createCastleGate();
-        this.createVillagers();
-
-        // Add interactive object sprites
-        this.add.image(400, 400, 'milestone').setDepth(5); // Cobblestone road
-        this.add.image(400, 60, 'banner').setDepth(15); // Defensive wall banner
-        this.add.image(500, 250, 'market-stall').setDepth(10); // Town square stall
-        this.add.image(200, 250, 'guild-sign').setDepth(10); // Craft guilds sign
-        this.add.image(600, 150, 'coat-of-arms').setDepth(10); // Feudal society shield
-
-        this.createPlayer(spawnX, spawnY);
-
-        // Camera setup
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.spaceKey = this.input.keyboard.addKey('SPACE');
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Create info panel system
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Create timeline bar
-        this.timelineBar = new TimelineBar(this, 'medieval');
-
-        // Interaction text (moved down to accommodate timeline)
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Era title card
-        this.showEraTitleCard('MEDIEVAL ERA', '1000-1500 CE');
-
-        // Track player direction
-        this.lastDirection = 'down';
-        this.playerSpeed = 140;
+    // Generate fire particles for torch flames
+    if (!this.textures.exists('fire-orange')) {
+      generateFireParticles(this);
     }
 
-    createInteractables() {
-        // Blacksmith & Anvil interactable
-        const blacksmithInfo = {
-            title: 'Medieval Metalworking',
-            content: 'Blacksmiths were among the most respected craftsmen in medieval society. They made everything from horseshoes to armor, and their skills took years to master.',
-            icon: '🔧'
-        };
-        const blacksmithZone = createInteractable(this, 260, 450, 80, 80, blacksmithInfo);
-        this.interactables.push(blacksmithZone);
+    // Generate interactive object sprites
+    generateMilestoneTexture(this, 'milestone');
+    generateBannerTexture(this, 'banner');
+    generateMarketStallTexture(this, 'market-stall');
+    generateGuildSignTexture(this, 'guild-sign');
+    generateCoatOfArmsTexture(this, 'coat-of-arms');
 
-        // Guard NPC interactable
-        const guardInfo = {
-            title: 'Town Guards',
-            content: 'Medieval towns employed guards to protect against bandits and enforce local laws. Being a guard was a respected position that often ran in families.',
-            icon: '🏛️'
-        };
-        const guardZone = createInteractable(this, 600, 350, 60, 60, guardInfo);
-        this.interactables.push(guardZone);
-
-        // Castle Gate interactable
-        const gateInfo = {
-            title: 'Castle Architecture',
-            content: 'Medieval castles (1000-1500 CE) were both homes and fortresses. Their thick walls, towers, and strategic design could withstand months-long sieges.',
-            icon: '🏰'
-        };
-        const gateZone = createInteractable(this, 400, 90, 160, 128, gateInfo);
-        this.interactables.push(gateZone);
-
-        // Torches interactable
-        const torchInfo = {
-            title: 'Medieval Lighting',
-            content: 'Before electricity, torches and candles were the only way to light dark spaces. A single torch burned for about 1-2 hours, making light an expensive luxury.',
-            icon: '🕯️'
-        };
-        const torchZone = createInteractable(this, 150, 80, 60, 60, torchInfo);
-        this.interactables.push(torchZone);
-
-        // Cobblestone ground interactable
-        const roadInfo = {
-            title: 'Medieval Infrastructure',
-            content: 'Cobblestone roads were a major advancement from dirt paths. They improved trade by allowing carts to travel in all weather and lasted for centuries with proper maintenance.',
-            icon: '🛤️'
-        };
-        const roadZone = createInteractable(this, 400, 400, 100, 100, roadInfo);
-        this.interactables.push(roadZone);
-
-        // Castle walls interactable
-        const wallInfo = {
-            title: 'Defensive Fortifications',
-            content: 'Castle walls could be up to 20 feet thick and 60 feet tall. Crenellations (the notched top) allowed defenders to shoot arrows while staying protected.',
-            icon: '🧱'
-        };
-        const wallZone = createInteractable(this, 400, 48, 200, 60, wallInfo);
-        this.interactables.push(wallZone);
-
-        // Town square area
-        const townInfo = {
-            title: 'Medieval Towns & Trade',
-            content: 'Medieval towns were centers of commerce and craft. Markets brought together farmers, craftsmen, and merchants. Town charters gave citizens rights and self-governance.',
-            icon: '🏛️'
-        };
-        const townZone = createInteractable(this, 500, 250, 100, 100, townInfo);
-        this.interactables.push(townZone);
-
-        // Guilds and crafts
-        const guildInfo = {
-            title: 'Craft Guilds',
-            content: 'Guilds controlled medieval trades through apprenticeship systems. Becoming a master craftsman took 7+ years of training and required creating a "masterpiece" to prove skill.',
-            icon: '⚒️'
-        };
-        const guildZone = createInteractable(this, 200, 250, 80, 80, guildInfo);
-        this.interactables.push(guildZone);
-
-        // Feudal system
-        const feudalInfo = {
-            title: 'Feudal Society',
-            content: 'Medieval Europe operated on feudalism: kings granted land to nobles, who provided knights for protection. Peasants worked the land in exchange for protection and housing.',
-            icon: '👑'
-        };
-        const feudalZone = createInteractable(this, 600, 150, 80, 80, feudalInfo);
-        this.interactables.push(feudalZone);
+    // Generate walking sprite for timeline (shared across scenes)
+    if (!this.textures.exists('walking-sprite')) {
+      generateWalkingSpriteTexture(this, 'walking-sprite');
+      // Add frames for walking sprite (4 frames of 16x16 pixels)
+      for (let i = 0; i < 4; i++) {
+        this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+      }
     }
 
-    showEraTitleCard(title, subtitle) {
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
+    // Get spawn position
+    const spawnX = data?.spawnX || 400;
+    const spawnY = data?.spawnY || 500;
 
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
+    // Fade in effect
+    this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+    // Add frame configs for work animations
+    for (let i = 1; i <= 2; i++) {
+      const key = `medieval-work-${i}`;
+      const numFrames = 4;
+      for (let f = 0; f < numFrames; f++) {
+        this.textures.get(key).add(f, 0, f * 32, 0, 32, 48);
+      }
+    }
+
+    // Add frame configs for player (if not already added)
+    if (!this.anims.exists('medieval-walk-down')) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-medieval').add(i, 0, col * 32, row * 48, 32, 48);
+      }
+    }
+
+    // World bounds
+    this.physics.world.setBounds(0, 0, 800, 600);
+
+    // Create scene elements
+    this.createGround();
+    this.createCastleWalls();
+    this.createTorches();
+    this.createCastleGate();
+    this.createVillagers();
+
+    // Add interactive object sprites
+    this.add.image(400, 400, 'milestone').setDepth(5); // Cobblestone road
+    this.add.image(400, 60, 'banner').setDepth(15); // Defensive wall banner
+    this.add.image(500, 250, 'market-stall').setDepth(10); // Town square stall
+    this.add.image(200, 250, 'guild-sign').setDepth(10); // Craft guilds sign
+    this.add.image(600, 150, 'coat-of-arms').setDepth(10); // Feudal society shield
+
+    this.createPlayer(spawnX, spawnY);
+
+    // Camera setup
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.spaceKey = this.input.keyboard.addKey('SPACE');
+    this.eKey = this.input.keyboard.addKey('E');
+
+    // Create info panel system
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
+
+    // Create timeline bar
+    this.timelineBar = new TimelineBar(this, 'medieval');
+
+    // Interaction text (moved down to accommodate timeline)
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
+
+    // Era title card
+    this.showEraTitleCard('MEDIEVAL ERA', '1000-1500 CE');
+
+    // Track player direction
+    this.lastDirection = 'down';
+    this.playerSpeed = 140;
+  }
+
+  createInteractables() {
+    // Blacksmith & Anvil interactable
+    const blacksmithInfo = {
+      title: 'Medieval Metalworking',
+      content:
+        'Blacksmiths were among the most respected craftsmen in medieval society. They made everything from horseshoes to armor, and their skills took years to master.',
+      icon: '🔧',
+    };
+    const blacksmithZone = createInteractable(this, 260, 450, 80, 80, blacksmithInfo);
+    this.interactables.push(blacksmithZone);
+
+    // Guard NPC interactable
+    const guardInfo = {
+      title: 'Town Guards',
+      content:
+        'Medieval towns employed guards to protect against bandits and enforce local laws. Being a guard was a respected position that often ran in families.',
+      icon: '🏛️',
+    };
+    const guardZone = createInteractable(this, 600, 350, 60, 60, guardInfo);
+    this.interactables.push(guardZone);
+
+    // Castle Gate interactable
+    const gateInfo = {
+      title: 'Castle Architecture',
+      content:
+        'Medieval castles (1000-1500 CE) were both homes and fortresses. Their thick walls, towers, and strategic design could withstand months-long sieges.',
+      icon: '🏰',
+    };
+    const gateZone = createInteractable(this, 400, 90, 160, 128, gateInfo);
+    this.interactables.push(gateZone);
+
+    // Torches interactable
+    const torchInfo = {
+      title: 'Medieval Lighting',
+      content:
+        'Before electricity, torches and candles were the only way to light dark spaces. A single torch burned for about 1-2 hours, making light an expensive luxury.',
+      icon: '🕯️',
+    };
+    const torchZone = createInteractable(this, 150, 80, 60, 60, torchInfo);
+    this.interactables.push(torchZone);
+
+    // Cobblestone ground interactable
+    const roadInfo = {
+      title: 'Medieval Infrastructure',
+      content:
+        'Cobblestone roads were a major advancement from dirt paths. They improved trade by allowing carts to travel in all weather and lasted for centuries with proper maintenance.',
+      icon: '🛤️',
+    };
+    const roadZone = createInteractable(this, 400, 400, 100, 100, roadInfo);
+    this.interactables.push(roadZone);
+
+    // Castle walls interactable
+    const wallInfo = {
+      title: 'Defensive Fortifications',
+      content:
+        'Castle walls could be up to 20 feet thick and 60 feet tall. Crenellations (the notched top) allowed defenders to shoot arrows while staying protected.',
+      icon: '🧱',
+    };
+    const wallZone = createInteractable(this, 400, 48, 200, 60, wallInfo);
+    this.interactables.push(wallZone);
+
+    // Town square area
+    const townInfo = {
+      title: 'Medieval Towns & Trade',
+      content:
+        'Medieval towns were centers of commerce and craft. Markets brought together farmers, craftsmen, and merchants. Town charters gave citizens rights and self-governance.',
+      icon: '🏛️',
+    };
+    const townZone = createInteractable(this, 500, 250, 100, 100, townInfo);
+    this.interactables.push(townZone);
+
+    // Guilds and crafts
+    const guildInfo = {
+      title: 'Craft Guilds',
+      content:
+        'Guilds controlled medieval trades through apprenticeship systems. Becoming a master craftsman took 7+ years of training and required creating a "masterpiece" to prove skill.',
+      icon: '⚒️',
+    };
+    const guildZone = createInteractable(this, 200, 250, 80, 80, guildInfo);
+    this.interactables.push(guildZone);
+
+    // Feudal system
+    const feudalInfo = {
+      title: 'Feudal Society',
+      content:
+        'Medieval Europe operated on feudalism: kings granted land to nobles, who provided knights for protection. Peasants worked the land in exchange for protection and housing.',
+      icon: '👑',
+    };
+    const feudalZone = createInteractable(this, 600, 150, 80, 80, feudalInfo);
+    this.interactables.push(feudalZone);
+  }
+
+  showEraTitleCard(title, subtitle) {
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#5C9EAD',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
+
+    // Create cobblestone ground
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        this.add.image(x * tileSize + 16, y * tileSize + 16, 'cobblestone');
+      }
+    }
+  }
+
+  createCastleWalls() {
+    // Castle wall backdrop at the top
+    const wallPositions = [
+      { x: 64, y: 48 },
+      { x: 128, y: 48 },
+      { x: 192, y: 48 },
+      { x: 320, y: 48 },
+      { x: 384, y: 48 },
+      { x: 448, y: 48 },
+      { x: 512, y: 48 },
+      { x: 576, y: 48 },
+      { x: 640, y: 48 },
+      { x: 704, y: 48 },
+    ];
+
+    wallPositions.forEach((pos) => {
+      this.add.image(pos.x, pos.y, 'castle-wall').setDepth(1);
+    });
+  }
+
+  createTorches() {
+    // Wall-mounted torches with animated flames
+    this.torches = [];
+    const torchPositions = [
+      { x: 150, y: 80 },
+      { x: 650, y: 80 },
+      { x: 100, y: 300 },
+      { x: 700, y: 300 },
+    ];
+
+    torchPositions.forEach((pos) => {
+      const torch = this.add.image(pos.x, pos.y, 'torch').setDepth(10);
+      this.torches.push(torch);
+
+      // Animated flame particles
+      this.add
+        .particles(pos.x, pos.y - 12, 'fire-orange', {
+          speed: { min: 15, max: 25 },
+          angle: { min: 260, max: 280 },
+          scale: { start: 0.6, end: 0 },
+          alpha: { start: 0.9, end: 0 },
+          lifespan: 500,
+          frequency: 80,
+          gravityY: -40,
+          blendMode: 'ADD',
+        })
+        .setDepth(11);
+    });
+
+    // Flickering animation timer for torches
+    this.time.addEvent({
+      delay: 150,
+      callback: () => {
+        this.torches.forEach((torch) => {
+          const flicker = Math.random() * 0.2 - 0.1;
+          torch.setScale(1 + flicker, 1 + flicker);
         });
-    }
+      },
+      loop: true,
+    });
+  }
 
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
+  createCastleGate() {
+    const gateX = 400;
+    const gateY = 90;
 
-        // Create cobblestone ground
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                this.add.image(x * tileSize + 16, y * tileSize + 16, 'cobblestone');
-            }
+    // Castle gate sprite (portal to next era)
+    this.castleGate = this.physics.add.sprite(gateX, gateY, 'castle-gate');
+    this.castleGate.setImmovable(true);
+
+    // Add sign above gate
+    this.add
+      .text(gateX, gateY - 70, '⬆ CASTLE GATE\nNext Era', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
+
+  createVillagers() {
+    this.villagers = [];
+
+    // Villager 1: Blacksmith hammering
+    const blacksmith = this.add.sprite(250, 450, 'medieval-work-1');
+    blacksmith.setDepth(50);
+    blacksmith.activity = 'blacksmith';
+    blacksmith.workFrame = 0;
+    this.villagers.push(blacksmith);
+
+    // Anvil next to blacksmith
+    const anvil = this.add.image(270, 465, 'anvil').setDepth(48);
+
+    // Hammer prop (follows blacksmith's hand)
+    const hammer = this.add.image(260, 440, 'blacksmith-hammer').setDepth(51);
+    blacksmith.prop = hammer;
+
+    // Yellow sparks particle emitter for hammer strikes
+    const sparks = this.add.particles(270, 460, 'fire-yellow', {
+      speed: { min: 30, max: 50 },
+      angle: { min: 0, max: 360 },
+      scale: { start: 0.6, end: 0 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 400,
+      frequency: -1, // Manual emission
+      gravityY: 150,
+    });
+
+    // Animate blacksmith hammering cycle
+    this.time.addEvent({
+      delay: 500,
+      callback: () => {
+        blacksmith.workFrame = (blacksmith.workFrame + 1) % 4;
+        blacksmith.setFrame(blacksmith.workFrame);
+
+        // Move hammer with arm motion
+        if (blacksmith.workFrame === 0) {
+          hammer.setPosition(260, 430); // Raised
+          hammer.setAngle(-45);
+        } else if (blacksmith.workFrame === 1) {
+          hammer.setPosition(265, 445); // Swinging down
+          hammer.setAngle(-20);
+        } else if (blacksmith.workFrame === 2) {
+          hammer.setPosition(270, 460); // Impact!
+          hammer.setAngle(0);
+          // Emit sparks on impact
+          sparks.emitParticle(8);
+        } else if (blacksmith.workFrame === 3) {
+          hammer.setPosition(265, 450); // Raising back
+          hammer.setAngle(-10);
         }
+      },
+      loop: true,
+    });
+
+    // Villager 2: Guard with spear (patrolling)
+    const guard = this.physics.add.sprite(550, 350, 'medieval-work-2');
+    guard.setDepth(50);
+    guard.activity = 'guarding';
+    guard.workFrame = 0;
+    guard.patrolMinX = 500;
+    guard.patrolMaxX = 700;
+    guard.patrolDirection = 1;
+    this.villagers.push(guard);
+
+    // Spear prop (held by guard)
+    const guardSpear = this.add.image(560, 340, 'guard-spear').setDepth(49);
+    guardSpear.setAngle(-90); // Vertical
+    guard.prop = guardSpear;
+
+    // Animate guard (simple frame cycling while patrolling)
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        guard.workFrame = (guard.workFrame + 1) % 4;
+        guard.setFrame(guard.workFrame);
+      },
+      loop: true,
+    });
+  }
+
+  createPlayer(x, y) {
+    // Create player sprite
+    this.player = this.physics.add.sprite(x, y, 'player-medieval');
+    this.player.setCollideWorldBounds(true);
+    this.player.setSize(24, 40);
+    this.player.setOffset(4, 8);
+    this.player.setDepth(50);
+
+    // Create animations if they don't exist yet
+    if (!this.anims.exists('medieval-walk-down')) {
+      this.anims.create({
+        key: 'medieval-walk-down',
+        frames: [
+          { key: 'player-medieval', frame: 0 },
+          { key: 'player-medieval', frame: 1 },
+          { key: 'player-medieval', frame: 2 },
+        ],
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'medieval-walk-left',
+        frames: this.anims.generateFrameNumbers('player-medieval', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'medieval-walk-right',
+        frames: this.anims.generateFrameNumbers('player-medieval', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'medieval-walk-up',
+        frames: this.anims.generateFrameNumbers('player-medieval', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    createCastleWalls() {
-        // Castle wall backdrop at the top
-        const wallPositions = [
-            { x: 64, y: 48 }, { x: 128, y: 48 }, { x: 192, y: 48 },
-            { x: 320, y: 48 }, { x: 384, y: 48 }, { x: 448, y: 48 },
-            { x: 512, y: 48 }, { x: 576, y: 48 }, { x: 640, y: 48 },
-            { x: 704, y: 48 }
-        ];
+    // Enable collision with castle gate
+    this.physics.add.overlap(this.player, this.castleGate, this.handleGateInteraction, null, this);
 
-        wallPositions.forEach(pos => {
-            this.add.image(pos.x, pos.y, 'castle-wall').setDepth(1);
-        });
+    this.nearGate = false;
+  }
+
+  handleGateInteraction() {
+    this.nearGate = true;
+  }
+
+  update(time, delta) {
+    // Check for nearby interactables
+    let nearInteractable = null;
+    for (const interactable of this.interactables) {
+      const dist = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
+
+      if (dist < 80) {
+        nearInteractable = interactable;
+        interactable.indicator.setVisible(true);
+      } else {
+        interactable.indicator.setVisible(false);
+      }
     }
 
-    createTorches() {
-        // Wall-mounted torches with animated flames
-        this.torches = [];
-        const torchPositions = [
-            { x: 150, y: 80 }, { x: 650, y: 80 },
-            { x: 100, y: 300 }, { x: 700, y: 300 }
-        ];
-
-        torchPositions.forEach(pos => {
-            const torch = this.add.image(pos.x, pos.y, 'torch').setDepth(10);
-            this.torches.push(torch);
-
-            // Animated flame particles
-            this.add.particles(pos.x, pos.y - 12, 'fire-orange', {
-                speed: { min: 15, max: 25 },
-                angle: { min: 260, max: 280 },
-                scale: { start: 0.6, end: 0 },
-                alpha: { start: 0.9, end: 0 },
-                lifespan: 500,
-                frequency: 80,
-                gravityY: -40,
-                blendMode: 'ADD'
-            }).setDepth(11);
-        });
-
-        // Flickering animation timer for torches
-        this.time.addEvent({
-            delay: 150,
-            callback: () => {
-                this.torches.forEach(torch => {
-                    const flicker = Math.random() * 0.2 - 0.1;
-                    torch.setScale(1 + flicker, 1 + flicker);
-                });
-            },
-            loop: true
-        });
+    // Handle E key press for info panels
+    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
+      this.infoPanel.toggle(nearInteractable.infoData);
     }
 
-    createCastleGate() {
-        const gateX = 400;
-        const gateY = 90;
+    this.nearGate = false;
 
-        // Castle gate sprite (portal to next era)
-        this.castleGate = this.physics.add.sprite(gateX, gateY, 'castle-gate');
-        this.castleGate.setImmovable(true);
+    // Check distance to castle gate
+    const distToGate = Phaser.Math.Distance.Between(
+      this.player.x,
+      this.player.y,
+      this.castleGate.x,
+      this.castleGate.y
+    );
 
-        // Add sign above gate
-        this.add.text(gateX, gateY - 70, '⬆ CASTLE GATE\nNext Era', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#4a4a4a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
+    if (distToGate < 90) {
+      this.nearGate = true;
+      this.interactionText.setText('Press SPACE to enter castle gate!\n(Next era coming soon)');
+      this.interactionText.setVisible(true);
+
+      if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+        this.enterNextEra();
+      }
+    } else if (!nearInteractable) {
+      this.interactionText.setVisible(false);
     }
 
-    createVillagers() {
-        this.villagers = [];
+    // Update guard patrol
+    this.updateGuardPatrol();
 
-        // Villager 1: Blacksmith hammering
-        const blacksmith = this.add.sprite(250, 450, 'medieval-work-1');
-        blacksmith.setDepth(50);
-        blacksmith.activity = 'blacksmith';
-        blacksmith.workFrame = 0;
-        this.villagers.push(blacksmith);
+    // Player movement
+    this.updatePlayerMovement();
+  }
 
-        // Anvil next to blacksmith
-        const anvil = this.add.image(270, 465, 'anvil').setDepth(48);
-
-        // Hammer prop (follows blacksmith's hand)
-        const hammer = this.add.image(260, 440, 'blacksmith-hammer').setDepth(51);
-        blacksmith.prop = hammer;
-
-        // Yellow sparks particle emitter for hammer strikes
-        const sparks = this.add.particles(270, 460, 'fire-yellow', {
-            speed: { min: 30, max: 50 },
-            angle: { min: 0, max: 360 },
-            scale: { start: 0.6, end: 0 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 400,
-            frequency: -1, // Manual emission
-            gravityY: 150
-        });
-
-        // Animate blacksmith hammering cycle
-        this.time.addEvent({
-            delay: 500,
-            callback: () => {
-                blacksmith.workFrame = (blacksmith.workFrame + 1) % 4;
-                blacksmith.setFrame(blacksmith.workFrame);
-
-                // Move hammer with arm motion
-                if (blacksmith.workFrame === 0) {
-                    hammer.setPosition(260, 430); // Raised
-                    hammer.setAngle(-45);
-                } else if (blacksmith.workFrame === 1) {
-                    hammer.setPosition(265, 445); // Swinging down
-                    hammer.setAngle(-20);
-                } else if (blacksmith.workFrame === 2) {
-                    hammer.setPosition(270, 460); // Impact!
-                    hammer.setAngle(0);
-                    // Emit sparks on impact
-                    sparks.emitParticle(8);
-                } else if (blacksmith.workFrame === 3) {
-                    hammer.setPosition(265, 450); // Raising back
-                    hammer.setAngle(-10);
-                }
-            },
-            loop: true
-        });
-
-        // Villager 2: Guard with spear (patrolling)
-        const guard = this.physics.add.sprite(550, 350, 'medieval-work-2');
-        guard.setDepth(50);
-        guard.activity = 'guarding';
-        guard.workFrame = 0;
-        guard.patrolMinX = 500;
-        guard.patrolMaxX = 700;
-        guard.patrolDirection = 1;
-        this.villagers.push(guard);
-
-        // Spear prop (held by guard)
-        const guardSpear = this.add.image(560, 340, 'guard-spear').setDepth(49);
-        guardSpear.setAngle(-90); // Vertical
-        guard.prop = guardSpear;
-
-        // Animate guard (simple frame cycling while patrolling)
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                guard.workFrame = (guard.workFrame + 1) % 4;
-                guard.setFrame(guard.workFrame);
-            },
-            loop: true
-        });
-    }
-
-    createPlayer(x, y) {
-        // Create player sprite
-        this.player = this.physics.add.sprite(x, y, 'player-medieval');
-        this.player.setCollideWorldBounds(true);
-        this.player.setSize(24, 40);
-        this.player.setOffset(4, 8);
-        this.player.setDepth(50);
-
-        // Create animations if they don't exist yet
-        if (!this.anims.exists('medieval-walk-down')) {
-            this.anims.create({
-                key: 'medieval-walk-down',
-                frames: [
-                    { key: 'player-medieval', frame: 0 },
-                    { key: 'player-medieval', frame: 1 },
-                    { key: 'player-medieval', frame: 2 }
-                ],
-                frameRate: 8,
-                repeat: -1
-            });
-
-            this.anims.create({
-                key: 'medieval-walk-left',
-                frames: this.anims.generateFrameNumbers('player-medieval', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
-
-            this.anims.create({
-                key: 'medieval-walk-right',
-                frames: this.anims.generateFrameNumbers('player-medieval', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
-
-            this.anims.create({
-                key: 'medieval-walk-up',
-                frames: this.anims.generateFrameNumbers('player-medieval', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
+  updateGuardPatrol() {
+    const guard = this.villagers.find((v) => v.activity === 'guarding');
+    if (guard) {
+      const speed = 30;
+      if (guard.patrolDirection === 1) {
+        guard.setVelocityX(speed);
+        guard.prop.x = guard.x + 10;
+        guard.prop.y = guard.y - 10;
+        if (guard.x > guard.patrolMaxX) {
+          guard.patrolDirection = -1;
+          guard.setFlipX(true);
         }
+      } else {
+        guard.setVelocityX(-speed);
+        guard.prop.x = guard.x - 10;
+        guard.prop.y = guard.y - 10;
+        if (guard.x < guard.patrolMinX) {
+          guard.patrolDirection = 1;
+          guard.setFlipX(false);
+        }
+      }
+    }
+  }
 
-        // Enable collision with castle gate
-        this.physics.add.overlap(this.player, this.castleGate, this.handleGateInteraction, null, this);
+  updatePlayerMovement() {
+    // Player movement logic
+    this.player.setVelocity(0);
+    let moving = false;
+    let newDirection = this.lastDirection;
 
-        this.nearGate = false;
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-this.playerSpeed);
+      newDirection = 'left';
+      moving = true;
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(this.playerSpeed);
+      newDirection = 'right';
+      moving = true;
     }
 
-    handleGateInteraction() {
-        this.nearGate = true;
+    if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-this.playerSpeed);
+      newDirection = 'up';
+      moving = true;
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(this.playerSpeed);
+      newDirection = 'down';
+      moving = true;
     }
 
-    update(time, delta) {
-        // Check for nearby interactables
-        let nearInteractable = null;
-        for (let interactable of this.interactables) {
-            const dist = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
-
-            if (dist < 80) {
-                nearInteractable = interactable;
-                interactable.indicator.setVisible(true);
-            } else {
-                interactable.indicator.setVisible(false);
-            }
-        }
-
-        // Handle E key press for info panels
-        if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-            this.infoPanel.toggle(nearInteractable.infoData);
-        }
-
-        this.nearGate = false;
-
-        // Check distance to castle gate
-        const distToGate = Phaser.Math.Distance.Between(
-            this.player.x, this.player.y,
-            this.castleGate.x, this.castleGate.y
-        );
-
-        if (distToGate < 90) {
-            this.nearGate = true;
-            this.interactionText.setText('Press SPACE to enter castle gate!\n(Next era coming soon)');
-            this.interactionText.setVisible(true);
-
-            if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-                this.enterNextEra();
-            }
-        } else if (!nearInteractable) {
-            this.interactionText.setVisible(false);
-        }
-
-        // Update guard patrol
-        this.updateGuardPatrol();
-
-        // Player movement
-        this.updatePlayerMovement();
+    // Normalize diagonal movement
+    if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
+      this.player.body.velocity.normalize().scale(this.playerSpeed);
     }
 
-    updateGuardPatrol() {
-        const guard = this.villagers.find(v => v.activity === 'guarding');
-        if (guard) {
-            const speed = 30;
-            if (guard.patrolDirection === 1) {
-                guard.setVelocityX(speed);
-                guard.prop.x = guard.x + 10;
-                guard.prop.y = guard.y - 10;
-                if (guard.x > guard.patrolMaxX) {
-                    guard.patrolDirection = -1;
-                    guard.setFlipX(true);
-                }
-            } else {
-                guard.setVelocityX(-speed);
-                guard.prop.x = guard.x - 10;
-                guard.prop.y = guard.y - 10;
-                if (guard.x < guard.patrolMinX) {
-                    guard.patrolDirection = 1;
-                    guard.setFlipX(false);
-                }
-            }
-        }
+    // Update animation
+    if (moving) {
+      if (newDirection !== this.lastDirection) {
+        this.player.play(`medieval-walk-${newDirection}`);
+        this.lastDirection = newDirection;
+      }
+    } else {
+      this.player.stop();
+      const frameMap = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(frameMap[this.lastDirection]);
     }
+  }
 
-    updatePlayerMovement() {
-        // Player movement logic
-        this.player.setVelocity(0);
-        let moving = false;
-        let newDirection = this.lastDirection;
+  enterNextEra() {
+    // Hide interaction text
+    this.interactionText.setVisible(false);
 
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-this.playerSpeed);
-            newDirection = 'left';
-            moving = true;
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(this.playerSpeed);
-            newDirection = 'right';
-            moving = true;
-        }
+    // Fade to black
+    this.cameras.main.fadeOut(1000, 0, 0, 0);
 
-        if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-this.playerSpeed);
-            newDirection = 'up';
-            moving = true;
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(this.playerSpeed);
-            newDirection = 'down';
-            moving = true;
-        }
-
-        // Normalize diagonal movement
-        if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
-            this.player.body.velocity.normalize().scale(this.playerSpeed);
-        }
-
-        // Update animation
-        if (moving) {
-            if (newDirection !== this.lastDirection) {
-                this.player.play(`medieval-walk-${newDirection}`);
-                this.lastDirection = newDirection;
-            }
-        } else {
-            this.player.stop();
-            const frameMap = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(frameMap[this.lastDirection]);
-        }
-    }
-
-    enterNextEra() {
-        // Hide interaction text
-        this.interactionText.setVisible(false);
-
-        // Fade to black
-        this.cameras.main.fadeOut(1000, 0, 0, 0);
-
-        // After fade, transition directly to Renaissance Scene
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-            this.scene.start('RenaissanceScene');
-        });
-    }
+    // After fade, transition directly to Renaissance Scene
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.start('RenaissanceScene');
+    });
+  }
 }
 
 // ===== RENAISSANCE SCENE =====
 
 class RenaissanceScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'RenaissanceScene' });
+  constructor() {
+    super({ key: 'RenaissanceScene' });
+  }
+
+  create(data) {
+    // Generate all textures procedurally
+    generateMarbleTexture(this, 'marble');
+    generateLibraryPortalTexture(this, 'library-portal');
+    generatePrintingPressTexture(this, 'printing-press');
+    generateEaselTexture(this, 'easel');
+    generateGlobeTexture(this, 'globe');
+    generateManuscriptTexture(this, 'manuscript');
+
+    // Generate NPC textures
+    generateRenaissanceNPCTexture(this, 'renaissance-artist', 'artist');
+    generateRenaissanceNPCTexture(this, 'renaissance-scholar', 'scholar');
+    generateRenaissanceNPCTexture(this, 'renaissance-inventor', 'inventor');
+
+    // Add frame configs for NPC sprites (4 frames per NPC)
+    if (!this.textures.get('renaissance-artist').has(0)) {
+      const npcKeys = ['renaissance-artist', 'renaissance-scholar', 'renaissance-inventor'];
+      npcKeys.forEach((key) => {
+        for (let i = 0; i < 4; i++) {
+          this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+        }
+      });
     }
 
-    create(data) {
-        // Generate all textures procedurally
-        generateMarbleTexture(this, 'marble');
-        generateLibraryPortalTexture(this, 'library-portal');
-        generatePrintingPressTexture(this, 'printing-press');
-        generateEaselTexture(this, 'easel');
-        generateGlobeTexture(this, 'globe');
-        generateManuscriptTexture(this, 'manuscript');
-
-        // Generate NPC textures
-        generateRenaissanceNPCTexture(this, 'renaissance-artist', 'artist');
-        generateRenaissanceNPCTexture(this, 'renaissance-scholar', 'scholar');
-        generateRenaissanceNPCTexture(this, 'renaissance-inventor', 'inventor');
-
-        // Add frame configs for NPC sprites (4 frames per NPC)
-        if (!this.textures.get('renaissance-artist').has(0)) {
-            const npcKeys = ['renaissance-artist', 'renaissance-scholar', 'renaissance-inventor'];
-            npcKeys.forEach(key => {
-                for (let i = 0; i < 4; i++) {
-                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
-                }
-            });
-        }
-
-        // Generate renaissance era player character
-        if (!this.textures.exists('player-renaissance')) {
-            generateRenaissancePlayerSprite(this, 'player-renaissance');
-        }
-
-        // Add frame configs for player sprite
-        if (!this.textures.get('player-renaissance').has(0)) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-renaissance').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // Generate fire particles (for candles/lamps)
-        if (!this.textures.exists('fire-orange')) {
-            generateFireParticles(this);
-        }
-
-        // Generate interactive object sprites
-        generateTelescopeTexture(this, 'telescope');
-
-        // Generate walking sprite for timeline (shared across scenes)
-        if (!this.textures.exists('walking-sprite')) {
-            generateWalkingSpriteTexture(this, 'walking-sprite');
-            // Add frames for walking sprite (4 frames of 16x16 pixels)
-            for (let i = 0; i < 4; i++) {
-                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-            }
-        }
-
-        // Setup
-        this.playerSpeed = 160;
-        this.lastDirection = 'down';
-
-        // Camera setup
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.physics.world.setBounds(0, 0, 800, 600);
-
-        // Create scene elements
-        this.createGround();
-        this.createLibraryPortal();
-        this.createObjects();
-        this.createScholars();
-
-        // Create player at spawn point
-        const spawnX = data?.spawnX || 400;
-        const spawnY = data?.spawnY || 500;
-        this.createPlayer(spawnX, spawnY);
-
-        // Camera follows player
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.spaceKey = this.input.keyboard.addKey('SPACE');
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Interaction text
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Create info panel system
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Timeline
-        this.timelineBar = new TimelineBar(this, 'renaissance');
-
-        // Era title card
-        this.showEraTitleCard('RENAISSANCE ERA', '1400-1600 CE');
+    // Generate renaissance era player character
+    if (!this.textures.exists('player-renaissance')) {
+      generateRenaissancePlayerSprite(this, 'player-renaissance');
     }
 
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
-
-        // Create marble floor
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                this.add.image(x * tileSize + 16, y * tileSize + 16, 'marble');
-            }
-        }
+    // Add frame configs for player sprite
+    if (!this.textures.get('player-renaissance').has(0)) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-renaissance').add(i, 0, col * 32, row * 48, 32, 48);
+      }
     }
 
-    createLibraryPortal() {
-        const portalX = 400;
-        const portalY = 90;
-
-        // Library portal sprite (portal to next era)
-        this.libraryPortal = this.physics.add.sprite(portalX, portalY, 'library-portal');
-        this.libraryPortal.setImmovable(true);
-
-        // Add sign above portal
-        this.add.text(portalX, portalY - 80, '⬆ LIBRARY\nNext Era', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#4a4a4a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
+    // Generate fire particles (for candles/lamps)
+    if (!this.textures.exists('fire-orange')) {
+      generateFireParticles(this);
     }
 
-    createObjects() {
-        // Printing press (left side)
-        this.printingPress = this.add.image(150, 200, 'printing-press').setDepth(10);
+    // Generate interactive object sprites
+    generateTelescopeTexture(this, 'telescope');
 
-        // Easel with painting (right side)
-        this.easel = this.add.image(650, 250, 'easel').setDepth(10);
-
-        // Globe on pedestal (center-left)
-        this.globe = this.add.image(250, 400, 'globe').setDepth(10);
-
-        // Stack of manuscripts (various positions)
-        this.add.image(600, 450, 'manuscript').setDepth(5);
-        this.add.image(620, 445, 'manuscript').setDepth(6);
-        this.add.image(610, 440, 'manuscript').setDepth(7);
-
-        this.add.image(200, 500, 'manuscript').setDepth(5);
-        this.add.image(215, 495, 'manuscript').setDepth(6);
-
-        // Candles with flickering flames (ambient lighting)
-        const candlePositions = [
-            { x: 100, y: 100 }, { x: 700, y: 100 },
-            { x: 120, y: 400 }, { x: 680, y: 400 }
-        ];
-
-        candlePositions.forEach(pos => {
-            // Candlestick (simple rectangle)
-            const candle = this.add.rectangle(pos.x, pos.y, 4, 12, 0xf5f3e8).setDepth(10);
-
-            // Flame particles
-            this.add.particles(pos.x, pos.y - 8, 'fire-orange', {
-                speed: { min: 10, max: 15 },
-                angle: { min: 260, max: 280 },
-                scale: { start: 0.4, end: 0 },
-                alpha: { start: 0.8, end: 0 },
-                lifespan: 400,
-                frequency: 100,
-                gravityY: -30,
-                blendMode: 'ADD'
-            }).setDepth(11);
-        });
+    // Generate walking sprite for timeline (shared across scenes)
+    if (!this.textures.exists('walking-sprite')) {
+      generateWalkingSpriteTexture(this, 'walking-sprite');
+      // Add frames for walking sprite (4 frames of 16x16 pixels)
+      for (let i = 0; i < 4; i++) {
+        this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+      }
     }
 
-    createScholars() {
-        this.scholars = [];
+    // Setup
+    this.playerSpeed = 160;
+    this.lastDirection = 'down';
 
-        // Scholar 1: Artist painting at easel
-        const artist = this.add.sprite(620, 250, 'renaissance-artist');
-        artist.setDepth(50);
-        artist.activity = 'artist';
-        artist.workFrame = 0;
-        this.scholars.push(artist);
+    // Camera setup
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.physics.world.setBounds(0, 0, 800, 600);
 
-        // Animate artist
-        this.time.addEvent({
-            delay: 500,
-            callback: () => {
-                artist.workFrame = (artist.workFrame + 1) % 4;
-                artist.setFrame(artist.workFrame);
-            },
-            loop: true
-        });
+    // Create scene elements
+    this.createGround();
+    this.createLibraryPortal();
+    this.createObjects();
+    this.createScholars();
 
-        // Scholar 2: Scholar reading/writing
-        const scholar = this.add.sprite(180, 500, 'renaissance-scholar');
-        scholar.setDepth(50);
-        scholar.activity = 'scholar';
-        scholar.workFrame = 0;
-        this.scholars.push(scholar);
+    // Create player at spawn point
+    const spawnX = data?.spawnX || 400;
+    const spawnY = data?.spawnY || 500;
+    this.createPlayer(spawnX, spawnY);
 
-        // Animate scholar
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                scholar.workFrame = (scholar.workFrame + 1) % 4;
-                scholar.setFrame(scholar.workFrame);
-            },
-            loop: true
-        });
+    // Camera follows player
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
 
-        // Scholar 3: Inventor tinkering
-        const inventor = this.add.sprite(280, 400, 'renaissance-inventor');
-        inventor.setDepth(50);
-        inventor.activity = 'inventor';
-        inventor.workFrame = 0;
-        this.scholars.push(inventor);
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.spaceKey = this.input.keyboard.addKey('SPACE');
+    this.eKey = this.input.keyboard.addKey('E');
 
-        // Animate inventor
-        this.time.addEvent({
-            delay: 450,
-            callback: () => {
-                inventor.workFrame = (inventor.workFrame + 1) % 4;
-                inventor.setFrame(inventor.workFrame);
-            },
-            loop: true
-        });
+    // Interaction text
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
+
+    // Create info panel system
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
+
+    // Timeline
+    this.timelineBar = new TimelineBar(this, 'renaissance');
+
+    // Era title card
+    this.showEraTitleCard('RENAISSANCE ERA', '1400-1600 CE');
+  }
+
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
+
+    // Create marble floor
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        this.add.image(x * tileSize + 16, y * tileSize + 16, 'marble');
+      }
+    }
+  }
+
+  createLibraryPortal() {
+    const portalX = 400;
+    const portalY = 90;
+
+    // Library portal sprite (portal to next era)
+    this.libraryPortal = this.physics.add.sprite(portalX, portalY, 'library-portal');
+    this.libraryPortal.setImmovable(true);
+
+    // Add sign above portal
+    this.add
+      .text(portalX, portalY - 80, '⬆ LIBRARY\nNext Era', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
+
+  createObjects() {
+    // Printing press (left side)
+    this.printingPress = this.add.image(150, 200, 'printing-press').setDepth(10);
+
+    // Easel with painting (right side)
+    this.easel = this.add.image(650, 250, 'easel').setDepth(10);
+
+    // Globe on pedestal (center-left)
+    this.globe = this.add.image(250, 400, 'globe').setDepth(10);
+
+    // Stack of manuscripts (various positions)
+    this.add.image(600, 450, 'manuscript').setDepth(5);
+    this.add.image(620, 445, 'manuscript').setDepth(6);
+    this.add.image(610, 440, 'manuscript').setDepth(7);
+
+    this.add.image(200, 500, 'manuscript').setDepth(5);
+    this.add.image(215, 495, 'manuscript').setDepth(6);
+
+    // Candles with flickering flames (ambient lighting)
+    const candlePositions = [
+      { x: 100, y: 100 },
+      { x: 700, y: 100 },
+      { x: 120, y: 400 },
+      { x: 680, y: 400 },
+    ];
+
+    candlePositions.forEach((pos) => {
+      // Candlestick (simple rectangle)
+      const candle = this.add.rectangle(pos.x, pos.y, 4, 12, 0xf5f3e8).setDepth(10);
+
+      // Flame particles
+      this.add
+        .particles(pos.x, pos.y - 8, 'fire-orange', {
+          speed: { min: 10, max: 15 },
+          angle: { min: 260, max: 280 },
+          scale: { start: 0.4, end: 0 },
+          alpha: { start: 0.8, end: 0 },
+          lifespan: 400,
+          frequency: 100,
+          gravityY: -30,
+          blendMode: 'ADD',
+        })
+        .setDepth(11);
+    });
+  }
+
+  createScholars() {
+    this.scholars = [];
+
+    // Scholar 1: Artist painting at easel
+    const artist = this.add.sprite(620, 250, 'renaissance-artist');
+    artist.setDepth(50);
+    artist.activity = 'artist';
+    artist.workFrame = 0;
+    this.scholars.push(artist);
+
+    // Animate artist
+    this.time.addEvent({
+      delay: 500,
+      callback: () => {
+        artist.workFrame = (artist.workFrame + 1) % 4;
+        artist.setFrame(artist.workFrame);
+      },
+      loop: true,
+    });
+
+    // Scholar 2: Scholar reading/writing
+    const scholar = this.add.sprite(180, 500, 'renaissance-scholar');
+    scholar.setDepth(50);
+    scholar.activity = 'scholar';
+    scholar.workFrame = 0;
+    this.scholars.push(scholar);
+
+    // Animate scholar
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        scholar.workFrame = (scholar.workFrame + 1) % 4;
+        scholar.setFrame(scholar.workFrame);
+      },
+      loop: true,
+    });
+
+    // Scholar 3: Inventor tinkering
+    const inventor = this.add.sprite(280, 400, 'renaissance-inventor');
+    inventor.setDepth(50);
+    inventor.activity = 'inventor';
+    inventor.workFrame = 0;
+    this.scholars.push(inventor);
+
+    // Animate inventor
+    this.time.addEvent({
+      delay: 450,
+      callback: () => {
+        inventor.workFrame = (inventor.workFrame + 1) % 4;
+        inventor.setFrame(inventor.workFrame);
+      },
+      loop: true,
+    });
+  }
+
+  createInteractables() {
+    // Printing Press interactable
+    const printingPressInfo = {
+      title: 'The Printing Press Revolution',
+      content:
+        "Johannes Gutenberg's printing press (1440) revolutionized knowledge sharing. Before this, books were hand-copied and took months to produce. The press could print 3,600 pages per day, making books affordable and spreading literacy across Europe.",
+      icon: '📖',
+    };
+    const printingPressZone = createInteractable(this, 150, 200, 60, 70, printingPressInfo);
+    this.interactables.push(printingPressZone);
+
+    // Easel/Artist interactable
+    const artInfo = {
+      title: 'Renaissance Art & Perspective',
+      content:
+        'Renaissance artists like Leonardo da Vinci and Michelangelo pioneered linear perspective, making paintings look 3D. They studied anatomy, light, and mathematics to create realistic art that still amazes us today.',
+      icon: '🎨',
+    };
+    const artZone = createInteractable(this, 650, 250, 80, 80, artInfo);
+    this.interactables.push(artZone);
+
+    // Globe interactable
+    const explorationInfo = {
+      title: 'Age of Exploration',
+      content:
+        'Renaissance explorers like Columbus (1492) and Magellan (1519) mapped the world using new navigation tools: the compass, astrolabe, and printed maps. These voyages connected continents and changed global trade forever.',
+      icon: '🌍',
+    };
+    const globeZone = createInteractable(this, 250, 400, 50, 50, explorationInfo);
+    this.interactables.push(globeZone);
+
+    // Scholar NPC interactable
+    const scholarInfo = {
+      title: 'Humanism & Classical Learning',
+      content:
+        'Renaissance scholars revived ancient Greek and Roman texts, studying philosophy, science, and literature. This "rebirth" of classical knowledge sparked new ideas about human potential and individual achievement.',
+      icon: '📚',
+    };
+    const scholarZone = createInteractable(this, 180, 500, 60, 60, scholarInfo);
+    this.interactables.push(scholarZone);
+
+    // Inventor NPC interactable
+    const inventorInfo = {
+      title: 'Renaissance Inventions',
+      content:
+        "Renaissance inventors like Leonardo da Vinci designed flying machines, submarines, and mechanical devices centuries ahead of their time. Though many weren't built, their detailed drawings inspired future engineers.",
+      icon: '⚙️',
+    };
+    const inventorZone = createInteractable(this, 280, 400, 60, 60, inventorInfo);
+    this.interactables.push(inventorZone);
+
+    // Manuscripts interactable
+    const manuscriptInfo = {
+      title: 'From Manuscripts to Print',
+      content:
+        'Before printing, monks spent years hand-copying books with beautiful illuminated letters. A single Bible took 2-3 years! The printing press made the same book in days, democratizing knowledge.',
+      icon: '✍️',
+    };
+    const manuscriptZone = createInteractable(this, 610, 450, 80, 60, manuscriptInfo);
+    this.interactables.push(manuscriptZone);
+
+    // Library Portal interactable
+    const libraryInfo = {
+      title: 'Centers of Learning',
+      content:
+        'Renaissance libraries and universities became temples of knowledge. The Medici Library in Florence held thousands of books on science, art, and philosophy, fueling the intellectual revolution.',
+      icon: '🏛️',
+    };
+    const libraryZone = createInteractable(this, 400, 90, 130, 150, libraryInfo);
+    this.interactables.push(libraryZone);
+
+    // Scientific Method area
+    const scienceInfo = {
+      title: 'Birth of Modern Science',
+      content:
+        'Renaissance thinkers like Galileo and Copernicus challenged old beliefs with observation and experiments. Their scientific method - question, test, prove - became the foundation of all modern science.',
+      icon: '🔬',
+    };
+    const scienceZone = createInteractable(this, 500, 350, 100, 100, scienceInfo);
+    this.interactables.push(scienceZone);
+  }
+
+  showEraTitleCard(title, subtitle) {
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#5C9EAD',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    // Fade out after 3 seconds
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  createPlayer(x, y) {
+    // Create player sprite
+    this.player = this.physics.add.sprite(x, y, 'player-renaissance');
+    this.player.setCollideWorldBounds(true);
+    this.player.setSize(24, 40);
+    this.player.setOffset(4, 8);
+    this.player.setDepth(50);
+
+    // Create animations if they don't exist yet
+    if (!this.anims.exists('renaissance-walk-down')) {
+      this.anims.create({
+        key: 'renaissance-walk-down',
+        frames: [
+          { key: 'player-renaissance', frame: 0 },
+          { key: 'player-renaissance', frame: 1 },
+          { key: 'player-renaissance', frame: 2 },
+        ],
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'renaissance-walk-left',
+        frames: this.anims.generateFrameNumbers('player-renaissance', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'renaissance-walk-right',
+        frames: this.anims.generateFrameNumbers('player-renaissance', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: 'renaissance-walk-up',
+        frames: this.anims.generateFrameNumbers('player-renaissance', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
     }
 
-    createInteractables() {
-        // Printing Press interactable
-        const printingPressInfo = {
-            title: 'The Printing Press Revolution',
-            content: 'Johannes Gutenberg\'s printing press (1440) revolutionized knowledge sharing. Before this, books were hand-copied and took months to produce. The press could print 3,600 pages per day, making books affordable and spreading literacy across Europe.',
-            icon: '📖'
-        };
-        const printingPressZone = createInteractable(this, 150, 200, 60, 70, printingPressInfo);
-        this.interactables.push(printingPressZone);
+    // Enable collision with library portal
+    this.physics.add.overlap(
+      this.player,
+      this.libraryPortal,
+      this.handlePortalInteraction,
+      null,
+      this
+    );
 
-        // Easel/Artist interactable
-        const artInfo = {
-            title: 'Renaissance Art & Perspective',
-            content: 'Renaissance artists like Leonardo da Vinci and Michelangelo pioneered linear perspective, making paintings look 3D. They studied anatomy, light, and mathematics to create realistic art that still amazes us today.',
-            icon: '🎨'
-        };
-        const artZone = createInteractable(this, 650, 250, 80, 80, artInfo);
-        this.interactables.push(artZone);
+    this.nearPortal = false;
+  }
 
-        // Globe interactable
-        const explorationInfo = {
-            title: 'Age of Exploration',
-            content: 'Renaissance explorers like Columbus (1492) and Magellan (1519) mapped the world using new navigation tools: the compass, astrolabe, and printed maps. These voyages connected continents and changed global trade forever.',
-            icon: '🌍'
-        };
-        const globeZone = createInteractable(this, 250, 400, 50, 50, explorationInfo);
-        this.interactables.push(globeZone);
+  handlePortalInteraction() {
+    this.nearPortal = true;
+  }
 
-        // Scholar NPC interactable
-        const scholarInfo = {
-            title: 'Humanism & Classical Learning',
-            content: 'Renaissance scholars revived ancient Greek and Roman texts, studying philosophy, science, and literature. This "rebirth" of classical knowledge sparked new ideas about human potential and individual achievement.',
-            icon: '📚'
-        };
-        const scholarZone = createInteractable(this, 180, 500, 60, 60, scholarInfo);
-        this.interactables.push(scholarZone);
+  update(time, delta) {
+    // Check for nearby interactables
+    let nearInteractable = null;
+    for (const interactable of this.interactables) {
+      const dist = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
 
-        // Inventor NPC interactable
-        const inventorInfo = {
-            title: 'Renaissance Inventions',
-            content: 'Renaissance inventors like Leonardo da Vinci designed flying machines, submarines, and mechanical devices centuries ahead of their time. Though many weren\'t built, their detailed drawings inspired future engineers.',
-            icon: '⚙️'
-        };
-        const inventorZone = createInteractable(this, 280, 400, 60, 60, inventorInfo);
-        this.interactables.push(inventorZone);
-
-        // Manuscripts interactable
-        const manuscriptInfo = {
-            title: 'From Manuscripts to Print',
-            content: 'Before printing, monks spent years hand-copying books with beautiful illuminated letters. A single Bible took 2-3 years! The printing press made the same book in days, democratizing knowledge.',
-            icon: '✍️'
-        };
-        const manuscriptZone = createInteractable(this, 610, 450, 80, 60, manuscriptInfo);
-        this.interactables.push(manuscriptZone);
-
-        // Library Portal interactable
-        const libraryInfo = {
-            title: 'Centers of Learning',
-            content: 'Renaissance libraries and universities became temples of knowledge. The Medici Library in Florence held thousands of books on science, art, and philosophy, fueling the intellectual revolution.',
-            icon: '🏛️'
-        };
-        const libraryZone = createInteractable(this, 400, 90, 130, 150, libraryInfo);
-        this.interactables.push(libraryZone);
-
-        // Scientific Method area
-        const scienceInfo = {
-            title: 'Birth of Modern Science',
-            content: 'Renaissance thinkers like Galileo and Copernicus challenged old beliefs with observation and experiments. Their scientific method - question, test, prove - became the foundation of all modern science.',
-            icon: '🔬'
-        };
-        const scienceZone = createInteractable(this, 500, 350, 100, 100, scienceInfo);
-        this.interactables.push(scienceZone);
+      if (dist < 80) {
+        nearInteractable = interactable;
+        interactable.indicator.setVisible(true);
+      } else {
+        interactable.indicator.setVisible(false);
+      }
     }
 
-    showEraTitleCard(title, subtitle) {
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        // Fade out after 3 seconds
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
-        });
+    // Handle E key press for info panels
+    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
+      this.infoPanel.toggle(nearInteractable.infoData);
     }
 
-    createPlayer(x, y) {
-        // Create player sprite
-        this.player = this.physics.add.sprite(x, y, 'player-renaissance');
-        this.player.setCollideWorldBounds(true);
-        this.player.setSize(24, 40);
-        this.player.setOffset(4, 8);
-        this.player.setDepth(50);
+    this.nearPortal = false;
 
-        // Create animations if they don't exist yet
-        if (!this.anims.exists('renaissance-walk-down')) {
-            this.anims.create({
-                key: 'renaissance-walk-down',
-                frames: [
-                    { key: 'player-renaissance', frame: 0 },
-                    { key: 'player-renaissance', frame: 1 },
-                    { key: 'player-renaissance', frame: 2 }
-                ],
-                frameRate: 8,
-                repeat: -1
-            });
+    // Check distance to library portal
+    const distToPortal = Phaser.Math.Distance.Between(
+      this.player.x,
+      this.player.y,
+      this.libraryPortal.x,
+      this.libraryPortal.y
+    );
 
-            this.anims.create({
-                key: 'renaissance-walk-left',
-                frames: this.anims.generateFrameNumbers('player-renaissance', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
+    if (distToPortal < 100) {
+      this.nearPortal = true;
+      this.interactionText.setText('Press SPACE to enter library!\n(Next era coming soon)');
+      this.interactionText.setVisible(true);
 
-            this.anims.create({
-                key: 'renaissance-walk-right',
-                frames: this.anims.generateFrameNumbers('player-renaissance', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
-
-            this.anims.create({
-                key: 'renaissance-walk-up',
-                frames: this.anims.generateFrameNumbers('player-renaissance', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        // Enable collision with library portal
-        this.physics.add.overlap(this.player, this.libraryPortal, this.handlePortalInteraction, null, this);
-
-        this.nearPortal = false;
+      if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+        this.enterNextEra();
+      }
+    } else if (!nearInteractable) {
+      this.interactionText.setVisible(false);
     }
 
-    handlePortalInteraction() {
-        this.nearPortal = true;
+    // Player movement
+    this.updatePlayerMovement();
+  }
+
+  updatePlayerMovement() {
+    // Reset velocity
+    this.player.setVelocity(0);
+
+    let moving = false;
+    let newDirection = this.lastDirection;
+
+    // Movement
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-this.playerSpeed);
+      newDirection = 'left';
+      moving = true;
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(this.playerSpeed);
+      newDirection = 'right';
+      moving = true;
     }
 
-    update(time, delta) {
-        // Check for nearby interactables
-        let nearInteractable = null;
-        for (let interactable of this.interactables) {
-            const dist = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
-
-            if (dist < 80) {
-                nearInteractable = interactable;
-                interactable.indicator.setVisible(true);
-            } else {
-                interactable.indicator.setVisible(false);
-            }
-        }
-
-        // Handle E key press for info panels
-        if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-            this.infoPanel.toggle(nearInteractable.infoData);
-        }
-
-        this.nearPortal = false;
-
-        // Check distance to library portal
-        const distToPortal = Phaser.Math.Distance.Between(
-            this.player.x, this.player.y,
-            this.libraryPortal.x, this.libraryPortal.y
-        );
-
-        if (distToPortal < 100) {
-            this.nearPortal = true;
-            this.interactionText.setText('Press SPACE to enter library!\n(Next era coming soon)');
-            this.interactionText.setVisible(true);
-
-            if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-                this.enterNextEra();
-            }
-        } else if (!nearInteractable) {
-            this.interactionText.setVisible(false);
-        }
-
-        // Player movement
-        this.updatePlayerMovement();
+    if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-this.playerSpeed);
+      newDirection = 'up';
+      moving = true;
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(this.playerSpeed);
+      newDirection = 'down';
+      moving = true;
     }
 
-    updatePlayerMovement() {
-        // Reset velocity
-        this.player.setVelocity(0);
-
-        let moving = false;
-        let newDirection = this.lastDirection;
-
-        // Movement
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-this.playerSpeed);
-            newDirection = 'left';
-            moving = true;
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(this.playerSpeed);
-            newDirection = 'right';
-            moving = true;
-        }
-
-        if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-this.playerSpeed);
-            newDirection = 'up';
-            moving = true;
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(this.playerSpeed);
-            newDirection = 'down';
-            moving = true;
-        }
-
-        // Normalize diagonal movement
-        if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
-            this.player.body.velocity.normalize().scale(this.playerSpeed);
-        }
-
-        // Update animation
-        if (moving) {
-            if (newDirection !== this.lastDirection) {
-                this.player.play(`renaissance-walk-${newDirection}`);
-                this.lastDirection = newDirection;
-            }
-        } else {
-            this.player.stop();
-            const frameMap = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(frameMap[this.lastDirection]);
-        }
+    // Normalize diagonal movement
+    if (this.player.body.velocity.x !== 0 && this.player.body.velocity.y !== 0) {
+      this.player.body.velocity.normalize().scale(this.playerSpeed);
     }
 
-    enterNextEra() {
-        this.cameras.main.fadeOut(1000);
-        this.time.delayedCall(1000, () => {
-            this.scene.start('IndustrialScene', { spawnX: 400, spawnY: 500 });
-        });
+    // Update animation
+    if (moving) {
+      if (newDirection !== this.lastDirection) {
+        this.player.play(`renaissance-walk-${newDirection}`);
+        this.lastDirection = newDirection;
+      }
+    } else {
+      this.player.stop();
+      const frameMap = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(frameMap[this.lastDirection]);
     }
+  }
+
+  enterNextEra() {
+    this.cameras.main.fadeOut(1000);
+    this.time.delayedCall(1000, () => {
+      this.scene.start('IndustrialScene', { spawnX: 400, spawnY: 500 });
+    });
+  }
 }
 
 // ===== ANCIENT CIVILIZATIONS SCENE =====
 
 class AncientScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'AncientScene' });
+  constructor() {
+    super({ key: 'AncientScene' });
+  }
+
+  create(data) {
+    // Generate scene-specific textures
+    generateSandstoneTexture(this, 'sandstone');
+    generatePyramidTexture(this, 'pyramid');
+    generatePapyrusTexture(this, 'papyrus');
+    generatePotteryTexture(this, 'pottery');
+
+    // Generate NPC textures
+    generateAncientNPCTexture(this, 'ancient-scribe', 'scribe');
+    generateAncientNPCTexture(this, 'ancient-pottery', 'pottery');
+    generateAncientNPCTexture(this, 'ancient-merchant', 'merchant');
+    generateAncientNPCTexture(this, 'ancient-farmer', 'farmer');
+
+    // Add frame configs for NPC sprites (4 frames per NPC)
+    if (!this.textures.get('ancient-scribe').has(0)) {
+      const npcKeys = ['ancient-scribe', 'ancient-pottery', 'ancient-merchant', 'ancient-farmer'];
+      npcKeys.forEach((key) => {
+        for (let i = 0; i < 4; i++) {
+          this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+        }
+      });
     }
 
-    create(data) {
-        // Generate scene-specific textures
-        generateSandstoneTexture(this, 'sandstone');
-        generatePyramidTexture(this, 'pyramid');
-        generatePapyrusTexture(this, 'papyrus');
-        generatePotteryTexture(this, 'pottery');
+    // Generate Ancient era player character
+    if (!this.textures.exists('player-ancient')) {
+      generateAncientPlayerSprite(this, 'player-ancient');
+    }
 
-        // Generate NPC textures
-        generateAncientNPCTexture(this, 'ancient-scribe', 'scribe');
-        generateAncientNPCTexture(this, 'ancient-pottery', 'pottery');
-        generateAncientNPCTexture(this, 'ancient-merchant', 'merchant');
-        generateAncientNPCTexture(this, 'ancient-farmer', 'farmer');
+    // Generate walking sprite for timeline (shared across scenes)
+    if (!this.textures.exists('walking-sprite')) {
+      generateWalkingSpriteTexture(this, 'walking-sprite');
+      // Add frames for walking sprite (4 frames of 16x16 pixels)
+      for (let i = 0; i < 4; i++) {
+        this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+      }
+    }
 
-        // Add frame configs for NPC sprites (4 frames per NPC)
-        if (!this.textures.get('ancient-scribe').has(0)) {
-            const npcKeys = ['ancient-scribe', 'ancient-pottery', 'ancient-merchant', 'ancient-farmer'];
-            npcKeys.forEach(key => {
-                for (let i = 0; i < 4; i++) {
-                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
-                }
-            });
+    // Spawn position
+    const spawnX = data?.spawnX || 400;
+    const spawnY = data?.spawnY || 500;
+
+    // Fade in effect when entering scene
+    this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+    // Add frame configs for player (if not already added)
+    if (!this.anims.exists('walk-down')) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-char').add(i, 0, col * 32, row * 48, 32, 48);
+      }
+    }
+
+    // World bounds
+    this.physics.world.setBounds(0, 0, 800, 600);
+
+    // Create scene elements
+    this.createGround();
+    this.createPyramid();
+    this.createProps();
+    this.createNPCs();
+
+    // Create player at spawn position
+    this.createPlayer(spawnX, spawnY);
+
+    // Camera
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.eKey = this.input.keyboard.addKey('E');
+
+    // Info panel & interactables
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
+
+    // Timeline bar
+    this.timelineBar = new TimelineBar(this, 'ancient');
+
+    // Interaction text
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
+
+    // Title card
+    this.showEraTitleCard('ANCIENT CIVILIZATIONS', '3000 BCE - 500 CE');
+
+    this.lastDirection = 'down';
+    this.playerSpeed = 140;
+  }
+
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        this.add.image(x * tileSize + 16, y * tileSize + 16, 'sandstone');
+      }
+    }
+  }
+
+  createPyramid() {
+    const pyramidX = 400;
+    const pyramidY = 80;
+
+    // Pyramid portal
+    this.pyramid = this.physics.add.sprite(pyramidX, pyramidY, 'pyramid');
+    this.pyramid.setImmovable(true);
+
+    // Sign
+    this.add
+      .text(pyramidX, pyramidY - 70, '⬆ PYRAMID\nNext Era', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
+
+  createProps() {
+    // Papyrus scrolls
+    this.add.image(150, 200, 'papyrus').setDepth(5);
+    this.add.image(180, 210, 'papyrus').setDepth(5);
+
+    // Pottery vessels
+    this.add.image(550, 250, 'pottery').setDepth(5);
+    this.add.image(580, 260, 'pottery').setDepth(5);
+    this.add.image(600, 240, 'pottery').setDepth(5);
+
+    // More scrolls
+    this.add.image(300, 450, 'papyrus').setDepth(5);
+
+    // Torches with fire particles (for ambient lighting)
+    this.createTorch(100, 100);
+    this.createTorch(700, 120);
+    this.createTorch(400, 550);
+  }
+
+  createTorch(x, y) {
+    // Torch holder (simple rectangle for the torch stick)
+    this.add.rectangle(x, y, 4, 20, 0x8b4513).setDepth(5);
+
+    // Orange flames (main fire)
+    this.add.particles(x, y - 15, 'fire-orange', {
+      speed: { min: 15, max: 25 },
+      angle: { min: 250, max: 290 },
+      scale: { start: 0.6, end: 0 },
+      alpha: { start: 0.9, end: 0 },
+      lifespan: 600,
+      frequency: 60,
+      gravityY: -40,
+      blendMode: 'ADD',
+    });
+
+    // Yellow flame tips
+    this.add.particles(x, y - 18, 'fire-yellow', {
+      speed: { min: 20, max: 30 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.4, end: 0 },
+      alpha: { start: 0.7, end: 0 },
+      lifespan: 400,
+      frequency: 80,
+      gravityY: -50,
+      blendMode: 'ADD',
+    });
+
+    // Smoke
+    this.add.particles(x, y - 20, 'fire-smoke', {
+      speed: { min: 5, max: 10 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.3, end: 0.8 },
+      alpha: { start: 0.2, end: 0 },
+      lifespan: 1500,
+      frequency: 250,
+      gravityY: -15,
+    });
+  }
+
+  createNPCs() {
+    this.npcs = [];
+    this.npcProps = []; // Track props that move with NPCs
+
+    // NPC 1: Scribe writing on papyrus (left side, mid-height)
+    const scribe = this.add.sprite(180, 280, 'ancient-scribe');
+    scribe.setDepth(50);
+    scribe.activity = 'scribe';
+    scribe.workFrame = 0;
+    this.npcs.push(scribe);
+
+    // Papyrus scroll prop (on desk/table in front of scribe)
+    const papyrusScroll = this.add.rectangle(170, 300, 16, 10, 0xf4e4c1).setDepth(49);
+    scribe.prop = papyrusScroll;
+
+    // Animate scribe with papyrus scroll movement
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        scribe.workFrame = (scribe.workFrame + 1) % 4;
+        scribe.setFrame(scribe.workFrame);
+        // Subtle scroll movement as if being unrolled
+        papyrusScroll.y = 300 + (scribe.workFrame % 2);
+      },
+      loop: true,
+    });
+
+    // NPC 2: Potter shaping pottery (bottom right)
+    const potter = this.add.sprite(600, 450, 'ancient-pottery');
+    potter.setDepth(50);
+    potter.activity = 'pottery';
+    potter.workFrame = 0;
+    this.npcs.push(potter);
+
+    // Pottery wheel prop
+    const potteryWheel = this.add.circle(600, 465, 8, 0x8b7355).setDepth(49);
+    potter.prop = potteryWheel;
+
+    // Animate potter with pottery wheel rotation
+    this.time.addEvent({
+      delay: 500,
+      callback: () => {
+        potter.workFrame = (potter.workFrame + 1) % 4;
+        potter.setFrame(potter.workFrame);
+      },
+      loop: true,
+    });
+    // Continuous pottery wheel rotation
+    this.tweens.add({
+      targets: potteryWheel,
+      rotation: Math.PI * 2,
+      duration: 2000,
+      repeat: -1,
+    });
+
+    // NPC 3: Merchant/Trader (bottom left-center)
+    const merchant = this.add.sprite(250, 480, 'ancient-merchant');
+    merchant.setDepth(50);
+    merchant.activity = 'merchant';
+    merchant.workFrame = 0;
+    this.npcs.push(merchant);
+
+    // Merchant goods/basket prop
+    const merchantGoods = this.add.rectangle(265, 495, 16, 12, 0x8b7355).setDepth(49);
+    merchant.prop = merchantGoods;
+
+    // Animate merchant
+    this.time.addEvent({
+      delay: 700,
+      callback: () => {
+        merchant.workFrame = (merchant.workFrame + 1) % 4;
+        merchant.setFrame(merchant.workFrame);
+        // Basket slightly moves as merchant gestures
+        merchantGoods.x = 265 + (merchant.workFrame % 2) * 2;
+      },
+      loop: true,
+    });
+
+    // NPC 4: Farmer with irrigation (right side, mid-height)
+    const farmer = this.add.sprite(550, 280, 'ancient-farmer');
+    farmer.setDepth(50);
+    farmer.activity = 'farmer';
+    farmer.workFrame = 0;
+    this.npcs.push(farmer);
+
+    // Water vessel prop
+    const waterVessel = this.add.rectangle(565, 295, 10, 14, 0x6a6a6a).setDepth(49);
+    farmer.prop = waterVessel;
+
+    // Animate farmer
+    this.time.addEvent({
+      delay: 650,
+      callback: () => {
+        farmer.workFrame = (farmer.workFrame + 1) % 4;
+        farmer.setFrame(farmer.workFrame);
+        // Vessel moves with farmer's work
+        waterVessel.y = 295 + (farmer.workFrame % 2);
+      },
+      loop: true,
+    });
+  }
+
+  createPlayer(x, y) {
+    this.player = this.physics.add.sprite(x, y, 'player-ancient');
+    this.player.setCollideWorldBounds(true);
+    this.player.setDepth(50);
+
+    // Add frame configs for ancient player (if not already added)
+    if (!this.textures.get('player-ancient').has(0)) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-ancient').add(i, 0, col * 32, row * 48, 32, 48);
+      }
+    }
+
+    // Create walking animations
+    if (!this.anims.exists('ancient-walk-down')) {
+      this.anims.create({
+        key: 'ancient-walk-down',
+        frames: this.anims.generateFrameNumbers('player-ancient', { start: 0, end: 2 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('ancient-walk-left')) {
+      this.anims.create({
+        key: 'ancient-walk-left',
+        frames: this.anims.generateFrameNumbers('player-ancient', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('ancient-walk-right')) {
+      this.anims.create({
+        key: 'ancient-walk-right',
+        frames: this.anims.generateFrameNumbers('player-ancient', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('ancient-walk-up')) {
+      this.anims.create({
+        key: 'ancient-walk-up',
+        frames: this.anims.generateFrameNumbers('player-ancient', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+
+    // Collision with pyramid
+    this.physics.add.overlap(this.player, this.pyramid, () => {
+      if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+        this.enterNextEra();
+      } else {
+        this.interactionText.setText('Press E to enter pyramid');
+        this.interactionText.setVisible(true);
+        this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
+      }
+    });
+  }
+
+  createInteractables() {
+    const writingInfo = {
+      title: 'Writing Systems',
+      content:
+        'Cuneiform and hieroglyphs (3200 BCE) let humans record knowledge for the first time. Before writing, all history was oral and easily lost!',
+      icon: '📜',
+    };
+    this.interactables.push(createInteractable(this, 150, 200, 80, 80, writingInfo));
+
+    const wheelInfo = {
+      title: 'The Wheel',
+      content:
+        'Invented ~3500 BCE, the wheel revolutionized transport. But it took 300 years before anyone thought to use it for chariots!',
+      icon: '⚙️',
+    };
+    this.interactables.push(createInteractable(this, 250, 350, 80, 80, wheelInfo));
+
+    const pyramidInfo = {
+      title: 'Pyramid Construction',
+      content:
+        "The Great Pyramid was built with 2.3M stone blocks, each 2.5 tons. It remained Earth's tallest structure for 3,800 years!",
+      icon: '🏛️',
+    };
+    this.interactables.push(createInteractable(this, 350, 80, 120, 120, pyramidInfo));
+
+    const irrigationInfo = {
+      title: 'Irrigation Systems',
+      content:
+        'Ancient irrigation systems could water 1000+ acres. This freed people from depending on rain and created the first cities.',
+      icon: '💧',
+    };
+    this.interactables.push(createInteractable(this, 500, 450, 80, 80, irrigationInfo));
+
+    const bronzeInfo = {
+      title: 'Bronze Metallurgy',
+      content:
+        'Bronze tools (3300 BCE) were 3x stronger than stone. This sparked trade networks spanning thousands of miles.',
+      icon: '⚒️',
+    };
+    this.interactables.push(createInteractable(this, 600, 300, 80, 80, bronzeInfo));
+
+    const mathInfo = {
+      title: 'Mathematics',
+      content:
+        'Babylonians invented the 60-minute hour and 360° circle in 2000 BCE. We still use their system today!',
+      icon: '📐',
+    };
+    this.interactables.push(createInteractable(this, 200, 500, 80, 80, mathInfo));
+  }
+
+  showEraTitleCard(title, subtitle) {
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#d4a832',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  update() {
+    if (!this.player) {
+      return;
+    }
+
+    const speed = this.playerSpeed;
+    this.player.setVelocity(0);
+
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-speed);
+      this.player.play('walk-left', true);
+      this.lastDirection = 'left';
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(speed);
+      this.player.play('walk-right', true);
+      this.lastDirection = 'right';
+    } else if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-speed);
+      this.player.play('walk-up', true);
+      this.lastDirection = 'up';
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(speed);
+      this.player.play('walk-down', true);
+      this.lastDirection = 'down';
+    } else {
+      this.player.stop();
+      const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(idleFrames[this.lastDirection]);
+    }
+
+    // Check interactables
+    this.interactables.forEach((interactable) => {
+      const distance = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
+
+      if (distance < 80) {
+        interactable.indicator.setVisible(true);
+        if (!interactable.promptShown) {
+          this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
+          this.interactionText.setVisible(true);
+          interactable.promptShown = true;
         }
 
-        // Generate Ancient era player character
-        if (!this.textures.exists('player-ancient')) {
-            generateAncientPlayerSprite(this, 'player-ancient');
+        if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+          this.infoPanel.toggle(interactable.infoData);
         }
-
-        // Generate walking sprite for timeline (shared across scenes)
-        if (!this.textures.exists('walking-sprite')) {
-            generateWalkingSpriteTexture(this, 'walking-sprite');
-            // Add frames for walking sprite (4 frames of 16x16 pixels)
-            for (let i = 0; i < 4; i++) {
-                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-            }
+      } else {
+        interactable.indicator.setVisible(false);
+        if (interactable.promptShown) {
+          this.interactionText.setVisible(false);
+          interactable.promptShown = false;
         }
+      }
+    });
+  }
 
-        // Spawn position
-        const spawnX = data?.spawnX || 400;
-        const spawnY = data?.spawnY || 500;
-
-        // Fade in effect when entering scene
-        this.cameras.main.fadeIn(1000, 0, 0, 0);
-
-        // Add frame configs for player (if not already added)
-        if (!this.anims.exists('walk-down')) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-char').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // World bounds
-        this.physics.world.setBounds(0, 0, 800, 600);
-
-        // Create scene elements
-        this.createGround();
-        this.createPyramid();
-        this.createProps();
-        this.createNPCs();
-
-        // Create player at spawn position
-        this.createPlayer(spawnX, spawnY);
-
-        // Camera
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Info panel & interactables
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Timeline bar
-        this.timelineBar = new TimelineBar(this, 'ancient');
-
-        // Interaction text
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Title card
-        this.showEraTitleCard('ANCIENT CIVILIZATIONS', '3000 BCE - 500 CE');
-
-        this.lastDirection = 'down';
-        this.playerSpeed = 140;
-    }
-
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
-
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                this.add.image(x * tileSize + 16, y * tileSize + 16, 'sandstone');
-            }
-        }
-    }
-
-    createPyramid() {
-        const pyramidX = 400;
-        const pyramidY = 80;
-
-        // Pyramid portal
-        this.pyramid = this.physics.add.sprite(pyramidX, pyramidY, 'pyramid');
-        this.pyramid.setImmovable(true);
-
-        // Sign
-        this.add.text(pyramidX, pyramidY - 70, '⬆ PYRAMID\nNext Era', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#4a4a4a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
-    }
-
-    createProps() {
-        // Papyrus scrolls
-        this.add.image(150, 200, 'papyrus').setDepth(5);
-        this.add.image(180, 210, 'papyrus').setDepth(5);
-
-        // Pottery vessels
-        this.add.image(550, 250, 'pottery').setDepth(5);
-        this.add.image(580, 260, 'pottery').setDepth(5);
-        this.add.image(600, 240, 'pottery').setDepth(5);
-
-        // More scrolls
-        this.add.image(300, 450, 'papyrus').setDepth(5);
-
-        // Torches with fire particles (for ambient lighting)
-        this.createTorch(100, 100);
-        this.createTorch(700, 120);
-        this.createTorch(400, 550);
-    }
-
-    createTorch(x, y) {
-        // Torch holder (simple rectangle for the torch stick)
-        this.add.rectangle(x, y, 4, 20, 0x8b4513).setDepth(5);
-
-        // Orange flames (main fire)
-        this.add.particles(x, y - 15, 'fire-orange', {
-            speed: { min: 15, max: 25 },
-            angle: { min: 250, max: 290 },
-            scale: { start: 0.6, end: 0 },
-            alpha: { start: 0.9, end: 0 },
-            lifespan: 600,
-            frequency: 60,
-            gravityY: -40,
-            blendMode: 'ADD'
-        });
-
-        // Yellow flame tips
-        this.add.particles(x, y - 18, 'fire-yellow', {
-            speed: { min: 20, max: 30 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.4, end: 0 },
-            alpha: { start: 0.7, end: 0 },
-            lifespan: 400,
-            frequency: 80,
-            gravityY: -50,
-            blendMode: 'ADD'
-        });
-
-        // Smoke
-        this.add.particles(x, y - 20, 'fire-smoke', {
-            speed: { min: 5, max: 10 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.3, end: 0.8 },
-            alpha: { start: 0.2, end: 0 },
-            lifespan: 1500,
-            frequency: 250,
-            gravityY: -15
-        });
-    }
-
-    createNPCs() {
-        this.npcs = [];
-        this.npcProps = []; // Track props that move with NPCs
-
-        // NPC 1: Scribe writing on papyrus (left side, mid-height)
-        const scribe = this.add.sprite(180, 280, 'ancient-scribe');
-        scribe.setDepth(50);
-        scribe.activity = 'scribe';
-        scribe.workFrame = 0;
-        this.npcs.push(scribe);
-
-        // Papyrus scroll prop (on desk/table in front of scribe)
-        const papyrusScroll = this.add.rectangle(170, 300, 16, 10, 0xf4e4c1).setDepth(49);
-        scribe.prop = papyrusScroll;
-
-        // Animate scribe with papyrus scroll movement
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                scribe.workFrame = (scribe.workFrame + 1) % 4;
-                scribe.setFrame(scribe.workFrame);
-                // Subtle scroll movement as if being unrolled
-                papyrusScroll.y = 300 + (scribe.workFrame % 2);
-            },
-            loop: true
-        });
-
-        // NPC 2: Potter shaping pottery (bottom right)
-        const potter = this.add.sprite(600, 450, 'ancient-pottery');
-        potter.setDepth(50);
-        potter.activity = 'pottery';
-        potter.workFrame = 0;
-        this.npcs.push(potter);
-
-        // Pottery wheel prop
-        const potteryWheel = this.add.circle(600, 465, 8, 0x8b7355).setDepth(49);
-        potter.prop = potteryWheel;
-
-        // Animate potter with pottery wheel rotation
-        this.time.addEvent({
-            delay: 500,
-            callback: () => {
-                potter.workFrame = (potter.workFrame + 1) % 4;
-                potter.setFrame(potter.workFrame);
-            },
-            loop: true
-        });
-        // Continuous pottery wheel rotation
-        this.tweens.add({
-            targets: potteryWheel,
-            rotation: Math.PI * 2,
-            duration: 2000,
-            repeat: -1
-        });
-
-        // NPC 3: Merchant/Trader (bottom left-center)
-        const merchant = this.add.sprite(250, 480, 'ancient-merchant');
-        merchant.setDepth(50);
-        merchant.activity = 'merchant';
-        merchant.workFrame = 0;
-        this.npcs.push(merchant);
-
-        // Merchant goods/basket prop
-        const merchantGoods = this.add.rectangle(265, 495, 16, 12, 0x8b7355).setDepth(49);
-        merchant.prop = merchantGoods;
-
-        // Animate merchant
-        this.time.addEvent({
-            delay: 700,
-            callback: () => {
-                merchant.workFrame = (merchant.workFrame + 1) % 4;
-                merchant.setFrame(merchant.workFrame);
-                // Basket slightly moves as merchant gestures
-                merchantGoods.x = 265 + (merchant.workFrame % 2) * 2;
-            },
-            loop: true
-        });
-
-        // NPC 4: Farmer with irrigation (right side, mid-height)
-        const farmer = this.add.sprite(550, 280, 'ancient-farmer');
-        farmer.setDepth(50);
-        farmer.activity = 'farmer';
-        farmer.workFrame = 0;
-        this.npcs.push(farmer);
-
-        // Water vessel prop
-        const waterVessel = this.add.rectangle(565, 295, 10, 14, 0x6a6a6a).setDepth(49);
-        farmer.prop = waterVessel;
-
-        // Animate farmer
-        this.time.addEvent({
-            delay: 650,
-            callback: () => {
-                farmer.workFrame = (farmer.workFrame + 1) % 4;
-                farmer.setFrame(farmer.workFrame);
-                // Vessel moves with farmer's work
-                waterVessel.y = 295 + (farmer.workFrame % 2);
-            },
-            loop: true
-        });
-    }
-
-    createPlayer(x, y) {
-        this.player = this.physics.add.sprite(x, y, 'player-ancient');
-        this.player.setCollideWorldBounds(true);
-        this.player.setDepth(50);
-
-        // Add frame configs for ancient player (if not already added)
-        if (!this.textures.get('player-ancient').has(0)) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-ancient').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // Create walking animations
-        if (!this.anims.exists('ancient-walk-down')) {
-            this.anims.create({
-                key: 'ancient-walk-down',
-                frames: this.anims.generateFrameNumbers('player-ancient', { start: 0, end: 2 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('ancient-walk-left')) {
-            this.anims.create({
-                key: 'ancient-walk-left',
-                frames: this.anims.generateFrameNumbers('player-ancient', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('ancient-walk-right')) {
-            this.anims.create({
-                key: 'ancient-walk-right',
-                frames: this.anims.generateFrameNumbers('player-ancient', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('ancient-walk-up')) {
-            this.anims.create({
-                key: 'ancient-walk-up',
-                frames: this.anims.generateFrameNumbers('player-ancient', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        // Collision with pyramid
-        this.physics.add.overlap(this.player, this.pyramid, () => {
-            if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-                this.enterNextEra();
-            } else {
-                this.interactionText.setText('Press E to enter pyramid');
-                this.interactionText.setVisible(true);
-                this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
-            }
-        });
-    }
-
-    createInteractables() {
-        const writingInfo = {
-            title: 'Writing Systems',
-            content: 'Cuneiform and hieroglyphs (3200 BCE) let humans record knowledge for the first time. Before writing, all history was oral and easily lost!',
-            icon: '📜'
-        };
-        this.interactables.push(createInteractable(this, 150, 200, 80, 80, writingInfo));
-
-        const wheelInfo = {
-            title: 'The Wheel',
-            content: 'Invented ~3500 BCE, the wheel revolutionized transport. But it took 300 years before anyone thought to use it for chariots!',
-            icon: '⚙️'
-        };
-        this.interactables.push(createInteractable(this, 250, 350, 80, 80, wheelInfo));
-
-        const pyramidInfo = {
-            title: 'Pyramid Construction',
-            content: 'The Great Pyramid was built with 2.3M stone blocks, each 2.5 tons. It remained Earth\'s tallest structure for 3,800 years!',
-            icon: '🏛️'
-        };
-        this.interactables.push(createInteractable(this, 350, 80, 120, 120, pyramidInfo));
-
-        const irrigationInfo = {
-            title: 'Irrigation Systems',
-            content: 'Ancient irrigation systems could water 1000+ acres. This freed people from depending on rain and created the first cities.',
-            icon: '💧'
-        };
-        this.interactables.push(createInteractable(this, 500, 450, 80, 80, irrigationInfo));
-
-        const bronzeInfo = {
-            title: 'Bronze Metallurgy',
-            content: 'Bronze tools (3300 BCE) were 3x stronger than stone. This sparked trade networks spanning thousands of miles.',
-            icon: '⚒️'
-        };
-        this.interactables.push(createInteractable(this, 600, 300, 80, 80, bronzeInfo));
-
-        const mathInfo = {
-            title: 'Mathematics',
-            content: 'Babylonians invented the 60-minute hour and 360° circle in 2000 BCE. We still use their system today!',
-            icon: '📐'
-        };
-        this.interactables.push(createInteractable(this, 200, 500, 80, 80, mathInfo));
-    }
-
-    showEraTitleCard(title, subtitle) {
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#d4a832',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
-        });
-    }
-
-    update() {
-        if (!this.player) return;
-
-        const speed = this.playerSpeed;
-        this.player.setVelocity(0);
-
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-speed);
-            this.player.play('walk-left', true);
-            this.lastDirection = 'left';
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(speed);
-            this.player.play('walk-right', true);
-            this.lastDirection = 'right';
-        } else if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-speed);
-            this.player.play('walk-up', true);
-            this.lastDirection = 'up';
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(speed);
-            this.player.play('walk-down', true);
-            this.lastDirection = 'down';
-        } else {
-            this.player.stop();
-            const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(idleFrames[this.lastDirection]);
-        }
-
-        // Check interactables
-        this.interactables.forEach(interactable => {
-            const distance = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
-
-            if (distance < 80) {
-                interactable.indicator.setVisible(true);
-                if (!interactable.promptShown) {
-                    this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
-                    this.interactionText.setVisible(true);
-                    interactable.promptShown = true;
-                }
-
-                if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-                    this.infoPanel.toggle(interactable.infoData);
-                }
-            } else {
-                interactable.indicator.setVisible(false);
-                if (interactable.promptShown) {
-                    this.interactionText.setVisible(false);
-                    interactable.promptShown = false;
-                }
-            }
-        });
-    }
-
-    enterNextEra() {
-        this.cameras.main.fadeOut(1000);
-        this.time.delayedCall(1000, () => {
-            this.scene.start('MedievalScene', { spawnX: 400, spawnY: 500 });
-        });
-    }
+  enterNextEra() {
+    this.cameras.main.fadeOut(1000);
+    this.time.delayedCall(1000, () => {
+      this.scene.start('MedievalScene', { spawnX: 400, spawnY: 500 });
+    });
+  }
 }
 
 // ===== INDUSTRIAL REVOLUTION SCENE =====
 
 class IndustrialScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'IndustrialScene' });
-    }
+  constructor() {
+    super({ key: 'IndustrialScene' });
+  }
 
-    create(data) {
-        // Generate scene-specific textures
-        generateBrickTexture(this, 'brick');
-        generateSteamEngineTexture(this, 'steam-engine');
-        generateSmokestackTexture(this, 'smokestack');
-        generateGearTexture(this, 'gear');
+  create(data) {
+    // Generate scene-specific textures
+    generateBrickTexture(this, 'brick');
+    generateSteamEngineTexture(this, 'steam-engine');
+    generateSmokestackTexture(this, 'smokestack');
+    generateGearTexture(this, 'gear');
 
-        // Generate NPC textures
-        generateIndustrialNPCTexture(this, 'industrial-worker', 'worker');
-        generateIndustrialNPCTexture(this, 'industrial-engineer', 'engineer');
-        generateIndustrialNPCTexture(this, 'industrial-assembly', 'assembly');
-        generateIndustrialNPCTexture(this, 'industrial-foreman', 'foreman');
+    // Generate NPC textures
+    generateIndustrialNPCTexture(this, 'industrial-worker', 'worker');
+    generateIndustrialNPCTexture(this, 'industrial-engineer', 'engineer');
+    generateIndustrialNPCTexture(this, 'industrial-assembly', 'assembly');
+    generateIndustrialNPCTexture(this, 'industrial-foreman', 'foreman');
 
-        // Add frame configs for NPC sprites (4 frames per NPC)
-        if (!this.textures.get('industrial-worker').has(0)) {
-            const npcKeys = ['industrial-worker', 'industrial-engineer', 'industrial-assembly', 'industrial-foreman'];
-            npcKeys.forEach(key => {
-                for (let i = 0; i < 4; i++) {
-                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
-                }
-            });
+    // Add frame configs for NPC sprites (4 frames per NPC)
+    if (!this.textures.get('industrial-worker').has(0)) {
+      const npcKeys = [
+        'industrial-worker',
+        'industrial-engineer',
+        'industrial-assembly',
+        'industrial-foreman',
+      ];
+      npcKeys.forEach((key) => {
+        for (let i = 0; i < 4; i++) {
+          this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
         }
-
-        // Generate industrial era player character
-        if (!this.textures.exists('player-industrial')) {
-            generateIndustrialPlayerSprite(this, 'player-industrial');
-        }
-
-        // Generate walking sprite for timeline (shared across scenes)
-        if (!this.textures.exists('walking-sprite')) {
-            generateWalkingSpriteTexture(this, 'walking-sprite');
-            // Add frames for walking sprite (4 frames of 16x16 pixels)
-            for (let i = 0; i < 4; i++) {
-                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-            }
-        }
-
-        // Spawn position
-        const spawnX = data?.spawnX || 400;
-        const spawnY = data?.spawnY || 500;
-
-        // Fade in effect when entering scene
-        this.cameras.main.fadeIn(1000, 0, 0, 0);
-
-        // Add frame configs for player (if not already added)
-        if (!this.anims.exists('industrial-walk-down')) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-industrial').add(i, 0, col * 32, row * 48, 32, 48);
-            }
-        }
-
-        // World bounds
-        this.physics.world.setBounds(0, 0, 800, 600);
-
-        // Create scene
-        this.createGround();
-        this.createFactory();
-        this.createProps();
-        this.createNPCs();
-
-        // Create player at spawn position
-        this.createPlayer(spawnX, spawnY);
-
-        // Camera
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Info & interactables
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Timeline
-        this.timelineBar = new TimelineBar(this, 'industrial');
-
-        // Interaction text
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Smoke particles
-        this.createSmokeEffects();
-
-        // Title card
-        this.showEraTitleCard('INDUSTRIAL REVOLUTION', '1760-1900 CE');
-
-        this.lastDirection = 'down';
-        this.playerSpeed = 140;
+      });
     }
 
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
-
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                this.add.image(x * tileSize + 16, y * tileSize + 16, 'brick');
-            }
-        }
+    // Generate industrial era player character
+    if (!this.textures.exists('player-industrial')) {
+      generateIndustrialPlayerSprite(this, 'player-industrial');
     }
 
-    createFactory() {
-        const factoryX = 400;
-        const factoryY = 80;
-
-        // Smokestack (factory portal)
-        this.smokestack = this.physics.add.sprite(factoryX, factoryY, 'smokestack');
-        this.smokestack.setImmovable(true);
-
-        // Sign
-        this.add.text(factoryX, factoryY - 50, '⬆ FACTORY\nNext Era', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#4a4a4a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
+    // Generate walking sprite for timeline (shared across scenes)
+    if (!this.textures.exists('walking-sprite')) {
+      generateWalkingSpriteTexture(this, 'walking-sprite');
+      // Add frames for walking sprite (4 frames of 16x16 pixels)
+      for (let i = 0; i < 4; i++) {
+        this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+      }
     }
 
-    createProps() {
-        // Steam engine
-        this.steamEngine = this.add.image(200, 250, 'steam-engine').setDepth(5);
+    // Spawn position
+    const spawnX = data?.spawnX || 400;
+    const spawnY = data?.spawnY || 500;
 
-        // Gears with rotation animations
-        const gear1 = this.add.image(500, 300, 'gear').setDepth(5).setScale(1.5);
-        const gear2 = this.add.image(530, 320, 'gear').setDepth(5).setScale(1.2);
-        const gear3 = this.add.image(550, 280, 'gear').setDepth(5);
+    // Fade in effect when entering scene
+    this.cameras.main.fadeIn(1000, 0, 0, 0);
 
-        // Rotate gears at different speeds for mechanical effect
-        this.tweens.add({
-            targets: gear1,
-            rotation: Math.PI * 2,
-            duration: 3000,
-            repeat: -1,
-            ease: 'Linear'
-        });
-
-        this.tweens.add({
-            targets: gear2,
-            rotation: -Math.PI * 2, // Opposite direction
-            duration: 2500,
-            repeat: -1,
-            ease: 'Linear'
-        });
-
-        this.tweens.add({
-            targets: gear3,
-            rotation: Math.PI * 2,
-            duration: 2000,
-            repeat: -1,
-            ease: 'Linear'
-        });
+    // Add frame configs for player (if not already added)
+    if (!this.anims.exists('industrial-walk-down')) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-industrial').add(i, 0, col * 32, row * 48, 32, 48);
+      }
     }
 
-    createNPCs() {
-        this.npcs = [];
-        this.npcProps = []; // Track props that move with NPCs
+    // World bounds
+    this.physics.world.setBounds(0, 0, 800, 600);
 
-        // NPC 1: Factory worker shoveling (bottom left)
-        const worker = this.add.sprite(150, 520, 'industrial-worker');
-        worker.setDepth(50);
-        worker.activity = 'worker';
-        worker.workFrame = 0;
-        this.npcs.push(worker);
+    // Create scene
+    this.createGround();
+    this.createFactory();
+    this.createProps();
+    this.createNPCs();
 
-        // Shovel prop (moves with worker's hands)
-        const shovel = this.add.rectangle(165, 515, 3, 18, 0x8b7355).setDepth(49);
-        worker.prop = shovel;
+    // Create player at spawn position
+    this.createPlayer(spawnX, spawnY);
 
-        // Animate worker with shovel movement
-        this.time.addEvent({
-            delay: 650,
-            callback: () => {
-                worker.workFrame = (worker.workFrame + 1) % 4;
-                worker.setFrame(worker.workFrame);
+    // Camera
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
 
-                // Move shovel with shoveling motion
-                if (worker.workFrame < 2) {
-                    shovel.setPosition(165, 510); // Raised
-                    shovel.rotation = -0.5;
-                } else {
-                    shovel.setPosition(165, 525); // Lowered (shoveling coal)
-                    shovel.rotation = 0.2;
-                }
-            },
-            loop: true
-        });
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.eKey = this.input.keyboard.addKey('E');
 
-        // NPC 2: Engineer at steam engine (left-center)
-        const engineer = this.add.sprite(220, 260, 'industrial-engineer');
-        engineer.setDepth(50);
-        engineer.activity = 'engineer';
-        engineer.workFrame = 0;
-        this.npcs.push(engineer);
+    // Info & interactables
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
 
-        // Pressure gauge prop
-        const pressureGauge = this.add.circle(235, 275, 6, 0x6a6a6a).setDepth(49);
-        engineer.prop = pressureGauge;
+    // Timeline
+    this.timelineBar = new TimelineBar(this, 'industrial');
 
-        // Animate engineer checking gauges
-        this.time.addEvent({
-            delay: 550,
-            callback: () => {
-                engineer.workFrame = (engineer.workFrame + 1) % 4;
-                engineer.setFrame(engineer.workFrame);
-                // Gauge "fluctuates" as engineer works
-                pressureGauge.radius = 6 + (engineer.workFrame % 2);
-            },
-            loop: true
-        });
+    // Interaction text
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
 
-        // NPC 3: Assembly line worker (right lower)
-        const assembly = this.add.sprite(550, 420, 'industrial-assembly');
-        assembly.setDepth(50);
-        assembly.activity = 'assembly';
-        assembly.workFrame = 0;
-        this.npcs.push(assembly);
+    // Smoke particles
+    this.createSmokeEffects();
 
-        // Parts/tools prop
-        const assemblyPart = this.add.rectangle(565, 435, 12, 8, 0x7a7a7a).setDepth(49);
-        assembly.prop = assemblyPart;
+    // Title card
+    this.showEraTitleCard('INDUSTRIAL REVOLUTION', '1760-1900 CE');
 
-        // Animate assembly worker
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                assembly.workFrame = (assembly.workFrame + 1) % 4;
-                assembly.setFrame(assembly.workFrame);
-                // Part moves with assembly work
-                assemblyPart.y = 435 + (assembly.workFrame % 2) * 2;
-            },
-            loop: true
-        });
+    this.lastDirection = 'down';
+    this.playerSpeed = 140;
+  }
 
-        // NPC 4: Foreman supervising (right mid)
-        const foreman = this.add.sprite(600, 280, 'industrial-foreman');
-        foreman.setDepth(50);
-        foreman.activity = 'foreman';
-        foreman.workFrame = 0;
-        this.npcs.push(foreman);
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
 
-        // Clipboard prop
-        const clipboard = this.add.rectangle(590, 295, 10, 14, 0x8b7355).setDepth(49);
-        foreman.prop = clipboard;
-
-        // Animate foreman with clipboard
-        this.time.addEvent({
-            delay: 700,
-            callback: () => {
-                foreman.workFrame = (foreman.workFrame + 1) % 4;
-                foreman.setFrame(foreman.workFrame);
-                // Clipboard moves slightly as foreman writes
-                clipboard.x = 590 + (foreman.workFrame % 2);
-            },
-            loop: true
-        });
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        this.add.image(x * tileSize + 16, y * tileSize + 16, 'brick');
+      }
     }
+  }
 
-    createSmokeEffects() {
-        // Create smoke particle texture
-        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
-        graphics.fillStyle(0x4a4a4a);
-        graphics.fillCircle(4, 4, 4);
-        graphics.generateTexture('smoke-particle', 8, 8);
-        graphics.destroy();
+  createFactory() {
+    const factoryX = 400;
+    const factoryY = 80;
 
-        // Smoke from smokestack (existing)
-        this.add.particles(350, 40, 'smoke-particle', {
-            speed: { min: 20, max: 40 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.5, end: 1.5 },
-            alpha: { start: 0.6, end: 0 },
-            lifespan: 2000,
-            frequency: 200,
-            gravityY: -20
-        });
+    // Smokestack (factory portal)
+    this.smokestack = this.physics.add.sprite(factoryX, factoryY, 'smokestack');
+    this.smokestack.setImmovable(true);
 
-        // Multi-layer steam engine particles
-        // Layer 1: White hot steam
-        this.add.particles(200, 240, 'fire-smoke', {
-            speed: { min: 15, max: 30 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.6, end: 1.2 },
-            alpha: { start: 0.7, end: 0 },
-            lifespan: 1200,
-            frequency: 100,
-            tint: 0xffffff, // White steam
-            gravityY: -25
-        });
+    // Sign
+    this.add
+      .text(factoryX, factoryY - 50, '⬆ FACTORY\nNext Era', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
 
-        // Layer 2: Gray smoke from engine
-        this.add.particles(200, 235, 'smoke-particle', {
-            speed: { min: 10, max: 20 },
-            angle: { min: 250, max: 290 },
-            scale: { start: 0.4, end: 1.0 },
-            alpha: { start: 0.5, end: 0 },
-            lifespan: 1500,
-            frequency: 150,
-            gravityY: -15
-        });
+  createProps() {
+    // Steam engine
+    this.steamEngine = this.add.image(200, 250, 'steam-engine').setDepth(5);
 
-        // Furnace glow particles (bottom left near worker)
-        // Orange glow
-        this.add.particles(150, 500, 'fire-orange', {
-            speed: { min: 5, max: 15 },
-            angle: { min: 260, max: 280 },
-            scale: { start: 0.8, end: 0 },
-            alpha: { start: 0.8, end: 0 },
-            lifespan: 800,
-            frequency: 80,
-            gravityY: -30,
-            blendMode: 'ADD'
-        });
+    // Gears with rotation animations
+    const gear1 = this.add.image(500, 300, 'gear').setDepth(5).setScale(1.5);
+    const gear2 = this.add.image(530, 320, 'gear').setDepth(5).setScale(1.2);
+    const gear3 = this.add.image(550, 280, 'gear').setDepth(5);
 
-        // Yellow furnace sparks
-        this.add.particles(150, 505, 'fire-yellow', {
-            speed: { min: 10, max: 25 },
-            angle: { min: 240, max: 300 },
-            scale: { start: 0.5, end: 0 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 600,
-            frequency: 120,
-            gravityY: -20,
-            blendMode: 'ADD'
-        });
-    }
+    // Rotate gears at different speeds for mechanical effect
+    this.tweens.add({
+      targets: gear1,
+      rotation: Math.PI * 2,
+      duration: 3000,
+      repeat: -1,
+      ease: 'Linear',
+    });
 
-    createPlayer(x, y) {
-        this.player = this.physics.add.sprite(x, y, 'player-industrial');
-        this.player.setCollideWorldBounds(true);
-        this.player.setDepth(50);
+    this.tweens.add({
+      targets: gear2,
+      rotation: -Math.PI * 2, // Opposite direction
+      duration: 2500,
+      repeat: -1,
+      ease: 'Linear',
+    });
 
-        // Create walking animations
-        if (!this.anims.exists('industrial-walk-down')) {
-            this.anims.create({
-                key: 'industrial-walk-down',
-                frames: this.anims.generateFrameNumbers('player-industrial', { start: 0, end: 2 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('industrial-walk-left')) {
-            this.anims.create({
-                key: 'industrial-walk-left',
-                frames: this.anims.generateFrameNumbers('player-industrial', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('industrial-walk-right')) {
-            this.anims.create({
-                key: 'industrial-walk-right',
-                frames: this.anims.generateFrameNumbers('player-industrial', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('industrial-walk-up')) {
-            this.anims.create({
-                key: 'industrial-walk-up',
-                frames: this.anims.generateFrameNumbers('player-industrial', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
+    this.tweens.add({
+      targets: gear3,
+      rotation: Math.PI * 2,
+      duration: 2000,
+      repeat: -1,
+      ease: 'Linear',
+    });
+  }
 
-        // Collision
-        this.physics.add.overlap(this.player, this.smokestack, () => {
-            if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-                this.enterNextEra();
-            } else {
-                this.interactionText.setText('Press E to enter factory');
-                this.interactionText.setVisible(true);
-                this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
-            }
-        });
-    }
+  createNPCs() {
+    this.npcs = [];
+    this.npcProps = []; // Track props that move with NPCs
 
-    createInteractables() {
-        const steamInfo = {
-            title: 'Steam Engine',
-            content: 'Watt\'s steam engine (1776) was 4x more efficient than previous designs. One engine replaced 50 horses - revolutionizing factories overnight!',
-            icon: '⚙️'
-        };
-        this.interactables.push(createInteractable(this, 200, 250, 80, 80, steamInfo));
+    // NPC 1: Factory worker shoveling (bottom left)
+    const worker = this.add.sprite(150, 520, 'industrial-worker');
+    worker.setDepth(50);
+    worker.activity = 'worker';
+    worker.workFrame = 0;
+    this.npcs.push(worker);
 
-        const railroadInfo = {
-            title: 'Railroads',
-            content: 'The first passenger railway (1825) averaged 15 mph. People said traveling faster than horses would make passengers\' lungs explode!',
-            icon: '🚂'
-        };
-        this.interactables.push(createInteractable(this, 150, 450, 80, 80, railroadInfo));
+    // Shovel prop (moves with worker's hands)
+    const shovel = this.add.rectangle(165, 515, 3, 18, 0x8b7355).setDepth(49);
+    worker.prop = shovel;
 
-        const factoryInfo = {
-            title: 'Factory System',
-            content: 'Manchester\'s factories employed 20,000+ workers by 1850. Cities grew from 10,000 to 1 million people in just 50 years.',
-            icon: '🏭'
-        };
-        this.interactables.push(createInteractable(this, 350, 80, 64, 80, factoryInfo));
+    // Animate worker with shovel movement
+    this.time.addEvent({
+      delay: 650,
+      callback: () => {
+        worker.workFrame = (worker.workFrame + 1) % 4;
+        worker.setFrame(worker.workFrame);
 
-        const telegraphInfo = {
-            title: 'Telegraph',
-            content: 'The telegraph (1844) sent messages at lightning speed - 186,000 miles/second! Before this, news traveled at horse speed: 10 mph.',
-            icon: '📡'
-        };
-        this.interactables.push(createInteractable(this, 550, 200, 80, 80, telegraphInfo));
-
-        const laborInfo = {
-            title: 'Child Labor',
-            content: '40% of factory workers were children under 10. Reforms in 1833 \'generously\' limited their workday to 12 hours.',
-            icon: '👶'
-        };
-        this.interactables.push(createInteractable(this, 600, 450, 80, 80, laborInfo));
-
-        const assemblyInfo = {
-            title: 'Assembly Line',
-            content: 'Ford\'s assembly line (1913) cut car production from 12 hours to 93 minutes! A Model T cost $850 (half of previous cars).',
-            icon: '🚗'
-        };
-        this.interactables.push(createInteractable(this, 500, 500, 80, 80, assemblyInfo));
-    }
-
-    showEraTitleCard(title, subtitle) {
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#7a7a7a',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
-        });
-    }
-
-    update() {
-        if (!this.player) return;
-
-        const speed = this.playerSpeed;
-        this.player.setVelocity(0);
-
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-speed);
-            this.player.play('industrial-walk-left', true);
-            this.lastDirection = 'left';
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(speed);
-            this.player.play('industrial-walk-right', true);
-            this.lastDirection = 'right';
-        } else if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-speed);
-            this.player.play('industrial-walk-up', true);
-            this.lastDirection = 'up';
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(speed);
-            this.player.play('industrial-walk-down', true);
-            this.lastDirection = 'down';
+        // Move shovel with shoveling motion
+        if (worker.workFrame < 2) {
+          shovel.setPosition(165, 510); // Raised
+          shovel.rotation = -0.5;
         } else {
-            this.player.stop();
-            const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(idleFrames[this.lastDirection]);
+          shovel.setPosition(165, 525); // Lowered (shoveling coal)
+          shovel.rotation = 0.2;
+        }
+      },
+      loop: true,
+    });
+
+    // NPC 2: Engineer at steam engine (left-center)
+    const engineer = this.add.sprite(220, 260, 'industrial-engineer');
+    engineer.setDepth(50);
+    engineer.activity = 'engineer';
+    engineer.workFrame = 0;
+    this.npcs.push(engineer);
+
+    // Pressure gauge prop
+    const pressureGauge = this.add.circle(235, 275, 6, 0x6a6a6a).setDepth(49);
+    engineer.prop = pressureGauge;
+
+    // Animate engineer checking gauges
+    this.time.addEvent({
+      delay: 550,
+      callback: () => {
+        engineer.workFrame = (engineer.workFrame + 1) % 4;
+        engineer.setFrame(engineer.workFrame);
+        // Gauge "fluctuates" as engineer works
+        pressureGauge.radius = 6 + (engineer.workFrame % 2);
+      },
+      loop: true,
+    });
+
+    // NPC 3: Assembly line worker (right lower)
+    const assembly = this.add.sprite(550, 420, 'industrial-assembly');
+    assembly.setDepth(50);
+    assembly.activity = 'assembly';
+    assembly.workFrame = 0;
+    this.npcs.push(assembly);
+
+    // Parts/tools prop
+    const assemblyPart = this.add.rectangle(565, 435, 12, 8, 0x7a7a7a).setDepth(49);
+    assembly.prop = assemblyPart;
+
+    // Animate assembly worker
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        assembly.workFrame = (assembly.workFrame + 1) % 4;
+        assembly.setFrame(assembly.workFrame);
+        // Part moves with assembly work
+        assemblyPart.y = 435 + (assembly.workFrame % 2) * 2;
+      },
+      loop: true,
+    });
+
+    // NPC 4: Foreman supervising (right mid)
+    const foreman = this.add.sprite(600, 280, 'industrial-foreman');
+    foreman.setDepth(50);
+    foreman.activity = 'foreman';
+    foreman.workFrame = 0;
+    this.npcs.push(foreman);
+
+    // Clipboard prop
+    const clipboard = this.add.rectangle(590, 295, 10, 14, 0x8b7355).setDepth(49);
+    foreman.prop = clipboard;
+
+    // Animate foreman with clipboard
+    this.time.addEvent({
+      delay: 700,
+      callback: () => {
+        foreman.workFrame = (foreman.workFrame + 1) % 4;
+        foreman.setFrame(foreman.workFrame);
+        // Clipboard moves slightly as foreman writes
+        clipboard.x = 590 + (foreman.workFrame % 2);
+      },
+      loop: true,
+    });
+  }
+
+  createSmokeEffects() {
+    // Create smoke particle texture
+    const graphics = this.make.graphics({ x: 0, y: 0, add: false });
+    graphics.fillStyle(0x4a4a4a);
+    graphics.fillCircle(4, 4, 4);
+    graphics.generateTexture('smoke-particle', 8, 8);
+    graphics.destroy();
+
+    // Smoke from smokestack (existing)
+    this.add.particles(350, 40, 'smoke-particle', {
+      speed: { min: 20, max: 40 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.5, end: 1.5 },
+      alpha: { start: 0.6, end: 0 },
+      lifespan: 2000,
+      frequency: 200,
+      gravityY: -20,
+    });
+
+    // Multi-layer steam engine particles
+    // Layer 1: White hot steam
+    this.add.particles(200, 240, 'fire-smoke', {
+      speed: { min: 15, max: 30 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.6, end: 1.2 },
+      alpha: { start: 0.7, end: 0 },
+      lifespan: 1200,
+      frequency: 100,
+      tint: 0xffffff, // White steam
+      gravityY: -25,
+    });
+
+    // Layer 2: Gray smoke from engine
+    this.add.particles(200, 235, 'smoke-particle', {
+      speed: { min: 10, max: 20 },
+      angle: { min: 250, max: 290 },
+      scale: { start: 0.4, end: 1.0 },
+      alpha: { start: 0.5, end: 0 },
+      lifespan: 1500,
+      frequency: 150,
+      gravityY: -15,
+    });
+
+    // Furnace glow particles (bottom left near worker)
+    // Orange glow
+    this.add.particles(150, 500, 'fire-orange', {
+      speed: { min: 5, max: 15 },
+      angle: { min: 260, max: 280 },
+      scale: { start: 0.8, end: 0 },
+      alpha: { start: 0.8, end: 0 },
+      lifespan: 800,
+      frequency: 80,
+      gravityY: -30,
+      blendMode: 'ADD',
+    });
+
+    // Yellow furnace sparks
+    this.add.particles(150, 505, 'fire-yellow', {
+      speed: { min: 10, max: 25 },
+      angle: { min: 240, max: 300 },
+      scale: { start: 0.5, end: 0 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 600,
+      frequency: 120,
+      gravityY: -20,
+      blendMode: 'ADD',
+    });
+  }
+
+  createPlayer(x, y) {
+    this.player = this.physics.add.sprite(x, y, 'player-industrial');
+    this.player.setCollideWorldBounds(true);
+    this.player.setDepth(50);
+
+    // Create walking animations
+    if (!this.anims.exists('industrial-walk-down')) {
+      this.anims.create({
+        key: 'industrial-walk-down',
+        frames: this.anims.generateFrameNumbers('player-industrial', { start: 0, end: 2 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('industrial-walk-left')) {
+      this.anims.create({
+        key: 'industrial-walk-left',
+        frames: this.anims.generateFrameNumbers('player-industrial', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('industrial-walk-right')) {
+      this.anims.create({
+        key: 'industrial-walk-right',
+        frames: this.anims.generateFrameNumbers('player-industrial', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('industrial-walk-up')) {
+      this.anims.create({
+        key: 'industrial-walk-up',
+        frames: this.anims.generateFrameNumbers('player-industrial', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+
+    // Collision
+    this.physics.add.overlap(this.player, this.smokestack, () => {
+      if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+        this.enterNextEra();
+      } else {
+        this.interactionText.setText('Press E to enter factory');
+        this.interactionText.setVisible(true);
+        this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
+      }
+    });
+  }
+
+  createInteractables() {
+    const steamInfo = {
+      title: 'Steam Engine',
+      content:
+        "Watt's steam engine (1776) was 4x more efficient than previous designs. One engine replaced 50 horses - revolutionizing factories overnight!",
+      icon: '⚙️',
+    };
+    this.interactables.push(createInteractable(this, 200, 250, 80, 80, steamInfo));
+
+    const railroadInfo = {
+      title: 'Railroads',
+      content:
+        "The first passenger railway (1825) averaged 15 mph. People said traveling faster than horses would make passengers' lungs explode!",
+      icon: '🚂',
+    };
+    this.interactables.push(createInteractable(this, 150, 450, 80, 80, railroadInfo));
+
+    const factoryInfo = {
+      title: 'Factory System',
+      content:
+        "Manchester's factories employed 20,000+ workers by 1850. Cities grew from 10,000 to 1 million people in just 50 years.",
+      icon: '🏭',
+    };
+    this.interactables.push(createInteractable(this, 350, 80, 64, 80, factoryInfo));
+
+    const telegraphInfo = {
+      title: 'Telegraph',
+      content:
+        'The telegraph (1844) sent messages at lightning speed - 186,000 miles/second! Before this, news traveled at horse speed: 10 mph.',
+      icon: '📡',
+    };
+    this.interactables.push(createInteractable(this, 550, 200, 80, 80, telegraphInfo));
+
+    const laborInfo = {
+      title: 'Child Labor',
+      content:
+        "40% of factory workers were children under 10. Reforms in 1833 'generously' limited their workday to 12 hours.",
+      icon: '👶',
+    };
+    this.interactables.push(createInteractable(this, 600, 450, 80, 80, laborInfo));
+
+    const assemblyInfo = {
+      title: 'Assembly Line',
+      content:
+        "Ford's assembly line (1913) cut car production from 12 hours to 93 minutes! A Model T cost $850 (half of previous cars).",
+      icon: '🚗',
+    };
+    this.interactables.push(createInteractable(this, 500, 500, 80, 80, assemblyInfo));
+  }
+
+  showEraTitleCard(title, subtitle) {
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#7a7a7a',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  update() {
+    if (!this.player) {
+      return;
+    }
+
+    const speed = this.playerSpeed;
+    this.player.setVelocity(0);
+
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-speed);
+      this.player.play('industrial-walk-left', true);
+      this.lastDirection = 'left';
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(speed);
+      this.player.play('industrial-walk-right', true);
+      this.lastDirection = 'right';
+    } else if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-speed);
+      this.player.play('industrial-walk-up', true);
+      this.lastDirection = 'up';
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(speed);
+      this.player.play('industrial-walk-down', true);
+      this.lastDirection = 'down';
+    } else {
+      this.player.stop();
+      const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(idleFrames[this.lastDirection]);
+    }
+
+    // Check interactables
+    this.interactables.forEach((interactable) => {
+      const distance = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
+
+      if (distance < 80) {
+        interactable.indicator.setVisible(true);
+        if (!interactable.promptShown) {
+          this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
+          this.interactionText.setVisible(true);
+          interactable.promptShown = true;
         }
 
-        // Check interactables
-        this.interactables.forEach(interactable => {
-            const distance = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
+        if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+          this.infoPanel.toggle(interactable.infoData);
+        }
+      } else {
+        interactable.indicator.setVisible(false);
+        if (interactable.promptShown) {
+          this.interactionText.setVisible(false);
+          interactable.promptShown = false;
+        }
+      }
+    });
+  }
 
-            if (distance < 80) {
-                interactable.indicator.setVisible(true);
-                if (!interactable.promptShown) {
-                    this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
-                    this.interactionText.setVisible(true);
-                    interactable.promptShown = true;
-                }
-
-                if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-                    this.infoPanel.toggle(interactable.infoData);
-                }
-            } else {
-                interactable.indicator.setVisible(false);
-                if (interactable.promptShown) {
-                    this.interactionText.setVisible(false);
-                    interactable.promptShown = false;
-                }
-            }
-        });
-    }
-
-    enterNextEra() {
-        this.cameras.main.fadeOut(1000);
-        this.time.delayedCall(1000, () => {
-            this.scene.start('ModernScene', { spawnX: 400, spawnY: 500 });
-        });
-    }
+  enterNextEra() {
+    this.cameras.main.fadeOut(1000);
+    this.time.delayedCall(1000, () => {
+      this.scene.start('ModernScene', { spawnX: 400, spawnY: 500 });
+    });
+  }
 }
 
 // ===== MODERN/DIGITAL AGE SCENE =====
 
 class ModernScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'ModernScene' });
+  constructor() {
+    super({ key: 'ModernScene' });
+  }
+
+  create(data) {
+    // Generate scene-specific textures
+    generateModernFloorTexture(this, 'modern-floor');
+    generateComputerTexture(this, 'computer');
+    generateServerTexture(this, 'server');
+    generateCircuitBoardTexture(this, 'circuit');
+
+    // Generate NPC textures
+    generateModernNPCTexture(this, 'modern-programmer', 'programmer');
+    generateModernNPCTexture(this, 'modern-tech', 'tech');
+    generateModernNPCTexture(this, 'modern-desk', 'desk');
+    generateModernNPCTexture(this, 'modern-it-tech', 'it-tech');
+
+    // Add frame configs for NPC sprites (4 frames per NPC)
+    if (!this.textures.get('modern-programmer').has(0)) {
+      const npcKeys = ['modern-programmer', 'modern-tech', 'modern-desk', 'modern-it-tech'];
+      npcKeys.forEach((key) => {
+        for (let i = 0; i < 4; i++) {
+          this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
+        }
+      });
     }
 
-    create(data) {
-        // Generate scene-specific textures
-        generateModernFloorTexture(this, 'modern-floor');
-        generateComputerTexture(this, 'computer');
-        generateServerTexture(this, 'server');
-        generateCircuitBoardTexture(this, 'circuit');
+    // Generate modern era player character
+    if (!this.textures.exists('player-modern')) {
+      generateModernPlayerSprite(this, 'player-modern');
+    }
 
-        // Generate NPC textures
-        generateModernNPCTexture(this, 'modern-programmer', 'programmer');
-        generateModernNPCTexture(this, 'modern-tech', 'tech');
-        generateModernNPCTexture(this, 'modern-desk', 'desk');
-        generateModernNPCTexture(this, 'modern-it-tech', 'it-tech');
+    // Generate walking sprite for timeline (shared across scenes)
+    if (!this.textures.exists('walking-sprite')) {
+      generateWalkingSpriteTexture(this, 'walking-sprite');
+      // Add frames for walking sprite (4 frames of 16x16 pixels)
+      for (let i = 0; i < 4; i++) {
+        this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
+      }
+    }
 
-        // Add frame configs for NPC sprites (4 frames per NPC)
-        if (!this.textures.get('modern-programmer').has(0)) {
-            const npcKeys = ['modern-programmer', 'modern-tech', 'modern-desk', 'modern-it-tech'];
-            npcKeys.forEach(key => {
-                for (let i = 0; i < 4; i++) {
-                    this.textures.get(key).add(i, 0, i * 32, 0, 32, 48);
-                }
-            });
+    // Spawn position
+    const spawnX = data?.spawnX || 400;
+    const spawnY = data?.spawnY || 500;
+
+    // Fade in effect when entering scene
+    this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+    // Add frame configs for player (if not already added)
+    if (!this.anims.exists('modern-walk-down')) {
+      for (let i = 0; i < 12; i++) {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        this.textures.get('player-modern').add(i, 0, col * 32, row * 48, 32, 48);
+      }
+    }
+
+    // World bounds
+    this.physics.world.setBounds(0, 0, 800, 600);
+
+    // Create scene
+    this.createGround();
+    this.createServer();
+    this.createProps();
+    this.createNPCs();
+
+    // Create player at spawn position
+    this.createPlayer(spawnX, spawnY);
+
+    // Camera
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.eKey = this.input.keyboard.addKey('E');
+
+    // Info & interactables
+    this.infoPanel = new InfoPanel(this);
+    this.interactables = [];
+    this.createInteractables();
+
+    // Timeline
+    this.timelineBar = new TimelineBar(this, 'modern');
+
+    // Interaction text
+    this.interactionText = this.add
+      .text(400, 560, '', {
+        fontSize: '16px',
+        fill: '#ffffff',
+        backgroundColor: '#000000',
+        padding: { x: 10, y: 5 },
+      })
+      .setOrigin(0.5)
+      .setDepth(100)
+      .setVisible(false);
+
+    // Screen glow effects
+    this.createScreenEffects();
+
+    // Title card
+    this.showEraTitleCard('MODERN/DIGITAL AGE', '1950-2020 CE');
+
+    this.lastDirection = 'down';
+    this.playerSpeed = 140;
+  }
+
+  createGround() {
+    const tileSize = 32;
+    const cols = 25;
+    const rows = 19;
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        this.add.image(x * tileSize + 16, y * tileSize + 16, 'modern-floor');
+      }
+    }
+  }
+
+  createServer() {
+    const serverX = 400;
+    const serverY = 80;
+
+    // Server rack (portal)
+    this.server = this.physics.add.sprite(serverX, serverY, 'server');
+    this.server.setImmovable(true);
+
+    // Sign
+    this.add
+      .text(serverX, serverY - 50, '⬆ DATA CENTER\nEnd Journey', {
+        fontSize: '14px',
+        fill: '#ffffff',
+        backgroundColor: '#2a2a2a',
+        padding: { x: 8, y: 4 },
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(10);
+  }
+
+  createProps() {
+    // Computers
+    this.add.image(150, 250, 'computer').setDepth(5);
+    this.add.image(550, 300, 'computer').setDepth(5);
+
+    // Circuit boards
+    this.add.image(200, 450, 'circuit').setDepth(5).setScale(1.5);
+    this.add.image(500, 470, 'circuit').setDepth(5).setScale(1.5);
+  }
+
+  createNPCs() {
+    this.npcs = [];
+    this.npcProps = []; // Track props that move with NPCs
+
+    // NPC 1: Programmer typing (left side, upper-mid)
+    const programmer = this.add.sprite(180, 260, 'modern-programmer');
+    programmer.setDepth(50);
+    programmer.activity = 'programmer';
+    programmer.workFrame = 0;
+    this.npcs.push(programmer);
+
+    // Laptop prop for programmer
+    const laptop1 = this.add.rectangle(180, 275, 20, 12, 0x6a6a6a).setDepth(49);
+    programmer.prop = laptop1;
+
+    // Keyboard prop (visual detail)
+    const keyboard1 = this.add.rectangle(180, 280, 24, 8, 0x4a4a4a).setDepth(48);
+
+    // Animate programmer
+    this.time.addEvent({
+      delay: 500,
+      callback: () => {
+        programmer.workFrame = (programmer.workFrame + 1) % 4;
+        programmer.setFrame(programmer.workFrame);
+      },
+      loop: true,
+    });
+
+    // NPC 2: Tech Support Worker (right side, mid)
+    const techSupport = this.add.sprite(570, 310, 'modern-tech');
+    techSupport.setDepth(50);
+    techSupport.activity = 'tech';
+    techSupport.workFrame = 0;
+    this.npcs.push(techSupport);
+
+    // Circuit board/tools prop
+    const circuitBoard = this.add.rectangle(585, 325, 16, 12, 0x4a8a6a).setDepth(49);
+    techSupport.prop = circuitBoard;
+
+    // Animate tech support
+    this.time.addEvent({
+      delay: 550,
+      callback: () => {
+        techSupport.workFrame = (techSupport.workFrame + 1) % 4;
+        techSupport.setFrame(techSupport.workFrame);
+        // Circuit board "tilts" as tech works
+        circuitBoard.rotation = (techSupport.workFrame % 2) * 0.1;
+      },
+      loop: true,
+    });
+
+    // NPC 3: Desk Worker (bottom center-left)
+    const deskWorker = this.add.sprite(300, 470, 'modern-desk');
+    deskWorker.setDepth(50);
+    deskWorker.activity = 'desk';
+    deskWorker.workFrame = 0;
+    this.npcs.push(deskWorker);
+
+    // Desktop computer prop
+    const desktop = this.add.rectangle(300, 485, 22, 14, 0x5a5a5a).setDepth(49);
+    deskWorker.prop = desktop;
+
+    // Monitor prop (visual detail)
+    const monitor = this.add.rectangle(300, 480, 18, 12, 0x2a2a2a).setDepth(48);
+
+    // Animate desk worker
+    this.time.addEvent({
+      delay: 600,
+      callback: () => {
+        deskWorker.workFrame = (deskWorker.workFrame + 1) % 4;
+        deskWorker.setFrame(deskWorker.workFrame);
+      },
+      loop: true,
+    });
+
+    // NPC 4: IT Technician near servers (top right)
+    const itTech = this.add.sprite(650, 240, 'modern-it-tech');
+    itTech.setDepth(50);
+    itTech.activity = 'it-tech';
+    itTech.workFrame = 0;
+    this.npcs.push(itTech);
+
+    // Server cables/tools prop
+    const serverCables = this.add.rectangle(665, 250, 12, 4, 0x4a6a8a).setDepth(49);
+    itTech.prop = serverCables;
+
+    // Animate IT tech
+    this.time.addEvent({
+      delay: 580,
+      callback: () => {
+        itTech.workFrame = (itTech.workFrame + 1) % 4;
+        itTech.setFrame(itTech.workFrame);
+        // Cables move as tech works
+        serverCables.x = 665 + (itTech.workFrame % 2) * 2;
+      },
+      loop: true,
+    });
+  }
+
+  createScreenEffects() {
+    // Create blue glow particle
+    const graphics = this.make.graphics({ x: 0, y: 0, add: false });
+    graphics.fillStyle(0x4a6a8a);
+    graphics.fillCircle(4, 4, 4);
+    graphics.generateTexture('screen-glow', 8, 8);
+    graphics.destroy();
+
+    // Enhanced screen glow from computers (more aggressive)
+    this.add.particles(150, 230, 'screen-glow', {
+      speed: { min: 8, max: 20 },
+      scale: { start: 0.5, end: 0 },
+      alpha: { start: 0.6, end: 0 },
+      lifespan: 800,
+      frequency: 200,
+      blendMode: 'ADD',
+    });
+
+    this.add.particles(550, 290, 'screen-glow', {
+      speed: { min: 8, max: 20 },
+      scale: { start: 0.5, end: 0 },
+      alpha: { start: 0.6, end: 0 },
+      lifespan: 800,
+      frequency: 200,
+      blendMode: 'ADD',
+    });
+
+    // Desk worker screen glow (flickering more)
+    this.add.particles(300, 470, 'screen-glow', {
+      speed: { min: 5, max: 12 },
+      scale: { start: 0.4, end: 0 },
+      alpha: { start: 0.5, end: 0 },
+      lifespan: 600,
+      frequency: 150,
+      tint: 0x4a8a6a, // Green tint
+      blendMode: 'ADD',
+    });
+
+    // Blinking LED particles on server rack (top right)
+    // Red LED
+    this.add.particles(650, 230, 'screen-glow', {
+      speed: { min: 0, max: 2 },
+      scale: { start: 0.15, end: 0.15 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 500,
+      frequency: 1000,
+      tint: 0xff0000,
+      blendMode: 'ADD',
+    });
+
+    // Green LED
+    this.add.particles(655, 235, 'screen-glow', {
+      speed: { min: 0, max: 2 },
+      scale: { start: 0.15, end: 0.15 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 700,
+      frequency: 800,
+      tint: 0x00ff00,
+      blendMode: 'ADD',
+    });
+
+    // Yellow LED
+    this.add.particles(660, 240, 'screen-glow', {
+      speed: { min: 0, max: 2 },
+      scale: { start: 0.15, end: 0.15 },
+      alpha: { start: 1, end: 0 },
+      lifespan: 600,
+      frequency: 900,
+      tint: 0xffff00,
+      blendMode: 'ADD',
+    });
+
+    // Data flow particles (horizontal streaks between computers)
+    this.add.particles(200, 250, 'screen-glow', {
+      speed: { min: 50, max: 100 },
+      angle: 0, // Moving right
+      scale: { start: 0.3, end: 0.1 },
+      alpha: { start: 0.8, end: 0 },
+      lifespan: 1000,
+      frequency: 500,
+      tint: 0x4a8a6a, // Green data
+      blendMode: 'ADD',
+    });
+
+    // Data flow from computer to desk worker
+    this.add.particles(180, 240, 'screen-glow', {
+      speed: { min: 40, max: 80 },
+      angle: { min: 80, max: 100 }, // Moving down
+      scale: { start: 0.25, end: 0.1 },
+      alpha: { start: 0.7, end: 0 },
+      lifespan: 1200,
+      frequency: 600,
+      tint: 0x6a6aaa, // Blue data
+      blendMode: 'ADD',
+    });
+  }
+
+  createPlayer(x, y) {
+    this.player = this.physics.add.sprite(x, y, 'player-modern');
+    this.player.setCollideWorldBounds(true);
+    this.player.setDepth(50);
+
+    // Animations (with existence checks to prevent duplicates)
+    if (!this.anims.exists('modern-walk-down')) {
+      this.anims.create({
+        key: 'modern-walk-down',
+        frames: this.anims.generateFrameNumbers('player-modern', { start: 0, end: 2 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('modern-walk-left')) {
+      this.anims.create({
+        key: 'modern-walk-left',
+        frames: this.anims.generateFrameNumbers('player-modern', { start: 3, end: 5 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('modern-walk-right')) {
+      this.anims.create({
+        key: 'modern-walk-right',
+        frames: this.anims.generateFrameNumbers('player-modern', { start: 6, end: 8 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+    if (!this.anims.exists('modern-walk-up')) {
+      this.anims.create({
+        key: 'modern-walk-up',
+        frames: this.anims.generateFrameNumbers('player-modern', { start: 9, end: 11 }),
+        frameRate: 8,
+        repeat: -1,
+      });
+    }
+
+    // Collision
+    this.physics.add.overlap(this.player, this.server, () => {
+      if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+        this.enterNextEra();
+      } else {
+        this.interactionText.setText('Press E to complete journey');
+        this.interactionText.setVisible(true);
+        this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
+      }
+    });
+  }
+
+  createInteractables() {
+    const pcInfo = {
+      title: 'Personal Computer',
+      content:
+        'The first PC (1977) had 4KB RAM and cost $1,298. Your smartphone has 4 MILLION times more memory!',
+      icon: '💻',
+    };
+    this.interactables.push(createInteractable(this, 150, 250, 60, 50, pcInfo));
+
+    const internetInfo = {
+      title: 'The Internet',
+      content:
+        "ARPANET (1969) connected 4 computers. Today's internet has 5+ billion users and 200 billion devices connected.",
+      icon: '🌐',
+    };
+    this.interactables.push(createInteractable(this, 300, 350, 80, 80, internetInfo));
+
+    const mobileInfo = {
+      title: 'Mobile Phones',
+      content:
+        "The first cell phone (1983) weighed 2 pounds and cost $4,000. Battery life? 30 minutes. Today's phones are 100x more powerful than 1969's Apollo computer!",
+      icon: '📱',
+    };
+    this.interactables.push(createInteractable(this, 550, 300, 60, 50, mobileInfo));
+
+    const genomeInfo = {
+      title: 'Human Genome',
+      content:
+        'Sequencing the first human genome (2003) took 13 years and $3B. Today it takes 1 day and $600!',
+      icon: '🧬',
+    };
+    this.interactables.push(createInteractable(this, 200, 150, 80, 80, genomeInfo));
+
+    const socialInfo = {
+      title: 'Social Media',
+      content:
+        'Facebook reached 1 billion users in 8 years (2012). It took TV 13 years, radio 38 years, and telephone 75 years!',
+      icon: '📲',
+    };
+    this.interactables.push(createInteractable(this, 600, 450, 80, 80, socialInfo));
+
+    const renewableInfo = {
+      title: 'Renewable Energy',
+      content:
+        'Solar panel efficiency doubled from 15% (2000) to 30% (2020). Solar is now cheaper than coal in most of the world!',
+      icon: '☀️',
+    };
+    this.interactables.push(createInteractable(this, 150, 500, 80, 80, renewableInfo));
+  }
+
+  showEraTitleCard(title, subtitle) {
+    const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
+    const titleText = this.add
+      .text(400, 280, title, {
+        fontSize: '48px',
+        fill: '#4a6a8a',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+    const subtitleText = this.add
+      .text(400, 340, subtitle, {
+        fontSize: '24px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: [titleCard, titleText, subtitleText],
+        alpha: 0,
+        duration: 1000,
+        onComplete: () => {
+          titleCard.destroy();
+          titleText.destroy();
+          subtitleText.destroy();
+        },
+      });
+    });
+  }
+
+  update() {
+    if (!this.player) {
+      return;
+    }
+
+    const speed = this.playerSpeed;
+    this.player.setVelocity(0);
+
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-speed);
+      this.player.play('modern-walk-left', true);
+      this.lastDirection = 'left';
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(speed);
+      this.player.play('modern-walk-right', true);
+      this.lastDirection = 'right';
+    } else if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-speed);
+      this.player.play('modern-walk-up', true);
+      this.lastDirection = 'up';
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(speed);
+      this.player.play('modern-walk-down', true);
+      this.lastDirection = 'down';
+    } else {
+      this.player.stop();
+      const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
+      this.player.setFrame(idleFrames[this.lastDirection]);
+    }
+
+    // Check interactables
+    this.interactables.forEach((interactable) => {
+      const distance = Phaser.Math.Distance.Between(
+        this.player.x,
+        this.player.y,
+        interactable.x,
+        interactable.y
+      );
+
+      if (distance < 80) {
+        interactable.indicator.setVisible(true);
+        if (!interactable.promptShown) {
+          this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
+          this.interactionText.setVisible(true);
+          interactable.promptShown = true;
         }
 
-        // Generate modern era player character
-        if (!this.textures.exists('player-modern')) {
-            generateModernPlayerSprite(this, 'player-modern');
+        if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+          this.infoPanel.toggle(interactable.infoData);
         }
-
-        // Generate walking sprite for timeline (shared across scenes)
-        if (!this.textures.exists('walking-sprite')) {
-            generateWalkingSpriteTexture(this, 'walking-sprite');
-            // Add frames for walking sprite (4 frames of 16x16 pixels)
-            for (let i = 0; i < 4; i++) {
-                this.textures.get('walking-sprite').add(i, 0, i * 16, 0, 16, 16);
-            }
+      } else {
+        interactable.indicator.setVisible(false);
+        if (interactable.promptShown) {
+          this.interactionText.setVisible(false);
+          interactable.promptShown = false;
         }
+      }
+    });
+  }
 
-        // Spawn position
-        const spawnX = data?.spawnX || 400;
-        const spawnY = data?.spawnY || 500;
-
-        // Fade in effect when entering scene
-        this.cameras.main.fadeIn(1000, 0, 0, 0);
-
-        // Add frame configs for player (if not already added)
-        if (!this.anims.exists('modern-walk-down')) {
-            for (let i = 0; i < 12; i++) {
-                const col = i % 3;
-                const row = Math.floor(i / 3);
-                this.textures.get('player-modern').add(i, 0, col * 32, row * 48, 32, 48);
-            }
+  enterNextEra() {
+    // Show completion message
+    const completionCard = this.add.rectangle(400, 300, 600, 400, 0x000000, 0.9).setDepth(300);
+    const congratsText = this.add
+      .text(400, 220, 'Journey Complete!', {
+        fontSize: '48px',
+        fill: '#4a6a8a',
+        fontStyle: 'bold',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
+    const messageText = this.add
+      .text(
+        400,
+        300,
+        "You've traveled through\n2.5 million years of human innovation!\n\nFrom cave fires to computers,\neach era built upon the last.",
+        {
+          fontSize: '20px',
+          fill: '#f3f4f6',
+          align: 'center',
+          lineSpacing: 10,
         }
+      )
+      .setOrigin(0.5)
+      .setDepth(301);
+    const restartText = this.add
+      .text(400, 420, 'Press SPACE to restart', {
+        fontSize: '18px',
+        fill: '#d4a832',
+      })
+      .setOrigin(0.5)
+      .setDepth(301);
 
-        // World bounds
-        this.physics.world.setBounds(0, 0, 800, 600);
+    // Blinking restart prompt
+    this.tweens.add({
+      targets: restartText,
+      alpha: 0.3,
+      duration: 800,
+      yoyo: true,
+      repeat: -1,
+    });
 
-        // Create scene
-        this.createGround();
-        this.createServer();
-        this.createProps();
-        this.createNPCs();
-
-        // Create player at spawn position
-        this.createPlayer(spawnX, spawnY);
-
-        // Camera
-        this.cameras.main.setBounds(0, 0, 800, 600);
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
-
-        // Controls
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.eKey = this.input.keyboard.addKey('E');
-
-        // Info & interactables
-        this.infoPanel = new InfoPanel(this);
-        this.interactables = [];
-        this.createInteractables();
-
-        // Timeline
-        this.timelineBar = new TimelineBar(this, 'modern');
-
-        // Interaction text
-        this.interactionText = this.add.text(400, 560, '', {
-            fontSize: '16px',
-            fill: '#ffffff',
-            backgroundColor: '#000000',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setDepth(100).setVisible(false);
-
-        // Screen glow effects
-        this.createScreenEffects();
-
-        // Title card
-        this.showEraTitleCard('MODERN/DIGITAL AGE', '1950-2020 CE');
-
-        this.lastDirection = 'down';
-        this.playerSpeed = 140;
-    }
-
-    createGround() {
-        const tileSize = 32;
-        const cols = 25;
-        const rows = 19;
-
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                this.add.image(x * tileSize + 16, y * tileSize + 16, 'modern-floor');
-            }
-        }
-    }
-
-    createServer() {
-        const serverX = 400;
-        const serverY = 80;
-
-        // Server rack (portal)
-        this.server = this.physics.add.sprite(serverX, serverY, 'server');
-        this.server.setImmovable(true);
-
-        // Sign
-        this.add.text(serverX, serverY - 50, '⬆ DATA CENTER\nEnd Journey', {
-            fontSize: '14px',
-            fill: '#ffffff',
-            backgroundColor: '#2a2a2a',
-            padding: { x: 8, y: 4 },
-            align: 'center'
-        }).setOrigin(0.5).setDepth(10);
-    }
-
-    createProps() {
-        // Computers
-        this.add.image(150, 250, 'computer').setDepth(5);
-        this.add.image(550, 300, 'computer').setDepth(5);
-
-        // Circuit boards
-        this.add.image(200, 450, 'circuit').setDepth(5).setScale(1.5);
-        this.add.image(500, 470, 'circuit').setDepth(5).setScale(1.5);
-    }
-
-    createNPCs() {
-        this.npcs = [];
-        this.npcProps = []; // Track props that move with NPCs
-
-        // NPC 1: Programmer typing (left side, upper-mid)
-        const programmer = this.add.sprite(180, 260, 'modern-programmer');
-        programmer.setDepth(50);
-        programmer.activity = 'programmer';
-        programmer.workFrame = 0;
-        this.npcs.push(programmer);
-
-        // Laptop prop for programmer
-        const laptop1 = this.add.rectangle(180, 275, 20, 12, 0x6a6a6a).setDepth(49);
-        programmer.prop = laptop1;
-
-        // Keyboard prop (visual detail)
-        const keyboard1 = this.add.rectangle(180, 280, 24, 8, 0x4a4a4a).setDepth(48);
-
-        // Animate programmer
-        this.time.addEvent({
-            delay: 500,
-            callback: () => {
-                programmer.workFrame = (programmer.workFrame + 1) % 4;
-                programmer.setFrame(programmer.workFrame);
-            },
-            loop: true
-        });
-
-        // NPC 2: Tech Support Worker (right side, mid)
-        const techSupport = this.add.sprite(570, 310, 'modern-tech');
-        techSupport.setDepth(50);
-        techSupport.activity = 'tech';
-        techSupport.workFrame = 0;
-        this.npcs.push(techSupport);
-
-        // Circuit board/tools prop
-        const circuitBoard = this.add.rectangle(585, 325, 16, 12, 0x4a8a6a).setDepth(49);
-        techSupport.prop = circuitBoard;
-
-        // Animate tech support
-        this.time.addEvent({
-            delay: 550,
-            callback: () => {
-                techSupport.workFrame = (techSupport.workFrame + 1) % 4;
-                techSupport.setFrame(techSupport.workFrame);
-                // Circuit board "tilts" as tech works
-                circuitBoard.rotation = (techSupport.workFrame % 2) * 0.1;
-            },
-            loop: true
-        });
-
-        // NPC 3: Desk Worker (bottom center-left)
-        const deskWorker = this.add.sprite(300, 470, 'modern-desk');
-        deskWorker.setDepth(50);
-        deskWorker.activity = 'desk';
-        deskWorker.workFrame = 0;
-        this.npcs.push(deskWorker);
-
-        // Desktop computer prop
-        const desktop = this.add.rectangle(300, 485, 22, 14, 0x5a5a5a).setDepth(49);
-        deskWorker.prop = desktop;
-
-        // Monitor prop (visual detail)
-        const monitor = this.add.rectangle(300, 480, 18, 12, 0x2a2a2a).setDepth(48);
-
-        // Animate desk worker
-        this.time.addEvent({
-            delay: 600,
-            callback: () => {
-                deskWorker.workFrame = (deskWorker.workFrame + 1) % 4;
-                deskWorker.setFrame(deskWorker.workFrame);
-            },
-            loop: true
-        });
-
-        // NPC 4: IT Technician near servers (top right)
-        const itTech = this.add.sprite(650, 240, 'modern-it-tech');
-        itTech.setDepth(50);
-        itTech.activity = 'it-tech';
-        itTech.workFrame = 0;
-        this.npcs.push(itTech);
-
-        // Server cables/tools prop
-        const serverCables = this.add.rectangle(665, 250, 12, 4, 0x4a6a8a).setDepth(49);
-        itTech.prop = serverCables;
-
-        // Animate IT tech
-        this.time.addEvent({
-            delay: 580,
-            callback: () => {
-                itTech.workFrame = (itTech.workFrame + 1) % 4;
-                itTech.setFrame(itTech.workFrame);
-                // Cables move as tech works
-                serverCables.x = 665 + (itTech.workFrame % 2) * 2;
-            },
-            loop: true
-        });
-    }
-
-    createScreenEffects() {
-        // Create blue glow particle
-        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
-        graphics.fillStyle(0x4a6a8a);
-        graphics.fillCircle(4, 4, 4);
-        graphics.generateTexture('screen-glow', 8, 8);
-        graphics.destroy();
-
-        // Enhanced screen glow from computers (more aggressive)
-        this.add.particles(150, 230, 'screen-glow', {
-            speed: { min: 8, max: 20 },
-            scale: { start: 0.5, end: 0 },
-            alpha: { start: 0.6, end: 0 },
-            lifespan: 800,
-            frequency: 200,
-            blendMode: 'ADD'
-        });
-
-        this.add.particles(550, 290, 'screen-glow', {
-            speed: { min: 8, max: 20 },
-            scale: { start: 0.5, end: 0 },
-            alpha: { start: 0.6, end: 0 },
-            lifespan: 800,
-            frequency: 200,
-            blendMode: 'ADD'
-        });
-
-        // Desk worker screen glow (flickering more)
-        this.add.particles(300, 470, 'screen-glow', {
-            speed: { min: 5, max: 12 },
-            scale: { start: 0.4, end: 0 },
-            alpha: { start: 0.5, end: 0 },
-            lifespan: 600,
-            frequency: 150,
-            tint: 0x4a8a6a, // Green tint
-            blendMode: 'ADD'
-        });
-
-        // Blinking LED particles on server rack (top right)
-        // Red LED
-        this.add.particles(650, 230, 'screen-glow', {
-            speed: { min: 0, max: 2 },
-            scale: { start: 0.15, end: 0.15 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 500,
-            frequency: 1000,
-            tint: 0xff0000,
-            blendMode: 'ADD'
-        });
-
-        // Green LED
-        this.add.particles(655, 235, 'screen-glow', {
-            speed: { min: 0, max: 2 },
-            scale: { start: 0.15, end: 0.15 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 700,
-            frequency: 800,
-            tint: 0x00ff00,
-            blendMode: 'ADD'
-        });
-
-        // Yellow LED
-        this.add.particles(660, 240, 'screen-glow', {
-            speed: { min: 0, max: 2 },
-            scale: { start: 0.15, end: 0.15 },
-            alpha: { start: 1, end: 0 },
-            lifespan: 600,
-            frequency: 900,
-            tint: 0xffff00,
-            blendMode: 'ADD'
-        });
-
-        // Data flow particles (horizontal streaks between computers)
-        this.add.particles(200, 250, 'screen-glow', {
-            speed: { min: 50, max: 100 },
-            angle: 0, // Moving right
-            scale: { start: 0.3, end: 0.1 },
-            alpha: { start: 0.8, end: 0 },
-            lifespan: 1000,
-            frequency: 500,
-            tint: 0x4a8a6a, // Green data
-            blendMode: 'ADD'
-        });
-
-        // Data flow from computer to desk worker
-        this.add.particles(180, 240, 'screen-glow', {
-            speed: { min: 40, max: 80 },
-            angle: { min: 80, max: 100 }, // Moving down
-            scale: { start: 0.25, end: 0.1 },
-            alpha: { start: 0.7, end: 0 },
-            lifespan: 1200,
-            frequency: 600,
-            tint: 0x6a6aaa, // Blue data
-            blendMode: 'ADD'
-        });
-    }
-
-    createPlayer(x, y) {
-        this.player = this.physics.add.sprite(x, y, 'player-modern');
-        this.player.setCollideWorldBounds(true);
-        this.player.setDepth(50);
-
-        // Animations (with existence checks to prevent duplicates)
-        if (!this.anims.exists('modern-walk-down')) {
-            this.anims.create({
-                key: 'modern-walk-down',
-                frames: this.anims.generateFrameNumbers('player-modern', { start: 0, end: 2 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('modern-walk-left')) {
-            this.anims.create({
-                key: 'modern-walk-left',
-                frames: this.anims.generateFrameNumbers('player-modern', { start: 3, end: 5 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('modern-walk-right')) {
-            this.anims.create({
-                key: 'modern-walk-right',
-                frames: this.anims.generateFrameNumbers('player-modern', { start: 6, end: 8 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-        if (!this.anims.exists('modern-walk-up')) {
-            this.anims.create({
-                key: 'modern-walk-up',
-                frames: this.anims.generateFrameNumbers('player-modern', { start: 9, end: 11 }),
-                frameRate: 8,
-                repeat: -1
-            });
-        }
-
-        // Collision
-        this.physics.add.overlap(this.player, this.server, () => {
-            if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-                this.enterNextEra();
-            } else {
-                this.interactionText.setText('Press E to complete journey');
-                this.interactionText.setVisible(true);
-                this.time.delayedCall(2000, () => this.interactionText.setVisible(false));
-            }
-        });
-    }
-
-    createInteractables() {
-        const pcInfo = {
-            title: 'Personal Computer',
-            content: 'The first PC (1977) had 4KB RAM and cost $1,298. Your smartphone has 4 MILLION times more memory!',
-            icon: '💻'
-        };
-        this.interactables.push(createInteractable(this, 150, 250, 60, 50, pcInfo));
-
-        const internetInfo = {
-            title: 'The Internet',
-            content: 'ARPANET (1969) connected 4 computers. Today\'s internet has 5+ billion users and 200 billion devices connected.',
-            icon: '🌐'
-        };
-        this.interactables.push(createInteractable(this, 300, 350, 80, 80, internetInfo));
-
-        const mobileInfo = {
-            title: 'Mobile Phones',
-            content: 'The first cell phone (1983) weighed 2 pounds and cost $4,000. Battery life? 30 minutes. Today\'s phones are 100x more powerful than 1969\'s Apollo computer!',
-            icon: '📱'
-        };
-        this.interactables.push(createInteractable(this, 550, 300, 60, 50, mobileInfo));
-
-        const genomeInfo = {
-            title: 'Human Genome',
-            content: 'Sequencing the first human genome (2003) took 13 years and $3B. Today it takes 1 day and $600!',
-            icon: '🧬'
-        };
-        this.interactables.push(createInteractable(this, 200, 150, 80, 80, genomeInfo));
-
-        const socialInfo = {
-            title: 'Social Media',
-            content: 'Facebook reached 1 billion users in 8 years (2012). It took TV 13 years, radio 38 years, and telephone 75 years!',
-            icon: '📲'
-        };
-        this.interactables.push(createInteractable(this, 600, 450, 80, 80, socialInfo));
-
-        const renewableInfo = {
-            title: 'Renewable Energy',
-            content: 'Solar panel efficiency doubled from 15% (2000) to 30% (2020). Solar is now cheaper than coal in most of the world!',
-            icon: '☀️'
-        };
-        this.interactables.push(createInteractable(this, 150, 500, 80, 80, renewableInfo));
-    }
-
-    showEraTitleCard(title, subtitle) {
-        const titleCard = this.add.rectangle(400, 300, 800, 600, 0x000000, 0.8).setDepth(300);
-        const titleText = this.add.text(400, 280, title, {
-            fontSize: '48px',
-            fill: '#4a6a8a',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-        const subtitleText = this.add.text(400, 340, subtitle, {
-            fontSize: '24px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5).setDepth(301);
-
-        this.time.delayedCall(3000, () => {
-            this.tweens.add({
-                targets: [titleCard, titleText, subtitleText],
-                alpha: 0,
-                duration: 1000,
-                onComplete: () => {
-                    titleCard.destroy();
-                    titleText.destroy();
-                    subtitleText.destroy();
-                }
-            });
-        });
-    }
-
-    update() {
-        if (!this.player) return;
-
-        const speed = this.playerSpeed;
-        this.player.setVelocity(0);
-
-        if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-speed);
-            this.player.play('modern-walk-left', true);
-            this.lastDirection = 'left';
-        } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(speed);
-            this.player.play('modern-walk-right', true);
-            this.lastDirection = 'right';
-        } else if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-speed);
-            this.player.play('modern-walk-up', true);
-            this.lastDirection = 'up';
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(speed);
-            this.player.play('modern-walk-down', true);
-            this.lastDirection = 'down';
-        } else {
-            this.player.stop();
-            const idleFrames = { down: 0, left: 3, right: 6, up: 9 };
-            this.player.setFrame(idleFrames[this.lastDirection]);
-        }
-
-        // Check interactables
-        this.interactables.forEach(interactable => {
-            const distance = Phaser.Math.Distance.Between(
-                this.player.x, this.player.y,
-                interactable.x, interactable.y
-            );
-
-            if (distance < 80) {
-                interactable.indicator.setVisible(true);
-                if (!interactable.promptShown) {
-                    this.interactionText.setText(`Press E: ${interactable.infoData.title}`);
-                    this.interactionText.setVisible(true);
-                    interactable.promptShown = true;
-                }
-
-                if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-                    this.infoPanel.toggle(interactable.infoData);
-                }
-            } else {
-                interactable.indicator.setVisible(false);
-                if (interactable.promptShown) {
-                    this.interactionText.setVisible(false);
-                    interactable.promptShown = false;
-                }
-            }
-        });
-    }
-
-    enterNextEra() {
-        // Show completion message
-        const completionCard = this.add.rectangle(400, 300, 600, 400, 0x000000, 0.9).setDepth(300);
-        const congratsText = this.add.text(400, 220, 'Journey Complete!', {
-            fontSize: '48px',
-            fill: '#4a6a8a',
-            fontStyle: 'bold'
-        }).setOrigin(0.5).setDepth(301);
-        const messageText = this.add.text(400, 300, 'You\'ve traveled through\n2.5 million years of human innovation!\n\nFrom cave fires to computers,\neach era built upon the last.', {
-            fontSize: '20px',
-            fill: '#f3f4f6',
-            align: 'center',
-            lineSpacing: 10
-        }).setOrigin(0.5).setDepth(301);
-        const restartText = this.add.text(400, 420, 'Press SPACE to restart', {
-            fontSize: '18px',
-            fill: '#d4a832'
-        }).setOrigin(0.5).setDepth(301);
-
-        // Blinking restart prompt
-        this.tweens.add({
-            targets: restartText,
-            alpha: 0.3,
-            duration: 800,
-            yoyo: true,
-            repeat: -1
-        });
-
-        // Restart on space
-        const spaceKey = this.input.keyboard.addKey('SPACE');
-        this.input.keyboard.once('keydown-SPACE', () => {
-            this.cameras.main.fadeOut(1000);
-            this.time.delayedCall(1000, () => {
-                this.scene.start('CavemanScene', { spawnX: 400, spawnY: 500 });
-            });
-        });
-    }
+    // Restart on space
+    const spaceKey = this.input.keyboard.addKey('SPACE');
+    this.input.keyboard.once('keydown-SPACE', () => {
+      this.cameras.main.fadeOut(1000);
+      this.time.delayedCall(1000, () => {
+        this.scene.start('CavemanScene', { spawnX: 400, spawnY: 500 });
+      });
+    });
+  }
 }
 
 // ===== PROGRESS TIMELINE SCENE =====
 
 class ProgressTimelineScene extends Phaser.Scene {
-    constructor() {
-        super({ key: 'ProgressTimelineScene' });
-    }
+  constructor() {
+    super({ key: 'ProgressTimelineScene' });
+  }
 
-    create(data) {
-        // Data contains: previousEra, nextEra, nextSceneKey
-        this.previousEra = data.previousEra || 'caveman';
-        this.nextEra = data.nextEra || 'farming';
-        this.nextSceneKey = data.nextSceneKey || 'FarmingScene';
+  create(data) {
+    // Data contains: previousEra, nextEra, nextSceneKey
+    this.previousEra = data.previousEra || 'caveman';
+    this.nextEra = data.nextEra || 'farming';
+    this.nextSceneKey = data.nextSceneKey || 'FarmingScene';
 
-        // Black background
-        this.cameras.main.setBackgroundColor('#000000');
+    // Black background
+    this.cameras.main.setBackgroundColor('#000000');
 
-        // Title
-        this.add.text(400, 50, 'THE ACCELERATION OF PROGRESS', {
-            fontSize: '32px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold',
-            align: 'center'
-        }).setOrigin(0.5);
+    // Title
+    this.add
+      .text(400, 50, 'THE ACCELERATION OF PROGRESS', {
+        fontSize: '32px',
+        fill: '#5C9EAD',
+        fontStyle: 'bold',
+        align: 'center',
+      })
+      .setOrigin(0.5);
 
-        // Subtitle
-        this.add.text(400, 90, 'Notice how gaps between major innovations are shrinking...', {
-            fontSize: '16px',
-            fill: '#f3f4f6',
-            align: 'center'
-        }).setOrigin(0.5);
+    // Subtitle
+    this.add
+      .text(400, 90, 'Notice how gaps between major innovations are shrinking...', {
+        fontSize: '16px',
+        fill: '#f3f4f6',
+        align: 'center',
+      })
+      .setOrigin(0.5);
 
-        // Timeline data - key inventions with years (negative = BCE, positive = CE)
-        const inventions = [
-            { name: 'Stone Tools', year: -2500000, icon: '🔧' },
-            { name: 'Fire', year: -1500000, icon: '🔥' },
-            { name: 'Agriculture', year: -10000, icon: '🌾' },
-            { name: 'Wheel', year: -3500, icon: '⚙️' },
-            { name: 'Writing', year: -3200, icon: '✍️' },
-            { name: 'Printing Press', year: 1440, icon: '📖' },
-            { name: 'Steam Engine', year: 1712, icon: '🚂' },
-            { name: 'Electricity', year: 1879, icon: '💡' },
-            { name: 'Automobile', year: 1885, icon: '🚗' },
-            { name: 'Airplane', year: 1903, icon: '✈️' },
-            { name: 'Computer', year: 1946, icon: '💻' },
-            { name: 'Internet', year: 1969, icon: '🌐' },
-            { name: 'Smartphone', year: 2007, icon: '📱' },
-            { name: 'AI', year: 2015, icon: '🤖' }
-        ];
+    // Timeline data - key inventions with years (negative = BCE, positive = CE)
+    const inventions = [
+      { name: 'Stone Tools', year: -2500000, icon: '🔧' },
+      { name: 'Fire', year: -1500000, icon: '🔥' },
+      { name: 'Agriculture', year: -10000, icon: '🌾' },
+      { name: 'Wheel', year: -3500, icon: '⚙️' },
+      { name: 'Writing', year: -3200, icon: '✍️' },
+      { name: 'Printing Press', year: 1440, icon: '📖' },
+      { name: 'Steam Engine', year: 1712, icon: '🚂' },
+      { name: 'Electricity', year: 1879, icon: '💡' },
+      { name: 'Automobile', year: 1885, icon: '🚗' },
+      { name: 'Airplane', year: 1903, icon: '✈️' },
+      { name: 'Computer', year: 1946, icon: '💻' },
+      { name: 'Internet', year: 1969, icon: '🌐' },
+      { name: 'Smartphone', year: 2007, icon: '📱' },
+      { name: 'AI', year: 2015, icon: '🤖' },
+    ];
 
-        // Draw timeline visualization
-        this.drawTimeline(inventions);
+    // Draw timeline visualization
+    this.drawTimeline(inventions);
 
-        // Calculate gaps to show acceleration
-        this.showAccelerationStats(inventions);
+    // Calculate gaps to show acceleration
+    this.showAccelerationStats(inventions);
 
-        // Instructions
-        this.add.text(400, 570, 'Press SPACE to continue or wait 5 seconds...', {
-            fontSize: '14px',
-            fill: '#9ca3af',
-            align: 'center'
-        }).setOrigin(0.5);
+    // Instructions
+    this.add
+      .text(400, 570, 'Press SPACE to continue or wait 5 seconds...', {
+        fontSize: '14px',
+        fill: '#9ca3af',
+        align: 'center',
+      })
+      .setOrigin(0.5);
 
-        // Space key to skip
-        this.spaceKey = this.input.keyboard.addKey('SPACE');
+    // Space key to skip
+    this.spaceKey = this.input.keyboard.addKey('SPACE');
 
-        // Auto-advance after 5 seconds
-        this.time.delayedCall(5000, () => {
-            this.transitionToNextScene();
-        });
-    }
+    // Auto-advance after 5 seconds
+    this.time.delayedCall(5000, () => {
+      this.transitionToNextScene();
+    });
+  }
 
-    drawTimeline(inventions) {
-        // Use logarithmic scale to show all inventions on screen
-        // Convert years to log scale for visualization
+  drawTimeline(inventions) {
+    // Use logarithmic scale to show all inventions on screen
+    // Convert years to log scale for visualization
 
-        const startY = 150;
-        const lineHeight = 360;
-        const leftX = 100;
-        const rightX = 700;
+    const startY = 150;
+    const lineHeight = 360;
+    const leftX = 100;
+    const rightX = 700;
 
-        // Draw vertical timeline bar
-        const graphics = this.add.graphics();
-        graphics.lineStyle(3, 0x5C9EAD);
-        graphics.beginPath();
-        graphics.moveTo(leftX, startY);
-        graphics.lineTo(leftX, startY + lineHeight);
-        graphics.strokePath();
+    // Draw vertical timeline bar
+    const graphics = this.add.graphics();
+    graphics.lineStyle(3, 0x5c9ead);
+    graphics.beginPath();
+    graphics.moveTo(leftX, startY);
+    graphics.lineTo(leftX, startY + lineHeight);
+    graphics.strokePath();
 
-        // Normalize positions (logarithmic scale for early dates)
-        const minYear = inventions[0].year;
-        const maxYear = inventions[inventions.length - 1].year;
+    // Normalize positions (logarithmic scale for early dates)
+    const minYear = inventions[0].year;
+    const maxYear = inventions[inventions.length - 1].year;
 
-        inventions.forEach((invention, index) => {
-            // Use custom positioning to show acceleration
-            // Early inventions are spaced out, later ones compressed
-            let position;
-            if (invention.year < 0) {
-                // Logarithmic scale for BCE dates
-                const logMin = Math.log10(Math.abs(minYear));
-                const logCurrent = Math.log10(Math.abs(invention.year));
-                position = (logMin - logCurrent) / logMin;
-            } else {
-                // Linear scale for CE dates (compressed)
-                position = 0.7 + (invention.year / maxYear) * 0.3;
-            }
+    inventions.forEach((invention, index) => {
+      // Use custom positioning to show acceleration
+      // Early inventions are spaced out, later ones compressed
+      let position;
+      if (invention.year < 0) {
+        // Logarithmic scale for BCE dates
+        const logMin = Math.log10(Math.abs(minYear));
+        const logCurrent = Math.log10(Math.abs(invention.year));
+        position = (logMin - logCurrent) / logMin;
+      } else {
+        // Linear scale for CE dates (compressed)
+        position = 0.7 + (invention.year / maxYear) * 0.3;
+      }
 
-            const y = startY + lineHeight * position;
+      const y = startY + lineHeight * position;
 
-            // Timeline dot
-            graphics.fillStyle(0x5C9EAD);
-            graphics.fillCircle(leftX, y, 5);
+      // Timeline dot
+      graphics.fillStyle(0x5c9ead);
+      graphics.fillCircle(leftX, y, 5);
 
-            // Icon
-            this.add.text(leftX - 40, y, invention.icon, {
-                fontSize: '20px'
-            }).setOrigin(0.5);
+      // Icon
+      this.add
+        .text(leftX - 40, y, invention.icon, {
+          fontSize: '20px',
+        })
+        .setOrigin(0.5);
 
-            // Invention name and year
-            const yearText = invention.year < 0
-                ? `${Math.abs(invention.year).toLocaleString()} BCE`
-                : `${invention.year} CE`;
+      // Invention name and year
+      const yearText =
+        invention.year < 0
+          ? `${Math.abs(invention.year).toLocaleString()} BCE`
+          : `${invention.year} CE`;
 
-            this.add.text(leftX + 20, y - 8, invention.name, {
-                fontSize: '14px',
-                fill: '#f3f4f6',
-                fontStyle: 'bold'
-            });
+      this.add.text(leftX + 20, y - 8, invention.name, {
+        fontSize: '14px',
+        fill: '#f3f4f6',
+        fontStyle: 'bold',
+      });
 
-            this.add.text(leftX + 20, y + 8, yearText, {
-                fontSize: '11px',
-                fill: '#9ca3af'
-            });
+      this.add.text(leftX + 20, y + 8, yearText, {
+        fontSize: '11px',
+        fill: '#9ca3af',
+      });
 
-            // Draw gap indicator lines between major eras
-            if (index > 0) {
-                const prevY = startY + lineHeight * ((inventions[index - 1].year < 0)
-                    ? (Math.log10(Math.abs(minYear)) - Math.log10(Math.abs(inventions[index - 1].year))) / Math.log10(Math.abs(minYear))
-                    : 0.7 + (inventions[index - 1].year / maxYear) * 0.3);
+      // Draw gap indicator lines between major eras
+      if (index > 0) {
+        const prevY =
+          startY +
+          lineHeight *
+            (inventions[index - 1].year < 0
+              ? (Math.log10(Math.abs(minYear)) - Math.log10(Math.abs(inventions[index - 1].year))) /
+                Math.log10(Math.abs(minYear))
+              : 0.7 + (inventions[index - 1].year / maxYear) * 0.3);
 
-                const gap = invention.year - inventions[index - 1].year;
+        const gap = invention.year - inventions[index - 1].year;
 
-                // Show major gaps (> 1000 years)
-                if (Math.abs(gap) > 1000) {
-                    graphics.lineStyle(1, 0x4a4a4a, 0.3);
-                    graphics.beginPath();
-                    graphics.moveTo(leftX, prevY);
-                    graphics.lineTo(leftX, y);
-                    graphics.strokePath();
+        // Show major gaps (> 1000 years)
+        if (Math.abs(gap) > 1000) {
+          graphics.lineStyle(1, 0x4a4a4a, 0.3);
+          graphics.beginPath();
+          graphics.moveTo(leftX, prevY);
+          graphics.lineTo(leftX, y);
+          graphics.strokePath();
 
-                    const gapYears = Math.abs(gap);
-                    let gapText;
-                    if (gapYears >= 1000000) {
-                        gapText = `${(gapYears / 1000000).toFixed(1)}M years`;
-                    } else if (gapYears >= 1000) {
-                        gapText = `${(gapYears / 1000).toFixed(0)}k years`;
-                    } else {
-                        gapText = `${gapYears} years`;
-                    }
+          const gapYears = Math.abs(gap);
+          let gapText;
+          if (gapYears >= 1000000) {
+            gapText = `${(gapYears / 1000000).toFixed(1)}M years`;
+          } else if (gapYears >= 1000) {
+            gapText = `${(gapYears / 1000).toFixed(0)}k years`;
+          } else {
+            gapText = `${gapYears} years`;
+          }
 
-                    this.add.text(leftX - 80, (prevY + y) / 2, gapText, {
-                        fontSize: '10px',
-                        fill: '#6a6a6a',
-                        align: 'right'
-                    }).setOrigin(1, 0.5);
-                }
-            }
-        });
-    }
-
-    showAccelerationStats(inventions) {
-        // Show statistics highlighting acceleration
-        const statsX = 450;
-        const statsY = 180;
-
-        this.add.text(statsX, statsY, 'Progress is Accelerating:', {
-            fontSize: '20px',
-            fill: '#5C9EAD',
-            fontStyle: 'bold'
-        });
-
-        const stats = [
-            '⏰ First 2.4 million years:',
-            '   Fire, stone tools',
-            '',
-            '⏰ Last 10,000 years:',
-            '   Agriculture, writing, wheel',
-            '',
-            '⏰ Last 500 years:',
-            '   Printing, steam, electricity',
-            '',
-            '⏰ Last 100 years:',
-            '   Cars, planes, computers,',
-            '   internet, AI',
-            '',
-            '💡 Each era brings more change',
-            '   in less time than the last!'
-        ];
-
-        stats.forEach((stat, index) => {
-            this.add.text(statsX, statsY + 35 + index * 20, stat, {
-                fontSize: '14px',
-                fill: stat.startsWith('⏰') || stat.startsWith('💡') ? '#f3f4f6' : '#9ca3af',
-                fontStyle: stat.startsWith('⏰') || stat.startsWith('💡') ? 'bold' : 'normal'
-            });
-        });
-    }
-
-    update() {
-        // Check for space key press
-        if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-            this.transitionToNextScene();
+          this.add
+            .text(leftX - 80, (prevY + y) / 2, gapText, {
+              fontSize: '10px',
+              fill: '#6a6a6a',
+              align: 'right',
+            })
+            .setOrigin(1, 0.5);
         }
-    }
+      }
+    });
+  }
 
-    transitionToNextScene() {
-        // Prevent multiple transitions
-        if (this.isTransitioning) return;
-        this.isTransitioning = true;
+  showAccelerationStats(inventions) {
+    // Show statistics highlighting acceleration
+    const statsX = 450;
+    const statsY = 180;
 
-        // Fade out
-        this.cameras.main.fadeOut(500, 0, 0, 0);
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-            // Start next scene
-            this.scene.start(this.nextSceneKey, { fromEra: this.previousEra });
-        });
+    this.add.text(statsX, statsY, 'Progress is Accelerating:', {
+      fontSize: '20px',
+      fill: '#5C9EAD',
+      fontStyle: 'bold',
+    });
+
+    const stats = [
+      '⏰ First 2.4 million years:',
+      '   Fire, stone tools',
+      '',
+      '⏰ Last 10,000 years:',
+      '   Agriculture, writing, wheel',
+      '',
+      '⏰ Last 500 years:',
+      '   Printing, steam, electricity',
+      '',
+      '⏰ Last 100 years:',
+      '   Cars, planes, computers,',
+      '   internet, AI',
+      '',
+      '💡 Each era brings more change',
+      '   in less time than the last!',
+    ];
+
+    stats.forEach((stat, index) => {
+      this.add.text(statsX, statsY + 35 + index * 20, stat, {
+        fontSize: '14px',
+        fill: stat.startsWith('⏰') || stat.startsWith('💡') ? '#f3f4f6' : '#9ca3af',
+        fontStyle: stat.startsWith('⏰') || stat.startsWith('💡') ? 'bold' : 'normal',
+      });
+    });
+  }
+
+  update() {
+    // Check for space key press
+    if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+      this.transitionToNextScene();
     }
+  }
+
+  transitionToNextScene() {
+    // Prevent multiple transitions
+    if (this.isTransitioning) {
+      return;
+    }
+    this.isTransitioning = true;
+
+    // Fade out
+    this.cameras.main.fadeOut(500, 0, 0, 0);
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      // Start next scene
+      this.scene.start(this.nextSceneKey, { fromEra: this.previousEra });
+    });
+  }
 }
 
 // ===== PHASER GAME CONFIGURATION =====
 
 const config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    parent: 'game',
-    backgroundColor: '#000000',
-    pixelArt: true,
-    antialias: false,
-    roundPixels: true,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-            debug: false
-        }
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  parent: 'game',
+  backgroundColor: '#000000',
+  pixelArt: true,
+  antialias: false,
+  roundPixels: true,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      debug: false,
     },
-    scene: [CavemanScene, FarmingScene, AncientScene, MedievalScene, RenaissanceScene, IndustrialScene, ModernScene],
-    scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH
-    }
+  },
+  scene: [
+    CavemanScene,
+    FarmingScene,
+    AncientScene,
+    MedievalScene,
+    RenaissanceScene,
+    IndustrialScene,
+    ModernScene,
+  ],
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
 };
 
 // Initialize the game

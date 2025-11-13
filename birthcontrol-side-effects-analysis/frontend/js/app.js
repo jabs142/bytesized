@@ -5,39 +5,46 @@ let statsData = null;
 
 // Load stats on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('data/stats.json');
-        statsData = await response.json();
+  try {
+    const response = await fetch('data/stats.json');
+    statsData = await response.json();
 
-        displayStats();
-        displayTopSymptoms();
-    } catch (error) {
-        console.error('Error loading data:', error);
-    }
+    displayStats();
+    displayTopSymptoms();
+  } catch (error) {
+    console.error('Error loading data:', error);
+  }
 });
 
 function displayStats() {
-    if (!statsData) return;
+  if (!statsData) {
+    return;
+  }
 
-    // Update stat cards
-    document.getElementById('stat-posts').textContent = statsData.total_posts.toLocaleString();
-    document.getElementById('stat-symptoms').textContent = statsData.posts_with_symptoms.toLocaleString();
-    document.getElementById('stat-patterns').textContent = statsData.total_rules_found.toLocaleString();
+  // Update stat cards
+  document.getElementById('stat-posts').textContent = statsData.total_posts.toLocaleString();
+  document.getElementById('stat-symptoms').textContent =
+    statsData.posts_with_symptoms.toLocaleString();
+  document.getElementById('stat-patterns').textContent =
+    statsData.total_rules_found.toLocaleString();
 
-    // Category stats removed - those sections were deleted from the HTML
+  // Category stats removed - those sections were deleted from the HTML
 }
 
 function displayTopSymptoms() {
-    if (!statsData || !statsData.top_symptoms) return;
+  if (!statsData || !statsData.top_symptoms) {
+    return;
+  }
 
-    const container = document.getElementById('top-symptoms-list');
-    const topSymptoms = Object.entries(statsData.top_symptoms).slice(0, 10);
+  const container = document.getElementById('top-symptoms-list');
+  const topSymptoms = Object.entries(statsData.top_symptoms).slice(0, 10);
 
-    container.innerHTML = topSymptoms.map(([symptom, count]) => {
-        const percentage = ((count / statsData.posts_with_symptoms) * 100).toFixed(1);
-        const barWidth = percentage;
+  container.innerHTML = topSymptoms
+    .map(([symptom, count]) => {
+      const percentage = ((count / statsData.posts_with_symptoms) * 100).toFixed(1);
+      const barWidth = percentage;
 
-        return `
+      return `
             <div class="flex items-center">
                 <div class="w-32 text-sm font-medium text-gray-700 capitalize">
                     ${symptom.replace(/_/g, ' ')}
@@ -54,5 +61,6 @@ function displayTopSymptoms() {
                 </div>
             </div>
         `;
-    }).join('');
+    })
+    .join('');
 }

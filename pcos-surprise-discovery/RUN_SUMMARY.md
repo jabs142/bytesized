@@ -7,6 +7,7 @@
 ## 🎉 What We Accomplished
 
 ### ✅ Phase 1: EXECUTED (Data Collection)
+
 - **500 Reddit posts collected** (1.6MB)
   - r/PCOS: 300 posts
   - r/PCOSloseit: 100 posts
@@ -16,21 +17,25 @@
 - **Data saved**: `data/raw/reddit_pcos_posts.json`
 
 ### ✅ Phase 2-3: BUILT (All Scripts Ready)
+
 **Phase 2 Scripts:**
+
 1. `src/analysis/llm_symptom_extractor.py` - Organic symptom discovery
 2. `src/analysis/llm_solution_extractor.py` - Treatment extraction
 3. `src/analysis/symptom_aggregator.py` - Frequency counting
 4. `src/analysis/top_symptom_selector.py` - Top 30 selection
 
-**Phase 3 Scripts:**
-5. `src/validation/pubmed_validator.py` - Research validation
-6. `src/validation/surprise_score_calculator.py` - **THE INNOVATION!**
+**Phase 3 Scripts:** 5. `src/validation/pubmed_validator.py` - Research
+validation 6. `src/validation/surprise_score_calculator.py` - **THE
+INNOVATION!**
 
 ### ✅ Phase 4: BUILT (Pattern Mining Scripts)
+
 7. `src/analysis/association_rules_miner.py` - Symptom clusters
 8. `src/analysis/treatment_effectiveness_ranker.py` - Treatment rankings
 
 ### ✅ Phase 5: BUILT (Complete Web Interface)
+
 - `frontend/index.html` - Mobile-first HTML
 - `frontend/js/app.js` - Interactive JavaScript
 - `frontend/css/styles.css` - Beautiful styling
@@ -40,6 +45,7 @@
 - Patient quotes
 
 ### ✅ Infrastructure
+
 - Configuration system (Config class)
 - Environment setup (.env)
 - Execution script (run_pipeline.sh)
@@ -63,6 +69,7 @@ You now have 3 options:
 ```
 
 This will:
+
 1. ✅ Already done: Collect Reddit posts (Phase 1)
 2. ✅ Already done: Extract official criteria (Phase 1)
 3. ⏭️ Extract symptoms with LLM (~7 min, ~$1.50)
@@ -136,13 +143,16 @@ Example surprise symptom:
 ```
 
 ### Additional Outputs:
+
 - `data/processed/all_symptoms_discovered.json` - All symptoms (100-200+)
 - `data/processed/solutions_discovered.json` - All treatments mentioned
 - `data/patterns/surprise_clusters.json` - Symptom combinations
 - `data/patterns/solution_rankings.json` - Treatment effectiveness
 
 ### Web Interface:
+
 Open `frontend/index.html` in browser to see:
+
 - Top symptoms ranked by surprise factor
 - Filter by 🔥 Very Surprising / ⚠️ Somewhat / ✓ Expected
 - Evidence details for each symptom
@@ -154,19 +164,19 @@ Open `frontend/index.html` in browser to see:
 
 ## 💰 Cost Breakdown
 
-| Phase | Component | Time | Cost |
-|-------|-----------|------|------|
-| 1A | Reddit Collection | ✅ Done | Free |
-| 1B | Official Criteria | ✅ Done | Free |
-| 2A | LLM Symptom Extraction | 7 min | ~$1.50 |
-| 2B | LLM Solution Extraction | 7 min | ~$1.50 |
-| 2C | Symptom Aggregation | <1 min | Free |
-| 3A | Top 30 Selection | <1 min | Free |
-| 3B | PubMed Validation | 5-10 min | Free |
-| 3C | Surprise Scoring | <1 min | Free |
-| 4A | Association Rules | <1 min | Free |
-| 4B | Treatment Rankings | <1 min | Free |
-| **TOTAL** | | **~20 min** | **~$2-3** |
+| Phase     | Component               | Time        | Cost      |
+| --------- | ----------------------- | ----------- | --------- |
+| 1A        | Reddit Collection       | ✅ Done     | Free      |
+| 1B        | Official Criteria       | ✅ Done     | Free      |
+| 2A        | LLM Symptom Extraction  | 7 min       | ~$1.50    |
+| 2B        | LLM Solution Extraction | 7 min       | ~$1.50    |
+| 2C        | Symptom Aggregation     | <1 min      | Free      |
+| 3A        | Top 30 Selection        | <1 min      | Free      |
+| 3B        | PubMed Validation       | 5-10 min    | Free      |
+| 3C        | Surprise Scoring        | <1 min      | Free      |
+| 4A        | Association Rules       | <1 min      | Free      |
+| 4B        | Treatment Rankings      | <1 min      | Free      |
+| **TOTAL** |                         | **~20 min** | **~$2-3** |
 
 ---
 
@@ -187,7 +197,8 @@ if research_validated:
     score *= 1.1      # Has evidence
 ```
 
-This is **novel** - no one has systematically calculated which symptoms are "surprisingly connected" to PCOS before!
+This is **novel** - no one has systematically calculated which symptoms are
+"surprisingly connected" to PCOS before!
 
 ### What We Built That's Production-Ready:
 
@@ -313,12 +324,14 @@ Once you run the full pipeline and see results:
 ## 📊 Success Metrics
 
 **Minimum Viable Success:**
+
 - ✅ 500 posts collected
 - ⏭️ 100+ unique symptoms discovered
 - ⏭️ 30 symptoms validated
 - ⏭️ Top 10 surprising symptoms identified
 
 **Ideal Success:**
+
 - ⏭️ 200+ unique symptoms
 - ⏭️ 10+ very surprising (score > 2.0)
 - ⏭️ 5+ symptom clusters
@@ -326,6 +339,7 @@ Once you run the full pipeline and see results:
 - ⏭️ Working web interface
 
 **Research Impact:**
+
 - ⏭️ Paper or preprint submission
 - ⏭️ Blog post with findings
 - ⏭️ Help 1000+ PCOS patients
@@ -356,9 +370,10 @@ cd /Users/jabelle/Code/repos/bytesized/pcos-surprise-discovery
 
 Or run phase-by-phase for more control.
 
-**The system is ready. Let's discover what doctors never mention about PCOS!** 🔥
+**The system is ready. Let's discover what doctors never mention about PCOS!**
+🔥
 
 ---
 
-*Built with: Python • OpenAI GPT-4o-mini • PRAW • Biopython • Chart.js*
-*Cost-optimized: $2-3 total • Mobile-first • Evidence-based • Patient-centered*
+_Built with: Python • OpenAI GPT-4o-mini • PRAW • Biopython • Chart.js_
+_Cost-optimized: $2-3 total • Mobile-first • Evidence-based • Patient-centered_

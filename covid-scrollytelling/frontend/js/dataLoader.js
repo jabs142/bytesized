@@ -20,7 +20,7 @@ export class DataLoader {
    */
   async loadAll() {
     try {
-      console.log('Loading data files...');
+      // console.log('Loading data files...');
 
       // Load all files in parallel
       const [covidData, worldMap, timelineEvents] = await Promise.all([
@@ -37,10 +37,12 @@ export class DataLoader {
       this.indexDataByDate();
       this.indexGlobalData();
 
-      console.log('✓ All data loaded successfully');
-      console.log(`  - Countries: ${Object.keys(this.covidData.countries).length}`);
-      console.log(`  - Date range: ${this.covidData.metadata.dateRange.start} to ${this.covidData.metadata.dateRange.end}`);
-      console.log(`  - Timeline events: ${this.timelineEvents.length}`);
+      // console.log('✓ All data loaded successfully');
+      // console.log(`  - Countries: ${Object.keys(this.covidData.countries).length}`);
+      // console.log(
+      //   `  - Date range: ${this.covidData.metadata.dateRange.start} to ${this.covidData.metadata.dateRange.end}`
+      // );
+      // console.log(`  - Timeline events: ${this.timelineEvents.length}`);
 
       return {
         covidData: this.covidData,
@@ -71,7 +73,7 @@ export class DataLoader {
    * Creates a map: date -> { countryCode: { cases, deaths, etc } }
    */
   indexDataByDate() {
-    console.log('Indexing data by date...');
+    // console.log('Indexing data by date...');
 
     for (const [code, countryData] of Object.entries(this.covidData.countries)) {
       for (const entry of countryData.timeline) {
@@ -93,7 +95,7 @@ export class DataLoader {
       }
     }
 
-    console.log(`✓ Indexed ${this.dataByDate.size} unique dates`);
+    // console.log(`✓ Indexed ${this.dataByDate.size} unique dates`);
   }
 
   /**
@@ -125,12 +127,14 @@ export class DataLoader {
    * @returns {Object} Global stats for that date
    */
   getGlobalForDate(date) {
-    return this.globalByDate.get(date) || {
-      totalCases: 0,
-      totalDeaths: 0,
-      totalVaccinations: 0,
-      peopleFullyVaccinated: 0,
-    };
+    return (
+      this.globalByDate.get(date) || {
+        totalCases: 0,
+        totalDeaths: 0,
+        totalVaccinations: 0,
+        peopleFullyVaccinated: 0,
+      }
+    );
   }
 
   /**
@@ -211,7 +215,9 @@ export class DataLoader {
     const data1 = this.getGlobalForDate(date1);
     const data2 = this.getGlobalForDate(date2);
 
-    if (data1[metric] === 0) return 0;
+    if (data1[metric] === 0) {
+      return 0;
+    }
 
     return ((data2[metric] - data1[metric]) / data1[metric]) * 100;
   }

@@ -1,346 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birth Control Side Effects Pattern Explorer</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Shared Styles & Components -->
-    <link rel="stylesheet" href="/shared/styles/eject-button.css">
+    <link rel="stylesheet" href="/shared/styles/eject-button.css" />
     <script src="/shared/components/EjectButton.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation - Eject Button -->
     <eject-button></eject-button>
 
     <!-- Header -->
     <header class="site-header">
-        <div class="page-container">
-            <h1 class="site-title">
-                Birth Control Side Effects Pattern Explorer
-            </h1>
-            <p class="site-subtitle">
-                Commonly unreported side effects from patient discussions analyzed against medical research
-            </p>
-        </div>
+      <div class="page-container">
+        <h1 class="site-title">Birth Control Side Effects Pattern Explorer</h1>
+        <p class="site-subtitle">
+          Commonly unreported side effects from patient discussions analyzed against medical research
+        </p>
+      </div>
     </header>
 
     <!-- Main Content -->
-    <main class="page-container" style="padding-top: 2rem; padding-bottom: 2rem;">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h2 class="hero-title">
-                Commonly Unreported Birth Control Side Effects
-            </h2>
-            <p class="hero-description">
-                Analysis of 537 patient discussions from Reddit compared with medical research to identify frequently reported side effects.
-            </p>
-            <div class="hero-actions">
-                <a href="validation.html" class="btn-primary">
-                    📊 View Validated Side Effects
-                </a>
-                <a href="long-term.html" class="btn-primary">
-                    ⏱️ Long-Term Effects (5+ Years)
-                </a>
-            </div>
-        </section>
+    <main class="page-container" style="padding-top: 2rem; padding-bottom: 2rem">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2 class="hero-title">Commonly Unreported Birth Control Side Effects</h2>
+        <p class="hero-description">
+          Analysis of 537 patient discussions from Reddit compared with medical research to identify frequently reported
+          side effects.
+        </p>
+        <div class="hero-actions">
+          <a href="validation.html" class="btn-primary"> 📊 View Validated Side Effects </a>
+          <a href="long-term.html" class="btn-primary"> ⏱️ Long-Term Effects (5+ Years) </a>
+        </div>
+      </section>
 
-        <!-- Context Section -->
-        <section class="content-card">
-            <h2 class="card-title">About This Analysis</h2>
-            <p class="card-text">
-                Birth control (hormonal contraception) is used by millions of people worldwide. While official documentation lists common side effects, patient experiences often include additional symptoms that may not be widely documented in medical literature.
-            </p>
-            <p class="card-text">
-                This tool analyzes 537 Reddit posts from birth control communities to identify frequently reported side effects and compares them with medical research literature (PubMed database).
-            </p>
-        </section>
+      <!-- Context Section -->
+      <section class="content-card">
+        <h2 class="card-title">About This Analysis</h2>
+        <p class="card-text">
+          Birth control (hormonal contraception) is used by millions of people worldwide. While official documentation
+          lists common side effects, patient experiences often include additional symptoms that may not be widely
+          documented in medical literature.
+        </p>
+        <p class="card-text">
+          This tool analyzes 537 Reddit posts from birth control communities to identify frequently reported side
+          effects and compares them with medical research literature (PubMed database).
+        </p>
+      </section>
 
-        <!-- Stats Cards -->
-        <section class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-value" id="stat-posts">537</div>
-                <div class="stat-label">Posts Analyzed</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="stat-symptoms">386</div>
-                <div class="stat-label">Posts with Symptoms</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="stat-patterns">17</div>
-                <div class="stat-label">Patterns Found</div>
-            </div>
-        </section>
+      <!-- Stats Cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-posts">537</div>
+          <div class="stat-label">Posts Analyzed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-symptoms">386</div>
+          <div class="stat-label">Posts with Symptoms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-patterns">17</div>
+          <div class="stat-label">Patterns Found</div>
+        </div>
+      </section>
 
-        <!-- Top Symptoms -->
-        <section class="content-card">
-            <h2 class="card-title">Most Common Side Effects</h2>
-            <div id="top-symptoms-list" class="space-y-3">
-                <!-- Dynamically populated -->
-            </div>
-        </section>
+      <!-- Top Symptoms -->
+      <section class="content-card">
+        <h2 class="card-title">Most Common Side Effects</h2>
+        <div id="top-symptoms-list" class="space-y-3">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
 
-        <!-- Network Visualization -->
-        <section class="content-card">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-title">Symptom Network Graph</h2>
-                    <p class="section-subtitle">Explore relationships between symptoms</p>
-                </div>
-                <div class="section-actions">
-                    <button id="toggle-filters-btn" class="btn-secondary">
-                        ⚙️ Filters
-                    </button>
-                    <button id="reset-btn" class="btn-secondary">
-                        Reset View
-                    </button>
-                </div>
-            </div>
+      <!-- Network Visualization -->
+      <section class="content-card">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Symptom Network Graph</h2>
+            <p class="section-subtitle">Explore relationships between symptoms</p>
+          </div>
+          <div class="section-actions">
+            <button id="toggle-filters-btn" class="btn-secondary">⚙️ Filters</button>
+            <button id="reset-btn" class="btn-secondary">Reset View</button>
+          </div>
+        </div>
 
-            <!-- Instructions -->
-            <div class="info-box">
-                <h3 class="info-box-title">How to use</h3>
-                <ul class="info-box-list">
-                    <li>• <strong>Node size</strong> = How frequently the symptom appears</li>
-                    <li>• <strong>Line thickness</strong> = Strength of the relationship</li>
-                    <li>• <strong>Click a node</strong> to highlight its connections</li>
-                    <li>• <strong>Drag nodes</strong> to rearrange the layout</li>
-                </ul>
-            </div>
+        <!-- Instructions -->
+        <div class="info-box">
+          <h3 class="info-box-title">How to use</h3>
+          <ul class="info-box-list">
+            <li>• <strong>Node size</strong> = How frequently the symptom appears</li>
+            <li>• <strong>Line thickness</strong> = Strength of the relationship</li>
+            <li>• <strong>Click a node</strong> to highlight its connections</li>
+            <li>• <strong>Drag nodes</strong> to rearrange the layout</li>
+          </ul>
+        </div>
 
-            <!-- Search & Filters (Collapsible) -->
-            <div id="controls-panel" class="controls-panel hidden" style="margin-top: 1rem;">
-                <!-- Search Box -->
-                <div class="form-group">
-                    <label for="symptom-search" class="form-label">
-                        🔍 Search for symptom
-                    </label>
-                    <input
-                        type="text"
-                        id="symptom-search"
-                        placeholder="Type to find a symptom (e.g., anxiety, acne)..."
-                        class="form-input"
-                    />
-                </div>
+        <!-- Search & Filters (Collapsible) -->
+        <div id="controls-panel" class="controls-panel hidden" style="margin-top: 1rem">
+          <!-- Search Box -->
+          <div class="form-group">
+            <label for="symptom-search" class="form-label"> 🔍 Search for symptom </label>
+            <input
+              type="text"
+              id="symptom-search"
+              placeholder="Type to find a symptom (e.g., anxiety, acne)..."
+              class="form-input"
+            />
+          </div>
 
-                <!-- Filters Grid -->
-                <div class="controls-grid">
-                    <!-- Symptom Type Filter -->
-                    <div class="form-group">
-                        <label for="type-filter" class="form-label">
-                            Category
-                        </label>
-                        <select id="type-filter" class="form-input">
-                            <option value="all">All Symptoms</option>
-                            <option value="mental">Mental Only</option>
-                            <option value="physical">Physical Only</option>
-                        </select>
-                    </div>
-
-                    <!-- Confidence Filter -->
-                    <div class="form-group">
-                        <label for="confidence-slider" class="form-label">
-                            Min Confidence: <span id="confidence-value">0%</span>
-                        </label>
-                        <input
-                            type="range"
-                            id="confidence-slider"
-                            min="0"
-                            max="100"
-                            value="0"
-                            class="w-full"
-                        />
-                    </div>
-
-                    <!-- Lift Filter -->
-                    <div class="form-group">
-                        <label for="lift-slider" class="form-label">
-                            Min Lift: <span id="lift-value">1.0x</span>
-                        </label>
-                        <input
-                            type="range"
-                            id="lift-slider"
-                            min="10"
-                            max="30"
-                            value="10"
-                            step="1"
-                            class="w-full"
-                        />
-                    </div>
-                </div>
-
-                <!-- Stats Display -->
-                <div class="flex justify-between items-center text-sm text-gray-600 pt-2 border-t border-gray-200">
-                    <span id="visible-stats">Showing all symptoms and connections</span>
-                    <button
-                        id="clear-filters-btn"
-                        class="text-blue-600 hover:text-blue-800 font-medium"
-                    >
-                        Clear Filters
-                    </button>
-                </div>
+          <!-- Filters Grid -->
+          <div class="controls-grid">
+            <!-- Symptom Type Filter -->
+            <div class="form-group">
+              <label for="type-filter" class="form-label"> Category </label>
+              <select id="type-filter" class="form-input">
+                <option value="all">All Symptoms</option>
+                <option value="mental">Mental Only</option>
+                <option value="physical">Physical Only</option>
+              </select>
             </div>
 
-            <div id="network-container" style="width: 100%; height: 600px; border: 2px solid var(--gb-darkest); border-radius: 2px; background: var(--bg); box-shadow: var(--shadow-md); position: relative;"></div>
-
-            <!-- Legend -->
-            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
-                <h3 class="font-semibold text-gray-900 mb-3">Legend</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-                    <div class="flex items-center">
-                        <svg width="30" height="20" class="mr-2">
-                            <circle cx="15" cy="10" r="8" fill="#E4ACB2" stroke="#fff" stroke-width="2"/>
-                        </svg>
-                        <span class="text-gray-700">Mental symptom</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg width="30" height="20" class="mr-2">
-                            <circle cx="15" cy="10" r="8" fill="#99BAB9" stroke="#fff" stroke-width="2"/>
-                        </svg>
-                        <span class="text-gray-700">Physical symptom</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg width="30" height="20" class="mr-2">
-                            <line x1="0" y1="10" x2="30" y2="10" stroke="#9ca3af" stroke-width="3"/>
-                        </svg>
-                        <span class="text-gray-700">Connection strength</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- No Data Message for network -->
-        <section id="no-data" class="hidden bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded mb-8">
-            <h3 class="text-lg font-semibold text-yellow-900 mb-2">
-                No network data available
-            </h3>
-            <p class="text-yellow-800">
-                The pattern mining analysis didn't generate enough data for visualization.
-            </p>
-        </section>
-
-        <!-- Node Details Panel for network -->
-        <section id="details-panel" class="hidden content-card">
-            <h2 class="card-title">
-                Symptom Details
-            </h2>
-            <div id="details-content">
-                <!-- Dynamically populated -->
-            </div>
-        </section>
-
-        <!-- Symptom Checker -->
-        <section class="content-card">
-            <h2 class="card-title">Symptom Checker</h2>
-            <p class="card-text">Select symptoms you're experiencing to see what other symptoms commonly appear together</p>
-
-            <!-- Search Box -->
-            <div class="form-group" style="margin-bottom: 1.5rem;">
-                <label for="symptom-search-checker" class="form-label">
-                    🔍 Search symptoms
-                </label>
-                <input
-                    type="text"
-                    id="symptom-search-checker"
-                    placeholder="Type to search (e.g., anxiety, acne)..."
-                    class="form-input"
-                />
+            <!-- Confidence Filter -->
+            <div class="form-group">
+              <label for="confidence-slider" class="form-label">
+                Min Confidence: <span id="confidence-value">0%</span>
+              </label>
+              <input type="range" id="confidence-slider" min="0" max="100" value="0" class="w-full" />
             </div>
 
-            <!-- Selected Symptoms -->
-            <div class="mb-6">
-                <h3 class="text-sm font-medium text-gray-700 mb-2">
-                    Selected (<span id="selected-count">0</span>):
-                </h3>
-                <div id="selected-symptoms" class="min-h-[3rem] p-3 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
-                    <p class="text-gray-400 text-sm" id="empty-state">
-                        Select symptoms from the list below
-                    </p>
-                </div>
+            <!-- Lift Filter -->
+            <div class="form-group">
+              <label for="lift-slider" class="form-label"> Min Lift: <span id="lift-value">1.0x</span> </label>
+              <input type="range" id="lift-slider" min="10" max="30" value="10" step="1" class="w-full" />
             </div>
+          </div>
 
-            <!-- Popular Symptoms -->
-            <div class="mb-6">
-                <h3 class="text-sm font-medium text-gray-700 mb-3">
-                    Popular Symptoms:
-                </h3>
-                <div id="popular-symptoms" class="flex flex-wrap gap-2">
-                    <!-- Dynamically populated -->
-                </div>
+          <!-- Stats Display -->
+          <div class="flex justify-between items-center text-sm text-gray-600 pt-2 border-t border-gray-200">
+            <span id="visible-stats">Showing all symptoms and connections</span>
+            <button id="clear-filters-btn" class="text-blue-600 hover:text-blue-800 font-medium">Clear Filters</button>
+          </div>
+        </div>
+
+        <div
+          id="network-container"
+          style="
+            width: 100%;
+            height: 600px;
+            border: 2px solid var(--gb-darkest);
+            border-radius: 2px;
+            background: var(--bg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+          "
+        ></div>
+
+        <!-- Legend -->
+        <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+          <h3 class="font-semibold text-gray-900 mb-3">Legend</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+            <div class="flex items-center">
+              <svg width="30" height="20" class="mr-2">
+                <circle cx="15" cy="10" r="8" fill="#E4ACB2" stroke="#fff" stroke-width="2" />
+              </svg>
+              <span class="text-gray-700">Mental symptom</span>
             </div>
-
-            <!-- All Symptoms -->
-            <div class="mb-6">
-                <h3 class="text-sm font-medium text-gray-700 mb-3">
-                    All Symptoms:
-                </h3>
-                <div id="all-symptoms" class="grid grid-cols-1 md:grid-cols-2 gap-2 max-h-96 overflow-y-auto p-2 border border-gray-200 rounded-lg">
-                    <!-- Dynamically populated -->
-                </div>
+            <div class="flex items-center">
+              <svg width="30" height="20" class="mr-2">
+                <circle cx="15" cy="10" r="8" fill="#99BAB9" stroke="#fff" stroke-width="2" />
+              </svg>
+              <span class="text-gray-700">Physical symptom</span>
             </div>
-
-            <!-- Analyze Button -->
-            <button
-                id="analyze-btn"
-                disabled
-                class="btn-primary disabled:bg-gray-300 disabled:cursor-not-allowed"
-                style="width: 100%;"
-            >
-                Analyze Patterns
-            </button>
-        </section>
-
-        <!-- Results Section -->
-        <section id="results-section" class="hidden content-card">
-            <h2 class="card-title">
-                Discovered Patterns
-            </h2>
-            <div id="results-content">
-                <!-- Dynamically populated -->
+            <div class="flex items-center">
+              <svg width="30" height="20" class="mr-2">
+                <line x1="0" y1="10" x2="30" y2="10" stroke="#9ca3af" stroke-width="3" />
+              </svg>
+              <span class="text-gray-700">Connection strength</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- No Results Message -->
-        <section id="no-results" class="hidden bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded mb-8">
-            <h3 class="text-lg font-semibold text-yellow-900 mb-2">
-                No patterns found
-            </h3>
-            <p class="text-yellow-800">
-                We didn't find any significant patterns for the selected symptoms. This could mean the combination is rare or these symptoms appear independently.
-            </p>
-        </section>
+      <!-- No Data Message for network -->
+      <section id="no-data" class="hidden bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded mb-8">
+        <h3 class="text-lg font-semibold text-yellow-900 mb-2">No network data available</h3>
+        <p class="text-yellow-800">The pattern mining analysis didn't generate enough data for visualization.</p>
+      </section>
 
+      <!-- Node Details Panel for network -->
+      <section id="details-panel" class="hidden content-card">
+        <h2 class="card-title">Symptom Details</h2>
+        <div id="details-content">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Symptom Checker -->
+      <section class="content-card">
+        <h2 class="card-title">Symptom Checker</h2>
+        <p class="card-text">Select symptoms you're experiencing to see what other symptoms commonly appear together</p>
+
+        <!-- Search Box -->
+        <div class="form-group" style="margin-bottom: 1.5rem">
+          <label for="symptom-search-checker" class="form-label"> 🔍 Search symptoms </label>
+          <input
+            type="text"
+            id="symptom-search-checker"
+            placeholder="Type to search (e.g., anxiety, acne)..."
+            class="form-input"
+          />
+        </div>
+
+        <!-- Selected Symptoms -->
+        <div class="mb-6">
+          <h3 class="text-sm font-medium text-gray-700 mb-2">Selected (<span id="selected-count">0</span>):</h3>
+          <div
+            id="selected-symptoms"
+            class="min-h-[3rem] p-3 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300"
+          >
+            <p class="text-gray-400 text-sm" id="empty-state">Select symptoms from the list below</p>
+          </div>
+        </div>
+
+        <!-- Popular Symptoms -->
+        <div class="mb-6">
+          <h3 class="text-sm font-medium text-gray-700 mb-3">Popular Symptoms:</h3>
+          <div id="popular-symptoms" class="flex flex-wrap gap-2">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- All Symptoms -->
+        <div class="mb-6">
+          <h3 class="text-sm font-medium text-gray-700 mb-3">All Symptoms:</h3>
+          <div
+            id="all-symptoms"
+            class="grid grid-cols-1 md:grid-cols-2 gap-2 max-h-96 overflow-y-auto p-2 border border-gray-200 rounded-lg"
+          >
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Analyze Button -->
+        <button
+          id="analyze-btn"
+          disabled
+          class="btn-primary disabled:bg-gray-300 disabled:cursor-not-allowed"
+          style="width: 100%"
+        >
+          Analyze Patterns
+        </button>
+      </section>
+
+      <!-- Results Section -->
+      <section id="results-section" class="hidden content-card">
+        <h2 class="card-title">Discovered Patterns</h2>
+        <div id="results-content">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- No Results Message -->
+      <section id="no-results" class="hidden bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded mb-8">
+        <h3 class="text-lg font-semibold text-yellow-900 mb-2">No patterns found</h3>
+        <p class="text-yellow-800">
+          We didn't find any significant patterns for the selected symptoms. This could mean the combination is rare or
+          these symptoms appear independently.
+        </p>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-12">
-        <div class="max-w-4xl mx-auto px-4 py-8">
-            <!-- Medical Disclaimer -->
-            <div class="bg-yellow-900 bg-opacity-30 border border-yellow-600 rounded-lg p-4 mb-6">
-                <h3 class="text-yellow-300 font-bold text-sm mb-2">⚠️ Important Medical Disclaimer</h3>
-                <p class="text-gray-300 text-sm leading-relaxed">
-                    This analysis is for <strong>informational and research purposes only</strong> and is <strong>not medical advice</strong>.
-                    The data is based on self-reported experiences from Reddit posts and may not reflect clinical research findings or individual medical situations.
-                    Always consult a qualified healthcare provider about birth control side effects, medication changes, or any health concerns.
-                    If you experience serious side effects, seek immediate medical attention.
-                </p>
-            </div>
+      <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Medical Disclaimer -->
+        <div class="bg-yellow-900 bg-opacity-30 border border-yellow-600 rounded-lg p-4 mb-6">
+          <h3 class="text-yellow-300 font-bold text-sm mb-2">⚠️ Important Medical Disclaimer</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            This analysis is for <strong>informational and research purposes only</strong> and is
+            <strong>not medical advice</strong>. The data is based on self-reported experiences from Reddit posts and
+            may not reflect clinical research findings or individual medical situations. Always consult a qualified
+            healthcare provider about birth control side effects, medication changes, or any health concerns. If you
+            experience serious side effects, seek immediate medical attention.
+          </p>
         </div>
+      </div>
     </footer>
 
     <!-- Tooltip for network graph -->
-    <div id="tooltip" style="position: absolute; padding: 0.5rem; background: var(--bg); color: var(--text-primary); border: 2px solid var(--gb-darkest); border-radius: 2px; box-shadow: var(--shadow-md); pointer-events: none; font-family: 'Courier New', monospace; font-size: 0.75rem; z-index: 100; display: none;"></div>
+    <div
+      id="tooltip"
+      style="
+        position: absolute;
+        padding: 0.5rem;
+        background: var(--bg);
+        color: var(--text-primary);
+        border: 2px solid var(--gb-darkest);
+        border-radius: 2px;
+        box-shadow: var(--shadow-md);
+        pointer-events: none;
+        font-family: 'Courier New', monospace;
+        font-size: 0.75rem;
+        z-index: 100;
+        display: none;
+      "
+    ></div>
 
     <script src="js/app.js"></script>
     <script src="js/network.js"></script>
     <script src="js/symptom-checker.js"></script>
-</body>
+  </body>
 </html>

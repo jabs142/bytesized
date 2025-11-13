@@ -5,16 +5,16 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const aboutToggle = document.getElementById('aboutToggle');
-    const aboutModal = document.getElementById('aboutModal');
+  const aboutToggle = document.getElementById('aboutToggle');
+  const aboutModal = document.getElementById('aboutModal');
 
-    if (!aboutToggle || !aboutModal) {
-        console.warn('About button or modal not found');
-        return;
-    }
+  if (!aboutToggle || !aboutModal) {
+    console.warn('About button or modal not found');
+    return;
+  }
 
-    // Open modal when About button is clicked
-    aboutToggle.addEventListener('click', () => {
-        aboutModal.open();
-    });
+  // Open modal when About button is clicked
+  aboutToggle.addEventListener('click', () => {
+    aboutModal.open();
+  });
 });

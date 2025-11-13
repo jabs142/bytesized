@@ -1,257 +1,341 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pharmaceutical Innovation Clusters - ByteSized Research</title>
 
     <!-- Retro Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Shared Styles & Components -->
-    <link rel="stylesheet" href="/shared/styles/eject-button.css">
+    <link rel="stylesheet" href="/shared/styles/eject-button.css" />
     <script src="/shared/components/EjectButton.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- EJECT BUTTON -->
     <eject-button></eject-button>
 
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <h1>Pharmaceutical Innovation Clusters</h1>
-            <p class="subtitle">Discovering temporal patterns in FDA drug approvals</p>
-        </div>
+      <div class="container">
+        <h1>Pharmaceutical Innovation Clusters</h1>
+        <p class="subtitle">Discovering temporal patterns in FDA drug approvals</p>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
+      <div class="container">
+        <!-- Introduction Section -->
+        <section class="intro-section">
+          <div class="intro-card">
+            <h2>What Are Pharmaceutical Innovation Clusters?</h2>
+            <p>
+              History shows us that major pharmaceutical innovations don't happen randomly—they cluster together in
+              waves. Two-thirds of all antibiotic types ever discovered emerged in a single 20-year window
+              (1940s-1960s). This analysis examines FDA drug approvals from 1939–2024 to identify these temporal
+              patterns and reveal disparities in therapeutic development.
+            </p>
+          </div>
+        </section>
 
-            <!-- Introduction Section -->
-            <section class="intro-section">
-                <div class="intro-card">
-                    <h2>What Are Pharmaceutical Innovation Clusters?</h2>
-                    <p>
-                        History shows us that major pharmaceutical innovations don't happen randomly—they cluster together in waves.
-                        Two-thirds of all antibiotic types ever discovered emerged in a single 20-year window (1940s-1960s).
-                        This analysis examines FDA drug approvals from 1939–2024 to identify these temporal patterns
-                        and reveal disparities in therapeutic development.
-                    </p>
-                </div>
-            </section>
+        <!-- Statistics Section -->
+        <section class="stats-section">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" id="total-innovations">---</div>
+              <div class="stat-label">FDA Drug Approvals</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="cluster-count">---</div>
+              <div class="stat-label">Cluster Periods</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="peak-decade">---</div>
+              <div class="stat-label">Peak Decade</div>
+            </div>
+          </div>
+        </section>
+        <!-- Master Timeline Section -->
+        <section class="timeline-section">
+          <h2>📊 FDA Drug Approval Timeline</h2>
+          <p class="section-description">
+            Each bar represents a decade of pharmaceutical approvals. Hover to see exact counts.
+          </p>
+          <div id="master-timeline" class="timeline-container">
+            <div class="loading">Loading timeline...</div>
+          </div>
+        </section>
 
-            <!-- Statistics Section -->
-            <section class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number" id="total-innovations">---</div>
-                        <div class="stat-label">FDA Drug Approvals</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="cluster-count">---</div>
-                        <div class="stat-label">Cluster Periods</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="peak-decade">---</div>
-                        <div class="stat-label">Peak Decade</div>
-                    </div>
-                </div>
-            </section>
-            <!-- Master Timeline Section -->
-            <section class="timeline-section">
-                <h2>📊 FDA Drug Approval Timeline</h2>
-                <p class="section-description">
-                    Each bar represents a decade of pharmaceutical approvals. Hover to see exact counts.
-                </p>
-                <div id="master-timeline" class="timeline-container">
-                    <div class="loading">Loading timeline...</div>
-                </div>
-            </section>
+        <!-- Statistical Analysis Section -->
+        <section class="stats-tests-section">
+          <h2>🔬 Statistical Analysis Results</h2>
+          <p class="section-description">
+            Using the Coefficient of Variation and sliding window analysis, we can prove that pharmaceutical innovations
+            cluster together rather than occurring randomly.
+          </p>
 
-            <!-- Statistical Analysis Section -->
-            <section class="stats-tests-section">
-                <h2>🔬 Statistical Analysis Results</h2>
-                <p class="section-description">
-                    Using the Coefficient of Variation and sliding window analysis, we can prove that pharmaceutical innovations cluster together rather than occurring randomly.
-                </p>
+          <div id="poisson-results" class="test-results-grid">
+            <div class="loading">Loading statistical tests...</div>
+          </div>
+        </section>
 
-                <div id="poisson-results" class="test-results-grid">
-                    <div class="loading">Loading statistical tests...</div>
-                </div>
-            </section>
+        <!-- Drug Approval Clusters -->
+        <section class="clusters-section">
+          <h2>FDA Drug Approval Clusters</h2>
+          <p class="section-description">
+            Periods where drug approvals exceeded the historical mean by more than 1 standard deviation
+          </p>
+          <div id="fda-cluster-list" class="cluster-list">
+            <div class="loading">Loading...</div>
+          </div>
+        </section>
 
-            <!-- Drug Approval Clusters -->
-            <section class="clusters-section">
-                <h2>FDA Drug Approval Clusters</h2>
-                <p class="section-description">
-                    Periods where drug approvals exceeded the historical mean by more than 1 standard deviation
-                </p>
-                <div id="fda-cluster-list" class="cluster-list">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
+        <!-- Pharmaceutical Insights Section -->
+        <section class="unique-insights-section">
+          <h2>🔍 Pharmaceutical Insights</h2>
+          <!-- Data Coverage Note -->
+          <div
+            style="
+              margin: var(--spacing-md) auto;
+              max-width: 900px;
+              padding: var(--spacing-md);
+              background: #fff3cd;
+              border: 2px solid #ffc107;
+              border-radius: var(--radius-pixel);
+            "
+          >
+            <h4
+              style="
+                font-family: var(--font-pixel);
+                font-size: 0.7rem;
+                margin-bottom: var(--spacing-sm);
+                color: var(--gb-dark);
+              "
+            >
+              📊 Data Coverage Note
+            </h4>
+            <p style="font-size: 0.875rem; line-height: 1.6; margin: 0; color: var(--text-primary)">
+              The therapeutic area analyses below are based on
+              <strong>12,121 classified drugs (~17% of the 71,203 total FDA approvals)</strong>. Many older drugs
+              (pre-1980s) lack complete pharmacological classification in FDA records. The patterns shown are
+              representative of drugs with available therapeutic classifications, with classification accuracy improving
+              significantly for post-2000 approvals.
+            </p>
+          </div>
 
-            <!-- Pharmaceutical Insights Section -->
-            <section class="unique-insights-section">
-                <h2>🔍 Pharmaceutical Insights</h2>
-                <!-- Data Coverage Note -->
-                <div style="margin: var(--spacing-md) auto; max-width: 900px; padding: var(--spacing-md); background: #FFF3CD; border: 2px solid #FFC107; border-radius: var(--radius-pixel);">
-                    <h4 style="font-family: var(--font-pixel); font-size: 0.7rem; margin-bottom: var(--spacing-sm); color: var(--gb-dark);">📊 Data Coverage Note</h4>
-                    <p style="font-size: 0.875rem; line-height: 1.6; margin: 0; color: var(--text-primary);">
-                        The therapeutic area analyses below are based on <strong>12,121 classified drugs (~17% of the 71,203 total FDA approvals)</strong>.
-                        Many older drugs (pre-1980s) lack complete pharmacological classification in FDA records. The patterns shown are representative
-                        of drugs with available therapeutic classifications, with classification accuracy improving significantly for post-2000 approvals.
-                    </p>
-                </div>
+          <!-- Temporal Clustering Pattern -->
+          <div class="insight-container">
+            <h3>📊 Temporal Clustering Patterns</h3>
+            <p class="insight-intro">
+              See when each therapeutic area had concentrated innovation "boom" periods. Each dot represents one drug
+              approval.
+            </p>
+            <div id="therapeutic-timeline-container">
+              <div class="loading">Loading temporal clustering data...</div>
+            </div>
+          </div>
 
-                <!-- Temporal Clustering Pattern -->
-                <div class="insight-container">
-                    <h3>📊 Temporal Clustering Patterns</h3>
-                    <p class="insight-intro">
-                        See when each therapeutic area had concentrated innovation "boom" periods. Each dot represents one drug approval.
-                    </p>
-                    <div id="therapeutic-timeline-container">
-                        <div class="loading">Loading temporal clustering data...</div>
-                    </div>
-                </div>
+          <!-- Top Therapeutic Areas -->
+          <div class="insight-container">
+            <h3>Top Therapeutic Areas by Approval Count</h3>
+            <p class="insight-intro">
+              Broad therapeutic categories ranked by total FDA drug approvals. Shows which disease areas have attracted
+              the most pharmaceutical investment.
+            </p>
+            <div id="top-therapeutic-areas">
+              <div class="loading">Loading therapeutic areas data...</div>
+            </div>
+          </div>
 
-                <!-- Top Therapeutic Areas -->
-                <div class="insight-container">
-                    <h3>Top Therapeutic Areas by Approval Count</h3>
-                    <p class="insight-intro">
-                        Broad therapeutic categories ranked by total FDA drug approvals.
-                        Shows which disease areas have attracted the most pharmaceutical investment.
-                    </p>
-                    <div id="top-therapeutic-areas">
-                        <div class="loading">Loading therapeutic areas data...</div>
-                    </div>
-                </div>
+          <!-- Emerging Drug Classes -->
+          <div class="insight-container">
+            <h3>Emerging Drug Classes (Only 1 Drug Each)</h3>
+            <p class="insight-intro">
+              Cutting-edge pharmaceutical innovations where only a single drug has been approved. These represent
+              breakthrough therapies or novel mechanisms of action entering the market.
+            </p>
+            <div id="pharmaceutical-neglect">
+              <div class="loading">Loading drug class data...</div>
+            </div>
+          </div>
 
-                <!-- Emerging Drug Classes -->
-                <div class="insight-container">
-                    <h3>Emerging Drug Classes (Only 1 Drug Each)</h3>
-                    <p class="insight-intro">
-                        Cutting-edge pharmaceutical innovations where only a single drug has been approved.
-                        These represent breakthrough therapies or novel mechanisms of action entering the market.
-                    </p>
-                    <div id="pharmaceutical-neglect">
-                        <div class="loading">Loading drug class data...</div>
-                    </div>
-                </div>
+          <!-- When Did Each Therapeutic Area Peak -->
+          <div class="insight-container">
+            <h3>When Did Each Therapeutic Area Peak?</h3>
+            <p class="insight-intro">
+              Discover which decades saw concentrated development for different therapeutic categories.
+            </p>
+            <div id="therapeutic-peaks-chart">
+              <div class="loading">Loading peak analysis...</div>
+            </div>
+          </div>
+        </section>
 
-                <!-- When Did Each Therapeutic Area Peak -->
-                <div class="insight-container">
-                    <h3>When Did Each Therapeutic Area Peak?</h3>
-                    <p class="insight-intro">
-                        Discover which decades saw concentrated development for different therapeutic categories.
-                    </p>
-                    <div id="therapeutic-peaks-chart">
-                        <div class="loading">Loading peak analysis...</div>
-                    </div>
-                </div>
-            </section>
+        <!-- The Generic Drug Revolution Section -->
+        <section class="generic-revolution-section">
+          <h2>The Generic Drug Revolution</h2>
+          <p class="section-description">
+            The 1980s saw the most drug approvals in history—but was this pure innovation? Explore the shift from
+            innovative drugs (new molecules) to generic drugs (bioequivalent copies).
+          </p>
+          <div id="decade-breakdown-chart">
+            <div class="loading">Loading decade breakdown data...</div>
+          </div>
 
-            <!-- The Generic Drug Revolution Section -->
-            <section class="generic-revolution-section">
-                <h2>The Generic Drug Revolution</h2>
-                <p class="section-description">
-                    The 1980s saw the most drug approvals in history—but was this pure innovation?
-                    Explore the shift from innovative drugs (new molecules) to generic drugs (bioequivalent copies).
-                </p>
-                <div id="decade-breakdown-chart">
-                    <div class="loading">Loading decade breakdown data...</div>
-                </div>
+          <!-- Context Box -->
+          <div
+            style="
+              margin-top: var(--spacing-md);
+              padding: var(--spacing-md);
+              background: #e8f5e9;
+              border: 2px solid var(--gb-light);
+              border-radius: var(--radius-pixel);
+            "
+          >
+            <h4
+              style="
+                font-family: var(--font-pixel);
+                font-size: 0.7rem;
+                margin-bottom: var(--spacing-sm);
+                color: var(--gb-dark);
+              "
+            >
+              ℹ️ Understanding Drug Types
+            </h4>
+            <ul
+              style="font-size: 0.875rem; line-height: 1.6; margin: 0; padding-left: 1.5rem; color: var(--text-primary)"
+            >
+              <li>
+                <strong>Innovative (NDA/BLA):</strong> New molecular entities, biologics, or novel combinations. These
+                represent original pharmaceutical research.
+              </li>
+              <li>
+                <strong>Generic (ANDA):</strong> Bioequivalent copies of off-patent drugs. Same active ingredient as the
+                original but typically lower cost.
+              </li>
+              <li>
+                <strong>Historical Context:</strong> The Hatch-Waxman Act (1984) created the modern generic drug
+                approval pathway, eliminating the need for full clinical trials for bioequivalent drugs.
+              </li>
+              <li>
+                <strong>Both are important:</strong> Generics improve access and affordability, while innovative drugs
+                advance medical science.
+              </li>
+            </ul>
+          </div>
+        </section>
 
-                <!-- Context Box -->
-                <div style="margin-top: var(--spacing-md); padding: var(--spacing-md); background: #E8F5E9; border: 2px solid var(--gb-light); border-radius: var(--radius-pixel);">
-                    <h4 style="font-family: var(--font-pixel); font-size: 0.7rem; margin-bottom: var(--spacing-sm); color: var(--gb-dark);">ℹ️ Understanding Drug Types</h4>
-                    <ul style="font-size: 0.875rem; line-height: 1.6; margin: 0; padding-left: 1.5rem; color: var(--text-primary);">
-                        <li><strong>Innovative (NDA/BLA):</strong> New molecular entities, biologics, or novel combinations. These represent original pharmaceutical research.</li>
-                        <li><strong>Generic (ANDA):</strong> Bioequivalent copies of off-patent drugs. Same active ingredient as the original but typically lower cost.</li>
-                        <li><strong>Historical Context:</strong> The Hatch-Waxman Act (1984) created the modern generic drug approval pathway, eliminating the need for full clinical trials for bioequivalent drugs.</li>
-                        <li><strong>Both are important:</strong> Generics improve access and affordability, while innovative drugs advance medical science.</li>
-                    </ul>
-                </div>
-            </section>
+        <!-- Pharmaceutical Innovation Stories Section -->
+        <section class="pharmaceutical-stories-section">
+          <h2>📚 Pharmaceutical Innovation Stories</h2>
+          <p class="section-description">
+            Six data-driven insights revealing the breakthroughs, surges, and transformations in pharmaceutical
+            development across decades.
+          </p>
+          <div id="pharmaceutical-stories">
+            <div class="loading">Loading innovation stories...</div>
+          </div>
+        </section>
 
-            <!-- Pharmaceutical Innovation Stories Section -->
-            <section class="pharmaceutical-stories-section">
-                <h2>📚 Pharmaceutical Innovation Stories</h2>
-                <p class="section-description">
-                    Six data-driven insights revealing the breakthroughs, surges, and transformations in pharmaceutical development across decades.
-                </p>
-                <div id="pharmaceutical-stories">
-                    <div class="loading">Loading innovation stories...</div>
-                </div>
-            </section>
-
-            <!-- Methodology Section -->
-            <section class="methodology-section">
-                <div class="container">
-                    <h2>Methodology</h2>
-                    <div class="methodology-grid">
-                        <div class="method-card">
-                            <h3>Data Sources</h3>
-                            <ul>
-                                <li>FDA Orange Book API (drug approvals, 1939-2024)</li>
-                                <li>71,149 total drug approvals analyzed</li>
-                                <li>Classification via FDA pharmacological classes + indication fields</li>
-                            </ul>
-                        </div>
-                        <div class="method-card">
-                            <h3>Clustering Method</h3>
-                            <ul>
-                                <li>Statistical threshold: >2σ above mean</li>
-                                <li>Minimum cluster size: 3 consecutive years</li>
-                                <li>Identifies periods of unusual approval density</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="disclaimer-card">
-                        <h3>Research Context</h3>
-                        <p>
-                            This analysis reveals temporal patterns in pharmaceutical innovation and therapeutic neglect
-                            but does not establish causality. Multiple factors—economic incentives, regulatory changes,
-                            disease prevalence, research funding, and market size—may contribute to these patterns.
-                        </p>
-                    </div>
-                    <div class="disclaimer-card">
-                        <h3>Classification Methodology & Limitations</h3>
-                        <p><strong>Classification Approach:</strong></p>
-                        <ul style="margin-bottom: 15px;">
-                            <li><strong>Data Source:</strong> FDA pharmacological class fields (EPC & MOA) with 345 unique classes</li>
-                            <li><strong>Simplification:</strong> Technical FDA terms converted to plain language (e.g., "Programmed Death Receptor-1 Blocking Antibody" → "PD-1 Inhibitors")</li>
-                            <li><strong>Secondary data:</strong> FDA indication and usage fields for context</li>
-                            <li><strong>Fallback:</strong> Keyword matching on generic drug names when FDA classification unavailable</li>
-                            <li><strong>No assumptions:</strong> Using actual FDA classifications, not manually-created therapeutic buckets</li>
-                        </ul>
-                        <p><strong>Known Limitations:</strong></p>
-                        <ul>
-                            <li><strong>Combination drugs:</strong> Drugs with multiple therapeutic uses are assigned to a single primary pharmacological class</li>
-                            <li><strong>Missing data:</strong> Older drugs (pre-1980s) may lack complete pharmacological classification in FDA records (~86% unclassified)</li>
-                            <li><strong>Off-label use:</strong> Drugs approved for one condition but widely used for another are classified by their FDA-approved indication only</li>
-                            <li><strong>Emerging categories:</strong> Gene therapies and novel modalities are classified under their pharmacological mechanism, not disease</li>
-                            <li><strong>Data completeness:</strong> Classification accuracy improves for recent approvals (2000+) due to more complete FDA metadata</li>
-                        </ul>
-                        <p style="margin-top: 15px;"><em>Note: Drug counts represent FDA-approved pharmacological classes, not therapeutic impact. Market size, clinical significance, and innovation value may not correlate with approval counts. A class with 1 drug (e.g., "TYK2 Inhibitors") may represent groundbreaking innovation, while classes with 800+ drugs may be saturated markets.</em></p>
-                    </div>
-                </div>
-            </section>
-
-        </div>
+        <!-- Methodology Section -->
+        <section class="methodology-section">
+          <div class="container">
+            <h2>Methodology</h2>
+            <div class="methodology-grid">
+              <div class="method-card">
+                <h3>Data Sources</h3>
+                <ul>
+                  <li>FDA Orange Book API (drug approvals, 1939-2024)</li>
+                  <li>71,149 total drug approvals analyzed</li>
+                  <li>Classification via FDA pharmacological classes + indication fields</li>
+                </ul>
+              </div>
+              <div class="method-card">
+                <h3>Clustering Method</h3>
+                <ul>
+                  <li>Statistical threshold: >2σ above mean</li>
+                  <li>Minimum cluster size: 3 consecutive years</li>
+                  <li>Identifies periods of unusual approval density</li>
+                </ul>
+              </div>
+            </div>
+            <div class="disclaimer-card">
+              <h3>Research Context</h3>
+              <p>
+                This analysis reveals temporal patterns in pharmaceutical innovation and therapeutic neglect but does
+                not establish causality. Multiple factors—economic incentives, regulatory changes, disease prevalence,
+                research funding, and market size—may contribute to these patterns.
+              </p>
+            </div>
+            <div class="disclaimer-card">
+              <h3>Classification Methodology & Limitations</h3>
+              <p><strong>Classification Approach:</strong></p>
+              <ul style="margin-bottom: 15px">
+                <li>
+                  <strong>Data Source:</strong> FDA pharmacological class fields (EPC & MOA) with 345 unique classes
+                </li>
+                <li>
+                  <strong>Simplification:</strong> Technical FDA terms converted to plain language (e.g., "Programmed
+                  Death Receptor-1 Blocking Antibody" → "PD-1 Inhibitors")
+                </li>
+                <li><strong>Secondary data:</strong> FDA indication and usage fields for context</li>
+                <li>
+                  <strong>Fallback:</strong> Keyword matching on generic drug names when FDA classification unavailable
+                </li>
+                <li>
+                  <strong>No assumptions:</strong> Using actual FDA classifications, not manually-created therapeutic
+                  buckets
+                </li>
+              </ul>
+              <p><strong>Known Limitations:</strong></p>
+              <ul>
+                <li>
+                  <strong>Combination drugs:</strong> Drugs with multiple therapeutic uses are assigned to a single
+                  primary pharmacological class
+                </li>
+                <li>
+                  <strong>Missing data:</strong> Older drugs (pre-1980s) may lack complete pharmacological
+                  classification in FDA records (~86% unclassified)
+                </li>
+                <li>
+                  <strong>Off-label use:</strong> Drugs approved for one condition but widely used for another are
+                  classified by their FDA-approved indication only
+                </li>
+                <li>
+                  <strong>Emerging categories:</strong> Gene therapies and novel modalities are classified under their
+                  pharmacological mechanism, not disease
+                </li>
+                <li>
+                  <strong>Data completeness:</strong> Classification accuracy improves for recent approvals (2000+) due
+                  to more complete FDA metadata
+                </li>
+              </ul>
+              <p style="margin-top: 15px">
+                <em
+                  >Note: Drug counts represent FDA-approved pharmacological classes, not therapeutic impact. Market
+                  size, clinical significance, and innovation value may not correlate with approval counts. A class with
+                  1 drug (e.g., "TYK2 Inhibitors") may represent groundbreaking innovation, while classes with 800+
+                  drugs may be saturated markets.</em
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>Data source: FDA Orange Book API (1939-2024)</p>
-            <p>Analysis method: Statistical temporal clustering | Therapeutic area classification</p>
-        </div>
+      <div class="container">
+        <p>Data source: FDA Orange Book API (1939-2024)</p>
+        <p>Analysis method: Statistical temporal clustering | Therapeutic area classification</p>
+      </div>
     </footer>
 
     <!-- D3.js for interactive visualizations -->
@@ -264,5 +348,5 @@
     <script src="js/therapeutic-peaks-viz.js"></script>
     <script src="js/decade-breakdown-viz.js"></script>
     <script src="js/therapeutic-timeline.js"></script>
-</body>
+  </body>
 </html>
