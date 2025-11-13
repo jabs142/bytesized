@@ -2,7 +2,7 @@
 
 > **Your blueprint for creating new "cartridge" projects with consistency and speed**
 
-Last Updated: November 10, 2025
+Last Updated: November 13, 2025
 
 ---
 
@@ -31,7 +31,6 @@ bytesized/
 ├── index.html                    # Main Game Boy portal
 ├── STYLE_GUIDE.md                # Design system (READ THIS FIRST!)
 ├── REPO_GUIDE.md                 # This file - scaffolding guide
-├── QUICKSTART.md                 # Dev environment setup
 ├── requirements.txt              # Consolidated Python dependencies
 ├── package.json                  # Frontend dev server
 │
@@ -39,8 +38,6 @@ bytesized/
 │   ├── components/               # Web Components (EjectButton, StatCard)
 │   ├── styles/                   # CSS variables, retro theme
 │   └── utils/                    # JavaScript utilities (dataLoader, formatters)
-│
-├── template-cartridge/           # Starter template (copy this!)
 │
 └── [YOUR-CARTRIDGE-NAME]/        # Individual projects
     ├── src/                      # Python data analysis (optional)
@@ -85,27 +82,21 @@ python3 -m http.server 8000
 **Step 2: Choose Your Template Type**
 - See [Decision Tree](#decision-tree-what-type-of-cartridge) below
 
-**Step 3: Copy Template**
-```bash
-cp -r template-cartridge your-cartridge-name
-cd your-cartridge-name
-```
-
-**Step 4: Initialize Git Ignore**
+**Step 3: Initialize Git Ignore**
 ```bash
 # Already included in template, but verify:
 cat .gitignore
 # Should exclude: data/, .env, __pycache__, etc.
 ```
 
-**Step 5: Configure Environment**
+**Step 4: Configure Environment**
 ```bash
 # If using Python analysis:
 cp .env.example .env
 # Add your API keys (OPENAI_API_KEY, REDDIT_CLIENT_ID, etc.)
 ```
 
-**Step 6: Install Dependencies**
+**Step 5: Install Dependencies**
 ```bash
 # Python (if needed):
 pip install -r ../requirements.txt
@@ -226,12 +217,6 @@ h1 {
 - Key features
 - Data sources
 - Methodology
-
-## Quick Start
-
-\`\`\`bash
-# How to run
-\`\`\`
 
 ## Data Pipeline (if applicable)
 

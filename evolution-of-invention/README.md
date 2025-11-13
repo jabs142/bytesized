@@ -1,10 +1,19 @@
 # Walking Through Time - Evolution of Invention
 
-An educational pixel-art game built with Phaser 3 that takes players on a journey through human history, exploring different eras and innovations.
+> An educational pixel-art game that takes players on a journey through 7 historical eras
 
-## Project Overview
+**Frontend-Only Cartridge** - Interactive Phaser 3 game with procedurally generated sprites
 
-This game features 7 historical eras:
+## What's Built
+
+- **7 Historical Eras:** From Stone Age to Modern Era, each with unique environments, NPCs, and inventions
+- **Interactive Gameplay:** Talk to NPCs, collect items, explore each era at your own pace
+- **Educational Content:** Learn about key innovations and historical context through in-game dialogue
+- **Retro Pixel Art:** Procedurally generated sprites with authentic 8-bit aesthetic
+- **Timeline System:** Visual progress tracker showing historical progression
+
+## Historical Eras
+
 1. **Caveman Era** - Stone Age tools and fire
 2. **Farming Era** - Agricultural revolution
 3. **Medieval Era** - Castles and feudal systems

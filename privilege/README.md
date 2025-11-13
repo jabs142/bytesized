@@ -155,7 +155,12 @@ privilege/
 │   │   └── app.js          # Quiz UI logic and flow control
 │   └── data/
 │       └── conditional-probabilities.json  # Global statistics data
-├── test_calculator.js      # Test suite for calculations
+├── test/                   # Comprehensive test suite (125 tests)
+│   ├── calculator.test.js       # Unit tests for calculator logic
+│   ├── integration.test.js      # End-to-end integration tests
+│   ├── data-validation.test.js  # Data integrity validation
+│   └── score-validation.test.js # Regression tests for known scenarios
+├── package.json            # Jest configuration and test scripts
 └── README.md
 ```
 

@@ -31,3 +31,7 @@ python-dotenv==1.0.0           # Environment variables
 
 # LLM/AI
 openai==1.54.3                 # OpenAI API for symptom extraction
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0

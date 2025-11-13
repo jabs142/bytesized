@@ -43,3 +43,7 @@ pydantic==2.12.3
 
 # PubMed API
 biopython==1.83  # For PubMed queries
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
