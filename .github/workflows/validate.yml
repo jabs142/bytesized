@@ -32,9 +32,9 @@ jobs:
 
       - name: Start local server
         run: |
-          npm start &
+          npm start -- --no-browser &
           echo $! > server.pid
-          sleep 8
+          sleep 5
 
       - name: Test portal loads
         run: |
