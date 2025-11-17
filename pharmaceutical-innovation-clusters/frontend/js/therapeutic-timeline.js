@@ -3,6 +3,13 @@
  * Scatter plot showing individual drug approvals across time within decades
  */
 
+// Import lazy loader for decade data
+import {
+  loadTimelineSummary,
+  loadDecadeData,
+  preloadAdjacentDecades,
+} from './timeline-data-loader.js';
+
 // Color palette for therapeutic areas (pastel palette for better aesthetics)
 const THERAPEUTIC_COLORS = {
   "Alzheimer's & Dementia": '#E4ACB2', // Dusty rose
@@ -26,27 +33,9 @@ let decades = [];
 const therapeuticAreaIndex = {};
 
 /**
- * Generate decade chunks from data
- */
-function generateDecades(startYear, endYear) {
-  const chunks = [];
-  const startDecade = Math.floor(startYear / 10) * 10;
-  const endDecade = Math.floor(endYear / 10) * 10;
-
-  for (let year = startDecade; year <= endDecade; year += 10) {
-    chunks.push({
-      label: `${year}s`,
-      start: year,
-      end: year + 9,
-    });
-  }
-  return chunks;
-}
-
-/**
  * Main function to render the therapeutic area timeline as scatter plot
  */
-function renderTherapeuticTimeline() {
+async function renderTherapeuticTimeline() {
   const container = document.getElementById('therapeutic-timeline-container');
 
   if (!container) {
@@ -54,71 +43,72 @@ function renderTherapeuticTimeline() {
     return;
   }
 
-  if (!window.therapeuticTimeline || !window.therapeuticTimeline.approvals) {
-    container.innerHTML = '<div class="loading">No timeline data available</div>';
-    return;
-  }
+  try {
+    // Load summary data (metadata only, very small file)
+    const data = await loadTimelineSummary();
 
-  const data = window.therapeuticTimeline;
+    // Generate decades from summary
+    decades = data.decades;
 
-  // Generate decades from data
-  decades = generateDecades(data.date_range.start, data.date_range.end);
+    // Create therapeutic area index
+    data.therapeutic_areas.forEach((area, i) => {
+      therapeuticAreaIndex[area] = i;
+    });
 
-  // Create therapeutic area index
-  data.therapeutic_areas.forEach((area, i) => {
-    therapeuticAreaIndex[area] = i;
-  });
+    // Clear container
+    container.innerHTML = '';
 
-  // Clear container
-  container.innerHTML = '';
+    // Add title and description
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'timeline-header';
+    container.appendChild(headerDiv);
 
-  // Add title and description
-  const headerDiv = document.createElement('div');
-  headerDiv.className = 'timeline-header';
-  container.appendChild(headerDiv);
-
-  // Create navigation controls
-  const navDiv = document.createElement('div');
-  navDiv.className = 'decade-navigation';
-  navDiv.innerHTML = `
+    // Create navigation controls
+    const navDiv = document.createElement('div');
+    navDiv.className = 'decade-navigation';
+    navDiv.innerHTML = `
         <button id="prev-decade" class="nav-arrow" aria-label="Previous decade">◄</button>
         <select id="decade-dropdown" class="decade-select">
             ${decades.map((d, i) => `<option value="${i}">${d.label}</option>`).join('')}
         </select>
         <button id="next-decade" class="nav-arrow" aria-label="Next decade">►</button>
     `;
-  container.appendChild(navDiv);
+    container.appendChild(navDiv);
 
-  // Create scatter plot container
-  const scatterDiv = document.createElement('div');
-  scatterDiv.id = 'therapeutic-scatter';
-  container.appendChild(scatterDiv);
+    // Create scatter plot container
+    const scatterDiv = document.createElement('div');
+    scatterDiv.id = 'therapeutic-scatter';
+    container.appendChild(scatterDiv);
 
-  // Setup navigation handlers
-  document.getElementById('prev-decade').addEventListener('click', () => navigateDecade(-1));
-  document.getElementById('next-decade').addEventListener('click', () => navigateDecade(1));
-  document.getElementById('decade-dropdown').addEventListener('change', (e) => {
-    currentDecadeIndex = parseInt(e.target.value);
-    renderScatterPlot(decades[currentDecadeIndex]);
-  });
+    // Setup navigation handlers
+    document.getElementById('prev-decade').addEventListener('click', () => navigateDecade(-1));
+    document.getElementById('next-decade').addEventListener('click', () => navigateDecade(1));
+    document.getElementById('decade-dropdown').addEventListener('change', (e) => {
+      currentDecadeIndex = parseInt(e.target.value);
+      renderScatterPlot(decades[currentDecadeIndex]);
+    });
 
-  // Render initial decade
-  renderScatterPlot(decades[currentDecadeIndex]);
+    // Render initial decade
+    await renderScatterPlot(decades[currentDecadeIndex]);
 
-  // Initialize dropdown to match currentDecadeIndex
-  document.getElementById('decade-dropdown').value = currentDecadeIndex;
+    // Initialize dropdown to match currentDecadeIndex
+    document.getElementById('decade-dropdown').value = currentDecadeIndex;
+  } catch (error) {
+    console.error('Error loading timeline data:', error);
+    container.innerHTML = '<div class="loading">Failed to load timeline data</div>';
+  }
 }
 
 /**
  * Navigate between decades
  */
-function navigateDecade(direction) {
+async function navigateDecade(direction) {
   const newIndex = currentDecadeIndex + direction;
 
   if (newIndex >= 0 && newIndex < decades.length) {
     currentDecadeIndex = newIndex;
     document.getElementById('decade-dropdown').value = currentDecadeIndex;
-    renderScatterPlot(decades[currentDecadeIndex]);
+    await renderScatterPlot(decades[currentDecadeIndex]);
   }
 }
 
@@ -152,137 +142,146 @@ function generateScatterCoordinates(approvals) {
 /**
  * Render scatter plot using D3.js
  */
-function renderScatterPlot(decade) {
+async function renderScatterPlot(decade) {
   const container = document.getElementById('therapeutic-scatter');
-  container.innerHTML = '';
+  container.innerHTML = '<div class="loading">Loading decade data...</div>';
 
-  // Filter approvals for this decade
-  const approvals = window.therapeuticTimeline.approvals.filter(
-    (a) => a.year >= decade.start && a.year <= decade.end
-  );
+  try {
+    // Load decade data on-demand
+    const decadeData = await loadDecadeData(decade.start);
+    const approvals = decadeData.approvals;
 
-  if (approvals.length === 0) {
-    container.innerHTML = '<div class="no-data">No approvals in this decade</div>';
-    return;
+    // Preload adjacent decades in background for smooth navigation
+    preloadAdjacentDecades(decade.start);
+
+    container.innerHTML = '';
+
+    if (approvals.length === 0) {
+      container.innerHTML = '<div class="no-data">No approvals in this decade</div>';
+      return;
+    }
+
+    // Generate coordinates
+    const points = generateScatterCoordinates(approvals);
+
+    // Dimensions
+    const margin = { top: 60, right: 120, bottom: 80, left: 200 };
+    const width = 900;
+    const height = 600;
+
+    // Create accessible description
+    const description = `Scatter plot showing ${approvals.length} drug approvals across therapeutic areas in the ${decade.label}. Each dot represents one drug approval. Y-axis shows therapeutic categories, X-axis shows years within the decade.`;
+
+    // Create SVG
+    const svg = d3
+      .select(container)
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('role', 'img')
+      .attr('aria-label', description);
+
+    const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+
+    // Scales
+    const xScale = d3.scaleLinear().domain([-0.5, 9.5]).range([0, plotWidth]);
+
+    const yScale = d3
+      .scaleLinear()
+      .domain([-0.5, Object.keys(therapeuticAreaIndex).length - 0.5])
+      .range([0, plotHeight]);
+
+    // X-axis (years within decade)
+    const xAxis = d3
+      .axisBottom(xScale)
+      .tickValues(d3.range(0, 10))
+      .tickFormat((d) => decade.start + d);
+
+    g.append('g')
+      .attr('transform', `translate(0,${plotHeight})`)
+      .call(xAxis)
+      .selectAll('text')
+      .style('fill', '#000')
+      .style('font-size', '6px')
+      .style('font-family', 'Courier New, monospace');
+
+    g.select('.domain').style('stroke', '#333');
+    g.selectAll('.tick line').style('stroke', '#333');
+
+    // Y-axis (therapeutic areas)
+    const therapeuticAreas = Object.keys(therapeuticAreaIndex).sort(
+      (a, b) => therapeuticAreaIndex[a] - therapeuticAreaIndex[b]
+    );
+
+    const yAxis = d3
+      .axisLeft(yScale)
+      .tickValues(d3.range(0, therapeuticAreas.length))
+      .tickFormat((d, i) => therapeuticAreas[i]);
+
+    g.append('g')
+      .call(yAxis)
+      .selectAll('text')
+      .style('fill', '#333')
+      .style('font-size', '6px')
+      .style('font-weight', 'bold')
+      .style('font-family', 'Courier New, monospace');
+
+    g.select('.domain').style('stroke', '#333');
+    g.selectAll('.tick line').style('stroke', '#333');
+
+    // Draw points
+    g.selectAll('circle')
+      .data(points)
+      .enter()
+      .append('circle')
+      .attr('cx', (d) => xScale(d.x))
+      .attr('cy', (d) => yScale(d.y))
+      .attr('r', 6)
+      .attr('fill', (d) => d.color)
+      .attr('opacity', 0.85)
+      .attr('stroke', '#333')
+      .attr('stroke-width', 1)
+      .style('cursor', 'pointer')
+      .on('mouseover', function (event, d) {
+        d3.select(this)
+          .attr('r', 8)
+          .attr('opacity', 1)
+          .attr('stroke', '#000')
+          .attr('stroke-width', 2);
+
+        showTooltip(event, d);
+      })
+      .on('mouseout', function () {
+        d3.select(this)
+          .attr('r', 6)
+          .attr('opacity', 0.85)
+          .attr('stroke', '#333')
+          .attr('stroke-width', 1);
+
+        hideTooltip();
+      });
+
+    // Add title showing current decade and count
+    svg
+      .append('text')
+      .attr('x', width / 2)
+      .attr('y', 25)
+      .attr('text-anchor', 'middle')
+      .style('fill', '#000')
+      .style('font-size', '12px')
+      .style('font-weight', 'bold')
+      .style('font-family', 'Courier New, monospace')
+      .text(`${decade.label}: ${approvals.length} Drug Approvals`);
+
+    // Add legend
+    addLegend(svg, width, height, therapeuticAreas);
+  } catch (error) {
+    console.error('Error rendering scatter plot:', error);
+    container.innerHTML = '<div class="loading">Failed to load decade data</div>';
   }
-
-  // Generate coordinates
-  const points = generateScatterCoordinates(approvals);
-
-  // Dimensions
-  const margin = { top: 60, right: 120, bottom: 80, left: 200 };
-  const width = 900;
-  const height = 600;
-
-  // Create accessible description
-  const description = `Scatter plot showing ${approvals.length} drug approvals across therapeutic areas in the ${decade.label}. Each dot represents one drug approval. Y-axis shows therapeutic categories, X-axis shows years within the decade.`;
-
-  // Create SVG
-  const svg = d3
-    .select(container)
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('role', 'img')
-    .attr('aria-label', description);
-
-  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
-
-  const plotWidth = width - margin.left - margin.right;
-  const plotHeight = height - margin.top - margin.bottom;
-
-  // Scales
-  const xScale = d3.scaleLinear().domain([-0.5, 9.5]).range([0, plotWidth]);
-
-  const yScale = d3
-    .scaleLinear()
-    .domain([-0.5, Object.keys(therapeuticAreaIndex).length - 0.5])
-    .range([0, plotHeight]);
-
-  // X-axis (years within decade)
-  const xAxis = d3
-    .axisBottom(xScale)
-    .tickValues(d3.range(0, 10))
-    .tickFormat((d) => decade.start + d);
-
-  g.append('g')
-    .attr('transform', `translate(0,${plotHeight})`)
-    .call(xAxis)
-    .selectAll('text')
-    .style('fill', '#000')
-    .style('font-size', '6px')
-    .style('font-family', 'Courier New, monospace');
-
-  g.select('.domain').style('stroke', '#333');
-  g.selectAll('.tick line').style('stroke', '#333');
-
-  // Y-axis (therapeutic areas)
-  const therapeuticAreas = Object.keys(therapeuticAreaIndex).sort(
-    (a, b) => therapeuticAreaIndex[a] - therapeuticAreaIndex[b]
-  );
-
-  const yAxis = d3
-    .axisLeft(yScale)
-    .tickValues(d3.range(0, therapeuticAreas.length))
-    .tickFormat((d, i) => therapeuticAreas[i]);
-
-  g.append('g')
-    .call(yAxis)
-    .selectAll('text')
-    .style('fill', '#333')
-    .style('font-size', '6px')
-    .style('font-weight', 'bold')
-    .style('font-family', 'Courier New, monospace');
-
-  g.select('.domain').style('stroke', '#333');
-  g.selectAll('.tick line').style('stroke', '#333');
-
-  // Draw points
-  g.selectAll('circle')
-    .data(points)
-    .enter()
-    .append('circle')
-    .attr('cx', (d) => xScale(d.x))
-    .attr('cy', (d) => yScale(d.y))
-    .attr('r', 6)
-    .attr('fill', (d) => d.color)
-    .attr('opacity', 0.85)
-    .attr('stroke', '#333')
-    .attr('stroke-width', 1)
-    .style('cursor', 'pointer')
-    .on('mouseover', function (event, d) {
-      d3.select(this)
-        .attr('r', 8)
-        .attr('opacity', 1)
-        .attr('stroke', '#000')
-        .attr('stroke-width', 2);
-
-      showTooltip(event, d);
-    })
-    .on('mouseout', function () {
-      d3.select(this)
-        .attr('r', 6)
-        .attr('opacity', 0.85)
-        .attr('stroke', '#333')
-        .attr('stroke-width', 1);
-
-      hideTooltip();
-    });
-
-  // Add title showing current decade and count
-  svg
-    .append('text')
-    .attr('x', width / 2)
-    .attr('y', 25)
-    .attr('text-anchor', 'middle')
-    .style('fill', '#000')
-    .style('font-size', '12px')
-    .style('font-weight', 'bold')
-    .style('font-family', 'Courier New, monospace')
-    .text(`${decade.label}: ${approvals.length} Drug Approvals`);
-
-  // Add legend
-  addLegend(svg, width, height, therapeuticAreas);
 }
 
 /**
@@ -380,3 +379,6 @@ function showTooltip(event, data) {
 function hideTooltip() {
   d3.select('.scatter-tooltip').style('opacity', 0);
 }
+
+// Export function globally for non-module scripts
+window.renderTherapeuticTimeline = renderTherapeuticTimeline;

@@ -1,0 +1,79 @@
+[
+  {
+    "pmid": "12345678",
+    "title": "Mood disorders associated with hormonal contraceptives: A systematic review",
+    "abstract": "Background: Hormonal contraceptives are widely used but may be associated with mood changes. Methods: We conducted a systematic review of studies examining the relationship between hormonal contraceptives and mood disorders. Results: Evidence suggests a potential association between hormonal contraceptives and increased risk of depression and anxiety in some users. Conclusion: Healthcare providers should monitor patients for mood changes when prescribing hormonal contraceptives.",
+    "authors": ["Smith J", "Johnson A", "Williams B"],
+    "journal": "Journal of Women's Health",
+    "pub_date": "2023-03-15",
+    "doi": "10.1234/jwh.2023.12345",
+    "mesh_terms": [
+      "Contraceptives, Oral, Hormonal",
+      "Depression",
+      "Anxiety",
+      "Mood Disorders"
+    ]
+  },
+  {
+    "pmid": "23456789",
+    "title": "Polycystic ovary syndrome: Clinical manifestations and metabolic consequences",
+    "abstract": "Polycystic ovary syndrome (PCOS) is a complex endocrine disorder affecting reproductive-age women. Common symptoms include irregular menstruation, hyperandrogenism (acne, hirsutism), and metabolic abnormalities. Patients often present with insulin resistance, obesity, and increased cardiovascular risk. This review summarizes current understanding of PCOS pathophysiology and clinical management.",
+    "authors": ["Martinez C", "Lopez D", "Garcia E"],
+    "journal": "Endocrine Reviews",
+    "pub_date": "2023-05-20",
+    "doi": "10.1234/endorev.2023.23456",
+    "mesh_terms": [
+      "Polycystic Ovary Syndrome",
+      "Hyperandrogenism",
+      "Insulin Resistance",
+      "Hirsutism",
+      "Acne"
+    ]
+  },
+  {
+    "pmid": "34567890",
+    "title": "Ehlers-Danlos syndrome: Diagnostic challenges and multisystem manifestations",
+    "abstract": "Ehlers-Danlos syndrome (EDS) comprises a heterogeneous group of connective tissue disorders. The hypermobile subtype is most common, characterized by joint hypermobility, chronic pain, and multisystem involvement. Patients frequently report gastrointestinal symptoms, dysautonomia, and chronic fatigue. Early recognition and multidisciplinary management are essential.",
+    "authors": ["Anderson F", "Taylor G", "Thomas H"],
+    "journal": "American Journal of Medical Genetics",
+    "pub_date": "2023-07-10",
+    "doi": "10.1234/ajmg.2023.34567",
+    "mesh_terms": [
+      "Ehlers-Danlos Syndrome",
+      "Joint Hypermobility",
+      "Chronic Pain",
+      "Fatigue",
+      "Gastrointestinal Symptoms"
+    ]
+  },
+  {
+    "pmid": "45678901",
+    "title": "Fatigue in women with polycystic ovary syndrome: Prevalence and associated factors",
+    "abstract": "Objective: To investigate the prevalence of fatigue in women with PCOS and identify associated factors. Methods: Cross-sectional study of 250 women with PCOS. Results: 73% reported significant fatigue. Fatigue was associated with insulin resistance, obesity, and depression. Conclusion: Fatigue is highly prevalent in PCOS and warrants clinical attention.",
+    "authors": ["Brown I", "Davis J", "Wilson K"],
+    "journal": "Journal of Clinical Endocrinology & Metabolism",
+    "pub_date": "2023-09-05",
+    "doi": "10.1234/jcem.2023.45678",
+    "mesh_terms": [
+      "Polycystic Ovary Syndrome",
+      "Fatigue",
+      "Depression",
+      "Insulin Resistance"
+    ]
+  },
+  {
+    "pmid": "56789012",
+    "title": "Headache as an adverse effect of combined oral contraceptives: A meta-analysis",
+    "abstract": "We performed a meta-analysis of 15 studies examining headache incidence in combined oral contraceptive users. Pooled analysis showed a modest increase in headache frequency among users compared to non-users (RR 1.32, 95% CI 1.18-1.48). Migraine with aura may be exacerbated by hormonal contraceptives.",
+    "authors": ["Lee L", "Kim M", "Park N"],
+    "journal": "Headache: The Journal of Head and Face Pain",
+    "pub_date": "2023-11-12",
+    "doi": "10.1234/head.2023.56789",
+    "mesh_terms": [
+      "Contraceptives, Oral, Combined",
+      "Headache",
+      "Migraine Disorders",
+      "Adverse Effects"
+    ]
+  }
+]

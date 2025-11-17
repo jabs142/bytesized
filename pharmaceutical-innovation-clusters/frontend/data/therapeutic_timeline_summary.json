@@ -1,0 +1,96 @@
+{
+  "therapeutic_areas": [
+    "Alzheimer's & Dementia",
+    "CNS & Neurology",
+    "Cardiovascular",
+    "Dermatology",
+    "Diabetes & Endocrine",
+    "Gastrointestinal",
+    "Immunology & Rheumatology",
+    "Infectious Disease",
+    "Oncology",
+    "Pain & Analgesia",
+    "Psychiatry",
+    "Rare & Orphan Diseases",
+    "Respiratory"
+  ],
+  "total_records": 9998,
+  "date_range": {
+    "start": 1942,
+    "end": 2024
+  },
+  "decades": [
+    {
+      "decade": 1940,
+      "label": "1940s",
+      "start": 1940,
+      "end": 1949,
+      "count": 3,
+      "file": "decades/1940s.json"
+    },
+    {
+      "decade": 1950,
+      "label": "1950s",
+      "start": 1950,
+      "end": 1959,
+      "count": 43,
+      "file": "decades/1950s.json"
+    },
+    {
+      "decade": 1960,
+      "label": "1960s",
+      "start": 1960,
+      "end": 1969,
+      "count": 216,
+      "file": "decades/1960s.json"
+    },
+    {
+      "decade": 1970,
+      "label": "1970s",
+      "start": 1970,
+      "end": 1979,
+      "count": 537,
+      "file": "decades/1970s.json"
+    },
+    {
+      "decade": 1980,
+      "label": "1980s",
+      "start": 1980,
+      "end": 1989,
+      "count": 1044,
+      "file": "decades/1980s.json"
+    },
+    {
+      "decade": 1990,
+      "label": "1990s",
+      "start": 1990,
+      "end": 1999,
+      "count": 1639,
+      "file": "decades/1990s.json"
+    },
+    {
+      "decade": 2000,
+      "label": "2000s",
+      "start": 2000,
+      "end": 2009,
+      "count": 2275,
+      "file": "decades/2000s.json"
+    },
+    {
+      "decade": 2010,
+      "label": "2010s",
+      "start": 2010,
+      "end": 2019,
+      "count": 2803,
+      "file": "decades/2010s.json"
+    },
+    {
+      "decade": 2020,
+      "label": "2020s",
+      "start": 2020,
+      "end": 2029,
+      "count": 1438,
+      "file": "decades/2020s.json"
+    }
+  ]
+}

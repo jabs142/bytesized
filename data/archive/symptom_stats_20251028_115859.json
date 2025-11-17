@@ -1,0 +1,786 @@
+[
+  {
+    "symptom": "pain",
+    "mention_count": 180,
+    "frequency": 0.7,
+    "post_ids": [
+      "1oho985",
+      "1ohxcag",
+      "1ohy1yb",
+      "1ohxseb",
+      "1ohrum8",
+      "1oh8a21",
+      "1ohzbjl",
+      "1ohq4j0",
+      "1ohoofn",
+      "1oh5jci"
+    ]
+  },
+  {
+    "symptom": "hypermobile",
+    "mention_count": 62,
+    "frequency": 0.241,
+    "post_ids": [
+      "1oerbzc",
+      "1nonwia",
+      "1mefjy9",
+      "1mfs113",
+      "1kb8uiu",
+      "1i0twrv",
+      "1lakwq0",
+      "1hcym67",
+      "1jjsmin",
+      "1ohchai"
+    ]
+  },
+  {
+    "symptom": "ache",
+    "mention_count": 27,
+    "frequency": 0.105,
+    "post_ids": [
+      "1ohzbjl",
+      "1ofhk1h",
+      "1of8vby",
+      "1oexxga",
+      "1of2im4",
+      "1k9kt66",
+      "1lspjwr",
+      "1o32sf7",
+      "1hvmhtn",
+      "1ljrgy3"
+    ]
+  },
+  {
+    "symptom": "fatigue",
+    "mention_count": 27,
+    "frequency": 0.105,
+    "post_ids": [
+      "1ohb143",
+      "1og9wty",
+      "1ogaopx",
+      "1ofumhx",
+      "1ofg0sh",
+      "1ofhk1h",
+      "1of7nzw",
+      "1of2im4",
+      "1mfs113",
+      "1kb8uiu"
+    ]
+  },
+  {
+    "symptom": "chronic pain",
+    "mention_count": 23,
+    "frequency": 0.089,
+    "post_ids": [
+      "1ohoofn",
+      "1oh8xf3",
+      "1ogsivo",
+      "1ogqwdw",
+      "1oerbzc",
+      "1kv5oao",
+      "1mfs113",
+      "1jyqym7",
+      "1jjsmin",
+      "1ogrm3i"
+    ]
+  },
+  {
+    "symptom": "tired",
+    "mention_count": 21,
+    "frequency": 0.082,
+    "post_ids": [
+      "1ohzbjl",
+      "1ohb143",
+      "1ogxn13",
+      "1ogznto",
+      "1ogqijk",
+      "1ofhk1h",
+      "1hpxrpj",
+      "1k9kt66",
+      "1jloguo",
+      "1ohyrbv"
+    ]
+  },
+  {
+    "symptom": "subluxation",
+    "mention_count": 20,
+    "frequency": 0.078,
+    "post_ids": [
+      "1ohxseb",
+      "1ogwt7a",
+      "1kb8uiu",
+      "1kyodgj",
+      "1lakwq0",
+      "1hcym67",
+      "1ohvjvk",
+      "1ogrm3i",
+      "1of66dk",
+      "1ofdtn0"
+    ]
+  },
+  {
+    "symptom": "joint pain",
+    "mention_count": 19,
+    "frequency": 0.074,
+    "post_ids": [
+      "1ohzbjl",
+      "1ogsivo",
+      "1oerbzc",
+      "1of2im4",
+      "1k9kt66",
+      "1o32sf7",
+      "1kb8uiu",
+      "1oeisd5",
+      "1oc4294",
+      "1oba0zm"
+    ]
+  },
+  {
+    "symptom": "dislocation",
+    "mention_count": 18,
+    "frequency": 0.07,
+    "post_ids": [
+      "1ohoofn",
+      "1ogz9rb",
+      "1ohb143",
+      "1ogwt7a",
+      "1og8nma",
+      "1oeuwb7",
+      "1kv5oao",
+      "1mwkvye",
+      "1lakwq0",
+      "1ohchai"
+    ]
+  },
+  {
+    "symptom": "ibs",
+    "mention_count": 13,
+    "frequency": 0.051,
+    "post_ids": [
+      "1ogsivo",
+      "1k9kt66",
+      "1ohvjvk",
+      "1ohwgmu",
+      "1oclvfw",
+      "1obw52l",
+      "1oaiuhg",
+      "1n6o06u",
+      "1id1npu",
+      "1o5ur8p"
+    ]
+  },
+  {
+    "symptom": "anxiety",
+    "mention_count": 13,
+    "frequency": 0.051,
+    "post_ids": [
+      "1ohxcag",
+      "1ogznto",
+      "1ogaopx",
+      "1lntwrb",
+      "1jloguo",
+      "1od54bw",
+      "1ob5wh0",
+      "1ivxij6",
+      "1id1npu",
+      "1m50crk"
+    ]
+  },
+  {
+    "symptom": "back pain",
+    "mention_count": 12,
+    "frequency": 0.047,
+    "post_ids": [
+      "1ohzbjl",
+      "1ogqijk",
+      "1kb8uiu",
+      "1oh5yc1",
+      "1oex1y7",
+      "1oeyr55",
+      "1of5llx",
+      "1obw3p2",
+      "1oba0zm",
+      "1lrbcn7"
+    ]
+  },
+  {
+    "symptom": "focus",
+    "mention_count": 12,
+    "frequency": 0.047,
+    "post_ids": [
+      "1og9wty",
+      "1ogaopx",
+      "1ofv614",
+      "1ofalx3",
+      "1ld6m9z",
+      "1nyx63y",
+      "1l6j9ln",
+      "1of5llx",
+      "1oapmv0",
+      "1jvbvr6"
+    ]
+  },
+  {
+    "symptom": "stress",
+    "mention_count": 11,
+    "frequency": 0.043,
+    "post_ids": [
+      "1ohoofn",
+      "1og7gwc",
+      "1mwkvye",
+      "1jloguo",
+      "1m82ocg",
+      "1id1npu",
+      "1mccimu",
+      "1nc08pc",
+      "1jvbvr6",
+      "1md5se7"
+    ]
+  },
+  {
+    "symptom": "energy",
+    "mention_count": 10,
+    "frequency": 0.039,
+    "post_ids": [
+      "1ogznto",
+      "1ogaopx",
+      "1ld6m9z",
+      "1ns5fei",
+      "1o7ez9k",
+      "1loxntg",
+      "1ij22md",
+      "1l4m9an",
+      "1j0hup4",
+      "1l8y2ro"
+    ]
+  },
+  {
+    "symptom": "mcas",
+    "mention_count": 10,
+    "frequency": 0.039,
+    "post_ids": [
+      "1ohh7ki",
+      "1ohitjq",
+      "1og9wty",
+      "1ogmppn",
+      "1ofv614",
+      "1ns5fei",
+      "1o7ez9k",
+      "1jloguo",
+      "1og5wlo",
+      "1nu4jo4"
+    ]
+  },
+  {
+    "symptom": "dental",
+    "mention_count": 9,
+    "frequency": 0.035,
+    "post_ids": [
+      "1ohzgtr",
+      "1ofaw9w",
+      "1nvg6y3",
+      "1i9al6f",
+      "1jloguo",
+      "1oh2qr4",
+      "1oawa0z",
+      "1nc08pc",
+      "1ii7cnz"
+    ]
+  },
+  {
+    "symptom": "headache",
+    "mention_count": 7,
+    "frequency": 0.027,
+    "post_ids": [
+      "1of8vby",
+      "1oh4bte",
+      "1hpmobt",
+      "1mi7wu5",
+      "1lrbcn7",
+      "1hqfe5c",
+      "1nxbdy4"
+    ]
+  },
+  {
+    "symptom": "migraine",
+    "mention_count": 7,
+    "frequency": 0.027,
+    "post_ids": [
+      "1oho985",
+      "1ohxcag",
+      "1kbgmcb",
+      "1mwkvye",
+      "1jloguo",
+      "1oh4bte",
+      "1obpgt0"
+    ]
+  },
+  {
+    "symptom": "numbness",
+    "mention_count": 7,
+    "frequency": 0.027,
+    "post_ids": [
+      "1ogqijk",
+      "1oerbzc",
+      "1kb8uiu",
+      "1kapqp9",
+      "1jvbvr6",
+      "1icmvtn",
+      "1iruytx"
+    ]
+  },
+  {
+    "symptom": "teeth",
+    "mention_count": 7,
+    "frequency": 0.027,
+    "post_ids": [
+      "1oh5vtw",
+      "1ogjpr9",
+      "1ogxk3d",
+      "1hh834x",
+      "1i9al6f",
+      "1jjsmin",
+      "1og8xsb"
+    ]
+  },
+  {
+    "symptom": "dizzy",
+    "mention_count": 6,
+    "frequency": 0.023,
+    "post_ids": [
+      "1ohbr3h",
+      "1ofumhx",
+      "1mc77ny",
+      "1hvmhtn",
+      "1ohvjvk",
+      "1nh4voz"
+    ]
+  },
+  {
+    "symptom": "neck pain",
+    "mention_count": 6,
+    "frequency": 0.023,
+    "post_ids": [
+      "1hfabl4",
+      "1jyqym7",
+      "1oe455t",
+      "1lrbcn7",
+      "1lnvvsy",
+      "1n3epss"
+    ]
+  },
+  {
+    "symptom": "immune",
+    "mention_count": 6,
+    "frequency": 0.023,
+    "post_ids": [
+      "1ogmppn",
+      "1oerbzc",
+      "1i0twrv",
+      "1iunfpw",
+      "1i0tw0o",
+      "1jvbvr6"
+    ]
+  },
+  {
+    "symptom": "vision",
+    "mention_count": 6,
+    "frequency": 0.023,
+    "post_ids": [
+      "1ohitjq",
+      "1o32sf7",
+      "1mwkvye",
+      "1oarz22",
+      "1ivxij6",
+      "1n2zx9q"
+    ]
+  },
+  {
+    "symptom": "hearing",
+    "mention_count": 6,
+    "frequency": 0.023,
+    "post_ids": [
+      "1oho985",
+      "1og7gwc",
+      "1maoig6",
+      "1oco4z3",
+      "1iisv4q",
+      "1jsgu1z"
+    ]
+  },
+  {
+    "symptom": "dizziness",
+    "mention_count": 5,
+    "frequency": 0.019,
+    "post_ids": [
+      "1ohitjq",
+      "1of7nzw",
+      "1obpgt0",
+      "1o5ur8p",
+      "1nh4voz"
+    ]
+  },
+  {
+    "symptom": "fibromyalgia",
+    "mention_count": 5,
+    "frequency": 0.019,
+    "post_ids": [
+      "1oerbzc",
+      "1kkxf23",
+      "1ohevx3",
+      "1obgyk7",
+      "1oarz22"
+    ]
+  },
+  {
+    "symptom": "chronic fatigue",
+    "mention_count": 5,
+    "frequency": 0.019,
+    "post_ids": [
+      "1og9wty",
+      "1of7nzw",
+      "1jjsmin",
+      "1oh2qr4",
+      "1jsgu1z"
+    ]
+  },
+  {
+    "symptom": "muscle pain",
+    "mention_count": 4,
+    "frequency": 0.016,
+    "post_ids": [
+      "1oerbzc",
+      "1oarz22",
+      "1mlbpd5",
+      "1k01ea3"
+    ]
+  },
+  {
+    "symptom": "depression",
+    "mention_count": 4,
+    "frequency": 0.016,
+    "post_ids": [
+      "1ohxcag",
+      "1ogaopx",
+      "1id1npu",
+      "1hpmobt"
+    ]
+  },
+  {
+    "symptom": "exhaustion",
+    "mention_count": 4,
+    "frequency": 0.016,
+    "post_ids": [
+      "1i0twrv",
+      "1lmpm3b",
+      "1n2o8ab",
+      "1i0tw0o"
+    ]
+  },
+  {
+    "symptom": "faint",
+    "mention_count": 3,
+    "frequency": 0.012,
+    "post_ids": [
+      "1ohb143",
+      "1h61e3j",
+      "1hvmhtn"
+    ]
+  },
+  {
+    "symptom": "digestion",
+    "mention_count": 3,
+    "frequency": 0.012,
+    "post_ids": [
+      "1oeyr55",
+      "1oc4o8z",
+      "1n2zx9q"
+    ]
+  },
+  {
+    "symptom": "brain fog",
+    "mention_count": 3,
+    "frequency": 0.012,
+    "post_ids": [
+      "1id1npu",
+      "1jx20gy",
+      "1nh4voz"
+    ]
+  },
+  {
+    "symptom": "loose joints",
+    "mention_count": 3,
+    "frequency": 0.012,
+    "post_ids": [
+      "1oh9z8s",
+      "1obcf62",
+      "1ob98gz"
+    ]
+  },
+  {
+    "symptom": "scoliosis",
+    "mention_count": 3,
+    "frequency": 0.012,
+    "post_ids": [
+      "1ogpzt6",
+      "1od5j17",
+      "1oba0zm"
+    ]
+  },
+  {
+    "symptom": "infections",
+    "mention_count": 3,
+    "frequency": 0.012,
+    "post_ids": [
+      "1oh5vtw",
+      "1ogxk3d",
+      "1obgyk7"
+    ]
+  },
+  {
+    "symptom": "fainting",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1ohb143",
+      "1hvmhtn"
+    ]
+  },
+  {
+    "symptom": "blood pressure",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1ofid2t",
+      "1kb8uiu"
+    ]
+  },
+  {
+    "symptom": "nausea",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1of8vby",
+      "1og5wlo"
+    ]
+  },
+  {
+    "symptom": "gastroparesis",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1ld6m9z",
+      "1ogwyti"
+    ]
+  },
+  {
+    "symptom": "diarrhea",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1ohxcag",
+      "1ogsivo"
+    ]
+  },
+  {
+    "symptom": "bloating",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1oeyr55",
+      "1oc4o8z"
+    ]
+  },
+  {
+    "symptom": "reflux",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1oh4bte",
+      "1oegzmc"
+    ]
+  },
+  {
+    "symptom": "vomiting",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1oho985",
+      "1k0kyqr"
+    ]
+  },
+  {
+    "symptom": "confusion",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1kgn0om",
+      "1jvbvr6"
+    ]
+  },
+  {
+    "symptom": "joint instability",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1ogqijk",
+      "1jvbvr6"
+    ]
+  },
+  {
+    "symptom": "wound healing",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1ohh7ki",
+      "1jvbvr6"
+    ]
+  },
+  {
+    "symptom": "panic",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1og4rba",
+      "1hi7qaa"
+    ]
+  },
+  {
+    "symptom": "cfs",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1kkxf23",
+      "1ogwyti"
+    ]
+  },
+  {
+    "symptom": "allergies",
+    "mention_count": 2,
+    "frequency": 0.008,
+    "post_ids": [
+      "1jloguo",
+      "1nu4jo4"
+    ]
+  },
+  {
+    "symptom": "tachycardia",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1ohvj31"
+    ]
+  },
+  {
+    "symptom": "palpitations",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1ivxij6"
+    ]
+  },
+  {
+    "symptom": "syncope",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1ohvjvk"
+    ]
+  },
+  {
+    "symptom": "constipation",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1of1ru2"
+    ]
+  },
+  {
+    "symptom": "gerd",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1of66dk"
+    ]
+  },
+  {
+    "symptom": "stomach pain",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1og5wlo"
+    ]
+  },
+  {
+    "symptom": "cognitive",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1kapqp9"
+    ]
+  },
+  {
+    "symptom": "tingling",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1jvbvr6"
+    ]
+  },
+  {
+    "symptom": "neuropathy",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1kkxf23"
+    ]
+  },
+  {
+    "symptom": "tmj",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1oarz22"
+    ]
+  },
+  {
+    "symptom": "bruising",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1oh5yc1"
+    ]
+  },
+  {
+    "symptom": "stretchy skin",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1o32sf7"
+    ]
+  },
+  {
+    "symptom": "fragile skin",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1ogjpr9"
+    ]
+  },
+  {
+    "symptom": "vertigo",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1kb8uiu"
+    ]
+  },
+  {
+    "symptom": "histamine",
+    "mention_count": 1,
+    "frequency": 0.004,
+    "post_ids": [
+      "1mccimu"
+    ]
+  }
+]

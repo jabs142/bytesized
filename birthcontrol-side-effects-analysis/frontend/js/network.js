@@ -1,11 +1,15 @@
 // Network Visualization JavaScript
 // Interactive D3.js force-directed graph for symptom relationships
 
+// Import D3 lazy loader
+import { loadD3 } from '/shared/utils/d3-loader.js';
+
 let networkData = null;
 let networkStatsData = null;
 let svg = null;
 let simulation = null;
 let selectedNode = null;
+let d3 = null; // Will be populated by lazy loader
 
 // Filter state
 let filters = {
@@ -19,9 +23,14 @@ let filters = {
 let allNodes = [];
 let allEdges = [];
 
-// Load data on page load
+// Load D3 and data on page load
 document.addEventListener('DOMContentLoaded', async () => {
   try {
+    // Lazy-load D3.js library
+    d3 = await loadD3();
+    window.d3 = d3; // Make available globally for this file
+
+    // Load data files
     const [networkResponse, statsResponse] = await Promise.all([
       fetch('data/symptom_network.json'),
       fetch('data/stats.json'),

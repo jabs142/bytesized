@@ -3,11 +3,12 @@
  * Handles data loading, filtering, and rendering
  */
 
+// Import D3 lazy loader
+import { loadD3 } from '/shared/utils/d3-loader.js';
+
 let clusterData = null;
 let statsData = null;
-const industryData = null;
 let vizData = null;
-let currentFilter = 'all';
 
 /**
  * Convert markdown bold syntax to HTML
@@ -22,6 +23,10 @@ function markdownToHtml(text) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
+  // Lazy-load D3.js library first
+  const d3 = await loadD3();
+  window.d3 = d3; // Make available globally for all viz scripts
+
   await loadData();
   await loadUniqueInsightsData();
   initializeFilters();
@@ -39,7 +44,6 @@ async function loadData() {
       statsRes,
       therapeuticRes,
       neglectRes,
-      timelineRes,
       fdaPharmRes,
       enrichedClustersRes,
       clusterContextRes,
@@ -48,7 +52,6 @@ async function loadData() {
       fetch('data/statistical_results.json').catch(() => null),
       fetch('data/therapeutic_trends.json').catch(() => null),
       fetch('data/neglected_diseases.json').catch(() => null),
-      fetch('data/therapeutic_timeline.json').catch(() => null),
       fetch('data/fda_pharm_classes.json').catch(() => null),
       fetch('data/enriched_clusters.json').catch(() => null),
       fetch('data/cluster_context.json').catch(() => null),
@@ -75,10 +78,8 @@ async function loadData() {
       // console.log('Neglect data loaded:', window.neglectData);
     }
 
-    if (timelineRes && timelineRes.ok) {
-      window.therapeuticTimeline = await timelineRes.json();
-      // console.log('Timeline data loaded:', window.therapeuticTimeline.total_records, 'approvals');
-    }
+    // Note: Timeline data is now loaded lazily by therapeutic-timeline.js
+    // See timeline-data-loader.js for on-demand decade loading
 
     if (fdaPharmRes && fdaPharmRes.ok) {
       window.fdaPharmClasses = await fdaPharmRes.json();
@@ -129,9 +130,6 @@ function initializeFilters() {
       // Update active state
       filterButtons.forEach((btn) => btn.classList.remove('active'));
       button.classList.add('active');
-
-      // Update filter
-      currentFilter = button.dataset.category;
 
       // Re-render with filter
       renderClusters();
@@ -361,86 +359,6 @@ function renderFDAClusters() {
     .join('');
 
   container.innerHTML = html;
-}
-
-/**
- * Render top 10 individual diseases by approval count as horizontal bar chart
- */
-function renderTechCategories() {
-  const container = document.getElementById('top-diseases-chart');
-
-  if (!container) {
-    return;
-  }
-
-  if (!window.neglectData) {
-    container.innerHTML = '<div class="loading">No disease data available</div>';
-    return;
-  }
-
-  // Collect all individual diseases (neglected + common)
-  const allDiseases = [];
-
-  // Add neglected diseases
-  if (window.neglectData.neglected_diseases) {
-    Object.entries(window.neglectData.neglected_diseases).forEach(([name, data]) => {
-      allDiseases.push({
-        name,
-        total: data.total_approvals || 0,
-        category: 'neglected',
-      });
-    });
-  }
-
-  // Add common diseases
-  if (window.neglectData.common_diseases) {
-    Object.entries(window.neglectData.common_diseases).forEach(([name, data]) => {
-      allDiseases.push({
-        name,
-        total: data.total_approvals || 0,
-        category: 'common',
-      });
-    });
-  }
-
-  // Sort by total approvals (descending) and take top 10
-  const top10 = allDiseases.sort((a, b) => b.total - a.total).slice(0, 10);
-
-  const maxCount = Math.max(...top10.map((d) => d.total));
-
-  let html = `
-        <div class="patterns-section">
-            <div class="category-bars">
-    `;
-
-  top10.forEach((disease) => {
-    const percentage = maxCount > 0 ? (disease.total / maxCount) * 100 : 0;
-    const barColor = '#3498db';
-
-    html += `
-            <div class="category-bar-row">
-                <div class="category-label">${disease.name}</div>
-                <div class="category-bar-container">
-                    <div class="category-bar-fill" style="width: ${percentage}%; background: ${barColor};"></div>
-                    <div class="category-bar-value">${disease.total.toLocaleString()}</div>
-                </div>
-            </div>
-        `;
-  });
-
-  html += `
-            </div>
-        </div>
-    `;
-
-  container.innerHTML = html;
-}
-
-/**
- * Toggle cluster card expansion
- */
-function toggleCluster(element) {
-  element.classList.toggle('expanded');
 }
 
 /**

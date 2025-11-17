@@ -3,6 +3,7 @@
  * Initializes all modules and coordinates the visualization
  */
 
+import { loadD3WithTopoJSON } from '/shared/utils/d3-loader.js';
 import { DataLoader } from './dataLoader.js';
 import { MapRenderer } from './map.js';
 import { ScrollHandler } from './scrollHandler.js';
@@ -26,6 +27,12 @@ class COVIDStoryApp {
     try {
       // Show loading screen
       this.showLoading(true);
+
+      // Step 0: Load D3.js and TopoJSON libraries
+      // console.log('\n0. Loading visualization libraries...');
+      const { d3, topojson } = await loadD3WithTopoJSON();
+      window.d3 = d3; // Make available globally
+      window.topojson = topojson; // Make available globally
 
       // Step 1: Load data
       // console.log('\n1. Loading data...');
@@ -74,13 +81,13 @@ class COVIDStoryApp {
 
   /**
    * Handle scene change
-   * @param {Object} scene - Scene object
-   * @param {number} index - Scene index
+   * @param {Object} _scene - Scene object
+   * @param {number} _index - Scene index
    */
-  onSceneChange(scene, index) {
-    // console.log(`Scene ${index}: ${scene.title} (${scene.date})`);
+  onSceneChange(_scene, _index) {
+    // console.log(`Scene ${_index}: ${_scene.title} (${_scene.date})`);
     // Optional: Track analytics, update URL hash, etc.
-    // window.location.hash = `scene-${index}`;
+    // window.location.hash = `scene-${_index}`;
   }
 
   /**
@@ -135,8 +142,6 @@ class COVIDStoryApp {
     const endDate = new Date('2024-01-01');
     const currentDate = new Date(startDate);
 
-    let monthCount = 0;
-
     while (currentDate <= endDate) {
       const month = document.createElement('div');
       month.className = 'timeline-month';
@@ -157,10 +162,7 @@ class COVIDStoryApp {
 
       // Move to next month
       currentDate.setMonth(currentDate.getMonth() + 1);
-      monthCount++;
     }
-
-    // console.log(`✓ Generated ${monthCount} monthly timeline markers`);
   }
 
   /**

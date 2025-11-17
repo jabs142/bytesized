@@ -355,15 +355,14 @@
       </div>
     </footer>
 
-    <!-- D3.js for interactive visualizations -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- D3.js is now lazy-loaded by app.js for better performance -->
 
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
     <script src="js/statistical-viz.js"></script>
     <script src="js/timeline-viz.js"></script>
     <script src="js/unique-insights.js"></script>
     <script src="js/therapeutic-peaks-viz.js"></script>
     <script src="js/decade-breakdown-viz.js"></script>
-    <script src="js/therapeutic-timeline.js"></script>
+    <script src="js/therapeutic-timeline.js" type="module"></script>
   </body>
 </html>

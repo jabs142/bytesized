@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- D3.js is now lazy-loaded by network.js for better performance -->
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Shared Styles & Components -->
@@ -356,7 +356,7 @@
     ></div>
 
     <script src="js/app.js"></script>
-    <script src="js/network.js"></script>
+    <script type="module" src="js/network.js"></script>
     <script src="js/symptom-checker.js"></script>
   </body>
 </html>

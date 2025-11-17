@@ -1,0 +1,89 @@
+{
+  "symptom_extraction": {
+    "prompt_type": "extract_symptoms",
+    "response": {
+      "symptoms": [
+        {
+          "symptom": "anxiety",
+          "category": "mental",
+          "severity": "moderate",
+          "context": "increased anxiety after starting hormonal birth control"
+        },
+        {
+          "symptom": "mood swings",
+          "category": "mental",
+          "severity": "moderate",
+          "context": "experiencing mood swings on birth control"
+        },
+        {
+          "symptom": "headaches",
+          "category": "physical",
+          "severity": "moderate",
+          "context": "daily headaches since starting medication"
+        }
+      ],
+      "confidence": 0.92
+    }
+  },
+  "side_effect_validation": {
+    "prompt_type": "validate_side_effect",
+    "response": {
+      "is_valid_side_effect": true,
+      "medical_term": "anxiety disorder",
+      "icd_code": "F41.9",
+      "confidence": 0.88,
+      "reasoning": "Anxiety is a documented side effect of hormonal contraceptives, appearing in clinical literature and FDA documentation."
+    }
+  },
+  "pcos_surprise_score": {
+    "prompt_type": "calculate_surprise",
+    "response": {
+      "symptom": "fatigue",
+      "reddit_frequency": 0.73,
+      "pubmed_papers": 45,
+      "surprise_score": 0.58,
+      "classification": "somewhat_surprising",
+      "reasoning": "High patient reports but moderate research coverage"
+    }
+  },
+  "symptom_categorization": {
+    "prompt_type": "categorize_symptom",
+    "response": {
+      "symptom": "brain fog",
+      "category": "cognitive",
+      "subcategory": "mental_clarity",
+      "is_physical": false,
+      "is_mental": true,
+      "confidence": 0.95
+    }
+  },
+  "pubmed_relevance": {
+    "prompt_type": "assess_relevance",
+    "response": {
+      "is_relevant": true,
+      "relevance_score": 0.89,
+      "key_findings": [
+        "Study confirms association between PCOS and fatigue",
+        "73% prevalence rate reported",
+        "Associated with insulin resistance and depression"
+      ],
+      "mesh_terms_match": ["Polycystic Ovary Syndrome", "Fatigue"]
+    }
+  },
+  "error_response": {
+    "prompt_type": "error_test",
+    "response": {
+      "error": "Invalid API key",
+      "code": "authentication_error",
+      "message": "The API key provided is invalid or has expired"
+    }
+  },
+  "empty_extraction": {
+    "prompt_type": "extract_symptoms",
+    "response": {
+      "symptoms": [],
+      "confidence": 0.0,
+      "note": "No clear symptoms mentioned in the provided text"
+    }
+  }
+}
