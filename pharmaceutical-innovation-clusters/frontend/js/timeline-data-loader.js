@@ -11,7 +11,7 @@ let summaryData = null;
  * Load timeline summary (metadata only)
  * @returns {Promise<Object>} Summary data with decade list
  */
-export async function loadTimelineSummary() {
+async function loadTimelineSummary() {
   if (summaryData) {
     return summaryData;
   }
@@ -36,7 +36,7 @@ export async function loadTimelineSummary() {
  * @param {number} decade - Decade year (e.g., 1990)
  * @returns {Promise<Object>} Decade data with approvals
  */
-export async function loadDecadeData(decade) {
+async function loadDecadeData(decade) {
   // Check cache first
   if (decadeCache.has(decade)) {
     return decadeCache.get(decade);
@@ -64,7 +64,7 @@ export async function loadDecadeData(decade) {
  * Preload adjacent decades for smooth navigation
  * @param {number} currentDecade - Current decade being viewed
  */
-export async function preloadAdjacentDecades(currentDecade) {
+async function preloadAdjacentDecades(currentDecade) {
   const prevDecade = currentDecade - 10;
   const nextDecade = currentDecade + 10;
 
@@ -84,7 +84,7 @@ export async function preloadAdjacentDecades(currentDecade) {
 /**
  * Clear the decade cache (useful for memory management)
  */
-export function clearDecadeCache() {
+function clearDecadeCache() {
   decadeCache.clear();
 }
 
@@ -92,9 +92,16 @@ export function clearDecadeCache() {
  * Get cache statistics
  * @returns {Object} Cache info
  */
-export function getCacheInfo() {
+function getCacheInfo() {
   return {
     cachedDecades: Array.from(decadeCache.keys()).sort(),
     cacheSize: decadeCache.size,
   };
 }
+
+// Explicitly expose functions as global for use by other scripts
+window.loadTimelineSummary = loadTimelineSummary;
+window.loadDecadeData = loadDecadeData;
+window.preloadAdjacentDecades = preloadAdjacentDecades;
+window.clearDecadeCache = clearDecadeCache;
+window.getCacheInfo = getCacheInfo;

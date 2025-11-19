@@ -3,12 +3,7 @@
  * Scatter plot showing individual drug approvals across time within decades
  */
 
-// Import lazy loader for decade data
-import {
-  loadTimelineSummary,
-  loadDecadeData,
-  preloadAdjacentDecades,
-} from './timeline-data-loader.js';
+/* global loadTimelineSummary, loadDecadeData, preloadAdjacentDecades */
 
 // Color palette for therapeutic areas (pastel palette for better aesthetics)
 const THERAPEUTIC_COLORS = {
