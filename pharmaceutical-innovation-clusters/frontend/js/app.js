@@ -3,12 +3,39 @@
  * Handles data loading, filtering, and rendering
  */
 
-// Import D3 lazy loader
-import { loadD3 } from '/shared/utils/d3-loader.js';
-
 let clusterData = null;
 let statsData = null;
 let vizData = null;
+
+/**
+ * Load D3.js library dynamically (inline version to avoid ES6 module issues)
+ */
+async function loadD3() {
+  // Check if D3 is already available
+  if (typeof window.d3 !== 'undefined') {
+    return Promise.resolve(window.d3);
+  }
+
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://d3js.org/d3.v7.min.js';
+    script.async = true;
+
+    script.onload = () => {
+      if (typeof window.d3 !== 'undefined') {
+        resolve(window.d3);
+      } else {
+        reject(new Error('D3.js loaded but not available'));
+      }
+    };
+
+    script.onerror = () => {
+      reject(new Error('Failed to load D3.js from CDN'));
+    };
+
+    document.head.appendChild(script);
+  });
+}
 
 /**
  * Convert markdown bold syntax to HTML
