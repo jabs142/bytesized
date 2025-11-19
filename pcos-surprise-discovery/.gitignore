@@ -18,6 +18,12 @@ ENV/
 # Data (don't commit raw Reddit data)
 data/raw/*.json
 data/interim/*.json
+data/processed/*.json
+data/validated/*.json
+
+# Exception: Allow frontend data files for deployment
+!frontend/data/*.json
+!frontend/data/**/*.json
 
 # IDEs
 .vscode/

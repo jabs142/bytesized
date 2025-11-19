@@ -38,6 +38,25 @@ document.addEventListener('DOMContentLoaded', async () => {
  */
 async function loadData() {
   try {
+    // Track failed files for better error reporting
+    const failedFiles = [];
+
+    // Helper function to fetch with error tracking
+    const fetchWithTracking = async (url, isRequired = false) => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        return response;
+      } catch (error) {
+        const errorMsg = `Failed to load ${url}: ${error.message}`;
+        console.error(errorMsg);
+        failedFiles.push({ file: url, error: error.message, required: isRequired });
+        return null;
+      }
+    };
+
     // Load all pharmaceutical data files in parallel
     const [
       clustersRes,
@@ -48,60 +67,52 @@ async function loadData() {
       enrichedClustersRes,
       clusterContextRes,
     ] = await Promise.all([
-      fetch('data/clusters.json'),
-      fetch('data/statistical_results.json').catch(() => null),
-      fetch('data/therapeutic_trends.json').catch(() => null),
-      fetch('data/neglected_diseases.json').catch(() => null),
-      fetch('data/fda_pharm_classes.json').catch(() => null),
-      fetch('data/enriched_clusters.json').catch(() => null),
-      fetch('data/cluster_context.json').catch(() => null),
+      fetchWithTracking('data/clusters.json', true),
+      fetchWithTracking('data/statistical_results.json', false),
+      fetchWithTracking('data/therapeutic_trends.json', false),
+      fetchWithTracking('data/neglected_diseases.json', false),
+      fetchWithTracking('data/fda_pharm_classes.json', false),
+      fetchWithTracking('data/enriched_clusters.json', false),
+      fetchWithTracking('data/cluster_context.json', false),
     ]);
 
-    // Parse responses
-    if (clustersRes.ok) {
+    // Parse responses (only if fetch succeeded)
+    if (clustersRes) {
       clusterData = await clustersRes.json();
-      // console.log('Cluster data loaded');
+      // console.log('✓ Cluster data loaded');
     }
 
-    if (statsRes && statsRes.ok) {
+    if (statsRes) {
       statsData = await statsRes.json();
-      // console.log('Statistical data loaded');
+      // console.log('✓ Statistical data loaded');
     }
 
-    if (therapeuticRes && therapeuticRes.ok) {
+    if (therapeuticRes) {
       window.therapeuticData = await therapeuticRes.json();
-      // console.log('Therapeutic data loaded');
+      // console.log('✓ Therapeutic data loaded');
     }
 
-    if (neglectRes && neglectRes.ok) {
+    if (neglectRes) {
       window.neglectData = await neglectRes.json();
-      // console.log('Neglect data loaded:', window.neglectData);
+      // console.log('✓ Neglect data loaded');
     }
 
     // Note: Timeline data is now loaded lazily by therapeutic-timeline.js
     // See timeline-data-loader.js for on-demand decade loading
 
-    if (fdaPharmRes && fdaPharmRes.ok) {
+    if (fdaPharmRes) {
       window.fdaPharmClasses = await fdaPharmRes.json();
-      // console.log(
-      //   'FDA Pharm Classes loaded:',
-      //   window.fdaPharmClasses.total_pharm_classes,
-      //   'classes'
-      // );
+      // console.log('✓ FDA Pharm Classes loaded');
     }
 
-    if (enrichedClustersRes && enrichedClustersRes.ok) {
+    if (enrichedClustersRes) {
       window.enrichedClusters = await enrichedClustersRes.json();
-      // console.log(
-      //   'Enriched clusters loaded:',
-      //   window.enrichedClusters.clusters?.length || 0,
-      //   'clusters'
-      // );
+      // console.log('✓ Enriched clusters loaded');
     }
 
-    if (clusterContextRes && clusterContextRes.ok) {
+    if (clusterContextRes) {
       window.clusterContext = await clusterContextRes.json();
-      // console.log('Cluster context loaded');
+      // console.log('✓ Cluster context loaded');
     }
 
     // Use clusters.json for visualization if available
@@ -109,13 +120,27 @@ async function loadData() {
       vizData = clusterData;
     }
 
+    // Report any failed files
+    if (failedFiles.length > 0) {
+      console.warn(`${failedFiles.length} file(s) failed to load:`, failedFiles);
+
+      // Check if any required files failed
+      const requiredFailures = failedFiles.filter((f) => f.required);
+      if (requiredFailures.length > 0) {
+        const fileList = requiredFailures.map((f) => f.file).join(', ');
+        throw new Error(`Required data files missing: ${fileList}`);
+      }
+    }
+
     // If none loaded, show error
     if (!clusterData && !statsData) {
-      throw new Error('No data files found');
+      throw new Error('No data files found. Please run the analysis pipeline to generate data.');
     }
   } catch (error) {
     console.error('Error loading data:', error);
-    showError('Failed to load data. Please run the analysis pipeline first.');
+    const errorMessage =
+      error.message || 'Failed to load data. Please run the analysis pipeline first.';
+    showError(errorMessage);
   }
 }
 

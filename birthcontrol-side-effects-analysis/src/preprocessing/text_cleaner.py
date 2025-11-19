@@ -38,7 +38,7 @@ class TextCleaner:
 
         # Phone number patterns (US format, can be extended)
         self.phone_pattern = re.compile(
-            r'\b(?:\+?1[-.]?)?\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})\b'
+            r'\b(?:\+?1[-.\s]?)?\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})\b'
         )
 
         # Social Security Number pattern (XXX-XX-XXXX)
@@ -53,7 +53,7 @@ class TextCleaner:
 
         # Reddit username mentions (u/username)
         self.reddit_user_pattern = re.compile(
-            r'\b/?u/[A-Za-z0-9_-]+'
+            r'/?u/[A-Za-z0-9_-]+'
         )
 
         # Subreddit mentions (r/subreddit) - keep these, they're topic indicators

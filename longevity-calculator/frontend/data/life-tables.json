@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "source": "CDC WONDER, United States Life Tables 2019",
+    "year": 2019,
+    "country": "United States",
+    "description": "Age-specific mortality rates and life expectancy for US population"
+  },
+  "male": {
+    "life_expectancy_at_birth": 76.3,
+    "mortality_rates": {
+      "0": 0.005886,
+      "1": 0.000424,
+      "5": 0.000143,
+      "10": 0.000132,
+      "15": 0.000455,
+      "20": 0.000941,
+      "25": 0.001089,
+      "30": 0.001244,
+      "35": 0.001547,
+      "40": 0.002134,
+      "45": 0.003281,
+      "50": 0.005117,
+      "55": 0.007947,
+      "60": 0.012273,
+      "65": 0.018854,
+      "70": 0.029482,
+      "75": 0.046824,
+      "80": 0.075543,
+      "85": 0.122688,
+      "90": 0.195846,
+      "95": 0.291667,
+      "100": 0.400000
+    }
+  },
+  "female": {
+    "life_expectancy_at_birth": 81.4,
+    "mortality_rates": {
+      "0": 0.004899,
+      "1": 0.000361,
+      "5": 0.000110,
+      "10": 0.000095,
+      "15": 0.000257,
+      "20": 0.000381,
+      "25": 0.000473,
+      "30": 0.000616,
+      "35": 0.000888,
+      "40": 0.001348,
+      "45": 0.002180,
+      "50": 0.003486,
+      "55": 0.005508,
+      "60": 0.008530,
+      "65": 0.013193,
+      "70": 0.020962,
+      "75": 0.033933,
+      "80": 0.056298,
+      "85": 0.095256,
+      "90": 0.161290,
+      "95": 0.254237,
+      "100": 0.370370
+    }
+  },
+  "gompertz_parameters": {
+    "description": "Parameters for Gompertz mortality model: mortality(age) = alpha * exp(beta * age)",
+    "male": {
+      "alpha": 0.0001,
+      "beta": 0.09
+    },
+    "female": {
+      "alpha": 0.00005,
+      "beta": 0.095
+    }
+  },
+  "location_adjustments": {
+    "description": "Life expectancy adjustments by country (years relative to US baseline)",
+    "United States": 0.0,
+    "Japan": 5.7,
+    "Switzerland": 4.8,
+    "Singapore": 4.6,
+    "Australia": 3.7,
+    "Spain": 3.4,
+    "Italy": 3.0,
+    "Canada": 2.7,
+    "France": 2.3,
+    "United Kingdom": 1.2,
+    "Germany": 1.0,
+    "China": -0.4,
+    "Mexico": -1.9,
+    "Russia": -6.1,
+    "India": -7.7,
+    "Nigeria": -24.3,
+    "Other": 0.0
+  }
+}

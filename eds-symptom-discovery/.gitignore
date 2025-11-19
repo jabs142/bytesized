@@ -23,6 +23,12 @@ credentials.json
 data/raw/*.json
 data/research/*.json
 data/validated/*.json
+data/processed/*.json
+data/analysis/*.json
+
+# Exception: Allow frontend data files for deployment
+!frontend/data/*.json
+!frontend/data/**/*.json
 
 # IDE
 .vscode/

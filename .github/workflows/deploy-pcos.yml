@@ -1,0 +1,99 @@
+name: Deploy PCOS Surprise Discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pcos-surprise-discovery/**'
+      - '.github/workflows/deploy-pcos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-pcos"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('pcos-surprise-discovery/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        working-directory: ./pcos-surprise-discovery
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run analysis pipeline
+        working-directory: ./pcos-surprise-discovery
+        continue-on-error: true
+        run: |
+          # Run the main analysis steps from run_pipeline.sh
+          echo "Running Reddit data collection..."
+          python src/data_collection/reddit_collector.py || echo "Reddit collection skipped"
+
+          echo "Running official criteria extraction..."
+          python src/data_collection/extract_official_criteria.py || echo "Criteria extraction skipped"
+
+          echo "Running symptom extraction..."
+          python src/analysis/llm_symptom_extractor.py || echo "Symptom extraction skipped"
+
+          echo "Running solution extraction..."
+          python src/analysis/llm_solution_extractor.py || echo "Solution extraction skipped"
+
+          echo "Running symptom aggregation..."
+          python src/analysis/symptom_aggregator.py || echo "Symptom aggregation skipped"
+
+          echo "Running top symptom selection..."
+          python src/analysis/top_symptom_selector.py || echo "Top symptom selection skipped"
+
+          echo "Running PubMed validation..."
+          python src/validation/pubmed_validator.py || echo "PubMed validation skipped"
+
+          echo "Running surprise score calculation..."
+          python src/validation/surprise_score_calculator.py || echo "Surprise score calculation skipped"
+
+      - name: Ensure frontend data exists
+        working-directory: ./pcos-surprise-discovery
+        run: |
+          # Frontend data should already exist from previous runs
+          echo "Frontend data files:"
+          ls -lh frontend/data/*.json 2>/dev/null || echo "No data files found - using existing committed data"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './pcos-surprise-discovery/frontend'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

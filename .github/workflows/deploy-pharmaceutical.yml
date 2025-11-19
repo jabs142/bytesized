@@ -1,0 +1,35 @@
+name: Deploy Pharmaceutical Innovation Clusters
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pharmaceutical-innovation-clusters/**'
+      - '.github/workflows/deploy-pharmaceutical.yml'
+      - '.github/workflows/reusable-python-data-pipeline.yml'
+  workflow_dispatch:  # Allow manual triggering
+
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages-pharmaceutical"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable-python-data-pipeline.yml
+    with:
+      project_name: 'pharmaceutical-innovation-clusters'
+      analysis_script: 'run_complete_analysis.py'
+      post_processing_scripts: 'optimize_timeline_data.py'
+      required_data_files: 'frontend/data/clusters.json,frontend/data/statistical_results.json,frontend/data/therapeutic_timeline_summary.json,frontend/data/decades/1940s.json,frontend/data/decades/1950s.json,frontend/data/decades/1960s.json,frontend/data/decades/1970s.json,frontend/data/decades/1980s.json,frontend/data/decades/1990s.json,frontend/data/decades/2000s.json,frontend/data/decades/2010s.json,frontend/data/decades/2020s.json'
+      upload_artifact_path: 'frontend'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

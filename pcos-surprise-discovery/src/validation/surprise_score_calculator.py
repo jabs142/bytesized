@@ -39,22 +39,24 @@ class SurpriseScoreCalculator:
         """
         # High awareness (commonly known PCOS symptoms)
         high_awareness_keywords = [
-            "irregular", "period", "facial_hair", "hirsutism", "acne",
-            "weight_gain", "infertility", "ovarian", "cyst"
+            "irregular", "period", "facial", "hair", "hirsutism", "acne",
+            "weight", "gain", "infertility", "ovarian", "cyst"
         ]
 
         # Check if symptom contains high awareness keywords
-        symptom_lower = symptom.lower()
-        if any(keyword in symptom_lower for keyword in high_awareness_keywords):
+        # Normalize to handle underscores and spaces
+        symptom_normalized = symptom.lower().replace("_", " ")
+
+        if any(keyword in symptom_normalized for keyword in high_awareness_keywords):
             return "high"
 
         # Low awareness (surprising connections)
         low_awareness_keywords = [
-            "sleep", "apnea", "skin_tag", "depression", "anxiety",
-            "brain_fog", "fatigue", "migraine", "headache"
+            "sleep", "apnea", "skin tag", "depression", "anxiety",
+            "brain fog", "fatigue", "migraine", "headache"
         ]
 
-        if any(keyword in symptom_lower for keyword in low_awareness_keywords):
+        if any(keyword in symptom_normalized for keyword in low_awareness_keywords):
             return "low"
 
         return "medium"
@@ -118,13 +120,16 @@ class SurpriseScoreCalculator:
             tier_description = "Known PCOS symptom or expected association"
 
         # Determine evidence tier
+        posts_appearing_in = symptom_data.get("posts_appearing_in", 0)
+        mentions = symptom_data.get("mentions", 0)
+
         if in_criteria:
             tier = 1
             tier_label = "Tier 1: Diagnostic"
         elif has_research and paper_count >= 5:
             tier = 2
             tier_label = "Tier 2: Research-backed"
-        elif symptom_data["posts_appearing_in"] >= 25:
+        elif posts_appearing_in >= 25:
             tier = 3
             tier_label = "Tier 3: Strong patient signal"
         else:
@@ -140,8 +145,8 @@ class SurpriseScoreCalculator:
             "tier_description": tier_description,
             "evidence": {
                 "in_criteria": in_criteria,
-                "reddit_mentions": symptom_data["mentions"],
-                "reddit_posts": symptom_data["posts_appearing_in"],
+                "reddit_mentions": mentions,
+                "reddit_posts": posts_appearing_in,
                 "reddit_frequency": round(reddit_frequency, 3),
                 "surprise_signals": surprise_signals,
                 "pubmed_papers": paper_count,

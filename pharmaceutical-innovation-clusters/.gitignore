@@ -22,8 +22,9 @@ data/validated/
 
 # JSON files - ignore all except frontend data
 *.json
-# Exception: Allow frontend data files to be served by live-server
+# Exception: Allow frontend data files to be served by live-server (including subdirectories)
 !frontend/data/*.json
+!frontend/data/**/*.json
 
 # Outputs
 outputs/

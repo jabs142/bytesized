@@ -102,5 +102,18 @@
     "url": "./privilege/frontend/index.html",
     "status": "available",
     "wip": true
+  },
+  {
+    "id": "longevity-calculator",
+    "title": "Memento Mori",
+    "subtitle": "Life Expectancy Calculator",
+    "color": "#8B7355",
+    "icon": "⏳",
+    "pattern": "timeline",
+    "labelText": "Life",
+    "description": "Calculate your life expectancy and visualize time remaining",
+    "url": "./longevity-calculator/frontend/index.html",
+    "status": "available",
+    "wip": true
   }
 ]

@@ -16,13 +16,19 @@ export async function loadTimelineSummary() {
     return summaryData;
   }
 
-  const response = await fetch('data/therapeutic_timeline_summary.json');
-  if (!response.ok) {
-    throw new Error(`Failed to load timeline summary: ${response.statusText}`);
-  }
+  try {
+    const response = await fetch('data/therapeutic_timeline_summary.json');
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
 
-  summaryData = await response.json();
-  return summaryData;
+    summaryData = await response.json();
+    // Timeline summary loaded successfully
+    return summaryData;
+  } catch (error) {
+    console.error('Failed to load timeline summary:', error.message);
+    throw error;
+  }
 }
 
 /**
@@ -36,16 +42,22 @@ export async function loadDecadeData(decade) {
     return decadeCache.get(decade);
   }
 
-  // Load from file
-  const response = await fetch(`data/decades/${decade}s.json`);
-  if (!response.ok) {
-    throw new Error(`Failed to load decade ${decade}s: ${response.statusText}`);
+  try {
+    // Load from file
+    const response = await fetch(`data/decades/${decade}s.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    decadeCache.set(decade, data);
+    // Decade data loaded successfully
+
+    return data;
+  } catch (error) {
+    console.error(`Failed to load decade ${decade}s:`, error.message);
+    throw error;
   }
-
-  const data = await response.json();
-  decadeCache.set(decade, data);
-
-  return data;
 }
 
 /**
@@ -58,10 +70,14 @@ export async function preloadAdjacentDecades(currentDecade) {
 
   // Preload in background (don't await)
   if (!decadeCache.has(prevDecade)) {
-    loadDecadeData(prevDecade).catch(() => {}); // Ignore errors for preloading
+    loadDecadeData(prevDecade).catch((error) => {
+      console.warn(`Preload failed for decade ${prevDecade}s:`, error.message);
+    });
   }
   if (!decadeCache.has(nextDecade)) {
-    loadDecadeData(nextDecade).catch(() => {}); // Ignore errors for preloading
+    loadDecadeData(nextDecade).catch((error) => {
+      console.warn(`Preload failed for decade ${nextDecade}s:`, error.message);
+    });
   }
 }
 

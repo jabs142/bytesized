@@ -42,11 +42,17 @@ data/processed/*.csv
 data/interim/*.json
 data/interim/*.jsonl
 data/interim/*.csv
+data/analysis/*.json
+data/validated/*.json
 
 # Keep directory structure but ignore data
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/interim/.gitkeep
+
+# Exception: Allow frontend data files for deployment
+!frontend/data/*.json
+!frontend/data/**/*.json
 
 # Outputs
 outputs/visualizations/*

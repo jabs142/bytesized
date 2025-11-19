@@ -1,0 +1,114 @@
+name: Deploy Birth Control Side Effects Analysis
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'birthcontrol-side-effects-analysis/**'
+      - '.github/workflows/deploy-birthcontrol.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-birthcontrol"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('birthcontrol-side-effects-analysis/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        working-directory: ./birthcontrol-side-effects-analysis
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run analysis pipeline
+        working-directory: ./birthcontrol-side-effects-analysis
+        run: |
+          # Run the main analysis steps from run_full_pipeline.sh
+          echo "Running LLM side effect extraction..."
+          python src/analysis/llm_side_effect_extractor.py || echo "LLM extraction skipped (may require pre-existing data)"
+
+          echo "Running PubMed validation..."
+          python src/validation/evidence_validator.py || echo "Evidence validation skipped"
+
+          echo "Running relevance filtering..."
+          python src/validation/pubmed_relevance_checker.py || echo "Relevance checking skipped"
+
+          echo "Running comment validation..."
+          python src/analysis/llm_comment_validator.py || echo "Comment validation skipped"
+
+      - name: Copy data to frontend
+        working-directory: ./birthcontrol-side-effects-analysis
+        run: |
+          mkdir -p frontend/data
+
+          # Copy validated database (with relevance filtering)
+          if [ -f "data/validated/validated_side_effects_database_filtered.json" ]; then
+            cp data/validated/validated_side_effects_database_filtered.json frontend/data/validated_side_effects_database.json
+            echo "✓ Copied relevance-filtered database"
+          elif [ -f "data/validated/validated_side_effects_database.json" ]; then
+            cp data/validated/validated_side_effects_database.json frontend/data/
+            echo "✓ Copied validated database"
+          fi
+
+          # Copy LLM stats
+          if [ -f "data/analysis/llm_side_effect_stats.json" ]; then
+            cp data/analysis/llm_side_effect_stats.json frontend/data/
+            echo "✓ Copied LLM stats"
+          fi
+
+          # Copy comment validations
+          if [ -f "data/analysis/comment_validations.json" ]; then
+            cp data/analysis/comment_validations.json frontend/data/
+            echo "✓ Copied comment validations"
+          fi
+
+          # Copy symptom validation stats
+          if [ -f "data/analysis/symptom_validation_stats.json" ]; then
+            cp data/analysis/symptom_validation_stats.json frontend/data/
+            echo "✓ Copied symptom validation stats"
+          fi
+
+          echo "Frontend data files:"
+          ls -lh frontend/data/*.json 2>/dev/null || echo "No data files found"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './birthcontrol-side-effects-analysis/frontend'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

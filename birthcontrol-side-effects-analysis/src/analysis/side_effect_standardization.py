@@ -67,14 +67,15 @@ def standardize_side_effect(side_effect_name: str) -> str:
     Returns:
         The standardized side effect name
     """
-    # First check if it needs standardization
+    # First check exact match
     if side_effect_name in STANDARDIZATION_RULES:
         return STANDARDIZATION_RULES[side_effect_name]
 
-    # Also check lowercase version
-    lower = side_effect_name.lower()
-    if lower in STANDARDIZATION_RULES:
-        return STANDARDIZATION_RULES[lower]
+    # Check case-insensitive match against all keys
+    lower_input = side_effect_name.lower()
+    for key, value in STANDARDIZATION_RULES.items():
+        if key.lower() == lower_input:
+            return value
 
     # Return original if no standardization rule found
     return side_effect_name

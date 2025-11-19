@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "source": "Li Y, et al. Impact of Healthy Lifestyle Factors on Life Expectancies in the US Population. Circulation. 2018;138(4):345-355.",
+    "description": "Hazard ratios for all-cause mortality based on lifestyle factors",
+    "note": "Lower hazard ratio = lower mortality risk = longer life expectancy"
+  },
+  "factors": {
+    "smoking": {
+      "label": "Smoking Status",
+      "description": "Current smoking status and history",
+      "levels": {
+        "never": {
+          "label": "Never Smoker",
+          "hazard_ratio": 1.0,
+          "description": "Never smoked or less than 100 cigarettes lifetime"
+        },
+        "former": {
+          "label": "Former Smoker",
+          "hazard_ratio": 1.3,
+          "description": "Previously smoked but quit"
+        },
+        "current": {
+          "label": "Current Smoker",
+          "hazard_ratio": 2.2,
+          "description": "Currently smoking"
+        }
+      }
+    },
+    "exercise": {
+      "label": "Physical Activity",
+      "description": "Minutes of moderate-to-vigorous physical activity per week",
+      "levels": {
+        "high": {
+          "label": "High (150+ min/week)",
+          "hazard_ratio": 1.0,
+          "description": "≥150 minutes moderate or ≥75 minutes vigorous activity per week"
+        },
+        "moderate": {
+          "label": "Moderate (75-150 min/week)",
+          "hazard_ratio": 1.15,
+          "description": "75-150 minutes moderate activity per week"
+        },
+        "low": {
+          "label": "Low (30-75 min/week)",
+          "hazard_ratio": 1.35,
+          "description": "30-75 minutes moderate activity per week"
+        },
+        "sedentary": {
+          "label": "Sedentary (<30 min/week)",
+          "hazard_ratio": 1.6,
+          "description": "<30 minutes moderate activity per week"
+        }
+      }
+    },
+    "bmi": {
+      "label": "Body Mass Index (BMI)",
+      "description": "Weight in kg / (height in meters)²",
+      "levels": {
+        "normal": {
+          "label": "Normal (18.5-24.9)",
+          "hazard_ratio": 1.0,
+          "description": "BMI between 18.5 and 24.9"
+        },
+        "overweight": {
+          "label": "Overweight (25-29.9)",
+          "hazard_ratio": 1.15,
+          "description": "BMI between 25 and 29.9"
+        },
+        "obese": {
+          "label": "Obese (30+)",
+          "hazard_ratio": 1.45,
+          "description": "BMI 30 or higher"
+        },
+        "underweight": {
+          "label": "Underweight (<18.5)",
+          "hazard_ratio": 1.35,
+          "description": "BMI less than 18.5"
+        }
+      }
+    },
+    "sleep": {
+      "label": "Sleep Duration",
+      "description": "Average hours of sleep per night",
+      "levels": {
+        "optimal": {
+          "label": "Optimal (7-8 hours)",
+          "hazard_ratio": 1.0,
+          "description": "7-8 hours of sleep per night"
+        },
+        "short": {
+          "label": "Short (6-7 hours)",
+          "hazard_ratio": 1.12,
+          "description": "6-7 hours of sleep per night"
+        },
+        "very_short": {
+          "label": "Very Short (<6 hours)",
+          "hazard_ratio": 1.25,
+          "description": "Less than 6 hours per night"
+        },
+        "long": {
+          "label": "Long (9+ hours)",
+          "hazard_ratio": 1.18,
+          "description": "9 or more hours per night"
+        }
+      }
+    },
+    "diet": {
+      "label": "Diet Quality",
+      "description": "Overall diet quality based on dietary guidelines",
+      "levels": {
+        "excellent": {
+          "label": "Excellent",
+          "hazard_ratio": 1.0,
+          "description": "High intake of fruits, vegetables, whole grains, lean proteins"
+        },
+        "good": {
+          "label": "Good",
+          "hazard_ratio": 1.08,
+          "description": "Moderate adherence to dietary guidelines"
+        },
+        "fair": {
+          "label": "Fair",
+          "hazard_ratio": 1.18,
+          "description": "Some adherence to dietary guidelines"
+        },
+        "poor": {
+          "label": "Poor",
+          "hazard_ratio": 1.35,
+          "description": "Low adherence to dietary guidelines, high processed foods"
+        }
+      }
+    },
+    "alcohol": {
+      "label": "Alcohol Consumption",
+      "description": "Average alcoholic drinks per day",
+      "levels": {
+        "moderate": {
+          "label": "Moderate (0-1 drinks/day)",
+          "hazard_ratio": 1.0,
+          "description": "0-1 drinks per day for women, 0-2 for men"
+        },
+        "light": {
+          "label": "Light (1-2 drinks/day)",
+          "hazard_ratio": 1.05,
+          "description": "1-2 drinks per day"
+        },
+        "heavy": {
+          "label": "Heavy (3+ drinks/day)",
+          "hazard_ratio": 1.4,
+          "description": "3 or more drinks per day"
+        },
+        "none": {
+          "label": "None (abstainer)",
+          "hazard_ratio": 1.08,
+          "description": "No alcohol consumption"
+        }
+      }
+    }
+  },
+  "optimal_lifestyle": {
+    "description": "All optimal lifestyle factors combined",
+    "years_gained": 14.0,
+    "note": "Individuals with all 5 optimal factors (never smoking, high activity, normal BMI, optimal sleep, excellent diet, moderate alcohol) live approximately 14 years longer"
+  }
+}

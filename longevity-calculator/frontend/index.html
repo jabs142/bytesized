@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memento Mori - Life Expectancy Calculator - ByteSized</title>
+    <meta
+      name="description"
+      content="Calculate your life expectancy based on demographics and lifestyle. Visualize your time remaining and explore habit impacts."
+    />
+
+    <!-- Google Fonts - Press Start 2P for authentic 8-bit feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Shared Styles & Components -->
+    <link rel="stylesheet" href="/shared/styles/eject-button.css" />
+    <link rel="stylesheet" href="/shared/styles/wip-banner.css" />
+    <script src="/shared/components/EjectButton.js"></script>
+    <script src="/shared/components/WIPBanner.js"></script>
+  </head>
+  <body class="game-body">
+    <!-- Work in Progress Banner -->
+    <wip-banner></wip-banner>
+
+    <!-- Eject Button -->
+    <eject-button></eject-button>
+
+    <!-- Main Game Container -->
+    <main class="game-container">
+      <!-- Game Boy Device -->
+      <div class="gameboy-device">
+        <!-- Device Header -->
+        <div class="device-header">
+          <div class="power-indicator">
+            <div class="led-light active"></div>
+            <span class="power-label">POWER</span>
+          </div>
+          <div class="game-title">MEMENTO MORI</div>
+        </div>
+
+        <!-- Screen Container -->
+        <div class="screen-container">
+          <div class="screen-bezel">
+            <div class="screen-glass">
+              <!-- CRT Effects Overlay -->
+              <div class="crt-overlay"></div>
+              <div class="scanlines"></div>
+
+              <!-- Screen Content -->
+              <div id="appScreen" class="screen-content">
+                <!-- Welcome Screen -->
+                <div id="welcomeScreen" class="app-screen active">
+                  <div class="screen-header">
+                    <h1 class="pixel-header">⏳ MEMENTO MORI</h1>
+                  </div>
+                  <div class="screen-body">
+                    <p class="intro-text">
+                      "Remember that you must die." Calculate your life expectancy based on demographics, lifestyle
+                      factors, and visualize your time remaining.
+                    </p>
+                    <div class="feature-list">
+                      <div class="feature-item">📊 Personalized Life Expectancy</div>
+                      <div class="feature-item">💪 Habit Impact Simulator</div>
+                      <div class="feature-item">📅 Life Calendar Visualization</div>
+                    </div>
+                    <button id="startCalculator" class="btn-primary">
+                      <span class="btn-text">START</span>
+                      <span class="btn-icon">▶</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Question Screen -->
+                <div id="questionScreen" class="app-screen">
+                  <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                    <span id="progressText" class="progress-text">Question 1 of 8</span>
+                  </div>
+                  <div class="question-container">
+                    <h2 id="questionText" class="question-text"></h2>
+                    <div id="optionsContainer" class="options-container">
+                      <!-- Options will be dynamically inserted -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div id="resultsScreen" class="app-screen">
+                  <div class="screen-header">
+                    <h1 class="pixel-header">YOUR LIFE EXPECTANCY</h1>
+                  </div>
+                  <div class="results-container">
+                    <div class="life-expectancy-result">
+                      <div class="result-label">Estimated Life Expectancy</div>
+                      <div id="lifeExpectancy" class="result-number">-- years</div>
+                      <div class="result-sublabel"><span id="yearsRemaining">--</span> years remaining</div>
+                    </div>
+                    <div class="result-stats">
+                      <div class="stat-item">
+                        <span class="stat-label">Weeks Lived</span>
+                        <span id="weeksLived" class="stat-value">--</span>
+                      </div>
+                      <div class="stat-item">
+                        <span class="stat-label">Weeks Remaining</span>
+                        <span id="weeksRemaining" class="stat-value">--</span>
+                      </div>
+                    </div>
+                    <div class="action-buttons">
+                      <button id="viewHabitSimulator" class="btn-primary">
+                        <span class="btn-text">HABIT SIMULATOR</span>
+                        <span class="btn-icon">▶</span>
+                      </button>
+                      <button id="viewLifeCalendar" class="btn-secondary">
+                        <span class="btn-text">LIFE CALENDAR</span>
+                        <span class="btn-icon">📅</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Habit Simulator Screen -->
+                <div id="habitSimulatorScreen" class="app-screen">
+                  <div class="screen-header">
+                    <h2 class="pixel-subheader">💪 HABIT IMPACT SIMULATOR</h2>
+                  </div>
+                  <div class="simulator-container">
+                    <div class="baseline-comparison">
+                      <div class="comparison-item baseline">
+                        <span class="comparison-label">Baseline</span>
+                        <span id="baselineAge" class="comparison-value">-- years</span>
+                      </div>
+                      <div class="comparison-item modified">
+                        <span class="comparison-label">With Changes</span>
+                        <span id="modifiedAge" class="comparison-value">-- years</span>
+                      </div>
+                      <div class="comparison-item difference">
+                        <span class="comparison-label">Difference</span>
+                        <span id="ageDifference" class="comparison-value">+0.0 years</span>
+                      </div>
+                    </div>
+                    <div id="habitControls" class="habit-controls">
+                      <!-- Habit sliders will be dynamically inserted -->
+                    </div>
+                  </div>
+                  <div class="action-buttons">
+                    <button id="backToResults" class="btn-secondary">
+                      <span class="btn-text">BACK</span>
+                      <span class="btn-icon">◀</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Life Calendar Screen -->
+                <div id="lifeCalendarScreen" class="app-screen">
+                  <div class="screen-header">
+                    <h2 class="pixel-subheader">📅 YOUR LIFE IN WEEKS</h2>
+                  </div>
+                  <div class="calendar-container">
+                    <div class="calendar-legend">
+                      <div class="legend-item">
+                        <span class="legend-box lived"></span>
+                        <span class="legend-label">Lived</span>
+                      </div>
+                      <div class="legend-item">
+                        <span class="legend-box remaining"></span>
+                        <span class="legend-label">Remaining</span>
+                      </div>
+                    </div>
+                    <div id="lifeCalendarGrid" class="life-calendar-grid">
+                      <!-- Grid will be dynamically generated -->
+                    </div>
+                  </div>
+                  <div class="action-buttons">
+                    <button id="backToResultsFromCalendar" class="btn-secondary">
+                      <span class="btn-text">BACK</span>
+                      <span class="btn-icon">◀</span>
+                    </button>
+                    <button id="restartCalculator" class="btn-primary">
+                      <span class="btn-text">RESTART</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Panel -->
+      <aside class="info-panel">
+        <div class="info-section">
+          <h3 class="info-title">About This Calculator</h3>
+          <p class="info-text">
+            This calculator estimates life expectancy using CDC life tables and hazard ratios from peer-reviewed
+            research (Li et al. 2018, Circulation).
+          </p>
+        </div>
+        <div class="info-section">
+          <h3 class="info-title">Methodology</h3>
+          <ul class="info-list">
+            <li>Base mortality from CDC 2019 life tables</li>
+            <li>Gompertz model for age-specific mortality</li>
+            <li>Hazard ratios from lifestyle epidemiology</li>
+            <li>Monte Carlo simulation for uncertainty</li>
+          </ul>
+        </div>
+        <div class="info-section">
+          <h3 class="info-title">Lifestyle Factors</h3>
+          <ul class="info-list">
+            <li>Smoking status</li>
+            <li>Physical activity level</li>
+            <li>Body Mass Index (BMI)</li>
+            <li>Sleep duration</li>
+            <li>Diet quality</li>
+            <li>Alcohol consumption</li>
+          </ul>
+        </div>
+        <div class="info-section disclaimer">
+          <h3 class="info-title">Disclaimer</h3>
+          <p class="info-text small">
+            This is a statistical estimate based on population averages. Individual outcomes vary greatly. This tool is
+            for educational purposes and should not replace medical advice.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
