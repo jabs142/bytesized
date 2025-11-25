@@ -121,18 +121,16 @@ export class ScrollHandler {
       const interpolatedDate = new Date(interpolatedTime);
       const dateString = interpolatedDate.toISOString().split('T')[0];
 
-      // Get closest available data for interpolated date
-      const interpolatedData = this.dataLoader.getClosestData(dateString);
-
       // Update map smoothly (no transition since we're updating frequently)
+      // Note: updateMapSmooth now uses getClosestData internally to handle interpolated dates
       this.mapRenderer.updateMapSmooth(
         dateString,
         currentScene.showVaccinations || nextScene.showVaccinations
       );
 
       // Update stats smoothly INCLUDING the date display
-      const globalData =
-        this.dataLoader.getGlobalForDate(dateString) || this.dataLoader.getClosestData(dateString);
+      // Use getClosestGlobalData to get real data for interpolated dates (prevents zeros)
+      const globalData = this.dataLoader.getClosestGlobalData(dateString);
 
       if (globalData) {
         // Update counters and date without animation (too frequent)

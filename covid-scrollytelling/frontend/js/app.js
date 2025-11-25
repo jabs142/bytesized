@@ -3,7 +3,7 @@
  * Initializes all modules and coordinates the visualization
  */
 
-import { loadD3WithTopoJSON } from '/shared/utils/d3-loader.js';
+import { loadD3WithTopoJSON } from '../../../shared/utils/d3-loader.js';
 import { DataLoader } from './dataLoader.js';
 import { MapRenderer } from './map.js';
 import { ScrollHandler } from './scrollHandler.js';
@@ -30,39 +30,69 @@ class COVIDStoryApp {
 
       // Step 0: Load D3.js and TopoJSON libraries
       // console.log('\n0. Loading visualization libraries...');
-      const { d3, topojson } = await loadD3WithTopoJSON();
-      window.d3 = d3; // Make available globally
-      window.topojson = topojson; // Make available globally
+      this.updateLoadingMessage('Loading visualization libraries...');
+      try {
+        const { d3, topojson } = await loadD3WithTopoJSON();
+        window.d3 = d3; // Make available globally
+        window.topojson = topojson; // Make available globally
+      } catch (error) {
+        throw new Error(`Failed to load D3.js/TopoJSON libraries: ${error.message}`);
+      }
 
       // Step 1: Load data
       // console.log('\n1. Loading data...');
-      this.dataLoader = new DataLoader();
-      await this.dataLoader.loadAll();
+      this.updateLoadingMessage('Loading COVID-19 data...');
+      try {
+        this.dataLoader = new DataLoader();
+        await this.dataLoader.loadAll();
+      } catch (error) {
+        throw new Error(`Failed to load data files: ${error.message}`);
+      }
 
       // Step 2: Initialize map
       // console.log('\n2. Initializing map...');
-      this.mapRenderer = new MapRenderer('#map-container', this.dataLoader);
-      this.mapRenderer.renderMap();
+      this.updateLoadingMessage('Initializing world map...');
+      try {
+        this.mapRenderer = new MapRenderer('#map-container', this.dataLoader);
+        this.mapRenderer.renderMap();
+      } catch (error) {
+        throw new Error(`Failed to initialize map: ${error.message}`);
+      }
 
       // Step 3: Set initial state (first scene)
       // console.log('\n3. Setting initial scene...');
-      const firstScene = SCENES[0];
-      this.mapRenderer.updateMap(firstScene.date, firstScene.showVaccinations);
-      this.updateStats(firstScene.date);
+      this.updateLoadingMessage('Setting up timeline...');
+      try {
+        const firstScene = SCENES[0];
+        this.mapRenderer.updateMap(firstScene.date, firstScene.showVaccinations);
+        this.updateStats(firstScene.date);
+      } catch (error) {
+        throw new Error(`Failed to set initial scene: ${error.message}`);
+      }
 
       // Step 4: Initialize scroll handler
       // console.log('\n4. Initializing scroll handler...');
-      this.scrollHandler = new ScrollHandler(this.mapRenderer, this.dataLoader);
-      this.scrollHandler.init();
+      this.updateLoadingMessage('Preparing scrollytelling...');
+      try {
+        this.scrollHandler = new ScrollHandler(this.mapRenderer, this.dataLoader);
+        this.scrollHandler.init();
 
-      // Register callbacks
-      this.scrollHandler.onSceneChange((scene, index) => {
-        this.onSceneChange(scene, index);
-      });
+        // Register callbacks
+        this.scrollHandler.onSceneChange((scene, index) => {
+          this.onSceneChange(scene, index);
+        });
+      } catch (error) {
+        throw new Error(`Failed to initialize scroll handler: ${error.message}`);
+      }
 
       // Step 5: Generate timeline markers
       // console.log('\n5. Generating timeline...');
-      this.generateTimelineMarkers();
+      this.updateLoadingMessage('Generating timeline markers...');
+      try {
+        this.generateTimelineMarkers();
+      } catch (error) {
+        throw new Error(`Failed to generate timeline: ${error.message}`);
+      }
 
       // Hide loading screen
       this.showLoading(false);
@@ -75,7 +105,7 @@ class COVIDStoryApp {
       this.playIntroAnimation();
     } catch (error) {
       console.error('Failed to initialize application:', error);
-      this.showError(error.message);
+      this.showError(error.message, error);
     }
   }
 
@@ -177,20 +207,63 @@ class COVIDStoryApp {
   }
 
   /**
-   * Show error message
-   * @param {string} message - Error message
+   * Update loading message
+   * @param {string} message - Loading status message
    */
-  showError(message) {
+  updateLoadingMessage(message) {
+    const loadingText = document.querySelector('#loading-screen p');
+    if (loadingText) {
+      loadingText.textContent = message;
+    }
+  }
+
+  /**
+   * Show error message with retry button
+   * @param {string} message - Error message
+   * @param {Error} error - Original error object (for debugging)
+   */
+  showError(message, error = null) {
+    // Hide loading screen first
+    this.showLoading(false);
+
+    // Create error overlay
     const errorDiv = document.createElement('div');
-    errorDiv.className = 'error-message';
+    errorDiv.className = 'error-overlay';
     errorDiv.innerHTML = `
-      <h2>Error Loading Visualization</h2>
-      <p>${message}</p>
-      <p>Please refresh the page to try again.</p>
+      <div class="error-container">
+        <div class="error-icon">⚠️</div>
+        <h2>Failed to Load Visualization</h2>
+        <p class="error-message">${message}</p>
+        <div class="error-actions">
+          <button class="retry-button" onclick="window.location.reload()">
+            <span>🔄</span> Retry
+          </button>
+          <button class="details-button" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+            Show Details
+          </button>
+          <div class="error-details" style="display:none">
+            <pre>${error ? error.stack || error.toString() : 'No additional details available'}</pre>
+          </div>
+        </div>
+        <p class="error-help">
+          If this problem persists:
+          <br>• Check your internet connection
+          <br>• Try a different browser
+          <br>• Check the browser console for more details
+        </p>
+      </div>
     `;
 
     document.body.appendChild(errorDiv);
-    this.showLoading(false);
+
+    // Log detailed error for debugging
+    if (error) {
+      console.error('Detailed error information:', {
+        message: error.message,
+        stack: error.stack,
+        error: error,
+      });
+    }
   }
 
   /**

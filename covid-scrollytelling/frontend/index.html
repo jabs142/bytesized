@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Shared Styles & Components -->
-    <link rel="stylesheet" href="/shared/styles/eject-button.css" />
-    <script src="/shared/components/EjectButton.js"></script>
+    <link rel="stylesheet" href="../../shared/styles/eject-button.css" />
+    <script src="../../shared/components/EjectButton.js"></script>
 
     <!-- External Libraries -->
     <!-- D3.js and TopoJSON are now lazy-loaded by app.js for better performance -->
@@ -33,13 +33,13 @@
 
   <body>
     <!-- Navigation - Eject Button (Dark Theme) -->
-    <eject-button theme="dark"></eject-button>
+    <eject-button theme="dark" href="../../index.html"></eject-button>
 
     <!-- Loading Screen -->
     <div id="loading-screen">
       <div class="loader">
         <div class="spinner"></div>
-        <div class="loading-text">Loading COVID-19 Data...</div>
+        <p class="loading-text">Loading COVID-19 Data...</p>
         <div class="loading-subtext">This may take a moment</div>
       </div>
     </div>

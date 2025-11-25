@@ -156,7 +156,8 @@ export class MapRenderer {
    */
   updateMapSmooth(date, showVaccinations = false) {
     this.currentDate = date;
-    const data = this.dataLoader.getDataForDate(date);
+    // Use getClosestData to handle interpolated dates that don't exist in dataset
+    const data = this.dataLoader.getClosestData(date);
 
     // Update country colors instantly (no transition)
     this.countries

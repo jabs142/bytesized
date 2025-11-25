@@ -4664,8 +4664,12 @@ class CavemanScene extends Phaser.Scene {
     }
 
     // Handle E key press for interactables
-    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-      this.infoPanel.toggle(nearInteractable.infoData);
+    if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+      if (this.infoPanel.isVisible) {
+        this.infoPanel.hide();
+      } else if (nearInteractable) {
+        this.infoPanel.toggle(nearInteractable.infoData);
+      }
     }
 
     // Check distance to cave
@@ -5232,8 +5236,12 @@ class FarmingScene extends Phaser.Scene {
     }
 
     // Handle E key press for interactables
-    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-      this.infoPanel.toggle(nearInteractable.infoData);
+    if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+      if (this.infoPanel.isVisible) {
+        this.infoPanel.hide();
+      } else if (nearInteractable) {
+        this.infoPanel.toggle(nearInteractable.infoData);
+      }
     }
 
     // Check distance to barn
@@ -5856,8 +5864,12 @@ class MedievalScene extends Phaser.Scene {
     }
 
     // Handle E key press for info panels
-    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-      this.infoPanel.toggle(nearInteractable.infoData);
+    if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+      if (this.infoPanel.isVisible) {
+        this.infoPanel.hide();
+      } else if (nearInteractable) {
+        this.infoPanel.toggle(nearInteractable.infoData);
+      }
     }
 
     this.nearGate = false;
@@ -6417,8 +6429,12 @@ class RenaissanceScene extends Phaser.Scene {
     }
 
     // Handle E key press for info panels
-    if (Phaser.Input.Keyboard.JustDown(this.eKey) && nearInteractable) {
-      this.infoPanel.toggle(nearInteractable.infoData);
+    if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
+      if (this.infoPanel.isVisible) {
+        this.infoPanel.hide();
+      } else if (nearInteractable) {
+        this.infoPanel.toggle(nearInteractable.infoData);
+      }
     }
 
     this.nearPortal = false;
@@ -6994,7 +7010,11 @@ class AncientScene extends Phaser.Scene {
         }
 
         if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-          this.infoPanel.toggle(interactable.infoData);
+          if (this.infoPanel.isVisible) {
+            this.infoPanel.hide();
+          } else {
+            this.infoPanel.toggle(interactable.infoData);
+          }
         }
       } else {
         interactable.indicator.setVisible(false);
@@ -7553,7 +7573,11 @@ class IndustrialScene extends Phaser.Scene {
         }
 
         if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-          this.infoPanel.toggle(interactable.infoData);
+          if (this.infoPanel.isVisible) {
+            this.infoPanel.hide();
+          } else {
+            this.infoPanel.toggle(interactable.infoData);
+          }
         }
       } else {
         interactable.indicator.setVisible(false);
@@ -8105,7 +8129,11 @@ class ModernScene extends Phaser.Scene {
         }
 
         if (Phaser.Input.Keyboard.JustDown(this.eKey)) {
-          this.infoPanel.toggle(interactable.infoData);
+          if (this.infoPanel.isVisible) {
+            this.infoPanel.hide();
+          } else {
+            this.infoPanel.toggle(interactable.infoData);
+          }
         }
       } else {
         interactable.indicator.setVisible(false);

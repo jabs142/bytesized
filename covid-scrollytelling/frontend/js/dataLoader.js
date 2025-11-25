@@ -3,7 +3,14 @@
  * Handles fetching and processing COVID-19 data, map data, and timeline events
  */
 
+/* global AbortController */
+
 import { CONFIG } from './config.js';
+
+// Fetch configuration
+const FETCH_TIMEOUT = 10000; // 10 seconds
+const MAX_RETRIES = 3;
+const RETRY_DELAY = 1000; // 1 second base delay
 
 export class DataLoader {
   constructor() {
@@ -56,16 +63,77 @@ export class DataLoader {
   }
 
   /**
-   * Load JSON file
+   * Fetch with timeout
+   * @param {string} url - URL to fetch
+   * @param {number} timeout - Timeout in milliseconds
+   * @returns {Promise<Response>}
+   */
+  async fetchWithTimeout(url, timeout = FETCH_TIMEOUT) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      return response;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') {
+        throw new Error(`Request timeout after ${timeout}ms for: ${url}`);
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * Sleep utility for retry delays
+   * @param {number} ms - Milliseconds to sleep
+   * @returns {Promise<void>}
+   */
+  sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  /**
+   * Load JSON file with retry logic
    * @param {string} path - Path to JSON file
    * @returns {Promise<Object>}
    */
   async loadJSON(path) {
-    const response = await fetch(path);
-    if (!response.ok) {
-      throw new Error(`Failed to load ${path}: ${response.statusText}`);
+    let lastError = null;
+
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        // console.log(`Loading ${path} (attempt ${attempt}/${MAX_RETRIES})`);
+
+        const response = await this.fetchWithTimeout(path);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        // console.log(`✓ Successfully loaded ${path}`);
+        return data;
+      } catch (error) {
+        lastError = error;
+        console.warn(`Failed to load ${path} (attempt ${attempt}/${MAX_RETRIES}):`, error.message);
+
+        // If not the last attempt, wait before retrying (exponential backoff)
+        if (attempt < MAX_RETRIES) {
+          const delay = RETRY_DELAY * Math.pow(2, attempt - 1);
+          // console.log(`Retrying in ${delay}ms...`);
+          await this.sleep(delay);
+        }
+      }
     }
-    return response.json();
+
+    // All retries failed
+    throw new Error(
+      `Failed to load ${path} after ${MAX_RETRIES} attempts. ` +
+        `Last error: ${lastError?.message || 'Unknown error'}. ` +
+        `Please check your internet connection and ensure the file exists.`
+    );
   }
 
   /**
@@ -156,6 +224,27 @@ export class DataLoader {
     }
 
     return this.getDataForDate(closestDate);
+  }
+
+  /**
+   * Get global data for closest date (if exact date not available)
+   * @param {string} targetDate - Target date in YYYY-MM-DD format
+   * @returns {Object} Global stats for closest available date
+   */
+  getClosestGlobalData(targetDate) {
+    const target = new Date(targetDate);
+    let closestDate = null;
+    let minDiff = Infinity;
+
+    for (const date of this.globalByDate.keys()) {
+      const diff = Math.abs(new Date(date) - target);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestDate = date;
+      }
+    }
+
+    return this.getGlobalForDate(closestDate);
   }
 
   /**

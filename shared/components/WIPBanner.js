@@ -6,9 +6,11 @@
  * Usage:
  * <wip-banner></wip-banner>
  * <wip-banner dismissible="true"></wip-banner>
+ * <wip-banner data-path="../../data/cartridges.json"></wip-banner>
  *
  * Attributes:
  * - dismissible: "true" to allow closing the banner (defaults to "false")
+ * - data-path: path to cartridges.json file (defaults to "/data/cartridges.json")
  */
 class WIPBanner extends HTMLElement {
   constructor() {
@@ -57,7 +59,8 @@ class WIPBanner extends HTMLElement {
   async checkIfWIP() {
     try {
       // Fetch cartridges data
-      const response = await fetch('/data/cartridges.json');
+      const dataPath = this.getAttribute('data-path') || '/data/cartridges.json';
+      const response = await fetch(dataPath);
       if (!response.ok) {
         return false;
       }

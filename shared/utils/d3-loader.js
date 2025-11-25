@@ -15,14 +15,111 @@
  * - Pharmaceutical Innovation (D3.js for timeline & scatter plots)
  */
 
-// Library versions
+// Library versions and CDN URLs (with fallbacks)
 const D3_VERSION = '7';
-const D3_CDN_URL = `https://d3js.org/d3.v${D3_VERSION}.min.js`;
-const TOPOJSON_CDN_URL = 'https://unpkg.com/topojson@3';
+const D3_CDN_URLS = [
+  `https://d3js.org/d3.v${D3_VERSION}.min.js`,
+  `https://cdn.jsdelivr.net/npm/d3@${D3_VERSION}`,
+  `https://unpkg.com/d3@${D3_VERSION}`,
+];
+const TOPOJSON_CDN_URLS = [
+  'https://unpkg.com/topojson@3',
+  'https://cdn.jsdelivr.net/npm/topojson@3',
+];
+
+// Timeout for script loading (10 seconds)
+const SCRIPT_TIMEOUT = 10000;
 
 // Cache loaded libraries
 let d3Promise = null;
 let topojsonPromise = null;
+
+/**
+ * Load a script with timeout and fallback CDN support
+ * @param {string[]} urls - Array of CDN URLs to try
+ * @param {string} globalName - Name of the global object (e.g., 'd3', 'topojson')
+ * @param {string} libraryName - Human-readable library name for error messages
+ * @returns {Promise<Object>} The loaded library object
+ */
+async function loadScriptWithFallback(urls, globalName, libraryName) {
+  let lastError = null;
+
+  for (let i = 0; i < urls.length; i++) {
+    const url = urls[i];
+    // console.log(`Attempting to load ${libraryName} from: ${url}`);
+
+    try {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+
+        let timeoutId = null;
+        let resolved = false;
+
+        const cleanup = () => {
+          if (timeoutId) {
+            clearTimeout(timeoutId);
+          }
+          resolved = true;
+        };
+
+        script.onload = () => {
+          if (resolved) {
+            return;
+          }
+          cleanup();
+
+          if (typeof window[globalName] !== 'undefined') {
+            // console.log(`✓ Successfully loaded ${libraryName} from ${url}`);
+            resolve(window[globalName]);
+          } else {
+            reject(new Error(`${libraryName} loaded but not available on window object`));
+          }
+        };
+
+        script.onerror = () => {
+          if (resolved) {
+            return;
+          }
+          cleanup();
+          reject(new Error(`Failed to load ${libraryName} from ${url}`));
+        };
+
+        // Set timeout
+        timeoutId = setTimeout(() => {
+          if (resolved) {
+            return;
+          }
+          cleanup();
+          script.remove();
+          reject(new Error(`Timeout loading ${libraryName} from ${url}`));
+        }, SCRIPT_TIMEOUT);
+
+        document.head.appendChild(script);
+      });
+
+      // Success - return the loaded library
+      return window[globalName];
+    } catch (error) {
+      lastError = error;
+      console.warn(`Failed to load ${libraryName} from ${url}:`, error.message);
+
+      // If not the last URL, continue to next fallback
+      if (i < urls.length - 1) {
+        // console.log(`Trying fallback CDN for ${libraryName}...`);
+        continue;
+      }
+    }
+  }
+
+  // All CDNs failed
+  throw new Error(
+    `Failed to load ${libraryName} from all CDN sources. ` +
+      `Last error: ${lastError?.message || 'Unknown error'}. ` +
+      `Please check your internet connection.`
+  );
+}
 
 /**
  * Load D3.js library dynamically
@@ -39,26 +136,10 @@ export async function loadD3() {
     return Promise.resolve(window.d3);
   }
 
-  // Create new loading promise
-  d3Promise = new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = D3_CDN_URL;
-    script.async = true;
-
-    script.onload = () => {
-      if (typeof window.d3 !== 'undefined') {
-        resolve(window.d3);
-      } else {
-        reject(new Error('D3.js loaded but not available on window object'));
-      }
-    };
-
-    script.onerror = () => {
-      d3Promise = null; // Reset promise so retry is possible
-      reject(new Error('Failed to load D3.js from CDN'));
-    };
-
-    document.head.appendChild(script);
+  // Create new loading promise with fallback support
+  d3Promise = loadScriptWithFallback(D3_CDN_URLS, 'd3', 'D3.js').catch((error) => {
+    d3Promise = null; // Reset promise so retry is possible
+    throw error;
   });
 
   return d3Promise;
@@ -79,27 +160,13 @@ export async function loadTopoJSON() {
     return Promise.resolve(window.topojson);
   }
 
-  // Create new loading promise
-  topojsonPromise = new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = TOPOJSON_CDN_URL;
-    script.async = true;
-
-    script.onload = () => {
-      if (typeof window.topojson !== 'undefined') {
-        resolve(window.topojson);
-      } else {
-        reject(new Error('TopoJSON loaded but not available on window object'));
-      }
-    };
-
-    script.onerror = () => {
+  // Create new loading promise with fallback support
+  topojsonPromise = loadScriptWithFallback(TOPOJSON_CDN_URLS, 'topojson', 'TopoJSON').catch(
+    (error) => {
       topojsonPromise = null; // Reset promise so retry is possible
-      reject(new Error('Failed to load TopoJSON from CDN'));
-    };
-
-    document.head.appendChild(script);
-  });
+      throw error;
+    }
+  );
 
   return topojsonPromise;
 }

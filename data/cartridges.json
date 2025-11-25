@@ -101,7 +101,7 @@
     "description": "Calculate your statistical privilege using global data and conditional probability",
     "url": "./privilege/frontend/index.html",
     "status": "available",
-    "wip": true
+    "wip": false
   },
   {
     "id": "longevity-calculator",
