@@ -95,7 +95,7 @@ class Portal {
     div.setAttribute('tabindex', '0');
 
     // Create descriptive aria-label
-    let ariaLabel = `${cartridge.title}: ${cartridge.subtitle}. ${cartridge.description}`;
+    let ariaLabel = `${cartridge.title}: ${cartridge.subtitle}`;
     if (cartridge.status === 'coming_soon') {
       ariaLabel += ' (Coming soon)';
       div.setAttribute('aria-disabled', 'true');
@@ -119,10 +119,11 @@ class Portal {
       <div class="cartridge-body ${cartridge.pattern ? `pattern-${cartridge.pattern}` : ''}" style="--cartridge-glow: ${cartridge.color}50;">
         <div class="cartridge-notch"></div>
         <div class="cartridge-label" style="--label-color: ${cartridge.color};">
-          ${cartridge.icon ? `<div class="cartridge-icon">${cartridge.icon}</div>` : ''}
-          <div class="cartridge-title">${cartridge.title}</div>
-          <div class="cartridge-subtitle">${cartridge.subtitle}</div>
-          <div class="cartridge-description">${cartridge.description}</div>
+          <div class="cartridge-content">
+            ${cartridge.icon ? `<div class="cartridge-icon">${cartridge.icon}</div>` : ''}
+            <div class="cartridge-title">${cartridge.title}</div>
+            <div class="cartridge-subtitle">${cartridge.subtitle}</div>
+          </div>
           <div class="cartridge-label-text">${cartridge.labelText}</div>
         </div>
         <div class="cartridge-connector">
