@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI in Healthcare Fundamentals - ByteSized Research</title>
+    <meta
+      name="description"
+      content="Learn core AI concepts for healthcare through interactive demonstrations. Understanding machine learning, evaluation metrics, and healthcare-specific challenges."
+    />
+
+    <!-- Retro Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Shared Styles & Components -->
+    <link rel="stylesheet" href="../../shared/styles/eject-button.css" />
+    <script src="../../shared/components/EjectButton.js"></script>
+  </head>
+  <body>
+    <!-- EJECT BUTTON -->
+    <eject-button href="../../index.html"></eject-button>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1>🧠 AI in Healthcare Fundamentals</h1>
+        <p class="subtitle">An Interactive Crash Course</p>
+      </div>
+    </header>
+
+    <!-- Navigation Pills -->
+    <nav class="section-nav" id="section-nav">
+      <div class="container">
+        <div class="nav-pills">
+          <button class="nav-pill active" data-section="intro">Introduction</button>
+          <button class="nav-pill" data-section="metrics">Evaluation Metrics</button>
+          <button class="nav-pill" data-section="challenges">Healthcare Challenges</button>
+          <button class="nav-pill" data-section="deployment">Deployment</button>
+          <button class="nav-pill" data-section="llms">Large Language Models</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Introduction Section -->
+        <section id="intro" class="content-section active">
+          <div class="intro-card">
+            <h2>Why This Matters</h2>
+            <p class="intro-text">
+              Artificial intelligence is transforming healthcare, from diagnosing diseases to predicting patient
+              outcomes. But understanding how these systems work—and where they can fail—is crucial for everyone
+              involved in healthcare.
+            </p>
+            <p class="intro-text">
+              This interactive guide will teach you the fundamental concepts behind healthcare AI, using simple
+              explanations and hands-on demonstrations.
+            </p>
+          </div>
+
+          <h2 class="section-title">Core Technical Concepts</h2>
+          <p class="section-intro">
+            Understanding the basics of machine learning is essential for evaluating healthcare AI. These concepts form
+            the foundation of how AI systems learn and make predictions.
+          </p>
+
+          <!-- Supervised vs Unsupervised Learning -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🎯 Supervised vs. Unsupervised Learning</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                <strong>Supervised learning</strong> uses labeled training data where the correct outcome is known. For
+                example, training a model on thousands of mammograms with confirmed pathology results (malignant vs.
+                benign) allows it to learn radiographic patterns associated with each diagnosis. The model then applies
+                these learned patterns to classify new, unseen images.
+              </p>
+              <p>
+                <strong>Unsupervised learning</strong> identifies patterns in data without predefined labels. Rather
+                than predicting a known outcome, these algorithms discover structure—such as identifying patient
+                subgroups with similar clinical presentations that may represent distinct disease phenotypes, or
+                detecting anomalous patterns in vital sign monitoring that warrant further investigation.
+              </p>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Most clinical AI relies on supervised learning, but acquiring high-quality labeled data is
+                  resource-intensive and often reflects existing diagnostic conventions. Unsupervised approaches can
+                  reveal novel patterns—potentially identifying disease subtypes or risk factors not previously
+                  characterized—but their clinical utility requires careful validation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Classification vs Regression -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>📊 Classification vs. Regression</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                <strong>Classification</strong> predicts categories: malignant or benign, admit or discharge, positive
+                or negative test result. The output is a discrete label.
+              </p>
+              <p>
+                <strong>Regression</strong> predicts continuous numbers: expected length of stay (3.5 days), risk score
+                (72%), or estimated blood glucose level (145 mg/dL).
+              </p>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Many clinical "risk scores" are actually binary classifiers that output a confidence value. When a
+                  sepsis alert shows "70% risk," this often represents the model's confidence in predicting "yes" vs.
+                  "no"—not a calibrated probability that 70 out of 100 similar patients will develop sepsis. This
+                  distinction matters: a well-<strong>calibrated</strong> probability can inform shared decision-making,
+                  while an uncalibrated confidence score may systematically over- or underestimate actual risk. (See the
+                  Calibration section in Evaluation Metrics for more.)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training/Validation/Test Sets -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🔄 Training, Validation, and Test Sets</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                Models need to be evaluated on data they haven't seen before, otherwise they might just memorize the
+                training examples rather than learning generalizable patterns.
+              </p>
+
+              <div class="data-split-visual">
+                <div class="split-section training">
+                  <div class="split-label">Training Set (60%)</div>
+                  <div class="split-description">Used to teach the model patterns</div>
+                </div>
+                <div class="split-section validation">
+                  <div class="split-label">Validation Set (20%)</div>
+                  <div class="split-description">Used to tune model settings</div>
+                </div>
+                <div class="split-section test">
+                  <div class="split-label">Test Set (20%)</div>
+                  <div class="split-description">Used for final evaluation</div>
+                </div>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  In healthcare, <strong>temporal validation</strong> (training on older data, testing on newer) is
+                  crucial because patient populations and clinical practices change over time. A model trained on 2018
+                  data might fail on 2024 patients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overfitting and Generalization -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>📈 Overfitting and Generalization</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                <strong>Overfitting</strong> occurs when a model learns the training data too precisely—capturing noise
+                and institution-specific quirks rather than underlying clinical patterns. An overfitted model performs
+                exceptionally well on training data but poorly on new patients.
+              </p>
+              <p>
+                <strong>Generalization</strong> is the goal: a model that captures true clinical relationships and
+                performs consistently across different patient populations, time periods, and care settings.
+              </p>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  A model with 99% accuracy on training data but 60% on external validation has likely overfit. This is
+                  why external validation—testing on data from different institutions or time periods—is essential
+                  before clinical deployment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Imbalance -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>⚖️ Class Imbalance</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                In healthcare, the outcomes we most want to predict are often rare. Sepsis occurs in roughly 2% of
+                hospital admissions. Medication errors affect a small fraction of prescriptions. This creates
+                <strong>class imbalance</strong>: the model sees far more "negative" examples than "positive" ones.
+              </p>
+              <p>
+                A naive model could achieve 98% accuracy on sepsis prediction simply by always predicting "no
+                sepsis"—while missing every actual case.
+              </p>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Overall accuracy is often meaningless in healthcare. Metrics like sensitivity, specificity, and AUROC
+                  that account for both classes separately give a more honest picture of model performance on imbalanced
+                  clinical datasets.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bias and Fairness -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>⚠️ Bias and Fairness</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                Machine learning models learn patterns from historical data—including patterns that reflect systemic
+                inequities. If certain populations had less access to specialist care, fewer diagnostic tests, or
+                different treatment patterns, models trained on this data can perpetuate or amplify these disparities.
+              </p>
+              <p>
+                A model might perform well overall but systematically underdiagnose conditions in underrepresented
+                groups, or recommend less aggressive treatment for patients whose demographic resembles those who
+                historically received less care.
+              </p>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Evaluating model performance across demographic subgroups—not just in aggregate—is essential. A model
+                  that works well "on average" may fail specific populations, potentially widening rather than closing
+                  healthcare disparities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Evaluation Metrics Section -->
+        <section id="metrics" class="content-section">
+          <h2 class="section-title">Evaluation Metrics That Actually Matter</h2>
+          <p class="section-intro">
+            Understanding how AI models are measured is critical for knowing when they're actually useful. These metrics
+            tell you different things about model performance.
+          </p>
+
+          <!-- Sensitivity and Specificity -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🎯 Sensitivity and Specificity</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                <strong>Sensitivity</strong> (true positive rate) measures the proportion of patients with a condition
+                who are correctly identified by the test. A sensitivity of 95% means the test detects 95 out of 100
+                patients who actually have the disease. High sensitivity minimizes false negatives—critical for
+                conditions where missing a diagnosis has severe consequences.
+              </p>
+              <p>
+                <strong>Specificity</strong> (true negative rate) measures the proportion of patients without the
+                condition who are correctly identified as negative. A specificity of 90% means 90 out of 100 healthy
+                patients receive a correct negative result. High specificity minimizes false positives—important when
+                positive results trigger invasive follow-up procedures or significant patient anxiety.
+              </p>
+
+              <!-- Interactive ROC Demo Placeholder -->
+              <div id="roc-demo-container" class="demo-container">
+                <h4>Interactive Demo: The Sensitivity-Specificity Trade-off</h4>
+                <p class="demo-description">
+                  Every AI model outputs a probability score (e.g., 0.72 for "likely positive"). The
+                  <strong>decision threshold</strong> determines the cutoff: scores above it are classified as positive,
+                  below as negative.
+                </p>
+                <p class="demo-description">
+                  <strong>Lower threshold</strong> (e.g., 0.30): More cases flagged as positive → higher sensitivity
+                  (catch more disease) but lower specificity (more false alarms).
+                </p>
+                <p class="demo-description">
+                  <strong>Higher threshold</strong> (e.g., 0.70): Fewer cases flagged as positive → higher specificity
+                  (fewer false alarms) but lower sensitivity (miss more disease).
+                </p>
+                <p class="demo-description">
+                  <em>Try moving the slider to see how the operating point moves along the ROC curve.</em>
+                </p>
+                <!-- Demo will be inserted here by JavaScript -->
+              </div>
+
+              <div class="explanation-box">
+                <h4>Understanding the ROC Curve and AUROC</h4>
+                <p>
+                  The <strong>ROC (Receiver Operating Characteristic) curve</strong> plots sensitivity against (1 -
+                  specificity) across all possible decision thresholds. Each point on the curve represents a different
+                  threshold setting.
+                </p>
+                <p>
+                  <strong>AUROC (Area Under the ROC Curve)</strong> summarizes overall discriminative ability in a
+                  single number from 0.5 to 1.0:
+                </p>
+                <ul>
+                  <li><strong>0.5</strong> = No better than random chance (the diagonal line)</li>
+                  <li><strong>0.7–0.8</strong> = Acceptable discrimination</li>
+                  <li><strong>0.8–0.9</strong> = Excellent discrimination</li>
+                  <li><strong>0.9+</strong> = Outstanding discrimination</li>
+                </ul>
+                <p>
+                  A higher AUROC indicates the model can better distinguish between patients with and without the
+                  condition, regardless of the specific threshold chosen.
+                </p>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  The optimal sensitivity-specificity balance depends entirely on clinical context. For
+                  <strong>screening tests</strong> (e.g., initial cancer detection), high sensitivity is
+                  prioritized—missing a malignancy is far worse than additional follow-up testing. For
+                  <strong>confirmatory tests</strong> (e.g., before surgery), high specificity is essential to avoid
+                  unnecessary procedures.
+                </p>
+                <p>
+                  Critically, sensitivity and specificity are <strong>intrinsic properties of the test</strong> that
+                  remain constant regardless of the population tested. However, what clinicians actually need to
+                  know—the probability a positive result is correct—depends on disease prevalence. This is why PPV and
+                  NPV (covered next) are equally important.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PPV and NPV -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🔍 Positive and Negative Predictive Value</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                <strong>Positive Predictive Value (PPV)</strong> answers the question clinicians face at the point of
+                care: "Given a positive test result, what is the probability this patient actually has the condition?"
+                PPV depends on both test accuracy and disease prevalence in the population being tested.
+              </p>
+              <p>
+                <strong>Negative Predictive Value (NPV)</strong> answers the complementary question: "Given a negative
+                test result, what is the probability this patient truly does not have the condition?" High NPV is
+                essential for ruling out disease with confidence.
+              </p>
+
+              <!-- Interactive Prevalence Demo Placeholder -->
+              <div id="prevalence-demo-container" class="demo-container">
+                <h4>Interactive Demo: Why Prevalence Changes Everything</h4>
+                <p class="demo-description">
+                  PPV and NPV depend not just on the test's accuracy, but on how common the disease is in the population
+                  being tested. This is <strong>Bayes' theorem</strong>
+                  in action.
+                </p>
+                <p class="demo-description">
+                  In a <strong>low-prevalence population</strong> (e.g., screening healthy people), even a highly
+                  accurate test produces many false positives relative to true positives, resulting in low PPV.
+                </p>
+                <p class="demo-description">
+                  In a <strong>high-prevalence population</strong> (e.g., symptomatic patients in a specialty clinic),
+                  the same test yields much higher PPV because true positives outnumber false positives.
+                </p>
+                <p class="demo-description">
+                  <em
+                    >Adjust the prevalence slider to see how the confusion matrix and predictive values change for a
+                    test with fixed 90% sensitivity and 90% specificity.</em
+                  >
+                </p>
+                <!-- Demo will be inserted here by JavaScript -->
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  This prevalence effect explains why the same AI tool can perform well in one setting but poorly in
+                  another. A sepsis prediction model with 90% sensitivity and 90% specificity might have a PPV of 50% in
+                  a general ward (5% sepsis prevalence) but 90% in the ICU (50% prevalence).
+                </p>
+                <p>
+                  When evaluating clinical AI, always ask:
+                  <strong
+                    >"What was the disease prevalence in the validation population, and how does that compare to my
+                    patient population?"</strong
+                  >
+                  A model validated in a specialty referral center may perform very differently in primary care.
+                </p>
+                <p>
+                  This is also why indiscriminate screening with AI tools can be problematic— in low-prevalence
+                  populations, even excellent tests generate more false positives than true positives.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calibration -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>📏 Calibration</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                A well-<strong>calibrated</strong> model produces probability estimates that match observed outcomes.
+                When it predicts "70% risk," approximately 70 out of 100 patients with that prediction actually
+                experience the outcome. Poorly calibrated models may still rank patients correctly by risk (good
+                discrimination) but systematically over- or under-predict the actual probabilities.
+              </p>
+
+              <!-- Interactive Calibration Demo Placeholder -->
+              <div id="calibration-demo-container" class="demo-container">
+                <h4>Interactive Demo: Calibration Comparison</h4>
+                <p class="demo-description">
+                  The calibration plot compares predicted probabilities (x-axis) to observed outcomes (y-axis). A
+                  perfectly calibrated model follows the diagonal line.
+                </p>
+                <p class="demo-description">
+                  <strong>Well-calibrated:</strong> Points cluster near the diagonal—predictions match reality.
+                </p>
+                <p class="demo-description">
+                  <strong>Poorly calibrated:</strong> Points deviate from the diagonal—the model may systematically
+                  overestimate or underestimate risk.
+                </p>
+                <!-- Demo will be inserted here by JavaScript -->
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Many published AI models report impressive AUROC scores but suffer from poor calibration. A model with
+                  AUROC of 0.90 can still be clinically useless if its probability estimates are systematically wrong.
+                </p>
+                <p>
+                  <strong>Discrimination</strong> (AUROC) tells you whether the model can rank patients by risk.
+                  <strong>Calibration</strong> tells you whether you can trust the actual probability values. For
+                  clinical decision-making— especially shared decision-making with patients—you need both.
+                </p>
+                <p>
+                  When reviewing AI tool performance, look beyond AUROC. Ask for calibration plots or Brier scores. A
+                  well-calibrated model with AUROC of 0.80 may be more useful than a poorly calibrated model with AUROC
+                  of 0.90.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Healthcare-Specific Challenges Section -->
+        <section id="challenges" class="content-section">
+          <h2 class="section-title">The Unique Challenges of Healthcare AI</h2>
+          <p class="section-intro">
+            Healthcare presents special challenges that don't exist in other AI applications. These aren't just
+            technical problems—they reflect fundamental differences in how medicine works.
+          </p>
+
+          <!-- Distribution Shift -->
+          <div class="concept-card featured">
+            <div class="concept-header">
+              <h3>📉 Distribution Shift</h3>
+            </div>
+            <div class="concept-content">
+              <p>Models degrade when deployed in environments different from training. This includes:</p>
+              <ul>
+                <li>
+                  <strong>Temporal shift</strong>: Patient populations and diseases change over time (COVID changed
+                  everything)
+                </li>
+                <li><strong>Population shift</strong>: Different demographics, genetics, environmental factors</li>
+                <li><strong>Practice shift</strong>: New EHR systems, updated protocols, different equipment</li>
+              </ul>
+
+              <!-- Interactive Distribution Shift Demo Placeholder -->
+              <div id="distribution-shift-demo" class="demo-container featured-demo">
+                <h4>Interactive Demo: Watch Performance Degrade Over Time</h4>
+                <p class="demo-description">
+                  This demo shows a model trained on 2015-2018 data. Move the timeline slider to see how performance
+                  degrades as conditions change. Toggle events like COVID-19 and EHR system changes to see their impact.
+                </p>
+                <!-- Demo will be inserted here by JavaScript -->
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  This is why models trained at research labs often fail at community hospitals. The environments are
+                  different enough that patterns learned in one place don't transfer. Continuous monitoring and
+                  retraining are essential.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label Leakage -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🔓 Label Leakage</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                Using information that wouldn't actually be available at prediction time. This makes models look
+                artificially good during development but useless in practice.
+              </p>
+
+              <div class="explanation-box">
+                <h4>Common Types of Label Leakage</h4>
+                <ul>
+                  <li>
+                    <strong>Temporal leakage:</strong> Using lab results or measurements that were drawn after the
+                    outcome occurred (e.g., using a blood culture result from day 3 to predict sepsis on day 1)
+                  </li>
+                  <li>
+                    <strong>Clinical action leakage:</strong> Including treatment decisions that reflect clinicians
+                    already suspecting the condition (e.g., using ICU admission to predict deterioration, when ICU
+                    admission was triggered by deterioration)
+                  </li>
+                  <li>
+                    <strong>Billing code leakage:</strong> Using diagnosis codes that are only assigned retrospectively
+                    during chart review, often after the outcome is known
+                  </li>
+                  <li>
+                    <strong>Outcome-influenced features:</strong> Using measurements that change because of the outcome
+                    itself (e.g., using "days in hospital" to predict mortality, when deaths shorten hospital stays)
+                  </li>
+                </ul>
+              </div>
+
+              <div class="example-box">
+                <h4>Classic Example</h4>
+                <p>
+                  <strong>Predicting sepsis</strong> using the fact that broad-spectrum antibiotics were ordered. But
+                  antibiotics are only ordered <em>after</em> clinicians already suspect sepsis. The model is just
+                  detecting the doctor's decision, not predicting the disease.
+                </p>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Label leakage inflates apparent performance during testing but makes models worthless when deployed.
+                  Always ask: "Would this information truly be available before the prediction needs to be made?"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ground Truth Problems -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🎯 Ground Truth Problems</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                Many "labels" in healthcare are themselves imperfect. What we call "ground truth" often reflects human
+                judgment, billing practices, or limited information.
+              </p>
+
+              <ul>
+                <li><strong>Diagnosis codes</strong> reflect billing practices as much as clinical reality</li>
+                <li>
+                  <strong>Radiology reports</strong> reflect what radiologists looked for, not everything in the image
+                </li>
+                <li>
+                  <strong>Readmissions</strong> are partially a function of healthcare access, not just clinical status
+                </li>
+              </ul>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Your model can only be as good as your labels. If the training labels are biased or incomplete, the
+                  model will learn those biases and limitations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automation Bias -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🤖 Automation Bias</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                Clinicians tend to over-trust algorithmic recommendations, especially when busy or tired. This can
+                paradoxically make AI tools harmful if they're wrong in systematic ways.
+              </p>
+
+              <div class="example-box">
+                <h4>The Paradox</h4>
+                <p>
+                  A moderately accurate AI might be worse than no AI at all if it prevents clinicians from catching
+                  errors they would have caught on their own. The human + AI combination can perform worse than the
+                  human alone.
+                </p>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Deployment isn't just about model accuracy—it's about how the tool fits into clinical workflow and
+                  decision-making. Alert fatigue, confirmation bias, and over-reliance on automation are real human
+                  factors that affect outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Deployment and Regulatory Section -->
+        <section id="deployment" class="content-section">
+          <h2 class="section-title">Regulatory and Deployment Reality</h2>
+          <p class="section-intro">
+            The best-performing model is worthless if it can't be deployed in real clinical settings. Regulatory
+            approval, workflow integration, and explainability all matter.
+          </p>
+
+          <!-- FDA Pathways -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>📋 FDA Regulatory Pathways</h3>
+            </div>
+            <div class="concept-content">
+              <p>Most clinical AI tools go through one of these FDA pathways:</p>
+
+              <div class="pathway-grid">
+                <div class="pathway-card">
+                  <h4>510(k) Clearance</h4>
+                  <p>
+                    Show "substantial equivalence" to an already-approved device. Fastest and most common pathway for
+                    clinical AI.
+                  </p>
+                </div>
+                <div class="pathway-card">
+                  <h4>De Novo</h4>
+                  <p>For novel low-risk devices with no predicate. Creates a new regulatory category.</p>
+                </div>
+                <div class="pathway-card">
+                  <h4>PMA (Premarket Approval)</h4>
+                  <p>
+                    For high-risk devices. Requires clinical trials demonstrating safety and efficacy. Rare for AI
+                    tools.
+                  </p>
+                </div>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  The regulatory approach is still evolving for continuously learning systems and large language models.
+                  Current frameworks assume static algorithms, but modern AI often updates over time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinical Workflow Integration -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🔄 Clinical Workflow Integration</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                The "last mile" of integration often determines success more than model performance. Key considerations:
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Alert fatigue</strong>: Too many alerts get ignored. Precision matters more than sensitivity
+                  in many cases.
+                </li>
+                <li>
+                  <strong>Timing</strong>: Predictions need to arrive when clinicians can act on them, not hours later.
+                </li>
+                <li>
+                  <strong>Actionability</strong>: The prediction should suggest clear next steps, not just flag
+                  potential problems.
+                </li>
+                <li>
+                  <strong>Integration</strong>: Should fit into existing EHR workflows, not require separate logins or
+                  systems.
+                </li>
+              </ul>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Many high-performing models fail in practice because they don't fit how clinicians actually work.
+                  Understanding the user and workflow is as important as understanding the algorithm.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explainability -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🔍 Explainability vs. Performance</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                There's often a tradeoff between models that perform well (deep neural networks) and models clinicians
+                can understand (logistic regression, decision trees).
+              </p>
+
+              <div class="comparison-grid">
+                <div class="comparison-card">
+                  <h4>Interpretable Models</h4>
+                  <ul>
+                    <li>Logistic regression</li>
+                    <li>Decision trees</li>
+                    <li>Rule-based systems</li>
+                  </ul>
+                  <p class="pros">✓ Easy to explain and audit</p>
+                  <p class="cons">✗ May sacrifice performance</p>
+                </div>
+                <div class="comparison-card">
+                  <h4>"Black Box" Models</h4>
+                  <ul>
+                    <li>Deep neural networks</li>
+                    <li>Gradient boosting</li>
+                    <li>Ensemble methods</li>
+                  </ul>
+                  <p class="pros">✓ Often best performance</p>
+                  <p class="cons">✗ Hard to explain decisions</p>
+                </div>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  Regulatory bodies and clinicians often want explanations. But saliency maps and feature importance
+                  scores can be misleading—they show what the model used, not whether its reasoning is sound.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Large Language Models Section -->
+        <section id="llms" class="content-section">
+          <h2 class="section-title">Large Language Models in Healthcare</h2>
+          <p class="section-intro">
+            LLMs like GPT-4 and Claude represent a new frontier in healthcare AI. They excel at different tasks than
+            traditional ML but bring unique challenges.
+          </p>
+
+          <!-- Strengths -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>💪 Strengths</h3>
+            </div>
+            <div class="concept-content">
+              <div class="strength-grid">
+                <div class="strength-card">
+                  <h4>📝 Summarization</h4>
+                  <p>Condensing lengthy medical records or literature into concise, readable summaries.</p>
+                </div>
+                <div class="strength-card">
+                  <h4>🌐 Translation</h4>
+                  <p>
+                    Converting medical jargon to patient-friendly language, or between different clinical documentation
+                    styles.
+                  </p>
+                </div>
+                <div class="strength-card">
+                  <h4>📊 Data Extraction</h4>
+                  <p>
+                    Pulling structured information from unstructured clinical notes—medications, symptoms, test results.
+                  </p>
+                </div>
+                <div class="strength-card">
+                  <h4>🧠 Cognitive Aids</h4>
+                  <p>
+                    Suggesting differential diagnoses for rare disease patterns that clinicians might not immediately
+                    recognize.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weaknesses -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>⚠️ Weaknesses and Risks</h3>
+            </div>
+            <div class="concept-content">
+              <ul class="weakness-list">
+                <li>
+                  <strong>Hallucinations</strong>: LLMs can confidently generate false information, which is
+                  particularly dangerous in clinical contexts where errors can harm patients.
+                </li>
+                <li>
+                  <strong>No Reliability Guarantees</strong>: No proven way to ensure factual accuracy. The model might
+                  give different answers to the same question asked twice.
+                </li>
+                <li>
+                  <strong>Training Data Contamination</strong>: Trained on internet text that includes medical
+                  misinformation, outdated practices, and non-expert opinions.
+                </li>
+                <li>
+                  <strong>Inconsistency</strong>: Responses can vary based on minor prompt changes or random chance in
+                  generation.
+                </li>
+              </ul>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  LLMs should augment, not replace, clinical expertise. They're most useful for administrative tasks and
+                  information retrieval, not direct diagnostic decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emerging Use Cases -->
+          <div class="concept-card">
+            <div class="concept-header">
+              <h3>🚀 Emerging Use Cases</h3>
+            </div>
+            <div class="concept-content">
+              <p>
+                The pattern emerging is <strong>augmentation of administrative tasks</strong> rather than direct
+                diagnostic decisions:
+              </p>
+
+              <div class="use-case-grid">
+                <div class="use-case-card">
+                  <h4>Prior Authorization</h4>
+                  <p>
+                    Automating insurance paperwork by extracting relevant information from clinical notes and matching
+                    to coverage criteria.
+                  </p>
+                </div>
+                <div class="use-case-card">
+                  <h4>Clinical Documentation</h4>
+                  <p>
+                    Generating draft progress notes from conversation transcripts, saving clinician time on charting.
+                  </p>
+                </div>
+                <div class="use-case-card">
+                  <h4>Patient Messaging Triage</h4>
+                  <p>Categorizing patient portal messages by urgency and routing to appropriate staff.</p>
+                </div>
+                <div class="use-case-card">
+                  <h4>Literature Synthesis</h4>
+                  <p>Summarizing recent research on specific conditions to help clinicians stay current.</p>
+                </div>
+              </div>
+
+              <div class="key-insight">
+                <h4>Why This Matters</h4>
+                <p>
+                  LLMs are best at tasks where errors are easily caught by humans (like draft notes) rather than
+                  autonomous decisions. The goal is to save time on busywork, not replace clinical judgment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="content-section">
+          <div class="conclusion-card">
+            <h2>Key Takeaways</h2>
+            <div class="takeaways-grid">
+              <div class="takeaway-card">
+                <h3>1. Context Matters</h3>
+                <p>
+                  The same AI tool can work well in one setting and fail in another. Always consider the population,
+                  environment, and workflow.
+                </p>
+              </div>
+              <div class="takeaway-card">
+                <h3>2. Metrics Tell Stories</h3>
+                <p>
+                  High AUROC doesn't mean a model is useful. Calibration, prevalence-adjusted PPV, and real-world
+                  performance matter more.
+                </p>
+              </div>
+              <div class="takeaway-card">
+                <h3>3. Deployment is Hard</h3>
+                <p>
+                  Technical performance is just the beginning. Workflow integration, regulatory approval, and human
+                  factors determine real-world success.
+                </p>
+              </div>
+              <div class="takeaway-card">
+                <h3>4. Labels Shape Learning</h3>
+                <p>
+                  Models learn from their training data. Biased labels, label leakage, and ground-truth problems limit
+                  what AI can achieve.
+                </p>
+              </div>
+              <div class="takeaway-card">
+                <h3>5. Change is Constant</h3>
+                <p>
+                  Distribution shift is inevitable in healthcare. Continuous monitoring and adaptation are essential,
+                  not optional.
+                </p>
+              </div>
+              <div class="takeaway-card">
+                <h3>6. LLMs are Tools</h3>
+                <p>
+                  Large language models excel at augmenting administrative work but need human oversight for clinical
+                  decisions.
+                </p>
+              </div>
+            </div>
+
+            <div class="next-steps">
+              <h3>Keep Learning</h3>
+              <p>
+                This guide covered the fundamentals, but healthcare AI is a rapidly evolving field. Stay curious, think
+                critically about new tools, and always ask: "Does this actually help patients?"
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/interactive-demos.js"></script>
+  </body>
+</html>
