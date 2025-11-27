@@ -129,6 +129,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+#lifeCalendarScreen .screen-container {
+  height: 700px;
+}
+
 .screen-bezel {
   background-color: #2a2a2a;
   border-radius: 4px;
@@ -233,6 +237,10 @@ body {
    WELCOME SCREEN
    ============================================ */
 
+#welcomeScreen {
+  justify-content: center;
+}
+
 .screen-header {
   text-align: center;
   margin-bottom: 1rem;
@@ -245,7 +253,7 @@ body {
 }
 
 #welcomeScreen .screen-body {
-  justify-content: space-between;
+  justify-content: center;
   min-height: 100%;
 }
 
@@ -413,6 +421,12 @@ body {
   color: var(--gb-darkest);
   margin: 0.5rem 0;
   text-shadow: 2px 2px 0 rgb(0 0 0 / 15%);
+}
+
+.result-number.death-date {
+  font-size: 1rem;
+  color: var(--gb-darkest);
+  text-shadow: 2px 2px 0 rgb(139 172 15 / 30%);
 }
 
 .result-sublabel {
@@ -712,18 +726,18 @@ body {
 
 .life-calendar-grid {
   display: grid;
-  grid-template-columns: repeat(52, 1fr);
-  gap: 2px;
-  padding: 1rem;
+  grid-template-columns: repeat(26, 1fr);
+  gap: 3px;
+  padding: 1.5rem;
   background-color: rgb(255 255 255 / 30%);
   border-radius: 4px;
   border: 2px solid var(--gb-dark);
-  max-height: 300px;
-  overflow-y: auto;
 }
 
 .week-cell {
   aspect-ratio: 1;
+  min-width: 10px;
+  min-height: 10px;
   border-radius: 1px;
   border: 1px solid rgb(0 0 0 / 10%);
   cursor: pointer;

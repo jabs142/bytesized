@@ -148,7 +148,25 @@ class LongevityCalculator {
       weeksLived,
       weeksRemaining,
       totalWeeks: weeksLived + weeksRemaining,
+      estimatedDeathDate: this.calculateDeathDate(yearsRemaining),
     };
+  }
+
+  /**
+   * Calculate estimated death date
+   * @param {number} yearsRemaining - Years remaining from current date
+   * @returns {string} - Formatted death date
+   */
+  calculateDeathDate(yearsRemaining) {
+    const today = new Date();
+    const totalDays = yearsRemaining * 365.25;
+    const deathDate = new Date(today.getTime() + totalDays * 24 * 60 * 60 * 1000);
+
+    return deathDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
   }
 
   /**
@@ -212,7 +230,7 @@ class LongevityCalculator {
    * Get available locations
    */
   getLocations() {
-    return Object.keys(this.lifeTables.location_adjustments);
+    return Object.keys(this.lifeTables.location_adjustments).filter((key) => key !== 'description');
   }
 }
 

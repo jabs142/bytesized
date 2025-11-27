@@ -60,14 +60,9 @@
                   </div>
                   <div class="screen-body">
                     <p class="intro-text">
-                      "Remember that you must die." Calculate your life expectancy based on demographics, lifestyle
-                      factors, and visualize your time remaining.
+                      The phrase memento mori is Latin for "remember you must die." It serves as a reminder of the
+                      inevitability of death and the transient nature of human life.
                     </p>
-                    <div class="feature-list">
-                      <div class="feature-item">📊 Personalized Life Expectancy</div>
-                      <div class="feature-item">💪 Habit Impact Simulator</div>
-                      <div class="feature-item">📅 Life Calendar Visualization</div>
-                    </div>
                     <button id="startCalculator" class="btn-primary">
                       <span class="btn-text">START</span>
                       <span class="btn-icon">▶</span>
@@ -96,9 +91,12 @@
                   </div>
                   <div class="results-container">
                     <div class="life-expectancy-result">
-                      <div class="result-label">Estimated Life Expectancy</div>
-                      <div id="lifeExpectancy" class="result-number">-- years</div>
-                      <div class="result-sublabel"><span id="yearsRemaining">--</span> years remaining</div>
+                      <div class="result-label">ESTIMATED END DATE</div>
+                      <div id="estimatedDeathDate" class="result-number death-date">--</div>
+                      <div class="result-sublabel" style="margin-top: 1.5rem">
+                        Life Expectancy: <span id="lifeExpectancy" style="font-weight: bold">-- years</span><br />
+                        <span id="yearsRemaining">--</span> years remaining
+                      </div>
                     </div>
                     <div class="result-stats">
                       <div class="stat-item">
@@ -115,7 +113,7 @@
                         <span class="btn-text">HABIT SIMULATOR</span>
                         <span class="btn-icon">▶</span>
                       </button>
-                      <button id="viewLifeCalendar" class="btn-secondary">
+                      <button id="viewLifeCalendar" class="btn-primary">
                         <span class="btn-text">LIFE CALENDAR</span>
                         <span class="btn-icon">📅</span>
                       </button>

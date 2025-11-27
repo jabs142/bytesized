@@ -9,7 +9,7 @@ class LifeCalendar {
     this.container = document.getElementById(containerId);
     this.currentAge = currentAge;
     this.lifeExpectancy = Math.ceil(lifeExpectancy);
-    this.weeksPerYear = 52;
+    this.weeksPerYear = 26;
     this.currentWeek = Math.floor(currentAge * this.weeksPerYear);
     this.totalWeeks = Math.ceil(this.lifeExpectancy * this.weeksPerYear);
   }

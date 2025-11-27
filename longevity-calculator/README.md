@@ -6,8 +6,7 @@
 ## Overview
 
 An interactive web application that estimates life expectancy based on
-demographics and lifestyle factors. Built with vanilla JavaScript following the
-ByteSized Design System.
+demographics and lifestyle factors.
 
 ## Features
 
@@ -34,15 +33,6 @@ ByteSized Design System.
 - Grid showing weeks lived vs. weeks remaining
 - Inspired by "Wait But Why" life calendar concept
 - Hover tooltips with age and status
-
-## Technical Implementation
-
-### Architecture
-
-- **Client-side only** (no backend required)
-- ES6 modules for clean code organization
-- Vanilla JavaScript (no frameworks)
-- Game Boy aesthetic following ByteSized design system
 
 ### File Structure
 

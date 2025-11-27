@@ -303,8 +303,13 @@ function calculateResults() {
  * Render results screen
  */
 function renderResults() {
-  const { lifeExpectancy, yearsRemaining, weeksLived, weeksRemaining } = state.results;
+  const { lifeExpectancy, yearsRemaining, weeksLived, weeksRemaining, estimatedDeathDate } =
+    state.results;
 
+  // Death date is now the primary display
+  document.getElementById('estimatedDeathDate').textContent = estimatedDeathDate || '--';
+
+  // Life expectancy details in sublabel
   document.getElementById('lifeExpectancy').textContent = `${lifeExpectancy} years`;
   document.getElementById('yearsRemaining').textContent = yearsRemaining.toFixed(1);
   document.getElementById('weeksLived').textContent = weeksLived.toLocaleString();
